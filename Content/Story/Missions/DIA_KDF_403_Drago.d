@@ -16,7 +16,7 @@ FUNC int  KDF_403_Drago_RUNE_Condition()
 };
 func void  KDF_403_Drago_RUNE_Info()
 {
-	AI_Output (self, other,"KDF_403_Drago_RUNE_Info_13_01"); //Przyjmij tÄ™ runÄ™ jako znak przychylnoÅ›ci Innosa. Oby ciÄ™ chroniÅ‚a podczas marszu przez twÄ… Å›cieÅ¼kÄ™ Å¼ycia.
+	AI_Output (self, other,"KDF_403_Drago_RUNE_Info_13_01"); //Przyjmij tê runê jako znak przychylnoœci Innosa. Oby ciê chroni³a podczas marszu przez tw¹ œcie¿kê ¿ycia.
 	CreateInvItem (self,ItArRuneFirebolt);
 	B_GiveInvItems (self, other, ItArRuneFirebolt, 1);
 	AI_StopProcessInfos	( self );
@@ -55,7 +55,7 @@ INSTANCE DIA_Drago_HELLO1 (C_INFO)
    condition    = DIA_Drago_HELLO1_Condition;
    information  = DIA_Drago_HELLO1_Info;
    permanent	= FALSE;
-   description	= "Kim jesteÅ›?";
+   description	= "Kim jesteœ?";
 };
 
 FUNC INT DIA_Drago_HELLO1_Condition()
@@ -65,10 +65,10 @@ FUNC INT DIA_Drago_HELLO1_Condition()
 
 FUNC VOID DIA_Drago_HELLO1_Info()
 {
-    AI_Output (other, self ,"DIA_Drago_HELLO1_15_01"); //Kim jesteÅ›?
-    AI_Output (self, other ,"DIA_Drago_HELLO1_03_02"); //Nazywam siÄ™ Drago, Mag z KrÄ™gu Ognia. Jestem takÅ¼e znawcÄ… magii oraz run.
-    AI_Output (self, other ,"DIA_Drago_HELLO1_03_03"); //W dawnych czasach sam wyrabiaÅ‚em runy na stole runicznym, jednak odkÄ…d Å¼yjemy otoczeni magicznÄ… BarierÄ…, nie muszÄ™ tego robiÄ‡.
-	AI_Output (self, other ,"DIA_Drago_HELLO1_03_04"); //Magiczne runy dostarczajÄ… nam z ZewnÄ™trznego Åšwiata, z Klasztoru MagÃ³w Ognia w Khorinis. 
+    AI_Output (other, self ,"DIA_Drago_HELLO1_15_01"); //Kim jesteœ?
+    AI_Output (self, other ,"DIA_Drago_HELLO1_03_02"); //Nazywam siê Drago, Mag z Krêgu Ognia. Jestem tak¿e znawc¹ magii oraz run.
+    AI_Output (self, other ,"DIA_Drago_HELLO1_03_03"); //W dawnych czasach sam wyrabia³em runy na stole runicznym, jednak odk¹d ¿yjemy otoczeni magiczn¹ Barier¹, nie muszê tego robiæ.
+	AI_Output (self, other ,"DIA_Drago_HELLO1_03_04"); //Magiczne runy dostarczaj¹ nam z Zewnêtrznego Œwiata, z Klasztoru Magów Ognia w Khorinis. 
 };
 
 //========================================
@@ -82,7 +82,7 @@ INSTANCE DIA_Drago_HELLO2 (C_INFO)
    condition    = DIA_Drago_HELLO2_Condition;
    information  = DIA_Drago_HELLO2_Info;
    permanent	= FALSE;
-   description	= "MoÅ¼esz mnie czegoÅ› nauczyÄ‡? ";
+   description	= "Mo¿esz mnie czegoœ nauczyæ? ";
 };
 
 FUNC INT DIA_Drago_HELLO2_Condition()
@@ -92,9 +92,9 @@ FUNC INT DIA_Drago_HELLO2_Condition()
 
 FUNC VOID DIA_Drago_HELLO2_Info()
 {
-    AI_Output (other, self ,"DIA_Drago_HELLO2_15_01"); //MoÅ¼esz mnie czegoÅ› nauczyÄ‡? 
-    AI_Output (self, other ,"DIA_Drago_HELLO2_03_02"); //Nie, synu. Nie uwaÅ¼am, Å¼eby w Kolonii zdolnoÅ›Ä‡ wytwarzania run byÅ‚a niezbÄ™dna. 
-	AI_Output (self, other ,"DIA_Drago_HELLO2_03_03"); //JeÅ›li chcesz nabyÄ‡ runÄ™ magicznÄ…, porozmawiaj z Torrezem, sprzedaje ich caÅ‚e mnÃ³stwo. 
+    AI_Output (other, self ,"DIA_Drago_HELLO2_15_01"); //Mo¿esz mnie czegoœ nauczyæ? 
+    AI_Output (self, other ,"DIA_Drago_HELLO2_03_02"); //Nie, synu. Nie uwa¿am, ¿eby w Kolonii zdolnoœæ wytwarzania run by³a niezbêdna. 
+	AI_Output (self, other ,"DIA_Drago_HELLO2_03_03"); //Jeœli chcesz nabyæ runê magiczn¹, porozmawiaj z Torrezem, sprzedaje ich ca³e mnóstwo. 
 };
 
 //========================================
@@ -108,7 +108,7 @@ INSTANCE DIA_Drago_HELLO3 (C_INFO)
    condition    = DIA_Drago_HELLO3_Condition;
    information  = DIA_Drago_HELLO3_Info;
    permanent	= FALSE;
-   description	= "Czy mogÄ™ ci w czymÅ› pomÃ³c?";
+   description	= "Czy mogê ci w czymœ pomóc?";
 };
 
 FUNC INT DIA_Drago_HELLO3_Condition()
@@ -122,27 +122,27 @@ FUNC INT DIA_Drago_HELLO3_Condition()
 
 FUNC VOID DIA_Drago_HELLO3_Info()
 {
-    AI_Output (other, self ,"DIA_Drago_HELLO3_15_01"); //Czy mogÄ™ ci w czymÅ› pomÃ³c?
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_02"); //W rzeczy samej. Teraz, gdy wiemy, Å¼e sÅ‚uÅ¼ysz Inosowi moÅ¼emy ciÄ™ wtajemniczyÄ‡ w nasze sprawy.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_03"); //Jak wiesz tu, w GÃ³rniczej Dolinie znajduje siÄ™ obÃ³z na bagnie. RezydujÄ… tam wyznawcy ÅšniÄ…cego, boga ktÃ³rego natury nie moÅ¼emy zgÅ‚Ä™biÄ‡.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_04"); //Istnieje tylko trzech bogÃ³w: Innos - Pan Ognia i SprawiedliwoÅ›ci, Adanos - Pan WÃ³d i RÃ³wnowagi oraz Beliar - WÅ‚adca Mroku i ZÅ‚a. W Å›wiÄ™tej trÃ³jce nie ma miejsca dla czwartego boga.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_05"); //Nie rozumiem dlaczego, ale Guru dysponujÄ… magiÄ… nadanÄ… im przez ÅšniÄ…cego, tak jakby rzeczywiÅ›cie byÅ‚ bogiem. 
-	AI_Output (self, other ,"DIA_Drago_HELLO3_03_06"); //WczeÅ›niej nie zawracaliÅ›my sobie gÅ‚owy wymysÅ‚ami Sekty, lecz ostatnio w Starym Obozie pojawiÅ‚o siÄ™ znacznie wiÄ™cej ich wysÅ‚annikÃ³w.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_07"); //PoleciÅ‚em jednemu z naszych Cieni, aby sprÃ³bowaÅ‚ siÄ™ od nich dowiedzieÄ‡, co planujÄ… Guru. 
-	AI_Output (self, other ,"DIA_Drago_HELLO3_03_08"); //Zdaje siÄ™, Å¼e przygotowujÄ… siÄ™ do wielkiego przyzwania, w czasie ktÃ³rego ÅšniÄ…cy ma im pokazaÄ‡ sposÃ³b na zniszczenie Bariery.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_09"); //Do tego wszystkiego dochodzi list od mistrza Pyrokara, ktÃ³ry nam dostarczyÅ‚eÅ›. UwaÅ¼a on, Å¼e Bractwo niesie ze sobÄ… ogromne zagroÅ¼enie dla losÃ³w caÅ‚ej Myrtany. 
-	AI_Output (self, other ,"DIA_Drago_HELLO3_03_10"); //Ten fakt bardzo zaniepokoiÅ‚ mistrza Corristo i zleciÅ‚ mi bardzo waÅ¼nÄ… misjÄ™.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_11"); //Mam dowiedzieÄ‡ siÄ™ wszystkiego o boskiej mocy, ktÃ³ra napÄ™dza runy Bractwa. Tu wÅ‚aÅ›nie mam dla ciebie waÅ¼kie zlecenie.
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_12"); //PÃ³jdziesz do obozu na bagnie i przyniesiesz mi trzy runy z zaklÄ™ciami ÅšniÄ…cego. ZaklÄ™cia nazywajÄ… siÄ™: uderzenie wiatru, pirokineza i sen. 
-	AI_Output (self, other ,"DIA_Drago_HELLO3_03_13"); //Spiesz siÄ™, musimy zdobyÄ‡ te runy zanim odbÄ™dzie siÄ™ przywoÅ‚anie ÅšniÄ…cego.
-    AI_Output (other, self ,"DIA_Drago_HELLO3_15_14"); //Czy jak sprÃ³buje je wykraÅ›Ä‡, nie bÄ™dzie to czyn haÅ„biÄ…cy imiÄ™ Innosa?
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_15"); //Nie, mÃ³j synu. Robisz to ku chwale Innosa i w imiÄ™ dobra, wiÄ™c Pan Ognia przymknie oko na pochodzenie run. 
-    AI_Output (self, other ,"DIA_Drago_HELLO3_03_16"); //Zatem ruszam w drogÄ™. 
+    AI_Output (other, self ,"DIA_Drago_HELLO3_15_01"); //Czy mogê ci w czymœ pomóc?
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_02"); //W rzeczy samej. Teraz, gdy wiemy, ¿e s³u¿ysz Inosowi mo¿emy ciê wtajemniczyæ w nasze sprawy.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_03"); //Jak wiesz tu, w Górniczej Dolinie znajduje siê obóz na bagnie. Rezyduj¹ tam wyznawcy Œni¹cego, boga którego natury nie mo¿emy zg³êbiæ.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_04"); //Istnieje tylko trzech bogów: Innos - Pan Ognia i Sprawiedliwoœci, Adanos - Pan Wód i Równowagi oraz Beliar - W³adca Mroku i Z³a. W œwiêtej trójce nie ma miejsca dla czwartego boga.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_05"); //Nie rozumiem dlaczego, ale Guru dysponuj¹ magi¹ nadan¹ im przez Œni¹cego, tak jakby rzeczywiœcie by³ bogiem. 
+	AI_Output (self, other ,"DIA_Drago_HELLO3_03_06"); //Wczeœniej nie zawracaliœmy sobie g³owy wymys³ami Sekty, lecz ostatnio w Starym Obozie pojawi³o siê znacznie wiêcej ich wys³anników.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_07"); //Poleci³em jednemu z naszych Cieni, aby spróbowa³ siê od nich dowiedzieæ, co planuj¹ Guru. 
+	AI_Output (self, other ,"DIA_Drago_HELLO3_03_08"); //Zdaje siê, ¿e przygotowuj¹ siê do wielkiego przyzwania, w czasie którego Œni¹cy ma im pokazaæ sposób na zniszczenie Bariery.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_09"); //Do tego wszystkiego dochodzi list od mistrza Pyrokara, który nam dostarczy³eœ. Uwa¿a on, ¿e Bractwo niesie ze sob¹ ogromne zagro¿enie dla losów ca³ej Myrtany. 
+	AI_Output (self, other ,"DIA_Drago_HELLO3_03_10"); //Ten fakt bardzo zaniepokoi³ mistrza Corristo i zleci³ mi bardzo wa¿n¹ misjê.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_11"); //Mam dowiedzieæ siê wszystkiego o boskiej mocy, która napêdza runy Bractwa. Tu w³aœnie mam dla ciebie wa¿kie zlecenie.
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_12"); //Pójdziesz do obozu na bagnie i przyniesiesz mi trzy runy z zaklêciami Œni¹cego. Zaklêcia nazywaj¹ siê: uderzenie wiatru, pirokineza i sen. 
+	AI_Output (self, other ,"DIA_Drago_HELLO3_03_13"); //Spiesz siê, musimy zdobyæ te runy zanim odbêdzie siê przywo³anie Œni¹cego.
+    AI_Output (other, self ,"DIA_Drago_HELLO3_15_14"); //Czy jak spróbuje je wykraœæ, nie bêdzie to czyn hañbi¹cy imiê Innosa?
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_15"); //Nie, mój synu. Robisz to ku chwale Innosa i w imiê dobra, wiêc Pan Ognia przymknie oko na pochodzenie run. 
+    AI_Output (self, other ,"DIA_Drago_HELLO3_03_16"); //Zatem ruszam w drogê. 
     MIS_NEW_GOD = LOG_RUNNING;
 
     Log_CreateTopic          (CH2_New_God, LOG_MISSION);
     Log_SetTopicStatus       (CH2_New_God, LOG_RUNNING);
-    B_LogEntry               (CH2_New_God,"Drago, Mag Ognia ze Starego Obozu musi zbadaÄ‡, kim naprawdÄ™ jest ÅšniÄ…cy i skÄ…d Guru biorÄ… swojÄ… moc. Aby pomÃ³c mu w badaniach, muszÄ™ przynieÅ›Ä‡ trzy runy: Uderzenie Wiatru, Sen i Pirokineza.");
+    B_LogEntry               (CH2_New_God,"Drago, Mag Ognia ze Starego Obozu musi zbadaæ, kim naprawdê jest Œni¹cy i sk¹d Guru bior¹ swoj¹ moc. Aby pomóc mu w badaniach, muszê przynieœæ trzy runy: Uderzenie Wiatru, Sen i Pirokineza.");
     AI_StopProcessInfos	(self);
 };
 var int herocan_askaboutresarch_drago;
@@ -157,7 +157,7 @@ INSTANCE DIA_Drago_RUNES_ALL_HEVE (C_INFO)
    condition    = DIA_Drago_RUNES_ALL_HEVE_Condition;
    information  = DIA_Drago_RUNES_ALL_HEVE_Info;
    permanent	= FALSE;
-   description	= "ZdobyÅ‚em runy magii ÅšniÄ…cego, oto one.";
+   description	= "Zdoby³em runy magii Œni¹cego, oto one.";
 };
 
 FUNC INT DIA_Drago_RUNES_ALL_HEVE_Condition()
@@ -175,15 +175,15 @@ FUNC INT DIA_Drago_RUNES_ALL_HEVE_Condition()
 
 FUNC VOID DIA_Drago_RUNES_ALL_HEVE_Info()
 {
-    AI_Output (other, self ,"DIA_Drago_RUNES_ALL_HEVE_15_01"); //ZdobyÅ‚em runy magii ÅšniÄ…cego, oto one.
+    AI_Output (other, self ,"DIA_Drago_RUNES_ALL_HEVE_15_01"); //Zdoby³em runy magii Œni¹cego, oto one.
     B_GiveInvItems (other, self, ItArRuneSleep, 1);
     B_GiveInvItems (other, self, ItArRuneWindfist, 1);
     B_GiveInvItems (other, self, ItArRunePyrokinesis, 1);
-    AI_Output (self, other ,"DIA_Drago_RUNES_ALL_HEVE_03_02"); //Nareszcie zbadamy czym naprawdÄ™ jest ÅšniÄ…cy. Natychmiast przystÄ…piÄ™ do badaÅ„. WeÅº tÄ… miksturÄ™, przygotowaÅ‚ jÄ… nasz alchemik - Damarok. 
-	AI_Output (self, other ,"DIA_Drago_RUNES_ALL_HEVE_03_03"); //Niech zwiÄ™kszy ona twoje duchowe zdolnoÅ›ci. WrÃ³Ä‡ do mnie za jakiÅ› czas, gdy skoÅ„czÄ™ moje badania.
+    AI_Output (self, other ,"DIA_Drago_RUNES_ALL_HEVE_03_02"); //Nareszcie zbadamy czym naprawdê jest Œni¹cy. Natychmiast przyst¹piê do badañ. WeŸ t¹ miksturê, przygotowa³ j¹ nasz alchemik - Damarok. 
+	AI_Output (self, other ,"DIA_Drago_RUNES_ALL_HEVE_03_03"); //Niech zwiêkszy ona twoje duchowe zdolnoœci. Wróæ do mnie za jakiœ czas, gdy skoñczê moje badania.
     CreateInvItems (self, ItFo_Potion_Mana_Perma_01, 1);
     B_GiveInvItems (self, other, ItFo_Potion_Mana_Perma_01, 1);
-    B_LogEntry                     (CH2_New_God,"OddaÅ‚em wszystkie trzy runy magowi Drago. W zamian otrzymaÅ‚em potÄ™Å¼na miksturÄ™, oraz Å›wiadomoÅ›Ä‡, Å¼e pomogÅ‚em Magom Ognia. Teraz muszÄ™ tylko czekaÄ‡ na wyniki badaÅ„.");
+    B_LogEntry                     (CH2_New_God,"Odda³em wszystkie trzy runy magowi Drago. W zamian otrzyma³em potê¿na miksturê, oraz œwiadomoœæ, ¿e pomog³em Magom Ognia. Teraz muszê tylko czekaæ na wyniki badañ.");
     
 	herocan_askaboutresarch_drago = true;
     B_GiveXP (500);
@@ -218,24 +218,53 @@ FUNC VOID DIA_Drago_RUNES_RESEARCH_PROGRESS_Info()
     AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_01"); //I jak tam badania nad runami?
     if (kapitel < 3)
     {
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_02"); //WrÃ³Ä‡ pÃ³Åºniej. WciÄ…Å¼ prÃ³bujÄ™ dowiedzieÄ‡ siÄ™ jaka siÅ‚a je napÄ™dza. Niech Innos obdaruje siÄ™ cierpliwoÅ›ciÄ… bracie.
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_02"); //Wróæ póŸniej. Wci¹¿ próbujê dowiedzieæ siê jaka si³a je napêdza. Niech Innos obdaruje siê cierpliwoœci¹ bracie.
     }
-    else if (kapitel == 3) && (AngarTellHeroForCalom == TRUE)
+    else if (kapitel == 3)
     {
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_03"); //UdaÅ‚o mi siÄ™ zgÅ‚Ä™biÄ‡ naturÄ™ run magii ÅšniÄ…cego! Mistrz Pyrokar ma racjÄ™, Sekta jest powaÅ¼nym zagroÅ¼eniem dla naszego Å›wiata.
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_04"); //ÅšniÄ…cy okazaÅ‚ siÄ™ byÄ‡ demonem z piekÅ‚a rodem. OmamiÅ‚ on ludzi z Bractwa przedstawiajÄ…c siÄ™ jako wspaniaÅ‚y i miÅ‚osierny bÃ³g, jednak w rzeczywistoÅ›ci jest wcieleniem samego Beliara.
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_05"); //ManipulowaÅ‚ on Guru, ktÃ³rzy pozostali pod wpÅ‚ywem palonego przez nich bagiennego ziela. ChciaÅ‚ zostaÄ‡ uwolniony i przynieÅ›Ä‡ na nas zagÅ‚adÄ™.
-        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_06"); //Wiem o tym. Wielkie przywoÅ‚anie okazaÅ‚o siÄ™ kompletnÄ… klapÄ…, doprowadziÅ‚o do Å›mierci Y"Beriona, duchowego przywÃ³dcy Bractwa. 
-		AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_07"); //Przed Å›mierciÄ… wielki mistrz zbudziÅ‚ siÄ™ i obwieÅ›ciÅ‚ Å¼e ÅšniÄ…cy nie jest tym, za co go uwaÅ¼ajÄ….
-        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_08"); //Tym samym wiara w ÅšniÄ…cego zostaÅ‚a porzucona przez SektÄ™, a nowym przywÃ³dcÄ… zostaÅ‚ Cor Angar.
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_09"); //JesteÅ› pewny, Å¼e wszyscy porzucili wiarÄ™ w ÅšniÄ…cego?
-        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_10"); //Nie. Cor Kalom, zebraÅ‚ oddziaÅ‚ fanatycznych StraÅ¼nikÃ³w ÅšwiÄ…tynnych i opuÅ›ciÅ‚ obÃ³z. Nie chciaÅ‚ uwierzyÄ‡ w prawdziwÄ… naturÄ™ ÅšniÄ…cego i postanowiÅ‚ odszukaÄ‡ go na wÅ‚asnÄ… rÄ™kÄ™. 
-        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_11"); //O Innosie, powstrzymaj tego szaleÅ„ca. PomÃ³w natychmiast z Corristo, musimy podjÄ…Ä‡ odpowiednie kroki.
-        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_12"); //W porzÄ…dku.
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_03"); //Uda³o mi siê zg³êbiæ naturê run magii Œni¹cego! Mistrz Pyrokar ma racjê, Sekta jest powa¿nym zagro¿eniem dla naszego œwiata.
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_04"); //Œni¹cy okaza³ siê byæ demonem z piek³a rodem. Omami³ on ludzi z Bractwa przedstawiaj¹c siê jako wspania³y i mi³osierny bóg, jednak w rzeczywistoœci jest wcieleniem samego Beliara.
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_05"); //Manipulowa³ on Guru, którzy pozostali pod wp³ywem palonego przez nich bagiennego ziela. Chcia³ zostaæ uwolniony i przynieœæ na nas zag³adê.
+        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_06"); //Wiem o tym. Wielkie przywo³anie okaza³o siê kompletn¹ klap¹, doprowadzi³o do œmierci Y"Beriona, duchowego przywódcy Bractwa. 
+		AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_07"); //Przed œmierci¹ wielki mistrz zbudzi³ siê i obwieœci³ ¿e Œni¹cy nie jest tym, za co go uwa¿aj¹.
+        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_08"); //Tym samym wiara w Œni¹cego zosta³a porzucona przez Sektê, a nowym przywódc¹ zosta³ Cor Angar.
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_09"); //Jesteœ pewny, ¿e wszyscy porzucili wiarê w Œni¹cego?
+        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_10"); //Nie. Cor Kalom, zebra³ oddzia³ fanatycznych Stra¿ników Œwi¹tynnych i opuœci³ obóz. Nie chcia³ uwierzyæ w prawdziw¹ naturê Œni¹cego i postanowi³ odszukaæ go na w³asn¹ rêkê. 
+        AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_11"); //O Innosie, powstrzymaj tego szaleñca. Pomów natychmiast z Corristo, musimy podj¹æ odpowiednie kroki.
+        AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_12"); //W porz¹dku.
 		DIA_Drago_RUNES_RESEARCH_PROGRESS.permanent = false;
-		B_LogEntry                     (CH2_New_God,"Drago powiedziaÅ‚ mi dokÅ‚adnie to samo, co juÅ¼ wiedziaÅ‚em. ÅšniÄ…cy to demon, ktÃ³ry oszukaÅ‚ czÅ‚onkÃ³w Bractwa. MuszÄ™ szybko porozmawiaÄ‡ z Corristo. To, co dzieje siÄ™ na bagnach moÅ¼e wpÅ‚ynÄ…Ä‡ na Å¼ycie wszystkich ludzi pod BarierÄ….");
+		B_LogEntry                     (CH2_New_God,"Drago powiedzia³ mi dok³adnie to samo, co ju¿ wiedzia³em. Œni¹cy to demon, który oszuka³ cz³onków Bractwa. Muszê szybko porozmawiaæ z Corristo. To, co dzieje siê na bagnach mo¿e wp³yn¹æ na ¿ycie wszystkich ludzi pod Barier¹.");
 		must_talk_corristo = true;
 		B_GiveXP (100);
     };
     AI_StopProcessInfos	(self);
+};
+
+instance dia_drago_pickpocket(c_info) {
+    npc = kdf_403_drago;
+    nr = 900;
+    condition = dia_drago_pickpocket_condition;
+    information = dia_drago_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_drago_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDF, 35);
+};
+
+func void dia_drago_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_drago_pickpocket);
+	info_addchoice(dia_drago_pickpocket, dialog_back, dia_drago_pickpocket_back);
+	info_addchoice(dia_drago_pickpocket, dialog_pickpocket, dia_drago_pickpocket_doit);
+};
+
+func void dia_drago_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_drago_pickpocket);
+};
+
+func void dia_drago_pickpocket_back() {
+    info_clearchoices(dia_drago_pickpocket);
 };
