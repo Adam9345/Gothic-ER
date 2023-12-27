@@ -186,4 +186,31 @@ FUNC VOID DIA_Luis_ZAKONCZONE_Info()
 	B_GiveInvItems (hero,self,ItMw_2H_Sword_Light_02,1);
 };
 
+instance dia_luis_pickpocket(c_info) {
+    npc = ban_1615_luis;
+    nr = 900;
+    condition = dia_luis_pickpocket_condition;
+    information = dia_luis_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_luis_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_luis_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_luis_pickpocket);
+	info_addchoice(dia_luis_pickpocket, dialog_back, dia_luis_pickpocket_back);
+	info_addchoice(dia_luis_pickpocket, dialog_pickpocket, dia_luis_pickpocket_doit);
+};
+
+func void dia_luis_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_luis_pickpocket);
+};
+
+func void dia_luis_pickpocket_back() {
+    info_clearchoices(dia_luis_pickpocket);
+};

@@ -456,7 +456,34 @@ FUNC VOID DIA_Magnus_HI_ZD_BEER_Info()
 	B_LogEntry               (ZachciankiDiliona,"Dostarczy³em skrzynkê piwa zadowolonemu Magnusowi. Pora wracaæ do Silasa kupiæ grzane wino.");
 };
 
+instance dia_magnus_pickpocket(c_info) {
+    npc = non_5675_magnus;
+    nr = 900;
+    condition = dia_magnus_pickpocket_condition;
+    information = dia_magnus_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_magnus_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 20);
+};
+
+func void dia_magnus_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_magnus_pickpocket);
+	info_addchoice(dia_magnus_pickpocket, dialog_back, dia_magnus_pickpocket_back);
+	info_addchoice(dia_magnus_pickpocket, dialog_pickpocket, dia_magnus_pickpocket_doit);
+};
+
+func void dia_magnus_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_magnus_pickpocket);
+};
+
+func void dia_magnus_pickpocket_back() {
+    info_clearchoices(dia_magnus_pickpocket);
+};
 
 
 

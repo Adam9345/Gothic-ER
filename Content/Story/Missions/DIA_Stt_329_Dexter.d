@@ -501,3 +501,31 @@ FUNC VOID DIA_Dexter_Kapitel4_dialog_Info()
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_09"); //Ponadto szef darzy mnie wielkim zaufaniem.
 };
 
+instance dia_dexter_pickpocket(c_info) {
+    npc = stt_329_dexter;
+    nr = 900;
+    condition = dia_dexter_pickpocket_condition;
+    information = dia_dexter_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_dexter_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_dexter_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_dexter_pickpocket);
+	info_addchoice(dia_dexter_pickpocket, dialog_back, dia_dexter_pickpocket_back);
+	info_addchoice(dia_dexter_pickpocket, dialog_pickpocket, dia_dexter_pickpocket_doit);
+};
+
+func void dia_dexter_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_dexter_pickpocket);
+};
+
+func void dia_dexter_pickpocket_back() {
+    info_clearchoices(dia_dexter_pickpocket);
+};

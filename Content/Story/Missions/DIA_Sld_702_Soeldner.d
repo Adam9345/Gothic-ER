@@ -80,3 +80,32 @@ FUNC VOID  DIA_Sld_702_PERM_Info()
 	AI_Output (self, other,"DIA_Sld_702_PERM_04_03"); //On nie musi chowaæ siê za plecami ca³ej armii siepaczy. Sam potrafi o siebie zadbaæ.
 	AI_Output (self, other,"DIA_Sld_702_PERM_04_04"); //My jesteœmy tu tylko na wypadek, gdyby nas potrzebowa³.
 };
+
+instance dia_sld_702_pickpocket(c_info) {
+    npc = sld_702_soeldner;
+    nr = 900;
+    condition = dia_sld_702_pickpocket_condition;
+    information = dia_sld_702_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_sld_702_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 30);
+};
+
+func void dia_sld_702_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_sld_702_pickpocket);
+	info_addchoice(dia_sld_702_pickpocket, dialog_back, dia_sld_702_pickpocket_back);
+	info_addchoice(dia_sld_702_pickpocket, dialog_pickpocket, dia_sld_702_pickpocket_doit);
+};
+
+func void dia_sld_702_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_sld_702_pickpocket);
+};
+
+func void dia_sld_702_pickpocket_back() {
+    info_clearchoices(dia_sld_702_pickpocket);
+};

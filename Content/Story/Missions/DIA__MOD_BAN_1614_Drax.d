@@ -1572,3 +1572,31 @@ FUNC VOID DIA_Drax_RyanDeath_Info()
     AI_Output (other, self ,"DIA_Drax_RyanDeath_15_03"); //Rozumiem.
 };
 
+instance dia_drax_pickpocket(c_info) {
+    npc = ban_1614_drax;
+    nr = 900;
+    condition = dia_drax_pickpocket_condition;
+    information = dia_drax_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_drax_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_drax_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_drax_pickpocket);
+	info_addchoice(dia_drax_pickpocket, dialog_back, dia_drax_pickpocket_back);
+	info_addchoice(dia_drax_pickpocket, dialog_pickpocket, dia_drax_pickpocket_doit);
+};
+
+func void dia_drax_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_drax_pickpocket);
+};
+
+func void dia_drax_pickpocket_back() {
+    info_clearchoices(dia_drax_pickpocket);
+};

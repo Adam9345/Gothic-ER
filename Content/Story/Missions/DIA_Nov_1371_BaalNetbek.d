@@ -249,3 +249,31 @@ FUNC VOID DIA_BaalNetbek_GRU_MUDSEED_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_baalnetbek_pickpocket(c_info) {
+    npc = nov_1371_baalnetbek;
+    nr = 900;
+    condition = dia_baalnetbek_pickpocket_condition;
+    information = dia_baalnetbek_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_baalnetbek_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_baalnetbek_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_baalnetbek_pickpocket);
+	info_addchoice(dia_baalnetbek_pickpocket, dialog_back, dia_baalnetbek_pickpocket_back);
+	info_addchoice(dia_baalnetbek_pickpocket, dialog_pickpocket, dia_baalnetbek_pickpocket_doit);
+};
+
+func void dia_baalnetbek_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_baalnetbek_pickpocket);
+};
+
+func void dia_baalnetbek_pickpocket_back() {
+    info_clearchoices(dia_baalnetbek_pickpocket);
+};

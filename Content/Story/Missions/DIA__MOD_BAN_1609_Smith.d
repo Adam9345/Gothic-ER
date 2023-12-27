@@ -192,3 +192,31 @@ FUNC VOID DIA_Smith_FindSwordAlibi_Info()
 	B_LogEntry                     (CH1_DestroyedGrave,"Smith poœwiadczy za Jensa. Powiedzia³ mi nawet, ¿e to nie pierwszy raz kiedy Kereth próbuje siê pozbyæ rymarza z Obozu. Dobrze, ¿e nie da³em siê nabraæ.");
 };
 
+instance dia_smith_pickpocket(c_info) {
+    npc = ban_1609_smith;
+    nr = 900;
+    condition = dia_smith_pickpocket_condition;
+    information = dia_smith_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_smith_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_smith_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_smith_pickpocket);
+	info_addchoice(dia_smith_pickpocket, dialog_back, dia_smith_pickpocket_back);
+	info_addchoice(dia_smith_pickpocket, dialog_pickpocket, dia_smith_pickpocket_doit);
+};
+
+func void dia_smith_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_smith_pickpocket);
+};
+
+func void dia_smith_pickpocket_back() {
+    info_clearchoices(dia_smith_pickpocket);
+};

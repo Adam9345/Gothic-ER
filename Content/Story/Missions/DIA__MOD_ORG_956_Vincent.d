@@ -94,3 +94,31 @@ FUNC VOID DIA_Vincent_HELLO1_Info()
     AI_Output (other, self ,"DIA_Vincent_HELLO1_15_07"); //Skoro tak stawiasz sprawê to nic nie wskóram.
 };
 
+instance dia_vincent_pickpocket(c_info) {
+    npc = org_956_vincent;
+    nr = 900;
+    condition = dia_vincent_pickpocket_condition;
+    information = dia_vincent_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_vincent_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_vincent_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_vincent_pickpocket);
+	info_addchoice(dia_vincent_pickpocket, dialog_back, dia_vincent_pickpocket_back);
+	info_addchoice(dia_vincent_pickpocket, dialog_pickpocket, dia_vincent_pickpocket_doit);
+};
+
+func void dia_vincent_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_vincent_pickpocket);
+};
+
+func void dia_vincent_pickpocket_back() {
+    info_clearchoices(dia_vincent_pickpocket);
+};

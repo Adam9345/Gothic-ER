@@ -336,3 +336,31 @@ FUNC VOID DIA_Viper_DWNS_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_viper_pickpocket(c_info) {
+    npc = stt_302_viper;
+    nr = 900;
+    condition = dia_viper_pickpocket_condition;
+    information = dia_viper_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_viper_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_viper_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_viper_pickpocket);
+	info_addchoice(dia_viper_pickpocket, dialog_back, dia_viper_pickpocket_back);
+	info_addchoice(dia_viper_pickpocket, dialog_pickpocket, dia_viper_pickpocket_doit);
+};
+
+func void dia_viper_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_viper_pickpocket);
+};
+
+func void dia_viper_pickpocket_back() {
+    info_clearchoices(dia_viper_pickpocket);
+};

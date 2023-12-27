@@ -307,7 +307,34 @@ FUNC VOID DIA_Melvin_BG_BDT_Info()
 	Wld_InsertItem			(ItMi_Items_BG,"FP_ITEM_BG4");
 };
 
+instance dia_melvin_pickpocket(c_info) {
+    npc = vlk_582_melvin;
+    nr = 900;
+    condition = dia_melvin_pickpocket_condition;
+    information = dia_melvin_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_melvin_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_melvin_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_melvin_pickpocket);
+	info_addchoice(dia_melvin_pickpocket, dialog_back, dia_melvin_pickpocket_back);
+	info_addchoice(dia_melvin_pickpocket, dialog_pickpocket, dia_melvin_pickpocket_doit);
+};
+
+func void dia_melvin_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_melvin_pickpocket);
+};
+
+func void dia_melvin_pickpocket_back() {
+    info_clearchoices(dia_melvin_pickpocket);
+};
 
 
 

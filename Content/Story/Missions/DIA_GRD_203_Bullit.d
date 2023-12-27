@@ -231,3 +231,32 @@ FUNC VOID DIA_Bullit_LACHMYTA_Info()
 	Npc_ExchangeRoutine	(GRD_203_Bullit, "start");	
     AI_StopProcessInfos	(self);
 };
+
+instance dia_bullit_pickpocket(c_info) {
+    npc = grd_203_bullit;
+    nr = 900;
+    condition = dia_bullit_pickpocket_condition;
+    information = dia_bullit_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_bullit_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_bullit_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_bullit_pickpocket);
+	info_addchoice(dia_bullit_pickpocket, dialog_back, dia_bullit_pickpocket_back);
+	info_addchoice(dia_bullit_pickpocket, dialog_pickpocket, dia_bullit_pickpocket_doit);
+};
+
+func void dia_bullit_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_bullit_pickpocket);
+};
+
+func void dia_bullit_pickpocket_back() {
+    info_clearchoices(dia_bullit_pickpocket);
+};

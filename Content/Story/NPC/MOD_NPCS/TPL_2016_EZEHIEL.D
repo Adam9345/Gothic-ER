@@ -4,7 +4,7 @@ instance TPL_3054_Ezehiel (Npc_Default)
 
 //----------Info ogolne----------
 
-name = "Pos≈Çaniec z Bractwa";
+name = "Pos≥aniec z Bractwa";
 Npctype = Npctype_Main;
 guild = GIL_TPL;
 level = 20;

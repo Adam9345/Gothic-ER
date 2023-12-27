@@ -866,3 +866,31 @@ FUNC VOID DIA_Rufus_PZEEEND_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_rufus_pickpocket(c_info) {
+    npc = bau_903_rufus;
+    nr = 900;
+    condition = dia_rufus_pickpocket_condition;
+    information = dia_rufus_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_rufus_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 18);
+};
+
+func void dia_rufus_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_rufus_pickpocket);
+	info_addchoice(dia_rufus_pickpocket, dialog_back, dia_rufus_pickpocket_back);
+	info_addchoice(dia_rufus_pickpocket, dialog_pickpocket, dia_rufus_pickpocket_doit);
+};
+
+func void dia_rufus_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_rufus_pickpocket);
+};
+
+func void dia_rufus_pickpocket_back() {
+    info_clearchoices(dia_rufus_pickpocket);
+};

@@ -363,3 +363,32 @@ Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
 	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
 	};
 };
+
+instance dia_rodriguez_pickpocket(c_info) {
+    npc = kdf_400_rodriguez;
+    nr = 900;
+    condition = dia_rodriguez_pickpocket_condition;
+    information = dia_rodriguez_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_rodriguez_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDF, 40);
+};
+
+func void dia_rodriguez_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_rodriguez_pickpocket);
+	info_addchoice(dia_rodriguez_pickpocket, dialog_back, dia_rodriguez_pickpocket_back);
+	info_addchoice(dia_rodriguez_pickpocket, dialog_pickpocket, dia_rodriguez_pickpocket_doit);
+};
+
+func void dia_rodriguez_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_rodriguez_pickpocket);
+};
+
+func void dia_rodriguez_pickpocket_back() {
+    info_clearchoices(dia_rodriguez_pickpocket);
+};

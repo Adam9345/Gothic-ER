@@ -98,3 +98,31 @@ FUNC VOID DIA_GRD_278_Gardist_LeaveMe1_Info()
 	Npc_ExchangeRoutine            (GRD_278_Gardist,"piwo");
 };
 
+instance dia_grd_278_pickpocket(c_info) {
+    npc = grd_278_gardist;
+    nr = 900;
+    condition = dia_grd_278_pickpocket_condition;
+    information = dia_grd_278_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_grd_278_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_grd_278_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grd_278_pickpocket);
+	info_addchoice(dia_grd_278_pickpocket, dialog_back, dia_grd_278_pickpocket_back);
+	info_addchoice(dia_grd_278_pickpocket, dialog_pickpocket, dia_grd_278_pickpocket_doit);
+};
+
+func void dia_grd_278_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grd_278_pickpocket);
+};
+
+func void dia_grd_278_pickpocket_back() {
+    info_clearchoices(dia_grd_278_pickpocket);
+};

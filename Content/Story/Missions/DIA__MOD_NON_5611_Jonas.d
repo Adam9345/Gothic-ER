@@ -473,3 +473,31 @@ FUNC VOID DIA_Jonas_ZM_Who_Info()
 	B_LogEntry               (ZagrozeniMysliwi,"Jonas twierdzi, ¿e Stra¿nicy Gomeza zamierzaj¹ uderzyæ na obóz myœliwych i potrzebuj¹ pomocy.");
 };
 
+instance dia_jonas_pickpocket(c_info) {
+    npc = non_5611_jonas;
+    nr = 900;
+    condition = dia_jonas_pickpocket_condition;
+    information = dia_jonas_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_jonas_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_jonas_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_jonas_pickpocket);
+	info_addchoice(dia_jonas_pickpocket, dialog_back, dia_jonas_pickpocket_back);
+	info_addchoice(dia_jonas_pickpocket, dialog_pickpocket, dia_jonas_pickpocket_doit);
+};
+
+func void dia_jonas_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_jonas_pickpocket);
+};
+
+func void dia_jonas_pickpocket_back() {
+    info_clearchoices(dia_jonas_pickpocket);
+};

@@ -499,4 +499,31 @@ FUNC VOID DIA_Guy_Zjawa_Info()
 	B_LogEntry               (Zjawa,"Guyowi rzuci³o siê w oczy podejrzane zachowanie Grima. Wydaje siê i¿ ma on co nieco za uszami. Muszê z niego wydusiæ co dok³adnie.");
 };
 
+instance dia_guy_pickpocket(c_info) {
+    npc = vlk_530_guy;
+    nr = 900;
+    condition = dia_guy_pickpocket_condition;
+    information = dia_guy_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_guy_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_guy_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_guy_pickpocket);
+	info_addchoice(dia_guy_pickpocket, dialog_back, dia_guy_pickpocket_back);
+	info_addchoice(dia_guy_pickpocket, dialog_pickpocket, dia_guy_pickpocket_doit);
+};
+
+func void dia_guy_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_guy_pickpocket);
+};
+
+func void dia_guy_pickpocket_back() {
+    info_clearchoices(dia_guy_pickpocket);
+};

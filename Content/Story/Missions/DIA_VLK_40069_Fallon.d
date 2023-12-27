@@ -198,3 +198,31 @@ FUNC VOID DIA_Fallon_Bojka_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_fallon_pickpocket(c_info) {
+    npc = vlk_40069_fallon;
+    nr = 900;
+    condition = dia_fallon_pickpocket_condition;
+    information = dia_fallon_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_fallon_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_fallon_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_fallon_pickpocket);
+	info_addchoice(dia_fallon_pickpocket, dialog_back, dia_fallon_pickpocket_back);
+	info_addchoice(dia_fallon_pickpocket, dialog_pickpocket, dia_fallon_pickpocket_doit);
+};
+
+func void dia_fallon_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_fallon_pickpocket);
+};
+
+func void dia_fallon_pickpocket_back() {
+    info_clearchoices(dia_fallon_pickpocket);
+};

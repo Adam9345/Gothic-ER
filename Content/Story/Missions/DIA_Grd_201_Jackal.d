@@ -560,3 +560,32 @@ FUNC VOID DIA_Jackal_ANGRYMAN_Info()
 	AI_Output (self, other ,"DIA_Jackal_ANGRYMAN_03_05"); //Dobra, mam ju¿ tego œmiecia wiêcej nie widzieæ!
     B_LogEntry               (CH1_ZmianaLorenza,"Uda³o siê. Urban rzuci³ siê na Szakala, a ten bez problemu go pokona³. Wœciek³ siê i kaza³ mi zabraæ Kopacza do Starej Kopalni.");	
 };
+
+instance dia_jackal_pickpocket(c_info) {
+    npc = grd_201_jackal;
+    nr = 900;
+    condition = dia_jackal_pickpocket_condition;
+    information = dia_jackal_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_jackal_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_jackal_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_jackal_pickpocket);
+	info_addchoice(dia_jackal_pickpocket, dialog_back, dia_jackal_pickpocket_back);
+	info_addchoice(dia_jackal_pickpocket, dialog_pickpocket, dia_jackal_pickpocket_doit);
+};
+
+func void dia_jackal_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_jackal_pickpocket);
+};
+
+func void dia_jackal_pickpocket_back() {
+    info_clearchoices(dia_jackal_pickpocket);
+};

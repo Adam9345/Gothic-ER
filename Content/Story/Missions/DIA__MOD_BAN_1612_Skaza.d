@@ -502,3 +502,32 @@ FUNC VOID DIA_Skaza_ALLWORKSOK_Info()
 	B_Givexp (100);
 	};
 };
+
+instance dia_skaza_pickpocket(c_info) {
+    npc = ban_1612_skaza;
+    nr = 900;
+    condition = dia_skaza_pickpocket_condition;
+    information = dia_skaza_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_skaza_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_skaza_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_skaza_pickpocket);
+	info_addchoice(dia_skaza_pickpocket, dialog_back, dia_skaza_pickpocket_back);
+	info_addchoice(dia_skaza_pickpocket, dialog_pickpocket, dia_skaza_pickpocket_doit);
+};
+
+func void dia_skaza_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_skaza_pickpocket);
+};
+
+func void dia_skaza_pickpocket_back() {
+    info_clearchoices(dia_skaza_pickpocket);
+};

@@ -494,3 +494,31 @@ FUNC VOID DIA_Silas_Lin_Info()
     AI_Output (self, other ,"DIA_Silas_Lin_03_08"); //Mam wa¿niejsze sprawy na g³owie. A ty d³u¿ej nie zawracaj mi tym dupy. Zrozumiano?
 };
 
+instance dia_silas_pickpocket(c_info) {
+    npc = org_841_silas;
+    nr = 900;
+    condition = dia_silas_pickpocket_condition;
+    information = dia_silas_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_silas_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_silas_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_silas_pickpocket);
+	info_addchoice(dia_silas_pickpocket, dialog_back, dia_silas_pickpocket_back);
+	info_addchoice(dia_silas_pickpocket, dialog_pickpocket, dia_silas_pickpocket_doit);
+};
+
+func void dia_silas_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_silas_pickpocket);
+};
+
+func void dia_silas_pickpocket_back() {
+    info_clearchoices(dia_silas_pickpocket);
+};

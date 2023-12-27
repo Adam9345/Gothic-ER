@@ -652,3 +652,32 @@ func void DIA_Aidan_CampInfo_HERB()
 	AI_Output (other,self,"DIA_Aidan_CampInfo_HERB_05_03"); //Dziêki.
 	B_GiveXP(30);
 };
+
+instance dia_aidan_pickpocket(c_info) {
+    npc = org_859_aidan;
+    nr = 900;
+    condition = dia_aidan_pickpocket_condition;
+    information = dia_aidan_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_aidan_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 35);
+};
+
+func void dia_aidan_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_aidan_pickpocket);
+	info_addchoice(dia_aidan_pickpocket, dialog_back, dia_aidan_pickpocket_back);
+	info_addchoice(dia_aidan_pickpocket, dialog_pickpocket, dia_aidan_pickpocket_doit);
+};
+
+func void dia_aidan_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_aidan_pickpocket);
+};
+
+func void dia_aidan_pickpocket_back() {
+    info_clearchoices(dia_aidan_pickpocket);
+};

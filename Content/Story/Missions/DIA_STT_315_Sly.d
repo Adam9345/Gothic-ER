@@ -408,3 +408,31 @@ FUNC VOID DIA_Sly_LOCHY_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_sly_pickpocket(c_info) {
+    npc = stt_315_sly;
+    nr = 900;
+    condition = dia_sly_pickpocket_condition;
+    information = dia_sly_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_sly_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_sly_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_sly_pickpocket);
+	info_addchoice(dia_sly_pickpocket, dialog_back, dia_sly_pickpocket_back);
+	info_addchoice(dia_sly_pickpocket, dialog_pickpocket, dia_sly_pickpocket_doit);
+};
+
+func void dia_sly_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_sly_pickpocket);
+};
+
+func void dia_sly_pickpocket_back() {
+    info_clearchoices(dia_sly_pickpocket);
+};

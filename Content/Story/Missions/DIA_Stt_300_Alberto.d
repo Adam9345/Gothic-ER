@@ -232,7 +232,34 @@ FUNC VOID DIA_Alberto_Oprawca_Ruda_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_alberto_pickpocket(c_info) {
+    npc = stt_300_alberto;
+    nr = 900;
+    condition = dia_alberto_pickpocket_condition;
+    information = dia_alberto_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_alberto_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 40);
+};
+
+func void dia_alberto_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_alberto_pickpocket);
+	info_addchoice(dia_alberto_pickpocket, dialog_back, dia_alberto_pickpocket_back);
+	info_addchoice(dia_alberto_pickpocket, dialog_pickpocket, dia_alberto_pickpocket_doit);
+};
+
+func void dia_alberto_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_alberto_pickpocket);
+};
+
+func void dia_alberto_pickpocket_back() {
+    info_clearchoices(dia_alberto_pickpocket);
+};
 
 
 

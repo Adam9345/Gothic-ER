@@ -732,3 +732,31 @@ FUNC VOID DIA_Jarvis_PZ_Info()
 	B_LogEntry               (PodejrzaneZamieszanie,"Negatywnie zaskoczony Jarvis obrotem wydarzeñ poleci³ mi czym prêdzej udaæ siê w okolice Starego Obozu. Mo¿e jest jeszcze cieñ szansy, ¿e dorwê drugiego z zamachowców.");
 };
 
+instance dia_jarvis_pickpocket(c_info) {
+    npc = sld_728_jarvis;
+    nr = 900;
+    condition = dia_jarvis_pickpocket_condition;
+    information = dia_jarvis_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_jarvis_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 30);
+};
+
+func void dia_jarvis_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_jarvis_pickpocket);
+	info_addchoice(dia_jarvis_pickpocket, dialog_back, dia_jarvis_pickpocket_back);
+	info_addchoice(dia_jarvis_pickpocket, dialog_pickpocket, dia_jarvis_pickpocket_doit);
+};
+
+func void dia_jarvis_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_jarvis_pickpocket);
+};
+
+func void dia_jarvis_pickpocket_back() {
+    info_clearchoices(dia_jarvis_pickpocket);
+};

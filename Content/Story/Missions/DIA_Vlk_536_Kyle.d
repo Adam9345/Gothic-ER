@@ -316,3 +316,32 @@ FUNC VOID DIA_Kyle_budlerhut_Info()
     B_GiveInvItems (self, other, ItMiNugget, 50);
     AI_StopProcessInfos	(self);
 };
+
+instance dia_kyle_pickpocket(c_info) {
+    npc = vlk_536_kyle;
+    nr = 900;
+    condition = dia_kyle_pickpocket_condition;
+    information = dia_kyle_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_kyle_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_kyle_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_kyle_pickpocket);
+	info_addchoice(dia_kyle_pickpocket, dialog_back, dia_kyle_pickpocket_back);
+	info_addchoice(dia_kyle_pickpocket, dialog_pickpocket, dia_kyle_pickpocket_doit);
+};
+
+func void dia_kyle_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_kyle_pickpocket);
+};
+
+func void dia_kyle_pickpocket_back() {
+    info_clearchoices(dia_kyle_pickpocket);
+};

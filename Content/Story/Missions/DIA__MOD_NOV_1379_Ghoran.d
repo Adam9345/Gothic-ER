@@ -416,3 +416,32 @@ FUNC VOID DIA_Ghoran_PICKPOCKET_BACK()
 {
 	Info_ClearChoices	(DIA_Ghoran_PICKPOCKET);
 };
+
+instance dia_ghoran_pickpocket2(c_info) {
+    npc = nov_1379_ghoran;
+    nr = 900;
+    condition = dia_ghoran_pickpocket2_condition;
+    information = dia_ghoran_pickpocket2_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_ghoran_pickpocket2_condition() {
+	e_beklauen(baseThfChanceNOV, 25);
+};
+
+func void dia_ghoran_pickpocket2_info() {
+	b_steal_message();
+	info_clearchoices(dia_ghoran_pickpocket2);
+	info_addchoice(dia_ghoran_pickpocket2, dialog_back, dia_ghoran_pickpocket2_back);
+	info_addchoice(dia_ghoran_pickpocket2, dialog_pickpocket, dia_ghoran_pickpocket2_doit);
+};
+
+func void dia_ghoran_pickpocket2_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ghoran_pickpocket2);
+};
+
+func void dia_ghoran_pickpocket2_back() {
+    info_clearchoices(dia_ghoran_pickpocket2);
+};

@@ -293,5 +293,32 @@ FUNC VOID DIA_GorNaLin_HI_LIN_Info()
     AI_Output (other, self ,"DIA_GorNaLin_HI_LIN_15_09"); //Na twoim miejscu zaj¹³bym siê bardziej przyziemnymi sprawami.
 };
 
+instance dia_gornalin_pickpocket(c_info) {
+    npc = tpl_3928_gornalin;
+    nr = 900;
+    condition = dia_gornalin_pickpocket_condition;
+    information = dia_gornalin_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_gornalin_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 35);
+};
+
+func void dia_gornalin_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornalin_pickpocket);
+	info_addchoice(dia_gornalin_pickpocket, dialog_back, dia_gornalin_pickpocket_back);
+	info_addchoice(dia_gornalin_pickpocket, dialog_pickpocket, dia_gornalin_pickpocket_doit);
+};
+
+func void dia_gornalin_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornalin_pickpocket);
+};
+
+func void dia_gornalin_pickpocket_back() {
+    info_clearchoices(dia_gornalin_pickpocket);
+};
 

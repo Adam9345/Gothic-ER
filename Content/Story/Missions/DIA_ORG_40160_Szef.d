@@ -119,3 +119,31 @@ FUNC VOID DIA_Szef_PZ_GORN_Info()
 //	
 };
 
+instance dia_szef_pickpocket(c_info) {
+    npc = org_40160_szef;
+    nr = 900;
+    condition = dia_szef_pickpocket_condition;
+    information = dia_szef_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_szef_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_szef_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_szef_pickpocket);
+	info_addchoice(dia_szef_pickpocket, dialog_back, dia_szef_pickpocket_back);
+	info_addchoice(dia_szef_pickpocket, dialog_pickpocket, dia_szef_pickpocket_doit);
+};
+
+func void dia_szef_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_szef_pickpocket);
+};
+
+func void dia_szef_pickpocket_back() {
+    info_clearchoices(dia_szef_pickpocket);
+};

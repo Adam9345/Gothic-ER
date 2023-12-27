@@ -393,3 +393,31 @@ FUNC VOID DIA_Buster_Zaczepka_Info()
 	
 };
 
+instance dia_buster_pickpocket(c_info) {
+    npc = org_833_buster;
+    nr = 900;
+    condition = dia_buster_pickpocket_condition;
+    information = dia_buster_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_buster_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_buster_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_buster_pickpocket);
+	info_addchoice(dia_buster_pickpocket, dialog_back, dia_buster_pickpocket_back);
+	info_addchoice(dia_buster_pickpocket, dialog_pickpocket, dia_buster_pickpocket_doit);
+};
+
+func void dia_buster_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_buster_pickpocket);
+};
+
+func void dia_buster_pickpocket_back() {
+    info_clearchoices(dia_buster_pickpocket);
+};

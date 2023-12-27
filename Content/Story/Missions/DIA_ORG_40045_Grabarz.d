@@ -259,7 +259,34 @@ FUNC VOID DIA_Grabarz_FI_WON_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_grabarz_pickpocket(c_info) {
+    npc = org_40045_grabarz;
+    nr = 900;
+    condition = dia_grabarz_pickpocket_condition;
+    information = dia_grabarz_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_grabarz_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_grabarz_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grabarz_pickpocket);
+	info_addchoice(dia_grabarz_pickpocket, dialog_back, dia_grabarz_pickpocket_back);
+	info_addchoice(dia_grabarz_pickpocket, dialog_pickpocket, dia_grabarz_pickpocket_doit);
+};
+
+func void dia_grabarz_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grabarz_pickpocket);
+};
+
+func void dia_grabarz_pickpocket_back() {
+    info_clearchoices(dia_grabarz_pickpocket);
+};
 
 
 

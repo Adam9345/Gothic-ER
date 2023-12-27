@@ -257,3 +257,32 @@ func void DIA_Ash_PotionHeal_Big ()
 	Info_AddChoice		(DIA_Ash_PotionHeal,"Daj du¿¹ miksturê lecznicz¹" ,DIA_Ash_PotionHeal_Big);
     };
 };
+
+instance dia_vart_pickpocket(c_info) {
+    npc = non_3071_vart;
+    nr = 900;
+    condition = dia_vart_pickpocket_condition;
+    information = dia_vart_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_vart_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 25);
+};
+
+func void dia_vart_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_vart_pickpocket);
+	info_addchoice(dia_vart_pickpocket, dialog_back, dia_vart_pickpocket_back);
+	info_addchoice(dia_vart_pickpocket, dialog_pickpocket, dia_vart_pickpocket_doit);
+};
+
+func void dia_vart_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_vart_pickpocket);
+};
+
+func void dia_vart_pickpocket_back() {
+    info_clearchoices(dia_vart_pickpocket);
+};

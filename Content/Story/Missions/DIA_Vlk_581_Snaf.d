@@ -1029,3 +1029,31 @@ FUNC VOID DIA_Snaf_Kapitel4_Dialog_Info()
    // AI_Output (other, self ,"DIA_Snaf_Kapitel4_Dialog_15_17"); //To ci dopiero historia. 
 };
 
+instance dia_snaf_pickpocket(c_info) {
+    npc = vlk_581_snaf;
+    nr = 900;
+    condition = dia_snaf_pickpocket_condition;
+    information = dia_snaf_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_snaf_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_snaf_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_snaf_pickpocket);
+	info_addchoice(dia_snaf_pickpocket, dialog_back, dia_snaf_pickpocket_back);
+	info_addchoice(dia_snaf_pickpocket, dialog_pickpocket, dia_snaf_pickpocket_doit);
+};
+
+func void dia_snaf_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_snaf_pickpocket);
+};
+
+func void dia_snaf_pickpocket_back() {
+    info_clearchoices(dia_snaf_pickpocket);
+};

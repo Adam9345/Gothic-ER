@@ -523,3 +523,31 @@ FUNC VOID DIA_Fingers_HELLO1_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_fingers_pickpocket(c_info) {
+    npc = stt_331_fingers;
+    nr = 900;
+    condition = dia_fingers_pickpocket_condition;
+    information = dia_fingers_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_fingers_pickpocket_condition() {
+	e_beklauen(5, 45);
+};
+
+func void dia_fingers_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_fingers_pickpocket);
+	info_addchoice(dia_fingers_pickpocket, dialog_back, dia_fingers_pickpocket_back);
+	info_addchoice(dia_fingers_pickpocket, dialog_pickpocket, dia_fingers_pickpocket_doit);
+};
+
+func void dia_fingers_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_fingers_pickpocket);
+};
+
+func void dia_fingers_pickpocket_back() {
+    info_clearchoices(dia_fingers_pickpocket);
+};

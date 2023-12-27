@@ -408,7 +408,34 @@ FUNC VOID DIA_Joel_Potwor_Info()
    
 };
 
+instance dia_joel_pickpocket(c_info) {
+    npc = grd_7006_joel;
+    nr = 900;
+    condition = dia_joel_pickpocket_condition;
+    information = dia_joel_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_joel_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_joel_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_joel_pickpocket);
+	info_addchoice(dia_joel_pickpocket, dialog_back, dia_joel_pickpocket_back);
+	info_addchoice(dia_joel_pickpocket, dialog_pickpocket, dia_joel_pickpocket_doit);
+};
+
+func void dia_joel_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_joel_pickpocket);
+};
+
+func void dia_joel_pickpocket_back() {
+    info_clearchoices(dia_joel_pickpocket);
+};
 
 
 

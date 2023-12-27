@@ -66,3 +66,31 @@ FUNC VOID DIA_RozbojnikPW_HELLO1_Info()
 	B_LogEntry(PrawdziwyWojownik,"Id¹c na polowanie natknêliœmy siê na bandziorów, którzy napadli jakiegoœ Najemnika. Trzeba mu pomóc!");
 };
 
+instance dia_org_40164_pickpocket(c_info) {
+    npc = org_40164_rozbojnik;
+    nr = 900;
+    condition = dia_org_40164_pickpocket_condition;
+    information = dia_org_40164_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_org_40164_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_org_40164_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_org_40164_pickpocket);
+	info_addchoice(dia_org_40164_pickpocket, dialog_back, dia_org_40164_pickpocket_back);
+	info_addchoice(dia_org_40164_pickpocket, dialog_pickpocket, dia_org_40164_pickpocket_doit);
+};
+
+func void dia_org_40164_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_org_40164_pickpocket);
+};
+
+func void dia_org_40164_pickpocket_back() {
+    info_clearchoices(dia_org_40164_pickpocket);
+};

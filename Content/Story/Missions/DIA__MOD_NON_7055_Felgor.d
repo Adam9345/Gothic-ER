@@ -83,3 +83,31 @@ FUNC VOID DIA_Felgor_HELLO1_Info()
 	Npc_Exchangeroutine (self,"nope");
 };
 
+instance dia_felgor_pickpocket(c_info) {
+    npc = non_7055_felgor;
+    nr = 900;
+    condition = dia_felgor_pickpocket_condition;
+    information = dia_felgor_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_felgor_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 20);
+};
+
+func void dia_felgor_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_felgor_pickpocket);
+	info_addchoice(dia_felgor_pickpocket, dialog_back, dia_felgor_pickpocket_back);
+	info_addchoice(dia_felgor_pickpocket, dialog_pickpocket, dia_felgor_pickpocket_doit);
+};
+
+func void dia_felgor_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_felgor_pickpocket);
+};
+
+func void dia_felgor_pickpocket_back() {
+    info_clearchoices(dia_felgor_pickpocket);
+};

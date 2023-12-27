@@ -94,3 +94,31 @@ FUNC VOID DIA_Syra_GomezDied_Info()
     AI_Output (self, other ,"DIA_Syra_GomezDied_03_12"); //Zostanê z nimi.
 };
 
+instance dia_syra_pickpocket(c_info) {
+    npc = ebr_109_syra;
+    nr = 900;
+    condition = dia_syra_pickpocket_condition;
+    information = dia_syra_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_syra_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAB, 15);
+};
+
+func void dia_syra_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_syra_pickpocket);
+	info_addchoice(dia_syra_pickpocket, dialog_back, dia_syra_pickpocket_back);
+	info_addchoice(dia_syra_pickpocket, dialog_pickpocket, dia_syra_pickpocket_doit);
+};
+
+func void dia_syra_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_syra_pickpocket);
+};
+
+func void dia_syra_pickpocket_back() {
+    info_clearchoices(dia_syra_pickpocket);
+};

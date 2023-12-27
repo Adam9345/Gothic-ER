@@ -334,3 +334,31 @@ FUNC VOID DIA_ULBERT_DWMN_B2_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_ulbert_pickpocket(c_info) {
+    npc = grd_271_ulbert;
+    nr = 900;
+    condition = dia_ulbert_pickpocket_condition;
+    information = dia_ulbert_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_ulbert_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_ulbert_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_ulbert_pickpocket);
+	info_addchoice(dia_ulbert_pickpocket, dialog_back, dia_ulbert_pickpocket_back);
+	info_addchoice(dia_ulbert_pickpocket, dialog_pickpocket, dia_ulbert_pickpocket_doit);
+};
+
+func void dia_ulbert_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ulbert_pickpocket);
+};
+
+func void dia_ulbert_pickpocket_back() {
+    info_clearchoices(dia_ulbert_pickpocket);
+};

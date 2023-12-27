@@ -180,3 +180,32 @@ FUNC void  ORG_861_Killian_LOST_Info()
 };
 
 */
+
+instance dia_killian_pickpocket(c_info) {
+    npc = org_861_killian;
+    nr = 900;
+    condition = dia_killian_pickpocket_condition;
+    information = dia_killian_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_killian_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_killian_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_killian_pickpocket);
+	info_addchoice(dia_killian_pickpocket, dialog_back, dia_killian_pickpocket_back);
+	info_addchoice(dia_killian_pickpocket, dialog_pickpocket, dia_killian_pickpocket_doit);
+};
+
+func void dia_killian_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_killian_pickpocket);
+};
+
+func void dia_killian_pickpocket_back() {
+    info_clearchoices(dia_killian_pickpocket);
+};

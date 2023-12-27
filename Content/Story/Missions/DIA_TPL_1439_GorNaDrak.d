@@ -337,7 +337,34 @@ AI_Output (self, other ,"DIA_GorNaDrak_BlokadaL_Dowodca_15_03"); //Mo¿e to jakiœ
 B_LogEntry               (Blokada,"Gor Na Drak twierdzi ¿e widzia³ dwóch stra¿ników id¹cych w stronê lasu, trzymaj¹c siê blisko skalnej œciany. Mo¿e to jakiœ trop do ich dowódcy...?"); 
 };
 
+instance dia_gornadrak_pickpocket(c_info) {
+    npc = tpl_1439_gornadrak;
+    nr = 900;
+    condition = dia_gornadrak_pickpocket_condition;
+    information = dia_gornadrak_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_gornadrak_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_gornadrak_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornadrak_pickpocket);
+	info_addchoice(dia_gornadrak_pickpocket, dialog_back, dia_gornadrak_pickpocket_back);
+	info_addchoice(dia_gornadrak_pickpocket, dialog_pickpocket, dia_gornadrak_pickpocket_doit);
+};
+
+func void dia_gornadrak_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornadrak_pickpocket);
+};
+
+func void dia_gornadrak_pickpocket_back() {
+    info_clearchoices(dia_gornadrak_pickpocket);
+};
 
 
 

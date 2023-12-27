@@ -370,3 +370,31 @@ FUNC VOID DIA_Abel_UCIECZKA_Info()
     AI_Output (self, other ,"DIA_Abel_UCIECZKA_03_03"); //Wszêdzie Stra¿nicy morduj¹cy byle kogo, ci¹g³e ataki. Daj spokój, po prostu musia³em siê stamt¹d wydostaæ.
 };
 
+instance dia_abel_pickpocket(c_info) {
+    npc = vlk_7003_abel;
+    nr = 900;
+    condition = dia_abel_pickpocket_condition;
+    information = dia_abel_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_abel_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_abel_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_abel_pickpocket);
+	info_addchoice(dia_abel_pickpocket, dialog_back, dia_abel_pickpocket_back);
+	info_addchoice(dia_abel_pickpocket, dialog_pickpocket, dia_abel_pickpocket_doit);
+};
+
+func void dia_abel_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_abel_pickpocket);
+};
+
+func void dia_abel_pickpocket_back() {
+    info_clearchoices(dia_abel_pickpocket);
+};

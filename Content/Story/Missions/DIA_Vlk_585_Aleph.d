@@ -584,5 +584,32 @@ FUNC VOID DIA_Aleph_DWMN_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_aleph_pickpocket(c_info) {
+    npc = vlk_585_aleph;
+    nr = 900;
+    condition = dia_aleph_pickpocket_condition;
+    information = dia_aleph_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_aleph_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_aleph_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_aleph_pickpocket);
+	info_addchoice(dia_aleph_pickpocket, dialog_back, dia_aleph_pickpocket_back);
+	info_addchoice(dia_aleph_pickpocket, dialog_pickpocket, dia_aleph_pickpocket_doit);
+};
+
+func void dia_aleph_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_aleph_pickpocket);
+};
+
+func void dia_aleph_pickpocket_back() {
+    info_clearchoices(dia_aleph_pickpocket);
+};
 

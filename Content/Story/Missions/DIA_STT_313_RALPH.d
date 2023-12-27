@@ -194,3 +194,31 @@ FUNC VOID DIA_Schatten_DealWithIt_Info()
 	B_ClearTreaderAmmo(self);
 };
 
+instance dia_ralph_pickpocket(c_info) {
+    npc = stt_313_schatten;
+    nr = 900;
+    condition = dia_ralph_pickpocket_condition;
+    information = dia_ralph_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_ralph_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_ralph_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_ralph_pickpocket);
+	info_addchoice(dia_ralph_pickpocket, dialog_back, dia_ralph_pickpocket_back);
+	info_addchoice(dia_ralph_pickpocket, dialog_pickpocket, dia_ralph_pickpocket_doit);
+};
+
+func void dia_ralph_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ralph_pickpocket);
+};
+
+func void dia_ralph_pickpocket_back() {
+    info_clearchoices(dia_ralph_pickpocket);
+};

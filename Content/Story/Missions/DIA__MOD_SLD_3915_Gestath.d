@@ -274,4 +274,31 @@ FUNC VOID DIA_Gestath_OBOZ_BANDYTOW_Info()
     AI_Output (self, other ,"DIA_Gestath_OBOZ_BANDYTOW_03_04"); //Prêdzej czy póŸniej Bariera opadnie, a wtedy siê wzbogacê. 
 };
 
+instance dia_gestath_pickpocket(c_info) {
+    npc = sld_3915_gestath;
+    nr = 900;
+    condition = dia_gestath_pickpocket_condition;
+    information = dia_gestath_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_gestath_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 35);
+};
+
+func void dia_gestath_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gestath_pickpocket);
+	info_addchoice(dia_gestath_pickpocket, dialog_back, dia_gestath_pickpocket_back);
+	info_addchoice(dia_gestath_pickpocket, dialog_pickpocket, dia_gestath_pickpocket_doit);
+};
+
+func void dia_gestath_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gestath_pickpocket);
+};
+
+func void dia_gestath_pickpocket_back() {
+    info_clearchoices(dia_gestath_pickpocket);
+};

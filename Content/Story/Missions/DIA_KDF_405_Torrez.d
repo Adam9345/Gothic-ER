@@ -691,6 +691,33 @@ FUNC VOID DIA_Torrez_Brandick_krysztal_Info()
 	B_GiveInvItems (other, self, itminugget, 130);	
 };
 
+instance dia_torrez_pickpocket(c_info) {
+    npc = kdf_405_torrez;
+    nr = 900;
+    condition = dia_torrez_pickpocket_condition;
+    information = dia_torrez_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_torrez_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDF, 40);
+};
+
+func void dia_torrez_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_torrez_pickpocket);
+	info_addchoice(dia_torrez_pickpocket, dialog_back, dia_torrez_pickpocket_back);
+	info_addchoice(dia_torrez_pickpocket, dialog_pickpocket, dia_torrez_pickpocket_doit);
+};
+
+func void dia_torrez_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_torrez_pickpocket);
+};
+
+func void dia_torrez_pickpocket_back() {
+    info_clearchoices(dia_torrez_pickpocket);
+};
 
 

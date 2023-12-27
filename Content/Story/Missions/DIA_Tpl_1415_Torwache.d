@@ -260,3 +260,31 @@ FUNC VOID DIA_Templer_Trader_Info()
     AI_Output (self, other ,"DIA_Templer_Trader_03_07"); //Efekt rytua³u przebudzenia zale¿y g³ównie od iloœci Nowicjuszy, którzy wezm¹ w nim udzia³.
 };
 
+instance dia_tpl_1415_pickpocket(c_info) {
+    npc = tpl_1415_templer;
+    nr = 900;
+    condition = dia_tpl_1415_pickpocket_condition;
+    information = dia_tpl_1415_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_tpl_1415_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_tpl_1415_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_tpl_1415_pickpocket);
+	info_addchoice(dia_tpl_1415_pickpocket, dialog_back, dia_tpl_1415_pickpocket_back);
+	info_addchoice(dia_tpl_1415_pickpocket, dialog_pickpocket, dia_tpl_1415_pickpocket_doit);
+};
+
+func void dia_tpl_1415_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_tpl_1415_pickpocket);
+};
+
+func void dia_tpl_1415_pickpocket_back() {
+    info_clearchoices(dia_tpl_1415_pickpocket);
+};

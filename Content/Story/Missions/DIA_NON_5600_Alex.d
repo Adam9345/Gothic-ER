@@ -1350,3 +1350,31 @@ FUNC VOID DIA_Alex_BLACK_PUFPUF_Info()
     AI_Output (other, self ,"DIA_Alex_BLACK_PUFPUF_15_09"); //Wielu widzia³oby tam Gomeza. Chyba nawet wszyscy, rzecz jasna poza nim samym...
 };
 
+instance dia_alex_pickpocket(c_info) {
+    npc = non_5600_alex;
+    nr = 900;
+    condition = dia_alex_pickpocket_condition;
+    information = dia_alex_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_alex_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 45);
+};
+
+func void dia_alex_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_alex_pickpocket);
+	info_addchoice(dia_alex_pickpocket, dialog_back, dia_alex_pickpocket_back);
+	info_addchoice(dia_alex_pickpocket, dialog_pickpocket, dia_alex_pickpocket_doit);
+};
+
+func void dia_alex_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_alex_pickpocket);
+};
+
+func void dia_alex_pickpocket_back() {
+    info_clearchoices(dia_alex_pickpocket);
+};

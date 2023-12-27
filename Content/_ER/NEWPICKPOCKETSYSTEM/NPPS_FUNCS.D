@@ -1,7 +1,3 @@
-META{
-	MergeMode = TRUE;
-};
-
 var int theftdexglob;
 var int theftnuggetglob;
 
@@ -88,15 +84,15 @@ func void setStealNuggets(var int maxNuggets) {
 	theftnuggetglob = randomNuggets;
 };
 
-func int d_beklauen(var int theftdex, var int theftnugget) {
-    if((npc_gettalentskill(other, npc_talent_pickpocket) >= 1) && (self.aivar[47] == false)) {
+func int e_beklauen(var int theftdex, var int theftnugget) {
+    if((npc_gettalentskill(other, npc_talent_pickpocket) >= 1) && (GetAdditionalAivar(self, NpcWasPickPocket) == false)) {
 		
         if(npc_isinstate(self, zs_talk)) {
 			setStealChance(self);
-		
+
 			if (npc_gettalentskill(other, npc_talent_pickpocket) == 1) {
 				theftdexglob = theftdex;
-			} else if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {
+			} else if (npc_gettalentskill(other, npc_talent_pickpocket) == 1) {
 				theftdexglob = theftdex + stealChance + bonusChance;
 			};
 			
@@ -115,14 +111,14 @@ func void b_givethiefxp() {
 	b_givexp(thiefxp * kapitel);
 };
 
-func void e_beklauen() {
+func void d_beklauen() {
 
 	var int randomNumber; randomNumber = r_MinMax(1, 100);
 
     if(randomNumber <= theftdexglob) {
 		prints_ext("Kradzie¿ udana", col_lime);
         b_giveinvitems(self, other, itminugget, theftnuggetglob);
-        self.aivar[47] = true;
+        SetAdditionalAivar(self, NpcWasPickPocket, true);
         b_givethiefxp();
 		
 		if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {

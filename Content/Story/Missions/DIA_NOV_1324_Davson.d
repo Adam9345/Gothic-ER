@@ -412,3 +412,31 @@ FUNC VOID DIA_Novize_HowAreYou_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_davson_pickpocket(c_info) {
+    npc = nov_1324_novize;
+    nr = 900;
+    condition = dia_davson_pickpocket_condition;
+    information = dia_davson_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_davson_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_davson_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_davson_pickpocket);
+	info_addchoice(dia_davson_pickpocket, dialog_back, dia_davson_pickpocket_back);
+	info_addchoice(dia_davson_pickpocket, dialog_pickpocket, dia_davson_pickpocket_doit);
+};
+
+func void dia_davson_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_davson_pickpocket);
+};
+
+func void dia_davson_pickpocket_back() {
+    info_clearchoices(dia_davson_pickpocket);
+};

@@ -271,3 +271,31 @@ FUNC VOID DIA_Brennus_PZ_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_brennus_pickpocket(c_info) {
+    npc = vlk_40057_brennus;
+    nr = 900;
+    condition = dia_brennus_pickpocket_condition;
+    information = dia_brennus_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_brennus_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_brennus_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_brennus_pickpocket);
+	info_addchoice(dia_brennus_pickpocket, dialog_back, dia_brennus_pickpocket_back);
+	info_addchoice(dia_brennus_pickpocket, dialog_pickpocket, dia_brennus_pickpocket_doit);
+};
+
+func void dia_brennus_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_brennus_pickpocket);
+};
+
+func void dia_brennus_pickpocket_back() {
+    info_clearchoices(dia_brennus_pickpocket);
+};

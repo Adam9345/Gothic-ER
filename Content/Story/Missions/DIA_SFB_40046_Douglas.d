@@ -233,3 +233,31 @@ FUNC VOID DIA_Douglas_HI_DOUGLAS_Info()
     AI_Output (self, other ,"DIA_Douglas_HI_DOUGLAS_03_09"); //Wolê ju¿ swój aktualny los. Nie ma bogactwa i dobrobytu ale przynajmniej wci¹¿ ¿yje i teraz mogê siê napiæ w spokoju.
 };
 
+instance dia_douglas_pickpocket(c_info) {
+    npc = sfb_40046_douglas;
+    nr = 900;
+    condition = dia_douglas_pickpocket_condition;
+    information = dia_douglas_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_douglas_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 30);
+};
+
+func void dia_douglas_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_douglas_pickpocket);
+	info_addchoice(dia_douglas_pickpocket, dialog_back, dia_douglas_pickpocket_back);
+	info_addchoice(dia_douglas_pickpocket, dialog_pickpocket, dia_douglas_pickpocket_doit);
+};
+
+func void dia_douglas_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_douglas_pickpocket);
+};
+
+func void dia_douglas_pickpocket_back() {
+    info_clearchoices(dia_douglas_pickpocket);
+};

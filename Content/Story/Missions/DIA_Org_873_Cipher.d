@@ -411,4 +411,31 @@ FUNC VOID DIA_CIPHER_ATAK_LAS2_Info()
 	ORG_873_Cipher.aivar[AIV_PARTYMEMBER] = FALSE;
 };
 
+instance dia_cipher_pickpocket(c_info) {
+    npc = org_873_cipher;
+    nr = 900;
+    condition = dia_cipher_pickpocket_condition;
+    information = dia_cipher_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_cipher_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_cipher_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_cipher_pickpocket);
+	info_addchoice(dia_cipher_pickpocket, dialog_back, dia_cipher_pickpocket_back);
+	info_addchoice(dia_cipher_pickpocket, dialog_pickpocket, dia_cipher_pickpocket_doit);
+};
+
+func void dia_cipher_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_cipher_pickpocket);
+};
+
+func void dia_cipher_pickpocket_back() {
+    info_clearchoices(dia_cipher_pickpocket);
+};

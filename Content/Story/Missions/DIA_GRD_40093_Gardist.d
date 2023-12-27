@@ -56,3 +56,31 @@ FUNC VOID DIA_Gardist_HELLO1_Info()
     AI_Output (self, other ,"DIA_Gardist_HELLO1_03_10"); //No i bardzo dobrze.
 };
 
+instance dia_grd_40093_pickpocket(c_info) {
+    npc = grd_40093_gardist;
+    nr = 900;
+    condition = dia_grd_40093_pickpocket_condition;
+    information = dia_grd_40093_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_grd_40093_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_grd_40093_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grd_40093_pickpocket);
+	info_addchoice(dia_grd_40093_pickpocket, dialog_back, dia_grd_40093_pickpocket_back);
+	info_addchoice(dia_grd_40093_pickpocket, dialog_pickpocket, dia_grd_40093_pickpocket_doit);
+};
+
+func void dia_grd_40093_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grd_40093_pickpocket);
+};
+
+func void dia_grd_40093_pickpocket_back() {
+    info_clearchoices(dia_grd_40093_pickpocket);
+};

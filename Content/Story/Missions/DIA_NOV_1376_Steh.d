@@ -252,3 +252,32 @@ FUNC VOID DIA_Steh_QUEST2_YOU_TRUE ()
 	Info_ClearChoices	(DIA_Steh_QUEST2_YOU);
 	Npc_ExchangeRoutine(self,"tot");
 };
+
+instance dia_steh_pickpocket(c_info) {
+    npc = nov_1376_steh;
+    nr = 900;
+    condition = dia_steh_pickpocket_condition;
+    information = dia_steh_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_steh_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 25);
+};
+
+func void dia_steh_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_steh_pickpocket);
+	info_addchoice(dia_steh_pickpocket, dialog_back, dia_steh_pickpocket_back);
+	info_addchoice(dia_steh_pickpocket, dialog_pickpocket, dia_steh_pickpocket_doit);
+};
+
+func void dia_steh_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_steh_pickpocket);
+};
+
+func void dia_steh_pickpocket_back() {
+    info_clearchoices(dia_steh_pickpocket);
+};

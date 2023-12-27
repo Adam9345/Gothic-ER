@@ -285,3 +285,32 @@ FUNC VOID DIA_Snake_FreeMineCamp_Info()
     AI_Output (other, self ,"DIA_Snake_FreeMineCamp_15_06"); //W sumie to nie wiem.
     AI_Output (self, other ,"DIA_Snake_FreeMineCamp_03_07"); //No w³aœnie. Niczego wiêcej mi nie potrzeba. 
 };
+
+instance dia_snake_pickpocket(c_info) {
+    npc = non_7852_snake;
+    nr = 900;
+    condition = dia_snake_pickpocket_condition;
+    information = dia_snake_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_snake_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 20);
+};
+
+func void dia_snake_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_snake_pickpocket);
+	info_addchoice(dia_snake_pickpocket, dialog_back, dia_snake_pickpocket_back);
+	info_addchoice(dia_snake_pickpocket, dialog_pickpocket, dia_snake_pickpocket_doit);
+};
+
+func void dia_snake_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_snake_pickpocket);
+};
+
+func void dia_snake_pickpocket_back() {
+    info_clearchoices(dia_snake_pickpocket);
+};

@@ -245,3 +245,31 @@ FUNC VOID DIA_Togard_HELLO4_Info()
     AI_Output (self, other ,"DIA_Togard_HELLO4_03_02"); //Po co pytasz, jak dobrze wiesz? 
 };
 
+instance dia_vlk_501_pickpocket(c_info) {
+    npc = vlk_501_buddler;
+    nr = 900;
+    condition = dia_vlk_501_pickpocket_condition;
+    information = dia_vlk_501_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_vlk_501_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 15);
+};
+
+func void dia_vlk_501_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_vlk_501_pickpocket);
+	info_addchoice(dia_vlk_501_pickpocket, dialog_back, dia_vlk_501_pickpocket_back);
+	info_addchoice(dia_vlk_501_pickpocket, dialog_pickpocket, dia_vlk_501_pickpocket_doit);
+};
+
+func void dia_vlk_501_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_vlk_501_pickpocket);
+};
+
+func void dia_vlk_501_pickpocket_back() {
+    info_clearchoices(dia_vlk_501_pickpocket);
+};

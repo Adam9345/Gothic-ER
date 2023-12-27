@@ -254,7 +254,34 @@ FUNC VOID DIA_Harlok_AMM_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_harlok_pickpocket(c_info) {
+    npc = nov_1358_harlok;
+    nr = 900;
+    condition = dia_harlok_pickpocket_condition;
+    information = dia_harlok_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_harlok_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_harlok_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_harlok_pickpocket);
+	info_addchoice(dia_harlok_pickpocket, dialog_back, dia_harlok_pickpocket_back);
+	info_addchoice(dia_harlok_pickpocket, dialog_pickpocket, dia_harlok_pickpocket_doit);
+};
+
+func void dia_harlok_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_harlok_pickpocket);
+};
+
+func void dia_harlok_pickpocket_back() {
+    info_clearchoices(dia_harlok_pickpocket);
+};
 
 
 

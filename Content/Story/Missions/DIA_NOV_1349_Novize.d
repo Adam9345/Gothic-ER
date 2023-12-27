@@ -82,3 +82,31 @@ FUNC VOID DIA_Novize_YourWork_Info()
     AI_Output (other, self ,"DIA_Novize_YourWork_15_05"); //W takim razie ruszam w dalsz¹ drogê.
 };
 
+instance dia_nov_1349_pickpocket(c_info) {
+    npc = nov_1349_novize;
+    nr = 900;
+    condition = dia_nov_1349_pickpocket_condition;
+    information = dia_nov_1349_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_nov_1349_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_nov_1349_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_nov_1349_pickpocket);
+	info_addchoice(dia_nov_1349_pickpocket, dialog_back, dia_nov_1349_pickpocket_back);
+	info_addchoice(dia_nov_1349_pickpocket, dialog_pickpocket, dia_nov_1349_pickpocket_doit);
+};
+
+func void dia_nov_1349_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_nov_1349_pickpocket);
+};
+
+func void dia_nov_1349_pickpocket_back() {
+    info_clearchoices(dia_nov_1349_pickpocket);
+};

@@ -57,3 +57,31 @@ FUNC VOID DIA_Clayde_HELLO1_Info()
     };
 };
 
+instance dia_clayde_pickpocket(c_info) {
+    npc = vlk_595_clayde;
+    nr = 900;
+    condition = dia_clayde_pickpocket_condition;
+    information = dia_clayde_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_clayde_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_clayde_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_clayde_pickpocket);
+	info_addchoice(dia_clayde_pickpocket, dialog_back, dia_clayde_pickpocket_back);
+	info_addchoice(dia_clayde_pickpocket, dialog_pickpocket, dia_clayde_pickpocket_doit);
+};
+
+func void dia_clayde_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_clayde_pickpocket);
+};
+
+func void dia_clayde_pickpocket_back() {
+    info_clearchoices(dia_clayde_pickpocket);
+};

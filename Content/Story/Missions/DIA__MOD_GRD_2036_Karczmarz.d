@@ -365,3 +365,31 @@ FUNC VOID DIA_Karczmarz_HeroIsGrd_Info()
     //AI_Output (other, self ,"DIA_Karczmarz_HeroIsGrd_15_10"); //Có¿ mam nadzieje, ¿e nie wypowiadasz tych s³ów w z³¹ godzinê.
 };
 
+instance dia_karczmarz_pickpocket(c_info) {
+    npc = grd_2036_karczmarz;
+    nr = 900;
+    condition = dia_karczmarz_pickpocket_condition;
+    information = dia_karczmarz_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_karczmarz_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_karczmarz_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_karczmarz_pickpocket);
+	info_addchoice(dia_karczmarz_pickpocket, dialog_back, dia_karczmarz_pickpocket_back);
+	info_addchoice(dia_karczmarz_pickpocket, dialog_pickpocket, dia_karczmarz_pickpocket_doit);
+};
+
+func void dia_karczmarz_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_karczmarz_pickpocket);
+};
+
+func void dia_karczmarz_pickpocket_back() {
+    info_clearchoices(dia_karczmarz_pickpocket);
+};

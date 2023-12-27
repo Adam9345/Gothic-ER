@@ -749,3 +749,32 @@ FUNC VOID DIA_Gomez_PosunieciaTaktyczne_Info()
     CreateInvItems (self, ItMiNugget, 500);
     B_GiveInvItems (self, other, ItMiNugget, 500);
 };
+
+instance dia_gomez_pickpocket(c_info) {
+    npc = ebr_100_gomez;
+    nr = 900;
+    condition = dia_gomez_pickpocket_condition;
+    information = dia_gomez_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gomez_pickpocket_condition() {
+	e_beklauen(baseThfChanceEBR - 5, 50);
+};
+
+func void dia_gomez_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gomez_pickpocket);
+	info_addchoice(dia_gomez_pickpocket, dialog_back, dia_gomez_pickpocket_back);
+	info_addchoice(dia_gomez_pickpocket, dialog_pickpocket, dia_gomez_pickpocket_doit);
+};
+
+func void dia_gomez_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gomez_pickpocket);
+};
+
+func void dia_gomez_pickpocket_back() {
+    info_clearchoices(dia_gomez_pickpocket);
+};

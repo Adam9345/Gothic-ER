@@ -161,3 +161,31 @@ FUNC VOID DIA_GorNaBar_SZPIEG_Info()
     B_GiveXP (100);
 };
 
+instance dia_gornabar_pickpocket(c_info) {
+    npc = tpl_1400_gornabar;
+    nr = 900;
+    condition = dia_gornabar_pickpocket_condition;
+    information = dia_gornabar_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gornabar_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_gornabar_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornabar_pickpocket);
+	info_addchoice(dia_gornabar_pickpocket, dialog_back, dia_gornabar_pickpocket_back);
+	info_addchoice(dia_gornabar_pickpocket, dialog_pickpocket, dia_gornabar_pickpocket_doit);
+};
+
+func void dia_gornabar_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornabar_pickpocket);
+};
+
+func void dia_gornabar_pickpocket_back() {
+    info_clearchoices(dia_gornabar_pickpocket);
+};

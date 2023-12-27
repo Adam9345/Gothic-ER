@@ -496,3 +496,31 @@ FUNC VOID DIA_Nordmarczyk_RepairRSEnd_Info()
 	B_LogEntry(ThongvorRepair,"Odebra³em naprawion¹ broñ, wygl¹da ca³kiem nieŸle. Czas j¹ przetestowaæ w walce.");
 };
 
+instance dia_non_7851_pickpocket(c_info) {
+    npc = non_7851_nordmarczyk;
+    nr = 900;
+    condition = dia_non_7851_pickpocket_condition;
+    information = dia_non_7851_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_7851_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 20);
+};
+
+func void dia_non_7851_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_7851_pickpocket);
+	info_addchoice(dia_non_7851_pickpocket, dialog_back, dia_non_7851_pickpocket_back);
+	info_addchoice(dia_non_7851_pickpocket, dialog_pickpocket, dia_non_7851_pickpocket_doit);
+};
+
+func void dia_non_7851_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_7851_pickpocket);
+};
+
+func void dia_non_7851_pickpocket_back() {
+    info_clearchoices(dia_non_7851_pickpocket);
+};

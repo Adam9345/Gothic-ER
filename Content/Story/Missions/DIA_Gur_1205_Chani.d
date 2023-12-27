@@ -133,3 +133,31 @@ FUNC VOID DIA_Chani_ColonyChani_Info()
     AI_Output (self, other ,"DIA_Chani_ColonyChani_03_25"); //Jednak tutaj nie ma ona znaczenia. W obozie na bagnie ka¿dy jest sobie równy w tych kwestiach.
 };
 
+instance dia_chani_pickpocket(c_info) {
+    npc = gur_1205_chani;
+    nr = 900;
+    condition = dia_chani_pickpocket_condition;
+    information = dia_chani_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_chani_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAB, 15);
+};
+
+func void dia_chani_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_chani_pickpocket);
+	info_addchoice(dia_chani_pickpocket, dialog_back, dia_chani_pickpocket_back);
+	info_addchoice(dia_chani_pickpocket, dialog_pickpocket, dia_chani_pickpocket_doit);
+};
+
+func void dia_chani_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_chani_pickpocket);
+};
+
+func void dia_chani_pickpocket_back() {
+    info_clearchoices(dia_chani_pickpocket);
+};

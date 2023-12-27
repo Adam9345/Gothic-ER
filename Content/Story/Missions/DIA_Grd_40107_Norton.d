@@ -377,3 +377,32 @@ FUNC VOID DIA_Norton_PICKPOCKET_BACK()
 	Info_ClearChoices	(DIA_Norton_PICKPOCKET);
 };
 */
+
+instance dia_norton_pickpocket(c_info) {
+    npc = grd_40107_norton;
+    nr = 900;
+    condition = dia_norton_pickpocket_condition;
+    information = dia_norton_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_norton_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_norton_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_norton_pickpocket);
+	info_addchoice(dia_norton_pickpocket, dialog_back, dia_norton_pickpocket_back);
+	info_addchoice(dia_norton_pickpocket, dialog_pickpocket, dia_norton_pickpocket_doit);
+};
+
+func void dia_norton_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_norton_pickpocket);
+};
+
+func void dia_norton_pickpocket_back() {
+    info_clearchoices(dia_norton_pickpocket);
+};

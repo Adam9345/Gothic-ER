@@ -1386,6 +1386,33 @@ FUNC VOID DIA_Lares_InzyFail_Info()
     B_GiveXP (50);
 };
 
+instance dia_lares_pickpocket(c_info) {
+    npc = org_801_lares;
+    nr = 900;
+    condition = dia_lares_pickpocket_condition;
+    information = dia_lares_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_lares_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 35);
+};
+
+func void dia_lares_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_lares_pickpocket);
+	info_addchoice(dia_lares_pickpocket, dialog_back, dia_lares_pickpocket_back);
+	info_addchoice(dia_lares_pickpocket, dialog_pickpocket, dia_lares_pickpocket_doit);
+};
+
+func void dia_lares_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_lares_pickpocket);
+};
+
+func void dia_lares_pickpocket_back() {
+    info_clearchoices(dia_lares_pickpocket);
+};
 
 

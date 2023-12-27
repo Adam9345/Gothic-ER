@@ -77,3 +77,31 @@ FUNC VOID DIA_CoErpresser_Myto_Info()
     AI_Output (self, other ,"DIA_CoErpresser_Myto_03_06"); //Ale raz siê ¿yje! Tutaj nikt nas nie z³apie, w pobli¿u jest sporo niez³ych kryjówek.
 };
 
+instance dia_org_889_pickpocket(c_info) {
+    npc = org_889_coerpresser;
+    nr = 900;
+    condition = dia_org_889_pickpocket_condition;
+    information = dia_org_889_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_org_889_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_org_889_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_org_889_pickpocket);
+	info_addchoice(dia_org_889_pickpocket, dialog_back, dia_org_889_pickpocket_back);
+	info_addchoice(dia_org_889_pickpocket, dialog_pickpocket, dia_org_889_pickpocket_doit);
+};
+
+func void dia_org_889_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_org_889_pickpocket);
+};
+
+func void dia_org_889_pickpocket_back() {
+    info_clearchoices(dia_org_889_pickpocket);
+};

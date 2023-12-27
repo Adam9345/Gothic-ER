@@ -257,4 +257,31 @@ FUNC VOID DIA_Eliott_HI_ELIOTT_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_eliott_pickpocket(c_info) {
+    npc = vlk_40055_eliott;
+    nr = 900;
+    condition = dia_eliott_pickpocket_condition;
+    information = dia_eliott_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_eliott_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 25);
+};
+
+func void dia_eliott_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_eliott_pickpocket);
+	info_addchoice(dia_eliott_pickpocket, dialog_back, dia_eliott_pickpocket_back);
+	info_addchoice(dia_eliott_pickpocket, dialog_pickpocket, dia_eliott_pickpocket_doit);
+};
+
+func void dia_eliott_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_eliott_pickpocket);
+};
+
+func void dia_eliott_pickpocket_back() {
+    info_clearchoices(dia_eliott_pickpocket);
+};

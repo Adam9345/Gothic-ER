@@ -231,3 +231,31 @@ FUNC VOID DIA_Casper_HELLO_CH4_Info()
 	AI_Output (self, other ,"DIA_Casper_HELLO_CH4_03_06"); //Mam nadzieje, ¿e jakoœ to przetrzymamy.
 };
 
+instance dia_casper_pickpocket(c_info) {
+    npc = sfb_40011_casper;
+    nr = 900;
+    condition = dia_casper_pickpocket_condition;
+    information = dia_casper_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_casper_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 25);
+};
+
+func void dia_casper_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_casper_pickpocket);
+	info_addchoice(dia_casper_pickpocket, dialog_back, dia_casper_pickpocket_back);
+	info_addchoice(dia_casper_pickpocket, dialog_pickpocket, dia_casper_pickpocket_doit);
+};
+
+func void dia_casper_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_casper_pickpocket);
+};
+
+func void dia_casper_pickpocket_back() {
+    info_clearchoices(dia_casper_pickpocket);
+};

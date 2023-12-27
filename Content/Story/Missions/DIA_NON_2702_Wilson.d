@@ -829,5 +829,32 @@ FUNC VOID DIA_SZEFU_WHO_ORC_Info()
     AI_Output (self, other ,"DIA_SZEFU_WHO_ORC_03_07"); //Musisz mieæ oczy I uszy szeroko otwarte ch³opcze. 
 };
 
+instance dia_szefu_pickpocket(c_info) {
+    npc = non_2702_szefu;
+    nr = 900;
+    condition = dia_szefu_pickpocket_condition;
+    information = dia_szefu_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_szefu_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 25);
+};
+
+func void dia_szefu_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_szefu_pickpocket);
+	info_addchoice(dia_szefu_pickpocket, dialog_back, dia_szefu_pickpocket_back);
+	info_addchoice(dia_szefu_pickpocket, dialog_pickpocket, dia_szefu_pickpocket_doit);
+};
+
+func void dia_szefu_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_szefu_pickpocket);
+};
+
+func void dia_szefu_pickpocket_back() {
+    info_clearchoices(dia_szefu_pickpocket);
+};
 

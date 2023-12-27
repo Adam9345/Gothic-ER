@@ -80,7 +80,34 @@ func VOID Info_Przywodca_What_Info()
 	
 };
 
+instance dia_przywodca_pickpocket(c_info) {
+    npc = non_40004_przywodca;
+    nr = 900;
+    condition = dia_przywodca_pickpocket_condition;
+    information = dia_przywodca_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_przywodca_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_przywodca_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_przywodca_pickpocket);
+	info_addchoice(dia_przywodca_pickpocket, dialog_back, dia_przywodca_pickpocket_back);
+	info_addchoice(dia_przywodca_pickpocket, dialog_pickpocket, dia_przywodca_pickpocket_doit);
+};
+
+func void dia_przywodca_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_przywodca_pickpocket);
+};
+
+func void dia_przywodca_pickpocket_back() {
+    info_clearchoices(dia_przywodca_pickpocket);
+};
 
 
 

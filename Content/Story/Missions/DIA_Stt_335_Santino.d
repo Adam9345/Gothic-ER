@@ -271,7 +271,34 @@ FUNC VOID DIA_Santino_Oprawca_Info()
 	 B_LogEntry               (Oprawca,"Santino woli nie mieszaæ siê do sprawy Winstona. W sumie trochê mu siê nie dziwie.");
 };
 
+instance dia_santino_pickpocket(c_info) {
+    npc = stt_335_santino;
+    nr = 900;
+    condition = dia_santino_pickpocket_condition;
+    information = dia_santino_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_santino_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_santino_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_santino_pickpocket);
+	info_addchoice(dia_santino_pickpocket, dialog_back, dia_santino_pickpocket_back);
+	info_addchoice(dia_santino_pickpocket, dialog_pickpocket, dia_santino_pickpocket_doit);
+};
+
+func void dia_santino_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_santino_pickpocket);
+};
+
+func void dia_santino_pickpocket_back() {
+    info_clearchoices(dia_santino_pickpocket);
+};
 
 
 

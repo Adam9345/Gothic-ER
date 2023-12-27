@@ -617,3 +617,32 @@ FUNC VOID DIA_KUCHARZ_StrangePotionBuy_Info()
 	B_GiveInvItems (hero, self, itminugget, 60);
 	
 };
+
+instance dia_kucharz_pickpocket(c_info) {
+    npc = grd_7002_kucharz;
+    nr = 900;
+    condition = dia_kucharz_pickpocket_condition;
+    information = dia_kucharz_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_kucharz_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_kucharz_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_kucharz_pickpocket);
+	info_addchoice(dia_kucharz_pickpocket, dialog_back, dia_kucharz_pickpocket_back);
+	info_addchoice(dia_kucharz_pickpocket, dialog_pickpocket, dia_kucharz_pickpocket_doit);
+};
+
+func void dia_kucharz_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_kucharz_pickpocket);
+};
+
+func void dia_kucharz_pickpocket_back() {
+    info_clearchoices(dia_kucharz_pickpocket);
+};

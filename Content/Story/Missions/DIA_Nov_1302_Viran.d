@@ -426,7 +426,34 @@ FUNC VOID DIA_Viran_Cronnos_Plants_Info()
     B_LogEntry               (DziwnaPrzypadlosc,"Odebra³em od Virana roœliny, których potrzebuje Cronos. Teraz muszê mu je zanieœæ a on umówi mnie na spotkanie z Riordianem. Najpierw jednak da mu fiolkê z krwi¹ Richarda, któr¹ mi da³ do zbadania.");
 };
 
+instance dia_viran_pickpocket(c_info) {
+    npc = nov_1302_viran;
+    nr = 900;
+    condition = dia_viran_pickpocket_condition;
+    information = dia_viran_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_viran_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_viran_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_viran_pickpocket);
+	info_addchoice(dia_viran_pickpocket, dialog_back, dia_viran_pickpocket_back);
+	info_addchoice(dia_viran_pickpocket, dialog_pickpocket, dia_viran_pickpocket_doit);
+};
+
+func void dia_viran_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_viran_pickpocket);
+};
+
+func void dia_viran_pickpocket_back() {
+    info_clearchoices(dia_viran_pickpocket);
+};
 
 
 

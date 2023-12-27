@@ -721,5 +721,32 @@ func void Info_Connor_Teach_DEX_5()
 	Info_AddChoice		(Info_Connor_Teach,B_BuildLearnString(NAME_LearnDexterity_1,LPCOST_ATTRIBUTE_DEXTERITY,0),Info_Connor_Teach_DEX_1);
 };
 
+instance dia_connor_pickpocket(c_info) {
+    npc = ban_40028_connor;
+    nr = 900;
+    condition = dia_connor_pickpocket_condition;
+    information = dia_connor_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_connor_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 35);
+};
+
+func void dia_connor_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_connor_pickpocket);
+	info_addchoice(dia_connor_pickpocket, dialog_back, dia_connor_pickpocket_back);
+	info_addchoice(dia_connor_pickpocket, dialog_pickpocket, dia_connor_pickpocket_doit);
+};
+
+func void dia_connor_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_connor_pickpocket);
+};
+
+func void dia_connor_pickpocket_back() {
+    info_clearchoices(dia_connor_pickpocket);
+};
 

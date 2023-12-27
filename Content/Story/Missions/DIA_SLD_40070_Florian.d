@@ -244,3 +244,31 @@ FUNC VOID DIA_Florian_PZ_Info()
 	Wld_InsertNpc 	(ORG_40151_Podejrzany, "NC_SPAWN_DAM_LURKER2");
 };
 
+instance dia_florian_pickpocket(c_info) {
+    npc = sld_40070_florian;
+    nr = 900;
+    condition = dia_florian_pickpocket_condition;
+    information = dia_florian_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_florian_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 35);
+};
+
+func void dia_florian_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_florian_pickpocket);
+	info_addchoice(dia_florian_pickpocket, dialog_back, dia_florian_pickpocket_back);
+	info_addchoice(dia_florian_pickpocket, dialog_pickpocket, dia_florian_pickpocket_doit);
+};
+
+func void dia_florian_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_florian_pickpocket);
+};
+
+func void dia_florian_pickpocket_back() {
+    info_clearchoices(dia_florian_pickpocket);
+};

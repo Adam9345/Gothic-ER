@@ -85,3 +85,31 @@ FUNC VOID DIA_Rabus_First_Add2()
 	
 };
 
+instance dia_non_40027_pickpocket(c_info) {
+    npc = non_40027_rabus;
+    nr = 900;
+    condition = dia_non_40027_pickpocket_condition;
+    information = dia_non_40027_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_40027_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_non_40027_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_40027_pickpocket);
+	info_addchoice(dia_non_40027_pickpocket, dialog_back, dia_non_40027_pickpocket_back);
+	info_addchoice(dia_non_40027_pickpocket, dialog_pickpocket, dia_non_40027_pickpocket_doit);
+};
+
+func void dia_non_40027_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_40027_pickpocket);
+};
+
+func void dia_non_40027_pickpocket_back() {
+    info_clearchoices(dia_non_40027_pickpocket);
+};

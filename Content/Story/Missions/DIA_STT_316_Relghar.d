@@ -263,4 +263,31 @@ FUNC VOID DIA_Schatten_HowAreYou_Info()
     };
 };
 
+instance dia_stt_316_pickpocket(c_info) {
+    npc = stt_316_schatten;
+    nr = 900;
+    condition = dia_stt_316_pickpocket_condition;
+    information = dia_stt_316_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_stt_316_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_stt_316_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_stt_316_pickpocket);
+	info_addchoice(dia_stt_316_pickpocket, dialog_back, dia_stt_316_pickpocket_back);
+	info_addchoice(dia_stt_316_pickpocket, dialog_pickpocket, dia_stt_316_pickpocket_doit);
+};
+
+func void dia_stt_316_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_stt_316_pickpocket);
+};
+
+func void dia_stt_316_pickpocket_back() {
+    info_clearchoices(dia_stt_316_pickpocket);
+};

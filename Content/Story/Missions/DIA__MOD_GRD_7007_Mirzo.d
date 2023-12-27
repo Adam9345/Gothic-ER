@@ -339,3 +339,31 @@ FUNC VOID DIA_Mirzo_Lochy_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_mirzo_pickpocket(c_info) {
+    npc = grd_7007_mirzo;
+    nr = 900;
+    condition = dia_mirzo_pickpocket_condition;
+    information = dia_mirzo_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_mirzo_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_mirzo_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_mirzo_pickpocket);
+	info_addchoice(dia_mirzo_pickpocket, dialog_back, dia_mirzo_pickpocket_back);
+	info_addchoice(dia_mirzo_pickpocket, dialog_pickpocket, dia_mirzo_pickpocket_doit);
+};
+
+func void dia_mirzo_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_mirzo_pickpocket);
+};
+
+func void dia_mirzo_pickpocket_back() {
+    info_clearchoices(dia_mirzo_pickpocket);
+};

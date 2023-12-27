@@ -230,3 +230,31 @@ FUNC VOID DIA_Trip_WARN_BANDIT_WYMOWKI()
     AI_StartState (self, ZS_ATTACK, 1, "");
 };
 
+instance dia_trip_pickpocket(c_info) {
+    npc = grd_4060_trip;
+    nr = 900;
+    condition = dia_trip_pickpocket_condition;
+    information = dia_trip_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_trip_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_trip_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_trip_pickpocket);
+	info_addchoice(dia_trip_pickpocket, dialog_back, dia_trip_pickpocket_back);
+	info_addchoice(dia_trip_pickpocket, dialog_pickpocket, dia_trip_pickpocket_doit);
+};
+
+func void dia_trip_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_trip_pickpocket);
+};
+
+func void dia_trip_pickpocket_back() {
+    info_clearchoices(dia_trip_pickpocket);
+};

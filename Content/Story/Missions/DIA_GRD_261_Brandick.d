@@ -754,7 +754,34 @@ FUNC VOID DIA_brandick_Mapa_Info()
 
 };
 
+instance dia_brandick_pickpocket(c_info) {
+    npc = grd_261_brandick;
+    nr = 900;
+    condition = dia_brandick_pickpocket_condition;
+    information = dia_brandick_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_brandick_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_brandick_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_brandick_pickpocket);
+	info_addchoice(dia_brandick_pickpocket, dialog_back, dia_brandick_pickpocket_back);
+	info_addchoice(dia_brandick_pickpocket, dialog_pickpocket, dia_brandick_pickpocket_doit);
+};
+
+func void dia_brandick_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_brandick_pickpocket);
+};
+
+func void dia_brandick_pickpocket_back() {
+    info_clearchoices(dia_brandick_pickpocket);
+};
 
 
 

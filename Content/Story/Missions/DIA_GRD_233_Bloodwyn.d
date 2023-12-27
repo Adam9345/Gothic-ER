@@ -474,3 +474,31 @@ FUNC VOID Info_Bloodwyn_DIE_Info()
 	AI_StopProcessInfos	(self);
 };
 
+instance dia_bloodwyn_pickpocket(c_info) {
+    npc = grd_233_bloodwyn;
+    nr = 900;
+    condition = dia_bloodwyn_pickpocket_condition;
+    information = dia_bloodwyn_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_bloodwyn_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_bloodwyn_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_bloodwyn_pickpocket);
+	info_addchoice(dia_bloodwyn_pickpocket, dialog_back, dia_bloodwyn_pickpocket_back);
+	info_addchoice(dia_bloodwyn_pickpocket, dialog_pickpocket, dia_bloodwyn_pickpocket_doit);
+};
+
+func void dia_bloodwyn_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_bloodwyn_pickpocket);
+};
+
+func void dia_bloodwyn_pickpocket_back() {
+    info_clearchoices(dia_bloodwyn_pickpocket);
+};

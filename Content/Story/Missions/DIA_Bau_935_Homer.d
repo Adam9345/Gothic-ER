@@ -262,3 +262,31 @@ FUNC VOID DIA_Homer_PZ_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_homer_pickpocket(c_info) {
+    npc = bau_935_homer;
+    nr = 900;
+    condition = dia_homer_pickpocket_condition;
+    information = dia_homer_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_homer_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 20);
+};
+
+func void dia_homer_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_homer_pickpocket);
+	info_addchoice(dia_homer_pickpocket, dialog_back, dia_homer_pickpocket_back);
+	info_addchoice(dia_homer_pickpocket, dialog_pickpocket, dia_homer_pickpocket_doit);
+};
+
+func void dia_homer_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_homer_pickpocket);
+};
+
+func void dia_homer_pickpocket_back() {
+    info_clearchoices(dia_homer_pickpocket);
+};

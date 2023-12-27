@@ -59,3 +59,32 @@ FUNC VOID DIA_Ezehiel_VERY_IMPORTANT_Info()
     B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Mam jak najszybciej udaæ siê do Shana. Mogê skorzystaæ z mojej runy teleportacji do Bractwa.");
     AI_StopProcessInfos	(self);
 };
+
+instance dia_ezehiel_pickpocket(c_info) {
+    npc = tpl_3054_ezehiel;
+    nr = 900;
+    condition = dia_ezehiel_pickpocket_condition;
+    information = dia_ezehiel_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_ezehiel_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 35);
+};
+
+func void dia_ezehiel_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_ezehiel_pickpocket);
+	info_addchoice(dia_ezehiel_pickpocket, dialog_back, dia_ezehiel_pickpocket_back);
+	info_addchoice(dia_ezehiel_pickpocket, dialog_pickpocket, dia_ezehiel_pickpocket_doit);
+};
+
+func void dia_ezehiel_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ezehiel_pickpocket);
+};
+
+func void dia_ezehiel_pickpocket_back() {
+    info_clearchoices(dia_ezehiel_pickpocket);
+};

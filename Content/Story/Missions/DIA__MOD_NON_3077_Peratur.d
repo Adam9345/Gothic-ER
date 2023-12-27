@@ -91,3 +91,31 @@ FUNC VOID DIA_Peratur_GoDown_Info()
 	B_LogEntry					(CH1_GhoransVine, "Peratur ochoczo zszed³ z posterunku, gdy dowiedzia³ siê, ¿e Spike chce z nim pogadaæ. ");
 };
 
+instance dia_peratur_pickpocket(c_info) {
+    npc = non_3077_peratur;
+    nr = 900;
+    condition = dia_peratur_pickpocket_condition;
+    information = dia_peratur_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_peratur_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 20);
+};
+
+func void dia_peratur_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_peratur_pickpocket);
+	info_addchoice(dia_peratur_pickpocket, dialog_back, dia_peratur_pickpocket_back);
+	info_addchoice(dia_peratur_pickpocket, dialog_pickpocket, dia_peratur_pickpocket_doit);
+};
+
+func void dia_peratur_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_peratur_pickpocket);
+};
+
+func void dia_peratur_pickpocket_back() {
+    info_clearchoices(dia_peratur_pickpocket);
+};

@@ -64,3 +64,31 @@ FUNC VOID DIA_Najemnik_HELLO1_Info()
 	SLD_40167_Najemnik.attribute[ATR_HITPOINTS] = 460;
 };
 
+instance dia_sld_40167_pickpocket(c_info) {
+    npc = sld_40167_najemnik;
+    nr = 900;
+    condition = dia_sld_40167_pickpocket_condition;
+    information = dia_sld_40167_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_sld_40167_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 35);
+};
+
+func void dia_sld_40167_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_sld_40167_pickpocket);
+	info_addchoice(dia_sld_40167_pickpocket, dialog_back, dia_sld_40167_pickpocket_back);
+	info_addchoice(dia_sld_40167_pickpocket, dialog_pickpocket, dia_sld_40167_pickpocket_doit);
+};
+
+func void dia_sld_40167_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_sld_40167_pickpocket);
+};
+
+func void dia_sld_40167_pickpocket_back() {
+    info_clearchoices(dia_sld_40167_pickpocket);
+};

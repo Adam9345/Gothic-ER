@@ -51,3 +51,32 @@ FUNC VOID DIA_Elitarny_straznik_WITAJ_Info()
 	AI_Output (self, other ,"DIA_Elitarny_straznik_WITAJ_03_04"); //Po sam grób!
     AI_StopProcessInfos	(self);
 };
+
+instance dia_grd_3916_pickpocket(c_info) {
+    npc = grd_3916_elitarny_straznik;
+    nr = 900;
+    condition = dia_grd_3916_pickpocket_condition;
+    information = dia_grd_3916_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_grd_3916_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD - 5, 30);
+};
+
+func void dia_grd_3916_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grd_3916_pickpocket);
+	info_addchoice(dia_grd_3916_pickpocket, dialog_back, dia_grd_3916_pickpocket_back);
+	info_addchoice(dia_grd_3916_pickpocket, dialog_pickpocket, dia_grd_3916_pickpocket_doit);
+};
+
+func void dia_grd_3916_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grd_3916_pickpocket);
+};
+
+func void dia_grd_3916_pickpocket_back() {
+    info_clearchoices(dia_grd_3916_pickpocket);
+};

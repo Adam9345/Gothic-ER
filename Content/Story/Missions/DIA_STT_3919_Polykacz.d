@@ -50,3 +50,31 @@ FUNC VOID DIA_Polykacz_HELLO1_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_stt_3919_pickpocket(c_info) {
+    npc = stt_3919_polykacz;
+    nr = 900;
+    condition = dia_stt_3919_pickpocket_condition;
+    information = dia_stt_3919_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_stt_3919_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_stt_3919_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_stt_3919_pickpocket);
+	info_addchoice(dia_stt_3919_pickpocket, dialog_back, dia_stt_3919_pickpocket_back);
+	info_addchoice(dia_stt_3919_pickpocket, dialog_pickpocket, dia_stt_3919_pickpocket_doit);
+};
+
+func void dia_stt_3919_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_stt_3919_pickpocket);
+};
+
+func void dia_stt_3919_pickpocket_back() {
+    info_clearchoices(dia_stt_3919_pickpocket);
+};

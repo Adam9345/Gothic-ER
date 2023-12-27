@@ -877,3 +877,31 @@ FUNC VOID DIA_Gravo_LSZ_Adolf_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_gravo_pickpocket(c_info) {
+    npc = vlk_572_gravo;
+    nr = 900;
+    condition = dia_gravo_pickpocket_condition;
+    information = dia_gravo_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gravo_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_gravo_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gravo_pickpocket);
+	info_addchoice(dia_gravo_pickpocket, dialog_back, dia_gravo_pickpocket_back);
+	info_addchoice(dia_gravo_pickpocket, dialog_pickpocket, dia_gravo_pickpocket_doit);
+};
+
+func void dia_gravo_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gravo_pickpocket);
+};
+
+func void dia_gravo_pickpocket_back() {
+    info_clearchoices(dia_gravo_pickpocket);
+};

@@ -337,7 +337,34 @@ FUNC VOID DIA_Butch_ATAK_Info()
 	
 };
 
+instance dia_butch_pickpocket(c_info) {
+    npc = org_851_butch;
+    nr = 900;
+    condition = dia_butch_pickpocket_condition;
+    information = dia_butch_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_butch_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_butch_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_butch_pickpocket);
+	info_addchoice(dia_butch_pickpocket, dialog_back, dia_butch_pickpocket_back);
+	info_addchoice(dia_butch_pickpocket, dialog_pickpocket, dia_butch_pickpocket_doit);
+};
+
+func void dia_butch_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_butch_pickpocket);
+};
+
+func void dia_butch_pickpocket_back() {
+    info_clearchoices(dia_butch_pickpocket);
+};
 
 
 

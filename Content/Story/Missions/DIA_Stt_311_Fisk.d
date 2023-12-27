@@ -510,3 +510,31 @@ FUNC VOID DIA_Fisk_PNA_Skory_Info()
 	
 };
 
+instance dia_fisk_pickpocket(c_info) {
+    npc = stt_311_fisk;
+    nr = 900;
+    condition = dia_fisk_pickpocket_condition;
+    information = dia_fisk_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_fisk_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_fisk_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_fisk_pickpocket);
+	info_addchoice(dia_fisk_pickpocket, dialog_back, dia_fisk_pickpocket_back);
+	info_addchoice(dia_fisk_pickpocket, dialog_pickpocket, dia_fisk_pickpocket_doit);
+};
+
+func void dia_fisk_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_fisk_pickpocket);
+};
+
+func void dia_fisk_pickpocket_back() {
+    info_clearchoices(dia_fisk_pickpocket);
+};

@@ -119,3 +119,32 @@ FUNC VOID DIA_Organisator51_HELLO3_Info()
     AI_Output (self, other ,"DIA_Organisator51_HELLO3_03_02"); //Dziêki tobie znów mogê siê cieszyæ swoj¹ prac¹.
     AI_Output (self, other ,"DIA_Organisator51_HELLO3_03_03"); //Dziêkujê.
 };
+
+instance dia_org_951_pickpocket(c_info) {
+    npc = org_951_organisator;
+    nr = 900;
+    condition = dia_org_951_pickpocket_condition;
+    information = dia_org_951_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_org_951_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_org_951_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_org_951_pickpocket);
+	info_addchoice(dia_org_951_pickpocket, dialog_back, dia_org_951_pickpocket_back);
+	info_addchoice(dia_org_951_pickpocket, dialog_pickpocket, dia_org_951_pickpocket_doit);
+};
+
+func void dia_org_951_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_org_951_pickpocket);
+};
+
+func void dia_org_951_pickpocket_back() {
+    info_clearchoices(dia_org_951_pickpocket);
+};

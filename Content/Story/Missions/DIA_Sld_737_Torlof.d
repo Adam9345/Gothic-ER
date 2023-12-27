@@ -707,3 +707,31 @@ FUNC VOID DIA_Torlof_PZ_Zamach_Info()
 	Npc_ExchangeRoutine(SLD_40070_Florian,"PZ");
 };
 
+instance dia_torlof_pickpocket(c_info) {
+    npc = sld_737_torlof;
+    nr = 900;
+    condition = dia_torlof_pickpocket_condition;
+    information = dia_torlof_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_torlof_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 30);
+};
+
+func void dia_torlof_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_torlof_pickpocket);
+	info_addchoice(dia_torlof_pickpocket, dialog_back, dia_torlof_pickpocket_back);
+	info_addchoice(dia_torlof_pickpocket, dialog_pickpocket, dia_torlof_pickpocket_doit);
+};
+
+func void dia_torlof_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_torlof_pickpocket);
+};
+
+func void dia_torlof_pickpocket_back() {
+    info_clearchoices(dia_torlof_pickpocket);
+};

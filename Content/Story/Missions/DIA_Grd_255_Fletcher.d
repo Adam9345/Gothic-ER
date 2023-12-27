@@ -784,4 +784,31 @@ FUNC VOID DIA_Fletcher_Potwor_Plac_Info()
    
 };
 
+instance dia_fletcher_pickpocket(c_info) {
+    npc = grd_255_fletcher;
+    nr = 900;
+    condition = dia_fletcher_pickpocket_condition;
+    information = dia_fletcher_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_fletcher_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_fletcher_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_fletcher_pickpocket);
+	info_addchoice(dia_fletcher_pickpocket, dialog_back, dia_fletcher_pickpocket_back);
+	info_addchoice(dia_fletcher_pickpocket, dialog_pickpocket, dia_fletcher_pickpocket_doit);
+};
+
+func void dia_fletcher_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_fletcher_pickpocket);
+};
+
+func void dia_fletcher_pickpocket_back() {
+    info_clearchoices(dia_fletcher_pickpocket);
+};

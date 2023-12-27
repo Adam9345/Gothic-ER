@@ -224,3 +224,32 @@ FUNC VOID DIA_GorNaKosh_Ocaleni_Info()
 	Npc_ExchangeRoutine			(TPL_1400_GorNaBar, "camp");
 	Npc_ExchangeRoutine			(TPL_1401_GorNaKosh, "camp");
 };
+
+instance dia_gornakosh_pickpocket(c_info) {
+    npc = tpl_1401_gornakosh;
+    nr = 900;
+    condition = dia_gornakosh_pickpocket_condition;
+    information = dia_gornakosh_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gornakosh_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_gornakosh_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornakosh_pickpocket);
+	info_addchoice(dia_gornakosh_pickpocket, dialog_back, dia_gornakosh_pickpocket_back);
+	info_addchoice(dia_gornakosh_pickpocket, dialog_pickpocket, dia_gornakosh_pickpocket_doit);
+};
+
+func void dia_gornakosh_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornakosh_pickpocket);
+};
+
+func void dia_gornakosh_pickpocket_back() {
+    info_clearchoices(dia_gornakosh_pickpocket);
+};

@@ -262,3 +262,32 @@ FUNC VOID DIA_GorNaTokas_Sworddd_Info()
     AI_Output (self, other ,"DIA_GorNaTokas_Sworddd_03_02"); //To dziedzictwo skrytobójców, którzy dzia³ali na tych ziemiach.
     AI_Output (self, other ,"DIA_GorNaTokas_Sworddd_03_03"); //Nie musisz wszystkiego wiedzieæ.
 };
+
+instance dia_gornatokas_pickpocket(c_info) {
+    npc = tpl_1490_gornatokas;
+    nr = 900;
+    condition = dia_gornatokas_pickpocket_condition;
+    information = dia_gornatokas_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gornatokas_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 35);
+};
+
+func void dia_gornatokas_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornatokas_pickpocket);
+	info_addchoice(dia_gornatokas_pickpocket, dialog_back, dia_gornatokas_pickpocket_back);
+	info_addchoice(dia_gornatokas_pickpocket, dialog_pickpocket, dia_gornatokas_pickpocket_doit);
+};
+
+func void dia_gornatokas_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornatokas_pickpocket);
+};
+
+func void dia_gornatokas_pickpocket_back() {
+    info_clearchoices(dia_gornatokas_pickpocket);
+};

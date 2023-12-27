@@ -195,3 +195,32 @@ FUNC VOID DIA_Gamal_HERO_IS_GRD_Info()
 	AI_Output (self, other ,"DIA_Gamal_HERO_IS_GRD_03_10"); //Ma jak¹œ robotê dla Stra¿nika i twierdzi, ¿e to wa¿ne. 
     AI_StopProcessInfos	(self);
 };
+
+instance dia_gamal_pickpocket(c_info) {
+    npc = grd_7004_gamal;
+    nr = 900;
+    condition = dia_gamal_pickpocket_condition;
+    information = dia_gamal_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gamal_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_gamal_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gamal_pickpocket);
+	info_addchoice(dia_gamal_pickpocket, dialog_back, dia_gamal_pickpocket_back);
+	info_addchoice(dia_gamal_pickpocket, dialog_pickpocket, dia_gamal_pickpocket_doit);
+};
+
+func void dia_gamal_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gamal_pickpocket);
+};
+
+func void dia_gamal_pickpocket_back() {
+    info_clearchoices(dia_gamal_pickpocket);
+};

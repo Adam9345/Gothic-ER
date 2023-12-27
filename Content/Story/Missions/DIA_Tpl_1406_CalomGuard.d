@@ -262,3 +262,32 @@ func int Info_Tpl_1406_LastWarnD_Info()
 	AI_StopProcessInfos	(self);
 	
 };
+
+instance dia_kalomsguard_pickpocket(c_info) {
+    npc = tpl_1406_templer;
+    nr = 900;
+    condition = dia_kalomsguard_pickpocket_condition;
+    information = dia_kalomsguard_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_kalomsguard_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_kalomsguard_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_kalomsguard_pickpocket);
+	info_addchoice(dia_kalomsguard_pickpocket, dialog_back, dia_kalomsguard_pickpocket_back);
+	info_addchoice(dia_kalomsguard_pickpocket, dialog_pickpocket, dia_kalomsguard_pickpocket_doit);
+};
+
+func void dia_kalomsguard_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_kalomsguard_pickpocket);
+};
+
+func void dia_kalomsguard_pickpocket_back() {
+    info_clearchoices(dia_kalomsguard_pickpocket);
+};

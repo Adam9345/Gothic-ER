@@ -451,6 +451,33 @@ FUNC VOID DIA_BaalNamib_BG_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_baalnamib_pickpocket(c_info) {
+    npc = gur_1204_baalnamib;
+    nr = 900;
+    condition = dia_baalnamib_pickpocket_condition;
+    information = dia_baalnamib_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_baalnamib_pickpocket_condition() {
+	e_beklauen(baseThfChanceGUR, 35);
+};
+
+func void dia_baalnamib_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_baalnamib_pickpocket);
+	info_addchoice(dia_baalnamib_pickpocket, dialog_back, dia_baalnamib_pickpocket_back);
+	info_addchoice(dia_baalnamib_pickpocket, dialog_pickpocket, dia_baalnamib_pickpocket_doit);
+};
+
+func void dia_baalnamib_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_baalnamib_pickpocket);
+};
+
+func void dia_baalnamib_pickpocket_back() {
+    info_clearchoices(dia_baalnamib_pickpocket);
+};
 
  

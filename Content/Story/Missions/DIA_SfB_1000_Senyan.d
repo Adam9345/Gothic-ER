@@ -513,3 +513,31 @@ FUNC VOID DIA_Senyan_GoldMine_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_senyan_pickpocket(c_info) {
+    npc = sfb_1000_senyan;
+    nr = 900;
+    condition = dia_senyan_pickpocket_condition;
+    information = dia_senyan_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_senyan_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 20);
+};
+
+func void dia_senyan_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_senyan_pickpocket);
+	info_addchoice(dia_senyan_pickpocket, dialog_back, dia_senyan_pickpocket_back);
+	info_addchoice(dia_senyan_pickpocket, dialog_pickpocket, dia_senyan_pickpocket_doit);
+};
+
+func void dia_senyan_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_senyan_pickpocket);
+};
+
+func void dia_senyan_pickpocket_back() {
+    info_clearchoices(dia_senyan_pickpocket);
+};

@@ -269,3 +269,32 @@ FUNC VOID DIA_Hakan_ABOUT_KILLER_Info()
 	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_10"); //Przeszukaj inne miejsca zbrodni i dopiero wtedy wyci¹gnij wnioski. Na razie nie masz nic konkretnego.
 	B_LogEntry               (CH3_PsionicCSI,"Hakan powiedzia³ mi, ¿e w cia³o ofiary wbito jakieœ przedmioty. Zdradzi³ te¿, ¿e Talas podejrzewa o zabójstwo Harloka. On siê z tym zdaniem jednak w ogóle nie zgadza. Poradzi³ mi, aby zbada³ inne miejsca zbrodni i dopiero wtedy wyci¹gn¹³ wnioski.");
 };
+
+instance dia_hakan_pickpocket(c_info) {
+    npc = nov_1375_hakan;
+    nr = 900;
+    condition = dia_hakan_pickpocket_condition;
+    information = dia_hakan_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_hakan_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 15);
+};
+
+func void dia_hakan_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_hakan_pickpocket);
+	info_addchoice(dia_hakan_pickpocket, dialog_back, dia_hakan_pickpocket_back);
+	info_addchoice(dia_hakan_pickpocket, dialog_pickpocket, dia_hakan_pickpocket_doit);
+};
+
+func void dia_hakan_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_hakan_pickpocket);
+};
+
+func void dia_hakan_pickpocket_back() {
+    info_clearchoices(dia_hakan_pickpocket);
+};

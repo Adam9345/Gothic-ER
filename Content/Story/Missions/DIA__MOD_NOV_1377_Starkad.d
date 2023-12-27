@@ -327,4 +327,31 @@ FUNC VOID DIA_Patros_PLOTY_Info()
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_04"); //Je¿eli Shan siê o tym dowie, zacznie go szukaæ.
 };
 
+instance dia_starkad_pickpocket(c_info) {
+    npc = nov_1377_starkad;
+    nr = 900;
+    condition = dia_starkad_pickpocket_condition;
+    information = dia_starkad_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_starkad_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_starkad_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_starkad_pickpocket);
+	info_addchoice(dia_starkad_pickpocket, dialog_back, dia_starkad_pickpocket_back);
+	info_addchoice(dia_starkad_pickpocket, dialog_pickpocket, dia_starkad_pickpocket_doit);
+};
+
+func void dia_starkad_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_starkad_pickpocket);
+};
+
+func void dia_starkad_pickpocket_back() {
+    info_clearchoices(dia_starkad_pickpocket);
+};

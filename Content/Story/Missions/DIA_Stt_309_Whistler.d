@@ -968,3 +968,32 @@ FUNC VOID DIA_Whistler_GACIE_FAIL_Info()
     
 };
 */
+
+instance dia_whistler_pickpocket(c_info) {
+    npc = stt_309_whistler;
+    nr = 900;
+    condition = dia_whistler_pickpocket_condition;
+    information = dia_whistler_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_whistler_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_whistler_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_whistler_pickpocket);
+	info_addchoice(dia_whistler_pickpocket, dialog_back, dia_whistler_pickpocket_back);
+	info_addchoice(dia_whistler_pickpocket, dialog_pickpocket, dia_whistler_pickpocket_doit);
+};
+
+func void dia_whistler_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_whistler_pickpocket);
+};
+
+func void dia_whistler_pickpocket_back() {
+    info_clearchoices(dia_whistler_pickpocket);
+};

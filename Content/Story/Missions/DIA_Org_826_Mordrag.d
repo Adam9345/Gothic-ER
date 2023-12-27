@@ -632,7 +632,34 @@ FUNC VOID DIA_Mordrag_Mine_Info()
 
 };
 
+instance dia_mordrag_pickpocket(c_info) {
+    npc = org_826_mordrag;
+    nr = 900;
+    condition = dia_mordrag_pickpocket_condition;
+    information = dia_mordrag_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_mordrag_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_mordrag_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_mordrag_pickpocket);
+	info_addchoice(dia_mordrag_pickpocket, dialog_back, dia_mordrag_pickpocket_back);
+	info_addchoice(dia_mordrag_pickpocket, dialog_pickpocket, dia_mordrag_pickpocket_doit);
+};
+
+func void dia_mordrag_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_mordrag_pickpocket);
+};
+
+func void dia_mordrag_pickpocket_back() {
+    info_clearchoices(dia_mordrag_pickpocket);
+};
 
 
 

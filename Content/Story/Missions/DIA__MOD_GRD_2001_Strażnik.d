@@ -149,3 +149,32 @@ FUNC VOID DIA_Stra¿nik_SYTUACJA_Info()
     AI_Output (other, self ,"DIA_Stra¿nik_SYTUACJA_15_01"); //Jak sytuacja w kopalni?
     AI_Output (self, other ,"DIA_Stra¿nik_SYTUACJA_15_02"); //Na razie nie jest Ÿle. Chocia¿ dŸwiêki nasilaj¹ siê z ka¿dym dniem.
 };
+
+instance dia_grd_2001_pickpocket(c_info) {
+    npc = grd_2001_stra¿nik;
+    nr = 900;
+    condition = dia_grd_2001_pickpocket_condition;
+    information = dia_grd_2001_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_grd_2001_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_grd_2001_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grd_2001_pickpocket);
+	info_addchoice(dia_grd_2001_pickpocket, dialog_back, dia_grd_2001_pickpocket_back);
+	info_addchoice(dia_grd_2001_pickpocket, dialog_pickpocket, dia_grd_2001_pickpocket_doit);
+};
+
+func void dia_grd_2001_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grd_2001_pickpocket);
+};
+
+func void dia_grd_2001_pickpocket_back() {
+    info_clearchoices(dia_grd_2001_pickpocket);
+};

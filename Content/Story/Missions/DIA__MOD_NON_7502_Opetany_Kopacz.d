@@ -127,3 +127,90 @@ FUNC VOID DIA_Opetany_Kopacz04_EXIT_Info()
 {
 	AI_StopProcessInfos	(self);
 };
+
+instance dia_non_7504_pickpocket(c_info) {
+    npc = non_7504_opetany_kopacz;
+    nr = 900;
+    condition = dia_non_7504_pickpocket_condition;
+    information = dia_non_7504_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_7504_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 10);
+};
+
+func void dia_non_7504_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_7504_pickpocket);
+	info_addchoice(dia_non_7504_pickpocket, dialog_back, dia_non_7504_pickpocket_back);
+	info_addchoice(dia_non_7504_pickpocket, dialog_pickpocket, dia_non_7504_pickpocket_doit);
+};
+
+func void dia_non_7504_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_7504_pickpocket);
+};
+
+func void dia_non_7504_pickpocket_back() {
+    info_clearchoices(dia_non_7504_pickpocket);
+};
+
+instance dia_non_7503_pickpocket(c_info) {
+    npc = non_7503_opetany_kopacz;
+    nr = 900;
+    condition = dia_non_7503_pickpocket_condition;
+    information = dia_non_7503_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_7503_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 10);
+};
+
+func void dia_non_7503_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_7503_pickpocket);
+	info_addchoice(dia_non_7503_pickpocket, dialog_back, dia_non_7503_pickpocket_back);
+	info_addchoice(dia_non_7503_pickpocket, dialog_pickpocket, dia_non_7503_pickpocket_doit);
+};
+
+func void dia_non_7503_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_7503_pickpocket);
+};
+
+func void dia_non_7503_pickpocket_back() {
+    info_clearchoices(dia_non_7503_pickpocket);
+};
+
+instance dia_non_7502_pickpocket(c_info) {
+    npc = non_7502_opetany_kopacz;
+    nr = 900;
+    condition = dia_non_7502_pickpocket_condition;
+    information = dia_non_7502_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_7502_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 10);
+};
+
+func void dia_non_7502_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_7502_pickpocket);
+	info_addchoice(dia_non_7502_pickpocket, dialog_back, dia_non_7502_pickpocket_back);
+	info_addchoice(dia_non_7502_pickpocket, dialog_pickpocket, dia_non_7502_pickpocket_doit);
+};
+
+func void dia_non_7502_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_7502_pickpocket);
+};
+
+func void dia_non_7502_pickpocket_back() {
+    info_clearchoices(dia_non_7502_pickpocket);
+};

@@ -231,3 +231,31 @@ FUNC VOID DIA_Stary_RavensCamp_Info()
     AI_Output (self, other ,"DIA_Stary_RavensCamp_03_11"); //Có¿, mam nadziejê, ¿e nie bêdê tego ¿a³owa³.
 };
 
+instance dia_non_5677_pickpocket(c_info) {
+    npc = non_5677_stary;
+    nr = 900;
+    condition = dia_non_5677_pickpocket_condition;
+    information = dia_non_5677_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_5677_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 20);
+};
+
+func void dia_non_5677_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_5677_pickpocket);
+	info_addchoice(dia_non_5677_pickpocket, dialog_back, dia_non_5677_pickpocket_back);
+	info_addchoice(dia_non_5677_pickpocket, dialog_pickpocket, dia_non_5677_pickpocket_doit);
+};
+
+func void dia_non_5677_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_5677_pickpocket);
+};
+
+func void dia_non_5677_pickpocket_back() {
+    info_clearchoices(dia_non_5677_pickpocket);
+};

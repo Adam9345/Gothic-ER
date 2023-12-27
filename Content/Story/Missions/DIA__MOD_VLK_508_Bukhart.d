@@ -197,3 +197,32 @@ FUNC VOID DIA_Bukhart_TwoHoursLater_Info()
 	B_GiveInvItems (self,other, ItMi_FlourBagWithSand, 2);
 	
 };
+
+instance dia_vlk_508_pickpocket(c_info) {
+    npc = vlk_508_buddler;
+    nr = 900;
+    condition = dia_vlk_508_pickpocket_condition;
+    information = dia_vlk_508_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_vlk_508_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_vlk_508_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_vlk_508_pickpocket);
+	info_addchoice(dia_vlk_508_pickpocket, dialog_back, dia_vlk_508_pickpocket_back);
+	info_addchoice(dia_vlk_508_pickpocket, dialog_pickpocket, dia_vlk_508_pickpocket_doit);
+};
+
+func void dia_vlk_508_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_vlk_508_pickpocket);
+};
+
+func void dia_vlk_508_pickpocket_back() {
+    info_clearchoices(dia_vlk_508_pickpocket);
+};

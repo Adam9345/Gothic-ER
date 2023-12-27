@@ -48,3 +48,31 @@ FUNC VOID DIA_Org_40022_Szkodnik_Alcohol_Info()
 		 
 };
 
+instance dia_org_40022_pickpocket(c_info) {
+    npc = org_40022_szkodnik;
+    nr = 900;
+    condition = dia_org_40022_pickpocket_condition;
+    information = dia_org_40022_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_org_40022_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_org_40022_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_org_40022_pickpocket);
+	info_addchoice(dia_org_40022_pickpocket, dialog_back, dia_org_40022_pickpocket_back);
+	info_addchoice(dia_org_40022_pickpocket, dialog_pickpocket, dia_org_40022_pickpocket_doit);
+};
+
+func void dia_org_40022_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_org_40022_pickpocket);
+};
+
+func void dia_org_40022_pickpocket_back() {
+    info_clearchoices(dia_org_40022_pickpocket);
+};

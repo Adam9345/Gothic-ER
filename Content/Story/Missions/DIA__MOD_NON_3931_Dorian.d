@@ -140,3 +140,31 @@ FUNC VOID DIA_Dorian_HELLO3_Info()
 	NON_3931_Dorian.flags = 2;
 };
 
+instance dia_dorian_pickpocket(c_info) {
+    npc = non_3931_dorian;
+    nr = 900;
+    condition = dia_dorian_pickpocket_condition;
+    information = dia_dorian_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_dorian_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 25);
+};
+
+func void dia_dorian_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_dorian_pickpocket);
+	info_addchoice(dia_dorian_pickpocket, dialog_back, dia_dorian_pickpocket_back);
+	info_addchoice(dia_dorian_pickpocket, dialog_pickpocket, dia_dorian_pickpocket_doit);
+};
+
+func void dia_dorian_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_dorian_pickpocket);
+};
+
+func void dia_dorian_pickpocket_back() {
+    info_clearchoices(dia_dorian_pickpocket);
+};

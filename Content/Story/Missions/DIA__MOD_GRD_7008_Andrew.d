@@ -490,3 +490,32 @@ FUNC VOID DIA_Andrew_HEY2_Info()
 	AI_Output (self, other ,"DIA_Andrew_HEY2_03_06"); //Nie ma sprawy. Nie ma ju¿ ¿adnych zale¿noœci miêdzy mn¹, a tymi ludŸmi. Muszê sobie znaleŸæ nowe ubranie, bo w koñcu ktoœ mnie kropnie.
 	B_GiveXP (100);
 };
+
+instance dia_andrew_pickpocket(c_info) {
+    npc = grd_7008_tukash;
+    nr = 900;
+    condition = dia_andrew_pickpocket_condition;
+    information = dia_andrew_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_andrew_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_andrew_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_andrew_pickpocket);
+	info_addchoice(dia_andrew_pickpocket, dialog_back, dia_andrew_pickpocket_back);
+	info_addchoice(dia_andrew_pickpocket, dialog_pickpocket, dia_andrew_pickpocket_doit);
+};
+
+func void dia_andrew_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_andrew_pickpocket);
+};
+
+func void dia_andrew_pickpocket_back() {
+    info_clearchoices(dia_andrew_pickpocket);
+};

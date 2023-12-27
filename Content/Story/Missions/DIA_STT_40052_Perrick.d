@@ -164,7 +164,34 @@ FUNC VOID DIA_Perrick_HI_PERR_Info()
     AI_Output (self, other ,"DIA_Perrick_HI_PERR_03_12"); //Wiêc radzê zacisn¹æ zêby i pokazaæ jaja. Tylko to plus g³owa na karku dadz¹ ci godne miejsce pod barier¹.
 };
 
+instance dia_perrick_pickpocket(c_info) {
+    npc = stt_40052_perrick;
+    nr = 900;
+    condition = dia_perrick_pickpocket_condition;
+    information = dia_perrick_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_perrick_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_perrick_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_perrick_pickpocket);
+	info_addchoice(dia_perrick_pickpocket, dialog_back, dia_perrick_pickpocket_back);
+	info_addchoice(dia_perrick_pickpocket, dialog_pickpocket, dia_perrick_pickpocket_doit);
+};
+
+func void dia_perrick_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_perrick_pickpocket);
+};
+
+func void dia_perrick_pickpocket_back() {
+    info_clearchoices(dia_perrick_pickpocket);
+};
 
 
 

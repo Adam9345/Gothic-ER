@@ -726,3 +726,32 @@ FUNC VOID DIA_GorNaToth_PICKPOCKET_BACK()
 	Info_ClearChoices	(DIA_GorNaToth_PICKPOCKET);
 };
 */
+
+instance dia_gornatoth_pickpocket(c_info) {
+    npc = tpl_1402_gornatoth;
+    nr = 900;
+    condition = dia_gornatoth_pickpocket_condition;
+    information = dia_gornatoth_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gornatoth_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_gornatoth_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornatoth_pickpocket);
+	info_addchoice(dia_gornatoth_pickpocket, dialog_back, dia_gornatoth_pickpocket_back);
+	info_addchoice(dia_gornatoth_pickpocket, dialog_pickpocket, dia_gornatoth_pickpocket_doit);
+};
+
+func void dia_gornatoth_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornatoth_pickpocket);
+};
+
+func void dia_gornatoth_pickpocket_back() {
+    info_clearchoices(dia_gornatoth_pickpocket);
+};

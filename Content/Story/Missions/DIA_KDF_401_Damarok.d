@@ -500,3 +500,32 @@ FUNC VOID DIA_Damarok_HELLO5_Info()
 	B_GiveInvItems (other, self, ItAt_Bloodfly_02, 25);
     AI_StopProcessInfos	(self);
 };
+
+instance dia_damarok_pickpocket(c_info) {
+    npc = kdf_401_damarok;
+    nr = 900;
+    condition = dia_damarok_pickpocket_condition;
+    information = dia_damarok_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_damarok_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDF, 40);
+};
+
+func void dia_damarok_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_damarok_pickpocket);
+	info_addchoice(dia_damarok_pickpocket, dialog_back, dia_damarok_pickpocket_back);
+	info_addchoice(dia_damarok_pickpocket, dialog_pickpocket, dia_damarok_pickpocket_doit);
+};
+
+func void dia_damarok_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_damarok_pickpocket);
+};
+
+func void dia_damarok_pickpocket_back() {
+    info_clearchoices(dia_damarok_pickpocket);
+};

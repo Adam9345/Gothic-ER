@@ -330,3 +330,32 @@ FUNC void  ORG_862_Jacko_ANGEBOT_Info()
 };  
 
 */
+
+instance dia_jacko_pickpocket(c_info) {
+    npc = org_862_jacko;
+    nr = 900;
+    condition = dia_jacko_pickpocket_condition;
+    information = dia_jacko_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_jacko_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_jacko_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_jacko_pickpocket);
+	info_addchoice(dia_jacko_pickpocket, dialog_back, dia_jacko_pickpocket_back);
+	info_addchoice(dia_jacko_pickpocket, dialog_pickpocket, dia_jacko_pickpocket_doit);
+};
+
+func void dia_jacko_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_jacko_pickpocket);
+};
+
+func void dia_jacko_pickpocket_back() {
+    info_clearchoices(dia_jacko_pickpocket);
+};

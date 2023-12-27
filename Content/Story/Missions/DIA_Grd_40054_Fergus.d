@@ -318,3 +318,31 @@ FUNC VOID DIA_Fergus_CONTACTS_Info()
     AI_Output (self, other ,"DIA_Fergus_CONTACTS_03_06"); //Póki nie zacznie zagra¿aæ pozycji jego samego rzecz jasna.... 
 };
 
+instance dia_fergus_pickpocket(c_info) {
+    npc = grd_40054_fergus;
+    nr = 900;
+    condition = dia_fergus_pickpocket_condition;
+    information = dia_fergus_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_fergus_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_fergus_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_fergus_pickpocket);
+	info_addchoice(dia_fergus_pickpocket, dialog_back, dia_fergus_pickpocket_back);
+	info_addchoice(dia_fergus_pickpocket, dialog_pickpocket, dia_fergus_pickpocket_doit);
+};
+
+func void dia_fergus_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_fergus_pickpocket);
+};
+
+func void dia_fergus_pickpocket_back() {
+    info_clearchoices(dia_fergus_pickpocket);
+};

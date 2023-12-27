@@ -124,3 +124,32 @@ FUNC VOID DIA_Fingers_GiveRaport_Info()
 	AI_Output (self, other,"DIA_Fingers_GiveRaport_05_01"); //Gdzie by³? Na Innosa, wielkie dziêki. Idê czym prêdzej oddaæ go Magnatom. 
 	B_GiveInvItems (other, self, itmi_OM_LorenzoRaport,1);
 };
+
+instance dia_stt_322_pickpocket(c_info) {
+    npc = stt_322_schatten;
+    nr = 900;
+    condition = dia_stt_322_pickpocket_condition;
+    information = dia_stt_322_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_stt_322_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_stt_322_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_stt_322_pickpocket);
+	info_addchoice(dia_stt_322_pickpocket, dialog_back, dia_stt_322_pickpocket_back);
+	info_addchoice(dia_stt_322_pickpocket, dialog_pickpocket, dia_stt_322_pickpocket_doit);
+};
+
+func void dia_stt_322_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_stt_322_pickpocket);
+};
+
+func void dia_stt_322_pickpocket_back() {
+    info_clearchoices(dia_stt_322_pickpocket);
+};

@@ -274,3 +274,31 @@ FUNC VOID DIA_Pock_Plaga_Info()
 	B_LogEntry               (Plaga,"Pock zgodzi³ siê zostaæ stró¿em magazynu Ry¿owego Ksiêcia. Wreszcie znalaz³em fra... Znaczy chcia³em napisaæ chêtnego. ");
 };
 
+instance dia_pock_pickpocket(c_info) {
+    npc = bau_902_pock;
+    nr = 900;
+    condition = dia_pock_pickpocket_condition;
+    information = dia_pock_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_pock_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 15);
+};
+
+func void dia_pock_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_pock_pickpocket);
+	info_addchoice(dia_pock_pickpocket, dialog_back, dia_pock_pickpocket_back);
+	info_addchoice(dia_pock_pickpocket, dialog_pickpocket, dia_pock_pickpocket_doit);
+};
+
+func void dia_pock_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_pock_pickpocket);
+};
+
+func void dia_pock_pickpocket_back() {
+    info_clearchoices(dia_pock_pickpocket);
+};

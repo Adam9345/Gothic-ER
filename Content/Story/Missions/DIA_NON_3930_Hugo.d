@@ -342,3 +342,31 @@ FUNC VOID DIA_Hugo_TWO_Tablica_Info()
 	B_LogEntry               (TajemniczaWiadomoscOrkow,"Wróci³em do Hugo. Ten przekaza³ mi wieœci, po których nogi siê podemn¹ ugiê³y. Szamani Orków stworzyli magiczny portal przez, który zamierzaj¹ dostaæ siê do wie¿y Xardasa I zabiæ go tak by nie pomóg³ mi w walce ze Œni¹cym. Muszê jak najszybciej go ostrzec.");
 };
 
+instance dia_hugo_pickpocket2(c_info) {
+    npc = non_3930_hugo;
+    nr = 900;
+    condition = dia_hugo_pickpocket2_condition;
+    information = dia_hugo_pickpocket2_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_hugo_pickpocket2_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_hugo_pickpocket2_info() {
+	b_steal_message();
+	info_clearchoices(dia_hugo_pickpocket2);
+	info_addchoice(dia_hugo_pickpocket2, dialog_back, dia_hugo_pickpocket2_back);
+	info_addchoice(dia_hugo_pickpocket2, dialog_pickpocket, dia_hugo_pickpocket2_doit);
+};
+
+func void dia_hugo_pickpocket2_doit() {
+    d_beklauen();
+    info_clearchoices(dia_hugo_pickpocket2);
+};
+
+func void dia_hugo_pickpocket2_back() {
+    info_clearchoices(dia_hugo_pickpocket2);
+};

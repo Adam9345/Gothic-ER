@@ -272,3 +272,32 @@ FUNC VOID DIA_Riv_PICKPOCKET_BACK()
 {
 	Info_ClearChoices	(DIA_Riv_PICKPOCKET);
 };
+
+instance dia_riv_pickpocket2(c_info) {
+    npc = org_952_riv;
+    nr = 900;
+    condition = dia_riv_pickpocket2_condition;
+    information = dia_riv_pickpocket2_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_riv_pickpocket2_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_riv_pickpocket2_info() {
+	b_steal_message();
+	info_clearchoices(dia_riv_pickpocket2);
+	info_addchoice(dia_riv_pickpocket2, dialog_back, dia_riv_pickpocket2_back);
+	info_addchoice(dia_riv_pickpocket2, dialog_pickpocket, dia_riv_pickpocket2_doit);
+};
+
+func void dia_riv_pickpocket2_doit() {
+    d_beklauen();
+    info_clearchoices(dia_riv_pickpocket2);
+};
+
+func void dia_riv_pickpocket2_back() {
+    info_clearchoices(dia_riv_pickpocket2);
+};

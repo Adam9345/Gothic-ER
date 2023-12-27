@@ -338,3 +338,31 @@ FUNC VOID DIA_Josep_Camp_Info()
 	AI_StopProcessInfos	(self);
 };
 
+instance dia_josep_pickpocket(c_info) {
+    npc = non_5614_josep;
+    nr = 900;
+    condition = dia_josep_pickpocket_condition;
+    information = dia_josep_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_josep_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 25);
+};
+
+func void dia_josep_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_josep_pickpocket);
+	info_addchoice(dia_josep_pickpocket, dialog_back, dia_josep_pickpocket_back);
+	info_addchoice(dia_josep_pickpocket, dialog_pickpocket, dia_josep_pickpocket_doit);
+};
+
+func void dia_josep_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_josep_pickpocket);
+};
+
+func void dia_josep_pickpocket_back() {
+    info_clearchoices(dia_josep_pickpocket);
+};

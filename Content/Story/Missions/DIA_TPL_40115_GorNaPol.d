@@ -486,3 +486,31 @@ FUNC VOID DIA_GorNaPol_HERO_IS_TPL_Info()
     AI_Output (self, other ,"DIA_GorNaPol_HERO_IS_TPL_03_05"); //Krocz pewny swego ale nie zapominaj o sile ducha!
 };
 
+instance dia_gornapol_pickpocket(c_info) {
+    npc = tpl_40115_gornapol;
+    nr = 900;
+    condition = dia_gornapol_pickpocket_condition;
+    information = dia_gornapol_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gornapol_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_gornapol_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gornapol_pickpocket);
+	info_addchoice(dia_gornapol_pickpocket, dialog_back, dia_gornapol_pickpocket_back);
+	info_addchoice(dia_gornapol_pickpocket, dialog_pickpocket, dia_gornapol_pickpocket_doit);
+};
+
+func void dia_gornapol_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gornapol_pickpocket);
+};
+
+func void dia_gornapol_pickpocket_back() {
+    info_clearchoices(dia_gornapol_pickpocket);
+};

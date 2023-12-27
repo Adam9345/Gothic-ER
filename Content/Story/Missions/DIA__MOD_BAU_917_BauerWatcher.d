@@ -64,3 +64,32 @@ FUNC VOID DIA_BauerWatcher_UnnecessaryDeath_Info()
 	
 	B_LogEntry                     (CH1_BuntZbieraczy,"Okaza³o siê, ¿e przypuszczenia Rufusa by³y b³êdne i zabi³em niewinn¹ osobê. Muszê pogadaæ o tym z Rufusem.");
 };
+
+instance dia_bau_917_pickpocket(c_info) {
+    npc = bau_917_bauer;
+    nr = 900;
+    condition = dia_bau_917_pickpocket_condition;
+    information = dia_bau_917_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_bau_917_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 18);
+};
+
+func void dia_bau_917_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_bau_917_pickpocket);
+	info_addchoice(dia_bau_917_pickpocket, dialog_back, dia_bau_917_pickpocket_back);
+	info_addchoice(dia_bau_917_pickpocket, dialog_pickpocket, dia_bau_917_pickpocket_doit);
+};
+
+func void dia_bau_917_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_bau_917_pickpocket);
+};
+
+func void dia_bau_917_pickpocket_back() {
+    info_clearchoices(dia_bau_917_pickpocket);
+};

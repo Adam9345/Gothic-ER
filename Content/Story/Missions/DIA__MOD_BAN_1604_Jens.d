@@ -580,3 +580,32 @@ else
 		AI_Output (self, other ,"DIA_Jens_SYTUACJA_03_20"); //Nie gadam z takimi jak ty! Zje¿d¿aj.
 };
 };
+
+instance dia_jens_pickpocket(c_info) {
+    npc = ban_1604_jens;
+    nr = 900;
+    condition = dia_jens_pickpocket_condition;
+    information = dia_jens_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_jens_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_jens_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_jens_pickpocket);
+	info_addchoice(dia_jens_pickpocket, dialog_back, dia_jens_pickpocket_back);
+	info_addchoice(dia_jens_pickpocket, dialog_pickpocket, dia_jens_pickpocket_doit);
+};
+
+func void dia_jens_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_jens_pickpocket);
+};
+
+func void dia_jens_pickpocket_back() {
+    info_clearchoices(dia_jens_pickpocket);
+};

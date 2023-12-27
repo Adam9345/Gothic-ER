@@ -526,3 +526,32 @@ FUNC VOID DIA_Scorpio_Blachostka_Info()
 	B_LogEntry               (Blachostka,"Skorpion powiedzia³ , ¿e John wykonuje podejrzane misje dla Magnatów. Dziwi³ siê  ,¿e poszed³ na wspó³pracê z takim ¿ó³todziobem jak ja. Wyczuwam k³opoty.");
 };
 
+instance dia_scorpio_pickpocket(c_info) {
+    npc = grd_205_scorpio;
+    nr = 900;
+    condition = dia_scorpio_pickpocket_condition;
+    information = dia_scorpio_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_scorpio_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_scorpio_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_scorpio_pickpocket);
+	info_addchoice(dia_scorpio_pickpocket, dialog_back, dia_scorpio_pickpocket_back);
+	info_addchoice(dia_scorpio_pickpocket, dialog_pickpocket, dia_scorpio_pickpocket_doit);
+};
+
+func void dia_scorpio_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_scorpio_pickpocket);
+};
+
+func void dia_scorpio_pickpocket_back() {
+    info_clearchoices(dia_scorpio_pickpocket);
+};
+

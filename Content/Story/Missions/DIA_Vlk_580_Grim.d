@@ -713,3 +713,31 @@ FUNC VOID DIA_Grim_HELLO_IM_STT_Info()
     AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_10"); //Dziêki, przyda siê!
 };
 
+instance dia_grim_pickpocket(c_info) {
+    npc = vlk_580_grim;
+    nr = 900;
+    condition = dia_grim_pickpocket_condition;
+    information = dia_grim_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_grim_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 15);
+};
+
+func void dia_grim_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grim_pickpocket);
+	info_addchoice(dia_grim_pickpocket, dialog_back, dia_grim_pickpocket_back);
+	info_addchoice(dia_grim_pickpocket, dialog_pickpocket, dia_grim_pickpocket_doit);
+};
+
+func void dia_grim_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grim_pickpocket);
+};
+
+func void dia_grim_pickpocket_back() {
+    info_clearchoices(dia_grim_pickpocket);
+};

@@ -126,3 +126,31 @@ func void DIA_Nek_Exposed_MONEY ()
     AI_Output (self, other ,"DIA_Nek_Exposed_MONEY_03_02"); //Wybacz kolego, ale nie mam ani bry³ki wiêcej. To jak, dogadamy siê?	
 };
 
+instance dia_nek_pickpocket(c_info) {
+    npc = grd_3085_nek;
+    nr = 900;
+    condition = dia_nek_pickpocket_condition;
+    information = dia_nek_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_nek_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_nek_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_nek_pickpocket);
+	info_addchoice(dia_nek_pickpocket, dialog_back, dia_nek_pickpocket_back);
+	info_addchoice(dia_nek_pickpocket, dialog_pickpocket, dia_nek_pickpocket_doit);
+};
+
+func void dia_nek_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_nek_pickpocket);
+};
+
+func void dia_nek_pickpocket_back() {
+    info_clearchoices(dia_nek_pickpocket);
+};

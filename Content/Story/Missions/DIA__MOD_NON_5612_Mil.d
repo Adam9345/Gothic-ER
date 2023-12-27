@@ -374,3 +374,31 @@ FUNC VOID DIA_Mil_ArnoldBearsFur_Info()
     AI_Output (self, other ,"DIA_Mil_ArnoldBearsFur_03_04"); //Jak nie umiesz œci¹gaæ futer to siê naucz. Mo¿na zarobiæ sporo rudy.
 };
 
+instance dia_mil_pickpocket(c_info) {
+    npc = non_5612_mil;
+    nr = 900;
+    condition = dia_mil_pickpocket_condition;
+    information = dia_mil_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_mil_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_mil_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_mil_pickpocket);
+	info_addchoice(dia_mil_pickpocket, dialog_back, dia_mil_pickpocket_back);
+	info_addchoice(dia_mil_pickpocket, dialog_pickpocket, dia_mil_pickpocket_doit);
+};
+
+func void dia_mil_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_mil_pickpocket);
+};
+
+func void dia_mil_pickpocket_back() {
+    info_clearchoices(dia_mil_pickpocket);
+};

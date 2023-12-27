@@ -878,4 +878,31 @@ FUNC VOID DIA_IAN_DWMN_DRAKE_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_ian_pickpocket(c_info) {
+    npc = stt_301_ian;
+    nr = 900;
+    condition = dia_ian_pickpocket_condition;
+    information = dia_ian_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_ian_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT - 10, 30);
+};
+
+func void dia_ian_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_ian_pickpocket);
+	info_addchoice(dia_ian_pickpocket, dialog_back, dia_ian_pickpocket_back);
+	info_addchoice(dia_ian_pickpocket, dialog_pickpocket, dia_ian_pickpocket_doit);
+};
+
+func void dia_ian_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ian_pickpocket);
+};
+
+func void dia_ian_pickpocket_back() {
+    info_clearchoices(dia_ian_pickpocket);
+};

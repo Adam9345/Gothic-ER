@@ -388,3 +388,31 @@ FUNC VOID DIA_Huan_LearnSmith_02_Info()
 	
 };
 
+instance dia_huan_pickpocket(c_info) {
+    npc = org_9550_huan;
+    nr = 900;
+    condition = dia_huan_pickpocket_condition;
+    information = dia_huan_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_huan_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_huan_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_huan_pickpocket);
+	info_addchoice(dia_huan_pickpocket, dialog_back, dia_huan_pickpocket_back);
+	info_addchoice(dia_huan_pickpocket, dialog_pickpocket, dia_huan_pickpocket_doit);
+};
+
+func void dia_huan_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_huan_pickpocket);
+};
+
+func void dia_huan_pickpocket_back() {
+    info_clearchoices(dia_huan_pickpocket);
+};

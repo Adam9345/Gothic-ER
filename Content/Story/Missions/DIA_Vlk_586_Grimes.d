@@ -557,7 +557,34 @@ FUNC VOID DIA_Grimes_Richard_Is_Dead_Info()
 
 */
 
+instance dia_grimes_pickpocket(c_info) {
+    npc = vlk_586_grimes;
+    nr = 900;
+    condition = dia_grimes_pickpocket_condition;
+    information = dia_grimes_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_grimes_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_grimes_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_grimes_pickpocket);
+	info_addchoice(dia_grimes_pickpocket, dialog_back, dia_grimes_pickpocket_back);
+	info_addchoice(dia_grimes_pickpocket, dialog_pickpocket, dia_grimes_pickpocket_doit);
+};
+
+func void dia_grimes_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_grimes_pickpocket);
+};
+
+func void dia_grimes_pickpocket_back() {
+    info_clearchoices(dia_grimes_pickpocket);
+};
 
 
 

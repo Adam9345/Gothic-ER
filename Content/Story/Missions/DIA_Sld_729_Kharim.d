@@ -144,3 +144,32 @@ func void Info_Kharim_Charge_Insult_Face()
 	AI_Output (other, self,"Info_Kharim_Charge_Insult_Face_15_00"); //Z pocz¹tku chcia³em powiedzieæ coœ o twoich w¹t³ych ramionach, ale potem zobaczy³em twoj¹ paskudn¹ mordê.
 	AI_Output (self, other,"Info_Kharim_Charge_Insult_Face_09_01"); //To twoja ostatnia szansa, ¿eby odejœæ st¹d o w³asnych si³ach!
 };
+
+instance dia_kharim_pickpocket(c_info) {
+    npc = sld_729_kharim;
+    nr = 900;
+    condition = dia_kharim_pickpocket_condition;
+    information = dia_kharim_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_kharim_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 30);
+};
+
+func void dia_kharim_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_kharim_pickpocket);
+	info_addchoice(dia_kharim_pickpocket, dialog_back, dia_kharim_pickpocket_back);
+	info_addchoice(dia_kharim_pickpocket, dialog_pickpocket, dia_kharim_pickpocket_doit);
+};
+
+func void dia_kharim_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_kharim_pickpocket);
+};
+
+func void dia_kharim_pickpocket_back() {
+    info_clearchoices(dia_kharim_pickpocket);
+};

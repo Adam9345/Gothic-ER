@@ -380,3 +380,31 @@ FUNC VOID DIA_Ziggy_CH5_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_ziggy_pickpocket(c_info) {
+    npc = sfb_40063_ziggy;
+    nr = 900;
+    condition = dia_ziggy_pickpocket_condition;
+    information = dia_ziggy_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_ziggy_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 20);
+};
+
+func void dia_ziggy_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_ziggy_pickpocket);
+	info_addchoice(dia_ziggy_pickpocket, dialog_back, dia_ziggy_pickpocket_back);
+	info_addchoice(dia_ziggy_pickpocket, dialog_pickpocket, dia_ziggy_pickpocket_doit);
+};
+
+func void dia_ziggy_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_ziggy_pickpocket);
+};
+
+func void dia_ziggy_pickpocket_back() {
+    info_clearchoices(dia_ziggy_pickpocket);
+};

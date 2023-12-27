@@ -89,3 +89,31 @@ FUNC VOID DIA_Killer_HELLO2_Info()
 	AI_StopProcessInfos	(self);
 };
 
+instance dia_killer_pickpocket(c_info) {
+    npc = non_40108_killer;
+    nr = 900;
+    condition = dia_killer_pickpocket_condition;
+    information = dia_killer_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_killer_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_killer_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_killer_pickpocket);
+	info_addchoice(dia_killer_pickpocket, dialog_back, dia_killer_pickpocket_back);
+	info_addchoice(dia_killer_pickpocket, dialog_pickpocket, dia_killer_pickpocket_doit);
+};
+
+func void dia_killer_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_killer_pickpocket);
+};
+
+func void dia_killer_pickpocket_back() {
+    info_clearchoices(dia_killer_pickpocket);
+};

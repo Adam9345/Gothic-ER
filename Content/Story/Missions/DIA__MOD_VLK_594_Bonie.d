@@ -154,3 +154,32 @@ FUNC VOID Info_BereitsBonie_Info()
 {
 	AI_Output (self, other,"Info_BereitsBonie_Info_13_02"); //Zap³aci³eœ - mo¿esz przejœæ. No, ruszaj siê!
 };
+
+instance dia_bonie_pickpocket(c_info) {
+    npc = vlk_594_bonie;
+    nr = 900;
+    condition = dia_bonie_pickpocket_condition;
+    information = dia_bonie_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_bonie_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 30);
+};
+
+func void dia_bonie_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_bonie_pickpocket);
+	info_addchoice(dia_bonie_pickpocket, dialog_back, dia_bonie_pickpocket_back);
+	info_addchoice(dia_bonie_pickpocket, dialog_pickpocket, dia_bonie_pickpocket_doit);
+};
+
+func void dia_bonie_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_bonie_pickpocket);
+};
+
+func void dia_bonie_pickpocket_back() {
+    info_clearchoices(dia_bonie_pickpocket);
+};

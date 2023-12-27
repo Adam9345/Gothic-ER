@@ -504,3 +504,31 @@ FUNC VOID DIA_Baloro_Ziggy_Info()
  
 };
 
+instance dia_baloro_pickpocket(c_info) {
+    npc = sld_753_baloro;
+    nr = 900;
+    condition = dia_baloro_pickpocket_condition;
+    information = dia_baloro_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_baloro_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 30);
+};
+
+func void dia_baloro_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_baloro_pickpocket);
+	info_addchoice(dia_baloro_pickpocket, dialog_back, dia_baloro_pickpocket_back);
+	info_addchoice(dia_baloro_pickpocket, dialog_pickpocket, dia_baloro_pickpocket_doit);
+};
+
+func void dia_baloro_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_baloro_pickpocket);
+};
+
+func void dia_baloro_pickpocket_back() {
+    info_clearchoices(dia_baloro_pickpocket);
+};

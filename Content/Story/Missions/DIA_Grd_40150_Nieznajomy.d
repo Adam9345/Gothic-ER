@@ -96,3 +96,31 @@ FUNC VOID DIA_Nieznajomy_HELLO2_Info()
 	
 };
 
+instance dia_nieznajomy_pickpocket(c_info) {
+    npc = grd_40150_nieznajomy;
+    nr = 900;
+    condition = dia_nieznajomy_pickpocket_condition;
+    information = dia_nieznajomy_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_nieznajomy_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_nieznajomy_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_nieznajomy_pickpocket);
+	info_addchoice(dia_nieznajomy_pickpocket, dialog_back, dia_nieznajomy_pickpocket_back);
+	info_addchoice(dia_nieznajomy_pickpocket, dialog_pickpocket, dia_nieznajomy_pickpocket_doit);
+};
+
+func void dia_nieznajomy_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_nieznajomy_pickpocket);
+};
+
+func void dia_nieznajomy_pickpocket_back() {
+    info_clearchoices(dia_nieznajomy_pickpocket);
+};

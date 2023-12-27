@@ -310,3 +310,31 @@ FUNC VOID DIA_Gulris_HELLO5_Info()
     AI_Output (self, other ,"DIA_Gulris_HELLO5_03_02"); //Gomez... Oczywiœcie, ¿e Gomez.
 };
 
+instance dia_gulris_pickpocket(c_info) {
+    npc = vlk_560_buddler;
+    nr = 900;
+    condition = dia_gulris_pickpocket_condition;
+    information = dia_gulris_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_gulris_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_gulris_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gulris_pickpocket);
+	info_addchoice(dia_gulris_pickpocket, dialog_back, dia_gulris_pickpocket_back);
+	info_addchoice(dia_gulris_pickpocket, dialog_pickpocket, dia_gulris_pickpocket_doit);
+};
+
+func void dia_gulris_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gulris_pickpocket);
+};
+
+func void dia_gulris_pickpocket_back() {
+    info_clearchoices(dia_gulris_pickpocket);
+};

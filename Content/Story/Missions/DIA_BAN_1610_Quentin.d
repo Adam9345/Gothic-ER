@@ -3011,5 +3011,32 @@ FUNC VOID DIA_Quentin_TMQ_END_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_quentin_pickpocket(c_info) {
+    npc = ban_1610_quentin;
+    nr = 900;
+    condition = dia_quentin_pickpocket_condition;
+    information = dia_quentin_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_quentin_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG - 10, 40);
+};
+
+func void dia_quentin_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_quentin_pickpocket);
+	info_addchoice(dia_quentin_pickpocket, dialog_back, dia_quentin_pickpocket_back);
+	info_addchoice(dia_quentin_pickpocket, dialog_pickpocket, dia_quentin_pickpocket_doit);
+};
+
+func void dia_quentin_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_quentin_pickpocket);
+};
+
+func void dia_quentin_pickpocket_back() {
+    info_clearchoices(dia_quentin_pickpocket);
+};
 

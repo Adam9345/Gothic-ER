@@ -380,3 +380,31 @@ FUNC VOID DIA_Balam_VelayaIsGood_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_balam_pickpocket(c_info) {
+    npc = stt_324_balam;
+    nr = 900;
+    condition = dia_balam_pickpocket_condition;
+    information = dia_balam_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_balam_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_balam_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_balam_pickpocket);
+	info_addchoice(dia_balam_pickpocket, dialog_back, dia_balam_pickpocket_back);
+	info_addchoice(dia_balam_pickpocket, dialog_pickpocket, dia_balam_pickpocket_doit);
+};
+
+func void dia_balam_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_balam_pickpocket);
+};
+
+func void dia_balam_pickpocket_back() {
+    info_clearchoices(dia_balam_pickpocket);
+};

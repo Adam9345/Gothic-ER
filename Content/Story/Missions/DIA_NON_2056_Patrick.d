@@ -474,5 +474,32 @@ FUNC VOID DIA_Patrick_New_Camp_Quartz_Info()
 
 };
 
+instance dia_patrick_pickpocket(c_info) {
+    npc = non_2056_patrick;
+    nr = 900;
+    condition = dia_patrick_pickpocket_condition;
+    information = dia_patrick_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_patrick_pickpocket_condition() {
+	e_beklauen(baseThfChanceNON, 20);
+};
+
+func void dia_patrick_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_patrick_pickpocket);
+	info_addchoice(dia_patrick_pickpocket, dialog_back, dia_patrick_pickpocket_back);
+	info_addchoice(dia_patrick_pickpocket, dialog_pickpocket, dia_patrick_pickpocket_doit);
+};
+
+func void dia_patrick_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_patrick_pickpocket);
+};
+
+func void dia_patrick_pickpocket_back() {
+    info_clearchoices(dia_patrick_pickpocket);
+};
 

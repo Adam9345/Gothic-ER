@@ -122,3 +122,32 @@ FUNC VOID DIA_Schuerfer_GOR_NA_LIN_Info()
     B_LogEntry                     (CH2_MissedSpy,"Shutfer nie powiedzia³ mi nic ciekawego o Gor Na Linie.");
     AI_StopProcessInfos	(self);
 };
+
+instance dia_sfb_1001_pickpocket(c_info) {
+    npc = sfb_1001_schuerfer;
+    nr = 900;
+    condition = dia_sfb_1001_pickpocket_condition;
+    information = dia_sfb_1001_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_sfb_1001_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 20);
+};
+
+func void dia_sfb_1001_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_sfb_1001_pickpocket);
+	info_addchoice(dia_sfb_1001_pickpocket, dialog_back, dia_sfb_1001_pickpocket_back);
+	info_addchoice(dia_sfb_1001_pickpocket, dialog_pickpocket, dia_sfb_1001_pickpocket_doit);
+};
+
+func void dia_sfb_1001_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_sfb_1001_pickpocket);
+};
+
+func void dia_sfb_1001_pickpocket_back() {
+    info_clearchoices(dia_sfb_1001_pickpocket);
+};

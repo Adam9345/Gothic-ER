@@ -561,4 +561,31 @@ FUNC VOID DIA_Gilbert_Guy_Spokoj_Info()
     B_LogEntry                     (PSI_Zdrajca,"Okazjue siê, ¿e jakiœ czas temu Gaston przysta³ do myœliwych i przyj¹ imie Arnold. Wygl¹da na to, ¿e uda³o mi siê go zlokalizowaæ. Muszê go teraz jakoœ wywabiæ z obozu myœliwych.");
 };
 
+instance dia_gilbert_pickpocket(c_info) {
+    npc = non_1500_gilbert;
+    nr = 900;
+    condition = dia_gilbert_pickpocket_condition;
+    information = dia_gilbert_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_gilbert_pickpocket_condition() {
+	e_beklauen(baseThfChanceNON, 25);
+};
+
+func void dia_gilbert_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gilbert_pickpocket);
+	info_addchoice(dia_gilbert_pickpocket, dialog_back, dia_gilbert_pickpocket_back);
+	info_addchoice(dia_gilbert_pickpocket, dialog_pickpocket, dia_gilbert_pickpocket_doit);
+};
+
+func void dia_gilbert_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gilbert_pickpocket);
+};
+
+func void dia_gilbert_pickpocket_back() {
+    info_clearchoices(dia_gilbert_pickpocket);
+};

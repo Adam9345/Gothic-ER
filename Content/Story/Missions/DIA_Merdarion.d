@@ -390,3 +390,31 @@ FUNC VOID DIA_Merdarion_OTHER_TELE_Info()
     AI_Output (self, other ,"DIA_Merdarion_OTHER_TELE_03_07"); //Wydaje mi siê, ¿e tak. Pochodz¹ one z pradawnych czasów, wiêc mog¹ byæ rozsiane po ca³ej wyspie Khorinis. Jeœli uda nam siê obaliæ Barierê, z pewnoœci¹ ich poszukam. 
 };
 
+instance dia_merdarion_pickpocket(c_info) {
+    npc = kdw_602_merdarion;
+    nr = 900;
+    condition = dia_merdarion_pickpocket_condition;
+    information = dia_merdarion_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_merdarion_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDW, 55);
+};
+
+func void dia_merdarion_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_merdarion_pickpocket);
+	info_addchoice(dia_merdarion_pickpocket, dialog_back, dia_merdarion_pickpocket_back);
+	info_addchoice(dia_merdarion_pickpocket, dialog_pickpocket, dia_merdarion_pickpocket_doit);
+};
+
+func void dia_merdarion_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_merdarion_pickpocket);
+};
+
+func void dia_merdarion_pickpocket_back() {
+    info_clearchoices(dia_merdarion_pickpocket);
+};

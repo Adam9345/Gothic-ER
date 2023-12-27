@@ -269,3 +269,32 @@ FUNC VOID DIA_Lorenzo_GET_GUILD_Info()
 	
 	
 };
+
+instance dia_lorenzo_pickpocket(c_info) {
+    npc = stt_5013_lorenzo;
+    nr = 900;
+    condition = dia_lorenzo_pickpocket_condition;
+    information = dia_lorenzo_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_lorenzo_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 35);
+};
+
+func void dia_lorenzo_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_lorenzo_pickpocket);
+	info_addchoice(dia_lorenzo_pickpocket, dialog_back, dia_lorenzo_pickpocket_back);
+	info_addchoice(dia_lorenzo_pickpocket, dialog_pickpocket, dia_lorenzo_pickpocket_doit);
+};
+
+func void dia_lorenzo_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_lorenzo_pickpocket);
+};
+
+func void dia_lorenzo_pickpocket_back() {
+    info_clearchoices(dia_lorenzo_pickpocket);
+};

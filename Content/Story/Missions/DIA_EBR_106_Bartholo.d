@@ -636,4 +636,31 @@ FUNC VOID DIA_Bartholo_PNA_Nagroda_Info()
 	
 };
 
+instance dia_bartholo_pickpocket(c_info) {
+    npc = ebr_106_bartholo;
+    nr = 900;
+    condition = dia_bartholo_pickpocket_condition;
+    information = dia_bartholo_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_bartholo_pickpocket_condition() {
+	e_beklauen(baseThfChanceEBR, 40);
+};
+
+func void dia_bartholo_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_bartholo_pickpocket);
+	info_addchoice(dia_bartholo_pickpocket, dialog_back, dia_bartholo_pickpocket_back);
+	info_addchoice(dia_bartholo_pickpocket, dialog_pickpocket, dia_bartholo_pickpocket_doit);
+};
+
+func void dia_bartholo_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_bartholo_pickpocket);
+};
+
+func void dia_bartholo_pickpocket_back() {
+    info_clearchoices(dia_bartholo_pickpocket);
+};

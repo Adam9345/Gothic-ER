@@ -407,3 +407,32 @@ FUNC void  Org_843_Sharky_CATCHED_Info()
 	Npc_ExchangeRoutine (Org_843_Sharky,"start");
 	AI_StopProcessInfos (self);
 };
+
+instance dia_sharky_pickpocket(c_info) {
+    npc = org_843_sharky;
+    nr = 900;
+    condition = dia_sharky_pickpocket_condition;
+    information = dia_sharky_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_sharky_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_sharky_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_sharky_pickpocket);
+	info_addchoice(dia_sharky_pickpocket, dialog_back, dia_sharky_pickpocket_back);
+	info_addchoice(dia_sharky_pickpocket, dialog_pickpocket, dia_sharky_pickpocket_doit);
+};
+
+func void dia_sharky_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_sharky_pickpocket);
+};
+
+func void dia_sharky_pickpocket_back() {
+    info_clearchoices(dia_sharky_pickpocket);
+};

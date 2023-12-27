@@ -8,6 +8,7 @@ _INTERN\Float.D
 _INTERN\LeGo_G1\HEADER_G1.src
 _ER\oSDamageDescriptor.D
 _ER\Trucizna.D
+_ER\AdditionalAIVars.d
 
 _ER\classes.d
 _ER\helper_Funcs.d
@@ -239,6 +240,9 @@ AI\ORC\TA_ORC.D
 AI\ORC\TESTORC.d
 AI\ORC\TESTORCSLAVE.D
 
+_ER\NEWPICKPOCKETSYSTEM\NPPS_CONSTANTS.D
+_ER\NEWPICKPOCKETSYSTEM\NPPS_FUNCS.D
+
 STORY\NPC\*.D
 STORY\NPC\MOD_NPCS\*.D
 
@@ -248,14 +252,12 @@ STORY\MISSIONS\DIA*.D
 _ER\Regeneracja.D
 _ER\SHA_GWM.D
 _ER\FastTravelMap_HK.d
-_Er\torchHotKey.d
+_ER\torchHotKey.d
 
 STORY\STARTUP.D
 
 
 _INTERN\G_FUNCTIONS.SRC
-
-
 
 
 

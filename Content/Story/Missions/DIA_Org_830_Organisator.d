@@ -133,3 +133,32 @@ FUNC VOID Info_ORG_830_Perm_Info()
 	AI_Output (other, self,"Info_ORG_830_Perm_15_00"); //Co s³ychaæ wewn¹trz?
 	AI_Output (self, other,"Info_ORG_830_Perm_13_01"); //To co zwykle - ogólnie spokój, od czasu do czasu jakaœ drobna burda.
 };
+
+instance dia_org_830_pickpocket(c_info) {
+    npc = org_830_organisator;
+    nr = 900;
+    condition = dia_org_830_pickpocket_condition;
+    information = dia_org_830_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_org_830_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 35);
+};
+
+func void dia_org_830_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_org_830_pickpocket);
+	info_addchoice(dia_org_830_pickpocket, dialog_back, dia_org_830_pickpocket_back);
+	info_addchoice(dia_org_830_pickpocket, dialog_pickpocket, dia_org_830_pickpocket_doit);
+};
+
+func void dia_org_830_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_org_830_pickpocket);
+};
+
+func void dia_org_830_pickpocket_back() {
+    info_clearchoices(dia_org_830_pickpocket);
+};

@@ -467,3 +467,31 @@ FUNC VOID DIA_Mazin_FIGHTBRUCE_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_mazin_pickpocket(c_info) {
+    npc = org_2704_mazin;
+    nr = 900;
+    condition = dia_mazin_pickpocket_condition;
+    information = dia_mazin_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_mazin_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_mazin_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_mazin_pickpocket);
+	info_addchoice(dia_mazin_pickpocket, dialog_back, dia_mazin_pickpocket_back);
+	info_addchoice(dia_mazin_pickpocket, dialog_pickpocket, dia_mazin_pickpocket_doit);
+};
+
+func void dia_mazin_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_mazin_pickpocket);
+};
+
+func void dia_mazin_pickpocket_back() {
+    info_clearchoices(dia_mazin_pickpocket);
+};

@@ -261,3 +261,32 @@ FUNC VOID  DIA_Balor_Perm_Info()
 	AI_Output (other, self,"DIA_Balor_Perm_15_00"); //Nie przeszkadzaj sobie w pracy!
 	AI_Output (self, other,"DIA_Balor_Perm_01_01"); //A myœlisz, ¿e co ja robiê? Grzebiê sobie w jajach?
 };
+
+instance dia_balor_pickpocket(c_info) {
+    npc = nov_1304_balor;
+    nr = 900;
+    condition = dia_balor_pickpocket_condition;
+    information = dia_balor_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_balor_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_balor_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_balor_pickpocket);
+	info_addchoice(dia_balor_pickpocket, dialog_back, dia_balor_pickpocket_back);
+	info_addchoice(dia_balor_pickpocket, dialog_pickpocket, dia_balor_pickpocket_doit);
+};
+
+func void dia_balor_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_balor_pickpocket);
+};
+
+func void dia_balor_pickpocket_back() {
+    info_clearchoices(dia_balor_pickpocket);
+};

@@ -284,3 +284,60 @@ FUNC VOID DIA_Glest_HI_Glest_Info()
     AI_Output (self, other ,"DIA_Glest_HI_Glest_03_09"); //Te cholerne, mordercze podziemne stwory.
 };
 
+instance dia_glest_pickpocket(c_info) {
+    npc = non_40139_glest;
+    nr = 900;
+    condition = dia_glest_pickpocket_condition;
+    information = dia_glest_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_glest_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 25);
+};
+
+func void dia_glest_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_glest_pickpocket);
+	info_addchoice(dia_glest_pickpocket, dialog_back, dia_glest_pickpocket_back);
+	info_addchoice(dia_glest_pickpocket, dialog_pickpocket, dia_glest_pickpocket_doit);
+};
+
+func void dia_glest_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_glest_pickpocket);
+};
+
+func void dia_glest_pickpocket_back() {
+    info_clearchoices(dia_glest_pickpocket);
+};
+
+instance dia_non_2094_pickpocket(c_info) {
+    npc = non_2094_glest;
+    nr = 900;
+    condition = dia_non_2094_pickpocket_condition;
+    information = dia_non_2094_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_2094_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 25);
+};
+
+func void dia_non_2094_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_2094_pickpocket);
+	info_addchoice(dia_non_2094_pickpocket, dialog_back, dia_non_2094_pickpocket_back);
+	info_addchoice(dia_non_2094_pickpocket, dialog_pickpocket, dia_non_2094_pickpocket_doit);
+};
+
+func void dia_non_2094_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_2094_pickpocket);
+};
+
+func void dia_non_2094_pickpocket_back() {
+    info_clearchoices(dia_non_2094_pickpocket);
+};

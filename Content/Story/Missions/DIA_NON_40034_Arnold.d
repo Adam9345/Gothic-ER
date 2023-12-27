@@ -464,3 +464,31 @@ FUNC VOID DIA_Arnold_Bears_Are_Die_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_arnold_pickpocket(c_info) {
+    npc = non_40034_arnold;
+    nr = 900;
+    condition = dia_arnold_pickpocket_condition;
+    information = dia_arnold_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_arnold_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_arnold_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_arnold_pickpocket);
+	info_addchoice(dia_arnold_pickpocket, dialog_back, dia_arnold_pickpocket_back);
+	info_addchoice(dia_arnold_pickpocket, dialog_pickpocket, dia_arnold_pickpocket_doit);
+};
+
+func void dia_arnold_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_arnold_pickpocket);
+};
+
+func void dia_arnold_pickpocket_back() {
+    info_clearchoices(dia_arnold_pickpocket);
+};

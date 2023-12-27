@@ -101,3 +101,32 @@ func void DIA_Uciekinier_HELLO_Smierc ()
     AI_StartState (self,ZS_ATTACK,1,"");
 	
 };
+
+instance dia_nov_1380_pickpocket(c_info) {
+    npc = nov_1380_artfiactsthief;
+    nr = 900;
+    condition = dia_nov_1380_pickpocket_condition;
+    information = dia_nov_1380_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_nov_1380_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 25);
+};
+
+func void dia_nov_1380_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_nov_1380_pickpocket);
+	info_addchoice(dia_nov_1380_pickpocket, dialog_back, dia_nov_1380_pickpocket_back);
+	info_addchoice(dia_nov_1380_pickpocket, dialog_pickpocket, dia_nov_1380_pickpocket_doit);
+};
+
+func void dia_nov_1380_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_nov_1380_pickpocket);
+};
+
+func void dia_nov_1380_pickpocket_back() {
+    info_clearchoices(dia_nov_1380_pickpocket);
+};

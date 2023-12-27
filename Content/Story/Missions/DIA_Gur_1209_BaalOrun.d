@@ -534,5 +534,32 @@ FUNC VOID DIA_BaalOrun_G_Plants_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_baalorun_pickpocket(c_info) {
+    npc = gur_1209_baalorun;
+    nr = 900;
+    condition = dia_baalorun_pickpocket_condition;
+    information = dia_baalorun_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_baalorun_pickpocket_condition() {
+	e_beklauen(baseThfChanceGUR, 35);
+};
+
+func void dia_baalorun_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_baalorun_pickpocket);
+	info_addchoice(dia_baalorun_pickpocket, dialog_back, dia_baalorun_pickpocket_back);
+	info_addchoice(dia_baalorun_pickpocket, dialog_pickpocket, dia_baalorun_pickpocket_doit);
+};
+
+func void dia_baalorun_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_baalorun_pickpocket);
+};
+
+func void dia_baalorun_pickpocket_back() {
+    info_clearchoices(dia_baalorun_pickpocket);
+};
 

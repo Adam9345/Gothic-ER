@@ -349,3 +349,32 @@ FUNC VOID DIA_Miguel_QuentinUcieczka_Info()
     AI_Output (self, other ,"DIA_Miguel_QuentinUcieczka_03_09"); //Nie, to jego sprawy. Gomez nawet nie wie o naszej ucieczce. 
     AI_Output (self, other ,"DIA_Miguel_QuentinUcieczka_03_10"); //Przypuszczam, ¿e Kruk chce wszystko zatuszowaæ, albo jeszcze coœ zrobiæ w Obozie.
 };
+
+instance dia_miguel_pickpocket(c_info) {
+    npc = ban_1600_miguel;
+    nr = 900;
+    condition = dia_miguel_pickpocket_condition;
+    information = dia_miguel_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_miguel_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_miguel_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_miguel_pickpocket);
+	info_addchoice(dia_miguel_pickpocket, dialog_back, dia_miguel_pickpocket_back);
+	info_addchoice(dia_miguel_pickpocket, dialog_pickpocket, dia_miguel_pickpocket_doit);
+};
+
+func void dia_miguel_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_miguel_pickpocket);
+};
+
+func void dia_miguel_pickpocket_back() {
+    info_clearchoices(dia_miguel_pickpocket);
+};

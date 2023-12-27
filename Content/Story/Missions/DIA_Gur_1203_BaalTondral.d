@@ -702,7 +702,34 @@ FUNC VOID DIA_BaalTondral_Ghaston_Dead_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_baaltondral_pickpocket(c_info) {
+    npc = gur_1203_baaltondral;
+    nr = 900;
+    condition = dia_baaltondral_pickpocket_condition;
+    information = dia_baaltondral_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_baaltondral_pickpocket_condition() {
+	e_beklauen(baseThfChanceGUR, 35);
+};
+
+func void dia_baaltondral_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_baaltondral_pickpocket);
+	info_addchoice(dia_baaltondral_pickpocket, dialog_back, dia_baaltondral_pickpocket_back);
+	info_addchoice(dia_baaltondral_pickpocket, dialog_pickpocket, dia_baaltondral_pickpocket_doit);
+};
+
+func void dia_baaltondral_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_baaltondral_pickpocket);
+};
+
+func void dia_baaltondral_pickpocket_back() {
+    info_clearchoices(dia_baaltondral_pickpocket);
+};
 
 
 

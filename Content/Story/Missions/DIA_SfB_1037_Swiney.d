@@ -518,7 +518,34 @@ FUNC VOID DIA_SWINEY_ZYJE_Info()
 	GrabarzIsDead1 = TRUE;
 };
 
+instance dia_swiney_pickpocket(c_info) {
+    npc = sfb_1037_swiney;
+    nr = 900;
+    condition = dia_swiney_pickpocket_condition;
+    information = dia_swiney_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_swiney_pickpocket_condition() {
+	e_beklauen(baseThfChanceSFB, 30);
+};
+
+func void dia_swiney_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_swiney_pickpocket);
+	info_addchoice(dia_swiney_pickpocket, dialog_back, dia_swiney_pickpocket_back);
+	info_addchoice(dia_swiney_pickpocket, dialog_pickpocket, dia_swiney_pickpocket_doit);
+};
+
+func void dia_swiney_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_swiney_pickpocket);
+};
+
+func void dia_swiney_pickpocket_back() {
+    info_clearchoices(dia_swiney_pickpocket);
+};
 
 
 

@@ -104,3 +104,31 @@ FUNC VOID DIA_Torbeld_New_members_Info()
     AI_Output (self, other ,"DIA_Torbeld_New_members_03_21"); //A i widzisz.
 };
 
+instance dia_torbeld_pickpocket(c_info) {
+    npc = non_40154_torbeld;
+    nr = 900;
+    condition = dia_torbeld_pickpocket_condition;
+    information = dia_torbeld_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_torbeld_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 35);
+};
+
+func void dia_torbeld_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_torbeld_pickpocket);
+	info_addchoice(dia_torbeld_pickpocket, dialog_back, dia_torbeld_pickpocket_back);
+	info_addchoice(dia_torbeld_pickpocket, dialog_pickpocket, dia_torbeld_pickpocket_doit);
+};
+
+func void dia_torbeld_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_torbeld_pickpocket);
+};
+
+func void dia_torbeld_pickpocket_back() {
+    info_clearchoices(dia_torbeld_pickpocket);
+};

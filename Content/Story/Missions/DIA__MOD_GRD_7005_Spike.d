@@ -190,3 +190,31 @@ FUNC VOID DIA_Spike_ZND_Info()
 	
 };
 
+instance dia_spike_pickpocket(c_info) {
+    npc = grd_7005_spike;
+    nr = 900;
+    condition = dia_spike_pickpocket_condition;
+    information = dia_spike_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_spike_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_spike_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_spike_pickpocket);
+	info_addchoice(dia_spike_pickpocket, dialog_back, dia_spike_pickpocket_back);
+	info_addchoice(dia_spike_pickpocket, dialog_pickpocket, dia_spike_pickpocket_doit);
+};
+
+func void dia_spike_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_spike_pickpocket);
+};
+
+func void dia_spike_pickpocket_back() {
+    info_clearchoices(dia_spike_pickpocket);
+};

@@ -620,4 +620,31 @@ FUNC VOID DIA_Flint_HeroLose_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_flint_pickpocket(c_info) {
+    npc = stt_2046_flint;
+    nr = 900;
+    condition = dia_flint_pickpocket_condition;
+    information = dia_flint_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_flint_pickpocket_condition() {
+	e_beklauen(baseThfChanceSTT, 30);
+};
+
+func void dia_flint_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_flint_pickpocket);
+	info_addchoice(dia_flint_pickpocket, dialog_back, dia_flint_pickpocket_back);
+	info_addchoice(dia_flint_pickpocket, dialog_pickpocket, dia_flint_pickpocket_doit);
+};
+
+func void dia_flint_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_flint_pickpocket);
+};
+
+func void dia_flint_pickpocket_back() {
+    info_clearchoices(dia_flint_pickpocket);
+};

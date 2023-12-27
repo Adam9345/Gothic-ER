@@ -138,3 +138,32 @@ FUNC INT DIA_Karl_GOMEZDIE_Condition()
 	AI_StopProcessInfos (self);
 };
 */
+
+instance dia_non_3921_pickpocket(c_info) {
+    npc = non_3921_wiezien;
+    nr = 900;
+    condition = dia_non_3921_pickpocket_condition;
+    information = dia_non_3921_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_non_3921_pickpocket_condition() {
+	e_beklauen(baseThfChanceNON, 5);
+};
+
+func void dia_non_3921_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_non_3921_pickpocket);
+	info_addchoice(dia_non_3921_pickpocket, dialog_back, dia_non_3921_pickpocket_back);
+	info_addchoice(dia_non_3921_pickpocket, dialog_pickpocket, dia_non_3921_pickpocket_doit);
+};
+
+func void dia_non_3921_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_non_3921_pickpocket);
+};
+
+func void dia_non_3921_pickpocket_back() {
+    info_clearchoices(dia_non_3921_pickpocket);
+};

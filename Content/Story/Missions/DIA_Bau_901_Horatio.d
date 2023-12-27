@@ -625,3 +625,31 @@ FUNC VOID DIA_Horatio_TalkingFoster_Info()
 	B_LogEntry           (PoszkodowaniZbieracze,"Horacy podejrzewa Fostera o udzia³ w ca³ym zamieszaniu. Mówi, ¿e zbieracz traktuje swoja skrzyniê jak najwiêkszy skarb. Jest w szopie gdzie zbieracze chodz¹ spaæ. Klucz trzyma Foster ale sprawne rêce z³odzieja mog¹ go wykraœæ. Ktoœ w Nowym Obozie z pewnoœci¹ mi pomo¿e. ");
 };
 
+instance dia_horatio_pickpocket(c_info) {
+    npc = bau_901_horatio;
+    nr = 900;
+    condition = dia_horatio_pickpocket_condition;
+    information = dia_horatio_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_horatio_pickpocket_condition() {
+	e_beklauen(baseThfChanceBAU, 18);
+};
+
+func void dia_horatio_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_horatio_pickpocket);
+	info_addchoice(dia_horatio_pickpocket, dialog_back, dia_horatio_pickpocket_back);
+	info_addchoice(dia_horatio_pickpocket, dialog_pickpocket, dia_horatio_pickpocket_doit);
+};
+
+func void dia_horatio_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_horatio_pickpocket);
+};
+
+func void dia_horatio_pickpocket_back() {
+    info_clearchoices(dia_horatio_pickpocket);
+};

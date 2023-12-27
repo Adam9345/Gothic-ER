@@ -256,4 +256,31 @@ FUNC VOID DIA_Orik_PORACHUNKI_Info()
 	B_GiveXP (200);	
 };
 
+instance dia_orik_pickpocket(c_info) {
+    npc = sld_701_orik;
+    nr = 900;
+    condition = dia_orik_pickpocket_condition;
+    information = dia_orik_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_orik_pickpocket_condition() {
+	e_beklauen(baseThfChanceSLD, 40);
+};
+
+func void dia_orik_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_orik_pickpocket);
+	info_addchoice(dia_orik_pickpocket, dialog_back, dia_orik_pickpocket_back);
+	info_addchoice(dia_orik_pickpocket, dialog_pickpocket, dia_orik_pickpocket_doit);
+};
+
+func void dia_orik_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_orik_pickpocket);
+};
+
+func void dia_orik_pickpocket_back() {
+    info_clearchoices(dia_orik_pickpocket);
+};

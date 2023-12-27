@@ -709,3 +709,31 @@ FUNC VOID DIA_Darrion_LearnSmith_02_Info()
 	
 };
 
+instance dia_darrion_pickpocket(c_info) {
+    npc = nov_1312_darrion;
+    nr = 900;
+    condition = dia_darrion_pickpocket_condition;
+    information = dia_darrion_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_darrion_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 30);
+};
+
+func void dia_darrion_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_darrion_pickpocket);
+	info_addchoice(dia_darrion_pickpocket, dialog_back, dia_darrion_pickpocket_back);
+	info_addchoice(dia_darrion_pickpocket, dialog_pickpocket, dia_darrion_pickpocket_doit);
+};
+
+func void dia_darrion_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_darrion_pickpocket);
+};
+
+func void dia_darrion_pickpocket_back() {
+    info_clearchoices(dia_darrion_pickpocket);
+};

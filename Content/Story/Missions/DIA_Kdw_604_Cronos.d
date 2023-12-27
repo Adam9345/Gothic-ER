@@ -1196,7 +1196,34 @@ FUNC VOID DIA_Cronos_DP_RIORDIAN_Go_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_cronos_pickpocket(c_info) {
+    npc = kdw_604_cronos;
+    nr = 900;
+    condition = dia_cronos_pickpocket_condition;
+    information = dia_cronos_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_cronos_pickpocket_condition() {
+	e_beklauen(baseThfChanceKDW, 50);
+};
+
+func void dia_cronos_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_cronos_pickpocket);
+	info_addchoice(dia_cronos_pickpocket, dialog_back, dia_cronos_pickpocket_back);
+	info_addchoice(dia_cronos_pickpocket, dialog_pickpocket, dia_cronos_pickpocket_doit);
+};
+
+func void dia_cronos_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_cronos_pickpocket);
+};
+
+func void dia_cronos_pickpocket_back() {
+    info_clearchoices(dia_cronos_pickpocket);
+};
 
 
 

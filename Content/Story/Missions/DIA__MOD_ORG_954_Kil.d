@@ -60,3 +60,32 @@ FUNC VOID DIA_Kil_THIEF_Info()
     Npc_SetTarget (ORG_955_Fil, other);
     AI_StartState (ORG_955_Fil, ZS_ATTACK, 1, "");
 };
+
+instance dia_kil_pickpocket(c_info) {
+    npc = org_954_kil;
+    nr = 900;
+    condition = dia_kil_pickpocket_condition;
+    information = dia_kil_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_kil_pickpocket_condition() {
+	e_beklauen(baseThfChanceORG, 30);
+};
+
+func void dia_kil_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_kil_pickpocket);
+	info_addchoice(dia_kil_pickpocket, dialog_back, dia_kil_pickpocket_back);
+	info_addchoice(dia_kil_pickpocket, dialog_pickpocket, dia_kil_pickpocket_doit);
+};
+
+func void dia_kil_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_kil_pickpocket);
+};
+
+func void dia_kil_pickpocket_back() {
+    info_clearchoices(dia_kil_pickpocket);
+};

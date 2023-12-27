@@ -120,3 +120,32 @@ FUNC VOID DIA_Vlk_534_Success_Info()
     B_LogEntry               (CH1_BuddlerDanny,"Powiedzia³em Kopaczowi sprzed Obozu, ¿e jego kumpel straci³ ca³¹ rudê.");
 	B_GiveXP (150);
 };
+
+instance dia_vlk_534_pickpocket(c_info) {
+    npc = vlk_534_buddler;
+    nr = 900;
+    condition = dia_vlk_534_pickpocket_condition;
+    information = dia_vlk_534_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_vlk_534_pickpocket_condition() {
+	e_beklauen(baseThfChanceVLK, 20);
+};
+
+func void dia_vlk_534_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_vlk_534_pickpocket);
+	info_addchoice(dia_vlk_534_pickpocket, dialog_back, dia_vlk_534_pickpocket_back);
+	info_addchoice(dia_vlk_534_pickpocket, dialog_pickpocket, dia_vlk_534_pickpocket_doit);
+};
+
+func void dia_vlk_534_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_vlk_534_pickpocket);
+};
+
+func void dia_vlk_534_pickpocket_back() {
+    info_clearchoices(dia_vlk_534_pickpocket);
+};

@@ -473,5 +473,32 @@ FUNC VOID DIA_Gerard_NEED_HELP_Info()
     AI_StopProcessInfos	(self);
 };
 
+instance dia_gerard_pickpocket(c_info) {
+    npc = non_3900_gerard;
+    nr = 900;
+    condition = dia_gerard_pickpocket_condition;
+    information = dia_gerard_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_gerard_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 35);
+};
+
+func void dia_gerard_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_gerard_pickpocket);
+	info_addchoice(dia_gerard_pickpocket, dialog_back, dia_gerard_pickpocket_back);
+	info_addchoice(dia_gerard_pickpocket, dialog_pickpocket, dia_gerard_pickpocket_doit);
+};
+
+func void dia_gerard_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_gerard_pickpocket);
+};
+
+func void dia_gerard_pickpocket_back() {
+    info_clearchoices(dia_gerard_pickpocket);
+};
 

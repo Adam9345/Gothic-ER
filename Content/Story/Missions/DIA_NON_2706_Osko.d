@@ -409,7 +409,34 @@ FUNC VOID DIA_Osko_Przegrupowania_ENDGO()
 	AI_StopProcessInfos(self);
 };
 
+instance dia_osko_pickpocket(c_info) {
+    npc = non_2706_osko;
+    nr = 900;
+    condition = dia_osko_pickpocket_condition;
+    information = dia_osko_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_osko_pickpocket_condition() {
+	e_beklauen(baseThfChanceGRD, 30);
+};
+
+func void dia_osko_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_osko_pickpocket);
+	info_addchoice(dia_osko_pickpocket, dialog_back, dia_osko_pickpocket_back);
+	info_addchoice(dia_osko_pickpocket, dialog_pickpocket, dia_osko_pickpocket_doit);
+};
+
+func void dia_osko_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_osko_pickpocket);
+};
+
+func void dia_osko_pickpocket_back() {
+    info_clearchoices(dia_osko_pickpocket);
+};
 
 
 

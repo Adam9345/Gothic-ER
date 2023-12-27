@@ -289,3 +289,32 @@ FUNC VOID DIA_GorBoba_IHave_USW_Info()
 	Log_SetTopicStatus	(MieczGorBoby,	LOG_SUCCESS);
 	B_GiveXP(450);
 };
+
+instance dia_tpl_3927_pickpocket(c_info) {
+    npc = tpl_3927_gorboba;
+    nr = 900;
+    condition = dia_tpl_3927_pickpocket_condition;
+    information = dia_tpl_3927_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
+
+func int dia_tpl_3927_pickpocket_condition() {
+	e_beklauen(baseThfChanceTPL, 30);
+};
+
+func void dia_tpl_3927_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_tpl_3927_pickpocket);
+	info_addchoice(dia_tpl_3927_pickpocket, dialog_back, dia_tpl_3927_pickpocket_back);
+	info_addchoice(dia_tpl_3927_pickpocket, dialog_pickpocket, dia_tpl_3927_pickpocket_doit);
+};
+
+func void dia_tpl_3927_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_tpl_3927_pickpocket);
+};
+
+func void dia_tpl_3927_pickpocket_back() {
+    info_clearchoices(dia_tpl_3927_pickpocket);
+};

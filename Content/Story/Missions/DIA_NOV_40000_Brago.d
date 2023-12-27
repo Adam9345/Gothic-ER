@@ -348,7 +348,34 @@ FUNC VOID DIA_Brago_ER_WHO_Info()
     AI_Output (self, other ,"DIA_Brago_ER_WHO_03_05"); //A co mogê na tym zyskaæ? Jeœli nic to nie strzêpie sobie jêzyka kapujesz?
 };
 
+instance dia_brago_pickpocket(c_info) {
+    npc = nov_40000_brago;
+    nr = 900;
+    condition = dia_brago_pickpocket_condition;
+    information = dia_brago_pickpocket_info;
+    permanent = 1;
+    description = pickpocket_final;
+};
 
+func int dia_brago_pickpocket_condition() {
+	e_beklauen(baseThfChanceNOV, 35);
+};
+
+func void dia_brago_pickpocket_info() {
+	b_steal_message();
+	info_clearchoices(dia_brago_pickpocket);
+	info_addchoice(dia_brago_pickpocket, dialog_back, dia_brago_pickpocket_back);
+	info_addchoice(dia_brago_pickpocket, dialog_pickpocket, dia_brago_pickpocket_doit);
+};
+
+func void dia_brago_pickpocket_doit() {
+    d_beklauen();
+    info_clearchoices(dia_brago_pickpocket);
+};
+
+func void dia_brago_pickpocket_back() {
+    info_clearchoices(dia_brago_pickpocket);
+};
 
 
 
