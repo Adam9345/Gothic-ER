@@ -378,7 +378,7 @@ func void Update_Character_Menu()
 {
    // var int Mining;
     var string Smith;
-    Smith =  "Kowalstwo            -";                                
+    Smith =  "Kowalstwo       -";                                
     Update_Menu_Item("MENU_ITEM_TALENT_14_TITLE", Smith);
 	if (NPC_TALENT_SMITH == 1)
 	{
