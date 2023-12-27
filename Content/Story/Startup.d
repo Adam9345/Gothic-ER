@@ -3015,6 +3015,7 @@ FUNC VOID INIT_WORLD ()
 	Init_FastTravelMap_HK();
 	AF_ItemPreview_Init();
 	Init_CraftingSystem();
+	TorchHotKey_Init();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
  
