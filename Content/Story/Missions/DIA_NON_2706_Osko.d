@@ -1,0 +1,415 @@
+//========================================
+//-----------------> OPCJA *KONIEC* 
+//========================================
+
+INSTANCE DIA_osko_EXIT(C_INFO)
+{
+	npc             = NON_2706_osko;
+	nr              = 999;
+	condition	= DIA_osko_EXIT_Condition;
+	information	= DIA_osko_EXIT_Info;
+	permanent	= TRUE;
+	description     = DIALOG_ENDE;
+};
+
+FUNC INT DIA_osko_EXIT_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_osko_EXIT_Info()
+{
+	AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> WhoJu
+//========================================
+
+INSTANCE DIA_osko_WhoJu (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 4;
+   condition    = DIA_osko_WhoJu_Condition;
+   information  = DIA_osko_WhoJu_Info;
+   permanent	= false;
+   description	= "Kim jesteœ?";
+};
+
+FUNC INT DIA_osko_WhoJu_Condition()
+{
+    return TRUE;
+};
+
+FUNC VOID DIA_osko_WhoJu_Info()
+{
+    AI_Output (other, self ,"DIA_osko_WhoJu_15_01"); //Kim jesteœ?
+    AI_Output (self, other ,"DIA_osko_WhoJu_03_02"); //Hmm? Jestem Osko. Polujê na orków razem z band¹ Wilsona. Mia³eœ du¿o szczêœcia, ¿e uda³o ci siê tu dotrzeæ w jednym kawa³ku.
+	AI_Output (other, self ,"DIA_osko_WhoJu_15_03"); //Wspi¹³em siê tu po œcianie skalnej.
+	AI_Output (self, other ,"DIA_osko_WhoJu_03_04"); //To oczywiste. Nie da³byœ rady przejœæ od strony Ziem Orków. Wejœcie do obozu jest zabarykadowane. Poza tym nik³e szanse, ¿e w ogóle byœ do niego dotar³. 
+	AI_Output (self, other ,"DIA_osko_WhoJu_03_05"); //Nie zmienia to faktu, ¿e droga przez ska³y te¿ nie jest ³atwa. Jeden fa³szywy ruch i l¹dujesz na ziemi ze skrêconym karkiem.
+	AI_Output (self, other ,"DIA_osko_WhoJu_03_06"); //Poni¿ej, w szczelinie skalnej mieszka pewien staruszek. Rozmawia³em z nim kiedyœ. Uciek³ ze Starego Obozu kilka lat temu, a ja obieca³em, ¿e go nie wydam.
+	AI_Output (self, other ,"DIA_osko_WhoJu_03_07"); //No bo w sumie po co? Nie nadepn¹³ mi na odcisk, a za Stra¿nikami z Obozu niezbyt przepadam, wiêc niech sobie tu ¿yje. 
+	AI_Output (other, self ,"DIA_osko_WhoJu_15_08"); //Do czego zmierzasz?
+	AI_Output (self, other ,"DIA_osko_WhoJu_03_09"); //Ten staruszek pomimo lat wci¹¿ potrafi siê nieŸle wspinaæ. Myœlê, ¿e gdybyœ z nim pogada³, móg³by ciê czegoœ nauczyæ.
+	Log_CreateTopic (GE_TeacherOW,LOG_NOTE);
+	B_LogEntry		(GE_TeacherOW,"£owca orków Osko zdradzi³ mi, ¿e w jaskini w pobli¿u ich obozu mieszka niezwykle zrêczny staruszek. Jeœli go poproszê, mo¿e nauczy mnie akrobatyki.");
+};
+
+//========================================
+//-----------------> HELLO5
+//========================================
+
+INSTANCE DIA_osko_HELLO5 (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 5;
+   condition    = DIA_osko_HELLO5_Condition;
+   information  = DIA_osko_HELLO5_Info;
+   permanent	= FALSE;
+   description	= "Dlaczego polujecie na orków?";
+};
+
+FUNC INT DIA_osko_HELLO5_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_osko_WhoJu))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_HELLO5_Info()
+{
+    AI_Output (other, self ,"DIA_osko_HELLO5_15_01"); //Dlaczego polujecie na orków?
+    AI_Output (self, other ,"DIA_osko_HELLO5_03_02"); //A dlaczego by nie? Co mamy lepszego do roboty pod Barier¹?
+    AI_Output (self, other ,"DIA_osko_HELLO5_03_03"); //WyobraŸ sobie, ¿e kiedyœ uciekniemy z tego okropnego miejsca. Wtedy umiejêtnoœci siê przydadz¹. Zw³aszcza, ¿e na kontynencie trwa wojna.
+    AI_Output (self, other ,"DIA_osko_HELLO5_03_04"); //Skoñczy³y siê czasy w których do stra¿y miejskiej przyjmowa³o siê byle kogo. W czasie wojny s³abi pracuj¹ w polu, a silni walcz¹. 
+	AI_Output (other, self ,"DIA_osko_HELLO5_15_05"); //Dobrze rozumiem, ¿e jeœli uda³oby ci siê st¹d uciec, to zaci¹gn¹³byœ siê do stra¿y miejskiej, by walczyæ z orkami?
+	AI_Output (self, other ,"DIA_osko_HELLO5_03_06"); //Gdybym mia³ okazjê, to owszem. Stra¿nicy dostaj¹ ¿o³d, zni¿ki w burdelach i mieszkañcy ich szanuj¹. 
+	AI_Output (self, other ,"DIA_osko_HELLO5_03_07"); //Od czasu do czasu musia³bym tylko ubiæ jakiegoœ orka, który niebezpiecznie siê zbli¿y³. 
+	AI_Output (self, other ,"DIA_osko_HELLO5_03_08"); //Nic nadzwyczajnego. Tutaj robiê to codziennie. 
+};
+
+//========================================
+//-----------------> HELLO6
+//========================================
+
+INSTANCE DIA_osko_HELLO6 (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 6;
+   condition    = DIA_osko_HELLO6_Condition;
+   information  = DIA_osko_HELLO6_Info;
+   permanent	= FALSE;
+   description	= "To trudna praca?";
+};
+
+FUNC INT DIA_osko_HELLO6_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_osko_WhoJu))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_HELLO6_Info()
+{
+    AI_Output (other, self ,"DIA_osko_HELLO6_15_01"); //To trudna praca?
+    AI_Output (self, other ,"DIA_osko_HELLO6_03_02"); //Oczywiœcie, ¿e tak. Orkowie to twardzi przeciwnicy.
+    AI_Output (self, other ,"DIA_osko_HELLO6_03_03"); //Trzeba atakowaæ szybko i mocno. Nie mo¿na siê wahaæ.
+    AI_Output (self, other ,"DIA_osko_HELLO6_03_04"); //Aby dobrze walczyæ z orkami, musisz p³ynnie pos³ugiwaæ siê swoim orê¿em.
+    AI_Output (self, other ,"DIA_osko_HELLO6_03_05"); //Nie zawsze liczy siê tylko si³a.
+};
+
+//========================================
+//-----------------> LegendaModdingu
+//========================================
+
+INSTANCE DIA_osko_LegendaModdingu (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 6;
+   condition    = DIA_osko_LegendaModdingu_Condition;
+   information  = DIA_osko_LegendaModdingu_Info;
+   permanent	= FALSE;
+   description	= "Mo¿esz mi opowiedzieæ jeszcze coœ ciekawego?";
+};
+
+FUNC INT DIA_osko_LegendaModdingu_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_osko_WhoJu))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_LegendaModdingu_Info()
+{
+    AI_Output (other, self ,"DIA_osko_LegendaModdingu_15_01"); //Mo¿esz mi opowiedzieæ jeszcze coœ ciekawego?
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_02"); //W³aœnie przypomnia³em sobie pewn¹ legendê...
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_03"); //Wieki temu, jeszcze przed powstaniem Bariery w Górniczej Dolinie zjawi³ siê tajemniczy Przybysz.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_04"); //By³ to cz³owiek niezwykle uzdolniony. Ponoæ walczy³ mieczem niczym najznamienitszy z wojowników, a cios jego by³ równy sile uderzaj¹cej ³apy trolla.
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_05"); //Oko jego by³o stworzone do ³uku, a rêka mimo i¿ ciê¿ka potrafi³a wyci¹gn¹æ z kieszeni bogaczy najró¿niejsze skarby. 
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_06"); //I ta w³aœnie rêka pewnego dnia go zawiod³a. Nasz tajemniczy Przybysz wybra³ ongiœ siê do klasztoru Zmiennokszta³tnych.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_07"); //Zale¿a³o mu ponoæ na jakimœ cennym artefakcie. W klasztorze opisa³ siê jako handlarza.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_08"); //Mia³ ze sob¹ ró¿ne sk³adniki alchemiczne i rzemieœlnicze. Od wêgla, po sztabki stali, a¿ po przynêtê dla ryb. 
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_09"); //Zmiennokszta³tni uwierzyli w jego historiê i wpuœcili do klasztoru. Spêdzi³ tam kilka dni.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_10"); //Pi¹tego dnia dokona³ odwa¿nej próby kradzie¿y na najznamienitszym spoœród cz³onków gildii. Natychmiast go przy³apano.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_11"); //Jego niedosz³a ofiara wpad³a w sza³. Przybysz musia³ zostaæ ukarany. 
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_12"); //Jako, ¿e Zmiennokszta³tni doskonalili sztukê transmutacji, postanowili wykorzystaæ go jako swój eksperyment.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_13"); //Przetestowali na nim zaklêcie przemiany w k¹sacza. S³uch ciê nie myli. W k¹sacza...
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_14"); //Czar zadzia³a³. Cz³owiek w jednej chwili sta³ siê potworem, ale nie utraci³ swojej si³y.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_15"); //Powali³ magusów i puœci³ siê w szaleñczy pêd, który zakoñczy³ dopiero na Ziemiach Orków.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_16"); //Legenda g³osi, ¿e krêci siê tutaj po dziœ dzieñ. Zgin¹æ bowiem mo¿e tylko z rêki wojownika. Staroœæ mu niestraszna.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_17"); //Wiêc gdybyœ kiedyœ przy szlachtowaniu k¹saczy w ciele jednego z nich znalaz³ rozmaite skarby, wêgle i stal najcudowniejsz¹...
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_18"); //... to wiec ¿eœ zaszlachtowa³ pradawnego Przybysza, wojownika, handlarza, co Zmiennokszta³tnych magusów oszukaæ pragn¹³.
+};
+	
+	
+//========================================
+//-----------------> PROWOKACJA_DO_QUESTA
+//========================================
+
+INSTANCE DIA_osko_PROWOKACJA_DO_QUESTA (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 1;
+   condition    = DIA_osko_PROWOKACJA_DO_QUESTA_Condition;
+   information  = DIA_osko_PROWOKACJA_DO_QUESTA_Info;
+   permanent	= FALSE;
+   description	= "Jak tam sytuacja w obozie?";
+};
+
+FUNC INT DIA_osko_PROWOKACJA_DO_QUESTA_Condition()
+{
+    return TRUE;
+};
+
+FUNC VOID DIA_osko_PROWOKACJA_DO_QUESTA_Info()
+{
+    AI_Output (other, self ,"DIA_osko_PROWOKACJA_DO_QUESTA_15_01"); //Jak tam sytuacja w obozie?
+    AI_Output (self, other ,"DIA_osko_PROWOKACJA_DO_QUESTA_03_02"); //Jak na razie wszystko pod kontrol¹, orkowie trzymaj¹ siê od nas z dala. A jak któryœ z nich zapuœci siê zbyt blisko naszego obozu, szybko tego ¿a³uje.
+	AI_Output (self, other ,"DIA_osko_PROWOKACJA_DO_QUESTA_03_03"); //Ostatnio jednak zdarzy³o siê coœ dziwnego, jak masz chwilkê mogê ci opowiedzieæ.
+    AI_Output (other, self ,"DIA_osko_PROWOKACJA_DO_QUESTA_15_04"); //Mam czas, opowiadaj.
+    AI_Output (self, other ,"DIA_osko_PROWOKACJA_DO_QUESTA_03_05"); //Najpierw przynieœ mi piwo, bo trochê zasch³o mi w ustach.
+};
+
+//========================================
+//-----------------> QUEST_HUGO_START
+//========================================
+
+INSTANCE DIA_osko_QUEST_HUGO_START (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 2;
+   condition    = DIA_osko_QUEST_HUGO_START_Condition;
+   information  = DIA_osko_QUEST_HUGO_START_Info;
+   permanent	= FALSE;
+   description	= "Proszê bardzo. Wypij moje zdrowie.";
+};
+
+FUNC INT DIA_osko_QUEST_HUGO_START_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_osko_PROWOKACJA_DO_QUESTA))
+    && (Npc_HasItems (other, ItFoBeer) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_QUEST_HUGO_START_Info()
+{
+    AI_Output (other, self ,"DIA_osko_QUEST_HUGO_START_15_01"); //Proszê bardzo. Wypij moje zdrowie.
+    B_GiveInvItems (other, self, ItFoBeer, 1);
+	AI_StandUp (self);
+    AI_UseItem (self, ItFoBeer);
+    AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_02"); //Dziêki. No wiêc tak... W naszym obozie jeszcze kilka dni temu by³ jeszcze jeden ³owca. Nazywa³ siê Hugo i trochê za bardzo interesowa³ siê orkow¹ kultur¹. 
+	AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_03"); //Wiesz, zanim wsadzi³ jakiemuœ orkowi topór w dupê, wpierw trochê go torturowa³, pytaj¹c o ró¿ne rzeczy.
+    AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_04"); //W ka¿dym razie jakiœ tydzieñ temu walczyliœmy z grupk¹ orków w ruinach starej Cytadeli, na najwy¿szej górze Kolonii. 
+	AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_05"); //Hugo po walce znalaz³ przy zw³okach orkowego przywódcy jak¹œ mapê. Po tym jak wróciliœmy do obozu, studiowa³ j¹ przez dwa dni, po czym znikn¹³ bez œladu nikomu nic nie mówi¹c.
+    AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_06"); //Ja i reszta ch³opaków jesteœmy trochê tym faktem zmartwieni. Hugo to œwietny wojownik i wie jak traktowaæ orków. Szkoda by³oby straciæ kogoœ takiego. Jeœli gdzieœ go spotkasz, daj mi znaæ. 
+    AI_Output (other, self ,"DIA_osko_QUEST_HUGO_START_15_07"); //W porz¹dku. Jeœli go gdzieœ spotkam, to siê o tym dowiesz.
+    MIS_HunterHugo = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_HunterHugo, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_HunterHugo, LOG_RUNNING);
+    B_LogEntry               (CH1_HunterHugo,"Osko zdradzi³ mi, ¿e w obozie ³owców orków by³ jeszcze jeden myœliwy imieniem Hugo. Ponoæ bardzo interesowa³a go kultura orków. By³ dosyæ osobliwym cz³owiekiem, ale potrafi³ sobie poradziæ w niebezpieczeñstwie. Muszê go poszukaæ. Z pewnoœci¹ jest gdzieœ w pobli¿u obozu. ");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> ODKRYLEM
+//========================================
+
+INSTANCE DIA_osko_ODKRYLEM (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 1;
+   condition    = DIA_osko_ODKRYLEM_Condition;
+   information  = DIA_osko_ODKRYLEM_Info;
+   permanent	= FALSE;
+   description	= "Odnalaz³em Hugo, pomog³em mu w pewnej sprawie. Powinien wkrótce wróciæ.";
+};
+
+FUNC INT DIA_osko_ODKRYLEM_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Hugo_HELLO5))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_ODKRYLEM_Info()
+{
+    AI_Output (other, self ,"DIA_osko_ODKRYLEM_15_01"); //Odnalaz³em Hugo, pomog³em mu w pewnej sprawie. Powinien wkrótce wróciæ.
+    AI_Output (self, other ,"DIA_osko_ODKRYLEM_03_02"); //Dobra robota, cieszê siê, ¿e taki kawa³ wojownika jak on nie da³ siê tak ³atwo zabiæ. Oto 100 bry³ek rudy za informacje.
+    AI_Output (other, self ,"DIA_osko_ODKRYLEM_15_03"); //Dziêki. 
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
+    B_LogEntry     (CH1_HunterHugo,"Powiedzia³em Osko o tym, ¿e znalaz³em Hugo i pomog³em mu rozwi¹zaæ jego problemy.");
+    Log_SetTopicStatus       (CH1_HunterHugo, LOG_SUCCESS);
+    MIS_HunterHugo = LOG_SUCCESS;
+
+    B_GiveXP (200);
+};
+
+
+//--------------------------------------------------------------------------------1.6.1-----------------------------------------------------------------------------------------------
+
+//========================================
+//-----------------> Przegrupowania Orków
+//========================================
+
+INSTANCE DIA_Osko_Przegrupowania_Orkow (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 4;
+   condition    = DIA_Osko_Przegrupowania_Orkow_Condition;
+   information  = DIA_Osko_Przegrupowania_Orkow_Info;
+   permanent	= false;
+   description	= "Szykuje siê powa¿na robota.";
+};
+
+FUNC INT DIA_Osko_Przegrupowania_Orkow_Condition()
+{
+	if (Npc_KnowsInfo(hero,DIA_Wilson_Przegrupowania_Prin))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Osko_Przegrupowania_Orkow_Info()
+{
+    AI_Output (other, self ,"DIA_Osko_Przegrupowania_Orkow_15_01"); //Szykuje siê powa¿na robota.
+    AI_Output (self, other ,"DIA_Osko_Przegrupowania_Orkow_03_02"); //Zak³adam, ¿e ma to coœ wspólnego z ostatnimi manewrami wœród Orków.
+	AI_Output (other, self ,"DIA_Osko_Przegrupowania_Orkow_15_03"); //Zgad³eœ. Nale¿y zabiæ ich trzech hersztów. Wilson mówi³, ¿e mamy to zrobiæ razem z Rakusem.
+	AI_Output (self, other ,"DIA_Osko_Przegrupowania_Orkow_03_04"); //Wreszcie coœ zaczê³o siê dziaæ! Ju¿ zacz¹³em siê nudziæ.
+	AI_Output (self, other ,"DIA_Osko_Przegrupowania_Orkow_03_05"); //Jeœli chodzi o mnie mo¿emy ruszaæ natychmiast. Bêdê czeka³ przed obozem.
+    Npc_ExchangeRoutine(NON_2706_osko,"POWait");
+	
+};
+
+
+
+//========================================
+//-----------------> Przegrupowania Orków
+//========================================
+
+INSTANCE DIA_Osko_Przegrupowania_GR1 (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 4;
+   condition    = DIA_Osko_Przegrupowania_GR1_Condition;
+   information  = DIA_Osko_Przegrupowania_GR1_Info;
+   permanent	= false;
+   important    = TRUE;
+};
+
+FUNC INT DIA_Osko_Przegrupowania_GR1_Condition()
+{
+	if (Npc_IsDead (OrcGeneral_Move_01)) && (Npc_KnowsInfo(hero,DIA_Rakus_Atak_Orkow))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Osko_Przegrupowania_GR1_Info()
+{
+    AI_GotoNpc			(self,	hero);
+    AI_Output (self, other ,"DIA_Osko_Przegrupowania_GR1_03_01"); //Dobry pocz¹tek. Kocham tê robotê.
+    AI_Output (other, self ,"DIA_Osko_Przegrupowania_GR1_15_02"); //W³aœciwy cz³owiek na w³aœciwym miejscu. Ale pogadamy póŸniej teraz czas na kolejnego dowódce.
+    B_LogEntry               (PrzegrupowaniaOrkow,"Pokonaliœmy pierwszego dowódcê Orków. Dobry pocz¹tek.");
+};
+
+
+
+
+//========================================
+//-----------------> Przegrupowania Orków
+//========================================
+
+Func void Hero_Teleport_PO()
+{
+
+AI_Teleport(hero,"LOCATION_02_05");
+AI_StopProcessInfos(self);
+};
+
+
+INSTANCE DIA_Osko_Przegrupowania_GR3 (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 4;
+   condition    = DIA_Osko_Przegrupowania_GR3_Condition;
+   information  = DIA_Osko_Przegrupowania_GR3_Info;
+   permanent	= false;
+   important    = TRUE;
+};
+
+FUNC INT DIA_Osko_Przegrupowania_GR3_Condition()
+{
+	if (Npc_IsDead (OrcGeneral_Move_03)) && (Npc_KnowsInfo(hero,DIA_Rakus_Atak_Orkow))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Osko_Przegrupowania_GR3_Info()
+{
+    AI_GotoNpc			(self,	hero);
+    AI_Output (self, other ,"DIA_Osko_Przegrupowania_GR3_03_01"); //Ufff. No i znów zrobiliœmy swoje. Orkowie nie prêdko siê otrz¹sn¹!.
+	AI_Output (other, self ,"DIA_Osko_Przegrupowania_GR3_15_02"); //I o to chodzi³o. Czas zameldowaæ to Wilsonowi.
+	B_LogEntry               (PrzegrupowaniaOrkow,"Ostatni orkowy dowódca nie ¿yje. Pora zameldowaæ to Wilsonowi.");
+	NON_2705_Rakus.aivar[AIV_PARTYMEMBER] = FALSE;
+	NON_2706_osko.aivar[AIV_PARTYMEMBER]  = FALSE;
+	Npc_ExchangeRoutine(NON_2705_Rakus,"Start");
+    Npc_ExchangeRoutine(NON_2706_osko, "Start");
+	
+	
+	Info_ClearChoices	(DIA_Osko_Przegrupowania_GR3);
+    Info_AddChoice		(DIA_Osko_Przegrupowania_GR3, "(Wróæ do obozu)", DIA_Osko_Przegrupowania_END);
+	Info_AddChoice		(DIA_Osko_Przegrupowania_GR3, "(Zajmij siê swoimi sprawami)", DIA_Osko_Przegrupowania_ENDGO);
+};
+
+FUNC VOID DIA_Osko_Przegrupowania_END()
+{
+AI_StopProcessInfos(self);
+AI_Teleport(Hero,"LOCATION_02_05");
+Hero_Teleport_PO();
+};
+
+
+FUNC VOID DIA_Osko_Przegrupowania_ENDGO()
+{
+  
+	AI_Output (other, self ,"DIA_Osko_Przegrupowania_ENDGO_15_01"); //Do zobaczenia w obozie.
+    AI_Output (self, other ,"DIA_Osko_Przegrupowania_ENDGO_03_02"); //Trzymaj siê.
+	AI_StopProcessInfos(self);
+};
+
+
+
+
+

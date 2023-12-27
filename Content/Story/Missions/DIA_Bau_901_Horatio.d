@@ -1,0 +1,627 @@
+//poprawione i sprawdzone -  
+
+// ************************************************************
+// 			  				   EXIT 
+// ************************************************************
+
+INSTANCE DIA_Horatio_EXIT (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 999;
+	condition	= DIA_Horatio_EXIT_Condition;
+	information	= DIA_Horatio_EXIT_Info;
+	permanent	= 1;
+	description = DIALOG_ENDE;
+};                       
+
+FUNC INT DIA_Horatio_EXIT_Condition()
+{
+	return 1;
+};
+
+FUNC VOID DIA_Horatio_EXIT_Info()
+{	
+	AI_StopProcessInfos	(self);
+};
+
+// ************************************************************
+// 			  				   Wasser
+// ************************************************************
+
+INSTANCE Info_Horatio_Wasser(C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 800;
+	condition	= Info_Horatio_Wasser_Condition;
+	information	= Info_Horatio_Wasser_Info;
+	permanent	= 1;
+	description = "Przysy³a mnie Lewus. Przynios³em wam wodê.";
+};                       
+
+FUNC INT Info_Horatio_Wasser_Condition()
+{
+	if	((Lefty_Mission==LOG_RUNNING) || ((Lefty_Mission==LOG_SUCCESS) && Npc_HasItems(other, ItFo_Potion_Water_01)))
+	&&	(self.aivar[AIV_DEALDAY] <= Wld_GetDay())
+	&& 	(MIS_BuntZbieraczy != LOG_SUCCESS)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID Info_Horatio_Wasser_Info()
+{
+	AI_Output(other,self,"Info_Horatio_Wasser_15_00"); //Przysy³a mnie Lewus. Przynios³em wam wodê.
+	if (Npc_HasItems(other, ItFo_Potion_Water_01)>=1)
+	{
+		AI_Output(self,other,"Info_Horatio_Wasser_09_01"); //Dziêki, kolego. Jeszcze trochê, a zacz¹³bym piæ z ka³u¿y!
+		B_GiveInvItems(other,self,ItFo_Potion_Water_01,1);
+		if ( C_BodystateContains(self, BS_SIT) )
+		{
+			AI_StandUp		(self);
+			AI_TurnToNpc	(self, hero);
+		};
+		AI_UseItem(self, ItFo_Potion_Water_01);
+		An_Bauern_verteilt = An_Bauern_verteilt+1;
+		if (An_Bauern_verteilt>=DurstigeBauern)
+		{
+			Lefty_Mission = LOG_SUCCESS;
+		};
+		self.aivar[AIV_DEALDAY] = Wld_GetDay()+1;
+	}
+	else
+	{
+		AI_Output(self,other,"Info_Horatio_Wasser_NOWATER_09_00"); //Chyba ci siê skoñczy³a! Trudno, wezmê trochê od innych.
+	};
+};
+
+// ************************************************************
+// 						Hallo
+// ************************************************************
+	var int horatio_trouble;
+// ************************************************************
+
+INSTANCE DIA_Horatio_Hello (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 1;
+	condition	= DIA_Horatio_Hello_Condition;
+	information	= DIA_Horatio_Hello_Info;
+	permanent	= 0;
+	important	= 1;
+};                       
+
+FUNC INT DIA_Horatio_Hello_Condition()
+{
+	return 1;
+};
+
+FUNC VOID DIA_Horatio_Hello_Info()
+{	
+	AI_GotoNpc	(self, hero);
+
+	AI_Output (self, other,"DIA_Horatio_Hello_09_00"); //Co tu robisz? Szukasz k³opotów?
+	
+	Info_ClearChoices(DIA_Horatio_Hello );
+	Info_AddChoice	 (DIA_Horatio_Hello, "K³opotów? A co - grozisz mi, robolu?!",DIA_Horatio_Hello_PissOff);
+	Info_AddChoice	 (DIA_Horatio_Hello, "Spokojnie! Jestem tu nowy."	,DIA_Horatio_Hello_BeCool);
+};
+
+func void DIA_Horatio_Hello_BeCool()
+{
+	AI_Output (other, self,"DIA_Horatio_Hello_BeCool_15_00"); //Spokojnie! Jestem tu nowy.
+	AI_Output (self, other,"DIA_Horatio_Hello_BeCool_09_01"); //Hmmm... Wygl¹dasz w porz¹dku. Chocia¿ nigdy nie wiadomo - zawsze znajdzie siê jakiœ nowy, który wyobra¿a sobie niewiadomo co.
+	Info_ClearChoices(DIA_Horatio_Hello );
+};
+
+func void DIA_Horatio_Hello_PissOff()
+{
+	AI_Output (other, self,"DIA_Horatio_Hello_PissOff_15_00"); //K³opotów? A co - grozisz mi, robolu?!
+	AI_Output (self, other,"DIA_Horatio_Hello_PissOff_09_01"); //Tylko dlatego, ¿e pracujê w polu, myœlisz, ¿e nie dam sobie rady z kimœ takim jak ty?
+	AI_Output (self, other,"DIA_Horatio_Hello_PissOff_09_02"); //No, jeœli szukasz guza, to chodŸ!
+	horatio_trouble = TRUE;
+	
+	Info_ClearChoices(DIA_Horatio_Hello);
+	AI_StopProcessInfos	(self);
+};
+
+// ************************************************************
+// 						SORRY (PERM)
+// ************************************************************
+
+INSTANCE DIA_Horatio_SORRY (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 1;
+	condition	= DIA_Horatio_SORRY_Condition;
+	information	= DIA_Horatio_SORRY_Info;
+	permanent	= 1;
+	description = "Przepraszam, nie chcia³em byæ z³oœliwy.";
+};                       
+
+FUNC INT DIA_Horatio_SORRY_Condition()
+{
+	if (horatio_trouble == TRUE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_SORRY_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_SORRY_15_00"); //Przepraszam, nie chcia³em byæ z³oœliwy.
+	AI_Output (self, other,"DIA_Horatio_SORRY_09_01"); //Trzeba by³o pomyœleæ o tym wczeœniej, ch³opcze.
+};
+
+// ************************************************************
+// 					Horatios Story
+// ************************************************************
+
+INSTANCE DIA_Horatio_Story (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 1;
+	condition	= DIA_Horatio_Story_Condition;
+	information	= DIA_Horatio_Story_Info;
+	permanent	= 0;
+	description = "Co ktoœ taki jak ty robi w towarzystwie zbieraczy?";
+};                       
+
+FUNC INT DIA_Horatio_Story_Condition()
+{
+	if ( (horatio_trouble==FALSE) && (Npc_KnowsInfo(hero,DIA_Horatio_Hello)) )
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_Story_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_Story_15_00"); //Co ktoœ taki jak ty robi w towarzystwie zbieraczy?
+	AI_Output (self, other,"DIA_Horatio_Story_09_01"); //Lee te¿ mnie o to pyta³. Nie chce ju¿ walczyæ, no chyba ¿e w obronie w³asnej.
+	AI_Output (self, other,"DIA_Horatio_Story_09_02"); //Raz zabi³em cz³owieka i jak dla mnie to by³o o jeden raz za du¿o. Zreszt¹ dlatego w³aœnie trafi³em do tej zapchlonej Kolonii.
+	AI_Output (other, self,"DIA_Horatio_Story_15_03"); //Jak to siê sta³o?
+	AI_Output (self, other,"DIA_Horatio_Story_09_04"); //Zwyk³a bójka w karczmie. Nie chcia³em zabiæ faceta - chyba po prostu za mocno go waln¹³em.
+	AI_Output (self, other,"DIA_Horatio_Story_09_05"); //By³em wtedy kowalem. NajwyraŸniej nie doceni³em w³asnej si³y.
+};
+
+// ************************************************************
+// 						Warum hier?
+// ************************************************************
+
+INSTANCE DIA_Horatio_WhyHere (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 1;
+	condition	= DIA_Horatio_WhyHere_Condition;
+	information	= DIA_Horatio_WhyHere_Info;
+	permanent	= 0;
+	description = "Dlaczego do³¹czy³eœ w³aœnie do TEGO Obozu?";
+};                       
+
+FUNC INT DIA_Horatio_WhyHere_Condition()
+{
+	if (Npc_KnowsInfo(hero,DIA_Horatio_Story))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_WhyHere_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_WhyHere_15_00"); //Dlaczego do³¹czy³eœ w³aœnie do TEGO Obozu?
+	AI_Output (self, other,"DIA_Horatio_WhyHere_09_01"); //Ju¿ ci mówiê: do wyboru mia³em tylko tych œwirów z Sekty, a nie uœmiecha³o mi siê pranie mózgu, któremu chcieli mnie poddaæ.
+	AI_Output (self, other,"DIA_Horatio_WhyHere_09_02"); //W Starym Obozie mia³bym za du¿o k³opotów ze Stra¿nikami, a tutaj Najemnicy i Szkodniki traktuj¹ mnie z szacunkiem.
+	AI_Output (other, self,"DIA_Horatio_WhyHere_15_03"); //To znaczy - boj¹ siê ciebie...
+	AI_Output (self, other,"DIA_Horatio_WhyHere_09_04"); //Mo¿e. Tak, czy inaczej - tutaj znalaz³em spokój. Radzê ci pójœæ w moje œlady.
+};
+
+// ************************************************************
+// 						Bitte STR
+// ************************************************************
+	var int horatio_StrFree;
+// ************************************************************
+
+INSTANCE DIA_Horatio_PleaseTeachSTR (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 2;
+	condition	= DIA_Horatio_PleaseTeachSTR_Condition;
+	information	= DIA_Horatio_PleaseTeachSTR_Info;
+	permanent	= 0;
+	description = "Mo¿esz mnie wyszkoliæ tak bym by³ równie silny jak ty?";
+};                       
+
+FUNC INT DIA_Horatio_PleaseTeachSTR_Condition()
+{
+	if (Npc_KnowsInfo(hero,DIA_Horatio_Story))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_PleaseTeachSTR_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_PleaseTeachSTR_15_00"); //Mo¿esz mnie wyszkoliæ tak bym by³ równie silny jak ty?
+	AI_Output (self, other,"DIA_Horatio_PleaseTeachSTR_09_01"); //Nawet gdybym móg³ - po co ci to?
+	Info_ClearChoices(DIA_Horatio_PleaseTeachSTR );
+	var C_NPC ricelord; ricelord = Hlp_GetNpc(Bau_900_Ricelord);
+	if	Npc_KnowsInfo(hero,DIA_Jeremiah_Horatio)
+	{
+		Info_AddChoice	 (DIA_Horatio_PleaseTeachSTR, "Chcê wykoñczyæ Ry¿owego Ksiêcia i jego zbirów!",DIA_Horatio_PleaseTeachSTR_Ricelord);
+	}
+	else
+	{
+		Info_AddChoice	 (DIA_Horatio_PleaseTeachSTR, "Dobre pytanie. Przemyœlê to sobie.",DIA_Horatio_PleaseTeachSTR_BACK);
+	};
+	Info_AddChoice	 (DIA_Horatio_PleaseTeachSTR, "Do samoobrony!",DIA_Horatio_PleaseTeachSTR_Defend);
+	Info_AddChoice	 (DIA_Horatio_PleaseTeachSTR, "¯eby pokazaæ tym sukinsynom, ¿e nie mo¿na mn¹ pomiataæ.",DIA_Horatio_PleaseTeachSTR_Attack);
+
+	Log_CreateTopic		(CH1_HoratiosTeachings,	LOG_MISSION);
+	Log_SetTopicStatus	(CH1_HoratiosTeachings, LOG_RUNNING);
+	B_LogEntry			(CH1_HoratiosTeachings,	"Horacy, zbieracz ry¿u z Nowego Obozu, mo¿e mi pokazaæ, jak skuteczniej zadawaæ ciosy. Niestety, nie uda³o mi siê jeszcze znaleŸæ odpowiedzi na pytanie DLACZEGO mia³by to zrobiæ.");
+};
+
+func void DIA_Horatio_PleaseTeachSTR_Attack()
+{
+	AI_Output (other, self,"DIA_Horatio_PleaseTeachSTR_Attack_15_00"); //¯eby pokazaæ tym sukinsynom, ¿e nie mo¿na mn¹ pomiataæ.
+	AI_Output (self, other,"DIA_Horatio_PleaseTeachSTR_Attack_09_01"); //I zanim byœ siê obejrza³, sam sta³byœ siê jednym z tych sukinsynów... Nie, drogi panie, to nie jest w³aœciwa motywacja.
+	Info_ClearChoices(DIA_Horatio_PleaseTeachSTR );
+};
+
+func void DIA_Horatio_PleaseTeachSTR_Defend()
+{
+	AI_Output (other, self,"DIA_Horatio_PleaseTeachSTR_Defend_15_00"); //Do samoobrony!
+	AI_Output (self, other,"DIA_Horatio_PleaseTeachSTR_Defend_09_01"); //Do tego potrzeba szybkoœci, a nie si³y. Myœlisz, ¿e gruchotanie koœci pomo¿e ci wieœæ spokojne ¿ycie?
+};
+
+func void DIA_Horatio_PleaseTeachSTR_BACK()
+{
+	AI_Output (other, self,"DIA_Horatio_PleaseTeachSTR_BACK_15_00"); //Dobre pytanie. Przemyœlê to sobie.
+	Info_ClearChoices(DIA_Horatio_PleaseTeachSTR );
+};
+
+func void DIA_Horatio_PleaseTeachSTR_Ricelord()
+{
+	AI_Output (other, self,"DIA_Horatio_PleaseTeachSTR_Ricelord_15_00"); //Chcê wykoñczyæ Ry¿owego Ksiêcia i jego zbirów!
+	AI_Output (self, other,"DIA_Horatio_PleaseTeachSTR_Ricelord_09_01"); //Hmmm... Wielu ju¿ próbowa³o przed tob¹.
+	horatio_StrFree = TRUE;
+	Info_ClearChoices(DIA_Horatio_PleaseTeachSTR );
+};
+
+// ************************************************************
+// 						Nachgedacht (STR)
+// ************************************************************
+
+INSTANCE DIA_Horatio_ThoughtSTR (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 2;
+	condition	= DIA_Horatio_ThoughtSTR_Condition;
+	information	= DIA_Horatio_ThoughtSTR_Info;
+	permanent	= 1;
+	description = "Przemyœla³em sobie to wszystko jeszcze raz...";
+};                       
+
+FUNC INT DIA_Horatio_ThoughtSTR_Condition()
+{
+	if ( Npc_KnowsInfo(hero,DIA_Horatio_PleaseTeachSTR) && (horatio_StrFree == FALSE) )
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_ThoughtSTR_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_ThoughtSTR_15_00"); //Przemyœla³em sobie to wszystko jeszcze raz...
+	AI_Output (self, other,"DIA_Horatio_ThoughtSTR_09_01"); //No i? Wymyœli³eœ coœ lepszego?
+	
+	Info_ClearChoices(DIA_Horatio_ThoughtSTR );
+	Info_AddChoice	 (DIA_Horatio_ThoughtSTR, "Nie.",DIA_Horatio_ThoughtSTR_NoIdea);
+	
+	var C_NPC ricelord; ricelord = Hlp_GetNpc(Bau_900_Ricelord);
+	if	Npc_KnowsInfo(hero,DIA_Jeremiah_Horatio)
+	{
+		Info_AddChoice	 (DIA_Horatio_ThoughtSTR, "Tak. Chcia³bym przeciwstawiæ siê Ry¿owemu Ksiêciu i jego zbirom!",DIA_Horatio_ThoughtSTR_Ricelord);
+	};
+};
+
+func void DIA_Horatio_ThoughtSTR_NoIdea()
+{
+	AI_Output (other, self,"DIA_Horatio_ThoughtSTR_NoIdea_15_00"); //Nie.
+	AI_Output (self, other,"DIA_Horatio_ThoughtSTR_NoIdea_09_01"); //Tak myœla³em.
+	Info_ClearChoices(DIA_Horatio_ThoughtSTR );
+};
+
+func void DIA_Horatio_ThoughtSTR_Ricelord()
+{
+	AI_Output (other, self,"DIA_Horatio_ThoughtSTR_Ricelord_15_00"); //Tak. Chcia³bym przeciwstawiæ siê Ry¿owemu Ksiêciu i jego zbirom!
+	AI_Output (self, other,"DIA_Horatio_ThoughtSTR_Ricelord_09_01"); //Hmmm... Wielu ju¿ próbowa³o przed tob¹.
+	horatio_StrFree = TRUE;
+	
+	Info_ClearChoices(DIA_Horatio_ThoughtSTR );
+};
+
+// ************************************************************
+//					Will Ricelord köpfen
+// ************************************************************
+
+func void DIA_Horatio_HelpSTR_LEARN_NOW()
+{
+	if (other.attribute[ATR_STRENGTH]<=(100-5))
+	{
+		other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 5;
+		PrintS_Ext ("Si³a + 5",COL_Lime) ;
+		//PrintScreen	("Si³a + 5", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	}
+	else
+	{
+		other.attribute[ATR_STRENGTH] = 100; 
+		PrintScreen	("Si³a: 100", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	};
+				
+	AI_Output (self, other,"DIA_Horatio_HelpSTR_LEARN_NOW_09_00"); //Jeœli chcesz mocno uderzyæ, musisz najpierw popracowaæ nad odpowiedni¹ technik¹. To pierwsza zasada dobrego kowala.
+	AI_Output (self, other,"DIA_Horatio_HelpSTR_LEARN_NOW_09_01"); //Naucz siê uderzaæ ca³¹ rêk¹ - od ramienia po nadgarstek.
+	AI_Output (self, other,"DIA_Horatio_HelpSTR_LEARN_NOW_09_02"); //Im lepiej sobie z tym poradzisz, tym silniejszy bêdzie twój cios. Sam siê wkrótce przekonasz...
+};
+
+//--------------------------------------------------------------
+
+INSTANCE DIA_Horatio_HelpSTR (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 2;
+	condition	= DIA_Horatio_HelpSTR_Condition;
+	information	= DIA_Horatio_HelpSTR_Info;
+	permanent	= 0;
+	description = "MOGÊ pokonaæ Ry¿owego Ksiêcia i jego bandytów - jeœli mi pomo¿esz!";
+};                       
+
+FUNC INT DIA_Horatio_HelpSTR_Condition()
+{
+	if (horatio_StrFree == TRUE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_HelpSTR_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_HelpSTR_15_00"); //MOGÊ pokonaæ Ry¿owego Ksiêcia i jego bandytów - jeœli mi pomo¿esz!
+	AI_Output (self, other,"DIA_Horatio_HelpSTR_09_01"); //Dobrze! Przysi¹g³em, ¿e nigdy nie zaatakujê innego cz³owieka, ale nie powiedzia³em, ¿e nie poka¿ê komuœ jak to zrobiæ!
+	AI_Output (other, self,"DIA_Horatio_HelpSTR_15_02"); //Zamieniam siê w s³uch.
+	DIA_Horatio_HelpSTR_LEARN_NOW();
+
+	Log_SetTopicStatus	(CH1_HoratiosTeachings, LOG_SUCCESS);
+	B_LogEntry			(CH1_HoratiosTeachings,	"Horacy pokaza³ mi jak efektywnie wykorzystaæ moj¹ si³ê w walce. Dobry z niego cz³owiek.");
+};
+
+// ************************************************************
+// 							Thanks (PERM)
+// ************************************************************
+
+INSTANCE DIA_Horatio_Thanks (C_INFO)
+{
+	npc			= Bau_901_Horatio;
+	nr			= 2;
+	condition	= DIA_Horatio_Thanks_Condition;
+	information	= DIA_Horatio_Thanks_Info;
+	permanent	= 1;
+	description = "Dziêki za pomoc!";
+};                       
+
+FUNC INT DIA_Horatio_Thanks_Condition()
+{
+	if (Npc_KnowsInfo(hero,DIA_Horatio_HelpSTR))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Horatio_Thanks_Info()
+{	
+	AI_Output (other, self,"DIA_Horatio_Thanks_15_00"); //Dziêki za pomoc!
+	AI_Output (self, other,"DIA_Horatio_Thanks_09_01"); //Wykorzystaj tê wiedzê wy³¹cznie w s³usznej sprawie!
+};
+
+
+////////////////////////////////////////////
+//		 Bunt
+////////////////////////////////////////////
+
+INSTANCE DIA_Horatio_Bunt (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_Bunt_Condition;
+   information  = DIA_Horatio_Bunt_Info;
+   permanent	= FALSE;
+   description	= "Co myœlisz o tym ca³ym buncie?";
+};
+
+FUNC INT DIA_Horatio_Bunt_Condition()
+{
+    if  (MIS_BuntZbieraczy == LOG_RUNNING)      
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_Bunt_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_Bunt_15_01"); //Co myœlisz o tym ca³ym buncie?
+    AI_Output (self, other ,"DIA_Horatio_Bunt_03_02"); //Mam nadziejê, ¿e ca³a sprawa wkrótce ucichnie i obejdzie siê bez niepotrzebnego rozlewu krwi.
+    AI_Output (self, other ,"DIA_Horatio_Bunt_03_03"); //Nie jestem zwolennikiem rozwi¹zañ si³owych. Ju¿ raz w ¿yciu przesadzi³em.
+};
+
+////////////////////////////////////////////
+//		 WithoutBlood
+////////////////////////////////////////////
+
+INSTANCE DIA_Horatio_WithoutBlood (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_WithoutBlood_Condition;
+   information  = DIA_Horatio_WithoutBlood_Info;
+   permanent	= FALSE;
+   description	= "Podobno chcia³eœ ze mn¹ rozmawiaæ.";
+};
+
+FUNC INT DIA_Horatio_WithoutBlood_Condition()
+{
+    if  (Quest_TalkWithHoratio == LOG_RUNNING)      
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_WithoutBlood_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_WithoutBlood_15_01"); //Podobno chcia³eœ ze mn¹ rozmawiaæ.
+    AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_02"); //Tak, dobrze, ¿e przyszed³eœ. Widzê, ¿e wszyscy powoli trac¹ zimn¹ krew. Chcê ¿ebyœ to w koñcu ukróci³.
+    AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_03"); //Mam pewien plan.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_04"); //Chcê ¿ebyœ w³ama³ siê do magazynu. Za jedn¹ z drabin najdziesz skrzyniê.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_05"); //W œrodku znajduje siê ¿o³d dla bandziorów i pierœcieñ Ry¿owego Ksiêcia. To dla niego wa¿na pami¹tka.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_06"); //Teraz pozostawiam ci wybór. Mo¿esz ukraœæ tylko pierœcieñ i daæ go Pock'owi. 
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_07"); //Gdy ju¿ to zrobisz, powiedz Ry¿owemu Ksiêciu, ¿e Lewus ukrad³ jego pierœcieñ i odda³ go swojemu nowemu przyjacielowi.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_08"); //To na pewno ich sk³óci. Ry¿owy Ksi¹¿ê zostanie sam i przystanie na warunki buntowników.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_09"); //Z kolei, jeœli zabierzesz rudê i pierœcieñ, po czym mi to wszystko przyniesiesz, zadbam, aby bandziory pozby³y siê obydwóch wyzyskiwaczy.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_10"); //Wybór pozostawiam tobie.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_11"); //A co do kwestii w³amania... Có¿, cz³onkowie Nowego Obozu mog¹ swobodnie chodziæ po magazynie, wiêc nie by³oby k³opotu.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_12"); //W innym wypadku musia³byœ siê tam wkraœæ. Od strony domu na pewno nie wejdziesz. Przesiaduje tam Pock, który natychmiast ciê dostrze¿e.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_13"); //Wprawdzie drugie wejœcie te¿ jest mocno obstawione, jednak przy odrobinie szczêœcia uda ci siê wœlizgn¹æ.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_14"); //Najlepiej oprzeæ siê plecami o œcianê, zapaliæ, udawaæ, ¿e nic siê nie robi. Kiedy wszyscy zaczn¹ cie ignorowaæ po prostu siê przemknij.
+	AI_Output (other, self ,"DIA_Horatio_WithoutBlood_15_15"); //Postaram siê. W koñcu nie pierwszy raz siê skradam.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_16"); //Tu masz klucz. Powodzenia! I pamiêtaj, to ty zdecydujesz, ile krwi siê tutaj przeleje. Wybierz m¹drze.
+	
+	Quest_StealRing = LOG_RUNNING;
+	Quest_StealOre = LOG_RUNNING;
+	
+	CreateInvItem (self,ItMi_KeyToChestInStorage);
+	B_GiveInvItems (self, hero, ItMi_KeyToChestInStorage,1);
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Horacy chce, ¿ebym w³ama³ siê do magazynu i wykrad³ ze skrzyni bandziorów rudê i pierœcieñ Ry¿owego Ksiêcia. Mogê z nimi zrobiæ dwie rzeczy: oddaæ Horacemu, a wtedy on naœle siepaczy Lewusa na obu tyranów lub podarowaæ pierœcieñ Pockowi, powiedzieæ o tym Ry¿owemu Ksiêciu i tym samym sk³óciæ obu tyranów. Wybór nale¿y do mnie.");
+	
+	Npc_ExchangeRoutine (BAU_902_Pock,"outside");
+};
+
+////////////////////////////////////////////
+//		 KillBoth
+////////////////////////////////////////////
+
+INSTANCE DIA_Horatio_KillBoth (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_KillBoth_Condition;
+   information  = DIA_Horatio_KillBoth_Info;
+   permanent	= FALSE;
+   description	= "Mam tu rudê i pierœcieñ ze skrzyni.";
+};
+
+FUNC INT DIA_Horatio_KillBoth_Condition()
+{
+    if (Quest_StealOre == LOG_RUNNING) && (Quest_StealRing == LOG_RUNNING) && (Npc_HasItems (hero,ItMiNugget) >= 500) && (Npc_HasItems (hero,ItMi_RicelordRing) == 1)
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_KillBoth_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_KillBoth_15_01"); //Mam tu rudê i pierœcieñ ze skrzyni.
+    AI_Output (self, other ,"DIA_Horatio_KillBoth_03_02"); //Powiedz Rufusowi, ¿e ja siê wszystkim zajmê. Niech trzyma w ludzi w ryzach.
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Odda³em ³upy Horacemu. Mam o tym powiedzieæ Rufusowi, a w tym czasie Horacy zrobi co trzeba.");
+	
+	Quest_StealRing = LOG_FAILED;
+	Quest_StealOre = LOG_SUCCESS;
+};
+
+
+
+//========================================
+//-----------------> Poszkodowani
+//========================================
+
+INSTANCE DIA_Horatio_Poszkodowani (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_Poszkodowani_Condition;
+   information  = DIA_Horatio_Poszkodowani_Info;
+   permanent	= FALSE;
+   description	= "Czy rzuci³o ci siê w oczy coœ podejrzanego?";
+};
+
+FUNC INT DIA_Horatio_Poszkodowani_Condition()
+{
+     if (Npc_KnowsInfo(hero,DIA_Rufus_Poszkodowani))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Horatio_Poszkodowani_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_01"); //Czy rzuci³o ci siê w oczy coœ podejrzanego?
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_02"); //W jakim kontekœcie pytasz?
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_03"); //Ostatnich kradzie¿y kosztem zbieraczy.
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_04"); //To wredna i nieprzyjemna sprawa. Mnie równie¿ okradziono. Z³odziej powinien zostaæ surowo ukarany za te wystêpki.
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_05"); //Moim zdaniem to ktoœ kto dobrze zna nasze zwyczaje i tryb ¿ycia. Musi byæ tu niedaleko. Tak podpowiada logika.
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_06"); //Czy, któryœ ze zbieraczy zachowuje siê dziwnie?
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_07"); //Wszyscy zachowuj¹ siê jak wczeœniej. Albo dobrze albo chamsko jak zawsze. Ale jest jeden wyj¹tek, którego nie rozgryz³em. 
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_08"); //Kto?
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_09"); //Foster. Gdy tu trafi³ by³ pozytywnym i weso³ym goœciem. A teraz Zachowuje siê jakby by³ w ci¹g³ym zagro¿eniu. Porusza siê nerwowo, ci¹gle przeklina pod nosem...
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_10"); //Totalna zmiana. Dawny weso³ek jest k³êbkiem nerwów.
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_11"); //Pogadam z nim. 
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_12"); //W¹tpie czy dowiesz siê czegokolwiek od tego cz³owieka w tym stanie. Ale nigdy nie wiadomo.
+    AI_Output (other, self ,"DIA_Horatio_Poszkodowani_15_13"); //Zobaczymy.
+    AI_Output (self, other ,"DIA_Horatio_Poszkodowani_03_14"); //Wróæ potem. Chêtnie dowiem siê co ci powiedzia³.
+	B_LogEntry           (PoszkodowaniZbieracze,"Horacy gardzi z³odziejem, który okrada zbieraczy. Twierdzi, ¿e to ktoœ z bliskiego otoczenia. Rzuci³o mu siê w oczy dziwne zachowanie niejakiego Fostera. Spróbuje z nim pogadaæ.");
+};
+
+//========================================
+//-----------------> TalkingFoster
+//========================================
+
+INSTANCE DIA_Horatio_TalkingFoster (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_TalkingFoster_Condition;
+   information  = DIA_Horatio_TalkingFoster_Info;
+   permanent	= FALSE;
+   description	= "Zamieni³em s³owo z Fosterem.";
+};
+
+FUNC INT DIA_Horatio_TalkingFoster_Condition()
+{
+ if (Npc_KnowsInfo(hero,DIA_Foster_PZ))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Horatio_TalkingFoster_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_01"); //Zamieni³em s³owo z Fosterem.
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_02"); //I co ci powiedzia³?
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_03"); //Wrzesza³, ¿e nic nie wie o kradzie¿ach wyrz¹dzanych zbieraczom. I kaza³ mi siê wynosiæ.
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_04"); //Tego siê spodziewa³em. 
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_05"); //Uwa¿am, ¿e coœ ukrywa. Masz podobne zdanie?
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_06"); //S¹dzê, ¿e to niemal pewne. Ale bez stosownych œrodków go nie podejdziemy.
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_07"); //Jakie œrodki masz na myœli?
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_08"); //Có¿... Foster zachowuje siê jakby by³ w potencjalnym niebezpieczeñstwie. Jest jednak coœ czego konsekwentnie siê trzyma. To jego kufer.
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_10"); //W jaki sposób?
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_11"); //Zachowuje siê tak jakby w œrodku by³y relikwie jego najukochañszej matki lub niewiadomo jeszcze co.
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_12"); //Nie pozwala nikomu siê do niego zbli¿aæ. A nocami budzi siê i ci¹gle ma go na oku. Myœlê, ¿e to tam jest klucz do jego sprawy. 
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_13"); //A tak odnoœnie klucza... Hmmm klucz do skrzyni Foster trzyma ca³y czas przy sobie. Chyba tylko mistrz z³odziejstwa móg³by okraœæ tak wyczulonego goœcia.
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_14"); //Mam nadzieje, ¿e w Nowym Obozie takich nie brak.
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_15"); //Có¿, to nie moja bajka. Wiêcej nie mogê zrobiæ w tej sprawie.
+    AI_Output (other, self ,"DIA_Horatio_TalkingFoster_15_16"); //Có¿ dziêki. Zatem do zobaczenia.
+    AI_Output (self, other ,"DIA_Horatio_TalkingFoster_03_17"); //Powodzenia.
+	B_LogEntry           (PoszkodowaniZbieracze,"Horacy podejrzewa Fostera o udzia³ w ca³ym zamieszaniu. Mówi, ¿e zbieracz traktuje swoja skrzyniê jak najwiêkszy skarb. Jest w szopie gdzie zbieracze chodz¹ spaæ. Klucz trzyma Foster ale sprawne rêce z³odzieja mog¹ go wykraœæ. Ktoœ w Nowym Obozie z pewnoœci¹ mi pomo¿e. ");
+};
+

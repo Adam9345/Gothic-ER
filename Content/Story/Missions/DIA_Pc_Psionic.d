@@ -1,0 +1,1808 @@
+// **************************************************
+//						EXIT 
+// **************************************************
+instance  PC_Psionic_Exit (C_INFO)
+{
+	npc			=  PC_Psionic;
+	nr			=  999;
+	condition	=  PC_Psionic_Exit_Condition;
+	information	=  PC_Psionic_Exit_Info;
+	important	=  0;	
+	permanent	=  1;
+	description =	DIALOG_ENDE;
+};                       
+
+FUNC int  PC_Psionic_Exit_Condition()
+{
+	return 1;
+};
+
+FUNC VOID  PC_Psionic_Exit_Info()
+{
+	if (self.aivar[AIV_PARTYMEMBER])
+	{
+		AI_Output 	(self, hero,"Info_Lester_EXIT_05_01"); //ChodŸmy.
+	}
+	else
+	{
+		AI_Output 	(self, hero,"Info_Lester_EXIT_05_02"); //Niech Œni¹cy ma ciê w swojej opiece!
+	};
+	
+	AI_StopProcessInfos	( self );
+};
+
+// **************************************************
+//			SAKRILEG! Meister angesprochen
+// **************************************************
+instance  DIA_Lester_Sakrileg (C_INFO)
+{
+	npc			= PC_Psionic;
+	nr			= 1;
+	condition	= DIA_Lester_Sakrileg_Condition;
+	information	= DIA_Lester_Sakrileg_Info;
+	permanent	= 0;
+	important 	= 1;
+};                       
+
+FUNC int  DIA_Lester_Sakrileg_Condition()
+{
+	if (BaalNamib_Sakrileg == TRUE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_Sakrileg_Info()
+{
+	AI_Output (self, other,"DIA_Lester_Sakrileg_05_00"); //Odezwa³eœ siê do Guru! Nigdy wiêcej tego nie rób, to bluŸnierstwo! Jeœli jakiœ mistrz zechce z tob¹ rozmawiaæ, sam siê do ciebie odezwie.
+};
+
+// **************************************************
+//						Hallo
+// **************************************************
+
+instance  DIA_Lester_Hallo (C_INFO)
+{
+	npc			=  PC_Psionic;
+	nr			=  1;
+	condition	=  DIA_Lester_Hallo_Condition;
+	information	=  DIA_Lester_Hallo_Info;
+	permanent	=  0;
+	description = "Kim jesteœ?";
+};                       
+
+FUNC int  DIA_Lester_Hallo_Condition()
+{
+	if	(Kapitel < 3)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID  DIA_Lester_Hallo_Info()
+{
+	AI_Output (other, self,"DIA_Lester_Hallo_15_00"); //Kim jesteœ?
+	AI_Output (self, other,"DIA_Lester_Hallo_05_01"); //Nazywam siê Lester. Zajmujê siê naszymi nowymi goœæmi.
+	if (BaalNamib_Sakrileg == FALSE)
+	{
+		AI_Output (self, other,"DIA_Lester_Hallo_05_02"); //Masz szczêœcie, ¿e nie odezwa³eœ siê do Baal Namiba. Obcym nie wolno rozmawiaæ z Guru.
+	};
+};
+
+// **************************************************
+//				Will mit Meister reden
+// **************************************************
+
+instance  DIA_Lester_WannaTalkToMaster (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_WannaTalkToMaster_Condition;
+	information	= DIA_Lester_WannaTalkToMaster_Info;
+	permanent	= 0;
+	description	= "Ale ja muszê porozmawiaæ z twoim mistrzem.";
+};                       
+
+FUNC int  DIA_Lester_WannaTalkToMaster_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Lester_Hallo) || Npc_KnowsInfo(hero,DIA_Lester_Sakrileg) )
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	&&  (!Npc_KnowsInfo(hero,DIA_Lester_ShowHallo))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_WannaTalkToMaster_Info()
+{
+	AI_Output (other, self,"DIA_Lester_WannaTalkToMaster_15_00"); //Ale ja muszê porozmawiaæ z twoim mistrzem.
+	AI_Output (self, other,"DIA_Lester_WannaTalkToMaster_05_01"); //Nie próbuj! Gwarantujê ci, ¿e potrafiê udzieliæ ci wszystkich potrzebnych informacji.
+};
+
+// **************************************************
+//					Lager-Infos
+// **************************************************
+
+instance  DIA_Lester_CampInfo (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_CampInfo_Condition;
+	information	= DIA_Lester_CampInfo_Info;
+	permanent	= 1;
+	description	= "Opowiedz mi o waszym Obozie.";
+};                       
+
+FUNC int  DIA_Lester_CampInfo_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Lester_Hallo) )
+	&&	(Kapitel < 3)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_CampInfo_Info()
+{
+	AI_Output (other, self,"DIA_Lester_CampInfo_15_00"); //Opowiedz mi o waszym Obozie.
+	AI_Output (self, other,"DIA_Lester_CampInfo_05_01"); //A co chcesz wiedzieæ?
+	Info_Clearchoices (DIA_Lester_CampInfo);
+	Info_Addchoice (DIA_Lester_CampInfo,DIALOG_BACK,DIA_Lester_CampInfo_BACK); 
+	Info_Addchoice (DIA_Lester_CampInfo,"Opowiedz mi o tutejszych kastach.",DIA_Lester_CampInfo_GIL);
+	Info_Addchoice (DIA_Lester_CampInfo,"Co mo¿esz mi powiedzieæ o Œni¹cym?",DIA_Lester_CampInfo_SLEEPER);
+	Info_Addchoice (DIA_Lester_CampInfo,"Co mo¿esz mi powiedzieæ o bagiennym zielu?",DIA_Lester_CampInfo_HERB);
+};
+func void DIA_Lester_CampInfo_BACK()
+{
+	Info_Clearchoices (DIA_Lester_CampInfo);
+};
+
+func void DIA_Lester_CampInfo_GIL()
+{
+	AI_Output (other, self,"DIA_Lester_CampInfo_GIL_15_00"); //Opowiedz mi o tutejszych kastach.
+	AI_Output (self, other,"DIA_Lester_CampInfo_GIL_05_01"); //Najwy¿sz¹ kastê stanowi¹ Guru. To niezwykle potê¿ni duchowi przywódcy naszego Obozu. Stra¿nicy Œwi¹tyni wykorzystuj¹ si³ê swego ducha w walce.
+	AI_Output (self, other,"DIA_Lester_CampInfo_GIL_05_02"); //Ich cia³o i duch funkcjonuj¹ w idealnej harmonii. Lepiej nie wchodŸ im w drogê. Ja natomiast jestem Nowicjuszem. Naszym zadaniem jest wykonywanie wszystkich pomniejszych zadañ, no i oczywiœcie ¿arliwa modlitwa do Œni¹cego.
+	AI_Output (self, other,"DIA_Lester_CampInfo_GIL_05_03"); //Niektórzy Nowicjusze dost¹pili zaszczytu pobierania nauk u Guru, ale aby to osi¹gn¹æ, trzeba s³u¿yæ w Obozie przynajmniej kilka lat.
+};
+func void DIA_Lester_CampInfo_SLEEPER()
+{
+	AI_Output (other, self,"DIA_Lester_CampInfo_SLEEPER_15_00"); //Co mo¿esz mi powiedzieæ o Œni¹cym?
+	AI_Output (self, other,"DIA_Lester_CampInfo_SLEEPER_05_01"); //Œni¹cy to boska istota, która zsy³a nam wizje objawiaj¹ce jego wolê. W ka¿dym razie zsy³a je Guru.
+	AI_Output (self, other,"DIA_Lester_CampInfo_SLEEPER_05_02"); //Modlimy siê do niego, bo obieca³ zwróciæ nam wolnoœæ.
+	AI_Output (other, self,"DIA_Lester_CampInfo_SLEEPER_15_03"); //I wierzycie mu?
+	AI_Output (self, other,"DIA_Lester_CampInfo_SLEEPER_05_04"); //Hej, jestem w tej Kolonii od dwóch lat. Wiesz jak d³ugie mog¹ siê wydaæ DWA LATA w wiêzieniu?!
+	AI_Output (self, other,"DIA_Lester_CampInfo_SLEEPER_05_05"); //Nie wyobra¿asz sobie w co by³bym w stanie uwierzyæ, byle tylko wydostaæ siê z tego przeklêtego miejsca!
+};
+func void DIA_Lester_CampInfo_HERB()
+{
+	AI_Output (other, self,"DIA_Lester_CampInfo_HERB_15_00"); //Co mo¿esz mi powiedzieæ o bagiennym zielu?
+	AI_Output (self, other,"DIA_Lester_CampInfo_HERB_05_01"); //Có¿, ziele roœnie wy³¹cznie na bagnach. Zanim da siê je paliæ, trzeba je odpowiednio przetworzyæ. Tym w³aœnie zajmuj¹ siê Nowicjusze.
+	AI_Output (self, other,"DIA_Lester_CampInfo_HERB_05_02"); //Ziele ma dzia³anie relaksuj¹ce i uspokajaj¹ce. Dziêki niemu mo¿na osi¹gn¹æ stan umys³u pozwalaj¹cy na nawi¹zanie kontaktu ze Œni¹cym.
+	AI_Output (self, other,"DIA_Lester_CampInfo_HERB_05_03"); //Czêœæ zebranego ziela wymieniamy ze Starym Obozem. Tam te¿ pozyskujemy nowych cz³onów Bractwa.
+	AI_Output (self, other,"DIA_Lester_CampInfo_HERB_05_04"); //Wielu z nich do³¹cza do nas tylko ze wzglêdu na ziele, ale przynajmniej pomagaj¹ nam w pracy.
+};
+
+// **************************************************
+//					Wanna Join
+// **************************************************
+
+instance  DIA_Lester_WannaJoin (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_WannaJoin_Condition;
+	information	= DIA_Lester_WannaJoin_Info;
+	permanent	= 0;
+	description	= "Chcia³bym zostaæ cz³onkiem Bractwa.";
+};                       
+
+FUNC int  DIA_Lester_WannaJoin_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Lester_Hallo))
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_WannaJoin_Info()
+{
+	AI_Output (other, self,"DIA_Lester_WannaJoin_15_00"); //Chcia³bym zostaæ cz³onkiem Bractwa.
+	AI_Output (self, other,"DIA_Lester_WannaJoin_05_01"); //O tym, czy mo¿esz zostaæ jednym z nich zadecyduje Cor Kalom.
+	AI_Output (self, other,"DIA_Lester_WannaJoin_05_02"); //Ale on polega zwykle na opinii pozosta³ych Guru. Baal Namib na przyk³ad jest jednym z nich.
+	AI_Output (self, other,"DIA_Lester_WannaJoin_05_03"); //Najpierw musisz udowodniæ, ¿e jesteœ godny, by nale¿eæ do Bractwa. Dopiero wtedy Guru wyœl¹ ciê do Cor Kaloma.
+};
+
+// **************************************************
+//					Lager-Infos
+// **************************************************
+
+instance  DIA_Lester_HowProofWorthy (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_HowProofWorthy_Condition;
+	information	= DIA_Lester_HowProofWorthy_Info;
+	permanent	= 0;
+	description	= "Jak mam tego dokonaæ, jeœli ¿aden z Guru nie chce siê do mnie odezwaæ?";
+};                       
+
+FUNC int  DIA_Lester_HowProofWorthy_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Lester_WannaJoin))
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_HowProofWorthy_Info()
+{
+	AI_Output (other, self,"DIA_Lester_HowProofWorthy_15_00"); //Jak mam tego dokonaæ, jeœli ¿aden z Guru nie chce siê do mnie odezwaæ?
+	AI_Output (self, other,"DIA_Lester_HowProofWorthy_05_01"); //Chocia¿ trudno w to uwierzyæ, Guru bêd¹ obserwowali ka¿dy twój krok.
+	AI_Output (self, other,"DIA_Lester_HowProofWorthy_05_02"); //Jeœli uznaj¹, ¿e zas³ugujesz na zostanie jednym z nas, sami siê do ciebie odezw¹.
+	AI_Output (self, other,"DIA_Lester_HowProofWorthy_05_03"); //Z pewnoœci¹ znajdziesz w Obozie wiele okazji, by udowodniæ swoj¹ przydatnoœæ.
+
+	Log_CreateTopic		(CH1_JoinPsi,	LOG_MISSION);
+	Log_SetTopicStatus	(CH1_JoinPsi,	LOG_RUNNING);
+	B_LogEntry			(CH1_JoinPsi,	"Jeœli chcê do³¹czyæ do Bractwa Œni¹cego, muszê przekonaæ do siebie kilu Guru. Niestety, ci nie chc¹ rozmawiaæ z nowoprzyby³ymi. Nowicjusz Lester uprzedzi³ mnie, ¿e mimo to ka¿dy mój ruch jest obserwowany i ¿e powinienem spróbowaæ zrobiæ na nich dobre wra¿enie. Tylko jak niby mam to zrobiæ?! Na pocz¹tek rozejrzê siê trochê po Obozie Bractwa.");
+
+};
+
+// **************************************************
+//				WEIT WEG von BaalNamib
+// **************************************************
+	var int Lester_Show;
+// **************************************************
+
+instance  DIA_Lester_WeitWeg (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_WeitWeg_Condition;
+	information	= DIA_Lester_WeitWeg_Info;
+	permanent	= 0;
+	description	= "Jak mogê sk³oniæ twojego mistrza do rozmowy ze mn¹?";
+};                       
+
+FUNC int  DIA_Lester_WeitWeg_Condition()
+{
+	var C_NPC namib; namib = Hlp_GetNpc(Gur_1204_BaalNamib);
+	if	(Npc_GetDistToNpc(other,namib) > 1000)
+	&&	(BaalNamib_Ansprechbar==FALSE)
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_WeitWeg_Info()
+{
+	AI_Output (other, self,"DIA_Lester_WeitWeg_15_00"); //Jak mogê sk³oniæ twojego mistrza do rozmowy ze mn¹?
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_01"); //Musisz wiedzieæ, co chcia³by us³yszeæ?
+	AI_Output (other, self,"DIA_Lester_WeitWeg_15_02"); //A co chcia³by us³yszeæ?
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_03"); //Kiedy nastêpnym razem bêdziemy blisko niego, zwrócisz siê do mnie i porozmawiamy chwilê.
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_04"); //Baal Namib martwi siê, gdy¿ wielu Nowicjuszy oprócz modlitwy do Œni¹cego czci jeszcze starych bogów.
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_05"); //Powiesz mi, ¿e wyrzek³eœ siê innych bóstw i od tej pory zamierzasz wznosiæ mod³y wy³¹cznie do Œni¹cego.
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_06"); //Wtedy ja zapytam dlaczego podj¹³eœ tak¹ decyzjê, a ty odpowiesz, ¿e prze¿y³eœ wizjê, w której Œni¹cy wzywa³ ciê do siebie.
+	AI_Output (self, other,"DIA_Lester_WeitWeg_05_07"); //To go powinno zainteresowaæ. Myœlisz, ¿e dasz sobie radê?
+	AI_Output (other, self,"DIA_Lester_WeitWeg_15_08"); //Oczywiœcie!
+	
+	B_LogEntry	(CH1_JoinPsi, "Aby przekonaæ do siebie Baal Namiba, mam zwróciæ siê do Lestera, gdy wielki Guru bêdzie w pobli¿u porozmawiaæ z nim o bogach i Œni¹cym.");
+
+	Lester_Show = TRUE;
+};
+
+// **************************************************
+//					SHOW - Hallo
+// **************************************************
+
+instance  DIA_Lester_ShowHallo (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 1;
+	condition	= DIA_Lester_ShowHallo_Condition;
+	information	= DIA_Lester_ShowHallo_Info;
+	permanent	= 0;
+	important 	= 1;
+};                       
+
+FUNC int  DIA_Lester_ShowHallo_Condition()
+{
+	var C_NPC namib; namib = Hlp_GetNpc(Gur_1204_BaalNamib);
+	if	(Npc_GetDistToNpc(other,namib) < 500)
+	&&	(BaalNamib_Ansprechbar==FALSE)
+	&&	(Lester_Show == TRUE)
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_ShowHallo_Info()
+{
+	AI_Output (self, other,"DIA_Lester_ShowHallo_05_00"); //ACH! MI£O CIÊ ZNÓW WIDZIEÆ. CO U CIEBIE S£YCHAÆ?
+};
+
+// **************************************************
+//						SHOW
+// **************************************************
+
+instance  DIA_Lester_Show (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 1;
+	condition	= DIA_Lester_Show_Condition;
+	information	= DIA_Lester_Show_Info;
+	permanent	= 0;
+	description	= "WYRZEK£EM SIÊ STARYCH BOGÓW!";
+};                       
+
+FUNC int  DIA_Lester_Show_Condition()
+{
+	var C_NPC namib; namib = Hlp_GetNpc(Gur_1204_BaalNamib);
+	if ( (Npc_GetDistToNpc(other,namib) < 500) && (BaalNamib_Ansprechbar==FALSE) && (Lester_Show == TRUE) )
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_Show_Info()
+{
+	AI_Output (other, self,"DIA_Lester_Show_15_00"); //WYRZEK£EM SIÊ STARYCH BOGÓW!
+	AI_Output (self, other,"DIA_Lester_Show_05_01"); //CZY¯BY? CO CIÊ SK£ONI£O DO TAK DRASTYCZNYCH KROKÓW?
+	AI_Output (other, self,"DIA_Lester_Show_15_02"); //PRZE¯Y£EM OBJAWIENIE: ŒNI¥CY ZWRÓCI£ SIÊ DO MNIE...
+	AI_Output (self, other,"DIA_Lester_Show_05_03"); //I CO POWIEDZIA£?
+	AI_Output (other, self,"DIA_Lester_Show_15_04"); //POWIEDZIA£: ID DO OBOZU NA BAGNIE I PRZY£¥CZ SIÊ DO BRACTWA.
+	AI_Output (self, other,"DIA_Lester_Show_05_05"); //JESTEŒ SZCZÊŒLIWYM CZ£OWIEKIEM, NIEZNAJOMY: TYLKO NIELICZNI DOST¥PILI TAKIEJ NAGRODY.
+
+	BaalNamib_Ansprechbar = TRUE;
+
+	AI_StopProcessInfos(self);
+};
+
+// **************************************************
+//				GUIDE	Offer
+// **************************************************
+
+instance  DIA_Lester_GuideOffer (C_INFO) //E3
+{
+	npc			= PC_Psionic;
+	nr			= 5;
+	condition	= DIA_Lester_GuideOffer_Condition;
+	information	= DIA_Lester_GuideOffer_Info;
+	permanent	= 0;
+	description	= "Jak znajdê najwa¿niejsze miejsca w Obozie?";
+};
+
+FUNC int  DIA_Lester_GuideOffer_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Lester_Hallo))
+	&&	(Kapitel < 3)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_GuideOffer_Info()
+{
+	AI_Output (other, self,"DIA_Lester_GuideOffer_15_00"); //Jak znajdê najwa¿niejsze miejsca w Obozie?
+	AI_Output (self, other,"DIA_Lester_GuideOffer_05_01"); //Mogê ci pokazaæ wszystko, co warto tu obejrzeæ.
+};
+
+// **************************************************
+//				FÜHRUNG DURCHS PSI-CAMP
+// **************************************************
+
+
+// -----------UNTERWEGS--------------------  
+instance  PC_Psionic_SOON (C_INFO)
+{
+	npc			=  PC_Psionic;
+	condition	=  PC_Psionic_SOON_Condition;
+	information	=  PC_Psionic_SOON_Info;
+	important	=  0;	
+	permanent	=  1;
+	description = "Daleko jeszcze?";
+};                       
+
+FUNC int  PC_Psionic_SOON_Condition()
+{	
+	if  (Npc_KnowsInfo (hero,DIA_Lester_GuideOffer))
+	&&  (Kapitel < 3)
+	&&  (LesterGuide >= 1)
+	{
+		return TRUE;
+	};
+};
+FUNC VOID  PC_Psionic_SOON_Info()
+{
+	AI_Output (other, self,"PC_Psionic_SOON_Info_15_01"); //Daleko jeszcze?
+	AI_Output (self, other,"PC_Psionic_SOON_Info_05_02"); //Jakbyœ mi nie przeszkadza³, dawno bylibyœmy na miejscu.
+	AI_StopProcessInfos	( self );
+};
+//------ UNTERWEGS IM SUMPFLAGER UND ROUTE ÄNDERN ----------------
+instance  PC_Psionic_CHANGE (C_INFO)
+{
+	npc			=  PC_Psionic;
+	condition	=  PC_Psionic_CHANGE_Condition;
+	information	=  PC_Psionic_CHANGE_Info;
+	important	=  0;	
+	permanent	=  1;
+	description = "Rozmyœli³em siê.";
+};                       
+
+FUNC int  PC_Psionic_CHANGE_Condition()
+{	
+	if  Npc_KnowsInfo (hero,DIA_Lester_GuideOffer)
+	&&  (Kapitel < 3)
+	&&  (LesterGuide >= 1)
+	{
+		return TRUE;
+	};
+};
+FUNC VOID  PC_Psionic_CHANGE_Info()
+{
+	AI_Output (other, self,"PC_Psionic_CHANGE_Info_15_01"); //Rozmyœli³em siê.
+	AI_Output (self, other,"PC_Psionic_CHANGE_Info_05_02"); //Wiesz, gdzie mnie znaleŸæ.
+	AI_StopProcessInfos	( self );
+	LesterGuide = 0;
+	Npc_ExchangeRoutine (self,"START");
+
+};
+
+//------------------FÜHRUNG DURCH DAS LAGER
+instance  PC_Psionic_GUIDEFIRST (C_INFO)
+{
+	npc				= PC_Psionic;
+	nr				= 5;
+	condition		= PC_Psionic_GUIDEFIRST_Condition;
+	information		= PC_Psionic_GUIDEFIRST_Info;
+	important		= 0;
+	permanent		= 1;
+	description		= "Poka¿ mi jak dojœæ..."; 
+};
+
+FUNC int  PC_Psionic_GUIDEFIRST_Condition()
+{	
+	if  Npc_KnowsInfo (hero,DIA_LESTER_GuideOffer)
+	&&  (Kapitel < 3)
+	&&  (LesterGuide == 0)
+	{
+		return TRUE;
+	};
+		
+
+};
+FUNC void  PC_Psionic_GUIDEFIRST_Info()
+{
+	AI_Output (other, self,"PC_Psionic_GUIDEFIRST_Info_15_01"); //Poka¿ mi jak dojœæ...
+//	AI_Output (self, other,"PC_Psionic_GUIDEFIRST_Info_05_02"); //Klar, wohin willst du?
+	
+	Info_ClearChoices (PC_Psionic_GUIDEFIRST);
+	
+	Info_Addchoice (PC_Psionic_GUIDEFIRST, DIALOG_BACK, PC_Psionic_GUIDEFIRST_BACK);
+	Info_Addchoice (PC_Psionic_GUIDEFIRST,"... z powrotem do g³ównej bramy",PC_Psionic_GUIDEFIRST_MAINGATE);
+	Info_Addchoice (PC_Psionic_GUIDEFIRST,"... do kuŸni.",PC_Psionic_GUIDEFIRST_SMITH);
+	Info_Addchoice (PC_Psionic_GUIDEFIRST,"... do œwi¹tyni.",PC_Psionic_GUIDEFIRST_TEMPEL);
+	Info_Addchoice (PC_Psionic_GUIDEFIRST,"... do nauczycieli.",PC_Psionic_GUIDEFIRST_TRAIN);
+	Info_Addchoice (PC_Psionic_GUIDEFIRST,"... do laboratorium alchemicznego.",PC_Psionic_GUIDEFIRST_HERB);
+
+};  
+
+func void PC_Psionic_GUIDEFIRST_MAINGATE()
+{
+	Npc_ClearAIQueue	(self);
+	Info_ClearChoices 	(PC_Psionic_GUIDEFIRST);
+	LesterGuide = 0;
+	AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (self,"START");
+};
+
+func void PC_Psionic_GUIDEFIRST_SMITH()
+{
+	AI_Output (other, self,"PC_Psionic_GUIDEFIRST_SMITH_Info_15_01"); //... do kuŸni.
+	AI_Output (self, other,"PC_Psionic_GUIDEFIRST_SMITH_Info_05_02"); //ChodŸ za mn¹!
+	LesterGuide = 1;
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine(self,"GUIDETOSMITH");
+};
+
+func void PC_Psionic_GUIDEFIRST_TEMPEL()
+{
+	AI_Output (other, self,"PC_Psionic_GUIDEFIRST_TEMPEL_Info_15_01"); //... do œwi¹tyni.
+	AI_Output (self, other,"PC_Psionic_GUIDEFIRST_TEMPEL_Info_05_02"); //ChodŸ za mn¹!
+	LesterGuide = 2;
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine(self,"GUIDETOTEMPEL");
+};
+
+func void PC_Psionic_GUIDEFIRST_TRAIN()
+{
+	AI_Output (other, self,"PC_Psionic_GUIDEFIRST_TRAIN_Info_15_01"); //... do nauczycieli.
+	AI_Output (self, other,"PC_Psionic_GUIDEFIRST_TARIN_Info_05_02"); //ChodŸ za mn¹!
+	LesterGuide = 3;
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine(self,"GUIDETOTRAIN");
+};
+
+func void PC_Psionic_GUIDEFIRST_HERB()
+{
+	AI_Output (other, self,"PC_Psionic_GUIDEFIRST_HERB_Info_15_01"); //... do laboratorium alchemicznego.
+	AI_Output (self, other,"PC_Psionic_GUIDEFIRST_HERB_Info_05_02"); //ChodŸ za mn¹!
+	LesterGuide = 4;
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine(self,"GUIDETOHERB");
+};
+
+func void PC_Psionic_GUIDEFIRST_BACK()
+{
+	Info_ClearChoices 	(PC_Psionic_GUIDEFIRST);
+};
+
+// ***************************** Am Platz der Lehrer ****************************************//
+instance  PC_Psionic_TRAIN (C_INFO)
+{
+	npc				= PC_Psionic;                       
+	condition		= PC_Psionic_TRAIN_Condition; 
+	information		= PC_Psionic_TRAIN_Info;      
+	important		= 1;
+	permanent		= 1;
+	 
+};
+FUNC int  PC_Psionic_TRAIN_Condition()
+{
+	if ( Npc_GetDistToWP(self, "PSI_PATH_9_4") < 500 )
+	&& (LesterGuide == 3)
+	{
+		return TRUE;
+	};
+
+};
+
+FUNC void  PC_Psionic_TRAIN_Info()
+{
+	AI_Output (self, other,"PC_Psionic_TRAIN_Info_05_01"); //Tam znajdziesz Baal Cadara. To on naucza Nowicjuszy.
+	AI_PointAt(self,"PSI_PATH_9_14");
+	AI_StopPointAt (self);
+	AI_Output (self, other,"PC_Psionic_TRAIN_Info_05_02"); //Nad nami znajduje siê plac treningowy Œwi¹tynnych Stra¿ników. Zaczekam na ciebie na dole, albo u Baal Namiba, przy wejœciu do Obozu.
+
+	LesterGuide = 0;
+	Npc_ExchangeRoutine (self,"START");
+	AI_StopProcessInfos (self);
+	TA_BeginOverlay		(self);
+	TA_Stay			    (00,00,00,55,"PSI_PATH_9_4");
+	TA_EndOverlay		(self);	
+};  
+// ***************************** Am Tempelplatz ****************************************//
+instance  PC_Psionic_TEMPEL (C_INFO)
+{
+	npc				= PC_Psionic;                       
+	condition		= PC_Psionic_TEMPEL_Condition; 
+	information		= PC_Psionic_TEMPEL_Info;      
+	important		= 1;
+	permanent		= 0;
+	 
+};
+FUNC int  PC_Psionic_TEMPEL_Condition()
+{
+	if ( Npc_GetDistToWP(self, "PSI_TEMPLE_NOVIZE_PR") < 600 )
+	&& (LesterGuide == 2)
+	{
+		return TRUE;
+	};
+
+};
+
+FUNC void  PC_Psionic_TEMPEL_Info()
+{
+	AI_Output (self, other,"PC_Psionic_TEMPEL_Info_05_01"); //Oto œwi¹tynia! Zaczekam na ciebie tutaj, ale gdybyœ zamarudzi³, znajdziesz mnie przy wejœciu do Obozu.
+
+	LesterGuide = 0;
+	
+	Npc_ExchangeRoutine(self,"START");
+	AI_StopProcessInfos(self);
+	TA_BeginOverlay (self);
+	TA_Stay(00,00,01,00,"PSI_TEMPLE_NOVIZE_PR");  
+	TA_EndOverlay (self);
+
+};  
+// ***************************** An der Schmiede ****************************************//
+instance  PC_Psionic_SMITH (C_INFO)
+{
+	npc				= PC_Psionic;                       
+	condition		= PC_Psionic_SMITH_Condition; 
+	information		= PC_Psionic_SMITH_Info;      
+	important		= 1;
+	permanent		= 0;
+	 
+};
+FUNC int  PC_Psionic_SMITH_Condition()
+{
+	if ( Npc_GetDistToWP(self, "PSI_SMITH_IN") < 900 )
+	&& (LesterGuide == 1)
+	{
+		return 1;
+	};
+
+};
+
+FUNC void  PC_Psionic_SMITH_Info()
+{
+	AI_Output (self, other,"PC_Psionic_SMITH_Info_05_01"); //Jesteœmy w kuŸni. Rozejrzyj siê trochê. Bêdê czeka³ przez jak¹œ godzinê. PóŸniej znajdziesz mnie przy wejœciu do Obozu.
+	LesterGuide = 0;
+	
+	
+	Npc_ExchangeRoutine(self,"START");
+	AI_StopProcessInfos(self);
+	TA_BeginOverlay (self);
+	TA_Stay(00,00,01,00,"PSI_SMITH_IN");  
+	TA_EndOverlay (self);
+	
+	
+};   
+// ***************************** Beim Krauthändler ****************************************// 
+instance  PC_Psionic_HERB (C_INFO)
+{
+	npc				= PC_Psionic;                       
+	condition		= PC_Psionic_HERB_Condition; 
+	information		= PC_Psionic_HERB_Info;      
+	important		= 1;
+	permanent		= 0;
+	 
+};
+FUNC int  PC_Psionic_HERB_Condition()
+{
+	if ( Npc_GetDistToWP(self, "PSI_WALK_06") < 800 )
+	&& (LesterGuide == 4)
+	{
+		return TRUE;
+	};
+};
+FUNC void  PC_Psionic_HERB_Info()
+{
+	AI_Output      (self, other,"PC_Psionic_HERB_Info_05_01"); //Na górze tej drabiny znajdziesz laboratorium alchemiczne Cor Kaloma. Tu na dole rezyduje Fortuno, handlarz zielem.
+	AI_Output      (self, other,"PC_Psionic_HERB_Info_05_02"); //Zaczekam na ciebie tutaj. Tylko nie marudŸ zbyt d³ugo, bo wrócê do Baal Namiba.
+	
+	LesterGuide = 0;
+	
+	Npc_ExchangeRoutine(self,"START");
+
+	AI_StopProcessInfos(self);
+
+	TA_BeginOverlay (self);
+	TA_Stay(00,00,01,00,"PSI_32_HUT_EX");  
+	TA_EndOverlay (self);
+};    
+
+
+//#####################################################################
+//##
+//##
+//##							KAPITEL 2
+//##
+//##
+//#####################################################################
+
+//---------------------------------------------------------------------
+//	Info SEND
+//---------------------------------------------------------------------
+instance  PC_Psionic_SEND (C_INFO)// PC muss im ersten Kapitel schon mal mit Lester geredet haben 
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_SEND_Condition;
+	information		= PC_Psionic_SEND_Info;
+	important		= TRUE;
+	permanent		= FALSE;
+};
+
+FUNC int  PC_Psionic_SEND_Condition()
+{
+	//SN: NICHT auf Kapitel 2 abfragen, Kapitelwechel geschieht erst unten zentral für alle SC-Gilden!!!
+	if	(Npc_GetTrueGuild(hero) != GIL_NONE)
+	&&	(YBerion_BringFocus != LOG_RUNNING)
+	&&	(YBerion_BringFocus != LOG_SUCCESS)
+	&& 	(Npc_GetTrueGuild(hero) != GIL_SFB) 
+	&&  (Npc_GetTrueGuild(hero) != GIL_VLK)
+    &&  (kapitel == 1)	//fix 
+	{
+		return 1;
+	};
+};
+
+func void  PC_Psionic_SEND_Info()
+{
+	AI_GotoNpc			(self,hero);
+	if (Npc_KnowsInfo(hero,DIA_Lester_Hallo))
+	{
+		AI_Output		(self, other,"PC_Psionic_SEND_Info_05_00"); //Cieszê siê, ¿e ciê widzê. Mam dla ciebie wiadomoœæ.
+		AI_Output		(other, self,"PC_Psionic_SEND_Info_15_01"); //Mam nadziejê, ¿e dobr¹?
+	};
+	AI_Output			(self, other,"PC_Psionic_SEND_Info_05_02"); //Nasze Bractwo przygotowuje siê do wielkiego wydarzenia.
+	AI_Output			(other, self,"PC_Psionic_SEND_Info_15_03"); //Jakiego wydarzenia? Planujecie ucieczkê?
+	AI_Output			(self, other,"PC_Psionic_SEND_Info_05_04"); //Guru próbuj¹ skontaktowaæ siê ze Œni¹cym, ale potrzebuj¹ czegoœ, co zjednoczy ich duchowe si³y.
+	AI_Output			(other, self,"PC_Psionic_SEND_Info_15_05"); //I co dalej?
+	AI_Output			(self, other,"PC_Psionic_SEND_Info_05_06"); //Poszukuj¹ magicznego artefaktu, kamienia ogniskuj¹cego.
+	AI_Output			(self, other,"PC_Psionic_SEND_Info_05_07"); //Ponadto jeden z Guru dozna³ wizji w której objawi³ mu siê rytua³ przywo³ania pos³añca Œni¹cego. 
+
+		B_Kapitelwechsel	(2);
+};  
+
+//---------------------------------------------------------------------
+//	Info BROTHERHOOD_TODO
+//---------------------------------------------------------------------
+instance  PC_Psionic_BROTHERHOOD_TODO (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_BROTHERHOOD_TODO_Condition;
+	information		= PC_Psionic_BROTHERHOOD_TODO_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Czemu mia³bym byæ tym zainteresowany?"; 
+};
+
+FUNC int  PC_Psionic_BROTHERHOOD_TODO_Condition()
+{	
+	if Npc_KnowsInfo (hero, PC_Psionic_SEND)
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_BROTHERHOOD_TODO_Info()
+{
+	AI_Output			(other, self,"PC_Psionic_BROTHERHOOD_TODO_15_01"); //Czemu mia³bym byæ tym zainteresowany?
+	AI_Output			(self, other,"PC_Psionic_BROTHERHOOD_TODO_05_02"); //Porozmawiaj koniecznie z Jaœnie Oœwieconym Y'Berionem. To twoja wielka szansa, ¿eby spojrza³ na ciebie ³askawym okiem.
+	AI_Output			(other, self,"PC_Psionic_BROTHERHOOD_TODO_15_03"); //Gdzie mogê go znaleŸæ?
+	AI_Output			(self, other,"PC_Psionic_BROTHERHOOD_TODO_05_04"); //IdŸ do œwi¹tyni. Bardzo rzadko j¹ opuszcza. Pewnie w tych zimnych ruinach czuje siê bli¿ej Œni¹cego ni¿ gdzie indziej.
+	
+	MIS_MessengerRecall = LOG_RUNNING;
+
+   Log_CreateTopic		(CH2_MessengerRecall, LOG_MISSION);
+   Log_SetTopicStatus(CH2_MessengerRecall, LOG_RUNNING);
+   B_LogEntry				(CH2_MessengerRecall, "Lester zaczepi³ mnie i zacz¹³ coœ mówiæ o wielkich rzeczach, przywo³aniu Œni¹cego i jakiegoœ jego pos³añca. Aby wzi¹æ udzia³ w tym wielkim wydarzeniu powinienem pogadaæ z Y'Berionem, który zdradzi mi wiêcej o tym ca³ym pos³añcu. ");
+	
+	
+	Log_CreateTopic		(CH2_Focus,	LOG_MISSION);
+	Log_SetTopicStatus	(CH2_Focus,	LOG_RUNNING);
+	B_LogEntry			(CH2_Focus,	"Nowicjusz Lester powiedzia³ mi, ¿e Y'Berion poszukuje magicznego kamienia ogniskuj¹cego. Guru przebywa wewn¹trz œwi¹tynnego wzgórza.");
+
+	var C_NPC YBerion;
+	YBerion = Hlp_GetNpc(Gur_1200_YBerion);
+	YBerion.aivar[AIV_FINDABLE] = TRUE;
+
+};
+
+//--------------------------------------- 
+
+//#####################################################################
+//##
+//##
+//##							KAPITEL 3
+//##
+//##				
+//#####################################################################
+
+//	Suche Nach Dem Fokus In Der Bergfestung
+
+//---------------------------------------------------------------------
+//	Info FOLLOWME
+//---------------------------------------------------------------------
+instance PC_Psionic_FOLLOWME (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_FOLLOWME_Condition;
+	information		= PC_Psionic_FOLLOWME_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_FOLLOWME_Condition()
+{	
+	if ( Npc_GetDistToWp (hero,"LOCATION_19_01") < 400 ) 
+	&& ( Npc_GetDistToNpc (hero,PC_PSIONIC) <400)
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_FOLLOWME_Info()
+{
+	AI_GotoNpc(self,hero);
+	AI_Output (self, other,"PC_Psionic_FOLLOWME_Info_05_01"); //Hej, co tu robisz?
+	AI_Output (other, self,"PC_Psionic_FOLLOWME_Info_15_02"); //Przybywam z polecenia Magów Wody. Szukam magicznych artefaktów zwanych kamieniami ogniskuj¹cymi.
+	AI_Output (self, other,"PC_Psionic_FOLLOWME_Info_05_03"); //Szukasz kamieni ogniskuj¹cych, tak? Odwa¿ny jesteœ.
+	AI_Output (other, self,"PC_Psionic_FOLLOWME_Info_15_04"); //Saturas i pozostali magowie z Nowego Obozu zamierzaj¹ wykorzystaæ ich moc, by wysadziæ w powietrze Barierê i zwróciæ nam wolnoœæ.
+	AI_Output (self, other,"PC_Psionic_FOLLOWME_Info_05_05"); //Jak zobaczê to uwierzê...
+	AI_Output (other, self,"PC_Psionic_FOLLOWME_Info_15_06"); //Tu siê zgadzamy... Ale powiedz, czemu ty tu przyszed³eœ?
+	AI_Output (self, other,"PC_Psionic_FOLLOWME_Info_05_07"); //Zastanawiam siê, czy warto zaryzykowaæ wyprawê do Górskiej Fortecy.
+	AI_Output (self, other,"PC_Psionic_FOLLOWME_Info_05_08"); //Wiesz... jest tam pewien dokument, który chcia³bym odzyskaæ, ale taka wyprawa mo¿e siê okazaæ bardzo niebezpieczna.
+};
+
+// ***************************** INFOS ****************************************//
+instance  PC_Psionic_GOLEM (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_GOLEM_Condition;
+	information		= PC_Psionic_GOLEM_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Jak ci siê uda³o przejœæ przez tê ¿yw¹ górê?"; 
+};
+
+FUNC int  PC_Psionic_GOLEM_Condition()
+{	
+	if (Npc_KnowsInfo  (hero, PC_Psionic_FOLLOWME))
+	&& (!Npc_KnowsInfo  (hero, PC_Psionic_FINISH ))
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_GOLEM_Info()
+{
+	AI_Output (other, self,"PC_Psionic_NORMAL_Info_15_01"); //Jak ci siê uda³o przejœæ przez tê ¿yw¹ górê?
+	AI_Output (self, other,"PC_Psionic_NORMAL_Info_05_02"); //Pobiera³em nauki u najlepszych Guru. Ich magia potrafi byæ bardzo przydatna.
+};  
+
+//------------GESCHICHTE WARUM LESTER ZUR BERGFESTUNG GEHT--------------------
+instance  PC_Psionic_STORY (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_STORY_Condition;
+	information		= PC_Psionic_STORY_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Ten dokument, którego szukasz... Co to jest?"; 
+};
+
+FUNC int  PC_Psionic_STORY_Condition()
+{	
+	if	Npc_KnowsInfo (hero, PC_Psionic_FOLLOWME)  
+	 
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_STORY_Info()
+{
+	AI_Output (other, self,"PC_Psionic_STORY_Info_15_01"); //Ten dokument, którego szukasz... Co to jest?
+	AI_Output (self, other,"PC_Psionic_STORY_Info_05_02"); //Wiele lat temu w³adca tych ziem rezydowa³ w Górskiej Fortecy, sk¹d kontrolowa³ kopalniê i okoliczne tereny.
+	AI_Output (self, other,"PC_Psionic_STORY_Info_05_03"); //Jak wszyscy mo¿ni, posiada³ w swoich zbiorach dokument, który poœwiadcza³ jego prawo do tych ziem. Zamierzam odnaleŸæ to pismo.
+	AI_Output (other, self,"PC_Psionic_STORY_Info_15_04"); //Przecie¿ tak d³ugo, jak bêdziemy uwiêzieni wewn¹trz Bariery, ten dokument nie bêdzie wart z³amanego grosza!
+	AI_Output (self, other,"PC_Psionic_STORY_Info_05_05"); //Wiem. Ale prêdzej czy póŸniej magowie zdo³aj¹ przerwaæ Barierê. Wtedy ten kawa³ek papieru zapewni mi dostatnie ¿ycie na d³ugie lata.
+};  
+
+// ***************************** INFOS ****************************************//
+instance  PC_Psionic_COMEWITHME (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_COMEWITHME_Condition;
+	information		= PC_Psionic_COMEWITHME_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Moglibyœmy wspólnie rozejrzeæ siê po Fortecy!"; 
+};
+
+FUNC int  PC_Psionic_COMEWITHME_Condition()
+{	
+	if	Npc_KnowsInfo(hero, PC_Psionic_STORY)
+	&&	Npc_KnowsInfo(hero, PC_Psionic_GOLEM)
+	{
+		return TRUE;
+	};
+};
+
+FUNC void  PC_Psionic_COMEWITHME_Info()
+{
+	AI_Output (other, self,"PC_Psionic_COMEWITHME_Info_15_01"); //Moglibyœmy wspólnie rozejrzeæ siê po Fortecy!
+	AI_Output (self, other,"PC_Psionic_COMEWITHME_Info_05_02"); //Niez³y pomys³. ProwadŸ. Pójdê za tob¹.
+
+	Log_CreateTopic		(CH3_Fortress,	LOG_MISSION);
+	Log_SetTopicStatus	(CH3_Fortress,	LOG_RUNNING);
+	B_LogEntry		(CH3_Fortress,	"Przed potê¿n¹ Górsk¹ Fortec¹ spotka³em Lestera. Szuka³ pewnego dokumentu i postanowi³ tymczasowo do mnie do³¹czyæ.");
+
+  	self.aivar[AIV_PARTYMEMBER] =	TRUE;
+	Npc_ExchangeRoutine (self,"FORTRESSFOLLOW");
+	AI_StopProcessInfos	(self);
+};  
+
+//--------------------SPIELER KOMMT MIT LESTER ZUM FOKUSPLATZ-------------------
+instance PC_Psionic_FOKUSPLACE (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_FOKUSPLACE_Condition;
+	information		= PC_Psionic_FOKUSPLACE_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_FOKUSPLACE_Condition()
+{	
+	if ( Npc_GetDistToWp (hero,"LOCATION_19_03_PATH_RUIN7") < 400 ) 
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_FOKUSPLACE_Info()
+{
+	AI_GotoNpc(self,hero);
+	//AI_PointAt(FOKUSWP)
+	AI_Output (self, other,"PC_Psionic_FOKUSPLACE_Info_05_01"); //Patrz, chyba mia³eœ racjê co do tego kamienia ogniskuj¹cego.
+	AI_Output (other, self,"PC_Psionic_FOKUSPLACE_Info_15_02"); //Racja, to rzeczywiœcie wygl¹da na punkt ogniskuj¹cy... Ale nie ³atwo go bêdzie dosiêgn¹æ...
+	AI_StopProcessInfos(self);
+
+	B_LogEntry		(CH3_Fortress,	"Kamieñ, którego szukam, spoczywa na piedestale. Nie dam rady wdrapaæ siê tam. Muszê znaleŸæ jakiœ inny sposób na zdobycie artefaktu.");	
+	
+	Wld_InsertNpc		(Harpie,"LOCATION_19_03_ENTRANCE_HARPYE");
+	Wld_InsertNpc		(Harpie,"LOCATION_19_03_ENTRANCE_HARPYE2");
+	Wld_InsertNpc		(Harpie,"LOCATION_19_03_ENTRANCE_HARPYE3");
+};
+
+// ---------SPIELER WILL ÜBER DIE BRÜCKE OHNE DEN AUFTRAG ERFÜLLT ZU HABEN--------
+instance PC_Psionic_COMEBACK (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_COMEBACK_Condition;
+	information		= PC_Psionic_COMEBACK_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_COMEBACK_Condition()
+{	
+	if ( Npc_GetDistToWp (hero, "PATH_TO_PLATEAU04_BRIDGE2" ) < 600 )
+	&& ( Npc_KnowsInfo (hero,PC_Psionic_FOLLOWME))
+	&& (! Npc_HasItems (hero,Focus_3))
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_COMEBACK_Info()
+{
+	AI_GotoNpc(self,hero);
+	AI_Output (self, other,"PC_Psionic_COMEBACK_Info_05_01"); //Dok¹d siê wybierasz? Jeszcze nie skoñczyliœmy!
+	
+  	self.aivar[AIV_PARTYMEMBER] =	FALSE;
+	Npc_ExchangeRoutine (self,"FORTRESSWAIT");
+	AI_StopProcessInfos(self);
+};
+
+// -----SPIELER IST VERLETZT UND FRAGT NACH HILFE-------------------
+instance  PC_Psionic_IAMHURT (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_IAMHURT_Condition;
+	information		= PC_Psionic_IAMHURT_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Jestem ranny. Mo¿esz mi pomóc?"; 
+};
+
+FUNC int  PC_Psionic_IAMHURT_Condition()
+{	
+	if (hero.attribute[ATR_HITPOINTS] < (hero.attribute[ATR_HITPOINTS_MAX]/2))
+	&& (Npc_KnowsInfo (hero,PC_Psionic_FOLLOWME))
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_IAMHURT_Info()
+{
+	AI_Output (other, self,"PC_Psionic_IAMHURT_Info_15_01"); //Jestem ranny. Mo¿esz mi pomóc?
+	AI_Output (self, other,"PC_Psionic_IAMHURT_Info_05_02"); //WeŸ ten napój uzdrawiaj¹cy.
+	
+	CreateInvItem (self,ItFo_Potion_Health_02);
+	B_GiveInvItems 	(self, hero,ItFo_Potion_Health_02, 1);
+};  
+
+//------------- SPIELER HAT DIE URKUNDE FÜR LESTER GEFUNDEN-----------------------
+instance  PC_Psionic_URKUNDE (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_URKUNDE_Condition;
+	information		= PC_Psionic_URKUNDE_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Znalaz³em dokument!"; 
+};
+
+FUNC int  PC_Psionic_URKUNDE_Condition()
+{	
+	if(( Npc_HasItems (hero,ItWr_Urkunde_01 ))
+	&&( Npc_KnowsInfo(hero,PC_Psionic_STORY)))  
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_URKUNDE_Info()
+{
+	AI_Output			(other, self,"PC_Psionic_URKUNDE_Info_15_01"); //Znalaz³em dokument!
+	AI_Output			(self, other,"PC_Psionic_URKUNDE_Info_05_02"); //Dobra robota! Przyjmij te zwoje magiczne jako wyraz mojej wdziêcznoœci. Przy ich pomocy uda ci siê dotrzeæ do kamienia.
+	AI_Output			(self, other,"PC_Psionic_URKUNDE_Info_05_03"); //Zaczekam na ciebie przy platformie.
+
+	B_LogEntry		(CH3_Fortress,	"Akt w³asnoœci, którego szuka³ Lester, znajdowa³ siê w jednej ze skrzyñ. Nowicjusz da³ mi za niego cztery zwoje z zaklêciem telekinezy, które pomog¹ mi zdobyæ kamieñ.");
+	
+	CreateInvItems		(self,ItArScrollTelekinesis,4);
+	B_GiveInvItems 	(self, hero, ItArScrollTelekinesis,4);
+	B_GiveInvItems	(hero, self, ItWr_Urkunde_01, 1);
+
+	Npc_ExchangeRoutine	(self,	"WaitAtFocus");
+	AI_StopProcessInfos	(self);
+};
+
+//-------------
+instance  PC_Psionic_TIP (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_TIP_Condition;
+	information		= PC_Psionic_TIP_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Jak mam dosiêgn¹æ tego kamienia?"; 
+};
+
+FUNC int  PC_Psionic_TIP_Condition()
+{	
+	if (Npc_KnowsInfo (hero, PC_Psionic_URKUNDE))
+	&& ( ! Npc_HasItems (hero, Focus_3) )
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_TIP_Info()
+{
+	AI_Output (other, self,"PC_Psionic_TIP_Info_15_01"); //Jak mam dosiêgn¹æ tego kamienia?
+	AI_Output (self, other,"PC_Psionic_TIP_Info_05_02"); //Mistrz Y'Berion zwyk³ mawiaæ: Uczeñ próbuje przesuwaæ przedmioty rêkami i nogami. Mistrz porusza je si³¹ swego ducha.
+// 	AI_Output (self, other,"PC_Psionic_TIP_Info_05_03"); //Hier ist ein guter Ort, um die Kraft des Geistes zu nutzen!
+};  
+
+// ---ALLES IN DER BERGFESTUNG ERLEDIGT ABER LESTER DIE URKUNDE NICHT GEGEBEN
+instance PC_Psionic_LEAVE (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_LEAVE_Condition;
+	information		= PC_Psionic_LEAVE_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_LEAVE_Condition()
+{	
+	if ( ! Npc_HasItems (hero, Focus_3) )
+	&& ( ! Npc_HasItems (self, ItWr_Urkunde_01) ) 
+	&& ( Npc_GetDistToWp (hero, "PATH_TO_PLATEAU04_BRIDGE2") < 900 )
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_LEAVE_Info()
+{
+	AI_GotoNpc(self,hero);
+	AI_Output (self, other,"PC_Psionic_LEAVE_Info_05_01"); //Zostanê tutaj jeszcze trochê i poszukam dokumentu.
+	
+  	self.aivar[AIV_PARTYMEMBER] =	FALSE;
+
+	Npc_ExchangeRoutine (self,"BOOK");
+	AI_StopProcessInfos(self);
+};
+
+// --- Lester geht nach oben!-------------------------------
+instance PC_Psionic_BALKON (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_BALKON_Condition;
+	information		= PC_Psionic_BALKON_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_BALKON_Condition()
+{	
+	if  ( ! Npc_HasItems  (self, ItWr_Urkunde_01) ) 
+	&&  ( Npc_GetDistToWp (hero, "LOCATION_19_03_PEMTAGRAM2") < 1000 )
+
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_BALKON_Info()
+{
+	AI_GotoNpc(self,hero);
+	AI_Output (self, other,"PC_Psionic_BALKON_Info_05_01"); //Pójdê rozejrzeæ siê na górze.
+	
+	AI_StopProcessInfos(self);
+	Npc_ExchangeRoutine (self,"BALKON");
+
+};
+//---------------------------------------------------------------
+instance PC_Psionic_FINISH (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_FINISH_Condition;
+	information		= PC_Psionic_FINISH_Info;
+	important		= 1;
+	permanent		= 0;
+};
+
+FUNC int  PC_Psionic_FINISH_Condition()
+{	
+	if Npc_HasItems (hero,Focus_3)
+	&& Npc_KnowsInfo(hero,PC_Psionic_URKUNDE)
+	{
+		return TRUE;
+	};
+};
+func void  PC_Psionic_FINISH_Info()
+{
+	AI_Output (self, other,"PC_Psionic_FINISH_Info_05_01"); //Teraz obaj mamy to, po co przyszliœmy. Chcia³bym tu jeszcze trochê zostaæ, poczytaæ stare ksiêgi.
+	AI_Output (other, self,"PC_Psionic_FINISH_Info_15_02"); //Do nastêpnego spotkania!
+
+	B_LogEntry		(CH3_Fortress,	"Zabra³em kamieñ. Lester chce siê jeszcze trochê rozejrzeæ po Fortecy. Ciekawe, kiedy go znowu zobaczê.");
+
+ 	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	Npc_ExchangeRoutine (self,"BOOK");
+	AI_StopProcessInfos	(self);
+}; 
+/*---------------------------------BALKON DER BERGFESTUNG									
+------------------------------------------------------------------------*/
+
+instance  PC_Psionic_CHESTCLOSED (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_CHESTCLOSED_Condition;
+	information		= PC_Psionic_CHESTCLOSED_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Znalaz³eœ coœ?"; 
+};
+
+FUNC int  PC_Psionic_CHESTCLOSED_Condition()
+{	
+	if  ( ! Npc_HasItems (hero, Focus_3) )
+	&&  ( ! Npc_HasItems (self, ItWr_Urkunde_01) ) 
+	&&  ( Npc_GetDistToWp(hero,"LOCATION_19_03_SECOND_ETAGE_BALCON") < 500)
+	{ 
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_CHESTCLOSED_Info()
+{
+	AI_Output (other, self,"PC_Psionic_CHESTCLOSED_Info_15_01"); //Znalaz³eœ coœ?
+	AI_Output (self, other,"PC_Psionic_CHESTCLOSED_Info_05_02"); //Tamta skrzynia jest zamkniêta. Mo¿e uda siê nam gdzieœ znaleŸæ klucz.
+	AI_Output (self, other,"PC_Psionic_CHESTCLOSED_Info_05_03"); //Znalaz³eœ ju¿ ten dokument?
+	AI_Output (other, self,"PC_Psionic_CHESTCLOSED_Info_15_04"); //Nie, jeszcze nie...
+	AI_Output (self, other,"PC_Psionic_CHESTCLOSED_Info_05_05"); //Zagl¹da³eœ ju¿ do biblioteki?
+	AI_StopProcessInfos(self);
+};  
+/*------------------------------------------------------------------------
+							COME WITH ME AGAIN							
+------------------------------------------------------------------------*/
+
+instance  PC_Psionic_COMEAGAIN (C_INFO)
+{
+	npc				= PC_Psionic;
+	condition		= PC_Psionic_COMEAGAIN_Condition;
+	information		= PC_Psionic_COMEAGAIN_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Przeszukajmy tê Fortecê razem."; 
+};
+
+FUNC int  PC_Psionic_COMEAGAIN_Condition()
+{	
+	if (Npc_KnowsInfo (hero,PC_Psionic_LEAVE))
+	&& ( ! Npc_HasItems (hero, Focus_3) )
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  PC_Psionic_COMEAGAIN_Info()
+{
+	AI_Output (other, self,"PC_Psionic_COMEAGAIN_Info_15_01"); //Przeszukajmy tê Fortecê razem.
+	AI_Output (self, other,"PC_Psionic_COMEAGAIN_Info_05_02"); //Dobrze, idŸ przodem!
+ 
+ 	self.aivar[AIV_PARTYMEMBER] =	TRUE;
+	Npc_ExchangeRoutine (self,"FORTRESSFOLLOW");
+
+	AI_StopProcessInfos(self);
+};  
+
+//---------------------------------------------------------------------
+//	Info DIEGOMILTEN      ******Björn****** Patch2
+//---------------------------------------------------------------------
+INSTANCE Info_Lester_DIEGOMILTEN (C_INFO)
+{
+	npc			= PC_Psionic;
+	condition	= Info_Lester_DIEGOMILTEN_Condition;
+	information	= Info_Lester_DIEGOMILTEN_Info;
+	important	= 0;	
+	permanent	= 0;
+	description = "Spotka³em Diego i Miltena przed Starym Obozem!";
+};                       
+
+FUNC INT Info_Lester_DIEGOMILTEN_Condition()
+{
+	if	Npc_KnowsInfo(hero, Info_Diego_OCFAVOR)
+	{
+		return TRUE;
+	};
+};
+
+func VOID Info_Lester_DIEGOMILTEN_Info()
+{
+	
+	AI_Output	(hero,self,"Info_SFB_1_DieLage_15_00"); 				//Co s³ychaæ?
+	AI_Output 	(self, hero,"PC_Psionic_FOLLOWME_Info_05_01"); 			//Hej, co tu robisz?
+	AI_Output	(hero,self,"Info_Saturas_COLLAPSE_15_01"); 				//Stara Kopalnia zosta³a zalana przez podziemn¹ rzekê!
+	AI_Output 	(self, hero,"DIA_Fingers_BecomeShadow_05_01"); 			//I co z tego?
+	AI_Output 	(hero, self,"Info_Xardas_KDW_15_01"); 					//Wszyscy Magowie Ognia zginêli!
+	AI_Output 	(hero, self,"Info_Xardas_KDW_15_02"); 					//Gomez kaza³ ich zamordowaæ.
+	AI_Output 	(self, hero,"SVM_5_GetThingsRight"); 					//Nie ³atwo bêdzie to teraz odkrêciæ!
+	AI_Output 	(hero,self,"Info_Gorn_DIEGOMILTEN_15_01"); 				//Spotka³em Diego i Miltena przed Starym Obozem!
+	AI_Output 	(hero, self,"Info_lester_DIEGOMILTEN_15_01"); 			//Chce siê z tob¹ spotkaæ, tam gdzie zawsze.
+	AI_Output 	(self, hero,"SVM_5_YeahWellDone"); 						//Najwy¿szy czas!
+	AI_Output 	(other, self,"Info_Gorn_RUINWALLWHAT_15_01"); 			//I co teraz?
+	AI_Output 	(self, hero,"Info_lester_DIEGOMILTEN_05_02"); 			//Zostanê tutaj, ¿eby przejrzeæ stare ksiêgi.
+	AI_Output	(hero, self,"KDW_600_Saturas_OATH_Info_15_06"); 		//Eee... Nie rozumiem...
+	AI_Output 	(self, hero,"PC_Psionic_TIP_Info_05_02"); 				//Mistrz Y'Berion zwyk³ mawiaæ: Uczeñ próbuje przesuwaæ przedmioty rêkami i nogami. Mistrz porusza je si³¹ swego ducha.
+	AI_Output	(hero,self,"Info_Grd_6_DasLager_WasIstAerger_15_04"); 	//Dobrze, dobrze. Zrozumia³em aluzjê.
+	AI_Output 	(self, hero,"DIA_Fingers_Lehrer_Pickpocket2_05_03"); 	//Uwa¿aj na siebie.
+	AI_Output	(hero, self,"Info_FreemineOrc_EXIT_15_03"); 			//Dziêkujê. Muszê ju¿ ruszaæ w dalsz¹ drogê.
+	AI_Output 	(self, hero,"Info_Lester_EXIT_05_02"); 					//Niech Œni¹cy ma ciê w swojej opiece!
+	
+	B_LogEntry			(CH4_4Friends,		"Poinformowa³em Lestera o spotkaniu z ich przyjació³mi."); 
+		
+	B_GiveXP			(XP_MessageForGorn);
+/*
+	if (warned_gorn_or_lester == FALSE)
+	{
+		warned_gorn_or_lester = TRUE ;
+	}
+	else
+	{
+		B_LogEntry			(CH4_4Friends,		"Poinformowa³em Lestera i Gorna o spotkaniu z ich przyjació³mi. Moje zadanie skoñczone. Dalej bêd¹ musieli radziæ sobie sami..."); 
+		Log_SetTopicStatus	(CH4_4Friends,		LOG_SUCCESS);
+		MIS_4Friends = true;
+	};
+
+*/
+	if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE))
+	{
+	Npc_ExchangeRoutine (PC_PSIONIC,"spotkanie");
+	};
+	AI_StopProcessInfos(self);
+	
+};
+
+//========================================
+//-----------------> RUNY_INFOS
+//========================================
+
+INSTANCE DIA_PC_Psionic_RUNY_INFOS (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 1;
+   condition    = DIA_PC_Psionic_RUNY_INFOS_Condition;
+   information  = DIA_PC_Psionic_RUNY_INFOS_Info;
+   permanent	= FALSE;
+   description	= "Co s³ychaæ, Lesterze? (zagadaj o runach)";
+};
+
+FUNC INT DIA_PC_Psionic_RUNY_INFOS_Condition()
+{
+    if (MIS_NEW_GOD == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_RUNY_INFOS_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_RUNY_INFOS_15_01"); //Co s³ychaæ, Lesterze?
+    AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_02"); //S³ysza³em ¿e uda³o ci siê zdobyæ uznanie samego Mistrza Y'Beriona. Ca³kiem nieŸle, jak na kogoœ kto jest tu od niedawna.
+    AI_Output (other, self ,"DIA_PC_Psionic_RUNY_INFOS_15_03"); //Tak... Wasz Obóz jest bardzo ciekawym miejscem. Momentami ¿a³ujê, ¿e do³¹czy³em do Magów Ognia zamiast do Bractwa.
+    AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_04"); //Nie ma co p³akaæ nad rozlanym mlekiem, przyjacielu. Przecie¿ i tak nam pomagasz. Odk¹d pozby³eœ siê królowej pe³zaczy ze Starej Kopalni i zdoby³eœ jaja moi bracia uwa¿aj¹ ciê za bohatera. 
+    AI_Output (other, self ,"DIA_PC_Psionic_RUNY_INFOS_15_05"); //Hej, w³aœciwie to mam œwietny pomys³! Jestem magiem i mogê zg³êbiæ tajniki magii runicznej wszystkich rodzajów magii. Nie wiesz w jaki sposób mogê zdobyæ jak¹œ runê?
+    AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_06"); //Z tego co wiem runy sprzedaje Baal Cadar.
+    AI_Output (other, self ,"DIA_PC_Psionic_RUNY_INFOS_15_07"); //Tak, ale s¹ one bardzo drogie. Jako skromny s³uga Innosa nie mam doœæ rudy.
+    AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_08"); //No có¿, w takim razie mo¿e powinieneœ pomówiæ z moim mistrzem, Baal Namibem. Mo¿e zechce podzieliæ siê z tob¹ wiedz¹.
+    B_LogEntry                     (CH2_New_God,"Powinienem porozmawiaæ z Baal Namibem na temat run. Mo¿e uda mi siê jedn¹ dostaæ.");
+
+    B_GiveXP (50);
+    AI_StopProcessInfos	(self);
+};
+
+
+//#####################################################################################
+//####### ROZDZIA£ 5
+//####### SPOTKANIE
+//#####################################################################################
+//========================================
+//-----------------> PODAREK_LESTER
+//========================================
+
+INSTANCE DIA_Ash_PODAREK_LESTER (C_INFO)
+{
+   npc          = PC_PSIONIC;
+   nr           = 1;
+   condition    = DIA_Ash_PODAREK_LESTER_Condition;
+   information  = DIA_Ash_PODAREK_LESTER_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Ash_PODAREK_LESTER_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_pc_mage_PODAREK_MILTEN))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ash_PODAREK_LESTER_Info()
+{
+    AI_Output (self, hero ,"DIA_Ash_PODAREK_LESTER_03_01"); //Kogo ja widzê, to¿ to nasz bohater.
+    AI_Output (self, hero ,"DIA_Ash_PODAREK_LESTER_03_02"); //Cieszê siê, ¿e przyby³eœ. Zaczyna³em siê niepokoiæ.
+    AI_Output (hero, self ,"DIA_Ash_PODAREK_LESTER_03_03"); //Jak widaæ dotar³em.
+    AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_04"); //Tak, to oznacza, ¿e teraz jesteœ jednym z nas, na co w pe³ni zas³ugujesz.
+	// niepotrzebne! AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_05"); //Bractwo bez ciebie nigdy by siê nie pozbiera³o po upadku wiary w Œni¹cego.
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_06"); //Mam dla ciebie drobny podarek w imiê przyjaŸni.
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_07"); //WeŸ ten wywar z wnêtrznoœci pe³zaczy. 
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_08"); //Znalaz³em go przypadkiem w mojej chacie, gdy pakowa³em siê na wyprawê do Górskiej Fortecy.
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_09"); //Cor Kalom warzy³ takie dla Nowicjuszy, w celu wzmocnienia ich kontaktu ze Œni¹cym.
+    AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_10"); //Powinien zwiêkszyæ twoje si³y.
+	AI_Output (hero, self ,"DIA_Ash_PODAREK_LESTER_03_11"); //Dziêki!
+	CreateInvItems (self, ItFo_Potion_Elixier_Egg, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Elixier_Egg, 1);
+	B_LogEntry                     (CH4_4Friends,"Lester obdarowa³ mnie napojem z wnêtrznoœci pe³zaczy. Wreszcie dowiem siê, jakim œwiñstwem Cor Kalom odurza³ Nowicjuszy.");
+	//AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> LORE_BRACTWO
+//========================================
+
+INSTANCE DIA_PC_Psionic_LORE_BRACTWO (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 2;
+   condition    = DIA_PC_Psionic_LORE_BRACTWO_Condition;
+   information  = DIA_PC_Psionic_LORE_BRACTWO_Info;
+   permanent	= FALSE;
+   description	= "Co s³ychaæ w Bractwie?";
+};
+
+FUNC INT DIA_PC_Psionic_LORE_BRACTWO_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ash_PODAREK_LESTER))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_LORE_BRACTWO_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_LORE_BRACTWO_15_01"); //Co s³ychaæ w Bractwie?
+    AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_02"); //Szczerze mówi¹c nie mam pojêcia.
+    AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_03"); //Odk¹d wybra³em siê do Górskiej Fortecy, nie mia³em kontaktu z ¿adnym z moich braci.
+    AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_04"); //Za kilka dni zamierzam udaæ siê z wizyt¹ do mojego mistrza, Baal Namiba. 
+  //  AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_05"); //Mam nadziejê, ¿e dowiem siê czegoœ ciekawego.
+};
+
+//========================================
+//-----------------> ANGAR
+//========================================
+
+INSTANCE DIA_PC_Psionic_ANGAR (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 3;
+   condition    = DIA_PC_Psionic_ANGAR_Condition;
+   information  = DIA_PC_Psionic_ANGAR_Info;
+   permanent	= FALSE;
+   description	= "Co mo¿esz mi powiedzieæ o Cor Angarze?";
+};
+
+FUNC INT DIA_PC_Psionic_ANGAR_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ash_PODAREK_LESTER))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_ANGAR_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_ANGAR_15_01"); //Co mo¿esz mi powiedzieæ o Cor Angarze?
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_02"); //Myœlê, ¿e bêdzie dobrze zastêpowa³ Y'Beriona. 
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_03"); //Jest rozs¹dny, twardy, a zarazem wyrozumia³y.
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_04"); //Cieszê siê, ¿e Kalom opuœci³ Bractwo. Nie bêdzie zara¿a³ innych swoim jadem.
+    AI_Output (other, self ,"DIA_PC_Psionic_ANGAR_15_05"); //Myœla³em, ¿e szanowa³eœ Cor Kaloma.
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_06"); //Tak by³o, ale ten goœæ chyba za bardzo siê wczu³ w to wszystko.
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_07"); //A co do Cor Angara, to wierzê, ¿e zaprowadzi porz¹dek w Bractwie.
+	
+};
+
+//========================================
+//-----------------> SLEPPER
+//========================================
+
+INSTANCE DIA_PC_Psionic_SLEPPER (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 4;
+   condition    = DIA_PC_Psionic_SLEPPER_Condition;
+   information  = DIA_PC_Psionic_SLEPPER_Info;
+   permanent	= FALSE;
+   description	= "Œni¹cy naprawdê istnieje.";
+};
+
+FUNC INT DIA_PC_Psionic_SLEPPER_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ash_PODAREK_LESTER))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_SLEPPER_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_01"); //Œni¹cy naprawdê istnieje. Zosta³ przyzwany do tego œwiata przez orków.
+    AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_02"); //Co?! Nie mogê w to uwierzyæ!
+    AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_03"); //Jak mogliœmy byæ tacy œlepi! 
+    AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_04"); //Spoczywa uœpiony od wieków w œwi¹tyni pod miastem orków.
+    AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_05"); //To ca³kiem blisko st¹d. Mam nadzieje, ¿e nigdy nie zostanie zbudzony.
+    AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_06"); //Nie ³udzi³bym siê, wydaje mi siê, ¿e Cor Kalom dosta³ siê do œwi¹tyni.
+    AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_07"); //Lepiej szybko powstrzymaj tego szaleñca!
+    AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_08"); //Nie martw siê, postaram siê tym zaj¹æ. 
+	// tak, ju¿ pójdê i go pokonam, Bezimienny taki nie jest, wyciête
+   // AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_09"); //Mam nadzieje, ¿e ci siê uda.
+   // AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_10"); //Choæ z drugiej strony udowodni³eœ nie raz, ¿e jesteœ prawdziwym bohaterem.
+};
+
+//========================================
+//-----------------> WHY_PSICAMP
+//========================================
+
+INSTANCE DIA_PC_Psionic_WHY_PSICAMP (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 5;
+   condition    = DIA_PC_Psionic_WHY_PSICAMP_Condition;
+   information  = DIA_PC_Psionic_WHY_PSICAMP_Info;
+   permanent	= FALSE;
+   description	= "Dlaczego do³¹czy³eœ akurat do obozu na bagnie?";
+};
+
+FUNC INT DIA_PC_Psionic_WHY_PSICAMP_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ash_PODAREK_LESTER))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_WHY_PSICAMP_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_WHY_PSICAMP_15_01"); //Dlaczego do³¹czy³eœ akurat do obozu na bagnie?
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_02"); //D³ugo w³óczy³em siê po innych obozach, szukaj¹c wygodnego dla mnie ¿ycia.
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_03"); //Jednak ka¿dy obóz mia³ swoje wady i zalety.
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_04"); //Mia³em mêtlik w g³owie. Nie wiedzia³em co zrobiæ. 
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_05"); //Z braku lepszych pomys³ów do³¹czy³em do Bractwa. 
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_06"); //Uda³o mi siê wymigaæ od pracy jako zbieracz na bagnie. 
+    AI_Output (self, other ,"DIA_PC_Psionic_WHY_PSICAMP_03_08"); //Myœla³em póŸniej nad zmian¹, ale ciesze siê, ¿e ostatecznie zrezygnowa³em. 
+};
+
+//========================================
+//-----------------> CASTLE
+//========================================
+
+INSTANCE DIA_PC_Psionic_CASTLE (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 6;
+   condition    = DIA_PC_Psionic_CASTLE_Condition;
+   information  = DIA_PC_Psionic_CASTLE_Info;
+   permanent	= FALSE;
+   description	= "Co zamierzasz zrobiæ ze swoj¹ siedzib¹?";
+};
+
+FUNC INT DIA_PC_Psionic_CASTLE_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ash_PODAREK_LESTER))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Psionic_CASTLE_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Psionic_CASTLE_15_01"); //Co zamierzasz zrobiæ ze swoj¹ siedzib¹?
+    AI_Output (self, other ,"DIA_PC_Psionic_CASTLE_03_02"); //Po mojej krótkiej wizycie w Bractwie zamierzam zadomowiæ siê tam na dobre.
+    AI_Output (self, other ,"DIA_PC_Psionic_CASTLE_03_03"); //Mam przeczucie, ¿e ju¿ wkrótce Bariera upadnie.
+    AI_Output (self, other ,"DIA_PC_Psionic_CASTLE_03_04"); //Wtedy spêdzê resztê swojego ¿ycia w dostatku i bogactwie.
+    AI_Output (other, self ,"DIA_PC_Psionic_CASTLE_15_05"); //Tego ci ¿yczê.
+    AI_Output (self, other ,"DIA_PC_Psionic_CASTLE_03_06"); //Zawsze bêdziesz mile widzianym goœciem, przyjacielu. 
+};
+
+
+//-------------------------------------------------------------------------------------------SUBMOD------------------------------------------------------------
+
+
+// **************************************************
+//					Wanna Join
+// **************************************************
+
+instance  DIA_Lester_Zabojstwo (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_Zabojstwo_Condition;
+	information	= DIA_Lester_Zabojstwo_Info;
+	permanent	= 0;
+	important   = TRUE;
+};                       
+
+FUNC int  DIA_Lester_Zabojstwo_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_Brago_Medalion))
+    &&  (Ucieczka_Brago_Day<=(Wld_GetDay()-1)) 
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_Zabojstwo_Info()
+{
+
+    AI_Output (self, other,"DIA_Lester_Zabojstwo_05_01"); //Dziwie ci siê, ¿e mo¿esz byæ tak spokojny!
+	AI_Output (other, self,"DIA_Lester_Zabojstwo_15_02"); //A niby czemu mia³bym taki nie byæ?
+	AI_Output (self, other,"DIA_Lester_Zabojstwo_05_03"); //Choæby dlatego, ¿e jesteœ g³ównym podejrzanym o kilka wystêpków w tym zabójstwo.
+	NOV_40001_Mosul.attribute[ATR_HITPOINTS] = 0;
+	    Info_ClearChoices (DIA_Lester_Zabojstwo);
+	    Info_AddChoice    (DIA_Lester_Zabojstwo,"CO?!",DIA_Lester_Co);
+		
+};
+
+
+
+FUNC VOID DIA_Lester_Co()
+  {
+     AI_Teleport(NOV_40000_Brago, "WP_BRAGO_TAVERN");   
+	AI_Output               (other,self ,"DIA_Lester_Co_15_00");  //CO?!
+	AI_Output               (self ,other,"DIA_Lester_Co_11_01");  //Nowicjusz Mosul zosta³ zamordowany ostatniej nocy. Nied³ugo przed zabójstwem widziano wasz¹ bójkê. Ale to nie koniec.
+	AI_Output               (other,self ,"DIA_Lester_Co_15_02");  //Mów dalej!
+	AI_Output               (self ,other,"DIA_Lester_Co_11_03");  //Mosul otrzyma³ œmiertelne rany no¿em, który kupi³eœ u Melvina. No i jest jeszcze sprawa okradzenia Joru.
+	AI_Output               (self ,other,"DIA_Lester_Co_11_04");  //Brago zezna³, ¿e to twoja sprawka. 
+	AI_Output               (other,self ,"DIA_Lester_Co_15_05");  //Ten sukinsyn wszystko ukartowa³! To on jest morderc¹! Musze go dorwaæ i oczyœciæ siê z zarzutów.
+	AI_Output               (self ,other,"DIA_Lester_Co_11_06");  //Najpierw porozmawiaj z Baalem Namibem. To on nadzoruje sprawê morderstwa.
+	AI_Output               (self ,other,"DIA_Lester_Co_11_07");  //Ja te¿ z nim pomówiê. Dowie siê ode mnie, ¿e najprawdopodobniej to nie ty za tym stoisz. Ale to wci¹¿ ma³o.
+	AI_Output               (self ,other,"DIA_Lester_Co_11_08");  //A co do Brago to nie znajdziesz go w obozie. O œwicie poœpiesznie opuœci³ obóz. 
+	AI_Output               (other,self ,"DIA_Lester_Co_15_09");  //Wiadomo coœ wiêcej?
+	AI_Output               (self ,other,"DIA_Lester_Co_11_10");  //Tu¿ przed nim do Starej Kopalni wyruszyli Stra¿nicy Œwi¹tynni. Pomów z Gor Na Drakiem. Mo¿e on wie w któr¹ stronê poszed³ Brago.
+	AI_Output               (other,self ,"DIA_Lester_Co_15_11");  //Dziêki przyjacielu. Ratujesz mi skórê!
+	Info_ClearChoices       (DIA_Lester_Zabojstwo);  
+    
+	 NAMIB_MOSULKILL = TRUE;
+	 Npc_ExchangeRoutine            (NOV_40000_Brago,"Ucieczka");
+	 B_LogEntry                     (ZlodziejskaWspolpraca,"Lester powiedzia³ mi ¿e Nowicjusz Mosul zosta³ zamordowany ostatniej nocy. Dokonano tego no¿em, który kupi³em od Melvina. Ponoæ widziano wczeœniej moj¹ bójkê z Mosulem i to ja jestem g³ównym podejrzanym. Na dodatek ten sukinsyn Brago zezna³, ¿e okrad³em Joru. To wszystko to jego sprawka! Musze jakoœ oczyœciæ siê z zarzutów.");
+	 AI_StopProcessInfos  	        (self);
+};
+
+
+
+
+// **************************************************
+//					Wanna Join
+// **************************************************
+
+instance  DIA_Lester_Koniec_Brago (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_Koniec_Brago_Condition;
+	information	= DIA_Lester_Koniec_Brago_Info;
+	permanent	= 0;
+	important   = TRUE;
+};                       
+
+FUNC int  DIA_Lester_Koniec_Brago_Condition()
+{
+	if	(Npc_KnowsInfo(hero,DIA_BaalNamib_GIT))
+
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_Koniec_Brago_Info()
+{
+
+    AI_Output (self, other,"DIA_Lester_Koniec_Brago_05_00"); //A wiêc wszystko dobrze siê skoñczy³o.
+	AI_Output (other, self,"DIA_Lester_Koniec_Brago_15_01"); //Tak. Ale gdyby nie ty to teraz ca³a Sekta chcia³aby mnie wypatroszyæ.
+	AI_Output (self, other,"DIA_Lester_Koniec_Brago_05_02"); //Istotnie.
+	AI_Output (other, self,"DIA_Lester_Koniec_Brago_15_03"); //Jestem twoim d³u¿nikiem.
+	AI_Output (self, other,"DIA_Lester_Koniec_Brago_05_04"); //Drobiazg. Ja pomog³em tobie a ty kiedyœ pomo¿esz mi.
+	AI_Output (other, self,"DIA_Lester_Koniec_Brago_15_05"); //Postaram siê.
+	   
+};
+
+
+// **************************************************
+//					Cenne znalezisko
+// **************************************************
+
+instance  DIA_Lester_AMULET_PSI (C_INFO) //E2
+{
+	npc			= PC_Psionic;
+	nr			= 2;
+	condition	= DIA_Lester_AMULET_PSI_Condition;
+	information	= DIA_Lester_AMULET_PSI_Info;
+	permanent	= 0;
+	description   = "Mam pewien interesuj¹cy medalion...";
+};                       
+
+FUNC int  DIA_Lester_AMULET_PSI_Condition()
+{
+	if (Npc_HasItems(hero, Amulett_BrandickS)>=1)
+    && (Npc_KnowsInfo (hero ,GRD_261_Brandick_PSI_AMULET))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Lester_AMULET_PSI_Info()
+{
+
+    AI_Output (other, self,"DIA_Lester_AMULET_PSI_15_01"); //Mam pewien interesuj¹cy medalion. Mo¿esz mi coœ wiêcej powiedzieæ na jego temat?
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_02"); //Poka¿ mi go.
+	AI_Output (other, self,"DIA_Lester_AMULET_PSI_15_03"); //Proszê.
+	B_GiveInvItems (other,self,Amulett_BrandickS, 1);
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_04"); //Hmmm... Wygl¹da mi na medalion Œwi¹tynnego wojownika, który wzmacnia si³y witalne posiadacza.
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_05"); //Ale jest powa¿nie uszkodzony, a co za tym idzie niemal bezu¿yteczny.
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_06"); //A tak w³aœciwie to sk¹d go masz?
+	AI_Output (other, self,"DIA_Lester_AMULET_PSI_15_07"); //Jeden z waszych Stra¿ników Œwi¹tynnych zgin¹³ w Starej Kopalni. T¹ b³yskotkê znaleziono przy jego zw³okach.
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_08"); //A wiêc tak to wygl¹da. Có¿, byæ mo¿e jednak jest szansa, ¿e ten medalion da siê zreperowaæ.
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_09"); //Ale niestety, nie mogê ci w tym pomóc. Musisz pomówiæ z którymœ z Baalów. Mo¿e to byæ chocia¿by Baal Orun.
+	AI_Output (self, other,"DIA_Lester_AMULET_PSI_05_10"); //Jednak musisz go najpierw przekonaæ do rozmowy z tob¹. Masz z powrotem medalion.
+	B_GiveInvItems (self,other,Amulett_BrandickS, 1);
+	AI_Output (other, self,"DIA_Lester_AMULET_PSI_15_11"); //Coœ wymyœlê, dziêki za radê.
+    B_LogEntry               (CiekaweZnalezisko,"Rozmawia³em z Lesterem. Powiedzia³, ¿e uszkodzony medalion zwiêksza si³y witalne posiadacza. Myœlê, ¿e warto siê tym zainteresowaæ. Lester poleci³ mi porozmawiaæ z którymœ z Baalów na przyk³ad z Orunem.");
+
+};
+
+
+//========================================
+//-----------------> KH_Hear
+//========================================
+
+INSTANCE DIA_Pc_Psionic_KH_Hear (C_INFO)
+{
+   npc          = Pc_Psionic;
+   nr           = 1;
+   condition    = DIA_Pc_Psionic_KH_Hear_Condition;
+   information  = DIA_Pc_Psionic_KH_Hear_Info;
+   permanent	= FALSE;
+   description	= "S³ysza³eœ coœ o tak zwanej Koronie Hrodgira?";
+};
+
+FUNC INT DIA_Pc_Psionic_KH_Hear_Condition()
+{
+if (Npc_KnowsInfo(hero,DIA_Connor_KH_Sekta))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Pc_Psionic_KH_Hear_Info()
+{
+    AI_Output (other, self ,"DIA_Pc_Psionic_KH_Hear_15_01"); //S³ysza³eœ coœ o tak zwanej Koronie Hrodgira?
+    AI_Output (self, other ,"DIA_Pc_Psionic_KH_Hear_03_02"); //Niewiele. To ponoæ cenny przedmiot. Ale Baal Cadar powinien wiedzieæ wiêcej.
+    AI_Output (self, other ,"DIA_Pc_Psionic_KH_Hear_03_03"); //Jedyne informacjê jakie posiadam o tej koronie pochodz¹ w³aœnie od niego.
+    AI_Output (other, self ,"DIA_Pc_Psionic_KH_Hear_15_04"); //Wielkie dziêki.
+    AI_Output (self, other ,"DIA_Pc_Psionic_KH_Hear_03_05"); //Swoj¹ drog¹ to oznaka wielkiej buty – sporz¹dziæ sobie koronê samemu nie bêd¹c królem.
+    AI_Output (other, self ,"DIA_Pc_Psionic_KH_Hear_15_06"); //To prawda.
+	B_LogEntry               (KoronaHrodgira,"Lester powiedzia³, ¿e Baal Cadar wie wiêcej o koronie Hrodgira. Muszê z nim pogadaæ.");
+    AI_StopProcessInfos	(self);
+};
+//--------------------------------------------------------------Wi¹zanka Dla Cor Caloma
+
+//========================================
+//-----------------> WDC_CalomGuard
+//========================================
+var int Calom_GWarn;
+INSTANCE DIA_Pc_Psionic_WDC_CalomGuard (C_INFO)
+{
+   npc          = Pc_Psionic;
+   nr           = 1;
+   condition    = DIA_Pc_Psionic_WDC_CalomGuard_Condition;
+   information  = DIA_Pc_Psionic_WDC_CalomGuard_Info;
+   permanent	= FALSE;
+   description	= "Co mo¿esz mi powiedzieæ o ochroniarzu Cor Caloma?";
+};
+
+FUNC INT DIA_Pc_Psionic_WDC_CalomGuard_Condition()
+{
+if (Npc_KnowsInfo(hero,DIA_Templer_WDC))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Pc_Psionic_WDC_CalomGuard_Info()
+{
+    AI_Output (other, self ,"DIA_Pc_Psionic_WDC_CalomGuard_15_01"); //Co mo¿esz mi powiedzieæ o ochroniarzu Cor Caloma?
+    AI_Output (self, other ,"DIA_Pc_Psionic_WDC_CalomGuard_03_02"); //To bardzo dobry wojownik. Wyró¿ni³ siê na tyle, ¿e teraz pilnuje tak wa¿nej osobistoœci w naszym Bractwie.
+    AI_Output (other, self ,"DIA_Pc_Psionic_WDC_CalomGuard_15_03"); //A coœ jeszcze?
+    AI_Output (self, other ,"DIA_Pc_Psionic_WDC_CalomGuard_03_04"); //Jest bardzo dumny i pewny siebie. Ma tylko ¿al, ¿e nigdy nie zosta³ mistrzem naszej areny.
+    AI_Output (self, other ,"DIA_Pc_Psionic_WDC_CalomGuard_03_05"); //Gdyby us³ysza³, ¿e organizuj¹ tu turniej to pobieg³by z wywieszonym jêzorem by stan¹æ w szranki.
+    AI_Output (other, self ,"DIA_Pc_Psionic_WDC_CalomGuard_15_06"); //Hmm... Liczê na dos³ownoœæ tego stwierdzenia.
+	Calom_GWarn = TRUE;
+	 B_LogEntry               (WiazankaDlaCorCaloma,"Lester powiedzia³, ¿e ambicja ochroniarza Caloma zawsze by³o staniêcie w szranki na arenie Bractwa I zdobycie tytu³u czempiona. Chyba mu powiem, ¿e takowy w³aœnie siê zaczyna...");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> BG
+//========================================
+
+INSTANCE DIA_PC_Psionic_BG (C_INFO)
+{
+   npc          = PC_Psionic;
+   nr           = 1;
+   condition    = DIA_PC_Psionic_BG_Condition;
+   information  = DIA_PC_Psionic_BG_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_PC_Psionic_BG_Condition()
+{
+if (Npc_GetTrueGuild(hero) == GIL_TPL)
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_PC_Psionic_BG_Info()
+{
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_01"); //Mamy problem.
+    AI_Output (other, self ,"DIA_PC_Psionic_BG_15_02"); //Có¿, na tym œwiecie to chleb powszedni. O co chodzi?
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_03"); //Bagienne golemy podchodz¹ niebezpiecznie blisko obozu od strony bagna.
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_04"); //W efekcie straciliœmy ju¿ paru ludzi. To nie mo¿e siê powtarzaæ.
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_05"); //Te bestie strasznie siê rozzuchwali³y.
+    AI_Output (other, self ,"DIA_PC_Psionic_BG_15_06"); //Chyba wiem co masz na myœli...
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_07"); //Znam cz³owieka, który specjalizuje siê w zabijaniu tych stworów. Ale obawiam siê, ¿e ma wiele na g³owie.
+    AI_Output (other, self ,"DIA_PC_Psionic_BG_15_08"); //Kto to taki?
+    AI_Output (self, other ,"DIA_PC_Psionic_BG_03_09"); //Wojownik Œwi¹tynny Gor Na Pol. Opanowa³ sztukê zabijania b³otnych wê¿y I bagiennych golemów do perfekcji.
+    AI_Output (other, self ,"DIA_PC_Psionic_BG_15_10"); //Porozmawiam z nim.
+	Log_CreateTopic		(BagienneGolemy,	LOG_MISSION);
+	Log_SetTopicStatus	(BagienneGolemy,	LOG_RUNNING);
+	B_LogEntry               (BagienneGolemy,"Lester poninformowa³, ¿e pojawi³y siê ataki ze strony bagiennych golemów na mieszkañców obozu. Te stwory podchodz¹ coraz bli¿ej i zabijaj¹ nowicjuszy. Powinienem pomówiæ z Gor Na Polem on zna siê na zabijaniu bagiennych golemów.");
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

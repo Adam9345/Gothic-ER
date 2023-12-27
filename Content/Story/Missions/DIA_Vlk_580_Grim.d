@@ -1,0 +1,715 @@
+//poprawione i sprawdzone -Reflide
+
+// **************************************************
+// 						 EXIT 
+// **************************************************
+
+INSTANCE DIA_Grim_Exit (C_INFO)
+{
+	npc			= Vlk_580_Grim;
+	nr			= 999;
+	condition	= DIA_Grim_Exit_Condition;
+	information	= DIA_Grim_Exit_Info;
+	permanent	= 1;
+	description = DIALOG_ENDE;
+};                       
+
+FUNC INT DIA_Grim_Exit_Condition()
+{
+	return 1;
+};
+
+FUNC VOID DIA_Grim_Exit_Info()
+{
+	AI_StopProcessInfos	( self );
+};
+
+// **************************************************
+// 				FALLE (Schutzgeld)
+// **************************************************
+
+INSTANCE DIA_Grim_Falle (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 2;
+	condition		= DIA_Grim_Falle_Condition;
+	information		= DIA_Grim_Falle_Info;
+	permanent		= 0;
+	important 		= 1;
+};
+
+FUNC INT DIA_Grim_Falle_Condition()
+{	
+	if	(Grim_ProtectionBully == TRUE)
+	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_Falle_Info()
+{
+	AI_Output (self, other,"DIA_Grim_Falle_06_00"); //Hej, ty! Czy to nie ty chcesz do³¹czyæ do naszego Obozu?
+	AI_Output (other, self,"DIA_Grim_Falle_15_01"); //A jeœli chcê?
+	AI_Output (self, other,"DIA_Grim_Falle_06_02"); //Móg³bym ci pomóc...
+	AI_Output (other, self,"DIA_Grim_Falle_15_03"); //Jak?
+	AI_Output (self, other,"DIA_Grim_Falle_06_04"); //Na zewn¹trz Obozu siedzi dwóch goœci. Jeden z nich ukrad³ coœ cennego Magnatom. To cenny amulet, który mia³ nam zostaæ przys³any z ostatnim transportem ze Œwiata Zewnêtrznego.
+	AI_Output (self, other,"DIA_Grim_Falle_06_05"); //Któryœ z nich powinien mieæ ten amulet przy sobie. Jeœli zaatakujemy ich razem, powinno nam siê udaæ. Sam raczej nie dam rady. Co ty na to?
+		
+	Info_ClearChoices	(DIA_Grim_Falle );
+	Info_AddChoice		(DIA_Grim_Falle,"To nie dla mnie. Poszukaj sobie kogoœ innego."	,DIA_Grim_Falle_Deny);
+	Info_AddChoice		(DIA_Grim_Falle,"A co siê stanie, gdy ju¿ zdobêdziemy amulet?"	,DIA_Grim_Falle_HowShare);
+	Info_AddChoice		(DIA_Grim_Falle,"Pójdê z tob¹."							,DIA_Grim_Falle_Accepr);
+};
+
+func void DIA_Grim_Falle_Deny()
+{
+	AI_Output (other, self,"DIA_Grim_Falle_Deny_15_00"); //To nie dla mnie. Poszukaj sobie kogoœ innego.
+	AI_Output (self, other,"DIA_Grim_Falle_Deny_06_01"); //Z takim podejœciem d³ugo tu miejsca nie zagrzejesz. Daj mi znaæ, gdybyœ zmieni³ zdanie!
+	Info_ClearChoices	(DIA_Grim_Falle );
+};
+
+func void DIA_Grim_Falle_HowShare()
+{
+	AI_Output (other, self,"DIA_Grim_Falle_HowShare_15_00"); //A co siê stanie, gdy ju¿ zdobêdziemy amulet?
+	AI_Output (self, other,"DIA_Grim_Falle_HowShare_06_01"); //To proste. Zwrócê go Magnatom i odbiorê nagrodê. Przy okazji powiem im, ¿e mi pomog³eœ. Ta wiadomoœæ na pewno dotrze do Gomeza!
+	
+	Info_ClearChoices	(DIA_Grim_Falle );
+	Info_AddChoice		(DIA_Grim_Falle,"To nie dla mnie. Poszukaj sobie kogoœ innego."	,DIA_Grim_Falle_Deny);
+	Info_AddChoice		(DIA_Grim_Falle,"Nie! Albo dzielimy siê po po³owie, albo baw siê sam!"	,DIA_Grim_Falle_HalfHalf);
+	Info_AddChoice		(DIA_Grim_Falle,"Pójdê z tob¹."							,DIA_Grim_Falle_Accepr);
+};
+
+func void DIA_Grim_Falle_HalfHalf()
+{
+	AI_Output (other, self,"DIA_Grim_Falle_HalfHalf_15_00"); //Nie! Albo dzielimy siê po po³owie, albo baw siê sam!
+	AI_Output (self, other,"DIA_Grim_Falle_HalfHalf_06_01"); //Niech bêdzie, pó³ na pó³! Nagrody wystarczy dla nas dwóch! To jak? Mogê na ciebie liczyæ?
+};
+
+func void DIA_Grim_Falle_Accepr()
+{
+	AI_Output (other, self,"DIA_Grim_Falle_Accepr_15_00"); //Pójdê z tob¹.
+	AI_Output (self, other,"DIA_Grim_Falle_Accepr_06_01"); //Œwietnie, daj mi znaæ, gdy bêdziesz gotów.
+	Info_ClearChoices	(DIA_Grim_Falle );
+	Log_CreateTopic		(CH1_GrimAmulet,LOG_MISSION);
+	Log_SetTopicStatus	(CH1_GrimAmulet,LOG_RUNNING);
+	B_LogEntry (CH1_GrimAmulet,"Kopacz Grim twierdzi, ¿e kilku rzezimieszków ukrad³o jakiœ cenny amulet Magnatom. Prosi mnie, abyœmy razem siê z nimi rozprawili.");
+};
+
+// **************************************************
+// 				Bereit für Falle
+// **************************************************
+
+INSTANCE DIA_Grim_ReadyToGo (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 2;
+	condition		= DIA_Grim_ReadyToGo_Condition;
+	information		= DIA_Grim_ReadyToGo_Info;
+	permanent		= 0;
+	description		= "Jestem gotowy. ChodŸmy po ten amulet.";
+};
+
+FUNC INT DIA_Grim_ReadyToGo_Condition()
+{	
+	if (Npc_KnowsInfo(hero,DIA_Grim_Falle)) && (Kapitel < 4)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_ReadyToGo_Info()
+{
+	AI_Output (other, self,"DIA_Grim_ReadyToGo_15_00"); //Jestem gotowy. ChodŸmy po ten amulet.
+	AI_Output (self, other,"DIA_Grim_ReadyToGo_06_01"); //Zatem do dzie³a!
+	
+	AI_StopProcessInfos	(self);
+	
+	Npc_ExchangeRoutine(self,"GUIDE");
+};	
+
+// **************************************************
+//				OC DRAUSSEN ANGEKOMMEN
+// **************************************************
+
+instance  DIA_Grim_AtOCdraussen(C_INFO)
+{
+	npc			= Vlk_580_Grim;
+	nr			= 3;
+	condition	= DIA_Grim_AtOCdraussen_Condition;
+	information	= DIA_Grim_AtOCdraussen_Info;
+	permanent	= 0;
+	important 	= 1;
+};                       
+
+FUNC int  DIA_Grim_AtOCdraussen_Condition()
+{
+	if 	( Npc_KnowsInfo(hero,DIA_Grim_ReadyToGo)) && (Npc_GetDistToWp (hero,"OC_ROUND_22_CF_2_MOVEMENT") < 500 ) 
+	{
+		return 1;
+	};
+};
+
+FUNC VOID  DIA_Grim_AtOCdraussen_Info()
+{
+	AI_Output (self, other,"DIA_Grim_AtOCdraussen_06_00"); //Oto jesteœmy - daleko od twojego kumpla, Diego.
+	if ( ((Npc_GetDistToNpc(self,Bu520)<1000)&&(!Npc_IsDead(Bu520))) || ((Npc_GetDistToNpc(self,Bu534)<1000)&&(!Npc_IsDead(Bu534))) )
+	{
+		AI_Output (self, other,"DIA_Grim_AtOCdraussen_06_01"); //Mamy ci przekazaæ pozdrowienia od Bloodwyna!
+			Log_SetTopicStatus	(CH1_GrimAmulet,LOG_SUCCESS);
+	B_LogEntry (CH1_GrimAmulet,"Grim mnie oszuka³. On i jego koledzy odwa¿yli siê mnie zaatakowaæ. Podobno wynaj¹³ ich Bloodwyn... Na przysz³oœæ nie powinienem byæ tak ³atwowierny.");
+	}
+	else
+	{
+		AI_Output (self, other,"DIA_Grim_AtOCdraussen_06_02"); //Mam ci przekazaæ pozdrowienia od Bloodwyna!
+			Log_SetTopicStatus	(CH1_GrimAmulet,LOG_SUCCESS);
+	B_LogEntry (CH1_GrimAmulet,"Grim mnie oszuka³. Ponadto odwa¿y³ siê mnie zaatakowaæ. Podobno wynaj¹³ go Bloodwyn... Na przysz³oœæ nie powinienem byæ tak ³atwowierny.");
+	};
+
+ 
+	AI_StopProcessInfos	(self);
+		
+	Npc_ExchangeRoutine(self,"START");
+	Npc_SetTarget(self,other);
+	AI_StartState(self,ZS_ATTACK,1,"");
+	
+	var C_NPC Bu520; Bu520 = Hlp_GetNpc(Vlk_520_Buddler);
+	var C_NPC Bu534; Bu534 = Hlp_GetNpc(Vlk_534_Buddler);
+	var C_NPC Bu40162; Bu40162 = Hlp_GetNpc(VLK_40162_Buddler);
+	if ( (Npc_GetDistToNpc(self,Bu520)<1300) && (!Npc_IsDead(Bu520)) )
+	{
+		Npc_SetTarget(Bu520,other);
+		AI_StartState(Bu520,ZS_ATTACK,1,"");
+	};
+	
+	if ( (Npc_GetDistToNpc(self,Bu534)<1300) && (!Npc_IsDead(Bu534)) )
+	{
+		Npc_SetTarget(Bu534,other);
+		AI_StartState(Bu534,ZS_ATTACK,1,"");
+	};
+	if ( (Npc_GetDistToNpc(self,Bu40162)<1300) && (!Npc_IsDead(Bu40162)) )
+	{
+		Npc_SetTarget(Bu40162,other);
+		AI_StartState(Bu40162,ZS_ATTACK,1,"");
+	};
+	
+};
+
+// **************************************************
+// 				NACH Falle
+// **************************************************
+
+INSTANCE DIA_Grim_NACHFalle (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 2;
+	condition		= DIA_Grim_NACHFalle_Condition;
+	information		= DIA_Grim_NACHFalle_Info;
+	permanent		= 0;
+	important		= 1;
+};
+
+FUNC INT DIA_Grim_NACHFalle_Condition()
+{	
+	if ( (Npc_KnowsInfo(hero,DIA_Grim_AtOCdraussen)) && (Npc_GetDistToNpc(self,other)<ZivilAnquatschDist) )
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_NACHFalle_Info()
+{
+	AI_Output (other, self,"DIA_Grim_NACHFalle_15_01"); //Ty g³upcze, chcia³eœ mnie zwabiæ w pu³apkê...
+	AI_Output (self, other,"DIA_Grim_NACHFalle_06_02"); //Hej, stary! Jedziemy na tym samym wózku! Ja te¿ nie zamierzam ryæ pod ziemi¹ do koñca moich dni!
+	AI_Output (self, other,"DIA_Grim_NACHFalle_06_03"); //Dlatego wype³niam polecenia Stra¿ników. Ja te¿ chcê do³¹czyæ do Obozu!
+	AI_Output (self, other,"DIA_Grim_NACHFalle_06_04"); //Zreszt¹ sam zas³u¿y³eœ na ca³y ten bajzel. Dlaczego zadar³eœ ze Stra¿nikami?
+	AI_Output (self, other,"DIA_Grim_NACHFalle_06_05"); //Osobiœcie nic do ciebie nie mam. To jak bêdzie - wojna czy pokój.
+	
+	Info_ClearChoices	(DIA_Grim_NACHFalle );
+	Info_AddChoice		(DIA_Grim_NACHFalle,"Wojna."	,DIA_Grim_NACHFalle_Weiterpruegeln);
+	Info_AddChoice		(DIA_Grim_NACHFalle,"Pokój."			,DIA_Grim_NACHFalle_Frieden);
+};
+
+
+func void DIA_Grim_NACHFalle_Weiterpruegeln()
+{
+	AI_Output (other, self,"DIA_Grim_NACHFalle_Weiterpruegeln_15_00"); //Nie mam nic przeciwko wojnie!
+	AI_Output (self, other,"DIA_Grim_NACHFalle_Weiterpruegeln_06_01"); //Stary, mam ju¿ tego doœæ...
+	Info_ClearChoices	(DIA_Grim_NACHFalle );
+	AI_StopProcessInfos	(self);
+
+	Npc_SetTarget(self,other);
+	AI_StartState(self,ZS_ATTACK,1,"");
+};
+
+func void DIA_Grim_NACHFalle_Frieden()
+{
+	AI_Output (other, self,"DIA_Grim_NACHFalle_Frieden_15_00"); //Niech bêdzie pokój.
+	AI_Output (self, other,"DIA_Grim_NACHFalle_Frieden_06_01"); //Cieszê siê, ¿e mogliœmy to sobie wyjaœniæ. Najlepiej zapomnijmy o ca³ej sprawie. Od tej chwili jestem po twojej stronie.
+	AI_Output (self, other,"DIA_Grim_NACHFalle_Frieden_06_02"); //Gdybyœ jeszcze kiedyœ wpad³ w tarapaty, mo¿esz na mnie liczyæ. W koñcu jestem ci coœ winien.
+	Info_ClearChoices	(DIA_Grim_NACHFalle );
+
+	Npc_SetPermAttitude(self,ATT_FRIENDLY);
+};
+
+// **************************************************
+// 				Hallo
+// **************************************************
+	var int FirstOver;				
+// **************************************************
+
+INSTANCE DIA_Grim_Hallo (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 1;
+	condition		= DIA_Grim_Hallo_Condition;
+	information		= DIA_Grim_Hallo_Info;
+	permanent		= 0;
+	description		= "Jestem tu nowy.";
+};
+
+FUNC INT DIA_Grim_Hallo_Condition()
+{	
+	if (Grim_ProtectionBully==TRUE)
+	{
+		FirstOver = TRUE;
+	};
+	
+	if (FirstOver == FALSE)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_Hallo_Info()
+{
+	AI_Output (other, self,"DIA_Grim_Hallo_15_00"); //Jestem tu nowy.
+	AI_Output (self, other,"DIA_Grim_Hallo_06_01"); //¯ó³todziób, co? Nazywam siê Grim - te¿ jestem tu od niedawna. Wrzucili mnie nied³ugo przed tob¹.
+};
+
+// **************************************************
+// 						Leben
+// **************************************************
+
+INSTANCE DIA_Grim_Leben (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 2;
+	condition		= DIA_Grim_Leben_Condition;
+	information		= DIA_Grim_Leben_Info;
+	permanent		= 0;
+	description		= "Jak wygl¹da ¿ycie w Kolonii?";
+};
+
+FUNC INT DIA_Grim_Leben_Condition()
+{	
+if  (Kapitel < 4){
+	return 1;
+};
+};
+FUNC VOID DIA_Grim_Leben_Info()
+{
+	AI_Output (other, self,"DIA_Grim_Leben_15_00"); //Jak wygl¹da ¿ycie w Kolonii?
+	AI_Output (self, other,"DIA_Grim_Leben_06_01"); //Nie jest Ÿle, jeœli zap³acisz Stra¿nikom za ochronê.
+};
+
+// **************************************************
+// 						Aufnahme
+// **************************************************
+
+INSTANCE DIA_Grim_Aufnahme (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 3;
+	condition		= DIA_Grim_Aufnahme_Condition;
+	information		= DIA_Grim_Aufnahme_Info;
+	permanent		= 0;
+	description		= "Co mam zrobiæ, jeœli chcê zostaæ przyjêty do tego Obozu?";
+};
+
+FUNC INT DIA_Grim_Aufnahme_Condition()
+{	
+if (Kapitel < 4){
+	return 1;
+};
+};
+FUNC VOID DIA_Grim_Aufnahme_Info()
+{
+	AI_Output (other, self,"DIA_Grim_Aufnahme_15_00"); //Co mam zrobiæ, jeœli chcê zostaæ przyjêty do tego Obozu?
+	AI_Output (self, other,"DIA_Grim_Aufnahme_06_01"); //Na pocz¹tek musisz zostaæ Cieniem. W tym celu poszukaj sobie jakiegoœ wp³ywowego opiekuna. Kogoœ, kto wyjaœni ci co w trawie piszczy i wska¿e ci w³aœciw¹ drogê.
+	AI_Output (self, other,"DIA_Grim_Aufnahme_06_02"); //Na twoim miejscu trzyma³bym siê blisko Diego - ja tak zrobi³em i nie ¿a³ujê!
+	AI_Output (self, other,"DIA_Grim_Aufnahme_06_03"); //On podda ciê testowi zaufania - dla ka¿dego wygl¹da on trochê inaczej. No i musisz wype³niaæ jeszcze zadania zlecane ci przez Cienie.
+	AI_Output (self, other,"DIA_Grim_Aufnahme_06_04"); //Jeœli ci siê uda, zostaniesz jednym z nas.
+};
+
+// **************************************************
+// 						Wie weit bist DU?
+// **************************************************
+var int Grim_Tests;
+// **************************************************
+
+INSTANCE DIA_Grim_HowFarAreYou (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 4;
+	condition		= DIA_Grim_HowFarAreYou_Condition;
+	information		= DIA_Grim_HowFarAreYou_Info;
+	permanent		= 1;
+	description		= "A ty, jak sobie radzisz?";
+};
+
+FUNC INT DIA_Grim_HowFarAreYou_Condition()
+{	
+	if (Npc_KnowsInfo(hero,DIA_Grim_Aufnahme) && Npc_KnowsInfo(hero,Info_Diego_Rules)) && (Kapitel < 4)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_HowFarAreYou_Info()
+{
+	AI_Output (other, self,"DIA_Grim_HowFarAreYou_15_00"); //A ty, jak sobie radzisz?
+	AI_Output (self, other,"DIA_Grim_HowFarAreYou_06_01"); //Rozmawia³em ju¿ z Dexterem, Z³ym i R¹czk¹. To jedni najbardziej wp³ywowych ludzi w Zewnêtrznym Pierœcieniu.
+	
+	if	!Grim_Tests
+	{
+		B_LogEntry( CH1_JoinOC, "Dexter, Z³y i R¹czka nale¿¹ do wp³ywowych Cieni.");
+		Grim_Tests = TRUE;
+	};
+};
+
+// **************************************************
+// 						Leben
+// **************************************************
+
+INSTANCE DIA_Grim_YourPDV (C_INFO)
+{
+	npc				= Vlk_580_Grim;
+	nr				= 5;
+	condition		= DIA_Grim_YourPDV_Condition;
+	information		= DIA_Grim_YourPDV_Info;
+	permanent		= 0;
+	description		= "A jak wygl¹da³ TWÓJ test zaufania?";
+};
+
+FUNC INT DIA_Grim_YourPDV_Condition()
+{	
+	if (Npc_KnowsInfo(hero,DIA_Grim_Aufnahme)) && (Kapitel < 4)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Grim_YourPDV_Info()
+{
+	AI_Output (other, self,"DIA_Grim_YourPDV_15_00"); //A jak wygl¹da³ TWÓJ test zaufania?
+	AI_Output (self, other,"DIA_Grim_YourPDV_06_01"); //Tego nie mogê ci powiedzieæ. O takich rzeczach lepiej nie mówiæ g³oœno!
+};
+
+
+
+//#####################################################################
+//##
+//##
+//##							KAPITEL 2
+//##
+//##
+//#####################################################################
+
+//---------------------------------------------------------------------
+//	Info INEXTREMO
+//---------------------------------------------------------------------
+instance  DIA_Grim_INEXTREMO(C_INFO)
+{
+	npc			= Vlk_580_Grim;
+	nr			= 1;
+	condition	= DIA_Grim_INEXTREMO_Condition;
+	information	= DIA_Grim_INEXTREMO_Info;
+	permanent	= 0;
+	important 	= 1;
+};                       
+
+FUNC int  DIA_Grim_INEXTREMO_Condition()
+{
+	if	(Kapitel == 2) 
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID  DIA_Grim_INEXTREMO_Info()
+{
+	AI_Output		(self, other,"DIA_Grim_INEXTREMO_06_01"); //Hej, s³ysza³eœ ju¿ wieœci?
+	AI_Output		(self, other,"DIA_Grim_INEXTREMO_06_02"); //S¹ tu In Extremo! W³aœnie weszli na scenê!
+	AI_Output		(self, other,"DIA_Grim_INEXTREMO_06_03"); //Pospiesz siê, albo przegapisz koncert!
+
+	Npc_ExchangeRoutine	(self,	"InExtremo");
+
+	AI_StopProcessInfos(self);
+};
+
+//#####################################################################
+//##
+//##
+//##							KAPITEL 3
+//##
+//##
+//#####################################################################
+
+//---------------------------------------------------------------------
+//	Info INEXTREMOAWAY
+//---------------------------------------------------------------------
+instance  DIA_Grim_INEXTREMOAWAY(C_INFO)
+{
+	npc			= Vlk_580_Grim;
+	nr			= 1;
+	condition	= DIA_Grim_INEXTREMOAWAY_Condition;
+	information	= DIA_Grim_INEXTREMOAWAY_Info;
+	permanent	= 0;
+	important 	= 0;
+	description = "Gdzie s¹ In Extremo?";
+};                       
+
+FUNC int  DIA_Grim_INEXTREMOAWAY_Condition()
+{
+	if	Npc_KnowsInfo(hero, DIA_Grim_INEXTREMO)
+	&&	(Kapitel == 3) 
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID  DIA_Grim_INEXTREMOAWAY_Info()
+{
+	AI_Output			(hero, self,"DIA_Grim_INEXTREMOAWAY_15_01"); //Gdzie s¹ In Extremo?
+	AI_Output			(self, hero,"DIA_Grim_INEXTREMOAWAY_06_02"); //Pojechali dalej. Szkoda. Zd¹¿y³em siê przyzwyczaiæ do imprez pod scen¹.
+
+	AI_StopProcessInfos	(self);
+};
+
+//--------------------------------------------1.6.1-----------------
+
+//========================================
+//-----------------> Zjawa
+//========================================
+
+INSTANCE DIA_Grim_Zjawa (C_INFO)
+{
+   npc          = Vlk_580_Grim;
+   nr           = 1;
+   condition    = DIA_Grim_Zjawa_Condition;
+   information  = DIA_Grim_Zjawa_Info;
+   permanent	= FALSE;
+   description	= "S³ysza³em, ¿e ostatnio coœ nerwowo u ciebie...";
+};
+
+FUNC INT DIA_Grim_Zjawa_Condition()
+{
+	if (Npc_KnowsInfo(hero,DIA_Guy_Zjawa))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_Zjawa_Info()
+{
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_01"); //S³ysza³em, ¿e ostatnio coœ nerwowo u ciebie...
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_02"); //U mnie sk¹d¿e...
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_03"); //Widzê, po twoim wzroku, ¿e coœ ukrywasz.
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_04"); //Mylisz siê.
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_05"); //Obstawiam, ¿e masz coœ wspólnego ze zjaw¹, która nawiedza okolice.
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_06"); //Nie!
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_07"); //Coraz bardziej jestem pewien, ¿e tak. Wyduœ to wreszcie z siebie!
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_08"); //Jestem niewinny. Sk¹d mog³em widzieæ do czego to doprowadzi...
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_09"); //Wzi¹³em tylko pewien medalion z jakiegoœ grobu le¿¹cego na uboczu przy obozie.
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_10"); //Zaczynam rozumieæ. To ty wywo³a³eœ to ca³e zamieszanie.
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_11"); //Gdybym wiedzia³... Nigdy bym tego nie zrobi³. Móg³byœ porozmawiaæ z jakimœ magiem na ten temat?
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_12"); //Zobaczê co da siê zrobiæ.
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_13"); //Ach bym bym by³ zapomnia³... WeŸ ten cholerny medalion, mo¿e do czegoœ siê przyda... 
+	CreateInvItem (self, ItMi_Zjawa_Amulet);
+	B_GiveInvItems (self,other, ItMi_Zjawa_Amulet, 1);
+    AI_Output (other, self ,"DIA_Grim_Zjawa_15_14"); //Dobra... ja ju¿ pójdê...
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_15"); //Powodzenia i obyœcie pozbyli siê tego cholerstwa!
+	B_LogEntry               (Zjawa,"Grim jest odpowiedzialny za ca³y zamêt zwi¹zany ze zjaw¹. Zabra³ on jakiœ medalion z grobu le¿¹cego nieopodal obozu. Muszê siê rozmówiæ z Miltenem.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> Zjawa_droga
+//========================================
+
+INSTANCE DIA_Grim_Zjawa_droga (C_INFO)
+{
+   npc          = Vlk_580_Grim;
+   nr           = 1;
+   condition    = DIA_Grim_Zjawa_droga_Condition;
+   information  = DIA_Grim_Zjawa_droga_Info;
+   permanent	= FALSE;
+   description	= "Rozmawia³em z Miltenem.";
+};
+
+FUNC INT DIA_Grim_Zjawa_droga_Condition()
+{
+if (Npc_KnowsInfo(hero,DIA_PC_MAGE_Zjawa))
+
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_Zjawa_droga_Info()
+{
+    AI_Output (other, self ,"DIA_Grim_HELLO1_15_01"); //Rozmawia³em z Miltenem.
+    AI_Output (self, other ,"DIA_Grim_HELLO1_03_02"); //I czego siê dowiedzia³eœ?
+	
+    AI_Output (other, self ,"DIA_Grim_HELLO1_15_03"); //Tego, ¿e nawet zwrot medalionu to za ma³o. Trzeba bêdzie pokonaæ zjawê w bezpoœrednim starciu.
+    AI_Output (self, other ,"DIA_Grim_HELLO1_03_04"); //No to walcz z ni¹...
+    AI_Output (other, self ,"DIA_Grim_HELLO1_15_05"); //Nie tak prêdko. To ty nawa¿y³eœ tego piwa. Wieczorem zaprowadzisz mnie do miejsca gdzie le¿y ten rozkopany grób.
+    AI_Output (self, other ,"DIA_Grim_HELLO1_03_06"); //Muszê?!
+    AI_Output (other, self ,"DIA_Grim_HELLO1_15_07"); //Nie masz wyjœcia.
+	
+    AI_Output (self, other ,"DIA_Grim_HELLO1_03_08"); //Ehh... Niech bêdzie...
+
+B_LogEntry               (Zjawa,"Rozmawia³em z Grimem. Zaprowadzi mnie (choæ mocno niechêtnie) do grobu sk¹d zabra³ medalion. Muszê do niego zajrzeæ wieczorem.");
+	
+};
+//========================================
+//-----------------> Grave
+//========================================
+
+INSTANCE DIA_Grim_Grave (C_INFO)
+{
+   npc          = Vlk_580_Grim;
+   nr           = 1;
+   condition    = DIA_Grim_Grave_Condition;
+   information  = DIA_Grim_Grave_Info;
+   permanent	= FALSE;
+   description	= "ChodŸmy pod ten rozkopany grób.";
+};
+
+FUNC INT DIA_Grim_Grave_Condition()
+{
+if  (Npc_KnowsInfo(hero,DIA_Grim_Zjawa_droga))
+&&  Wld_IsTime(19, 01,05,59) 
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_Grave_Info()
+{
+    AI_Output (other, self ,"DIA_Grim_Grave_15_01"); //ChodŸmy pod ten rozkopany grób.
+    AI_Output (self, other ,"DIA_Grim_Grave_03_02"); //Ehhh... Za mn¹.
+    AI_Output (other, self ,"DIA_Grim_Grave_15_03"); //Przestañ sie mazaæ i rusz siê wreszcie!
+	Npc_ExchangeRoutine(self,"GuideZJ");
+	Wld_InsertNpc		(SkeletonMage_Glest ,"WP_MAGES_GLEST");
+	Wld_InsertNpc		(SkeletonScout ,	"WP_GLEST_MA1");
+	Wld_InsertNpc		(SkeletonScout ,	"WP_GLEST_MA2");
+	Wld_InsertNpc		(SkeletonScout ,	"WP_GLEST_MA3");
+    AI_StopProcessInfos	(self);
+};
+
+
+//========================================
+//-----------------> Zjawa_Dead
+//========================================
+
+INSTANCE DIA_Grim_Zjawa_Dead (C_INFO)
+{
+   npc          = Vlk_580_Grim;
+   nr           = 1;
+   condition    = DIA_Grim_Zjawa_Dead_Condition;
+   information  = DIA_Grim_Zjawa_Dead_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Grim_Zjawa_Dead_Condition()
+{
+if (Npc_GetDistToWP(hero,"OW_PATH_298")<5000)
+&& (Npc_KnowsInfo(hero,DIA_Grim_Zjawa_droga))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_Zjawa_Dead_Info()
+{
+    AI_Output (self, other ,"DIA_Grim_Zjawa_Dead_03_01"); //Eeeeh o¿ywieñcy... Nie podchodzê bli¿ej. 
+    AI_Output (other, self ,"DIA_Grim_Zjawa_Dead_15_02"); //Tchórzysz? Wiêc sam siê tym zajmê.
+    AI_Output (self, other ,"DIA_Grim_Zjawa_Dead_03_03"); //Powodzenia...
+	B_LogEntry               (Zjawa,"Dotarliœmy do grobu sk¹d Grim zwin¹³ medalion. Tak jak mówi³ Milten – zjawa sprowadzi³a sobie wiêcej kumpli. Muszê siê z nimi rozprawiæ.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> Z_KILL
+//========================================
+
+INSTANCE DIA_Grim_Z_KILL (C_INFO)
+{
+   npc          = Vlk_580_Grim;
+   nr           = 2;
+   condition    = DIA_Grim_Z_KILL_Condition;
+   information  = DIA_Grim_Z_KILL_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Grim_Z_KILL_Condition()
+{
+if (Npc_KnowsInfo(hero,DIA_Grim_Zjawa_Dead)) 
+&& (Npc_IsDead (SkeletonMage_Glest))
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_Z_KILL_Info()
+{
+    AI_Output (self, other ,"DIA_Grim_Z_KILL_03_01"); //Uda³o siê!
+    AI_Output (self, other ,"DIA_Grim_Z_KILL_03_02"); //Kamieñ mi spad³ z serca.
+    AI_Output (self, other ,"DIA_Grim_Z_KILL_03_03"); //WeŸ tê rudê za wykonan¹ brudn¹ robotê.
+		CreateInvItems	(self, Itminugget, 30);
+		B_GiveInvItems (self,other, Itminugget, 30);
+    AI_Output (other, self ,"DIA_Grim_Z_KILL_15_04"); //Dziêki. Tylko nie sprawiaj ju¿ wiêcej k³opotów.
+    AI_Output (self, other ,"DIA_Grim_Z_KILL_03_05"); //Obiecuje.
+    AI_Output (other, self ,"DIA_Grim_Z_KILL_15_06"); //Trzymam za s³owo.
+    AI_Output (self, other ,"DIA_Grim_Z_KILL_03_07"); //Na razie.
+    AI_Output (other, self ,"DIA_Grim_Z_KILL_15_08"); //Do zobaczenia. 
+	Npc_RemoveInvItems (other, ItMi_Zjawa_Amulet,1);
+	Npc_ExchangeRoutine(self,"Start");
+	B_LogEntry               (Zjawa,"Pokona³em o¿ywieñców. Zwróci³em te¿ uwagê Grimowi by nigdy nie pope³ni³ b³êdu z okradaniem grobów. Pora bym pogada³ o nagrodzie z Glestem.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> HELLO_IM_STT
+//========================================
+
+INSTANCE DIA_Grim_HELLO_IM_STT (C_INFO)
+{
+   npc          = VLK_580_Grim;
+   nr           = 1;
+   condition    = DIA_Grim_HELLO_IM_STT_Condition;
+   information  = DIA_Grim_HELLO_IM_STT_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Grim_HELLO_IM_STT_Condition()
+{
+ if (Kapitel == 2) || (Kapitel == 3) 
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Grim_HELLO_IM_STT_Info()
+{
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_01"); //Co tam u ciebie s³ychaæ?
+    AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_02"); //Sporo siê dzieje. Próbuje siê w tym odnaleŸæ.
+    AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_03"); //Ale widzê, ¿e i ty nie pró¿nujesz.
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_04"); //Tak. Wreszcie uda³o mi siê zaskarbiæ sobie na tyle powa¿ania tutejszych , ¿e Diego zgodzi³ siê mnie przyj¹æ.
+    AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_05"); //Gratuluje.
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_06"); //Wreszcie nie bêdê czu³ siê tutaj obco. No i mo¿e co nieco zarobiê.
+    AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_07"); //Zatem masz perspektywy na dalszy rozwój. Chcia³byœ kiedyœ zostaæ Stra¿nikiem?
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_08"); //Póki co oswoje siê w w realiach bycia Cieniem a potem zobaczymy.
+    AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_09"); //Zatem powodzenia.
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_10"); //Dziêki, przyda siê!
+};
+
