@@ -14,6 +14,7 @@ var int SztabkaStali;
 var int SztabkaMagicznejStali;
 var int SztabkaCiemnejStali;
 var int SztabkaZlota;
+var int SmeltIngot;
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -39,13 +40,17 @@ FUNC INT DIA_PC_Hero_Smelt_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_Smelt_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	SztabkaStali = False;
+	SztabkaMagicznejStali = False;
+	SztabkaCiemnejStali = False;
+	SztabkaZlota = False;
+	SmeltIngot = False;				  		
 	AI_StopProcessInfos	(self);
 };
 
 //*******************************************************
 //Spezielle Tränke  NPC_TALENT_Smelt = 1;
 //*******************************************************
-var int SmeltIngot;
 //----------------------
 INSTANCE PC_Smelting_Weapon (C_Info)
 {

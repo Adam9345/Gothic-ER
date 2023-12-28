@@ -15,6 +15,7 @@ FUNC VOID COOKING_S1 ()
 //-----------------> OPCJA *KONIEC* 
 //========================================
 
+var int CookingFood;					
 INSTANCE DIA_PC_Hero_Cook_EXIT(C_INFO)
 {
 	npc             = PC_Hero;
@@ -36,13 +37,13 @@ FUNC INT DIA_PC_Hero_Cook_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_Cook_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	CookingFood = FALSE;				 
 	AI_StopProcessInfos	(self);
 };
 
 //*******************************************************
 //Spezielle Tränke 
 //*******************************************************
-var int CookingFood;
 //----------------------
 INSTANCE PC_Cooking_Food (C_Info)
 {

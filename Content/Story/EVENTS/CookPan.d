@@ -13,6 +13,7 @@ FUNC VOID COOKPAN_S1 ()
 var int MuttonRaw;
 var int MoleratLiver;
 var int MuttonLurker;
+var int CookMeat;				 
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -40,6 +41,8 @@ FUNC VOID DIA_PC_Hero_CookPan_EXIT_Info()
 {
     MoleratLiver = False;
     MuttonRaw    = False;
+	MuttonLurker = FALSE;
+	CookMeat = FALSE;				  			  
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	AI_StopProcessInfos	(self);
 };
@@ -47,7 +50,6 @@ FUNC VOID DIA_PC_Hero_CookPan_EXIT_Info()
 //*******************************************************
 //Spezielle Tränke  NPC_TALENT_CookPan = 1;
 //*******************************************************
-var int CookMeat;
 //----------------------
 INSTANCE PC_CookPaning_Weapon (C_Info)
 {

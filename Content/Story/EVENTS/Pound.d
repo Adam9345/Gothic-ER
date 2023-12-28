@@ -39,6 +39,7 @@ if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POUND)//(PoundingSeeds == false)
 FUNC VOID DIA_PC_Hero_Pound_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PoundingSeeds = False;				   
 	AI_StopProcessInfos	(self);
 };
 

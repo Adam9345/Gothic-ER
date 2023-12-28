@@ -37,6 +37,8 @@ FUNC INT DIA_PC_Hero_Smith_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_Smith_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	SmithBelt = FALSE;
+	SmithWeapon = FALSE;
 	AI_StopProcessInfos	(self);
 };
 
