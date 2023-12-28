@@ -1,7 +1,3 @@
-META{
-	MergeMode = TRUE;
-};
-
 instance Info_Grd_6_pickpocket(C_Info)
 {
 	nr = 900;

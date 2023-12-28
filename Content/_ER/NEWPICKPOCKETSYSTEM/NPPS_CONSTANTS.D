@@ -1,7 +1,3 @@
-META{
-	MergeMode = TRUE;
-};
-
 const int theftdiff = 10;
 
 const int thiefxp = 10;

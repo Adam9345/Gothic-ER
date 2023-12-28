@@ -1,7 +1,3 @@
-META{
-	MergeMode = TRUE;
-};
-
 instance dia_grim_pickpocket(c_info) {
     npc = vlk_580_grim;
     nr = 900;
