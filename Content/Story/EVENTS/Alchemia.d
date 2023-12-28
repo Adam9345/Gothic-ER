@@ -72,7 +72,7 @@ FUNC INT DIA_PC_Hero_LifePotions_Condition()
 	&& (BrewingAlcohol == FALSE)
 	&& (BrewingPoison == FALSE)
 	&& (PrepareTobacco == FALSE)
-	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
     {
     return TRUE;
     };
@@ -130,7 +130,7 @@ FUNC INT DIA_PC_Hero_LifePotions_FullRegenerate_Condition ()
 {
 	if (BrewingLifePotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyFullRegenarate)
+	&& (HeroKnows_AlchemyFullRegenarate)
 	{	
 		return TRUE;
 	};
@@ -306,7 +306,7 @@ INSTANCE DIA_PC_Hero_ManaPotions (C_INFO)
 FUNC INT DIA_PC_Hero_ManaPotions_Condition()
 {
     if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
 	&& (BrewingLifePotion == FALSE)
 	&& (BrewingManaPotion == FALSE)
 	&& (BrewingSpecialPotion == FALSE)
@@ -336,7 +336,7 @@ INSTANCE DIA_PC_Hero_ManaPotions_FullRegenerate (C_Info)
 FUNC INT DIA_PC_Hero_ManaPotions_FullRegenerate_Condition ()
 {
 	if (BrewingManaPotion == TRUE)
-	//&& (HeroKnows_AlchemyFullRegenarate)
+	&& (HeroKnows_AlchemyFullRegenarate)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
 	{	
 		return TRUE;
@@ -515,7 +515,7 @@ INSTANCE DIA_PC_Hero_SpecialPotions (C_INFO)
 FUNC INT DIA_PC_Hero_SpecialPotions_Condition()
 {
     if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 2)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 2)
 	&& (BrewingLifePotion == FALSE)
 	&& (BrewingManaPotion == FALSE)
 	&& (BrewingSpecialPotion == FALSE)
@@ -547,7 +547,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_MAGE_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPotionsPower)
+	&& (HeroKnows_AlchemyPotionsPower)
 	{	
 		return TRUE;
 	};
@@ -582,7 +582,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_KING_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPotionsPower)
+	&& (HeroKnows_AlchemyPotionsPower)
 	{	
 		return TRUE;
 	};
@@ -617,7 +617,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_HPT1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyTimedPotions)
+	&& (HeroKnows_AlchemyTimedPotions)
 	{	
 		return TRUE;
 	};
@@ -652,7 +652,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_MAST1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyTimedPotions)
+	&& (HeroKnows_AlchemyTimedPotions)
 	{	
 		return TRUE;
 	};
@@ -687,7 +687,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_MANT1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyTimedPotions)
+	&& (HeroKnows_AlchemyTimedPotions)
 	{	
 		return TRUE;
 	};
@@ -722,7 +722,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_DEXT1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyTimedPotions)
+	&& (HeroKnows_AlchemyTimedPotions)
 	{	
 		return TRUE;
 	};
@@ -757,7 +757,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_STRT1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyTimedPotions)
+	&& (HeroKnows_AlchemyTimedPotions)
 	{	
 		return TRUE;
 	};
@@ -792,7 +792,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_PLAGUE_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyAganistPlague)
+	&& (HeroKnows_AlchemyAganistPlague)
 	{	
 		return TRUE;
 	};
@@ -946,7 +946,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_EN_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPermPotions2)
+	&& (HeroKnows_AlchemyPermPotions2)
 	{	
 		return TRUE;
 	};
@@ -981,7 +981,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_HP_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPermPotions2)
+	&& (HeroKnows_AlchemyPermPotions2)
 	{	
 		return TRUE;
 	};
@@ -1016,7 +1016,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_DEX_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPermPotions1)
+	&& (HeroKnows_AlchemyPermPotions1)
 	{	
 		return TRUE;
 	};
@@ -1051,7 +1051,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_STR_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemyPermPotions1)
+	&& (HeroKnows_AlchemyPermPotions1)
 	{	
 		return TRUE;
 	};
@@ -1086,7 +1086,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_Q3_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemySprintPotions)
+	&& (HeroKnows_AlchemySprintPotions)
 	{	
 		return TRUE;
 	};
@@ -1122,7 +1122,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_Q2_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemySprintPotions)
+	&& (HeroKnows_AlchemySprintPotions)
 	{	
 		return TRUE;
 	};
@@ -1157,7 +1157,7 @@ FUNC INT DIA_PC_Hero_SpecialPotions_Q1_Condition ()
 {
 	if (BrewingSpecialPotion == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (HeroKnows_AlchemySprintPotions)
+	&& (HeroKnows_AlchemySprintPotions)
 	{	
 		return TRUE;
 	};
@@ -1203,7 +1203,7 @@ if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
 	&& (BrewingAlcohol == FALSE)
 	&& (BrewingPoison == FALSE)
 	&& (PrepareTobacco == FALSE)     
- 	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)    
+ 	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)    
  {
     return TRUE;
     };
@@ -1229,7 +1229,7 @@ FUNC INT DIA_PC_Hero_Alcohol_Sztylet_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_NiczymCiosSztyletu) >=1)
+	&& (Npc_HasItems (hero, ItWr_NiczymCiosSztyletu) >=1)
 	{	
 		return TRUE;
 	};
@@ -1298,7 +1298,7 @@ FUNC INT DIA_PC_Hero_Alcohol_HoneyBeer_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte2) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte2) >=1)
 	{	
 		return TRUE;
 	};
@@ -1333,7 +1333,7 @@ FUNC INT DIA_PC_Hero_Alcohol_Honey1_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte2) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte2) >=1)
 	{	
 		return TRUE;
 	};
@@ -1368,7 +1368,7 @@ FUNC INT DIA_PC_Hero_Alcohol_Absynt_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte3) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte3) >=1)
 	{	
 		return TRUE;
 	};
@@ -1403,7 +1403,7 @@ FUNC INT DIA_PC_Hero_Alcohol_Nalewkaplants_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte3) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte3) >=1)
 	{	
 		return TRUE;
 	};
@@ -1438,7 +1438,7 @@ FUNC INT DIA_PC_Hero_Alcohol_Nalewkaberrys_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte1) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte1) >=1)
 	{	
 		return TRUE;
 	};
@@ -1473,7 +1473,7 @@ FUNC INT DIA_PC_Hero_Alcohol_NalewkaApple_Condition ()
 {
 	if (BrewingAlcohol == TRUE)
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_HasItems (hero, ItWr_SpiritsRecipte1) >=1)
+	&& (Npc_HasItems (hero, ItWr_SpiritsRecipte1) >=1)
 	{	
 		return TRUE;
 	};
@@ -1581,7 +1581,7 @@ INSTANCE DIA_PC_Hero_Trucizny (C_INFO)
 FUNC INT DIA_PC_Hero_Trucizny_Condition()
 {
 	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
 	&& (BrewingLifePotion == FALSE)
 	&& (BrewingManaPotion == FALSE)
 	&& (BrewingSpecialPotion == FALSE)
@@ -1720,7 +1720,7 @@ INSTANCE DIA_PC_Hero_Tyton_Alch (C_INFO)
 FUNC INT DIA_PC_Hero_Tyton_Alch_Condition()
 {
 	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_POTIONALCHEMY)
-	//&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)
 	&& (BrewingLifePotion == FALSE)
 	&& (BrewingManaPotion == FALSE)
 	&& (BrewingSpecialPotion == FALSE)
