@@ -92,7 +92,7 @@ func int e_beklauen(var int theftdex, var int theftnugget) {
 
 			if (npc_gettalentskill(other, npc_talent_pickpocket) == 1) {
 				theftdexglob = theftdex;
-			} else if (npc_gettalentskill(other, npc_talent_pickpocket) == 1) {
+			} else if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {
 				theftdexglob = theftdex + stealChance + bonusChance;
 			};
 			
