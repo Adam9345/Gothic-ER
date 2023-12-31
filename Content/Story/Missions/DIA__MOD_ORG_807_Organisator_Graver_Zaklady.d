@@ -247,202 +247,51 @@ FUNC INT DIA_Organisator_HELLO3_Condition()
     };
 };
 
-
-FUNC VOID DIA_Organisator_HELLO3_Info()
-{
-    AI_Output (other, self ,"DIA_Organisator_HELLO3_15_01"); //Zagrajmy w koœci.
-    AI_Output (self, other ,"DIA_Organisator_HELLO3_03_02"); //Zaczynamy. Ile stawiasz?
-
-    Info_ClearChoices		(DIA_Organisator_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=5)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "5 bry³ek rudy", DIA_Organisator_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=30)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=50)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
-	};
-//	if (Npc_HasItems (hero, ItMiNugget)>=500)
-//	{
-//    Info_AddChoice		(DIA_Organisator_HELLO3, "A co mi tam! 500 bry³ek", DIA_Organisator_HELLO3_500Ore);
-//	};
-    Info_AddChoice		(DIA_Organisator_HELLO3, "Jednak zrezygnujê.", DIA_Organisator_HELLO3_BACK);
+func void dia_organisator_hello3_choices() {
+	if(npc_hasitems(hero, itminugget) >= 5) {
+        info_addchoice(dia_organisator_hello3, "5 bry³ek rudy", dia_organisator_hello3_20ore);
+    };
+    if(npc_hasitems(hero, itminugget) >= 15) {
+        info_addchoice(dia_organisator_hello3, "15 bry³ek rudy", dia_organisator_hello3_60ore);
+    };
+    if(npc_hasitems(hero, itminugget) >= 30) {
+        info_addchoice(dia_organisator_hello3, "30 bry³ek rudy", dia_organisator_hello3_150ore);
+    };
+    if(npc_hasitems(hero, itminugget) >= 50) {
+        info_addchoice(dia_organisator_hello3, "50 bry³ek rudy", dia_organisator_hello3_300ore);
+    };
+    info_addchoice(dia_organisator_hello3, "Jednak zrezygnujê.", dia_organisator_hello3_back);
 };
 
-FUNC VOID DIA_Organisator_HELLO3_20ORE()
-{
-gra1 = Hlp_Random (2);
-if (gra1 == 1)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 5);
-Npc_RemoveInvItems (self, ItMiNugget, 5);
-}
-else
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
-CreateInvItems (self, ItMiNugget, 5);
-B_GiveInvItems (self, other, ItMiNugget, 5);
-};
- Info_ClearChoices		(DIA_Organisator_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=5)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "5 bry³ek rudy", DIA_Organisator_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=30)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=50)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
-	};
-//	if (Npc_HasItems (hero, ItMiNugget)>=500)
-//	{
-//    Info_AddChoice		(DIA_Organisator_HELLO3, "A co mi tam! 500 bry³ek", DIA_Organisator_HELLO3_500Ore);
-//	};
-    Info_AddChoice		(DIA_Organisator_HELLO3, "Jednak zrezygnujê.", DIA_Organisator_HELLO3_BACK);
+func void dia_organisator_hello3_info() {
+    ai_output(other, self, "DIA_Organisator_HELLO3_15_01");
+    ai_output(self, other, "DIA_Organisator_HELLO3_03_02");
+    info_clearchoices(dia_organisator_hello3);
+	dia_organisator_hello3_choices();
 };
 
-FUNC VOID DIA_Organisator_HELLO3_60ORE()
-{
-gra1 = Hlp_Random (2);
-if (gra1 == 1)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 15);
-Npc_RemoveInvItems (self, ItMiNugget, 15);
-}
-else
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
-CreateInvItems (self, ItMiNugget, 15);
-B_GiveInvItems (self, other, ItMiNugget, 15);
-};
- Info_ClearChoices		(DIA_Organisator_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=5)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "5 bry³ek rudy", DIA_Organisator_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=30)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=50)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
-	};
-//	if (Npc_HasItems (hero, ItMiNugget)>=500)
-//	{
-//    Info_AddChoice		(DIA_Organisator_HELLO3, "A co mi tam! 500 bry³ek", DIA_Organisator_HELLO3_500Ore);
-//	};
-    Info_AddChoice		(DIA_Organisator_HELLO3, "Jednak zrezygnujê.", DIA_Organisator_HELLO3_BACK);
+func void dia_organisator_hello3_20ore() {
+	throw_dice(5);
+    info_clearchoices(dia_organisator_hello3);
+	dia_organisator_hello3_choices();
 };
 
-FUNC VOID DIA_Organisator_HELLO3_150ORE()
-{
-gra1 = Hlp_Random (3);
-if (gra1 == 1)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 30);
-Npc_RemoveInvItems (self, ItMiNugget, 30);
-};
-if (gra1 == 2)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
-CreateInvItems (self, ItMiNugget, 30);
-B_GiveInvItems (self, other, ItMiNugget, 30);
-};
-if (gra1 == 3)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 30);
-Npc_RemoveInvItems (self, ItMiNugget, 30);
-};
- Info_ClearChoices		(DIA_Organisator_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=5)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "5 bry³ek rudy", DIA_Organisator_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=30)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=50)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
-	};
-//	if (Npc_HasItems (hero, ItMiNugget)>=500)
-//	{
-//    Info_AddChoice		(DIA_Organisator_HELLO3, "A co mi tam! 500 bry³ek", DIA_Organisator_HELLO3_500Ore);
-//	};
-    Info_AddChoice		(DIA_Organisator_HELLO3, "Jednak zrezygnujê.", DIA_Organisator_HELLO3_BACK);
+func void dia_organisator_hello3_60ore() {
+	throw_dice(15);
+    info_clearchoices(dia_organisator_hello3);
+	dia_organisator_hello3_choices();
 };
 
-FUNC VOID DIA_Organisator_HELLO3_300ore()
-{
-gra1 = Hlp_Random (3);
-if (gra1 == 1)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 50);
-Npc_RemoveInvItems (self, ItMiNugget, 50);
+func void dia_organisator_hello3_150ore() {
+    throw_dice(30);
+    info_clearchoices(dia_organisator_hello3);
+	dia_organisator_hello3_choices();
 };
-if (gra1 == 2)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
-CreateInvItems (self, ItMiNugget, 50);
-B_GiveInvItems (self, other, ItMiNugget, 50);
-};
-if (gra1 == 3)
-{
-AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
-B_GiveInvItems (other, self, ItMiNugget, 50);
-Npc_RemoveInvItems (self, ItMiNugget, 50);
-};
- Info_ClearChoices		(DIA_Organisator_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=5)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "5 bry³ek rudy", DIA_Organisator_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=30)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=50)
-	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
-	};
-//	if (Npc_HasItems (hero, ItMiNugget)>=500)
-//	{
-//    Info_AddChoice		(DIA_Organisator_HELLO3, "A co mi tam! 500 bry³ek", DIA_Organisator_HELLO3_500Ore);
-//	};
-    Info_AddChoice		(DIA_Organisator_HELLO3, "Jednak zrezygnujê.", DIA_Organisator_HELLO3_BACK);
+
+func void dia_organisator_hello3_300ore() {
+	throw_dice(50);
+    info_clearchoices(dia_organisator_hello3);
+	dia_organisator_hello3_choices();
 };
 
 FUNC VOID DIA_Organisator_HELLO3_500Ore()

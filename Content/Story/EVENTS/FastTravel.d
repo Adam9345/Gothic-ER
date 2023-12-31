@@ -325,7 +325,7 @@ func void DIA_PC_Hero_JustTravel_psicamp ()
 {
  Wld_PlayEffect("SLOW_BLITZ_FADE_IN_SLOW_OUT",hero,hero,0,0,0,FALSE);
 	PC_TimeTravel (traveltime);
-	AI_Teleport		(hero, "PSI_PATH_TEMPLE_1");
+	AI_Teleport		(hero, "PSI_ENTRANCE");
 	Info_ClearChoices		(DIA_PC_Hero_JustTravel);
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	AI_StopProcessInfos	(self);

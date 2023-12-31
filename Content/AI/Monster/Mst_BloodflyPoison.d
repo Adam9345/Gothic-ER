@@ -18,10 +18,10 @@ PROTOTYPE Mst_Default_BloodflySakhar(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //---------------------------------------------------------------	
-	protection	[PROT_BLUNT]		=	24;//+2
-	protection	[PROT_EDGE]			=	24;
-	protection	[PROT_POINT]		=	25;
-	protection	[PROT_FIRE]			=	25;
+	protection	[PROT_BLUNT]		=	18;//+2
+	protection	[PROT_EDGE]			=	18;
+	protection	[PROT_POINT]		=	18;
+	protection	[PROT_FIRE]			=	18;
 	protection	[PROT_FLY]			=	999;
 	protection	[PROT_MAGIC]		=	1;
 //---------------------------------------------------------------	

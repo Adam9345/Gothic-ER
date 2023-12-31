@@ -170,7 +170,7 @@ func void WYZWALACZ ()
  PrintS_Ext ("Nowa lokacja szybkiej podró¿y: Klify!",COL_White) ;
  };
  
-       if (loc_psicamp == false) && (Npc_GetDistToWP (hero, "PSI_PATH_TEMPLE_1") < 1000)
+       if (loc_psicamp == false) && (Npc_GetDistToWP (hero, "PSI_ENTRANCE") < 1000)
  {
  loc_psicamp = true;
  PrintS_Ext ("Nowa lokacja szybkiej podró¿y: Obóz Bractwa!",COL_White) ;

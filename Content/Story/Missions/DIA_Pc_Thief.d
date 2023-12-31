@@ -1325,35 +1325,7 @@ FUNC VOID Info_Diego_JoinAnalyze_Info()
 	};
 //};
 
-/*
-	Scatty: 	Scatty_ChargeKirgo == LOG_SUCCESS 	+2
-				Scatty_ChargeKirgo == LOG_FAILED 	-1
-				Scatty_ChargeKharim == LOG_SUCCESS 	+5
-				Scatty_ChargeKharim == LOG_FAILED 	+2
-			
-	Whistler: 	Whistler_BuyMySword = LOG_SUCCESS;	+3
-				Whistler_BuyMySword = LOG_FAILED;	+2
-				
-	Sly: 		Sly_LostNek = LOG_SUCCESS;			+4
-	
-	Fingers: 	Fingers_Learnt = LOG_SUCCESS; 		+3
-	
-	Dexter: 	Dexter_GetKalomsRecipe = LOG_SUCCESS; +5
-	
-	Thorus: 	Thorus_MordragKo = LOG_SUCCESS;		+5
-				Thorus_MordragKo = LOG_FAILED;		-5
-	
-				VAR INT MordragKO_PlayerChoseOreBarons;
-				VAR INT MordragKO_PlayerChoseThorus;
-				VAR INT MordragKO_HauAb;
-				var int MordragKO_StayAtNC;
-	
-	Fisk: 		Fisk_GetNewHehler = LOG_SUCCESS; // else if ( (MordragKO_HauAb==TRUE) || (MordragKO_StayAtNC==TRUE) )
-	
-	//--- EXTRA Bedingung ------
-	
-	Diego: 		Diego_BringList = LOG_SUCCESS;		
-*/
+
 
 
 INSTANCE Info_Diego_WhatToSayToGomez (C_INFO)

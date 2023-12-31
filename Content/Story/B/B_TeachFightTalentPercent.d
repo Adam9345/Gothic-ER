@@ -46,6 +46,10 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
+	if (Npc_HasItems(hero, ItmiNugget) < kosten * 10) {
+		PrintS_Ext("Za ma³o rudy!", COL_RED);
+		return FALSE;	
+	};
 	oth.lp = oth.lp - kosten;
 	
 	if(talent == NPC_TALENT_1H)
@@ -61,6 +65,8 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		{
 			PrintScreen("Trening: pos³ugiwanie siê broni¹ jednorêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		};
+		B_GiveInvItems  (hero, self, itminugget, kosten*10);
+		Npc_RemoveInvItems (self, itminugget, kosten*10);
 		B_SetFightSkill(hero,talent,percent);
 		return TRUE;
 	};
@@ -79,6 +85,8 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		{
 			PrintScreen	("Trening: pos³ugiwanie siê broni¹ dwurêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		};
+		B_GiveInvItems  (hero, self, itminugget, kosten*10);
+		Npc_RemoveInvItems (self, itminugget, kosten*10);
 		B_SetFightSkill(hero,talent,percent);
 		return TRUE;
 
@@ -90,12 +98,14 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		{
 			Npc_SetTalentValue(hero, NPC_TALENT_CROSSBOW, Npc_GetTalentValue(hero, NPC_TALENT_CROSSBOW)+percent);
 			B_SetFightSkill(hero,NPC_TALENT_CROSSBOW,percent);
-			PrintScreen	("Trening: pos³ugiwanie siê broni¹ dwu- i jednorêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
+			PrintScreen	("Trening: pos³ugiwanie siê ³ukiem i kusz¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		}
 		else
 		{
-			PrintScreen	("Trening: pos³ugiwanie siê broni¹ dwurêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
+			PrintScreen	("Trening: pos³ugiwanie siê ³ukiem", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		};
+		B_GiveInvItems  (hero, self, itminugget, kosten*10);
+		Npc_RemoveInvItems (self, itminugget, kosten*10);
 		B_SetFightSkill(hero,talent,percent);
 		return TRUE;
 
@@ -107,16 +117,19 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		{
 			Npc_SetTalentValue(hero, NPC_TALENT_BOW, Npc_GetTalentValue(hero, NPC_TALENT_BOW)+percent);
 			B_SetFightSkill(hero,NPC_TALENT_BOW,percent);
-			PrintScreen	("Trening: pos³ugiwanie siê broni¹ dwu- i jednorêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
+			PrintScreen	("Trening: pos³ugiwanie siê ³ukiem i kusz¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		}
 		else
 		{
-			PrintScreen	("Trening: pos³ugiwanie siê broni¹ dwurêczn¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
+			PrintScreen	("Trening: pos³ugiwanie siê kusz¹", -1,10,"FONT_OLD_20_WHITE.TGA",2);
 		};
+		B_GiveInvItems  (hero, self, itminugget, kosten*10);
+		Npc_RemoveInvItems (self, itminugget, kosten*10);
 		B_SetFightSkill(hero,talent,percent);
 		return TRUE;
 
       };
+  
   
 	
 };

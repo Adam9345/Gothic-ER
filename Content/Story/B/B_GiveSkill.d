@@ -189,11 +189,15 @@ func int b_teachthieftalent(var C_NPC slf,var C_NPC oth,var int talent)
 	oth.lp = oth.lp - kosten;
 	if(talent == NPC_TALENT_PICKLOCK)
 	{
-		if (Npc_GetTalentSkill(oth, NPC_TALENT_PICKLOCK) == 0) {
-			Npc_SetTalentSkill(oth,NPC_TALENT_PICKLOCK,1);
+		if (Npc_GetTalentSkill(oth, NPC_TALENT_PICKLOCK) == 0) 
+		{
+		Npc_SetTalentValue(oth, NPC_TALENT_PICKLOCK, Npc_GetTalentValue(oth, NPC_TALENT_PICKLOCK)-30);	
+		Npc_SetTalentSkill(oth,NPC_TALENT_PICKLOCK,1);
+			//Npc_GetTalentValue(oth, NPC_TALENT_PICKLOCK)-30;    
 		}
 		else if (Npc_GetTalentSkill(oth, NPC_TALENT_PICKLOCK) == 1) {
-			Npc_SetTalentSkill(oth,NPC_TALENT_PICKLOCK,2);
+		Npc_SetTalentValue(oth, NPC_TALENT_PICKLOCK, Npc_GetTalentValue(oth, NPC_TALENT_PICKLOCK)-30);	
+		Npc_SetTalentSkill(oth,NPC_TALENT_PICKLOCK,2);
 		};
 
 	//	PrintScreen(PRINT_LEARNPICKLOCK,-1,-1,FONT_SCREEN,2);
@@ -214,10 +218,15 @@ func int b_teachthieftalent(var C_NPC slf,var C_NPC oth,var int talent)
 	if(talent == NPC_TALENT_PICKPOCKET)
 	{
 		if (Npc_GetTalentSkill(oth, NPC_TALENT_PICKPOCKET) == 0) {
+			Npc_SetTalentValue(oth, NPC_TALENT_PICKPOCKET, Npc_GetTalentValue(oth, NPC_TALENT_PICKPOCKET)-30);	
 			Npc_SetTalentSkill(oth,NPC_TALENT_PICKPOCKET,1);
+			
+			
 		}
 		else if (Npc_GetTalentSkill(oth, NPC_TALENT_PICKPOCKET) == 1) {
+			Npc_SetTalentValue(oth, NPC_TALENT_PICKPOCKET, Npc_GetTalentValue(oth, NPC_TALENT_PICKPOCKET)-30);	
 			Npc_SetTalentSkill(oth,NPC_TALENT_PICKPOCKET,2);
+			
 		};
 	//	PrintScreen(PRINT_LEARNPICKPOCKET,-1,-1,FONT_SCREEN,2);
 		return TRUE;

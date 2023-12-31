@@ -106,6 +106,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 	//***************************************************************************
 	else if (neues_Kapitel == 3)
 	{
+	Wld_InsertItem			(ItRi_RegenManaS,"FP_ITEM_REG_MANARING");
 	
 	if (Zdrajca_S = LOG_RUNNING)
 	{
@@ -334,12 +335,12 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_ExchangeRoutine (TPL_3928_GorNaLin,"gardist");
 		//idzie pilnowaæ bramy do Obozu
 		};
-		if (MIS_ScarMurder == LOG_RUNNING)
-		{
-		B_LogEntry                     (CH3_ScarMurder,"Nie mam dostêpu do Starego Obozu. Nie uda mi siê wykonaæ tego zadania. Poza tym, nie ma teraz na to czasu.");
-		Log_SetTopicStatus       (CH3_ScarMurder, LOG_FAILED);
-		MIS_ScarMurder = LOG_FAILED;
-		};
+		//if (MIS_ScarMurder == LOG_RUNNING)
+		//{
+		//B_LogEntry                     (CH3_ScarMurder,"Nie mam dostêpu do Starego Obozu. Nie uda mi siê wykonaæ tego zadania. Poza tym, nie ma teraz na to czasu.");
+		//Log_SetTopicStatus       (CH3_ScarMurder, LOG_FAILED);
+	//	MIS_ScarMurder = LOG_FAILED;
+		//};
 		
 		var C_NPC scorpio; scorpio 	= Hlp_GetNpc (GRD_205_Scorpio);
 		

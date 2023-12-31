@@ -332,7 +332,7 @@ CONST STRING TXT_TALENTS_SKILLS [NPC_TALENT_MAX] =
 	"Zielony|£ucznik|Mistrz",                                   //NPC_TALENT_BOW    
 	"Zielony|Kusznik|Mistrz",                     				//NPC_TALENT_CROSSBOW    
 	"-|poz. 1/2|poz. 2/2",								        //NPC_TALENT_PICKLOCK   
-	"-|poz. 1/2|poz. 2/2",								        //NPC_TALENT_PICKPOCKET
+	"-|Uczony|Mistrz",			//poz. 1/2|poz. 2/2					        //NPC_TALENT_PICKPOCKET
 	"-|kr¹g 1 |kr¹g 2 |kr¹g 3 |kr¹g 4 |kr¹g 5 |kr¹g 6 ",	    //NPC_TALENT_MAGE         
 	"-|poz. 1/1|",                                              //NPC_TALENT_SNEAK       
 	"-|poz. 1/1",                                      		    //NPC_TALENT_REGENERATE 
@@ -578,30 +578,31 @@ const string NAME_LearnMidfix		=	" bry³ek rudy, ";
 const string NAME_LearnPostfixS		=	" pkt. umiejêtnoœci)";	
 const string NAME_LearnPostfixP		=	" pkt. umiejêtnoœci)";	
 
-const string NAME_LearnStrength_1	=	"Si³a +1 (10 bry³ek)";
-const string NAME_LearnStrength_5	=	"Si³a +5 (50 bry³ek)";
+
+const string NAME_LearnStrength_1	=	"Si³a +1";
+const string NAME_LearnStrength_5	=	"Si³a +5";
 const string NAME_LearnStrength_10	=	"Si³a +10 (100 bry³ek)";
 const string NAME_LearnStrength_20	=	"Si³a +20 (200 bry³ek)";
 
-const string NAME_LearnDexterity_1	=	"Zrêcznoœæ +1 (10 bry³ek) ";
-const string NAME_LearnDexterity_5	=	"Zrêcznoœæ +5 (50 bry³ek) ";
+const string NAME_LearnDexterity_1	=	"Zrêcznoœæ +1";
+const string NAME_LearnDexterity_5	=	"Zrêcznoœæ +5";
 const string NAME_LearnDexterity_10	=	"Zrêcznoœæ +10 (100 bry³ek)";
 const string NAME_LearnDexterity_20	=	"Zrêcznoœæ +20 (200 bry³ek)";
 
-const string NAME_LearnMana_1		=	"Mana +1 (10 bry³ek) ";
-const string NAME_LearnMana_5		=	"Mana +5 (50 bry³ek) ";
+const string NAME_LearnMana_1		=	"Mana +1";
+const string NAME_LearnMana_5		=	"Mana +5";
 const string NAME_LearnMana_10		=	"Mana +10 (100 bry³ek) ";
 const string NAME_LearnMana_20		=	"Mana +20 (200 bry³ek) ";
 
-const string NAME_Learn1h_1			=	"Broñ jednorêczna, poziom 1";
-const string NAME_Learn1h_2			=	"Broñ jednorêczna, poziom 2";
-const string NAME_Learn2h_1			=	"Broñ dwurêczna, poziom 1";
-const string NAME_Learn2h_2			=	"Broñ dwurêczna, poziom 2";
+const string NAME_Learn1h_1			=	"Broñ jednorêczna +1";
+const string NAME_Learn1h_2			=	"Broñ jednorêczna +5";
+const string NAME_Learn2h_1			=	"Broñ dwurêczna +1";
+const string NAME_Learn2h_2			=	"Broñ dwurêczna +5";
 
-const string NAME_LearnBow_1		=	"£uk, poziom 1";
-const string NAME_LearnBow_2		=	"£uk, poziom 2";
-const string NAME_LearnCrossbow_1	=	"Kusza, poziom 1";
-const string NAME_LearnCrossbow_2	=	"Kusza, poziom 2";
+const string NAME_LearnBow_1		=	"£uki +1";
+const string NAME_LearnBow_2		=	"£uki +5";
+const string NAME_LearnCrossbow_1	=	"Kusza +1";
+const string NAME_LearnCrossbow_2	=	"Kusza +5";
 
 const string NAME_LearnMage_1		=	"Pierwszy kr¹g magii";
 const string NAME_LearnMage_2		=	"Drugi kr¹g magii";

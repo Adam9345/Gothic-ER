@@ -1,5 +1,3 @@
-var int isincamera;
-
 const string torch_text_cannotputaway = "Nie mo¿esz teraz od³o¿yæ pochodni!";
 
 const string torch_text_lefthandoccupied = "Trzymasz ju¿ coœ innego w lewej d³oni!";
@@ -13,86 +11,68 @@ const string torch_text_notorch = "Nie masz pochodni!";
 const string torch_text_dialogue = "Nie mo¿esz trzymaæ pochodni w trakcie rozmowy!";
 
 func int torch_getslotitem() {
-    B_FullStop(hero);
     call_zstringptrparam("ZS_LEFTHAND");
     call__thiscall(_@(hero), 6878448); //GetSlotItem
     return call_retvalasptr();
 };
 
-func int torch_heroholdingtorch() {
-    var int ptr;
-    var c_item itm;
-
-    B_FullStop(hero);
-
-    ptr = torch_getslotitem();
-    if(ptr) {
-        itm = _^(ptr);
-        if(hlp_getinstanceid(itm) == itlstorchburning) {
-            return true;
-        };
-    };
-    return false;
-};
-
-func void torch_equip() {
-    B_FullStop(hero);
-    createinvitem(hero, itlstorchburning);
-    call_ptrparam(_@(itlstorchburning));
-    call__thiscall(_@(hero), 6908144); //Equip
-};
-
-func void torch_unequip() {
-    ocnpc_removefromslot(hero, "ZS_LEFTHAND", 0, 10);
-    createinvitem(hero, itlstorch);
+func void torch_use() {
+	createinvitem(hero, itlstorchburning);
+	call_ptrparam(_@(itlstorchburning));
+	call__thiscall(_@(hero), 6916112); //UseItem
 };
 
 func void torch_keyevent(var int key) {
     var int ptr;
     var c_item itm;
-
-    if((key == mem_getkey("keyTorch")) || (key == mem_getsecondarykey("keyTorch"))) {
-        if(infomanager_hasfinished() && (!isincamera)) {
-            ptr = torch_getslotitem();
-            if(ptr) {
-                itm = _^(ptr);
-                if(hlp_getinstanceid(itm) == itlstorchburning) {
-                    if((!c_bodystatecontains(hero, bs_stand)) && (!c_bodystatecontains(hero, bs_run)) && (!c_bodystatecontains(hero, bs_walk)) && (!c_bodystatecontains(hero, bs_sneak))) {
+	
+	if (key == mem_getkey("keyTorch")) {
+		if (infomanager_hasfinished()) {
+			ptr = torch_getslotitem();
+			
+			if (ptr) {
+				itm = _^(ptr);
+				
+				if (hlp_getinstanceid(itm) == itlstorchburning) {
+					if((!c_bodystatecontains(hero, bs_stand)) && (!c_bodystatecontains(hero, bs_run)) && (!c_bodystatecontains(hero, bs_walk)) && (!c_bodystatecontains(hero, bs_sneak))) {
                         print(torch_text_cannotputaway);
-                    }
-                    else {
-                        torch_equip();
-                        npc_removeinvitem(hero, itlstorchburning);
-                        npc_removeinvitem(hero, itlstorch);
-                    };
-                }
-                else if(hlp_getinstanceid(itm) != itlstorchburning) {
-                    print(torch_text_lefthandoccupied);
-                };
-            }
-            else if(npc_hasitems(hero, itlstorch) >= 1) {
-                if(!npc_isinfightmode(hero, fmode_none)) {
-                    print(torch_text_fightmode);
-                }
-                else if((!c_bodystatecontains(hero, bs_stand)) && (!c_bodystatecontains(hero, bs_run)) && (!c_bodystatecontains(hero, bs_walk)) && (!c_bodystatecontains(hero, bs_sneak))) {
-                    print(torch_text_cannotweartorch);
-                } 
-				/*else if (c_bodystatecontains(hero, bs_run) || c_bodystatecontains(hero, bs_walk)) {
-					print("Musisz siê zatrzymaæ, aby za³o¿yæ pochodniê");
-				}*/
-                else {
-                    torch_equip();
-                    npc_removeinvitems(hero, itlstorch, 2);
-                };
-            }
-            else {
-                print(torch_text_notorch);
-            };
-        }
-        else {
+                    } else {		
+						torch_use();
+						npc_removeinvitems(hero, itlstorchburning, 2);
+						npc_removeinvitems(hero, itlstorch, 1);
+					};
+					
+					if (c_bodystatecontains(hero, bs_run) || c_bodystatecontains(hero, bs_walk)) {
+						B_FullStop(hero);
+						AI_PlayAniBS( hero, "T_RUNL_2_RUN", BS_STAND );
+					};
+				};
+			} else {
+				if (npc_hasitems(hero, itlstorch) || npc_hasitems(hero, itlstorchburned)) {
+					if(!npc_isinfightmode(hero, fmode_none)) {
+						print(torch_text_fightmode);
+					}
+					else if((!c_bodystatecontains(hero, bs_stand)) && (!c_bodystatecontains(hero, bs_run)) && (!c_bodystatecontains(hero, bs_walk)) && (!c_bodystatecontains(hero, bs_sneak))) {
+						print(torch_text_cannotweartorch);
+					} else {
+						var int burnedtorchesamount; burnedtorchesamount = npc_hasitems(hero, itlstorchburned);
+						npc_removeinvitems(hero, itlstorchburned, burnedtorchesamount);
+						createinvitems(hero, itlstorch, burnedtorchesamount);
+						
+						B_FullStop(hero);
+						torch_use();
+						
+						npc_removeinvitems(hero, itlstorchburning, 2);
+						npc_removeinvitems(hero, itlstorch, 2);
+					};
+				} else {
+					print(torch_text_notorch);
+				};
+			};
+		} else {
             print(torch_text_dialogue);
         };
-    };
+	};  
 };
 
 func void init_torchkey() {
@@ -111,7 +91,7 @@ func void torchloadfix_checkandgivetorch() {
     };
     ptr = torch_getslotitem();
     if(torchloadfix_givetorch && (!ptr)) {
-        torch_equip();
+        torch_use();
         if(npc_hasitems(hero, itlstorch) > 0) {
             npc_removeinvitem(hero, itlstorch);
         };

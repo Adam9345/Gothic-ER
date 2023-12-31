@@ -1088,7 +1088,7 @@ INSTANCE ItMw_2h_RepairedRedSword (C_Item)
 
 	
 
-	damageTotal			= 	80;
+	damageTotal			= 	86;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 

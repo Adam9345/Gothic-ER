@@ -843,6 +843,10 @@ FUNC VOID STARTUP_SUB_OLDCAMP ()
 	Wld_InsertNpc				(Alligator,"WP_ADD_49");
 	Wld_InsertNpc				(Alligator,"WP_ADD_68");
 	
+	
+	
+	Wld_InsertNpc				(Skeleton_Lord,"WP_UNDEADPALADIN_01");
+	
 	//OCC_MERCS_LEFT_ROOM_BED5
 	//OCC_MERCS_LEFT_ROOM_BED6
 	

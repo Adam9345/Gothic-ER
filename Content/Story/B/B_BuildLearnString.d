@@ -10,9 +10,11 @@
 //	- lp: 30
 //  - ore: 200
 //	- Rückgabestring: "Zweihandkampf Stufe 1 (200 Erz, 20 Lernpunkte)"
+
 func string B_BuildLearnString (var string text, var int lp, var int ore)
 {
 	var string msg;
+	var int basicCost; basicCost = 10;
 	
 	msg	= ConcatStrings(text,	NAME_LearnPrefix);		// Bsp: "Zweihandkampf Stufe 1 ("
 
@@ -21,13 +23,18 @@ func string B_BuildLearnString (var string text, var int lp, var int ore)
 		msg = ConcatStrings(msg, IntToString(ore));		// Bsp: "Zweihandkampf Stufe 1 (200"
 		msg = ConcatStrings(msg, NAME_LearnMidfix);		// Bsp: "Zweihandkampf Stufe 1 (200 Erz, "
 	};
+
 	//str
 	if Hlp_StrCmp(text, NAME_LearnStrength_5)                 
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_str_cost * 5));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
 	msg = ConcatStrings(msg,	IntToString(public_str_cost*5));	
 	}
 	else if Hlp_StrCmp(text, NAME_LearnStrength_1)  
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_str_cost));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
 	msg = ConcatStrings(msg,	IntToString(public_str_cost));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnStrength_10)  
@@ -41,10 +48,14 @@ func string B_BuildLearnString (var string text, var int lp, var int ore)
 	//dex
 	else if Hlp_StrCmp(text, NAME_LearnDexterity_5)                   
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_dex_cost * 5));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
 	msg = ConcatStrings(msg,	IntToString(public_dex_cost*5));	
 	}
 	else if Hlp_StrCmp(text, NAME_LearnDexterity_1)  
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_dex_cost));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);
 	msg = ConcatStrings(msg,	IntToString(public_dex_cost));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnDexterity_10)  
@@ -58,10 +69,14 @@ func string B_BuildLearnString (var string text, var int lp, var int ore)
 	//mana
 	else if Hlp_StrCmp(text, NAME_LearnMana_5)                   
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_man_cost * 5));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
 	msg = ConcatStrings(msg,	IntToString(public_man_cost*5));	
 	}
 	else if Hlp_StrCmp(text, NAME_LearnMana_1)  
 	{
+	msg = ConcatStrings(msg,	IntToString(basicCost * public_man_cost));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
 	msg = ConcatStrings(msg,	IntToString(public_man_cost));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnMana_10)  
@@ -131,35 +146,51 @@ func string B_BuildLearnString (var string text, var int lp, var int ore)
 	}
 	else if Hlp_StrCmp(text, NAME_LearnCrossbow_2)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_CROSSBOW_2));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnCrossbow_1)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_CROSSBOW_1));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnBow_2)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_BOW_2));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_LearnBow_1)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_BOW_1));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_Learn2h_2)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_2H_2));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_Learn2h_1)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_2H_1));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_Learn1h_2)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_1H_2));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	}
 	else if Hlp_StrCmp(text, NAME_Learn1h_1)
 	{
-	msg = ConcatStrings(msg,	IntToString(LPCOST_TALENT_1H_1));
+	msg = ConcatStrings(msg,	IntToString(basicCost * lp));	
+	msg = ConcatStrings(msg, NAME_LearnMidfix);	
+	msg = ConcatStrings(msg,	IntToString(lp));
 	};
 	//end
 

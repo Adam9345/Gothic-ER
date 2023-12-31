@@ -576,7 +576,7 @@ FUNC VOID Info_CorAngar_FindHerb_Running_Info()
 		B_LogEntry		(CH3_FindHerbs,	"Fortuno, handlarz zielem, mo¿e mieæ takie zio³a na sk³adzie.");
 	};
 };
-
+var int AngarTellHeroForCalom;
 // ------------------------------ SUCCESS ----------------------------------
 INSTANCE Info_CorAngar_FindHerb_Success (C_INFO)
 {
@@ -635,7 +635,7 @@ FUNC VOID Info_CorAngar_FindHerb_Success_Info()
 	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_07"); //W gniewie zebra³ oddzia³ Stra¿ników Œwi¹tynnych i wyruszy³ na poszukiwanie Œni¹cego.
 	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_08"); //Niech to szlag! I jak teraz odzyskamy kamieñ ogniskuj¹cy?
 	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_09"); //Zdajê siê, ¿e kamieñ i ksiêga s¹ wci¹¿ w jego laboratorium. Masz tu klucz do skrzyni.
-
+    AngarTellHeroForCalom = TRUE;
 	CreateInvItem		(self,			ITKE_PSI_KALOM_01); 
 	B_GiveInvItems		(self,	other,	ITKE_PSI_KALOM_01,	1);
 	Npc_ExchangeRoutine (GUR_1202_CorAngar,"chef");//1.4

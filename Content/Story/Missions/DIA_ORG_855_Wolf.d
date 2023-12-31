@@ -203,9 +203,9 @@ FUNC VOID DIA_Wolf_SellArmor_Info()
 		AI_Output (self, other,"DIA_Wolf_SellArmor_09_01"); //Teraz, kiedy jesteœ jednym z nas, mogê ci jak¹œ sprzedaæ.
 
 		Info_ClearChoices 	(DIA_Wolf_SellArmor);
-		Info_Addchoice 		(DIA_Wolf_SellArmor,DIALOG_BACK														,DIA_Wolf_SellArmor_BACK);
-		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfBandits,VALUE_ORG_ARMOR_M),DIA_Wolf_SellArmor_M);
-		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfHeavyBandits,VALUE_ORG_ARMOR_H)		,DIA_Wolf_SellArmor_H);
+		Info_Addchoice 		(DIA_Wolf_SellArmor,DIALOG_BACK							                          ,DIA_Wolf_SellArmor_BACK);
+		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfBandits,VALUE_ORG_ARMOR_M)     ,DIA_Wolf_SellArmor_M);
+		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfHeavyBandits,VALUE_ORG_ARMOR_H),DIA_Wolf_SellArmor_H);
 	}
 	else
 	{
@@ -314,7 +314,7 @@ instance  ORG_855_Wolf_TRAIN (C_INFO)
 FUNC int  ORG_855_Wolf_TRAIN_Condition()
 {	
 	if (Npc_KnowsInfo (hero,ORG_855_Wolf_TRAINOFFER))
-	&& (Npc_GetTalentSkill (hero,NPC_TALENT_BOW) == 0)
+	//&& (Npc_GetTalentSkill (hero,NPC_TALENT_BOW) == 0)
 	{
 		return TRUE;
 	};

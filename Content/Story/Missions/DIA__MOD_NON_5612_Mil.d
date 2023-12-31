@@ -175,6 +175,7 @@ FUNC VOID DIA_Mil_PlaszczOK_Info()
     AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_02"); //Dobra robota. 
 	Log_SetTopicStatus       (CH1_FindWhiteSkin, LOG_SUCCESS);
     MIS_FindWhiteSkin = LOG_SUCCESS;
+	/*
 	if (Kapitel < 4) && ((Npc_GetTrueGuild(other) != GIL_STT) || (Npc_GetTrueGuild(other) != GIL_GRD))
 	{
 	AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_03"); //Mam dla ciebie jeszcze jedno zlecenie.
@@ -189,6 +190,7 @@ FUNC VOID DIA_Mil_PlaszczOK_Info()
 	{
 	B_GiveInvItems (hero, self, ItMi_PancerzMil, 1);
 	};
+	*/
 	AI_StopProcessInfos	(self);
 };
 

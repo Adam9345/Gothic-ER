@@ -113,15 +113,15 @@ FUNC VOID Rtn_RuinAbyss_3 ()
 // Gorn folgt dem Spieler bis vor das verschlossene Tor
 FUNC VOID Rtn_RuinFollow_3 ()
 {	
-	TA_FollowPC_Gorn		(00,00,	23,00,"OW_PATH_175_GATE1");    
-	TA_FollowPC_Gorn		(23,00,	24,00,"OW_PATH_175_GATE1");     
+	TA_FollowPC_Gorn		(00,00,	23,00,"OW_PATH_175_MEATBUG_GATE");    
+	TA_FollowPC_Gorn		(23,00,	24,00,"OW_PATH_175_MEATBUG_GATE");     
 };	
 
 // Gorn wartet vor dem verschlossenen Tor
 FUNC VOID Rtn_RuinWall_3 ()
 {	
-	TA_Stand			(00,00,	23,00,"OW_PATH_175_GATE1");    
-	TA_Stand			(23,00,	24,00,"OW_PATH_175_GATE1");     
+	TA_Stand			(00,00,	23,00,"OW_PATH_175_MEATBUG_GATE");    
+	TA_Stand			(23,00,	24,00,"OW_PATH_175_MEATBUG_GATE");     
 };	
 
 // Gorn folgt dem Spieler innerhalb der Klostermauern

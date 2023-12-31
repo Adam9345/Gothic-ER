@@ -430,7 +430,8 @@ FUNC int  Kdf_404_Xardas_SELLMAGICSTUFF_Condition()
 FUNC void  Kdf_404_Xardas_SELLMAGICSTUFF_Info()
 {
 	AI_Output (other, self,"Kdf_404_Xardas_SELLMAGICSTUFF_Info_15_01"); //Poszukujê wiedzy magicznej.
-	B_ClearTreaderAmmo(self);
+	Npc_RemoveInvItems (Kdf_404_Xardas, UrizielRune,10);
+	B_ClearTreaderAmmo (self);
 };
 
 //---------------------------------------------------------------------

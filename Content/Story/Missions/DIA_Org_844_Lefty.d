@@ -430,7 +430,8 @@ instance DIA_Lefty_NowFree (C_INFO)
 
 FUNC int DIA_Lefty_NowFree_Condition()
 {
-	if (Npc_KnowsInfo (hero,DIA_Lefty_Free)) && (day_LeftyAndZick != Wld_GetDay())
+	if (Npc_KnowsInfo (hero,DIA_Lefty_Free)) && (day_LeftyAndZick != Wld_GetDay()) 
+	&& !(Npc_KnowsInfo(hero,DIA_Josep_LeftRiceLord))
 	{
 		return 1;
 	};

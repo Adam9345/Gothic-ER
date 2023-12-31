@@ -88,39 +88,39 @@ instance MENU_STATUS(C_MENU_DEF)
 	
 	items[46]	= "MENU_ITEM_TALENT_6_TITLE";
 	items[47]	= "MENU_ITEM_TALENT_6_SKILL";
-	items[48]	= "MENU_ITEM_TALENT_6";
+	//items[47]	= "MENU_ITEM_TALENT_6";
 	
 	// Talent-Liste Fortsetzung (Mage)
-	items[49]	= "MENU_ITEM_TALENT_7_TITLE";
-	items[50]	= "MENU_ITEM_TALENT_7_SKILL";
+	items[48]	= "MENU_ITEM_TALENT_7_TITLE";
+	items[49]	= "MENU_ITEM_TALENT_7_SKILL";
 	
 	// Talent-Liste Fortsetzung (Special)
-	items[51]	= "MENU_ITEM_TALENT_8_TITLE";
-	items[52]	= "MENU_ITEM_TALENT_8_SKILL";
+	items[50]	= "MENU_ITEM_TALENT_8_TITLE";
+	items[51]	= "MENU_ITEM_TALENT_8_SKILL";
 
-	items[53]	= "MENU_ITEM_TALENT_9_TITLE";
-	items[54]	= "MENU_ITEM_TALENT_9_SKILL";
+	items[52]	= "MENU_ITEM_TALENT_9_TITLE";
+	items[53]	= "MENU_ITEM_TALENT_9_SKILL";
 	
-	items[55]	= "MENU_ITEM_TALENT_10_TITLE";
-	items[56]	= "MENU_ITEM_TALENT_10_SKILL";
+	items[54]	= "MENU_ITEM_TALENT_10_TITLE";
+	items[55]	= "MENU_ITEM_TALENT_10_SKILL";
+
+	items[56]	= "MENU_ITEM_TALENT_11_TITLE";
+	items[57]	= "MENU_ITEM_TALENT_11_SKILL";
 	
-	items[57]	= "MENU_ITEM_TALENT_11_TITLE";
-	items[58]	= "MENU_ITEM_TALENT_11_SKILL";
+	items[58]	= "MENU_ITEM_TALENT_12_TITLE";
+	items[59]	= "MENU_ITEM_TALENT_12_SKILL";
 	
-	items[59]	= "MENU_ITEM_TALENT_12_TITLE";
-	items[60]	= "MENU_ITEM_TALENT_12_SKILL";
+	items[60]	= "MENU_ITEM_TALENT_13_TITLE";
+	items[61]	= "MENU_ITEM_TALENT_13_SKILL";
 	
-	items[61]	= "MENU_ITEM_TALENT_13_TITLE";
-	items[62]	= "MENU_ITEM_TALENT_13_SKILL";
+	items[62]	= "MENU_ITEM_TALENT_14_TITLE";
+	items[63]	= "MENU_ITEM_TALENT_14_SKILL";
 	
-	items[63]	= "MENU_ITEM_TALENT_14_TITLE";
-	items[64]	= "MENU_ITEM_TALENT_14_SKILL";
+	items[64]	= "MENU_ITEM_TALENT_15_TITLE";
+	items[65]	= "MENU_ITEM_TALENT_15_SKILL";
 	
-	items[65]	= "MENU_ITEM_TALENT_15_TITLE";
-	items[66]	= "MENU_ITEM_TALENT_15_SKILL";
-	
-	items[67]	= "MENU_ITEM_TALENT_16_TITLE";
-	items[68]	= "MENU_ITEM_TALENT_16_SKILL";
+	items[66]	= "MENU_ITEM_TALENT_16_TITLE";
+	items[67]	= "MENU_ITEM_TALENT_16_SKILL";
 		
 	//
 	// Eigenschaften
@@ -481,7 +481,7 @@ INSTANCE MENU_ITEM_TALENT_5(C_MENU_ITEM_DEF) 	   { posx = STAT_B_X3;posy = STAT_
 // Talent 6
 INSTANCE MENU_ITEM_TALENT_6_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1;posy = STAT_TAL_Y +  8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 instance MENU_ITEM_TALENT_6_SKILL(C_MENU_ITEM_DEF) { posx = STAT_B_X2;posy = STAT_TAL_Y +  8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_TALENT_6(C_MENU_ITEM_DEF)       { posx = STAT_B_X3;posy = STAT_TAL_Y +  8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+//INSTANCE MENU_ITEM_TALENT_6(C_MENU_ITEM_DEF)       { posx = STAT_B_X3;posy = STAT_TAL_Y +  8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 // Magie
 

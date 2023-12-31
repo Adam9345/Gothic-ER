@@ -143,7 +143,7 @@ func void DIA_Stanley_START_TRAIN_1H_5()
 
 func void DIA_Stanley_START_TRAIN_2H_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,40);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,40);
 	Info_ClearChoices(DIA_Stanley_Teach);
 	Info_AddChoice(DIA_Stanley_Teach,Dialog_Back,DIA_Stanley_START_TRAIN_BACK);
 	
@@ -156,7 +156,7 @@ func void DIA_Stanley_START_TRAIN_2H_1()
 
 func void DIA_Stanley_START_TRAIN_2H_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,40);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,40);
 	Info_ClearChoices(DIA_Stanley_Teach);
 	Info_AddChoice(DIA_Stanley_Teach,Dialog_Back,DIA_Stanley_START_TRAIN_BACK);
 

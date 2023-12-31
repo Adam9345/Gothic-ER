@@ -705,7 +705,7 @@ FUNC INT DIA_Artegor_PP_WHAT_Condition()
     var C_ITEM	armor_STTPP;			armor_STTPP 			= Npc_GetEquippedArmor	(hero);
 	var int		armorInstance_STTPP;	armorInstance_STTPP	    = Hlp_GetInstanceID		(armor_STTPP);
 	
-	if (armorInstance_STTPP == Armor_Stt_pp) 
+	if (npc_getarmor(hero) == armor_stt_pp)
 	&& (PP_Mission == LOG_MISSION)
 	
 	

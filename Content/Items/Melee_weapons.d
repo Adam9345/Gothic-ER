@@ -1445,7 +1445,7 @@ INSTANCE ItMw_1H_Warhammer_01 (C_Item)
 	flags 				=	ITEM_AXE|ITEM_MULTI;	
 	material 			=	MAT_WOOD;
 
-	value 				=	1000;//500;//250
+	value 				=	500;//500;//250
 
 	damageTotal			=   50;
 	damagetype			=	DAM_BLUNT;
@@ -1722,7 +1722,7 @@ INSTANCE ItMw_1H_Sword_Broad_02 (C_Item)
 	flags 				=	ITEM_SWD|ITEM_MULTI;	
 	material 			=	MAT_METAL;
 
-	value 				=	1300;//650;//327
+	value 				=	570;//650;//327
 
 	damageTotal			= 	57;
 	damagetype 			= 	DAM_EDGE;
@@ -2086,7 +2086,7 @@ INSTANCE ItMw_2H_Axe_Old_01 (C_Item)
 	flags 				=	ITEM_2HD_AXE | ITEM_MULTI;	
 	material 			=	MAT_METAL;
 
-	value 				=	800;//900;//454
+	value 				=	670;//900;//454
 	
 	damageTotal			= 	67;
 	damagetype			=	DAM_EDGE;

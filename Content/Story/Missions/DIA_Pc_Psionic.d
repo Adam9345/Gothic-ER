@@ -704,6 +704,7 @@ FUNC int  PC_Psionic_SEND_Condition()
 	&&	(YBerion_BringFocus != LOG_SUCCESS)
 	&& 	(Npc_GetTrueGuild(hero) != GIL_SFB) 
 	&&  (Npc_GetTrueGuild(hero) != GIL_VLK)
+	&&  !(Npc_KnowsInfo(hero,PC_Psionic_SEND))
     &&  (kapitel == 1)	//fix 
 	{
 		return 1;

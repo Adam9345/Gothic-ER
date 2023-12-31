@@ -1711,7 +1711,7 @@ instance Info_Saturas_Fire_Varans (C_INFO)
 
 FUNC INT Info_Saturas_Fire_Varans_Condition()
 {	
-	 if (Kapitel == 4)
+	 if (Kapitel == 10)
 	 && (Npc_GetTrueGuild(hero) == GIL_KDW)
 	{
 		return TRUE;

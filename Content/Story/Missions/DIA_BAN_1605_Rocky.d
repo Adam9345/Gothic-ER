@@ -1263,8 +1263,9 @@ instance dia_rocky_pickpocket(c_info) {
     description = pickpocket_final;
 };
 
-func int dia_rocky_pickpocket_condition() {
-	e_beklauen(baseThfChanceORG, 30);
+func int dia_rocky_pickpocket_condition() 
+{
+	e_beklauen(baseThfChanceORG,30);
 };
 
 func void dia_rocky_pickpocket_info() {

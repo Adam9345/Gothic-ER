@@ -92,7 +92,7 @@ FUNC VOID DIA_cavalorn_Lehrer_Info()
 	AI_Output (other, self,"DIA_cavalorn_Lehrer_15_00"); //Mo¿esz mnie nauczyæ czegoœ o myœlistwie?
 	AI_Output (self, other,"DIA_cavalorn_Lehrer_12_01"); //To zale¿y tylko od tego, co chcia³byœ wiedzieæ.
 	Info_ClearChoices(DIA_cavalorn_Lehrer);
-	Info_AddChoice(DIA_cavalorn_Lehrer,DIALOG_BACK,DIA_Wolf_Bow_BACK);
+	Info_AddChoice(DIA_cavalorn_Lehrer,DIALOG_BACK,DIA_cavalorn_Lehrer_BACK);
 	Info_AddChoice(DIA_cavalorn_Lehrer,B_BuildLearnString("£uki +1",B_GetLearnCostTalent(other,NPC_TALENT_Bow,1),0),Dia_Cavalorn_Teach_Bow_1);
 	Info_AddChoice(DIA_cavalorn_Lehrer,B_BuildLearnString("£uki +5",B_GetLearnCostTalent(other,NPC_TALENT_Bow,5),0),Dia_Cavalorn_Teach_Bow_5);
 

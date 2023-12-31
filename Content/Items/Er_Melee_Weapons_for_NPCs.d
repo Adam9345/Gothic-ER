@@ -700,7 +700,7 @@ INSTANCE ItMw_065_2h_greataxe_01 (C_Item)
 	flags 				=	ITEM_SWD;	
 	material 			=	MAT_METAL;
 
-	value 				=	1600;
+	value 				=	650;
 
 	damageTotal			= 	65;
 	damagetype			=	DAM_EDGE;

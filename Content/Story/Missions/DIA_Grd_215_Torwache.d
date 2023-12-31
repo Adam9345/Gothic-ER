@@ -276,8 +276,9 @@ INSTANCE DIA_Torwache_PP_ARMOR (C_INFO)
 
 FUNC INT DIA_Torwache_PP_ARMOR_Condition()
 {
- if (Npc_HasItems (hero, Armor_Stt_pp) >=1)
- 
+ 	var C_ITEM	armor;			armor 			= Npc_GetEquippedArmor	(hero);
+	var int		armorInstance;	armorInstance	= Hlp_GetInstanceID		(armor);
+	if (armorInstance == Armor_Stt_pp)
 {
     return TRUE;
 };

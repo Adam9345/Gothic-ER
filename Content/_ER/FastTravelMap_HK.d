@@ -2,10 +2,10 @@ func void fastTravelMap_OnKey() {
 	var int key; key = esi;
 	
 	if (InfoManager_hasFinished() && NPC_HasItems(hero, FastTravelMap) >= 1) {
-		if (key == mem_getkey("keyFastTravelMap") 
-			&& C_BodyStateContains(hero,BS_STAND)) {
-			
-			AI_UseItem(hero, FastTravelMap);
+		if (key == mem_getkey("keyFastTravelMap")) {
+			if (C_BodyStateContains(hero,BS_STAND)){
+				AI_UseItem(hero, FastTravelMap);
+			};
 		};
 	};
 };
