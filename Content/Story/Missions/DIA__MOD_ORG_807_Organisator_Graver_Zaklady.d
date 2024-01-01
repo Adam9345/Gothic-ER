@@ -266,32 +266,33 @@ func void dia_organisator_hello3_choices() {
 func void dia_organisator_hello3_info() {
     ai_output(other, self, "DIA_Organisator_HELLO3_15_01");
     ai_output(self, other, "DIA_Organisator_HELLO3_03_02");
+    playdicegame(1, self);
     info_clearchoices(dia_organisator_hello3);
-	dia_organisator_hello3_choices();
+	//dia_organisator_hello3_choices();
 };
 
 func void dia_organisator_hello3_20ore() {
-	throw_dice(5);
+	//ThrowDice(5);
     info_clearchoices(dia_organisator_hello3);
-	dia_organisator_hello3_choices();
+	//dia_organisator_hello3_choices();
 };
 
 func void dia_organisator_hello3_60ore() {
-	throw_dice(15);
+	//ThrowDice(15);
     info_clearchoices(dia_organisator_hello3);
-	dia_organisator_hello3_choices();
+	//dia_organisator_hello3_choices();
 };
 
 func void dia_organisator_hello3_150ore() {
-    throw_dice(30);
+    //ThrowDice(30);
     info_clearchoices(dia_organisator_hello3);
-	dia_organisator_hello3_choices();
+	//dia_organisator_hello3_choices();
 };
 
 func void dia_organisator_hello3_300ore() {
-	throw_dice(50);
+	//ThrowDice(50);
     info_clearchoices(dia_organisator_hello3);
-	dia_organisator_hello3_choices();
+	//dia_organisator_hello3_choices();
 };
 
 FUNC VOID DIA_Organisator_HELLO3_500Ore()
@@ -343,6 +344,7 @@ B_GiveInvItems (other, self, ItMiNugget, 500);
 
 FUNC VOID DIA_Organisator_HELLO3_BACK()
 {
+    enddicegame();
     Info_ClearChoices	(DIA_Organisator_HELLO3);
 };
 

@@ -243,6 +243,7 @@ const int MOBSI_SMOKE         = 22;
 const int MOBSI_GRAVE         = 23;
 const int MOBSI_GRAVE2        = 24;
 const int MOBSI_GRAVE3        = 25;
+const int MOBSI_DICEGAME      = 26;
 var int player_mobsi_production;
 
 const int PERC_DIST_ACTIVE_MAX = 2000;

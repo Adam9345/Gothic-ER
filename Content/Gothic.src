@@ -32,6 +32,11 @@ AI\AI_INTERN\C_PredatorFoundPrey.d
 
 _ER\LogIngredients.d
 
+_ER\DiceGame\Variables.d
+_ER\DiceGame\DiceGameHelperFuncs.d
+STORY\EVENTS\DiceGame.D
+_ER\DiceGame\DiceGame.d
+
 
 STORY\STORY_GLOBALS.D
 STORY\ER_STORY_GLOBALS.D
@@ -197,8 +202,6 @@ AI\B_HUMAN\B_ValidateOther.D
 
 
 AI\PROTOTYPES\NPC_DEFAULT.D
-
-
 
 AI\ZS_MONSTER\*.D
 

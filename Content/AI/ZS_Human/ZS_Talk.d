@@ -172,6 +172,11 @@ FUNC INT ZS_Talk_Loop ()
 
 FUNC VOID ZS_Talk_End ()
 {
+	if (startdicegamematch == 1) {
+        startdicegamematch = 2;
+        b_dicegamedialog_s1();
+        npc_clearaiqueue(self);
+    };
     PrintDebugNpc(PD_ZS_FRAME,"ZS_Talk_End");
 };
 

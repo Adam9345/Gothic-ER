@@ -2028,4 +2028,7 @@ INSTANCE CONTROL_RETURN     	(C_SFX_DEF) {file= "Magic_6.wav" ;					};
 			   INSTANCE SVM_15_SC_HEYTURNAROUND02			    (C_SFX_DEF) {file= "SVM_15_SC_HEYTURNAROUND02.wav";				vol = 110;			};	
 			   INSTANCE SVM_15_SC_HEYTURNAROUND03				(C_SFX_DEF) {file= "SVM_15_SC_HEYTURNAROUND03.wav";				vol = 110;			};	
 			   INSTANCE SVM_15_SC_HEYTURNAROUND04				(C_SFX_DEF) {file= "SVM_15_SC_HEYTURNAROUND04.wav";				vol = 110;			};	
-			   INSTANCE SVM_15_SC_HEYWAITASECOND				(C_SFX_DEF) {file= "SVM_15_SC_HEYWAITASECOND.wav";				vol = 110;			};	
+			   INSTANCE SVM_15_SC_HEYWAITASECOND				(C_SFX_DEF) {file= "SVM_15_SC_HEYWAITASECOND.wav";				vol = 110;			};
+
+			   INSTANCE GELDBEUTEL				(C_SFX_DEF) {file= "GELDBEUTEL.wav";				vol = 110;			};	
+			   INSTANCE THROWDICES				(C_SFX_DEF) {file= "THROW_DICES.wav";				vol = 110;			};	
