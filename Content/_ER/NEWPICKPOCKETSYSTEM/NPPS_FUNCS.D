@@ -117,6 +117,7 @@ func void d_beklauen() {
 
     if(randomNumber <= theftdexglob) {
 		prints_ext("Kradzie¿ udana", col_lime);
+        snd_play("Geldbeutel");
         b_giveinvitems(self, other, itminugget, theftnuggetglob);
         SetAdditionalAivar(self, NpcWasPickPocket, true);
         b_givethiefxp();
