@@ -335,7 +335,7 @@ CONST STRING TXT_TALENTS_SKILLS [NPC_TALENT_MAX] =
 	"-|Uczony|Mistrz",			//poz. 1/2|poz. 2/2					        //NPC_TALENT_PICKPOCKET
 	"-|kr퉓 1 |kr퉓 2 |kr퉓 3 |kr퉓 4 |kr퉓 5 |kr퉓 6 ",	    //NPC_TALENT_MAGE         
 	"-|poz. 1/1|",                                              //NPC_TALENT_SNEAK       
-	"-|poz. 1/1",                                      		    //NPC_TALENT_REGENERATE 
+	" |",                                      		    //NPC_TALENT_REGENERATE 
 	"-|poz. 1/2|poz. 2/2",                                      //NPC_TALENT_FIREMASTER   
 	"-|poz. 1/1"                                                //NPC_TALENT_ACROBAT 
           	                                                    //NPC_TALENT_SMITHWEAPON

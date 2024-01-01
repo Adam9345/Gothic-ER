@@ -378,23 +378,28 @@ func void Update_Character_Menu()
 {
    // var int Mining;
     var string Smith;
-    Smith =  "Kowalstwo            -";                                
+    var string SmithSkill;
+    Smith =  "Kowalstwo";
+    SmithSkill = "-";                                
     Update_Menu_Item("MENU_ITEM_TALENT_14_TITLE", Smith);
+    Update_Menu_Item("MENU_ITEM_TALENT_14_SKILL", SmithSkill);
+    
 	if (NPC_TALENT_SMITH == 1)
 	{
-	Smith =  "Kowalstwo       poz.1/3";                          
-    Update_Menu_Item("MENU_ITEM_TALENT_14_TITLE", Smith);
+        SmithSkill = "poz. 1/3";                          
+        Update_Menu_Item("MENU_ITEM_TALENT_14_SKILL", SmithSkill);
 	};
+
 	if (NPC_TALENT_SMITH == 2)
 	{
-	Smith = "Kowalstwo       poz.2/3";                          
-    Update_Menu_Item("MENU_ITEM_TALENT_14_TITLE", Smith);
+        SmithSkill = "poz. 2/3";                          
+        Update_Menu_Item("MENU_ITEM_TALENT_14_SKILL", SmithSkill);
 	};
+
 	if (NPC_TALENT_SMITH == 3)
-	{
-	Smith =  "Kowalstwo       poz.3/3";      
-              	
-    Update_Menu_Item("MENU_ITEM_TALENT_14_TITLE", Smith);
+	{  
+        SmithSkill = "poz. 3/3";          	
+        Update_Menu_Item("MENU_ITEM_TALENT_14_SKILL", SmithSkill);
 	};
 		
 	var int NPC_TALENT_MINING;
@@ -406,7 +411,7 @@ func void Update_Character_Menu()
 	Mining           = "Wydobywanie";   
     MiningState      = ConcatStrings(IntToString(HERO_HACKCHANCE),"%");
 	Update_Menu_Item("MENU_ITEM_TALENT_16_TITLE", Mining);
-    Update_Menu_Item("MENU_ITEM_TALENT_17_TITLE", MiningState);
+    Update_Menu_Item("MENU_ITEM_TALENT_16_SKILL", MiningState);
 	
 	
 };
