@@ -87,7 +87,35 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		};
 		
 		kosten = kosten * skill;
-	};	
+	};
+
+	if (talent == NPC_TALENT_MAGE) {
+		if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 0)
+		{
+			kosten = 10;
+		}
+		else if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 1)
+		{
+			kosten = 15;
+		}
+		else if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 2)
+		{
+			kosten = 20;
+		}
+		else if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 3)
+		{
+			kosten = 25;
+		}
+		else if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 4)
+		{
+			kosten = 30;
+		}
+		else if(Npc_GetTalentSkill (hero,NPC_TALENT_MAGE) == 5)
+		{
+			kosten = 40;
+		};
+	};
+
 	return kosten;
 };
 
