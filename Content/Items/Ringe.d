@@ -1238,7 +1238,7 @@ INSTANCE ItRi_RegenManaS(C_Item)
 FUNC VOID Equip_ItRi_ManaRegenS()
 {
    	
- FF_ApplyOnceExt(REGMAN_S, 5000, -1);
+ FF_ApplyOnceExtGT(REGMAN_S, 5000, -1);
 
 };
 	
