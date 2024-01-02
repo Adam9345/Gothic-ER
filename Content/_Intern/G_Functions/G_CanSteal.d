@@ -6,6 +6,7 @@
  *************************************************************************/
 func int G_CanSteal()
 {
+	/*
 	if	( ( other.npcType != NPCTYPE_FRIEND ) && ( other.npcType != NPCTYPE_MAIN ) )
 	{
 		return TRUE;
@@ -16,4 +17,6 @@ func int G_CanSteal()
 		
 		return FALSE;
 	};
+	*/
+	return FALSE;
 };
