@@ -242,7 +242,7 @@ INSTANCE ItArScrollFireRain (C_Item)
 	mainflag 			=	ITEM_KAT_RUNE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	250;
+	value 				=	750;
 
 	visual				=	"ItAr_Scroll_36.3DS";
 	material			=	MAT_STONE;
