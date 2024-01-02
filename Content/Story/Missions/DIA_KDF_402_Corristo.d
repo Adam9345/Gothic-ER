@@ -746,7 +746,7 @@ FUNC void  KDF_402_Corristo_KREIS4_Info()
 /*------------------------------------------------------------------------
 							SCHWERE ROBE									
 ------------------------------------------------------------------------*/
-
+var int HeroBuyHeavKDFArmor;
 instance  KDF_402_Corristo_HEAVYARMOR (C_INFO)
 {
 	npc				= KDF_402_Corristo;
@@ -760,6 +760,7 @@ instance  KDF_402_Corristo_HEAVYARMOR (C_INFO)
 FUNC int  KDF_402_Corristo_HEAVYARMOR_Condition()
 {	
 	if (Npc_GetTrueGuild (hero) == GIL_KDF)
+	&& (HeroBuyHeavKDFArmor == FALSE)
 	{
 		return TRUE;
 	};
@@ -780,7 +781,7 @@ FUNC void  KDF_402_Corristo_HEAVYARMOR_Info()
 	else
 	{	
 		AI_Output			(self, other,"KDF_402_Corristo_HEAVYARMOR_Info_14_04"); //Twój czas wreszcie nadszed³. Jesteœ godzien, by nosiæ szatê Arcymaga Ognia.
-		
+		HeroBuyHeavKDFArmor = TRUE;
 		CreateInvItem		(hero,KDF_ARMOR_H);
 		
 		CreateInvItem		(self, ItAmArrow);
