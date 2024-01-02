@@ -385,12 +385,12 @@ INSTANCE ItMi_WhiteWolfBlood(C_Item)
 {
 	name 			=	"Krew bia³ego wilka";
 
-	mainflag 		=	ITEM_KAT_POTIONS;
-	flags 			=	ITEM_MULTI;
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MULTI;
 
 	value 			=	25;	
 
-	visual 			=	"ItFo_Potion_Health_01.3ds";
+	visual 			=	"ItMi_Blood.3ds";
 	material 		=	MAT_GLAS;
 
 	description		= name;
