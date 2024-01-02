@@ -706,6 +706,6 @@ const string PRINT_ADDON_HACKCHANCE = "Zwiêkszy³a siê umiejêtnoœæ wydobywania! (
 
 const string Name_Zarlokiel           = "¯ar³okie³";
 
-
+const string Name_Test              = "Test";
 
 const string PRINT_NOLEARNOVERPERSONALMAX = "Maksimum dla tego nauczyciela wynosi ";
