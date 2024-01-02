@@ -3020,6 +3020,7 @@ FUNC VOID INIT_WORLD ()
 	AF_ItemPreview_Init();
 	Init_CraftingSystem();
 	TorchHotKey_Init();
+	G1_EnhancedTrading_Init();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
  
