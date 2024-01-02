@@ -47,10 +47,9 @@ Func void WSTRE ()
 Func void REGMAN_S ()
 
 {	
-if !(hero.attribute[ATR_MANA] == ATR_MANA_MAX)
-&& !(hero.attribute[ATR_MANA] == 0)
+if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX] && hero.attribute[ATR_MANA] >= 0)
 {   
- Npc_ChangeAttribute ( hero , ATR_MANA , +4 ) ; 
+	Npc_ChangeAttribute ( hero , ATR_MANA , 4 ) ; 
 // Npc_ChangeAttribute ( hero , ATR_MANA , +3 ) ; 
 };	 	
 };
