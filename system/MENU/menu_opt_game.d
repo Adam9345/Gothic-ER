@@ -25,8 +25,11 @@ INSTANCE MENU_OPT_GAME(C_MENU_DEF)
 	
 	items[11]		= "MENUITEM_GAME_BLOOD";
 	items[12]		= "MENUITEM_GAME_BLOOD_CHOICE";
-				
-	items[13]		= "MENUITEM_GAME_BACK";
+
+	items[13]       = "MENUITEM_OPT_GFA";
+	items[14]       = "MENUITEM_OPT_GFA_CHOICE";
+
+	items[15]		= "MENUITEM_GAME_BACK";
 	
 	flags = flags | MENU_SHOW_INFO;
 };
@@ -271,7 +274,7 @@ INSTANCE MENUITEM_GAME_BACK(C_MENU_ITEM_DEF)
 	backpic		=	MENU_ITEM_BACK_PIC;
 	text[0]		=	"Wstecz";
 	// Position und Dimension	
-	posx		=	1000;		posy		=	MENU_BACK_Y;
+	posx		=	1000;		posy		=	MENU_BACK_Y + 300;
 	dimx		=	6192;		dimy		=	MENU_DY;
 	// Aktionen
 	onSelAction[0]	= 	SEL_ACTION_BACK;	
