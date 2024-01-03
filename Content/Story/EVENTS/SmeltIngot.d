@@ -44,7 +44,8 @@ FUNC VOID DIA_PC_Hero_Smelt_EXIT_Info()
 	SztabkaMagicznejStali = False;
 	SztabkaCiemnejStali = False;
 	SztabkaZlota = False;
-	SmeltIngot = False;				  		
+	SmeltIngot = False;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;				  		
 	AI_StopProcessInfos	(self);
 };
 

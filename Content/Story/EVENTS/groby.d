@@ -64,6 +64,7 @@ if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_GRAVE)
 FUNC VOID DIA_PC_HERO_EXIT_grob1_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 //========================================
@@ -121,6 +122,7 @@ if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_GRAVE2)
 FUNC VOID DIA_PC_HERO_EXIT_grob2_Info()
 {
 self.aivar[AIV_INVINCIBLE]=FALSE;
+PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 //========================================
@@ -179,6 +181,7 @@ FUNC VOID DIA_PC_HERO_EXIT_grob3_Info()
 {
 	AI_StopProcessInfos	(self);
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 };
 //========================================
 //-----------------> CLEAR_K1

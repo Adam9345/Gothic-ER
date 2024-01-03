@@ -37,7 +37,8 @@ FUNC INT DIA_PC_Hero_Cook_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_Cook_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
-	CookingFood = FALSE;				 
+	CookingFood = FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;				 
 	AI_StopProcessInfos	(self);
 };
 

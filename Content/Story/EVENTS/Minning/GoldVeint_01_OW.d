@@ -34,6 +34,7 @@ FUNC INT DIA_PC_HeroENdMinningGold_EXIT_Condition()
 FUNC VOID DIA_PC_HeroENdMinningGold_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+    PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 

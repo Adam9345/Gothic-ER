@@ -16,6 +16,10 @@ func void Fajka_S1 ()
 //-----------------> OPCJA *KONIEC* 
 //========================================
 
+func void Reset_Mobsi_Smoke() {
+    PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+};
+
 INSTANCE DIA_PC_Hero_Palenie_EXIT(C_INFO)
 {
 	npc             = PC_Hero;
@@ -37,6 +41,7 @@ FUNC INT DIA_PC_Hero_Palenie_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_Palenie_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+    PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 
@@ -89,6 +94,7 @@ FUNC VOID DIA_PC_Hero_Palenie_Tyton1()
     else
     {
 	PrintScreen	("Nie masz takiego tytoniu", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+    Reset_Mobsi_Smoke();
     AI_StopProcessInfos	(self);
     };
 };
@@ -104,6 +110,7 @@ FUNC VOID DIA_PC_Hero_Palenie_Tyton2()
     else
     {
 	PrintScreen	("Nie masz takiego tytoniu", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+    Reset_Mobsi_Smoke();
     AI_StopProcessInfos	(self);
     };
 };
@@ -118,6 +125,7 @@ FUNC VOID DIA_PC_Hero_Palenie_Tyton3()
     else
     {
 	PrintScreen	("Nie masz takiego tytoniu", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+    Reset_Mobsi_Smoke();
     AI_StopProcessInfos	(self);
     };
 };
@@ -135,6 +143,7 @@ FUNC VOID DIA_PC_Hero_Palenie_Tyton4()
     else
     {
 	PrintScreen	("Nie masz takiego tytoniu", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+    Reset_Mobsi_Smoke();
     AI_StopProcessInfos	(self);
     };
 };
@@ -148,6 +157,7 @@ FUNC VOID DIA_PC_Hero_Palenie_Tyton()
     else
     {
 	PrintScreen	("Nie masz takiego tytoniu", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+    Reset_Mobsi_Smoke();
     AI_StopProcessInfos	(self);
     };
 };

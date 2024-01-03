@@ -137,7 +137,8 @@ FUNC INT DIA_PC_Hero_NoRepair_Condition()
 FUNC VOID DIA_PC_Hero_NoRepair_Info()
 {
     AI_StopProcessInfos	(self);
-self.aivar[AIV_INVINCIBLE]=FALSE;
+	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 };
 
 //========================================

@@ -13,7 +13,7 @@ func void PC_TimeTravel (var int t)
 		Wld_SetTime	(t,00);
 	};
 	
-	PLAYER_MOBSI_PRODUCTION	=	MOBSI_FastTravel;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 
 	//-------- AssessEnterRoom-Wahrnehmung versenden --------
 	PrintGlobals		(PD_ITEM_MOBSI);
@@ -45,6 +45,7 @@ FUNC INT DIA_PC_Hero_TravelFast_EXIT_Condition()
 FUNC VOID DIA_PC_Hero_TravelFast_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 

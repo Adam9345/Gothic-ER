@@ -22,6 +22,7 @@ func void PC_Sleep (var int t)
 
 	//-------- AssessEnterRoom-Wahrnehmung versenden --------
 	PrintGlobals		(PD_ITEM_MOBSI);
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	Npc_SendPassivePerc	(hero,	PERC_ASSESSENTERROOM, NULL, hero);		//...damit der Spieler dieses Feature nicht zum Hütteplündern ausnutzt!
 };
 
@@ -72,7 +73,7 @@ func VOID PC_NoSleep_Info()
 {
 	AI_StopProcessInfos (self);
 	self.aivar[AIV_INVINCIBLE]=FALSE;
-	
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 };
 
 //---------------------- morgens --------------------------------------

@@ -50,6 +50,7 @@ FUNC VOID DIA_PC_Hero_Brewing_EXIT_Info()
 	BrewingAlcohol = FALSE;
 	BrewingPoison = FALSE;
 	PrepareTobacco = FALSE;
+	PLAYER_MOBSI_PRODUCTION	= MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 

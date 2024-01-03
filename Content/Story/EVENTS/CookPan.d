@@ -44,6 +44,7 @@ FUNC VOID DIA_PC_Hero_CookPan_EXIT_Info()
 	MuttonLurker = FALSE;
 	CookMeat = FALSE;				  			  
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 

@@ -39,6 +39,7 @@ FUNC VOID DIA_PC_Hero_Smith_EXIT_Info()
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	SmithBelt = FALSE;
 	SmithWeapon = FALSE;
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	AI_StopProcessInfos	(self);
 };
 

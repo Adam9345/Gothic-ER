@@ -43,6 +43,7 @@ FUNC INT DIA_PC_Hero_PrzerwijR_Condition()
 FUNC VOID DIA_PC_Hero_PrzerwijR_Info()
 {
     AI_StopProcessInfos	(self);
+    PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 };
 

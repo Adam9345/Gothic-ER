@@ -17,7 +17,7 @@ func void PC_Rest (var int t)
 	};
 	
 	PrintS_Ext("Czujesz siê wypoczêty...", COL_Lime);
-
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
    
 	
 	
@@ -87,7 +87,7 @@ func VOID PC_Rest_End_Info()
 {
 	AI_StopProcessInfos (self);
 	self.aivar[AIV_INVINCIBLE]=FALSE;
-	
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 };
 
 //---------------------- morgens --------------------------------------
