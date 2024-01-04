@@ -1926,7 +1926,7 @@ INSTANCE It_DavorsBow (C_Item)
 
 	value 				=	270;
 
-	damageTotal			=	50;
+	damageTotal			=	30;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmArrow;
 	cond_atr[2]   		=	ATR_DEXTERITY;
