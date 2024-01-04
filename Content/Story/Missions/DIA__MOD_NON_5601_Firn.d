@@ -169,7 +169,8 @@ INSTANCE DIA_Firn_TEACH (C_INFO)
 
 FUNC INT DIA_Firn_TEACH_Condition()
 {
-	if (Npc_KnowsInfo (hero, DIA_Firn_HELLO3)) && ((Knows_GetFur == false) ||  (Knows_GetHide == false))
+	if (Npc_KnowsInfo (hero, DIA_Firn_HELLO3)) 
+    && ((Knows_GetFur == false) ||  (Knows_GetHide == false) ||  (Knows_GetLurkerMeat == false) ||  (Knows_GetMoleratW == false))
 	{
     return TRUE;
 	};
