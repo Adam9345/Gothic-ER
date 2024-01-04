@@ -74,12 +74,12 @@ const int	SPL_SENDCAST_SHRINK			=	5;
 const int	SPL_DAMAGE_FIREBOLT			=	30;
 const int	SPL_DAMAGE_FIREBALL			=	30;		//pro Level
 const int	SPL_DAMAGE_FIRESTORM		=	50;
-const int	SPL_DAMAGE_FIRERAIN			=	500;
+const int	SPL_DAMAGE_FIRERAIN			=	450;
 
 const int	SPL_DAMAGE_THUNDERBOLT		=	20;
 const int	SPL_DAMAGE_THUNDERBALL		=	20;		//pro Level
 
-const int	SPL_DAMAGE_MASSDEATH		=	200;
+const int	SPL_DAMAGE_MASSDEATH		=	300;
 const int	SPL_DAMAGE_BREATHOFDEATH	=	100;
 const int	SPL_DAMAGE_DESTROYUNDEAD	=	9999;	//soll halt wirklich killen!
 
