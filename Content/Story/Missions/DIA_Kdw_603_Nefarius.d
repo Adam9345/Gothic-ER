@@ -73,7 +73,7 @@ FUNC VOID  Info_Nefarius_WoSaturas_Info()
 	AI_Output (other, self,"Info_Nefarius_WoSaturas_15_00"); //Gdzie mogê znaleŸæ Saturasa?
 	AI_Output (self, other,"Info_Nefarius_WoSaturas_04_01"); //Poszukaj za t¹ wielk¹, okr¹g³¹ bram¹.
 };
-
+/*
 // **************************** 
 //			WannaMage
 // ****************************
@@ -142,7 +142,7 @@ FUNC VOID  Info_Nefarius_NowReady_Info()
 		AI_Output (self, other,"Info_Nefarius_NowReady_04_03"); //Czekaj teraz cierpliwie na swoj¹ szansê...
 	};
 };
-
+*/
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
 ///////////////		Kapitel 2				//////////////

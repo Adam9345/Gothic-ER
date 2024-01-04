@@ -1581,7 +1581,7 @@ func void KDW_600_Saturas_TIMESUP_JA3()
 // ****************************************
 // 			Aufnahme eines Sld 
 // ****************************************
-
+/*
 instance KDW_600_Saturas_HogeAUFNAHME (C_INFO)
 {
 	npc				= KDW_600_Saturas;
@@ -1604,7 +1604,7 @@ func void  KDW_600_Saturas_HogeAUFNAHME_Info()
 {
 	AI_Output(other, self,"KDW_600_Saturas_HogeAUFNAHME_15_00"); //Nefarius powiedzia³, ¿e mogê ju¿ za³o¿yæ szatê Maga Wody.
 	
-	/* AB HIER IST ALLES DOPPELT - geklaut aus der KdF-KdW-Aufnahme */
+	
 	
 	AI_Output(self, other,"KDW_600_Saturas_NOMOREOC_Info_14_03"); //Zatem witaj w naszej spo³ecznoœci!
 	AI_Output(other, self,"KDW_600_Saturas_OATH_Info_15_01"); //Czy to oznacza, ¿e nale¿ê teraz do krêgu Magów Wody?
@@ -1662,7 +1662,7 @@ func void  KDW_600_Saturas_HogeAUFNAHMETeil2_Info()
 	B_LogEntry			(GE_BecomeWatermage,"Cronos nareszcie przyj¹³ mnie w poczet Magów Wody. ");	 
 	AI_StopProcessInfos	(self);
 };
-
+*/
 //========================================
 //-----------------> GRATULACJE_Z_KOPALNIA
 //========================================
