@@ -242,38 +242,6 @@ INSTANCE QUENTIN_ARMOR_H(C_Item)
 	TEXT[5]					=	NAME_Value;				COUNT[5]	= value;
 };
 
-/*******************************************************************************************
-**	PANCERZ KAPITANA PIRATÓW                                            			 **
-*******************************************************************************************/
-INSTANCE GORDON_ARMOR(C_Item)
-{
-	name 					=	"Strój kapitana";
-
-	mainflag 				=	ITEM_KAT_ARMOR;
-	flags 					=	0;
-
-	protection [PROT_EDGE] 	=	50;
-	protection [PROT_BLUNT] = 	50;
-	protection [PROT_POINT] = 	50;
-	protection [PROT_FIRE] 	= 	16;
-	protection [PROT_MAGIC] = 	7;
-
-	value 					=	protection [PROT_EDGE] * ARMOR_VALUE_MULTIPLIER;
-
-	wear 					=	WEAR_TORSO;
-
-	visual 					=	"pancerz_pirat.3ds";
-	visual_change 			=	"Armor_PIR_H_Addon.asc";
-	visual_skin 			=	0;
-	material 				=	MAT_LEATHER;
-	owner					=	NON_5027_Pirat4;
-	description				=	name;
-	TEXT[1]					=	NAME_Prot_Edge;			COUNT[1]	= protection	[PROT_EDGE];
-	TEXT[2]					=	NAME_Prot_Point;		COUNT[2]	= protection	[PROT_POINT];
-	TEXT[3] 				=	NAME_Prot_Fire;			COUNT[3]	= protection	[PROT_FIRE];
-	TEXT[4]					=	NAME_Prot_Magic;		COUNT[4]	= protection	[PROT_MAGIC];
-	TEXT[5]					=	NAME_Value;				COUNT[5]	= value;
-};
 
 /*******************************************************************************************
 **	ZBROJA SNAKE'A                                       			 **
