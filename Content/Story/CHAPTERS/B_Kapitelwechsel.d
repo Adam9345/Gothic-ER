@@ -748,13 +748,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
           B_SetPermAttitude	(GRD_219_Stone,	ATT_FRIENDLY);	
           B_ChangeGuild     (GRD_219_Stone,GIL_MEATBUG );
 		//zadanie tylko do 5 rozdzia³u
-		if (MIS_NewLocationForPirates != LOG_SUCCESS)
-		{
-		B_KillNPC				(NON_5026_Pirat3);	
-		B_KillNPC				(NON_5027_Pirat4);	
-		B_KillNPC				(NON_5024_Pirat1);	
-		B_KillNPC				(NON_5025_Pirat2);	
-		};
+	
 		// ³ad de fag? Mdl_SetVisualBody (self,"hum_body_naked0",0, 3,"Hum_Head_Psionic",12, 1,CRW_ARMOR_H);
 		//-------- Händler auffüllen --------
 		B_Give_ScorpioChapter5Weapons ();
