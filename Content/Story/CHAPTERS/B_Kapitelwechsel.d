@@ -655,16 +655,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_SetPermAttitude	(jim,	ATT_NEUTRAL);
 		
 		
-		//----------------Piraci-------------------
-		Wld_InsertNpc				(NON_5026_Pirat3,"ER_PATH_01");	
-		Wld_InsertNpc				(NON_5027_Pirat4,"ER_PATH_01");	
-		Wld_InsertNpc				(NON_5024_Pirat1,"ER_PATH_01");	
-		Wld_InsertNpc				(NON_5025_Pirat2,"ER_PATH_01");
-		
-		Wld_InsertNpc				(GRD_5028_Gardist,"ER_PATH_01");
-		Wld_InsertNpc				(GRD_5029_Gardist,"ER_PATH_01");
-		Wld_InsertNpc				(GRD_5030_Gardist,"ER_PATH_01");
-		Wld_InsertNpc				(GRD_5031_Gardist,"ER_PATH_01");
+
 		
 		
 		//----------------Ratford-----------------------
