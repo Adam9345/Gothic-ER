@@ -177,6 +177,7 @@ FUNC void  Tpl_1415_Templer_ROCK_Info()
 	Info_ClearChoices (Tpl_1415_Templer_ROCK);
 	Info_Addchoice (Tpl_1415_Templer_ROCK,DIALOG_BACK,Tpl_1415_Templer_ROCK_BACK);
 	Info_Addchoice (Tpl_1415_Templer_ROCK,B_BuildBuyArmorString(NAME_TorwachenPsiRock,VALUE_NOV_ARMOR_L),Tpl_1415_Templer_ROCK_BUY);
+	AFIP_SetChoiceItem(Tpl_1415_Templer_ROCK_BUY, NOV_ARMOR_L);
 };
 
 func void Tpl_1415_Templer_ROCK_BACK()
@@ -186,6 +187,7 @@ func void Tpl_1415_Templer_ROCK_BACK()
 
 func void Tpl_1415_Templer_ROCK_BUY()
 {
+	var int AFIP_ShowItem;
 	AI_Output (other, self,"Tpl_1415_Templer_ROCK_BUY_15_01"); //Niech bêdzie, wezmê tê szatê.
 	if (Npc_HasItems (hero,ItMiNugget) <  VALUE_NOV_ARMOR_L)
 	{
