@@ -307,8 +307,8 @@ instance  ORG_855_Wolf_TRAIN (C_INFO)
 	condition		= ORG_855_Wolf_TRAIN_Condition;
 	information		= ORG_855_Wolf_TRAIN_Info;
 	important		= 0;
-	permanent		= 0;
-	description		= B_BuildLearnString(NAME_LearnBow_1,LPCOST_TALENT_BOW_1,50); 
+	permanent		= 1;
+	description		= "Naucz mnie strzelaæ z ³uku. (50 Bry³ek rudy)"; 
 };
 
 FUNC int  ORG_855_Wolf_TRAIN_Condition()
@@ -320,17 +320,32 @@ FUNC int  ORG_855_Wolf_TRAIN_Condition()
 	};
 
 };
+
+var int payedForBowTrain;
+
 FUNC void  ORG_855_Wolf_TRAIN_Info()
 {
-	AI_Output (other, self,"ORG_855_Wolf_TRAIN_Info_15_01"); //Naucz mnie strzelaæ z ³uku.
-	
-	 Info_ClearChoices(ORG_855_Wolf_TRAIN);
-	Info_AddChoice(ORG_855_Wolf_TRAIN,DIALOG_BACK,DIA_Wolf_Bow_BACK);
-	Info_AddChoice(ORG_855_Wolf_TRAIN,B_BuildLearnString("£uki +1",B_GetLearnCostTalent(other,NPC_TALENT_Bow,1),0),Dia_Wolf_Teach_Bow_1);
-	Info_AddChoice(ORG_855_Wolf_TRAIN,B_BuildLearnString("£uki +5",B_GetLearnCostTalent(other,NPC_TALENT_Bow,5),0),Dia_Wolf_Teach_Bow_5);
-	
-	
-	
+	if (Npc_HasItems(hero, ItMiNugget) >= 50 || payedForBowTrain) {
+
+		AI_Output (other, self,"ORG_855_Wolf_TRAIN_Info_15_01"); //Naucz mnie strzelaæ z ³uku.
+
+		if (!payedForBowTrain) {
+			B_GiveInvItems (other, self, ItMiNugget, 50);
+			payedForBowTrain = TRUE;
+		};
+
+		Info_ClearChoices(ORG_855_Wolf_TRAIN);
+		Info_AddChoice(ORG_855_Wolf_TRAIN,DIALOG_BACK,DIA_Wolf_Bow_BACK);
+		Info_AddChoice(ORG_855_Wolf_TRAIN,B_BuildLearnString("£uki +1",B_GetLearnCostTalent(other,NPC_TALENT_Bow,1),0),Dia_Wolf_Teach_Bow_1);
+		Info_AddChoice(ORG_855_Wolf_TRAIN,B_BuildLearnString("£uki +5",B_GetLearnCostTalent(other,NPC_TALENT_Bow,5),0),Dia_Wolf_Teach_Bow_5);
+
+		ORG_855_Wolf_TRAIN.description = "Naucz mnie strzelaæ z ³uku.";
+
+	} else {
+		PrintS_Ext("Nie masz wystarczaj¹cej iloœci bry³ek rudy", COL_RED);
+
+		Info_ClearChoices(ORG_855_Wolf_TRAIN);
+	};
 };
 
 
@@ -407,7 +422,7 @@ func void ORG_855_Wolf_Teach_BACK()
 };
 func void ORG_855_Wolf_Teach_DEX_1()
 {
-	B_BuyAttributePoints(self,other,ATR_DEXTERITY,1,T_VHIG);  
+	Mod_KupAtrybut (hero, ATR_STRENGTH, 1);  
 	Info_ClearChoices	(ORG_855_Wolf_Teach);
 	Info_AddChoice		(ORG_855_Wolf_Teach,DIALOG_BACK									,ORG_855_Wolf_Teach_BACK);
 	Info_AddChoice		(ORG_855_Wolf_Teach,B_BuildLearnString(NAME_LearnDexterity_5,5*LPCOST_ATTRIBUTE_DEXTERITY,0)	,ORG_855_Wolf_Teach_DEX_5);
@@ -416,7 +431,7 @@ func void ORG_855_Wolf_Teach_DEX_1()
 
 func void ORG_855_Wolf_Teach_DEX_5()
 {
-	B_BuyAttributePoints(self,other,ATR_DEXTERITY,5,T_VHIG);  
+	Mod_KupAtrybut (hero, ATR_STRENGTH, 5);  
 	Info_ClearChoices	(ORG_855_Wolf_Teach);
 	Info_AddChoice		(ORG_855_Wolf_Teach,DIALOG_BACK									,ORG_855_Wolf_Teach_BACK);
 	Info_AddChoice		(ORG_855_Wolf_Teach,B_BuildLearnString(NAME_LearnDexterity_5,5*LPCOST_ATTRIBUTE_DEXTERITY,0),ORG_855_Wolf_Teach_DEX_5);
