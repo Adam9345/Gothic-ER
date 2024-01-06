@@ -422,7 +422,7 @@ func void ORG_855_Wolf_Teach_BACK()
 };
 func void ORG_855_Wolf_Teach_DEX_1()
 {
-	Mod_KupAtrybut (hero, ATR_STRENGTH, 1);  
+	Mod_KupAtrybut (hero, ATR_DEXTERITY, 1);  
 	Info_ClearChoices	(ORG_855_Wolf_Teach);
 	Info_AddChoice		(ORG_855_Wolf_Teach,DIALOG_BACK									,ORG_855_Wolf_Teach_BACK);
 	Info_AddChoice		(ORG_855_Wolf_Teach,B_BuildLearnString(NAME_LearnDexterity_5,5*LPCOST_ATTRIBUTE_DEXTERITY,0)	,ORG_855_Wolf_Teach_DEX_5);
@@ -431,7 +431,7 @@ func void ORG_855_Wolf_Teach_DEX_1()
 
 func void ORG_855_Wolf_Teach_DEX_5()
 {
-	Mod_KupAtrybut (hero, ATR_STRENGTH, 5);  
+	Mod_KupAtrybut (hero, ATR_DEXTERITY, 5);  
 	Info_ClearChoices	(ORG_855_Wolf_Teach);
 	Info_AddChoice		(ORG_855_Wolf_Teach,DIALOG_BACK									,ORG_855_Wolf_Teach_BACK);
 	Info_AddChoice		(ORG_855_Wolf_Teach,B_BuildLearnString(NAME_LearnDexterity_5,5*LPCOST_ATTRIBUTE_DEXTERITY,0),ORG_855_Wolf_Teach_DEX_5);
