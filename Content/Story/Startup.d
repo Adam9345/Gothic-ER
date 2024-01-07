@@ -3022,6 +3022,7 @@ FUNC VOID INIT_WORLD ()
 	TorchHotKey_Init();
 	G1_EnhancedTrading_Init();
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
+	G1_EnhancedPickLocking_Init();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
 
