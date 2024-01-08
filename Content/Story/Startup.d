@@ -3021,13 +3021,10 @@ FUNC VOID INIT_WORLD ()
 	Init_CraftingSystem();
 	TorchHotKey_Init();
 	G1_EnhancedTrading_Init();
-	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
+	GFA_Init(GFA_ALL);
 	G1_EnhancedPickLocking_Init();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
-
-	//onceSetAttitudes = 0;
- 
 	
  
 	//---------------------------------------------------------G³owa i tatua¿e

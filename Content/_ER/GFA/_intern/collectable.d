@@ -76,27 +76,29 @@ func void GFA_RP_KeepProjectileInWorld() {
         // Check if the new projectile instance is valid, -1 for invalid instance, 0 for empty
         if (projInst > 0) {
 
-            // Update projectile instance
-            if (projInst != projectile.instanz) {
-                const int call2 = 0; const int one = 1;
-                if (CALL_Begin(call2)) {
-                    CALL_IntParam(_@(one));      // Amount
-                    CALL_PtrParam(_@(projInst)); // Instance ID
-                    CALL__thiscall(_@(projectilePtr), oCItem__InitByScript);
-                    call2 = CALL_End();
+            if (Hlp_GetInstanceID(shooter) == Hlp_GetInstanceID(hero)) {
+                // Update projectile instance
+                if (projInst != projectile.instanz) {
+                    const int call2 = 0; const int one = 1;
+                    if (CALL_Begin(call2)) {
+                        CALL_IntParam(_@(one));      // Amount
+                        CALL_PtrParam(_@(projInst)); // Instance ID
+                        CALL__thiscall(_@(projectilePtr), oCItem__InitByScript);
+                        call2 = CALL_End();
+                    };
                 };
-            };
 
-            // Make the projectile focusable, i.e. collectable
-            projectile.flags = projectile.flags & ~ITEM_NFOCUS;
-            projectile._zCVob_bitfield[4] = projectile._zCVob_bitfield[4] & ~zCVob_bitfield4_dontWriteIntoArchive;
+                // Make the projectile focusable, i.e. collectable
+                projectile.flags = projectile.flags & ~ITEM_NFOCUS;
+                projectile._zCVob_bitfield[4] = projectile._zCVob_bitfield[4] & ~zCVob_bitfield4_dontWriteIntoArchive;
 
-            // Detach arrow AI from projectile (projectile will have no AI)
-            const int call3 = 0; var int zero;
-            if (CALL_Begin(call3)) {
-                CALL_IntParam(_@(zero));
-                CALL__thiscall(_@(projectilePtr), zCVob__SetAI);
-                call3 = CALL_End();
+                // Detach arrow AI from projectile (projectile will have no AI)
+                const int call3 = 0; var int zero;
+                if (CALL_Begin(call3)) {
+                    CALL_IntParam(_@(zero));
+                    CALL__thiscall(_@(projectilePtr), zCVob__SetAI);
+                    call3 = CALL_End();
+                };
             };
 
         } else {
@@ -113,6 +115,8 @@ func void GFA_RP_KeepProjectileInWorld() {
  */
 func void GFA_RP_PutProjectileIntoInventory() {
     var int arrowAI; arrowAI = ESI;
+
+    var int random; random = r_MinMax(0, 100);
 
     // Since deflection of projectiles (collision feature) does not exist in Gothic 1 by default, it is not inherently
     // clear at this point, whether the projectile is deflecting off of this NPC, like it is clear here for Gothic 2.
@@ -140,7 +144,9 @@ func void GFA_RP_PutProjectileIntoInventory() {
         var int projInst; projInst = GFA_GetUsedProjectileInstance(projectile.instanz, shooter, victim);
         GFA_ProjectilePtr = 0;
         if (projInst > 0) {
-            CreateInvItem(victim, projInst); // Put respective instance in inventory
+            if (random <= 50) {
+                CreateInvItem(victim, projInst); // Put respective instance in inventory
+            };
         };
     };
 

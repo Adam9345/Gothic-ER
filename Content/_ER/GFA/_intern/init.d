@@ -256,7 +256,7 @@ func void GFA_InitFeatureReuseProjectiles() {
     // Reduce number of auto created munition items for NPCs (exploit on ransacking downed/killed NPCs)
     MemoryProtectionOverride(oCNpc__RefreshNpc_createAmmoIfNone, 1);
     MEM_WriteByte(oCNpc__RefreshNpc_createAmmoIfNone, 5); // Reduce to five projectiles (default 50)
-
+    
     // Fix dropped projectile AI bug
     if (!IsHookF(oCAIVobMove__DoAI_stopMovement, GFA_FixDroppedProjectileAI)) {
         MEM_Info("Initializing dropped projectiles AI bug fix.");
