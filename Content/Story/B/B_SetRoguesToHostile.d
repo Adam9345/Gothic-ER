@@ -1,4 +1,10 @@
  
+func void B_NewSetAttitude(var C_NPC npc, var int attitude) {
+	var C_NPC helpNPC; helpNPC = Hlp_GetNpc(npc);
+	Npc_SetTempAttitude(helpNPC, attitude);
+	Npc_SetAttitude(helpNPC, attitude);
+};
+
 func void B_SetRoguesToHostile ()
 {
 	var C_NPC Quentin;	Quentin = Hlp_GetNpc(BAN_1610_Quentin); Npc_SetTempAttitude(Quentin,ATT_HOSTILE); Npc_SetAttitude(Quentin,ATT_HOSTILE);
@@ -23,6 +29,12 @@ func void B_SetRoguesToHostile ()
 		var C_NPC Killian;	Killian = Hlp_GetNpc(Org_861_Killian); if (Hlp_IsValidNpc(Killian))	{	Npc_SetTempAttitude(Killian,ATT_HOSTILE); Npc_SetAttitude(Killian,ATT_HOSTILE);	};
 		var C_NPC Jacko;	Jacko 	= Hlp_GetNpc(Org_862_Jacko	); if (Hlp_IsValidNpc(Jacko))	{	Npc_SetTempAttitude(Jacko,  ATT_HOSTILE); Npc_SetAttitude(Jacko,  ATT_HOSTILE);	};
 	};
+
+	B_NewSetAttitude(NON_40083_Bandyta, ATT_HOSTILE);
+	B_NewSetAttitude(NON_40084_Bandyta, ATT_HOSTILE);
+	B_NewSetAttitude(NON_40085_Bandyta, ATT_HOSTILE);
+	B_NewSetAttitude(NON_40086_Bandyta, ATT_HOSTILE);
+
 };
 func void B_SetRoguesToFriend ()
 {

@@ -5,8 +5,8 @@ instance NON_40083_Bandyta (Npc_Default)
 //----------Info ogolne----------
 
 name = NAME_Robuer;
-Npctype = Npctype_ambient;
-guild = GIL_ORCSCOUT;
+Npctype = Npctype_Rogue;
+guild = GIL_HUMAN;
 level = 20;
 voice = 7;
 id = 40083;
