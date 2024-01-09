@@ -153,32 +153,3 @@ FUNC VOID DIA_Natalia_PastNatalia_Info()
     AI_Output (self, other ,"DIA_Natalia_PastNatalia_03_13"); //Za³o¿ê siê, ¿e wci¹¿ nie mo¿e siê pozbieraæ po utracie swojej jedynej przyjació³ki...
     AI_Output (other, self ,"DIA_Natalia_PastNatalia_15_14"); //Rozumiem.
 };
-
-instance dia_natalia_pickpocket(c_info) {
-    npc = gur_1207_natalia;
-    nr = 900;
-    condition = dia_natalia_pickpocket_condition;
-    information = dia_natalia_pickpocket_info;
-    permanent = 1;
-    description = pickpocket_final;
-};
-
-func int dia_natalia_pickpocket_condition() {
-	e_beklauen(baseThfChanceBAB, 15);
-};
-
-func void dia_natalia_pickpocket_info() {
-	b_steal_message();
-	info_clearchoices(dia_natalia_pickpocket);
-	info_addchoice(dia_natalia_pickpocket, dialog_back, dia_natalia_pickpocket_back);
-	info_addchoice(dia_natalia_pickpocket, dialog_pickpocket, dia_natalia_pickpocket_doit);
-};
-
-func void dia_natalia_pickpocket_doit() {
-    d_beklauen();
-    info_clearchoices(dia_natalia_pickpocket);
-};
-
-func void dia_natalia_pickpocket_back() {
-    info_clearchoices(dia_natalia_pickpocket);
-};

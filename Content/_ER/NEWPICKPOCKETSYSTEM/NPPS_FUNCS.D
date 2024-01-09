@@ -68,9 +68,11 @@ func void setStealChance(var C_NPC npc) {
     if(npc.guild == gil_dmb) {
         stealChance = her.attribute[5] / 6;
     };
+    /*
     if(npc.guild == gil_bab) {
         stealChance = her.attribute[5];
     };
+    */
 	
 	if (stealChance <= 0) {
 		stealChance = 1;

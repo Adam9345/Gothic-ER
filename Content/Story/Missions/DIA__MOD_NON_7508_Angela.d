@@ -59,32 +59,3 @@ FUNC VOID DIA_Angela_HELLO1_Info()
     AI_Output (other, self ,"DIA_Angela_HELLO1_03_12"); //Ciekawa historia. 
     AI_Output (self, other ,"DIA_Angela_HELLO1_03_13"); //Dobra dobra, nie podlizuj siê. A teraz daj mi spokój, chcê odpocz¹æ od tej paplaniny.
 };
-
-instance dia_angela_pickpocket(c_info) {
-    npc = non_7508_angela;
-    nr = 900;
-    condition = dia_angela_pickpocket_condition;
-    information = dia_angela_pickpocket_info;
-    permanent = 1;
-    description = pickpocket_final;
-};
-
-func int dia_angela_pickpocket_condition() {
-	e_beklauen(baseThfChanceBAB, 15);
-};
-
-func void dia_angela_pickpocket_info() {
-	b_steal_message();
-	info_clearchoices(dia_angela_pickpocket);
-	info_addchoice(dia_angela_pickpocket, dialog_back, dia_angela_pickpocket_back);
-	info_addchoice(dia_angela_pickpocket, dialog_pickpocket, dia_angela_pickpocket_doit);
-};
-
-func void dia_angela_pickpocket_doit() {
-    d_beklauen();
-    info_clearchoices(dia_angela_pickpocket);
-};
-
-func void dia_angela_pickpocket_back() {
-    info_clearchoices(dia_angela_pickpocket);
-};

@@ -88,32 +88,3 @@ FUNC VOID DIA_Seraphia_GomezDied_Info()
     AI_Output (self, other ,"DIA_Seraphia_GomezDied_03_06"); //Podobno ludzie z Nowego Obozu maj¹ wkrótce zaj¹æ zamek. Raczej zostanê tutaj.
     AI_Output (other, self ,"DIA_Seraphia_GomezDied_15_07"); //Jasne.
 };
-
-instance dia_seraphia_pickpocket(c_info) {
-    npc = ebr_110_seraphia;
-    nr = 900;
-    condition = dia_seraphia_pickpocket_condition;
-    information = dia_seraphia_pickpocket_info;
-    permanent = 1;
-    description = pickpocket_final;
-};
-
-func int dia_seraphia_pickpocket_condition() {
-	e_beklauen(baseThfChanceBAB, 15);
-};
-
-func void dia_seraphia_pickpocket_info() {
-	b_steal_message();
-	info_clearchoices(dia_seraphia_pickpocket);
-	info_addchoice(dia_seraphia_pickpocket, dialog_back, dia_seraphia_pickpocket_back);
-	info_addchoice(dia_seraphia_pickpocket, dialog_pickpocket, dia_seraphia_pickpocket_doit);
-};
-
-func void dia_seraphia_pickpocket_doit() {
-    d_beklauen();
-    info_clearchoices(dia_seraphia_pickpocket);
-};
-
-func void dia_seraphia_pickpocket_back() {
-    info_clearchoices(dia_seraphia_pickpocket);
-};
