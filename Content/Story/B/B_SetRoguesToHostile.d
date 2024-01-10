@@ -30,11 +30,6 @@ func void B_SetRoguesToHostile ()
 		var C_NPC Jacko;	Jacko 	= Hlp_GetNpc(Org_862_Jacko	); if (Hlp_IsValidNpc(Jacko))	{	Npc_SetTempAttitude(Jacko,  ATT_HOSTILE); Npc_SetAttitude(Jacko,  ATT_HOSTILE);	};
 	};
 
-	B_NewSetAttitude(NON_40083_Bandyta, ATT_HOSTILE);
-	B_NewSetAttitude(NON_40084_Bandyta, ATT_HOSTILE);
-	B_NewSetAttitude(NON_40085_Bandyta, ATT_HOSTILE);
-	B_NewSetAttitude(NON_40086_Bandyta, ATT_HOSTILE);
-
 };
 func void B_SetRoguesToFriend ()
 {

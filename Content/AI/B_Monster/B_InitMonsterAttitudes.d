@@ -487,6 +487,8 @@ func void B_InitMonsterAttitudes ()
 	B_SetGuildAttitude	(GIL_SEPERATOR_HUM,	ATT_HOSTILE,	GIL_ORCWARRIOR		);
 	B_SetGuildAttitude	(GIL_SEPERATOR_HUM,	ATT_HOSTILE,	GIL_ORCSCOUT		);
 	B_SetGuildAttitude	(GIL_SEPERATOR_HUM,	ATT_FRIENDLY,	GIL_ORCSLAVE		);
+	B_SetGuildAttitude	(GIL_SEPERATOR_HUM,	ATT_HOSTILE,	GIL_BDT				);
+
 
 	//-------- GIL_GUR wird den Gegnern im Alten Tempel verpasst --------
 	// ER 1.4.8: Wy³¹czone, gdy¿ gracz mo¿e byæ GIL_GUR, a Œwi¹tynni maj¹ GIL_UNDEADORC
@@ -576,4 +578,30 @@ func void B_InitMonsterAttitudes ()
 	B_SetGuildAttitude	(GIL_ORCSLAVE 	,	ATT_FRIENDLY,	GIL_ORCWARRIOR  	);
 	B_SetGuildAttitude	(GIL_ORCSLAVE	,	ATT_FRIENDLY,	GIL_ORCSCOUT		);
 	B_SetGuildAttitude	(GIL_ORCSLAVE	,	ATT_FRIENDLY,	GIL_ORCSLAVE		);
+
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SEPERATOR_HUM	);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_WARAN			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SLF				);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_GOBBO			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_TROLL			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SNAPPER			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_MINECRAWLER		); //fix 1.4 OPUSZCZONA KOPALNIA!! 
+	B_SetGuildAttitude	(GIL_BDT,		ATT_NEUTRAL,	GIL_MEATBUG			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SCAVENGER		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_DEMON			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_WOLF			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SHADOWBEAST		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_BLOODFLY		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SWAMPSHARK		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_ZOMBIE			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_UNDEADORC		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_SKELETON		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_ORCDOG			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_MOLERAT			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_GOLEM			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_LURKER			);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_ORCSHAMAN		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_ORCWARRIOR		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_HOSTILE,	GIL_ORCSCOUT		);
+	B_SetGuildAttitude	(GIL_BDT,		ATT_FRIENDLY,	GIL_BDT				);
 }; 

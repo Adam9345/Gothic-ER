@@ -88,7 +88,7 @@ instance Babe_Rockefeller (Npc_Default)
 	//-------- primary data --------
 
 	name =							"babe rockefeller";
-	guild =							GIL_BAB;
+	guild =							GIL_NONE;
 	level =							1;
 	flags =							0;
 

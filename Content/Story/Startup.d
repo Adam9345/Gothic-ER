@@ -1445,7 +1445,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc				(NON_40083_Bandyta,"WP_BANDYTA_WIEZA_ER1");
 	Wld_InsertNpc				(NON_40084_Bandyta,"WP_BANDYTA_WIEZA_ER2");
 	Wld_InsertNpc				(NON_40085_Bandyta,"WP_BANDYTA_WIEZA_ER3");
-	Wld_InsertNpc				(NON_40086_Bandyta,"WP_BANDYTA_WIEZA_ER4");
+	Wld_InsertNpc				(NON_40085_Bandyta,"WP_BANDYTA_WIEZA_ER4");
 	Wld_InsertNpc				(GRD_40093_Gardist,"OC1");
 	Wld_InsertNpc				(Grd_40107_Norton,"OC1");
 

@@ -24,7 +24,7 @@ func void B_SetGuildAttitude (var int fromGuild, var int attitude, var int toGui
 		Wld_SetGuildAttitude	(fromGuild		,	attitude,	GIL_NOV		);
 		Wld_SetGuildAttitude	(fromGuild		,	attitude,	GIL_TPL		);
 		Wld_SetGuildAttitude	(fromGuild		,	attitude,	GIL_DMB		);
-		Wld_SetGuildAttitude	(fromGuild		,	attitude,	GIL_BAB		);
+		Wld_SetGuildAttitude	(fromGuild		,	attitude,	GIL_BDT		);
 	}
 	else if	(fromGuild == GIL_SEPERATOR_HUM)
 	{
@@ -43,7 +43,7 @@ func void B_SetGuildAttitude (var int fromGuild, var int attitude, var int toGui
 		Wld_SetGuildAttitude	(GIL_NOV		,	attitude,	toGuild		);
 		Wld_SetGuildAttitude	(GIL_TPL		,	attitude,	toGuild		);
 		Wld_SetGuildAttitude	(GIL_DMB		,	attitude,	toGuild		);
-		Wld_SetGuildAttitude	(GIL_BAB		,	attitude,	toGuild		);
+		Wld_SetGuildAttitude	(GIL_BDT		,	attitude,	toGuild		);
 	}
 	else
 	{

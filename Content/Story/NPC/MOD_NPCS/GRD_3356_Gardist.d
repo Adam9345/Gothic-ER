@@ -5,8 +5,8 @@ instance GRD_3356_Gardist (Npc_Default)
 //----------Info ogolne----------
 
 name 		=	NAME_Gardist;
-Npctype = Npctype_main;
-guild = GIL_ORCSCOUT;
+Npctype = Npctype_Rogue;
+guild = GIL_BDT;
 level = 30;
 voice = 14;
 id = 3356;

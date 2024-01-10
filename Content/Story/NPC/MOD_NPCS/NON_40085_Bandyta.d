@@ -6,7 +6,7 @@ instance NON_40085_Bandyta (Npc_Default)
 
 name = NAME_Robuer;
 Npctype = Npctype_Rogue;
-guild = GIL_HUMAN;
+guild = GIL_BDT;
 level = 20;
 voice = 8;
 id = 40085;

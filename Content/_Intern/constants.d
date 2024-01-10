@@ -314,7 +314,7 @@ CONST INT GIL_GUR										= 11					;		//	Gurus 5 svm
 CONST INT GIL_NOV										= 12					;		//	Novizen 10- svm
 CONST INT GIL_TPL										= 13					;		//	Templer 10 svm
 CONST INT GIL_DMB										= 14					;		//	Dämonenbeschwörer 1
-CONST INT GIL_BAB										= 15					;		//	Die Meister
+CONST INT GIL_BDT										= 15					;		//	Die Meister
 CONST INT GIL_SEPERATOR_HUM								= 16					;
 CONST INT MAX_GUILDS									= 16					;
 																				

@@ -149,7 +149,7 @@ func void PrintGuild (var int channel, var int guild)
 	if (guild ==  GIL_TPL	    ) { PrintDebugNpc   ( channel, "...Gilde: GIL_TPL");};
 	   
 	if (guild ==  GIL_DMB	    ) { PrintDebugNpc   ( channel, "...Gilde: GIL_DMB");};
-	if (guild ==  GIL_BAB	    ) { PrintDebugNpc   ( channel, "...Gilde: GIL_BAB");};
+	if (guild ==  GIL_BDT	    ) { PrintDebugNpc   ( channel, "...Gilde: GIL_BDT");};
 };
 
 //////////////////////////////////////////////////////////////////////////
