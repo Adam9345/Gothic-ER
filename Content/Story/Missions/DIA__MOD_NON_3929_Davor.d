@@ -198,12 +198,6 @@ func void DIA_Davor_Bow_BACK()
 {
 	Info_ClearChoices(DIA_Davor_LEARN_BOW_START);
 };
- Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
-	
-	
-	
-	
-};
 
 
 func void Dia_Davor_Teach_Crossbow_1()
