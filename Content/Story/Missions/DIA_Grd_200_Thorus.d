@@ -1231,7 +1231,7 @@ FUNC void  GRD_200_Thorus_TEACH_2H_START_Info()
 
 func void DIA_Thorus_START_TRAIN_2H_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,100);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,100);
 	Info_ClearChoices(GRD_200_Thorus_TEACH_2H_START);
 	Info_AddChoice(GRD_200_Thorus_TEACH_2H_START,Dialog_Back,DIA_Thorus_START_TRAIN_BACK);
 	
@@ -1244,7 +1244,7 @@ func void DIA_Thorus_START_TRAIN_2H_1()
 
 func void DIA_Thorus_START_TRAIN_2H_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,100);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,100);
 	Info_ClearChoices(GRD_200_Thorus_TEACH_2H_START);
 	Info_AddChoice(GRD_200_Thorus_TEACH_2H_START,Dialog_Back,DIA_Thorus_START_TRAIN_BACK);
 
