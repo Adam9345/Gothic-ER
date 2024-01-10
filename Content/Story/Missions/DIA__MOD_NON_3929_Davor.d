@@ -60,7 +60,7 @@ INSTANCE DIA_Davor_BowTrain (C_INFO)
    condition    = DIA_Davor_BowTrain_Condition;
    information  = DIA_Davor_BowTrain_Info;
    permanent	= FALSE;
-   description	= "Mo¿esz mnie nauczyæ jak pos³ugiwaæ siê ³ukiem?";
+   description	= "Mo¿esz mnie nauczyæ jak pos³ugiwaæ siê broni¹ dystansow¹?";
 };
 
 FUNC INT DIA_Davor_BowTrain_Condition()
@@ -70,7 +70,7 @@ FUNC INT DIA_Davor_BowTrain_Condition()
 
 FUNC VOID DIA_Davor_BowTrain_Info()
 {
-    AI_Output (other, self ,"DIA_Davor_BowTrain_15_01"); //Mo¿esz mnie nauczyæ jak pos³ugiwaæ siê ³ukiem?
+    AI_Output (other, self ,"DIA_Davor_BowTrain_15_01"); //Mo¿esz mnie nauczyæ jak pos³ugiwaæ siê broni¹ dystansow¹?
     AI_Output (self, other ,"DIA_Davor_BowTrain_03_02"); //Jasne, bêdzie cie to kosztowaæ 200 bry³ek rudy.
 };
 
@@ -99,8 +99,37 @@ if (Npc_KnowsInfo(hero,DIA_Davor_HELLO1))
 FUNC VOID DIA_Davor_HI_Davor_Info()
 {
     AI_Output (other, self ,"DIA_Davor_HI_Davor_15_01"); //D³ugo jesteœ w Kolonii?
-    AI_Output (self, other ,"DIA_Davor_HI_Davor_03_02"); //Wkrótce minie rok. Ale z racji, ¿e zajmowa³em siê myœlistwem od lat jakoœ daje sobie radê.
+    AI_Output (self, other ,"DIA_Davor_HI_Davor_03_02"); //Wkrótce minie rok. Ale z racji, ¿e zajmowa³em siê myœlistwem od lat, jakoœ daje sobie radê.
 
+};
+var int DavorCanLearnHero;
+//========================================
+//-----------------> IHaveYourNuggets
+//========================================
+
+INSTANCE DIA_Davor_IHaveYourNuggets (C_INFO)
+{
+   npc          = NON_3929_Davor;
+   nr           = 1;
+   condition    = DIA_Davor_IHaveYourNuggets_Condition;
+   information  = DIA_Davor_IHaveYourNuggets_Info;
+   permanent	= FALSE;
+   description	= "Mam twoj¹ rudê (200 bry³ek)";
+};
+
+FUNC INT DIA_Davor_IHaveYourNuggets_Condition()
+{
+if (Npc_KnowsInfo (hero, DIA_Davor_BowTrain))
+	&& (Npc_HasItems (other, ItMiNugget) >=200)
+{
+    return TRUE;
+};
+};
+FUNC VOID DIA_Davor_IHaveYourNuggets_Info()
+{
+    B_GiveInvItems (other, self, ItMiNugget, 200);
+    AI_Output (other, self ,"DIA_Davor_IHaveYourNuggets_15_01"); //Mam twoj¹ rudê.
+    AI_Output (self, other ,"DIA_Davor_IHaveYourNuggets_03_02"); //Œwietnie, zatem bierzmy siê do roboty.
 };
 
 
@@ -116,13 +145,12 @@ INSTANCE DIA_Davor_LEARN_BOW_START (C_INFO)
    condition    = DIA_Davor_LEARN_BOW_START_Condition;
    information  = DIA_Davor_LEARN_BOW_START_Info;
    permanent	= FALSE;
-   description	= "Chce siê u ciebie uczyæ strzelaæ z ³uku. (200 Bry³ek rudy)";
+   description	= "Ucz mnie.";
 };
 
 FUNC INT DIA_Davor_LEARN_BOW_START_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Davor_BowTrain))
-	&& (Npc_HasItems (other, ItMiNugget) >=200)
+    if (DavorCanLearnHero == TRUE)
     {
     return TRUE;
     };
@@ -131,19 +159,20 @@ FUNC INT DIA_Davor_LEARN_BOW_START_Condition()
 
 FUNC VOID DIA_Davor_LEARN_BOW_START_Info()
 {
-	AI_Output (other, self ,"DIA_Davor_LEARN_BOW_START_15_01"); //Chce siê u ciebie uczyæ strzelaæ z ³uku.
-	if (Npc_HasItems (hero, ItMiNugget) >=200)
-	{
+	AI_Output (other, self ,"DIA_Davor_LEARN_BOW_START_15_01"); //Ucz mnie.
+
     AI_Output (self, other ,"DIA_Davor_LEARN_BOW_START_03_02"); //Jasne. Powiedz, gdy bêdziesz gotów.
-    B_GiveInvItems (other, self, ItMiNugget, 200);
+   
 	DIA_Davor_LEARN_BOW_START.permanent = false;
-	};
+	
 	Info_ClearChoices(DIA_Davor_LEARN_BOW_START);
 	Info_AddChoice(DIA_Davor_LEARN_BOW_START,DIALOG_BACK,DIA_Davor_Bow_BACK);
 	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("£uki +1",B_GetLearnCostTalent(other,NPC_TALENT_Bow,1),0),Dia_Davor_Teach_Bow_1);
 	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("£uki +5",B_GetLearnCostTalent(other,NPC_TALENT_Bow,5),0),Dia_Davor_Teach_Bow_5);
 	
-	
+
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_Davor_Teach_Crossbow_1);
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_Davor_Teach_Crossbow_5);
 	
 };
 func void Dia_Davor_Teach_Bow_1()
@@ -168,6 +197,33 @@ func void Dia_Davor_Teach_Bow_5()
 func void DIA_Davor_Bow_BACK()
 {
 	Info_ClearChoices(DIA_Davor_LEARN_BOW_START);
+};
+ Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
+	
+	
+	
+	
+};
+
+
+func void Dia_Davor_Teach_Crossbow_1()
+{
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,60);
+	Info_ClearChoices(DIA_Davor_LEARN_BOW_START);
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,Dialog_Back,DIA_Davor_Bow_BACK);
+	
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_Davor_Teach_Crossbow_1);
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_Davor_Teach_Crossbow_5);
+};
+
+func void Dia_Davor_Teach_Crossbow_5()
+{
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,60);
+	Info_ClearChoices(DIA_Davor_LEARN_BOW_START);
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,Dialog_Back,DIA_Davor_Bow_BACK);
+	
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_Davor_Teach_Crossbow_1);
+	Info_AddChoice(DIA_Davor_LEARN_BOW_START,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_Davor_Teach_Crossbow_5);
 };
 
 
@@ -201,7 +257,7 @@ FUNC VOID DIA_Davor_OBOZ_Info()
     AI_Output (other, self ,"DIA_Davor_OBOZ_15_03"); //Co takiego?
     AI_Output (self, other ,"DIA_Davor_OBOZ_03_04"); //To trochê g³upie, ale zgubi³em swój ³uk gdzieœ w okolicy.
     AI_Output (other, self ,"DIA_Davor_OBOZ_15_05"); //Jak mo¿na zgubiæ ³uk?
-    AI_Output (self, other ,"DIA_Davor_OBOZ_03_06"); //Zwyczajnie. Pewnie zsun¹³ mi siê z ramienia. 
+    AI_Output (self, other ,"DIA_Davor_OBOZ_03_06"); //Nieopodal znajduje siê Troll. Pewnie zgubi³em ³uk, gdy przed nim zwiewa³em. 
     AI_Output (self, other ,"DIA_Davor_OBOZ_03_07"); //Móg³byœ go poszukaæ?
     B_LogEntry                     (CH3_NewBloodForOrcHunters,"Davor uda siê do obozu ³owców orków, je¿eli znajdê jego ³uk. Powinien byæ gdzieœ w okolicy.");
 };

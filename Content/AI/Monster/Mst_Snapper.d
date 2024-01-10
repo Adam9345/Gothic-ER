@@ -158,7 +158,7 @@ INSTANCE Snapper_ER	(Mst_Default_Snapper)
 	name							=	"Olbrzymi zêbacz";
 	guild							=	GIL_SNAPPER;
 	aivar[AIV_MM_REAL_ID]			= 	ID_SNAPPER;
-	level							=	300;//22
+	level							=	30;//22
 //---------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
