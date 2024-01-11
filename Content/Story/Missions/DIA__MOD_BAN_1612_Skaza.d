@@ -182,9 +182,10 @@ FUNC INT DIA_Bandyta_BuddlerEQ_Condition()
 {
 	var C_Item obecny_pancerz;
 	obecny_pancerz = Npc_GetEquippedArmor(hero);
+
    if (SkazaHelpHero == TRUE) && (MIS_DraxTest == LOG_RUNNING)
   
-	&& ((Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_L)) ||  (Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_M)) ||  (Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_H)))
+	&& ((Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_L) ||  (Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_M) ||  (Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_H))
     {
     return TRUE;
     };

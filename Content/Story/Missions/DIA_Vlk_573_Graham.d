@@ -178,7 +178,7 @@ FUNC INT DIA_Graham_Spy_Map_Bandit_Condition()
 	obecny_pancerz = Npc_GetEquippedArmor(hero);
     if (Npc_KnowsInfo (hero, DIA_Bandyta_BuddlerEQ))
     && (Npc_HasItems (other, ItMis_Thorus_Safe_conduct) >=1)
-	&& ((Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_L)) ||  (Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_M)) ||  (Hlp_GetInstanceID(obecny_pancerz)==Hlp_GetInstanceID(VLK_ARMOR_H)))
+	&& ((Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_L) ||  (Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_M) ||  (Hlp_GetInstanceID(obecny_pancerz)==VLK_ARMOR_H))
     {
     return TRUE;
 };
