@@ -50,8 +50,8 @@ FUNC VOID DIA_Gardist_HELLO1_Info()
     AI_Output (self, other ,"DIA_Gardist_HELLO1_03_04"); //Jeœli chodzi o Szkodników i Bandytów z gór to tak.
     AI_Output (self, other ,"DIA_Gardist_HELLO1_03_05"); //Ale po cholerê zawracasz mi zad? 
     AI_Output (other, self ,"DIA_Gardist_HELLO1_15_06"); // Tylko próbuje siê czegoœ dowiedzieæ.
-    AI_Output (self, other ,"DIA_Gardist_HELLO1_03_07"); //To szukaj tej swojej wiedzy gdzie inadziej. 
-    AI_Output (self, other ,"DIA_Gardist_HELLO1_03_08"); //Jeden moment niuewagi i pozmiatane przez takiego barana jak ty....
+    AI_Output (self, other ,"DIA_Gardist_HELLO1_03_07"); //To szukaj tej swojej wiedzy gdzie indziej. 
+    AI_Output (self, other ,"DIA_Gardist_HELLO1_03_08"); //Jeden moment nieuwagi i pozamiatane przez takiego barana jak ty....
     AI_Output (other, self ,"DIA_Gardist_HELLO1_15_09"); //W takim razie pójdê sobie.
     AI_Output (self, other ,"DIA_Gardist_HELLO1_03_10"); //No i bardzo dobrze.
 };
