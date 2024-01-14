@@ -155,8 +155,6 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		CorKalom_BringMCQBalls 	= LOG_SUCCESS;
 		CorKalom_BringBook 		= LOG_SUCCESS;
 
-		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
-		B_Story_RespawnOW_Ch3();
 		
 		//-------- Waffenhändler auffrischen --------
 		B_Give_FiskChapter3Weapons ();
@@ -181,6 +179,10 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_TradeInv_Kagan3();
 		B_GiveTradeInv_Silas3();
 		B_Give_Items_GavilianCh3();
+
+		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
+		B_Story_RespawnOW_Ch3();
+
 		//-------- Video abspielen --------
 		PlayVideo		("GREATPRAYER.BIK");
 
