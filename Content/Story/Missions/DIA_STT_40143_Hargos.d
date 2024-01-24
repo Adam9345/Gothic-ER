@@ -46,10 +46,10 @@ FUNC VOID DIA_Hargos_HELLO1_Info()
     AI_Output (other, self ,"DIA_Hargos_HELLO1_15_01"); //Kim jesteœ?
     AI_Output (self, other ,"DIA_Hargos_HELLO1_03_02"); //Jestem Hargos i pracuje jako drwal. 
     AI_Output (other, self ,"DIA_Hargos_HELLO1_15_03"); //Masz du¿o roboty?
-    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_04"); //Ca³kiem sporo chocia¿ pomaga mi Akl. Ponadto chodz¹ s³uchy, ¿e Magnaci planuj¹ rozbudowê obozowiska przed kopalni¹.
-    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_05"); //A co za tym idzie bêd¹ potrzebowali do tego surowców a wiêc g³ównie drewna.
+    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_04"); //Ca³kiem sporo, chocia¿ pomaga mi Akl. Ponadto, chodz¹ s³uchy, ¿e Magnaci planuj¹ rozbudowê obozowiska przed kopalni¹.
+    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_05"); //A co za tym idzie, bêd¹ potrzebowali do tego surowców, a wiêc g³ównie drewna.
     AI_Output (other, self ,"DIA_Hargos_HELLO1_15_06"); //Czyli pewnie bêdziesz mia³ pe³ne rêce roboty.
-    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_07"); //Tak. Dla wielu by³aby to mordêga i kolejny powód by daæ nogê do innego obozu albo ze sob¹ skoñczyæ ale nie dla mnie.
+    AI_Output (self, other ,"DIA_Hargos_HELLO1_03_07"); //Tak. Dla wielu by³aby to mordêga i kolejny powód by daæ nogê do innego obozu, albo ze sob¹ skoñczyæ Có¿. Nie dla mnie
 };
 
 //========================================
@@ -82,7 +82,7 @@ FUNC VOID DIA_Hargos_ZND_Info()
     AI_Output (self, other ,"DIA_Hargos_ZND_03_04"); //Dobrze. Umiesz wiêc odpowiednio machaæ mieczem i przyj¹æ na siebie kilka ciosów gdy trzeba.
     AI_Output (self, other ,"DIA_Hargos_ZND_03_05"); //W zwi¹zku z dalsz¹ planowan¹ rozbudow¹ obozowiska pod kopalni¹ potrzeba wielkich iloœci drewna.
     AI_Output (other, self ,"DIA_Hargos_ZND_15_06"); //Nie macie go wystarczaj¹co?
-    AI_Output (self, other ,"DIA_Hargos_ZND_03_07"); //Na dalsze prosperowanie obozowiska w tym kszta³cie a¿ nadto ale jeœli chcemy je rozbudowaæ to potrzeba go wiêcej.
+    AI_Output (self, other ,"DIA_Hargos_ZND_03_07"); //Na dalsze prosperowanie obozowiska w tym kszta³cie a¿ nadto, ale jeœli chcemy je rozbudowaæ to potrzeba go wiêcej.
     AI_Output (self, other ,"DIA_Hargos_ZND_03_08"); //Muszê wiêc udaæ siê po drewno do lasu. Potrzebuje ochrony.  
 };
 
@@ -138,7 +138,7 @@ if (Npc_KnowsInfo(hero,DIA_Hargos_ZND_PRIZE))
 FUNC VOID DIA_Hargos_ZND_GO_Info()
 {
     AI_Output (other, self ,"DIA_Hargos_ZND_GO_15_01"); //Wchodzê w to, ruszajmy.
-    AI_Output (self, other ,"DIA_Hargos_ZND_GO_03_02"); //Œwietnie zatem w drogê. ChodŸ za mn¹.
+    AI_Output (self, other ,"DIA_Hargos_ZND_GO_03_02"); //Œwietnie, zatem w drogê. ChodŸ za mn¹.
 	Npc_ExchangeRoutine (STT_40143_Hargos,"Forest");
 	Wld_SendTrigger     ("ZND_TENT");
 	Wld_InsertNpc		(Wolf,"WP_ZND_ENEMY1");
@@ -146,7 +146,7 @@ FUNC VOID DIA_Hargos_ZND_GO_Info()
 	Wld_InsertNpc		(Wolf,"WP_ZND_ENEMY3");
     Wld_InsertNpc		(Warg_Znd,"WP_ZND_ENEMY4");
 	STT_40143_Hargos.aivar[AIV_PARTYMEMBER] = TRUE;
-	B_LogEntry               (ZapotrzebowanieNaDrewno,"Drwal Hargos chcia³by udaæ siê do lasu by pozyskaæ nieco drewna do obozowiska pod Star¹ Kopalni¹. Jako Stra¿nik mam go eskortowaæ. Przysta³em na jego propozycje.");
+	B_LogEntry               (ZapotrzebowanieNaDrewno,"Drwal Hargos chcia³by udaæ siê do lasu by pozyskaæ nieco drewna do obozowiska pod Star¹ Kopalni¹. Jako Stra¿nik, mam go eskortowaæ. Przysta³em na jego propozycje.");
 	Log_CreateTopic		     (ZapotrzebowanieNaDrewno,	LOG_MISSION);
 	Log_SetTopicStatus    	 (ZapotrzebowanieNaDrewno,	LOG_RUNNING);
 	// WP_ZND_ENEMY4-1 PlayVideo ("er_cutscene_uturiel.bik"); 
@@ -176,9 +176,9 @@ if (Npc_KnowsInfo(hero,DIA_Hargos_ZND_PRIZE))
 };
 FUNC VOID DIA_Hargos_ZND_FOREST_Info()
 {
-    AI_Output (self, other ,"DIA_Hargos_ZND_FOREST_03_01"); //Uwa¿aj teraz miej oczy szeroko otwarte to niebezpieczne miejsce. A ja muszê siê skoncentrowaæ na pracy. A ty na tym bym wyszed³ z tego lasu ¿ywy.
+    AI_Output (self, other ,"DIA_Hargos_ZND_FOREST_03_01"); //Uwa¿aj. Teraz miej oczy szeroko otwarte. To niebezpieczne miejsce. Ja muszê siê skoncentrowaæ na pracy, a Ty na tym, bym wyszed³ z tego lasu ¿ywy.
     AI_Output (other, self ,"DIA_Hargos_ZND_FOREST_15_02"); //Damy radê. Daleko masz swoje stanowisko pracy?
-    AI_Output (self, other ,"DIA_Hargos_ZND_FOREST_03_03"); //Niedaleko, na skraju lasu. Mam nadziejê ¿e nie nalêg³o siê tam Beliar wie co.
+    AI_Output (self, other ,"DIA_Hargos_ZND_FOREST_03_03"); //Niedaleko, na skraju lasu. Mam nadziejê ¿e nie zalêg³o siê tam - Beliar wie co.
     AI_Output (other, self ,"DIA_Hargos_ZND_FOREST_15_04"); //To siê oka¿e, ruszajmy dalej.
 	B_LogEntry               (ZapotrzebowanieNaDrewno,"Dotarliœmy pod las. Teraz musimy byæ szczególnie ostro¿ni. Nie wiadomo co czai siê dalej.");
 	Npc_ExchangeRoutine (self,"Guide");
@@ -210,9 +210,9 @@ FUNC VOID DIA_Hargos_ZND_WORK_Info()
 {
     AI_Output (other, self ,"DIA_Hargos_ZND_WORK_15_01"); //Mo¿esz teraz pracowaæ w spokoju.
     AI_Output (self, other ,"DIA_Hargos_ZND_WORK_03_02"); //Oczywiœcie. Daj mi kika godzin na pracê. Obok jest ³awka, mo¿esz trochê odpocz¹æ.
-    AI_Output (self, other ,"DIA_Hargos_ZND_WORK_03_03"); //Mo¿e zd¹¿e skoñczyæ nim coœ znów tu przylezie.
+    AI_Output (self, other ,"DIA_Hargos_ZND_WORK_03_03"); //Mo¿e zd¹¿e skoñczyæ, nim coœ znów tu przylezie.
     AI_Output (other, self ,"DIA_Hargos_ZND_WORK_15_04"); //Dobra.
-	B_LogEntry               (ZapotrzebowanieNaDrewno,"Dotarliœmy pod stanowisko pracy Hargosa. Wybi³em wszystko co mog³o nam zagra¿aæ. Teraz mogê chwilê odsapn¹æ a nawet siê zdrzemn¹æ. Drwal popracuje minimum kilka godzin.");
+	B_LogEntry               (ZapotrzebowanieNaDrewno,"Dotarliœmy pod stanowisko pracy Hargosa. Wybi³em wszystko, co mog³o nam zagra¿aæ. Teraz mogê chwilê odsapn¹æ a nawet siê zdrzemn¹æ. Drwal popracuje minimum kilka godzin.");
 	Npc_ExchangeRoutine (self,"WORK");
 	Hero_Use_BenchZND = TRUE;
 };
@@ -246,7 +246,7 @@ FUNC VOID DIA_Hargos_Hargos_Get_Wood_Info()
     AI_Output (self, other ,"DIA_Hargos_Hargos_Get_Wood_03_02"); //Zrobione. Pozyska³em wystarczaj¹co du¿o drewna. 
     AI_Output (self, other ,"DIA_Hargos_Hargos_Get_Wood_03_03"); //WeŸ te deski le¿¹ce obok pnia. Podzielimy siê po po³owie. Oddasz mi je w pod kopalni¹. 
     AI_Output (other, self ,"DIA_Hargos_Hargos_Get_Wood_15_04"); //Jasne.
-	B_LogEntry               (ZapotrzebowanieNaDrewno,"Mo¿emy wracaæ do obozu. Hargos da³ mi po³owê desek, które mam zanieœæ pod kopalnie. I rzecz jasna go chroniæ.");
+	B_LogEntry               (ZapotrzebowanieNaDrewno,"Mo¿emy wracaæ do obozu. Hargos da³ mi po³owê desek, które mam zanieœæ pod kopalnie. Nie mogê zapomnieæ, by wci¹¿ go ochraniac.");
 	Wld_InsertNpc				(ORG_40145_Rozbojnik,"WP_ZND_ROZ1");			
 			
 	Npc_ExchangeRoutine(STT_40143_Hargos,"GuideBack");
@@ -312,10 +312,10 @@ FUNC VOID DIA_Hargos_ZND_OMINE_Info()
 {
     AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_01"); //No to jesteœmy.
     AI_Output (other, self ,"DIA_Hargos_ZND_OMINE_15_02"); //Masz resztê tych desek.
-    AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_03"); //Dziêki. Œwietny z ciebie wojownik co pokaza³eœ walcz¹c na moich oczach. 
+    AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_03"); //Dziêki. Œwietny z ciebie wojownik.
     AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_04"); //Lepiej nie da³o siê chyba tego zrobiæ. Teraz bêdê wiedzia³ na kim polegaæ w przysz³oœci.
     AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_05"); //Udaj siê teraz po zap³ate do Spike’a. Ja wracam do swojego stanowiska pracy.
-    AI_Output (other, self ,"DIA_Hargos_ZND_OMINE_15_06"); //Tak zrobiê. Zawsze mi³o dostaæ jak¹œ sumkê. Na razie.
+    AI_Output (other, self ,"DIA_Hargos_ZND_OMINE_15_06"); //Tak zrobiê. Na razie.
     AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_07"); //Do zobaczenia.
 
 	B_GiveInvItems (other,self, ItMi_HargosWood, 3);
@@ -348,11 +348,11 @@ FUNC INT DIA_Hargos_GRD_Condition()
 };
 FUNC VOID DIA_Hargos_GRD_Info()
 {
-    AI_Output (self, other ,"DIA_Hargos_GRD_03_01"); //Wszêdzie ciê pe³no co?
+    AI_Output (self, other ,"DIA_Hargos_GRD_03_01"); //Wszêdzie Ciê pe³no, co?
     AI_Output (other, self ,"DIA_Hargos_GRD_15_02"); //Na to wychodzi.
     AI_Output (self, other ,"DIA_Hargos_GRD_03_03"); //By³by z ciebie niez³y pracownik.
-    AI_Output (other, self ,"DIA_Hargos_GRD_15_04"); //Praca to jednak powtarzalnoœæ i nuda. Ja wolê gdy coœ siê dzieje.
-    AI_Output (self, other ,"DIA_Hargos_GRD_03_05"); //Pan od przygód co? Mam nadzieje, ¿e nie skoñczy siê to dla ciebie Ÿle w przeciwieñstwie do wielu innych.
+    AI_Output (other, self ,"DIA_Hargos_GRD_15_04"); //Nie lubiê rutyny. Wolê, gdy coœ siê dzieje.
+    AI_Output (self, other ,"DIA_Hargos_GRD_03_05"); //Pan od przygód, co? Mam nadzieje, ¿e nie skoñczy siê to dla ciebie Ÿle.
     AI_Output (other, self ,"DIA_Hargos_GRD_15_06"); //Te¿ bym tak wola³.
 };
 
@@ -382,17 +382,17 @@ FUNC VOID DIA_Hargos_HELLO_CH4_Info()
 {
     AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_01"); //Hej, dok¹d idziesz?
     AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_02"); //Za³atwiaæ swoje sprawy.
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_03"); //Zatem uwa¿aj by nie nadziaæ siê na jakiœ patrol Stra¿y. Teraz s¹ zdolni do ka¿dej zbrodni.
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_03"); //Zatem uwa¿aj, by nie nadziaæ siê na jakiœ patrol Stra¿y. Teraz s¹ zdolni do ka¿dej zbrodni.
     AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_04"); //Co tutaj robisz?
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_05"); //Po ostatnich wydarzeniach zdecydowa³em siê opuœciæ obozowisko przed Star¹ Kopalni¹.
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_06"); //Oficjalnie nie by³em cz³onkiem Starego Obozu. Mia³em za³atwiæ by formalnie nale¿eæ do Kopaczy ale...
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_05"); //Po ostatnich wydarzeniach, zdecydowa³em siê opuœciæ obozowisko, przed Star¹ Kopalni¹.
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_06"); //Oficjalnie nie by³em cz³onkiem Starego Obozu. Mia³em za³atwiæ, by formalnie nale¿eæ do Kopaczy ale...
     AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_07"); //Wiecznie odk³ada³em to na ,,jutro" skoro i tak wiecznie zajmowa³em siê drewnem.
     AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_08"); //Ba³eœ siê o swoje bezpieczeñstwo?
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_09"); //Obecnie cz³onkowie Starego Obozu patrz¹ na siebie krzywo a co dopiero na innych. Bêd¹c tam d³u¿ej ryzykowa³em , ¿e odbior¹ mi dobytek, pobij¹ albo gorzej...
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_10"); //Dlatego postanowi³em ukryæ siê u Myœliwego Toma. Chodz¹c po drewno po lasu zaprzyjaŸni³em siê z nim. Równy facet. A i jeszcze jedno... Widzia³em Thorusa i grupê ludzi jak szli w stronê placu wymian.
-    AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_11"); //Ciekawe co kombinuj¹. Kto tam by³?
-    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_12"); //By³em daleko ale zauwa¿y³em chocia¿by Scatty'ego i Fletchera. 
-    AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_13"); //Dziêki za informacje. Zatem idŸ do Toma ty tam gdzie chcesz i przetrwaj te trudne czasy.
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_09"); //Obecnie cz³onkowie Starego Obozu patrz¹ na siebie krzywo a co dopiero na innych. Bêd¹c tam d³u¿ej ryzykowa³em, ¿e odbior¹ mi dobytek, pobij¹ albo gorzej...
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_10"); //Dlatego postanowi³em ukryæ siê u Myœliwego Toma. Chodz¹c po drewno do lasu, zaprzyjaŸni³em siê z nim. Równy facet. A i jeszcze jedno... Widzia³em Thorusa i grupê ludzi jak szli w stronê placu wymian.
+    AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_11"); //Ciekawe, co kombinuj¹. Kto tam by³?
+    AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_12"); //By³em daleko, ale zauwa¿y³em chocia¿by Scatty'ego i Fletchera. 
+    AI_Output (other, self ,"DIA_Hargos_HELLO_CH4_15_13"); //Dziêki za informacje. Trzymaj siê i powodzenia.
     AI_Output (self, other ,"DIA_Hargos_HELLO_CH4_03_14"); //Dziêki i wzajemnie.
 	Npc_ExchangeRoutine(STT_40143_Hargos,"CH4Tom");
     AI_StopProcessInfos	(self);
