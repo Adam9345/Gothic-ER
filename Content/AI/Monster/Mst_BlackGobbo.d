@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_BlackGobbo(C_NPC)
 //------------------------------------------------------------------
 	protection	[PROT_BLUNT]		=	40;
 	protection	[PROT_EDGE]			=	40;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	40;
 	protection	[PROT_FIRE]			=	20;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

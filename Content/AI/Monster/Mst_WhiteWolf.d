@@ -18,9 +18,9 @@ PROTOTYPE Mst_Default_WhiteWolf(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //-----------------------------------------------------------
-	protection	[PROT_BLUNT]		=	45;
+	protection	[PROT_BLUNT]		=	25;
 	protection	[PROT_EDGE]			=	25;
-	protection	[PROT_POINT]		=	5;
+	protection	[PROT_POINT]		=	25;
 	protection	[PROT_FIRE]			=	0;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

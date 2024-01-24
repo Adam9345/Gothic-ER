@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Giant_Rat(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	10;
 	protection	[PROT_EDGE]			=	10;
-	protection	[PROT_POINT]		=	0;
+	protection	[PROT_POINT]		=	10;
 	protection	[PROT_FIRE]			=	5;
 	protection	[PROT_FLY]			=	10;
 	protection	[PROT_MAGIC]		=	0;

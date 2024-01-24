@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Minecrawler(C_Npc)
 //------------------------------------------------------
 	protection	[PROT_BLUNT]		=	55;
 	protection	[PROT_EDGE]			=	50;
-	protection	[PROT_POINT]		=	15;
+	protection	[PROT_POINT]		=	50;
 	protection	[PROT_FIRE]			=	25;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

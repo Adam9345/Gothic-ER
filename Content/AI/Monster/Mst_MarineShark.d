@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Marineshark(C_Npc)
 //---------------------------------------------------------------
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	60;
 	protection	[PROT_FIRE]			=	10;
 	protection	[PROT_FLY]			=	9999;
 	protection	[PROT_MAGIC]		=	40;

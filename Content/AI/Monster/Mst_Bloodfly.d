@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Bloodfly(C_Npc)
 //---------------------------------------------------------------	
 	protection	[PROT_BLUNT]		=	17;//+2
 	protection	[PROT_EDGE]			=	17;
-	protection	[PROT_POINT]		=	8;
+	protection	[PROT_POINT]		=	17;
 	protection	[PROT_FIRE]			=	0;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

@@ -19,7 +19,7 @@ PROTOTYPE Mst_Default_Bear(C_Npc)
 //---------------------------------------------------------
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	45;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	45;
 	protection	[PROT_FLY]			=	80;
 	protection	[PROT_MAGIC]		=	40;

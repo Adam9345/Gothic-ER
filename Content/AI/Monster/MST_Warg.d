@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Warg(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	70;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	30;
 	protection	[PROT_FLY]			=	30;
 	protection	[PROT_MAGIC]		=	0;

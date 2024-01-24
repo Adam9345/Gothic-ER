@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_WaranJadowity(C_Npc)
 //---------------------------------------------------
 	protection	[PROT_BLUNT]		=	25;
 	protection	[PROT_EDGE]			=	25;
-	protection	[PROT_POINT]		=	15;
+	protection	[PROT_POINT]		=	25;
 	protection	[PROT_FIRE]			=	15;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

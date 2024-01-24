@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_UndeadOrcWarrior (C_Npc)
 //----------------------------------------------------------	
 	protection	[PROT_BLUNT]		=	50; //9999;	//immun
 	protection	[PROT_EDGE]			=	50; //9999;	//immun
-	protection	[PROT_POINT]		=	25; //9999;	//immun
+	protection	[PROT_POINT]		=	50; //9999;	//immun
 	protection	[PROT_FIRE]			=	50; //9999;	//immun
 	protection	[PROT_FLY]			=	50; //9999;	//immun
 	protection	[PROT_MAGIC]		=	50; //120;

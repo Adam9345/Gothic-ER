@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_UnDeadShadowbeast(C_Npc)
 //---------------------------------------------------------
 	protection	[PROT_BLUNT]		=	100;
 	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	50;
+	protection	[PROT_POINT]		=	100;
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	100;
 	protection	[PROT_MAGIC]		=	50;

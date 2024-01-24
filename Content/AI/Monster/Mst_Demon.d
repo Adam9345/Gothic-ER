@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Demon(C_Npc)
 //--------------------------------------------------------
 	protection	[PROT_BLUNT]		=	100;
 	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	35;
+	protection	[PROT_POINT]		=	100;
 	protection	[PROT_FIRE]			=	500;
 	protection	[PROT_FLY]			=	1000;
 	protection	[PROT_MAGIC]		=	35;

@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Wolf(C_Npc)
 //-----------------------------------------------------------
 	protection	[PROT_BLUNT]		=	20;
 	protection	[PROT_EDGE]			=	20;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	20;
 	protection	[PROT_FIRE]			=	10;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

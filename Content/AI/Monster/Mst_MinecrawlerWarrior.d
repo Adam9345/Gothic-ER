@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_MinecrawlerWarrior(C_Npc)
 //------------------------------------------------------
 	protection	[PROT_BLUNT]		=	120;
 	protection	[PROT_EDGE]			=	120;
-	protection	[PROT_POINT]		=	35;
+	protection	[PROT_POINT]		=	120;
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	30;
 	protection	[PROT_MAGIC]		=	50;

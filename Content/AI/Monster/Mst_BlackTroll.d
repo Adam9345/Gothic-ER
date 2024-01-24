@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_TrollBlack(C_Npc)
 //------------------------------------------------------	
 	protection	[PROT_BLUNT]		=	200;
 	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	9999;	// immun
+	protection	[PROT_POINT]		=	200;	// immun
 	protection	[PROT_FIRE]			=	150;
 	protection	[PROT_FLY]			=	9999;	// immun
 	protection	[PROT_MAGIC]		=	120;

@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Swampshark(C_Npc)
 //---------------------------------------------------------------
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	9999;
 	protection	[PROT_MAGIC]		=	40;

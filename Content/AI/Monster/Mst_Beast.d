@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Beast(C_Npc)
 //---------------------------------------------------------
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	40;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	45;
 	protection	[PROT_FLY]			=	150;
 	protection	[PROT_MAGIC]		=	45;

@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_MinecrawlerQueen(C_Npc)
 //------------------------------------------------------
 	protection	[PROT_BLUNT]		=	70;
 	protection	[PROT_EDGE]			=	70;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_POINT]		=	70;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	1000;
 	protection	[PROT_MAGIC]		=	60;

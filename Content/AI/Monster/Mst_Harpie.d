@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_Harpie(C_Npc)
 //---------------------------------------------------------------	
 	protection	[PROT_BLUNT]		=	50;
 	protection	[PROT_EDGE]			=	30;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	40;
 	protection	[PROT_FIRE]			=	0;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	50;

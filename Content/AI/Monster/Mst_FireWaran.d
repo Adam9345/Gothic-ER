@@ -20,7 +20,7 @@ PROTOTYPE Mst_Default_FireWaran(C_Npc)
 //---------------------------------------------------
 	protection	[PROT_BLUNT]		=	40;
 	protection	[PROT_EDGE]			=	40;
-	protection	[PROT_POINT]		=	20;
+	protection	[PROT_POINT]		=	40;
 	protection	[PROT_FIRE]			=	9999;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;

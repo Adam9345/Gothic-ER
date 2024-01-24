@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Molerat(C_Npc)
 //------------------------------------------------------------
 	protection	[PROT_BLUNT]		=	8;
 	protection	[PROT_EDGE]			=	8;
-	protection	[PROT_POINT]		=	5;
+	protection	[PROT_POINT]		=	8;
 	protection	[PROT_FIRE]			=	5;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;
