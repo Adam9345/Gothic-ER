@@ -720,7 +720,7 @@ FUNC VOID DIA_OKYL_ZDECH_Info()
 	
 	    Info_ClearChoices (DIA_OKYL_ZDECH);
 	    Info_AddChoice    (DIA_OKYL_ZDECH,"¯a³uje tego czynu. Oto ruda."                        ,DIA_OKYL_KARA);
-	    Info_AddChoice    (DIA_OKYL_ZDECH,"Przepraszam ale nie mam rudy."                           ,DIA_OKYL_MORD);
+	    Info_AddChoice    (DIA_OKYL_ZDECH,"Nie mam rudy."                           ,DIA_OKYL_MORD);
 	    Info_AddChoice    (DIA_OKYL_ZDECH,"Nie mam zamiaru p³aciæ."                                      ,DIA_OKYL_MORK);
 	
 	
@@ -748,7 +748,7 @@ FUNC VOID DIA_OKYL_KARA()
 };
 FUNC VOID DIA_OKYL_MORD()
   {
-	AI_Output (other,self ,"DIA_OKYL_MORD_15_00");  //Przepraszam ale nie mam rudy.
+	AI_Output (other,self ,"DIA_OKYL_MORD_15_00");  //Nie mam rudy.
 	AI_Output (self ,other,"DIA_OKYL_MORD_11_01");  //Zobaczymy ile wyci¹gnê z twojego truch³a morderco.
 	 Log_SetTopicStatus       (Cienwboku, LOG_FAILED);
 	Npc_SetTempAttitude 	( self, ATT_HOSTILE );
