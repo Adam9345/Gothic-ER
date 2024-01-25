@@ -1085,13 +1085,19 @@ FUNC VOID Info_CorKalom_BringMCQBalls_Success_Info()
 	
 	Info_ClearChoices (Info_CorKalom_BringMCQBalls_Success);
 	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Daj mi jak¹œ runê."	,Info_CorKalom_BringMCQBalls_Success_RUNE);
+	AFIP_SetChoiceItem(Info_CorKalom_BringMCQBalls_Success_RUNE, ItArRuneLight);
 	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Daj mi jakiœ orê¿."	,Info_CorKalom_BringMCQBalls_Success_WAFFE);
+	AFIP_SetChoiceItem(Info_CorKalom_BringMCQBalls_Success_WAFFE, ItMw_1H_Mace_War_03);
 	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Daj mi napój uzdrawiaj¹cy."	,Info_CorKalom_BringMCQBalls_Success_HEAL);
-	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Wystarczy mi ruda."		,Info_CorKalom_BringMCQBalls_Success_ORE);
+	AFIP_SetChoiceItem(Info_CorKalom_BringMCQBalls_Success_HEAL, ItFo_Potion_Health_Perma_01);
+	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Wystarczy mi ruda. (x100)"		,Info_CorKalom_BringMCQBalls_Success_ORE);
+	AFIP_SetChoiceItem(Info_CorKalom_BringMCQBalls_Success_ORE, ItMinugget);
 	Info_Addchoice(Info_CorKalom_BringMCQBalls_Success,"Mo¿e byæ mana."	,Info_CorKalom_BringMCQBalls_Success_MANA);
+	AFIP_SetChoiceItem(Info_CorKalom_BringMCQBalls_Success_MANA, ItFo_Potion_Mana_Perma_01);
 };
 func void Info_CorKalom_BringMCQBalls_Success_RUNE ()
 {
+	var int AFIP_ShowItem;
 	AI_Output			(other, self,"Mis_2_PSI_Kalom_BringMCQEggs_Success_RUNE_15_01"); //Daj mi jak¹œ runê.
 	AI_Output			(self, other,"Mis_2_PSI_Kalom_BringMCQEggs_Success_RUNE_10_02"); //Niech ta runa rozœwietla tw¹ drogê!
 	CreateInvItem		(self,ItArRuneLight);
@@ -1101,6 +1107,7 @@ func void Info_CorKalom_BringMCQBalls_Success_RUNE ()
 };	
 func void Info_CorKalom_BringMCQBalls_Success_WAFFE ()
 {
+	var int AFIP_ShowItem;
 	AI_Output			(other, self,"Mis_2_PSI_Kalom_BringMCQEggs_Success_WAFFE_15_01"); //Daj mi jakiœ orê¿.
 	AI_Output			(self, other,"Mis_2_PSI_Kalom_BringMCQEggs_Success_WAFFE_10_02"); //Niech ten orê¿ sieje œmieræ w szeregach twoich wrogów!
 	CreateInvItem		(self, ItMw_1H_Mace_War_03);
@@ -1109,6 +1116,7 @@ func void Info_CorKalom_BringMCQBalls_Success_WAFFE ()
 };	
 func void Info_CorKalom_BringMCQBalls_Success_HEAL()
 {
+	var int AFIP_ShowItem;
 	AI_Output			(other, self,"Mis_2_PSI_Kalom_BringMCQEggs_Success_HEAL_15_01"); //Daj mi napój uzdrawiaj¹cy.
 	AI_Output			(self, other,"Mis_2_PSI_Kalom_BringMCQEggs_Success_HEAL_10_02"); //Niech ten napój przed³u¿y twoje ¿ycie.
 	CreateInvItem		(self,ItFo_Potion_Health_Perma_01);
@@ -1117,6 +1125,7 @@ func void Info_CorKalom_BringMCQBalls_Success_HEAL()
 };	
 func void Info_CorKalom_BringMCQBalls_Success_ORE ()
 {
+	var int AFIP_ShowItem;
 	AI_Output			(other, self,"Mis_2_PSI_Kalom_BringMCQEggs_Success_ORE_15_01"); //Wystarczy mi ruda.
 	AI_Output			(self, other,"Mis_2_PSI_Kalom_BringMCQEggs_Success_ORE_10_02"); //Przyjmij tê rudê jako oznakê wdziêcznoœci ca³ego Bractwa!
 	CreateInvItems		(self,ItMinugget,100);
@@ -1125,6 +1134,7 @@ func void Info_CorKalom_BringMCQBalls_Success_ORE ()
 };	
 func void Info_CorKalom_BringMCQBalls_Success_MANA()
 {
+	var int AFIP_ShowItem;
 	AI_Output			(other, self,"Mis_2_PSI_Kalom_BringMCQEggs_Success_MANA_15_01"); //Mo¿e byæ mana.
 	AI_Output			(self, other,"Mis_2_PSI_Kalom_BringMCQEggs_Success_MANA_10_02"); //Niech ten napój wzmocni drzemi¹c¹ w tobie magiê.
 	CreateInvItem		(self,ItFo_Potion_Mana_Perma_01);
