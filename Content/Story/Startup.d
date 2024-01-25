@@ -3014,7 +3014,10 @@ FUNC VOID INIT_WORLD ()
 	B_InitGuildAttitudes();
    
 	
-	LeGo_Init ((LeGo_All ) | LeGo_HookEngine | LeGo_View | LeGo_FrameFunctions | LeGo_Gamestate | LeGo_Render | LeGo_Buffs); 
+	//LeGo_Init ((LeGo_All ) | LeGo_HookEngine | LeGo_View | LeGo_FrameFunctions | LeGo_Gamestate | LeGo_Render | LeGo_Buffs); 
+
+	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
+
 	//G12_OnDmg_Event_Init ();
 	Init_FastTravelMap_HK();
 	AF_ItemPreview_Init();
@@ -3025,6 +3028,7 @@ FUNC VOID INIT_WORLD ()
 	G1_EnhancedPickLocking_Init();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
+	FF_ApplyOnceExtGT(WYZWALACZ, 2000, -1);
 	
  
 	//---------------------------------------------------------G³owa i tatua¿e
@@ -3054,7 +3058,7 @@ FUNC VOID STARTUP_WORLD ()
 	Startup_Sub_Demontower		();
 	Startup_Sub_Freeminecamp	();
 	Startup_Sub_Surface			();
-    Wld_SendTrigger("WYZWALACZ"); //wyzwalacz co 2 sekundy
+    //Wld_SendTrigger("WYZWALACZ"); //wyzwalacz co 2 sekundy
 	//die folgende Zeile gilt nur, bis die INIT_...-Funktionen von Ulf unterstützt werden.
 	INIT_WORLD					();
 	//PlayVideo ("er_warns.bik");
@@ -3088,7 +3092,7 @@ FUNC VOID STARTUP_WORLD ()
 
 FUNC VOID STARTUP_ORCGRAVEYARD ()
 {
-Wld_SendTrigger("WYZWALACZ");
+//Wld_SendTrigger("WYZWALACZ");
 	//-------- 1. Höhle --------
 	Wld_InsertNpc		(TrollGround,		"CM_TROL1");
 	Wld_InsertNpc		(OrcScoutGYD,		"GRYD_006");
@@ -3141,8 +3145,8 @@ FUNC VOID INIT_ORCGRAVEYARD ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	MEM_InitAll();
-	LeGo_Init(LeGo_All);
+	//MEM_InitAll();
+	//LeGo_Init(LeGo_All);
 	//INIT_GLOBAL();
 };
 
@@ -3330,7 +3334,7 @@ FUNC VOID STARTUP_ORCTEMPEL ()
 	Wld_InsertNpc				( ORC_Priest_5, "TPL_300" ); 
 	// ----------------- Sleeper ---------------------------------------
 	Wld_InsertNpc				( SLEEPER, "TPL_395" ); // Schläft die ganze Zeit :)
-	Wld_SendTrigger("WYZWALACZ");
+	//Wld_SendTrigger("WYZWALACZ");
 };
 
 FUNC VOID INIT_ORCTEMPEL ()
@@ -3341,8 +3345,8 @@ FUNC VOID INIT_ORCTEMPEL ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	MEM_InitAll();
-	LeGo_Init(LeGo_All);
+	//MEM_InitAll();
+	//LeGo_Init(LeGo_All);
 	//INIT_GLOBAL();
 };
 
@@ -3351,7 +3355,7 @@ FUNC VOID INIT_ORCTEMPEL ()
 
 FUNC VOID STARTUP_OLDMINE ()
 {
-Wld_SendTrigger("WYZWALACZ");
+//Wld_SendTrigger("WYZWALACZ");
     //***TROLE ZIEMNE 
 	Wld_InsertNpc				(TrollGround,"OM_TROLL1");
 	//trtololo 1.4
@@ -3501,15 +3505,15 @@ FUNC VOID INIT_OLDMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	MEM_InitAll();
+	//MEM_InitAll();
 //	INIT_GLOBAL();
-	LeGo_Init(LeGo_All);
+	//LeGo_Init(LeGo_All);
 };		
 
 
 FUNC VOID STARTUP_ABANDONEDMINE ()
 {
-	Wld_SendTrigger("WYZWALACZ");
+	//Wld_SendTrigger("WYZWALACZ");
 	
 	Wld_InsertNpc		(Zombie ,	"VM_ZOMBIE2"); 
 	Wld_InsertNpc		(Zombie ,	"VM_ZOMBIE1"); 
@@ -3607,16 +3611,16 @@ FUNC VOID INIT_ABANDONEDMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	MEM_InitAll();
+	//MEM_InitAll();
 //	INIT_GLOBAL();
-	LeGo_Init(LeGo_All);
+	//LeGo_Init(LeGo_All);
 };
 
 
 
 FUNC VOID STARTUP_FREEMINE ()	
 {
-Wld_SendTrigger("WYZWALACZ");
+//Wld_SendTrigger("WYZWALACZ");
 	//-------- globale Story-Variable --------
 	EnteredFreeMine = TRUE;
 
@@ -3690,9 +3694,9 @@ FUNC VOID INIT_FREEMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	MEM_InitAll();
+	//MEM_InitAll();
 	//INIT_GLOBAL();
-	LeGo_Init(LeGo_All);
+	//LeGo_Init(LeGo_All);
 };
 
 /**********************************************************
