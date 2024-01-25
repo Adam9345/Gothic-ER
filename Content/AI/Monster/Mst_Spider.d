@@ -18,7 +18,7 @@ PROTOTYPE Mst_Default_Spider(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //------------------------------------------------------
-	protection	[PROT_BLUNT]		=	45
+	protection	[PROT_BLUNT]		=	45;
 	protection	[PROT_EDGE]			=	45;
 	protection	[PROT_POINT]		=	45;
 	protection	[PROT_FIRE]			=	5;
