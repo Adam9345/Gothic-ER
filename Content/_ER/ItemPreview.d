@@ -502,7 +502,7 @@ func void AFIP_Create(var int itemIn)
     
     if (!AFIP_rndObj) // not really needed, but just to be sure
     {
-        AFIP_rndObj = Render_AddItemCenterPrio(itemIn , PS_VMax/2 + 1300, PS_VMax/2 + AFIP_height/2 - 150, AFIP_height - 700, Print_ToRatio(AFIP_height - 700, PS_Y), 1);
+        AFIP_rndObj = Render_AddItemCenterPrio(itemIn , PS_VMax/2 + 1300, PS_VMax/2 + AFIP_height/2, AFIP_height - 800, Print_ToRatio(AFIP_height - 800, PS_Y), 1);
     };
     
     Render_AddView(AFIP_view);
