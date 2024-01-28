@@ -135,6 +135,7 @@ FUNC VOID PC_ItMw_Addon_BanditTrader_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_BanditTrader.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -146,7 +147,6 @@ FUNC VOID PC_ItMw_Addon_BanditTrader_Info ()
     PrintScreen ("1x bry³ka z³ota"                  ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     */
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_Miecz1H6 (C_INFO)
@@ -180,6 +180,7 @@ FUNC VOID PC_ItMw_Miecz1H6_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H6.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -191,7 +192,6 @@ FUNC VOID PC_ItMw_Miecz1H6_Info ()
     PrintScreen ("1x pociête drewno"               ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_Miecz1H11 (C_INFO)
@@ -225,6 +225,7 @@ FUNC VOID PC_ItMw_Miecz1H11_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H11.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -235,7 +236,6 @@ FUNC VOID PC_ItMw_Miecz1H11_Info ()
     PrintScreen ("2x bry³ka wêgla"                        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 
 //***************************************************************************************
@@ -270,6 +270,7 @@ FUNC VOID PC_ItMw_Miecz1H15_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H15.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -282,7 +283,6 @@ FUNC VOID PC_ItMw_Miecz1H15_Info ()
 	PrintScreen ("1x sztabka magicznej stali"      ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 
 //***************************************************************************************
@@ -317,6 +317,7 @@ FUNC VOID PC_ItMw_1H_Sword_04_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan1b.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -329,7 +330,6 @@ FUNC VOID PC_ItMw_1H_Sword_04_Info ()
 	*/
 
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_1H_Sword_Long_01 (C_INFO)
@@ -363,6 +363,7 @@ FUNC VOID PC_ItMw_1H_Sword_Long_01_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan1c.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -379,7 +380,6 @@ FUNC VOID PC_ItMw_1H_Sword_Long_01_Info ()
 	*/
 
     };	
-    AI_StopProcessInfos(self);
 };
 
 /***************----------------------------------UMIEJÊTNOŒÆ POZIOM 2---------------------******************************/
@@ -416,6 +416,7 @@ FUNC VOID PC_ItMw_Miecz1H7_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H7.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -431,7 +432,6 @@ FUNC VOID PC_ItMw_Miecz1H7_Info ()
 	"FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_Miecz1H9 (C_INFO)
@@ -465,6 +465,7 @@ FUNC VOID PC_ItMw_Miecz1H9_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H9.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -478,7 +479,6 @@ FUNC VOID PC_ItMw_Miecz1H9_Info ()
     PrintScreen ("1x pazury trolla ziemnego"        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 
 //***************************************************************************************
@@ -513,6 +513,7 @@ FUNC VOID PC_ItMw_Miecz1H8_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz1H8.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -527,7 +528,6 @@ FUNC VOID PC_ItMw_Miecz1H8_Info ()
     PrintScreen ("1x niebieski kryszta³"       ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 
 //***************************************************************************************
@@ -562,6 +562,7 @@ FUNC VOID PC_ItMw_Rapier_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Rapier.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -574,7 +575,6 @@ FUNC VOID PC_ItMw_Rapier_Info ()
     PrintScreen ("1x bry³ka z³ota"             ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_2H_Sword_Light_01 (C_INFO)
@@ -608,6 +608,7 @@ FUNC VOID PC_ItMw_2H_Sword_Light_01_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan3b.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -620,7 +621,6 @@ FUNC VOID PC_ItMw_2H_Sword_Light_01_Info ()
     PrintScreen ("1x pociête drewno"             ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
 	*/
     };	
-    AI_StopProcessInfos(self);
 };
 //***************************************************************************************
 INSTANCE PC_ItMw_2H_Sword_Light_04 (C_INFO)
@@ -655,6 +655,7 @@ FUNC VOID PC_ItMw_2H_Sword_Light_04_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan3.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -701,6 +702,7 @@ FUNC VOID PC_ItMw_2H_Axe_light_01_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan5c.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -747,6 +749,7 @@ FUNC VOID PC_ItMw_2H_AxeHevay_100_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_2H_AxeHevay_100.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -796,6 +799,7 @@ FUNC VOID PC_ItMw_2H_Sword_02_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan4b.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -842,6 +846,7 @@ FUNC VOID PC_ItMw_Miecz2H5_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Miecz2H5.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -887,6 +892,7 @@ FUNC VOID PC_ItMw_2H_Axe_Heavy_01_Info ()
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
 		CreateInvItems (self, Recipe_Plan7b.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -964,6 +970,7 @@ FUNC VOID PC_ItBE_Addon_Leather_01_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_LeatherBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -973,7 +980,6 @@ FUNC VOID PC_ItBE_Addon_Leather_01_Info ()
     PrintScreen ("4x bry³ka ¿elaza"               ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1008,6 +1014,7 @@ FUNC VOID PC_ItBE_Addon_SLD_01_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_SldBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1019,7 +1026,6 @@ FUNC VOID PC_ItBE_Addon_SLD_01_Info ()
     PrintScreen ("10x bry³ka ¿elaza"               ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 //**************************PASY*************************************************************
 INSTANCE PC_ItBE_Addon_NOV_01 (C_INFO)
@@ -1053,6 +1059,7 @@ FUNC VOID PC_ItBE_Addon_NOV_01_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_FNovBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1064,7 +1071,6 @@ FUNC VOID PC_ItBE_Addon_NOV_01_Info ()
     PrintScreen ("5x bry³ka ¿elaza"               ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1099,6 +1105,7 @@ FUNC VOID PC_ItRe_GrdBelt_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_GrdBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1110,7 +1117,6 @@ FUNC VOID PC_ItRe_GrdBelt_Info ()
     PrintScreen ("10x bry³ka ¿elaza"              ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1145,6 +1151,7 @@ FUNC VOID PC_ItBE_Addon_KDF_01_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_KdfBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1157,7 +1164,6 @@ FUNC VOID PC_ItBE_Addon_KDF_01_Info ()
     PrintScreen ("15x bry³ka ¿elaza"                       ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 //**************************PASY*************************************************************
 INSTANCE PC_ItBE_Addon_MC (C_INFO)
@@ -1191,6 +1197,7 @@ FUNC VOID PC_ItBE_Addon_MC_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_CrawlerBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1203,7 +1210,6 @@ FUNC VOID PC_ItBE_Addon_MC_Info ()
     PrintScreen ("1x sztabka ciemnej stali"        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 //**************************PASY*************************************************************
 INSTANCE PC_ItBe_Addon_STR_5 (C_INFO)
@@ -1237,6 +1243,7 @@ FUNC VOID PC_ItBe_Addon_STR_5_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_StrengthBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1250,7 +1257,6 @@ FUNC VOID PC_ItBe_Addon_STR_5_Info ()
     PrintScreen ("1x sztabka magicznej stali"        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 //**************************PASY*************************************************************
 INSTANCE PC_ItBe_Addon_STR_10 (C_INFO)
@@ -1284,6 +1290,7 @@ FUNC VOID PC_ItBe_Addon_STR_10_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_PowerBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1297,7 +1304,6 @@ FUNC VOID PC_ItBe_Addon_STR_10_Info ()
     PrintScreen ("10x siarka"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 
@@ -1334,6 +1340,7 @@ FUNC VOID PC_ItBe_Addon_DEX_5_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_SkillBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1347,7 +1354,6 @@ FUNC VOID PC_ItBe_Addon_DEX_5_Info ()
     PrintScreen ("1x sztabka magicznej stali"       ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 
@@ -1384,6 +1390,7 @@ FUNC VOID PC_ItBe_Addon_DEX_10_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_DexterityBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1397,7 +1404,6 @@ FUNC VOID PC_ItBe_Addon_DEX_10_Info ()
     PrintScreen ("4x skrzyd³a krwiopijcy"          ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
    */
     };	
-    AI_StopProcessInfos(self);
 };
 
 
@@ -1434,6 +1440,7 @@ FUNC VOID PC_ItBe_Addon_Prot_EDGE_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_ArmorBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1446,7 +1453,6 @@ FUNC VOID PC_ItBe_Addon_Prot_EDGE_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1481,6 +1487,7 @@ FUNC VOID PC_ItBe_Addon_Prot_Point_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_DefendBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1493,7 +1500,6 @@ FUNC VOID PC_ItBe_Addon_Prot_Point_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1528,6 +1534,7 @@ FUNC VOID PC_ItBe_Addon_Prot_MAGIC_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_MagicArmorBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1540,7 +1547,6 @@ FUNC VOID PC_ItBe_Addon_Prot_MAGIC_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1575,6 +1581,7 @@ FUNC VOID PC_ItBe_Addon_Prot_FIRE_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_FireRunnerBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1587,7 +1594,6 @@ FUNC VOID PC_ItBe_Addon_Prot_FIRE_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1622,6 +1628,7 @@ FUNC VOID PC_ItBe_Addon_Prot_EdgPoi_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_ProtectionBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1635,7 +1642,6 @@ FUNC VOID PC_ItBe_Addon_Prot_EdgPoi_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 
 //**************************PASY*************************************************************
@@ -1670,6 +1676,7 @@ FUNC VOID PC_ItBE_TPL_01_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_TempleBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1682,7 +1689,6 @@ FUNC VOID PC_ItBE_TPL_01_Info ()
    */
    
     };	
-    AI_StopProcessInfos(self);
 };
 //**************************PASY*************************************************************
 INSTANCE PC_OrcHunterBelt_Recipe (C_INFO)
@@ -1716,6 +1722,7 @@ FUNC VOID PC_OrcHunterBelt_Recipe_Info ()
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
 		CreateInvItems (self, Recipe_OrcHunterBelt.recipeitem,1);
+		DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1729,56 +1736,4 @@ FUNC VOID PC_OrcHunterBelt_Recipe_Info ()
    
    */
     };	
-    AI_StopProcessInfos(self);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
