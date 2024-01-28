@@ -24,7 +24,7 @@ INSTANCE ItRe_MoleratSoup (C_Item)
 	scemeName			=	"MAP";
 	description			=   name;
 	
-	TEXT[2]                 = "Bonus P¯: 42";
+	TEXT[2]                 = "Bonus P¯: 45";
 //	TEXT[3]                 = "Wymagana si³a: 73";
 	TEXT[5]				= NAME_Value;
 	COUNT[5]			= value;
@@ -74,7 +74,7 @@ INSTANCE ItRe_SnafSoup (C_Item)
 	on_state[0]			=   UsePrzepisSnafSoup;
 	scemeName			=	"MAP";
 	description			=   name;
-	TEXT[2]                 = "Bonus P¯: 35";
+	TEXT[2]                 = "Bonus P¯: 38";
 	TEXT[5]				=   NAME_Value;
 	COUNT[5]			=   value;
 	
@@ -118,7 +118,7 @@ func void UsePrzepisSnafSoup ()
 	on_state[0]			=   CheeseSoup_Rec;
 	scemeName			=	"MAP";
 	description			=   name;
-	TEXT[2]                 = "Bonus P¯: 45";
+	TEXT[2]                 = "Bonus P¯: 48";
 	TEXT[5]				= NAME_Value;
 	COUNT[5]			= value;
 	
@@ -210,7 +210,7 @@ INSTANCE ItRe_ScaSoup (C_Item)
 	on_state[0]			=   UsePrzepisSCA;
 	scemeName			=	"MAP";
 	description			=   name;
-	TEXT[2]                 = "Bonus P¯: 45";
+	TEXT[2]                 = "Bonus P¯: 55";
 	TEXT[5]				= 	NAME_Value;
 	COUNT[5]			= 	value;
 	
@@ -830,7 +830,7 @@ INSTANCE Plan_BanditTrader(C_Item) //do kupienia u Huana
 	description				= name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 40";
-	TEXT[3]                 = "Wymagana zrêcznoœæ: 38";
+	TEXT[3]                 = "Wymagana zrêcznoœæ: 30";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -844,11 +844,11 @@ INSTANCE Plan_BanditTrader(C_Item) //do kupienia u Huana
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  
-					Doc_PrintLine	( nDocID,  0, "Rapier"					);
+					Doc_PrintLine	( nDocID,  0, "Pa³asz"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 40"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana zrêcznoœæ: 38"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana zrêcznoœæ: 30"					);
 					Doc_PrintLine	( nDocID,  0, ""	);
 					printAllIngredients(Recipe_BanditTrader, nDocID);
 					Doc_PrintLines	( nDocID,  0, ""					);
@@ -874,7 +874,7 @@ INSTANCE Plan_Miecz1H6(C_Item)
 	description				= name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 40";
-	TEXT[3]                 = "Wymagana si³a: 30";
+	TEXT[3]                 = "Wymagana si³a: 45";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -892,7 +892,7 @@ INSTANCE Plan_Miecz1H6(C_Item)
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 40"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 30"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 45"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					printAllIngredients(Recipe_Miecz1H6, nDocID);
 					Doc_Show		( nDocID 	);
@@ -902,7 +902,7 @@ INSTANCE Plan_Miecz1H6(C_Item)
 /******************************************************************************************/
 INSTANCE Plan_Miecz1H11(C_Item) //handel Huno
 {	
-	name 					=	"Plan: Porz¹dny miecz jednorêczny";
+	name 					=	"Plan: Porz¹dny Krótki Miecz";
 	
 	mainflag 				=	ITEM_KAT_DOCS;
 	flags 					=	0;
@@ -918,7 +918,7 @@ INSTANCE Plan_Miecz1H11(C_Item) //handel Huno
 	description				= name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 30";
-	TEXT[3]                 = "Wymagana si³a: 22";
+	TEXT[3]                 = "Wymagana si³a: 32";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -932,11 +932,11 @@ INSTANCE Plan_Miecz1H11(C_Item) //handel Huno
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  
-					Doc_PrintLine	( nDocID,  0, "Porz¹dny miecz jednorêczny"					);
+					Doc_PrintLine	( nDocID,  0, "Porz¹dny Krótki Miecz"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 30"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 22"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 32"					);
 					Doc_PrintLine	( nDocID,  0, ""	);				
 					printAllIngredients(Recipe_Miecz1H11, nDocID);
 					Doc_Show		( nDocID 	);
@@ -961,8 +961,8 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 
 	description				= name;
 	TEXT[1]                 = "Broñ jednorêczna";
-	TEXT[2]                 = "Obra¿enia: 26";
-	TEXT[3]                 = "Wymagana si³a: 18";
+	TEXT[2]                 = "Obra¿enia: 25";
+	TEXT[3]                 = "Wymagana si³a: 27";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -979,8 +979,8 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 					Doc_PrintLine	( nDocID,  0, "B³ysk nocy"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
-					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 26"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 18"					);
+					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 25"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 27"					);
 					Doc_PrintLine	( nDocID,  0, ""	);
 					printAllIngredients(Recipe_Miecz1H15, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1006,7 +1006,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 	description				= 	name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 33";
-	TEXT[3]                 = "Wymagana si³a: 30";
+	TEXT[3]                 = "Wymagana si³a: 35";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1024,7 +1024,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 33"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 30"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 35"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					printAllIngredients(Recipe_Plan1b, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1049,7 +1049,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 	description				= 	name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 34";
-	TEXT[3]                 = "Wymagana si³a: 35";
+	TEXT[3]                 = "Wymagana si³a: 36";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1067,7 +1067,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna");
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 34");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 40");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 36");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan1c, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1180,7 +1180,7 @@ INSTANCE Plan_Miecz1H9(C_Item) //do znalezienia w skrzyni w Wie¿y Mgie³
 	description				= 	name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 65";
-	TEXT[3]                 = "Wymagana si³a: 50";
+	TEXT[3]                 = "Wymagana si³a: 65";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1198,7 +1198,7 @@ INSTANCE Plan_Miecz1H9(C_Item) //do znalezienia w skrzyni w Wie¿y Mgie³
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 65"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 50"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 65"					);
 					Doc_PrintLine	( nDocID,  0, ""	);
 					printAllIngredients(Recipe_Miecz1H9, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1223,8 +1223,8 @@ INSTANCE Plan_Miecz1H8(C_Item)
 	description				= name;
 	TEXT[1]                 = "Broñ jednorêczna";
 	TEXT[2]                 = "Obra¿enia: 65";
-	TEXT[3]                 = "Wymagana si³a: 45";
-	TEXT[4]                 = "Wymagana mana: 30";
+	TEXT[3]                 = "Wymagana si³a: 65";
+	TEXT[4]                 = "Wymagana mana: 20";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -1242,8 +1242,8 @@ INSTANCE Plan_Miecz1H8(C_Item)
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Broñ jednorêczna"					);
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 65"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 45"					);
-					Doc_PrintLine	( nDocID,  0, "Wymagana mana: 30"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 65"					);
+					Doc_PrintLine	( nDocID,  0, "Wymagana mana: 20"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					printAllIngredients(Recipe_Miecz1H8, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1310,8 +1310,8 @@ INSTANCE Plan3b(C_Item) //handlarz: Darrion, ch4
 
 	description				= 	name;
 	TEXT[1]                 = "Broñ jednorêczna";
-	TEXT[2]                 = "Obra¿enia: 70";
-	TEXT[3]                 = "Wymagana si³a: 56";
+	TEXT[2]                 = "Obra¿enia: 56";
+	TEXT[3]                 = "Wymagana si³a: 58";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1328,8 +1328,8 @@ INSTANCE Plan3b(C_Item) //handlarz: Darrion, ch4
 					Doc_PrintLine	( nDocID,  0, "Lekki miecz dwurêczny"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna");
-					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 70");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 56");
+					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 56");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 58");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan3b, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1354,7 +1354,7 @@ INSTANCE Plan3(C_Item) //handlarz Scorpio, ch4
 	description				= name;
 	TEXT[1]                 = "Broñ dwurêczna";
 	TEXT[2]                 = "Obra¿enia: 74";
-	TEXT[3]                 = "Wymagana si³a: 73";
+	TEXT[3]                 = "Wymagana si³a: 79";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -1372,7 +1372,7 @@ INSTANCE Plan3(C_Item) //handlarz Scorpio, ch4
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna");
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 74");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 73");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 79");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan3, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1396,7 +1396,7 @@ INSTANCE Plan5c(C_Item) //handlarz: Martin, ch4
 	description				= name;
 	TEXT[1]                 = "Broñ dwurêczna";
 	TEXT[2]                 = "Obra¿enia: 77";
-	TEXT[3]                 = "Wymagana si³a: 75";
+	TEXT[3]                 = "Wymagana si³a: 80";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -1414,7 +1414,7 @@ INSTANCE Plan5c(C_Item) //handlarz: Martin, ch4
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna");
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 77");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 75");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 80");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan5c, nDocID);
 					Doc_Show		( nDocID 	);
@@ -1469,7 +1469,7 @@ INSTANCE ItRe_2H_AxeHevay_100(C_Item) //handlarz: Gavilian ch3/ huan
 
 INSTANCE Plan4b(C_Item) //miasto orków, podziemia
 {	
-	name 					=	"Plan: Ostrze bohatera";
+	name 					=	"Plan: Ostrze bohatera bractwa";
 	
 	mainflag 				=	ITEM_KAT_DOCS;
 	flags 					=	0;
@@ -1484,8 +1484,8 @@ INSTANCE Plan4b(C_Item) //miasto orków, podziemia
 
 	description				= 	name;
 	TEXT[1]                 = "Broñ dwurêczna";
-	TEXT[2]                 = "Obra¿enia: 83";
-	TEXT[3]                 = "Wymagana si³a: 78";
+	TEXT[2]                 = "Obra¿enia: 90";
+	TEXT[3]                 = "Wymagana si³a: 110";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1499,11 +1499,11 @@ INSTANCE Plan4b(C_Item) //miasto orków, podziemia
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  
-					Doc_PrintLine	( nDocID,  0, "Ostrze bohatera"					);
+					Doc_PrintLine	( nDocID,  0, "Ostrze bohatera bractwa"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna");
-					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 83");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 78");
+					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 90");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 110");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan4b, nDocID);					
 					Doc_Show		( nDocID 	);
@@ -1528,7 +1528,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	description				= name;
 	TEXT[1]                 = "Broñ dwurêczna";
 	TEXT[2]                 = "Obra¿enia: 85";
-	TEXT[3]                 = "Wymagana si³a: 75";
+	TEXT[3]                 = "Wymagana si³a: 90";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;
 };
@@ -1546,7 +1546,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, ""					       );
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna"			   );
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 85"			   );
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 75"		   );
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 90"		   );
 					Doc_PrintLine	( nDocID,  0, ""	                       );
 					printAllIngredients(Recipe_Miecz2H5, nDocID);
 
@@ -1572,7 +1572,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	description				= 	name;
 	TEXT[1]                 = "Broñ dwurêczna";
 	TEXT[2]                 = "Obra¿enia: 94";
-	TEXT[3]                 = "Wymagana si³a: 90";
+	TEXT[3]                 = "Wymagana si³a: 101";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1590,7 +1590,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Broñ dwurêczna");
 					Doc_PrintLine	( nDocID,  0, "Obra¿enia: 94");
-					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 90");
+					Doc_PrintLine	( nDocID,  0, "Wymagana si³a: 101");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_Plan7b, nDocID);			
 		
@@ -1619,8 +1619,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1637,8 +1637,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Skórzany pas"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_LeatherBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);
@@ -1667,8 +1667,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1685,8 +1685,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Pas najemnika"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_SldBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);
@@ -1713,8 +1713,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1731,8 +1731,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Szarfa gotowoœci"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_FNovBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);
@@ -1759,8 +1759,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1777,8 +1777,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Pas stra¿nika"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_GrdBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);
@@ -1805,8 +1805,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1823,8 +1823,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Szarfa Ognia"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_KdfBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);				
@@ -1850,8 +1850,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -1868,8 +1868,8 @@ INSTANCE Plan_Miecz2H5(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Pas Pe³zacza"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_CrawlerBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);				
@@ -2271,7 +2271,7 @@ FUNC VOID ProtectionBeltRecipe()
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  
-					Doc_PrintLine	( nDocID,  0, "Pas ognistego biegacza"					);
+					Doc_PrintLine	( nDocID,  0, "Ciê¿ki Pas Ochrony"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
 					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
@@ -2302,8 +2302,8 @@ FUNC VOID ProtectionBeltRecipe()
 
 	description				= 	name;
 	TEXT[1]                 = "Ochrona";
-	TEXT[2]                 = "Broñ: 2";
-	TEXT[3]                 = "Pociski: 2";
+	TEXT[2]                 = "Broñ: 3";
+	TEXT[3]                 = "Pociski: 3";
 	TEXT[5]					= 	NAME_Value;
 	COUNT[5]				= 	value;
 };
@@ -2317,11 +2317,11 @@ FUNC VOID TempleBeltRecipe()
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  
-					Doc_PrintLine	( nDocID,  0, "Pas Stra¿nika"					);
+					Doc_PrintLine	( nDocID,  0, "Pas Œwi¹tynny"					);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Ochrona");
-					Doc_PrintLine	( nDocID,  0, "Broñ: 2");
-					Doc_PrintLine	( nDocID,  0, "Pociski: 2");
+					Doc_PrintLine	( nDocID,  0, "Broñ: 3");
+					Doc_PrintLine	( nDocID,  0, "Pociski: 3");
 					Doc_PrintLine	( nDocID,  0, "");
 					printAllIngredients(Recipe_TempleBelt, nDocID);
 					Doc_PrintLine	( nDocID,  0, ""					);
