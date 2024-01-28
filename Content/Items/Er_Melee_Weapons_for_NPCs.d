@@ -533,10 +533,11 @@ INSTANCE Miecz1H10 (C_Item) //kaplica Beliara
 	visual 				=	"DB_ItMw_1H_Sword_Long_Smith_02.3DS";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2]				= NAME_Dam_Magic;				COUNT[2]	= damage[DAM_INDEX_Magic];
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
+	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[1]				= NAME_Dam_Magic;				COUNT[1]	= damage[DAM_INDEX_Magic];
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3] 			= NAME_Mana_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4]				= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -743,6 +744,7 @@ INSTANCE ItMw_2h_Sword_Lee (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;
 	
 };
 /*********************************************************************************/
@@ -768,6 +770,7 @@ INSTANCE ItMw_Sword_Boba (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;
 
 
 };
@@ -821,6 +824,7 @@ INSTANCE ItMw_Sword_2h_WarriorFrenzy (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;
 
 
 };
@@ -847,13 +851,13 @@ INSTANCE ItMw_Sword_2h_140 (C_Item)
 	cond_value[2]  		= 	160;
 	visual 				=	"ItMw_2h_Sword_140.3DS";
 
-	description			= name;
-	TEXT[0]             = "Posiada moc magicznych kryszta³ów";
+	description			= 	name;
+	TEXT[0]             = 	"Posiada moc magicznych kryszta³ów";
 	TEXT[1]				=	NAME_Dam_Edge;			COUNT[1]	=	damage[DAM_INDEX_EDGE];
 	TEXT[2]				=	NAME_Dam_Fire;			COUNT[2]	=	damage[DAM_INDEX_Fire];
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_TwoHanded;
-	
+	TEXT[3] 			= 	NAME_Str_needed;		COUNT[3]	= 	cond_value[2];
+	TEXT[4] 			= 	NAME_TwoHanded;
+	TEXT[5]				=	NAME_Value;
 };
 
 /*************************************************************************/
@@ -910,7 +914,7 @@ INSTANCE ITMW_CalomGuardSWD (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
-	//TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
 
@@ -940,7 +944,7 @@ INSTANCE ITMW_2h_Slayer (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_OneHanded;
-	//TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /*************************************************************************/
 INSTANCE ItMw_Soul_Destroyer (C_Item) 
@@ -968,7 +972,7 @@ INSTANCE ItMw_Soul_Destroyer (C_Item)
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
-	//TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
 /*************************************************************************/
