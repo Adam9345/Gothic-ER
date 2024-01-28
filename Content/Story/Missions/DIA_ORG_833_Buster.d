@@ -98,9 +98,9 @@ FUNC void DIA_ORG_833_Buster_Train1()
 		AI_Output (self, other,"DIA_ORG_833_Buster3_02_02"); //Po kilku lekcjach nauczysz siê skakaæ na wiêksze odleg³oœci.
 		AI_Output (self, other,"DIA_ORG_833_Buster3_02_03"); //Poka¿ê ci w jaki sposób mo¿na z³agodziæ efekt upadku z du¿ej wysokoœci. Tylko nie myœl sobie, ¿e bêdziesz móg³ skakaæ bóg wie sk¹d!
 		AI_Output (self, other,"DIA_ORG_833_Buster3_02_04"); //Akrobatyka przyda ci siê równie¿ w trakcie walki. Poka¿ê ci jak bardzo szybko zmniejszyæ lub zwiêkszyæ odleg³oœæ dziel¹c¹ ciê od przeciwnika. Powodzenia! 
+		B_GiveInvItems (hero, self, itminugget, 500);
+		Npc_RemoveInvItems (self, itminugget, 500);
 	};		
-	B_GiveInvItems (hero, self, itminugget, 500);
-	Npc_RemoveInvItems (self, itminugget, 500);
 	}
 	else
 	{

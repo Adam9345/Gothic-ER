@@ -116,6 +116,13 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		};
 	};
 
+	if (talent == NPC_TALENT_ACROBAT) {
+		if(Npc_GetTalentSkill (hero,NPC_TALENT_ACROBAT) == 0)
+		{
+			kosten = LPCOST_TALENT_ACROBAT;
+		};
+	};
+
 	return kosten;
 };
 
