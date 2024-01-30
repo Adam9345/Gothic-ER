@@ -115,13 +115,17 @@ func void DIA_Cavalorn_Lehrer_Schleichen()
 	{
 	if  (B_teachthieftalent(self,other,NPC_TALENT_SNEAK))
 	{		
-	    Info_AddChoice(DIA_cavalorn_Lehrer,Dialog_Back,DIA_Cavalorn_Bow_BACK);
+	    //Info_AddChoice(DIA_cavalorn_Lehrer,Dialog_Back,DIA_Cavalorn_Bow_BACK);
 		AI_Output (other, self,"DIA_cavalorn_Lehrer_Schleichen_15_00"); //Chcia³bym poruszaæ siê bezszelestnie.
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_01"); //I s³usznie. Skradanie pozwoli ci dostaæ siê niepostrze¿enie do cudzych domów, albo po cichu zajœæ od ty³u przeciwnika.
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_02"); //Chodz¹c na lekko ugiêtych nogach bêdziesz móg³ uwa¿niej obserwowaæ grunt, po którym st¹pasz, no i ³atwiej bêdzie ci balansowaæ cia³em.
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_03"); //Oczywiœcie ktoœ obserwuj¹cy ciê z boku natychmiast nabierze podejrzeñ, wiêc skradaj siê zawsze nie bêd¹c widzianym przez osoby trzecie.
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_04"); //Zapamiêtaj sobie dobrze co ci powiedzia³em, i przede wszystkim nie daj siê z³apaæ!
+		B_GiveInvItems (hero, self, itminugget, 200);
+		Npc_RemoveInvItems (self, itminugget, 200);
 	};
+	} else {
+		AI_Output (self, other,"DIA_Cavalorn_Lehrer_NOORE"); //Nie masz wystarczaj¹cej iloœci bry³ek rudy!
 	};	
 };
 
