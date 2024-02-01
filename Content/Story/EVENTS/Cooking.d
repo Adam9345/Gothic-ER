@@ -566,7 +566,7 @@ INSTANCE PC_ItFo_BigCasserole (C_INFO)
 
 FUNC INT PC_ItFo_BigCasserole_Condition()
 {	
-	if (MeatStew_Recipe == TRUE)  
+	if (BigCasserole_Recipe == TRUE)  
 	&& (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKING)
 	&& (CookingFood == TRUE)
 
