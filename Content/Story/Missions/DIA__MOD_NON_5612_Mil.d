@@ -173,24 +173,12 @@ FUNC VOID DIA_Mil_PlaszczOK_Info()
 {
     AI_Output (other, self ,"DIA_Mil_PlaszczOK_15_01"); //P³aszcz gotowy.
     AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_02"); //Dobra robota. 
+	B_GiveInvItems (other,self, ItMi_PancerzMil, 1);
+	B_GiveInvItems (self,other, ItAt_BearFur, 2);
+	B_LogEntry                     (CH1_FindWhiteSkin,"Mil dosta³ p³aszcz, i otrzyma³em od niego ma³¹ nagrodê.");
 	Log_SetTopicStatus       (CH1_FindWhiteSkin, LOG_SUCCESS);
+	B_GiveXP(150);
     MIS_FindWhiteSkin = LOG_SUCCESS;
-	/*
-	if (Kapitel < 4) && ((Npc_GetTrueGuild(other) != GIL_STT) || (Npc_GetTrueGuild(other) != GIL_GRD))
-	{
-	AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_03"); //Mam dla ciebie jeszcze jedno zlecenie.
-    AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_04"); //IdŸ do Starego Obozu i znajdŸ mi pasera, który dopilnuje, ¿eby ten p³aszcz trafi³ w rêce Magnata Blizny.
-    AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_05"); //Zrób to szybko. Gdy p³aszcz bêdzie jego, wróæ do mnie.  
-    MIS_ScarMurder = LOG_RUNNING;
-    Log_CreateTopic          (CH3_ScarMurder, LOG_MISSION);
-    Log_SetTopicStatus       (CH3_ScarMurder, LOG_RUNNING);
-    B_LogEntry               (CH3_ScarMurder,"Mam znaleŸæ kogoœ, kto sprzeda p³aszcz ze skóry wilka Magnatowi imieniem Blizna. Muszê szukaæ wœród handlarzy ze Starego Obozu.");
-	}
-	else
-	{
-	B_GiveInvItems (hero, self, ItMi_PancerzMil, 1);
-	};
-	*/
 	AI_StopProcessInfos	(self);
 };
 
