@@ -569,6 +569,25 @@ func void B_LogEntry(var string topic, var string entry)
 
 };
 
+func void B_LogEntryForBooks(var string topic, var string entry)
+{
+	PrintDebugNpc	(PD_ZS_DETAIL,	"B_LogEntryForBooks");
+	if (STR_Len(entry) > 0) {
+		Log_AddEntry	(topic, entry);
+	} else {
+		var string msg;
+		msg = ConcatStrings(NAME_NewLogEntry,	topic);
+		PrintS_Ext		(msg, COL_White);
+	};
+
+	//PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
+	//var string msg;
+
+	//PrintS_Ext		(NAME_NewLogEntry, COL_White);
+	Snd_Play 		("LogEntry");
+
+};
+
 func void B_LogStatus (var string topic, var int type)
 {
 	//B_Y_Levelup();
