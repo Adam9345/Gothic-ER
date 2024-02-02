@@ -84,7 +84,7 @@ const string	BookLog_HistoryOfVarant12				=	"Historia Varantu. Tom 12 - treœæ";
 
 
 const string    HrodgirMessageList                      =   "Do Lorda Hrodgira";
-const string    BookLog_NorthonKiller                   =   "Historia na p³askowyrzu - Plac Wymian";
+const string    BookLog_NorthonKiller                   =   "Historia na p³askowy¿u - Plac Wymian";
 const string    Cooking                                 =    "*Przepisy kulinarne";
 
 const string    ThongvorRepair                          =   "Nordmarczyk Thongvor i stary miecz";
