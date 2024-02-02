@@ -101,13 +101,21 @@ FUNC INT DIA_Chris_HELLO3_Condition()
     };
 };
 
+FUNC VOID StartDiceGameAfterTalking() {
+    playdicegame(2, self);
+
+};
 
 FUNC VOID DIA_Chris_HELLO3_Info()
 {
     AI_Output (other, self ,"DIA_Chris_HELLO3_15_01"); //Zagrajmy w koœci.
     AI_Output (self, other ,"DIA_Chris_HELLO3_03_02"); //Zaczynamy. Ile stawiasz?
 
+    AI_Function(self, StartDiceGameAfterTalking);
+
     Info_ClearChoices		(DIA_Chris_HELLO3);
+
+/*
 	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
     Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
@@ -129,6 +137,7 @@ FUNC VOID DIA_Chris_HELLO3_Info()
 //    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
 //	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
+    */
 };
 
 FUNC VOID DIA_Chris_HELLO3_20ORE()
