@@ -238,7 +238,7 @@ INSTANCE DIA_Blade_HELLO1 (C_INFO)
 
 FUNC INT DIA_Blade_HELLO1_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Mil_BliznaDed)) && (dia_blade_avbl == false)
+    if (kapitel ==10)
     {
     return TRUE;
     };

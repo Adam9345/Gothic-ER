@@ -111,8 +111,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
+B_SetFightSkills(self,70);
 
 //----------Ekwipunek----------
 
@@ -182,9 +181,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
-
+B_SetFightSkills(self,70);
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Sword_03);
 //EquipItem		(self, ItRw_Bow_Long_05_Z);
@@ -249,8 +246,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
+B_SetFightSkills(self,70);
 
 //----------Ekwipunek----------
 //EquipItem		(self, ItMw_2H_Sword_02);
@@ -306,8 +302,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
+B_SetFightSkills(self,70);
 
 //----------Ekwipunek----------
 
@@ -367,8 +362,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
+B_SetFightSkills(self,70);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_02);
@@ -450,8 +444,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+B_SetFightSkills(self,40);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_02);
@@ -503,8 +496,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+B_SetFightSkills(self,40);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_01);
@@ -565,8 +557,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+B_SetFightSkills(self,40);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_01);
@@ -620,8 +611,7 @@ Mdl_SetModelFatness(self,0);
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+B_SetFightSkills(self,40);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_01);//ostrze

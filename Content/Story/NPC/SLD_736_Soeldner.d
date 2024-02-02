@@ -13,7 +13,7 @@ instance SLD_736_Soeldner (Npc_Default)
 
 	//-------- abilities --------
 
-	attribute[ATR_STRENGTH] =		40;
+	attribute[ATR_STRENGTH] =		60;
 	attribute[ATR_DEXTERITY] =		35;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
