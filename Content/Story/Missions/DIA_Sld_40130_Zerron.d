@@ -40,7 +40,9 @@ INSTANCE DIA_Zerron_HELLO1 (C_INFO)
 
 FUNC INT DIA_Zerron_HELLO1_Condition()
 {
-    return TRUE;
+	if (C_BodyStateContains(hero,BS_STAND)) {
+    	return TRUE;
+	};
 };
 
 FUNC VOID DIA_Zerron_HELLO1_Info()
