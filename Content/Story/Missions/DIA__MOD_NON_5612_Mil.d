@@ -182,52 +182,6 @@ FUNC VOID DIA_Mil_PlaszczOK_Info()
 	AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> BliznaDed
-//========================================
-
-INSTANCE DIA_Mil_BliznaDed (C_INFO)
-{
-   npc          = NON_5612_Mil;
-   nr           = 1;
-   condition    = DIA_Mil_BliznaDed_Condition;
-   information  = DIA_Mil_BliznaDed_Info;
-   permanent	= FALSE;
-   description	= "P³aszcz trafi w rêce Blizny.";
-};
-
-FUNC INT DIA_Mil_BliznaDed_Condition()
-{
-    if (MIS_ScarMurder == LOG_RUNNING) 
-	&& ((oferta_fiska == true)
-    || (Npc_KnowsInfo (hero, DIA_Whistler_SellPlaszcz))
-   || (Npc_KnowsInfo (hero, DIA_Gravo_GiveItemPlaszcz)))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Mil_BliznaDed_Info()
-{
-    AI_Output (other, self ,"DIA_Mil_BliznaDed_15_01"); //P³aszcz trafi w rêce Blizny.
-    AI_Output (self, other ,"DIA_Mil_BliznaDed_03_02"); //Dobra robota. Je¿eli uda³o ci siê coœ przy tym zarobiæ, to mo¿esz zachowaæ to dla siebie.
-    AI_Output (self, other ,"DIA_Mil_BliznaDed_03_03"); //Ja otrzyma³em ju¿ swoj¹ czêœæ dzia³ki wczeœniej.
-    AI_Output (self, other ,"DIA_Mil_BliznaDed_03_04"); //Je¿eli masz chêæ na wiêcej, to idŸ do Nowego Obozu i znajdŸ Kosê.
-    AI_Output (other, self ,"DIA_Mil_BliznaDed_15_05"); //Kosê? Czy on jest w to wszystko wmieszany? Dlaczego p³aszcz mia³ trafiæ do Blizny?
-    AI_Output (self, other ,"DIA_Mil_BliznaDed_03_06"); //Pytania póŸniej. Powtórzê, jeœli chcesz dorobiæ, to idŸ do Kosy. 
-    AI_Output (self, other ,"DIA_Mil_BliznaDed_03_07"); //No, ju¿. Nie zawracaj mi g³owy.
-    B_LogEntry                     (CH3_ScarMurder,"Dziwne... Mil zachowywa³ siê podejrzanie. Powiedzia³, ¿e je¿eli chcê dorobiæ muszê pogadaæ z Kos¹. Mo¿e od niego dowiem siê, dlaczego p³aszcz mia³ trafiæ do Blizny.");
-
-    B_GiveXP (200);
-    AI_StopProcessInfos	(self);
-	
-	var c_npc blizna; blizna = Hlp_GetNpc (EBR_101_Scar);
-	Npc_RemoveInvItems (blizna, EBR_ARMOR_H2, 1);
-	CreateInvItems 	(blizna, BLIZNA_ARMOR_H,1);
-	AI_EquipBestArmor (blizna);
-	Mdl_SetVisualBody (blizna,"hum_body_Naked0", 0, 1,"Hum_Head_FatBald", 79,  1, BLIZNA_ARMOR_H);
-};
 
 ///////////////////////////////////////////////////
 // Help Alex
