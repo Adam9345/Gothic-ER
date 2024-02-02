@@ -61,7 +61,7 @@ FUNC VOID DIA_Smith_Lehrer_Info()
 	AI_Output (self, other,"DIA_Smith_Lehrer_12_01"); //To zale¿y tylko od tego, co chcia³byœ wiedzieæ.
 	
     Info_ClearChoices(DIA_Smith_Lehrer);
-	Info_AddChoice(DIA_Smith_Lehrer,DIALOG_BACK,DIA_Wolf_Bow_BACK);
+	Info_AddChoice(DIA_Smith_Lehrer,DIALOG_BACK,DIA_Smith_Bow_BACK);
 	Info_AddChoice(DIA_Smith_Lehrer,B_BuildLearnString("£uki +1",B_GetLearnCostTalent(other,NPC_TALENT_Bow,1),0),Dia_Smith_Teach_Bow_1);
 	Info_AddChoice(DIA_Smith_Lehrer,B_BuildLearnString("£uki +5",B_GetLearnCostTalent(other,NPC_TALENT_Bow,5),0),Dia_Smith_Teach_Bow_5);
 
@@ -77,7 +77,7 @@ func void DIA_Smith_Lehrer_Schleichen()
 	{
 	if  (B_teachthieftalent(self,other,NPC_TALENT_SNEAK))
 	{		
-	    Info_AddChoice(DIA_Smith_Lehrer,Dialog_Back,DIA_Smith_Bow_BACK);
+	    //Info_AddChoice(DIA_Smith_Lehrer,Dialog_Back,DIA_Smith_Bow_BACK);
 		AI_Output (other, self,"DIA_Smith_Lehrer_Schleichen_15_00"); //Chcia³bym poruszaæ siê bezszelestnie.
 		AI_Output (self, other,"DIA_Smith_Lehrer_Schleichen_12_01"); //I s³usznie. Skradanie pozwoli ci dostaæ siê niepostrze¿enie do cudzych domów, albo po cichu zajœæ od ty³u przeciwnika.
 		AI_Output (self, other,"DIA_Smith_Lehrer_Schleichen_12_02"); //Chodz¹c na lekko ugiêtych nogach bêdziesz móg³ uwa¿niej obserwowaæ grunt, po którym st¹pasz, no i ³atwiej bêdzie ci balansowaæ cia³em.
@@ -85,6 +85,8 @@ func void DIA_Smith_Lehrer_Schleichen()
 		AI_Output (self, other,"DIA_Smith_Lehrer_Schleichen_12_04"); //Zapamiêtaj sobie dobrze co ci powiedzia³em, i przede wszystkim nie daj siê z³apaæ!
 		B_GiveInvItems (other,self, itminugget, 200);
 	};
+	} else {
+		AI_Output (self, other,"DIA_Smith_Lehrer_NOORE"); //Nie masz wystarczaj¹cej iloœci bry³ek rudy!
 	};	
 };
 
@@ -100,7 +102,7 @@ func void Dia_Smith_Teach_Bow_1()
 
 func void Dia_Smith_Teach_Bow_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_Bow,1,100);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_Bow,5,100);
 	Info_ClearChoices(DIA_Smith_Lehrer);
 	Info_AddChoice(DIA_Smith_Lehrer,Dialog_Back,DIA_Smith_Bow_BACK);
 	
