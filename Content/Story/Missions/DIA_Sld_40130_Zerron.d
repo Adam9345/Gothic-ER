@@ -55,6 +55,9 @@ FUNC VOID DIA_Zerron_HELLO1_Info()
     AI_Output (other, self ,"DIA_Zerron_HELLO1_15_06"); //No to do kolekcji mamy jeszcze wszechstronnego bibliofila...
     AI_Output (other, self ,"DIA_Zerron_HELLO1_15_07"); //A ty masz te¿ jakieœ ksi¹¿ki do odsprzedania?
     AI_Output (self, other ,"DIA_Zerron_HELLO1_03_08"); //Có¿... Te które posiadam przeczyta³em nie jeden raz wiêc czemu nie.
+
+	Log_CreateTopic ("Skup ksi¹¿ek",LOG_NOTE);
+	B_LogEntry		("Skup ksi¹¿ek","Zerron z Nowego Obozu mo¿e kupiæ ode mnie niektóre ksi¹¿ki");
 };
 //========================================
 //-----------------> Trade
