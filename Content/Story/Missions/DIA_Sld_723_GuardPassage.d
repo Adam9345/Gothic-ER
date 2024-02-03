@@ -35,6 +35,7 @@ func int Info_SLD_723_FirstWarn_Condition()
 	if ((hero.aivar[AIV_GUARDPASSAGE_STATUS]== AIV_GPS_BEGIN)
 	&&  (self.aivar[AIV_PASSGATE]			== FALSE		) 
 	&&	(Hlp_StrCmp(Npc_GetNearestWP(self), self.wp)		))
+	&& (Npc_GetDistToWP(hero, self.wp) <= 400)
 	{
 		return TRUE;
 	};
