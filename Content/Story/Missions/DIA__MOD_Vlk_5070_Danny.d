@@ -38,7 +38,9 @@ INSTANCE DIA_Vlk_5070_THANKS (C_INFO)
 
 FUNC INT DIA_Vlk_5070_THANKS_Condition()
 {	
-	return 1;
+	if (C_BodyStateContains(hero,BS_STAND)) {
+    	return 1;
+	};
 };
 
 FUNC VOID DIA_Vlk_5070_THANKS_Info()
