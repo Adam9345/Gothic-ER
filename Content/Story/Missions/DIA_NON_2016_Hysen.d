@@ -96,7 +96,7 @@ FUNC VOID DIA_Hysen_THEFT_MODE_Info()
 	else
 	{
 	AI_Output (self, other ,"DIA_Hysen_THEFT_MODE_03_05"); //Nie interesuje mnie to.
-	PrintScreen ("Ryzyk zbyt du¿e!",-1,-1,"font_old_10_white.tga",1);
+	PrintScreen ("Ryzyko zbyt du¿e!",-1,-1,"font_old_10_white.tga",1);
 	};
 	AI_StopProcessInfos	(self);
 };
