@@ -82,7 +82,7 @@ FUNC INT Info_Grd_2035_FirstWarn_Condition()
 	if ((hero.aivar[AIV_GUARDPASSAGE_STATUS]== AIV_GPS_BEGIN)
 	&&  (self.aivar[AIV_PASSGATE]			== FALSE		) 
 	&&	(Npc_GetAttitude(self,hero)			!= ATT_FRIENDLY	) 
-	&&	(Hlp_StrCmp(Npc_GetNearestWP(self), self.wp)		))
+	&&	(Hlp_StrCmp(Npc_GetNearestWP(self), "PATROL1")		))
 	&&  (Npc_GetTrueGuild(hero) != GIL_GRD) || (Npc_GetTrueGuild(hero) == GIL_NONE)
 	{
 		return TRUE;
