@@ -261,7 +261,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		  Npc_ExchangeRoutine(BAN_1612_Skaza,"BQ");
 		  Npc_ExchangeRoutine(STT_40143_Hargos,"CH4");
 		  Npc_ExchangeRoutine(ORG_40045_Grabarz,"camp");
-	      Wld_SendTrigger("EVT_OC_MAINGATE01_01");
+	      //Wld_SendTrigger("EVT_OC_MAINGATE01_01");
 		  
 		//////////////////////////////////////////////////////////
 		// ANULOWANE ZADANIA
