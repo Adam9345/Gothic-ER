@@ -193,7 +193,7 @@ if 	(Npc_KnowsInfo(hero,DIA_Gardist_BEER_ForSanias))
 FUNC VOID DIA_Gardist_BEER_ForSanias_lifehiis_Info()
 {
     AI_Output (other, self ,"DIA_Gardist_BEER_ForSanias_lifehiis_15_01"); //Masz te dwa piwa.
-		B_GiveInvItems (self,other, ItFoBeer, 2);
+	B_GiveInvItems (other,self, ItFoBeer, 2);
     AI_Output (self, other ,"DIA_Gardist_BEER_ForSanias_lifehiis_03_02"); //Dziêki. Wo³aj¹ na mnie jak wo³aj¹ bo nikt nie pamiêta mojego pierwotnego imienia. Mia³em niespe³na 4 lata gdy nasz domek w lesie siê zapali³. Ojciec zgin¹³ w po¿arze.
     AI_Output (self, other ,"DIA_Gardist_BEER_ForSanias_lifehiis_03_03"); //Matka b³¹ka³a siê ze mn¹ ociemnia³a z ¿alu. Dopad³y nas zg³odnia³e wilki. 
     AI_Output (other, self ,"DIA_Gardist_BEER_ForSanias_lifehiis_15_04"); //I jak to prze¿y³eœ?
