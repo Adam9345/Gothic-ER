@@ -89,7 +89,7 @@ FUNC VOID DIA_GRD_278_Gardist_LeaveMe1_Info()
 	AI_Output (self, other,"DIA_GRD_278_Gardist_LeaveMe1_01_01"); //Dracon to równy goœæ. Poza tym nie ma to jak dobre piwo. Szef siê chyba nie obrazi jak odejdziemy na chwilkê...
 	AI_GotoWP(GRD_40016_Straznik,"OM_CAVE1_81");
     AI_Output (other, self,"DIA_GRD_278_Gardist_LeaveMe1_15_02"); //Znajdziecie go nie daleko pieca...
-	AI_Output (self, other,"DIA_GRD_278_Gardist_LeaveMe1_01_03"); //Tak, tak, zjerzd¿aj ju¿!
+	AI_Output (self, other,"DIA_GRD_278_Gardist_LeaveMe1_01_03"); //Tak, tak, zje¿d¿aj ju¿!
 	AI_StopProcessInfos	(self);
 	
 	StrazCesara = TRUE;

@@ -226,7 +226,7 @@ FUNC VOID DIA_Norton_HELLO2_Info()
     AI_Output (self, other ,"DIA_Norton_HELLO2_03_06"); //Nie zgrywaj siê. Jeœli ON dowie siê o Othnieli to jestem skoñczony. Jego zemsta rêkami jego ludzi dopadnie mnie i ur¿nie ³eb.
     AI_Output (other, self ,"DIA_Norton_HELLO2_15_07"); //Kim jest ,,On”?
     AI_Output (self, other ,"DIA_Norton_HELLO2_03_08"); //Nigdy ci tego nie powiem. Choæbyœ da³ mi ca³¹ rudê Kolonii. Nie ma mowy.
-    AI_Output (self, other ,"DIA_Norton_HELLO2_03_09"); //A teraz zjerzd¿aj! Bo inaczej wypruje ci flaki!
+    AI_Output (self, other ,"DIA_Norton_HELLO2_03_09"); //A teraz zje¿d¿aj! Bo inaczej wypruje ci flaki!
 	B_LogEntry               (ZaDlugiJezor,"Norton grozi³ mi, ¿e mnie zabije jeœli pisnê s³ówko na temat œmierci ¿ony króla. Wydaje siê, ¿e sam z kolei boi siê kogoœ innego….");
     AI_StopProcessInfos	(self);
 };
