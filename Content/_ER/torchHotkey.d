@@ -149,5 +149,6 @@ func void TorchHotKey_Init() {
         init_fixtorchesafterload_always();
         init_fixtorchesafterload_gamestart();
         //4743104
+        init = 1;
     };
 };
