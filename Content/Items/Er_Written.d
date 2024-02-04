@@ -1165,7 +1165,7 @@ func void Use_Book_BartholoSafeConduct ()
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 					Doc_PrintLines	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "My sêdzia Trybuna³u Królewskiego, Honorius z rodu Neridio, poœwiadczamy swym imieniem, ¿e niniejszym Bartholo z domu Ergalla zdo³a³ sp³aciæ swe winy wzglêdem Królestwa Myrtany uiszczaj¹c stosowne zadoœæuczynienie na poczet skarbca królewskiego. Niniejszy dokument przywraca rzeczonemu skazañcowi status cz³owieka wolnego i koñczy okres odbywania orzeczonej uprzednio przez s¹d kary. "	);
+					Doc_PrintLines	( nDocID,  0, "My sêdziowie Trybuna³u Królewskiego, Honorius z rodu Neridio, poœwiadczamy swym imieniem, ¿e niniejszym Bartholo z domu Ergalla zdo³a³ sp³aciæ swe winy wzglêdem Królestwa Myrtany uiszczaj¹c stosowne zadoœæuczynienie na poczet skarbca królewskiego. Niniejszy dokument przywraca rzeczonemu skazañcowi status cz³owieka wolnego i koñczy okres odbywania orzeczonej uprzednio przez s¹d kary. "	);
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus				
 					Doc_Show		( nDocID );
 };
