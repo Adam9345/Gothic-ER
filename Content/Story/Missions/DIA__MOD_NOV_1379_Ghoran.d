@@ -364,6 +364,8 @@ FUNC VOID DIA_Ghoran_BG_GHOGET_Info()
 //-----------------> OPCJA KRADZIE¯Y
 //========================================
 
+var int Ghoran_Theft;
+
 INSTANCE DIA_Ghoran_PICKPOCKET(C_INFO)
 {
 	npc          = NOV_1379_Ghoran;
@@ -377,7 +379,7 @@ INSTANCE DIA_Ghoran_PICKPOCKET(C_INFO)
 FUNC INT DIA_Ghoran_PICKPOCKET_Condition()
 {
 	if (Npc_KnowsInfo (hero, DIA_Ghoran_Margunios))
-	&& !(Npc_KnowsInfo (hero, DIA_Ghoran_PICKPOCKET))
+    && (Ghoran_Theft == FALSE)
 	
     {
     return TRUE;
@@ -399,6 +401,7 @@ FUNC VOID DIA_Ghoran_PICKPOCKET_DoIt()
  	{
 	     B_GiveInvItems (self,hero, ItWr_GhoranWine, 1);
 		 B_GiveXP(20);
+         Ghoran_Theft = TRUE;
 		 AI_StopProcessInfos	(self);
 		 	 
 	}
