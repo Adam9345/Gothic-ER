@@ -601,8 +601,8 @@ const string NAME_Learn2h_2			=	"Broñ dwurêczna +5";
 
 const string NAME_LearnBow_1		=	"£uki +1";
 const string NAME_LearnBow_2		=	"£uki +5";
-const string NAME_LearnCrossbow_1	=	"Kusza +1";
-const string NAME_LearnCrossbow_2	=	"Kusza +5";
+const string NAME_LearnCrossbow_1	=	"Kusze +1";
+const string NAME_LearnCrossbow_2	=	"Kusze +5";
 
 const string NAME_LearnMage_1		=	"Pierwszy kr¹g magii";
 const string NAME_LearnMage_2		=	"Drugi kr¹g magii";

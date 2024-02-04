@@ -123,6 +123,9 @@ FUNC VOID DIA_Scorpio_REFUSETRAIN_Info()
 {
 	AI_Output (other, self,"DIA_Scorpio_REFUSETRAIN_15_00"); //Mo¿esz mnie nauczyæ lepiej walczyæ?
 	AI_Output (self, other,"DIA_Scorpio_REFUSETRAIN_13_01"); //Szkolê tylko Stra¿ników, wiêc dopóki Thorus nie przyjmie ciê w nasze szeregi, musisz poszukaæ sobie innego nauczyciela.
+
+	Log_CreateTopic   	(GE_TeacherOC,LOG_NOTE);
+	B_LogEntry			(GE_TeacherOC,"Skorpion mo¿e mnie nauczaæ, dopiero gdy zostanê stra¿nikiem.");
 	
 };
 
@@ -169,7 +172,7 @@ instance  GRD_205_Scorpio_CROSSBOW (C_INFO)
 	condition		= GRD_205_Scorpio_CROSSBOW_Condition;
 	information		= GRD_205_Scorpio_CROSSBOW_Info;
 	important		= 0;
-	permanent		= 1;
+	permanent		= 0;
 	description		= "Mo¿esz mnie czegoœ nauczyæ?"; 
 };
 
@@ -209,6 +212,7 @@ FUNC void  GRD_205_Scorpio_CROSSBOW_Info()
 //-----------------> CROSSBOW_OK
 //========================================
 
+/*
 INSTANCE DIA_Scorpio_CROSSBOW_OK (C_INFO)
 {
    npc          = GRD_205_Scorpio;
@@ -234,6 +238,7 @@ FUNC VOID DIA_Scorpio_CROSSBOW_OK_Info()
 
 	
 };
+*/
 //========================================
 //-----------------> CROSSBOW_OK
 //========================================
@@ -244,29 +249,43 @@ INSTANCE DIA_Scorpio_CROSSBOW_OKLEARN (C_INFO)
    nr           = 1;
    condition    = DIA_Scorpio_CROSSBOW_OKLEARN_Condition;
    information  = DIA_Scorpio_CROSSBOW_OKLEARN_Info;
-   permanent	= FALSE;
-   description	= "Naucz mnie jak pos³ugiwaæ siê kusz¹.";
+   permanent	= TRUE;
+   description	= "Naucz mnie jak pos³ugiwaæ siê kusz¹. (200 bry³ek rudy)";
 };
 
 FUNC INT DIA_Scorpio_CROSSBOW_OKLEARN_Condition()
 {
- if (Npc_KnowsInfo(hero,DIA_Scorpio_CROSSBOW_OK))
+ if  (Npc_KnowsInfo(hero, GRD_205_Scorpio_CROSSBOW))
 {
     return TRUE;
 };
 };
+
+var int payedForCrossbowLearnScorpio;
+
 FUNC VOID DIA_Scorpio_CROSSBOW_OKLEARN_Info()
 {
-    AI_Output (other, self ,"DIA_Scorpio_CROSSBOW_OK_15_01"); //Naucz mnie jak pos³ugiwaæ siê kusz¹.
-    AI_Output (self,  other,"DIA_Scorpio_CROSSBOW_OK_15_02"); //Dobra. Bierzmy siê do roboty.
-	
-    Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
-	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,DIALOG_BACK,DIA_Scorpio_CROSSBOW_BACK);
-	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_Scorpio_Teach_Crossbow_1);
-	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_Scorpio_Teach_Crossbow_5);
-	
-	
-	
+	if (Npc_HasItems(hero,  itminugget) >= 200 || payedForCrossbowLearnScorpio) {
+    	AI_Output (other, self ,"DIA_Scorpio_CROSSBOW_OK_15_01"); //Naucz mnie jak pos³ugiwaæ siê kusz¹.
+    	AI_Output (self,  other,"DIA_Scorpio_CROSSBOW_OK_15_02"); //Dobra. Bierzmy siê do roboty.
+
+		if (!payedForCrossbowLearnScorpio) {
+			B_GiveInvItems (other,self, itminugget, 200);
+			payedForCrossbowLearnScorpio = TRUE;
+		};
+
+		Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
+		Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,DIALOG_BACK,DIA_Scorpio_CROSSBOW_BACK);
+		Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_Scorpio_Teach_Crossbow_1);
+		Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_Scorpio_Teach_Crossbow_5);
+
+		DIA_Scorpio_CROSSBOW_OKLEARN.description = "Naucz mnie jak pos³ugiwaæ siê kusz¹.";	
+
+		
+	} else {
+		PrintS_Ext("Nie masz wystarczaj¹cej iloœci bry³ek rudy", COL_RED);
+		Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
+	};	
 };
 
 
