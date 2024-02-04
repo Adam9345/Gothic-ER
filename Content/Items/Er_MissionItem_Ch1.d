@@ -3142,7 +3142,7 @@ INSTANCE ItWr_LSZ_ZiggyToMud (C_Item)
 	visual 				=	"ItWr_Scroll_01.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]		=  LSZ_ZiggyToMud;
-	scemeName		=	"MAPSEALED";
+	scemeName		=	"MAP";
 	description		=  name;
 	TEXT[1]				= "Od Ziggiego dla niejakieo";
 	TEXT[2]             = "Adolfa...";
