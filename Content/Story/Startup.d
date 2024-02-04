@@ -23,6 +23,25 @@ print ("aivar INVINCIBLE fixed!");
 //func void INIT_GLOBAL()
 //{
 
+const int _mod_init = 0;
+
+func VOID INIT_GLOBAL() {
+	MEM_InitAll();
+	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
+
+	//G12_OnDmg_Event_Init ();
+	if (!_mod_init) {
+		Init_FastTravelMap_HK();
+		AF_ItemPreview_Init();
+		Init_CraftingSystem();
+		TorchHotKey_Init();
+		G1_EnhancedTrading_Init();
+		GFA_Init(GFA_ALL);
+		G1_EnhancedPickLocking_Init();
+
+		_mod_init = 1;
+	};
+};
 
 
 //};
@@ -3016,16 +3035,7 @@ FUNC VOID INIT_WORLD ()
 	
 	//LeGo_Init ((LeGo_All ) | LeGo_HookEngine | LeGo_View | LeGo_FrameFunctions | LeGo_Gamestate | LeGo_Render | LeGo_Buffs); 
 
-	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
-
-	//G12_OnDmg_Event_Init ();
-	Init_FastTravelMap_HK();
-	AF_ItemPreview_Init();
-	Init_CraftingSystem();
-	TorchHotKey_Init();
-	G1_EnhancedTrading_Init();
-	GFA_Init(GFA_ALL);
-	G1_EnhancedPickLocking_Init();
+	INIT_GLOBAL();
 	FF_ApplyOnce(Mod_Menu_HSkills);
 	FF_ApplyOnce(Mod_FixAivarHero);
 	FF_ApplyOnceExtGT(WYZWALACZ, 2000, -1);
@@ -3145,7 +3155,7 @@ FUNC VOID INIT_ORCGRAVEYARD ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	//MEM_InitAll();
+	INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 	//INIT_GLOBAL();
 };
@@ -3345,7 +3355,7 @@ FUNC VOID INIT_ORCTEMPEL ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	//MEM_InitAll();
+	INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 	//INIT_GLOBAL();
 };
@@ -3505,7 +3515,7 @@ FUNC VOID INIT_OLDMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	//MEM_InitAll();
+	INIT_GLOBAL(); 
 //	INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 };		
@@ -3611,7 +3621,7 @@ FUNC VOID INIT_ABANDONEDMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	//MEM_InitAll();
+	INIT_GLOBAL(); 
 //	INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 };
@@ -3694,7 +3704,8 @@ FUNC VOID INIT_FREEMINE ()
 	//-------- Attitüden initialisieren --------
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
-	//MEM_InitAll();
+	
+	INIT_GLOBAL(); 
 	//INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 };
