@@ -242,7 +242,7 @@ instance  DIA_Rodriguez_Consecration (C_INFO)
 
 FUNC int  DIA_Rodriguez_Consecration_Condition()
 {
-	if	(Npc_GetTrueGuild(hero) == GIL_KDF) && Npc_KnowsInfo (hero, DIA_Rodriguez_FirstStaff) if (RodriguezConsecratedAll == FALSE)
+	if	(Npc_GetTrueGuild(hero) == GIL_KDF) && Npc_KnowsInfo (hero, DIA_Rodriguez_FirstStaff) && (RodriguezConsecratedAll == FALSE)
 	{
 		return TRUE;
 	};
