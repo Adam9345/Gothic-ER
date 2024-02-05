@@ -2214,7 +2214,6 @@ FUNC VOID DIA_PC_Fighter_GOWH_PZ_Info()
     AI_Output (other, self ,"DIA_PC_Fighter_GOWH_PZ_15_02"); //Tak chodŸ z nami.
     AI_Output (self, other ,"DIA_PC_Fighter_GOWH_PZ_03_03"); //W porz¹dku.
 	
-	
 	Info_ClearChoices	(DIA_PC_Fighter_GOWH_PZ);
 	Info_AddChoice		(DIA_PC_Fighter_GOWH_PZ, "(Szybka podró¿)", DIA_Gorn_PZGS);
 	
@@ -2227,6 +2226,8 @@ FUNC VOID DIA_Gorn_PZGS()
 	Wld_PlayEffect("SLOW_BLITZ_FADE_IN_SLOW_OUT",hero,hero,0,0,0,FALSE);
     Npc_ExchangeRoutine(PC_Fighter,"PzFoll");
    
+	self.aivar[AIV_PARTYMEMBER] = TRUE;
+
     AI_StopProcessInfos	(hero);
     AI_StopProcessInfos	(self);
 	AI_Teleport(PC_Fighter,"OW_PATH_039");
@@ -2277,6 +2278,7 @@ FUNC VOID DIA_PC_Fighter_PZ_ENDEG_Info()
     AI_Output (self, other ,"DIA_PC_Fighter_PZ_ENDEG_03_05"); //Nie omieszkam. I wracam do obozu. Trzymaj siê stary.
     AI_Output (other, self ,"DIA_PC_Fighter_PZ_ENDEG_15_06"); //Ty równie¿.
 	 Npc_ExchangeRoutine(PC_Fighter,"Start");
+	 self.aivar[AIV_PARTYMEMBER] = FALSE;
     AI_StopProcessInfos	(self);
 };
 
