@@ -5,7 +5,7 @@ instance NON_40133_Rabus (Npc_Default)
 
 //----------Info ogolne----------
 
-name = "Rabu≈õ";
+name = "Rabuú";
 Npctype = Npctype_Main;
 guild = GIL_ORG;
 level = 15;
