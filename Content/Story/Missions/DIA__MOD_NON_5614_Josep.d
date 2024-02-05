@@ -236,7 +236,7 @@ INSTANCE DIA_Josep_LeftRiceLord (C_INFO)
    condition    = DIA_Josep_LeftRiceLord_Condition;
    information  = DIA_Josep_LeftRiceLord_Info;
    permanent	= FALSE;
-   description	= "Zmywajmy siê z t¹d.";
+   description	= "Zmywajmy siê st¹d.";
 };
 
 FUNC INT DIA_Josep_LeftRiceLord_Condition()

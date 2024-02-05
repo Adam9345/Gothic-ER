@@ -274,6 +274,7 @@ FUNC VOID DIA_Outlam_CAVALORN_TEST_Info()
 	AI_Output (self, other ,"DIA_Outlam_CAVALORN_TEST_03_08"); //Miêso dostarczamy Silasowi do karczmy na jeziorze.
 	AI_Output (other, self ,"DIA_Outlam_CAVALORN_TEST_15_09"); //Kto odpowiada za transport?
 	AI_Output (self, other ,"DIA_Outlam_CAVALORN_TEST_03_10"); //Cyrus. Ka¿dego dnia wysy³a kogoœ z miêsem.
+	knowsLeather = true;
 	B_LogEntry   (CH1_TestOC,"Od Outlama dowiedzia³em siê co nieco o obozie najemników-myœliwych. Podobno powsta³ niedawno za zgod¹ Lee. Najemnicy nie chcieli siedzieæ bezczynie, wiêc postanowili zaj¹æ siê czymœ po¿ytecznym. Poluj¹ g³ównie na wilki, œcierwojady i dziki. Zdobyte miêso transportowane jest do karczmy na jeziorze.");
 };
 
