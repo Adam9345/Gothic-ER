@@ -88,11 +88,9 @@ FUNC VOID DIA_Rodriguez_ImportantQuest_Info()
     AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_09"); //Niestety nie mogê ci daæ ¿adnej broni. Powinieneœ j¹ raczej kupiæ u kowala.
     AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_10"); //Myœlê, ¿e te zwoje wystarcz¹.
 	AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_11"); //Powodzenia! Niech Innos ma was w opiece!
-    CreateInvItems (self, ItArScrollFirestorm, 3);
+  
     B_GiveInvItems (self, other, ItArScrollFirestorm, 3);
-    CreateInvItems (self, ItArScrollFireball, 5);
     B_GiveInvItems (self, other, ItArScrollFireball, 5);
-    CreateInvItems (self, ItArScrollHeal, 2);
     B_GiveInvItems (self, other, ItArScrollHeal, 2);
 
     B_LogEntry                     (CH3_QuestForHeavyArmor,"Otrzyma³em od Rodrigueza sporo przydatnych zwojów. Razem z oddzia³em Moroka mamy zniszczyæ wszystko, co znajduje siê w œwi¹tyni.");
@@ -188,8 +186,8 @@ FUNC VOID  DIA_Rodriguez_FirstStaff_Info()
 	AI_Output (other, self,"DIA_Rodriguez_FirstStaff_15_00"); //Potrzebujê kostura. Corristo przyj¹³ mnie w poczet Magów Ognia.
 	AI_Output (self, other,"DIA_Rodriguez_FirstStaff_12_01"); //Dokona³eœ wielkich czynów i zas³ugujesz na miano Maga. Oto twój pierwszy kostur. Jeœli bêdziesz chcia³, za drobn¹ op³at¹ przyst¹pimy do konsekracji. 
 	AI_Output (self, other,"DIA_Rodriguez_FirstStaff_12_02"); //Konsekracja pozwoli na wydobycie mocy z kryszta³u osadzonego w broni. Bêdzie on razi³ p³omieniami Innosa twoich wrogów. 
-	CreateInvItems (self, ItMw_2H_Staff_FireMage_01,1);
 	B_GiveInvItems (self,other, ItMw_2H_Staff_FireMage_01,1);
+
 	Log_CreateTopic	(OtherInfos,	LOG_NOTE);
 	B_LogEntry		(OtherInfos,	"Mag Ognia Rodriguez mo¿e konsekrowaæ mój kostur, oraz wydaæ mi lepszy, gdy bêdê gotów.");
 };
@@ -231,138 +229,134 @@ FUNC VOID  DIA_Rodriguez_SecondStaff_Info()
 //***********************************************
 //				Konsekracja
 //***********************************************
-
-instance  DIA_Rodriguez_Konsekracja (C_INFO)
+var int RodriguezConsecratedAll;
+instance  DIA_Rodriguez_Consecration (C_INFO)
 {
 	npc			=  KDF_400_Rodriguez;
 	nr			=  1;
-	condition	=  DIA_Rodriguez_Konsekracja_Condition;
-	information	=  DIA_Rodriguez_Konsekracja_Info;
+	condition	=  DIA_Rodriguez_Consecration_Condition;
+	information	=  DIA_Rodriguez_Consecration_Info;
 	permanent	=  1;
 	description =  "Konsekrujmy mój kostur.";
 };                       
 
-FUNC int  DIA_Rodriguez_Konsekracja_Condition()
+FUNC int  DIA_Rodriguez_Consecration_Condition()
 {
-	if	(Npc_GetTrueGuild(hero) == GIL_KDF) && Npc_KnowsInfo (hero, DIA_Rodriguez_FirstStaff)
+	if	(Npc_GetTrueGuild(hero) == GIL_KDF) && Npc_KnowsInfo (hero, DIA_Rodriguez_FirstStaff) if (RodriguezConsecratedAll == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-FUNC VOID  DIA_Rodriguez_Konsekracja_Info()
-{
-	AI_Output (other, self,"DIA_Rodriguez_Konsekracja_15_00"); //Konsekrujmy mój kostur.
-	AI_Output (self, other,"DIA_Rodriguez_Konsekracja_12_01"); //Pamiêtaj, ¿e po konsekracji wzrosn¹ wymagania kostura. Bêdziesz musia³ posiadaæ wiêksz¹ moc magiczn¹ i si³ê.
-	Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
+FUNC VOID  DIA_Rodriguez_Consecration_Info()
+{  
+	AI_Output (other, self,"DIA_Rodriguez_Consecration_15_00"); //Konsekrujmy mój kostur.
+	AI_Output (self, other,"DIA_Rodriguez_Consecration_12_01"); //Pamiêtaj, ¿e po konsekracji wzrosn¹ wymagania kostura. Bêdziesz musia³ posiadaæ wiêksz¹ moc magiczn¹ i si³ê.
+	Info_ClearChoices	(DIA_Rodriguez_Consecration);
 	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_01)
 	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj podstawowy kostur (500 bry³ek rudy, wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)", DIA_Rodriguez_Konsekracja_01); 
+    Info_AddChoice		(DIA_Rodriguez_Consecration, "Konsekruj podstawowy kostur (500 bry³ek rudy)", DIA_Rodriguez_U1); 
+	AFIP_SetChoiceItem  (DIA_Rodriguez_U1,ItMw_2H_Staff_FireMage_02);
+	// wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)
 	};
 	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_03)
 	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Wzmocnij kostur Maga Ognia(750 bry³ek rudy, wzrost wym. mana: 50, si³a: 35 obra¿enia: 55 + 5 od ognia)", DIA_Rodriguez_Konsekracja_02);
+    Info_AddChoice		(DIA_Rodriguez_Consecration, "Wzmocnij kostur Maga Ognia(750 bry³ek rudy)", DIA_Rodriguez_U2);
+	AFIP_SetChoiceItem  (DIA_Rodriguez_U2,ItMw_2H_Staff_FireMage_04);
+	//, wzrost wym. mana: 50, si³a: 35 obra¿enia: 55 + 5 od ognia)
 	};
 	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_04)
 	{
-	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
+	Info_AddChoice		(DIA_Rodriguez_Consecration, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy)", DIA_Rodriguez_U3);
+	AFIP_SetChoiceItem  (DIA_Rodriguez_U3,ItMw_2H_Staff_FireMage_05);
+	//, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)
 	};
+	//Info_AddChoice		(DIA_Rodriguez_Consecration, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy)", DIA_Rodriguez_U3);
+	
+	
 };
 
-func void DIA_Rodriguez_Konsekracja_01 ()
+func void DIA_Rodriguez_U1 ()
 {
+var int AFIP_ShowItem;
 if (Npc_HasItems(other,itminugget) >= 500)
 {
-B_GiveInvItems (hero, self, ItMw_2H_Staff_FireMage_01,1);
+Npc_RemoveInvItem (hero,	ItMw_2H_Staff_FireMage_01);
 B_GiveInvItems (hero, self, itminugget,500);
-CreateInvItems (self, ItMw_2H_Staff_FireMage_02,1);
 B_GiveInvItems (self, hero, ItMw_2H_Staff_FireMage_02,1);
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon1"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon2"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
+
+AI_Output (self, other,"DIA_Rodriguez_U1_12_01"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
+AI_Output (self, other,"DIA_Rodriguez_U1_12_02"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
 }
 else
 {
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon_NoOre"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
-};
-Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_01)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj podstawowy kostur (500 bry³ek rudy, wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)", DIA_Rodriguez_Konsekracja_01); 
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_03)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Wzmocnij kostur Maga Ognia(750 bry³ek rudy, wzrost wym. mana: 50, si³a: 35 obra¿enia: 55 + 5 od ognia)", DIA_Rodriguez_Konsekracja_02);
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_04)
-	{
-	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
-	};
+AI_Output (self, other,"DIA_Rodriguez_U1_12_03"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
 };
 
-func void DIA_Rodriguez_Konsekracja_02 ()
+Info_ClearChoices	(DIA_Rodriguez_Consecration);
+};
+
+
+
+
+
+
+func void DIA_Rodriguez_U2 ()
 {
+var int AFIP_ShowItem;
 if (Npc_HasItems(other,itminugget) >= 750)
 {
-B_GiveInvItems (hero, self, ItMw_2H_Staff_FireMage_03,1);
+Npc_RemoveInvItem	(hero,	ItMw_2H_Staff_FireMage_03);
 B_GiveInvItems (hero, self, itminugget,750);
-CreateInvItems (self, ItMw_2H_Staff_FireMage_04,1);
 B_GiveInvItems (self, hero, ItMw_2H_Staff_FireMage_04,1);
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon1"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon2"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
+
+AI_Output (self, other,"DIA_Rodriguez_U2_12_01"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
+AI_Output (self, other,"DIA_Rodriguez_U2_12_02"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
 }
 else
 {
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon_NoOre"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
-};
-	Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
-	Info_AddChoice		(DIA_Rodriguez_Konsekracja, DIALOG_BACK, DIA_Rodriguez_Konsekracja_01_Back); 
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_01)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj podstawowy kostur (500 bry³ek rudy, wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)", DIA_Rodriguez_Konsekracja_01); 
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_03)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Wzmocnij kostur Maga Ognia(750 bry³ek rudy, wzrost wym. mana: 50, si³a: 35 obra¿enia: 55 + 5 od ognia)", DIA_Rodriguez_Konsekracja_02);
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_04)
-	{
-	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
-	};
-};
-func void DIA_Rodriguez_Konsekracja_01_Back ()
-{
-	Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
+AI_Output (self, other,"DIA_Rodriguez_U2_12_03"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
 };
 
-func void DIA_Rodriguez_Konsekracja_03 ()
+Info_ClearChoices	(DIA_Rodriguez_Consecration);
+};
+func void DIA_Rodriguez_Consecration_U2_Back ()
 {
+	Info_ClearChoices	(DIA_Rodriguez_Consecration);
+};
+
+
+
+
+
+
+
+func void DIA_Rodriguez_U3 ()
+{
+var int AFIP_ShowItem;
 if (Npc_HasItems(other,itminugget) >= 1500)
 {
-B_GiveInvItems (hero, self, ItMw_2H_Staff_FireMage_04,1);
+
+Npc_RemoveInvItem	(hero,	ItMw_2H_Staff_FireMage_04);
 B_GiveInvItems (hero, self, itminugget,1500);
-CreateInvItems (self, ItMw_2H_Staff_FireMage_05,1);
 B_GiveInvItems (self, hero, ItMw_2H_Staff_FireMage_05,1);
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon1"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon2"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
+RodriguezConsecratedAll = TRUE;
+AI_Output (self, other,"DIA_Rodriguez_U3_12_01"); //Innosie, przelej czêœæ swej boskiej mocy do tego magicznego kryszta³u. Niech twe p³omienie ra¿¹ twoich wrogów.
+AI_Output (self, other,"DIA_Rodriguez_U3_12_02"); //Niech ten Mag kroczy œcie¿k¹ twojego œwiat³a i niechaj spogl¹daj¹c na twój œwiêty kostur zawsze wie, jak¹ decyzjê podj¹æ. 
 }
 else
 {
-AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon_NoOre"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
+AI_Output (self, other,"DIA_Rodriguez_U3_12_03"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
 };
-Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_01)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj podstawowy kostur (500 bry³ek rudy, wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)", DIA_Rodriguez_Konsekracja_01); 
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_03)
-	{
-    Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Wzmocnij kostur Maga Ognia(750 bry³ek rudy, wzrost wym. mana: 50, si³a: 35 obra¿enia: 55 + 5 od ognia)", DIA_Rodriguez_Konsekracja_02);
-	};
-	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_04)
-	{
-	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
-	};
+
+Info_ClearChoices	(DIA_Rodriguez_Consecration);
 };
+
+
+
+
+
+
 
 instance dia_rodriguez_pickpocket(c_info) {
     npc = kdf_400_rodriguez;
