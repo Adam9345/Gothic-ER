@@ -146,7 +146,7 @@ FUNC VOID DIA_Foster_PZ_WRITTEN_Info()
     AI_Output (other, self ,"DIA_Foster_PZ_WRITTEN_15_01"); //Ciekawe pismo.
     AI_Output (self, other ,"DIA_Foster_PZ_WRITTEN_03_02"); //Too...
     AI_Output (other, self ,"DIA_Foster_PZ_WRITTEN_15_03"); //Jesteœ cz³onkiem jakiejœ bandy?
-    AI_Output (self, other ,"DIA_Foster_PZ_WRITTEN_03_04"); //To nie tak....By³em nim ale ju¿ nie jestem. Nie mog³em tak okradaæ ludzi z, którymi ca³y czas przebywam. 
+    AI_Output (self, other ,"DIA_Foster_PZ_WRITTEN_03_04"); //To nie tak... By³em nim, ale ju¿ nie jestem. Nie mog³em tak okradaæ ludzi, z którymi ca³y czas przebywam. 
     AI_Output (other, self ,"DIA_Foster_PZ_WRITTEN_15_05"); //Przecie¿ kradzie¿e nadal maj¹ miejsce.
     AI_Output (self, other ,"DIA_Foster_PZ_WRITTEN_03_06"); //Ostatniej kradzie¿y dokona³em kilka dni temu ale postanowi³em, ¿e bêdzie ostatnia. Nie przespa³em paru nocy. Potem jeszcze dosta³em to pismo...
     AI_Output (other, self ,"DIA_Foster_PZ_WRITTEN_15_07"); //Wydano na ciebie wyrok.
