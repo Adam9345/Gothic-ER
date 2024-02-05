@@ -1,7 +1,12 @@
 
 func void Mod_Menu_HSkills ()
 {
-if (MEM_KeyState (KEY_SEMICOLON) == KEY_PRESSED) && (InfoManager_HasFinished ())
+
+	if(!mem_gothoptexists("KEYS", "menuHunterSkills")) {
+        mem_setkey("menuHunterSkills", key_semicolon);
+    };
+
+if (MEM_KeyPressed(MEM_GetKey("menuHunterSkills"))) && (InfoManager_HasFinished ())
 {
   UseFunc1Skills ();
 //MEM_Game.singleStep = true;
