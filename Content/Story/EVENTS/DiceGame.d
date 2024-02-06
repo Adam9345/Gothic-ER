@@ -413,7 +413,7 @@ func void pc_playdicegame_throwbones_info() {
     npcfourcount = 0;
     npcfivecount = 0;
     npcsixcount = 0;
-    FF_ApplyOnceExtGT(throwDicesWithDelay, 2000, 1);
+    FF_ApplyOnceExtGT(throwDicesWithDelay, 0, 1);
     startdicegamematch = 3;
 };
 
@@ -757,8 +757,8 @@ func void rethrowDiceNPCWithDelay() {
 
 func void pc_playdicegame_rethrowbones_dorethrow_info() {
     snd_play("ThrowDices");
-    FF_ApplyOnceExtGT(rethrowDicePlayerWithDelay, 2000, 1);
-    FF_ApplyOnceExtGT(rethrowDiceNPCWithDelay, 2000, 1);
+    FF_ApplyOnceExtGT(rethrowDicePlayerWithDelay, 0, 1);
+    FF_ApplyOnceExtGT(rethrowDiceNPCWithDelay, 0, 1);
     canrethrow = false;
     startdicegamematch = 4;
 };
