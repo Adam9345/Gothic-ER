@@ -433,7 +433,7 @@ FUNC INT DIA_Talas_FORTUNO_NK_Condition()
 FUNC VOID DIA_Talas_FORTUNO_NK_Info()
 {
     AI_Output (other, self ,"DIA_Talas_FORTUNO_NK_15_01"); //Co tu robisz? Gdzie jest Fortuno?
-    AI_Output (self, other ,"DIA_Talas_FORTUNO_NK_03_02"); //Fortuno zagin¹³ kilka nocy temu. Nikt nie jest w stanie wyjaœniæ co siê z nim sta³o. Po prostu rozp³yn¹³ siê w powietrzu.
+    AI_Output (self, other ,"DIA_Talas_FORTUNO_NK_03_02"); //Fortuno zagin¹³ kilka dni temu. Nikt nie jest w stanie wyjaœniæ co siê z nim sta³o. Po prostu rozp³yn¹³ siê w powietrzu.
     AI_Output (self, other ,"DIA_Talas_FORTUNO_NK_03_03"); //Obj¹³em jego funkcje. Baal Orun poprosi³ mnie osobiœcie, bym rozpocz¹³ handel wytwarzanym przez Nowicjuszy zielem.
     AI_Output (self, other ,"DIA_Talas_FORTUNO_NK_03_04"); //Je¿eli chcesz coœ kupiæ, to wal do mnie œmia³o. Chêtnie te¿ skupiê zio³a i owoce.
 Log_CreateTopic	(GE_TraderPSI,	LOG_NOTE);
@@ -544,10 +544,10 @@ FUNC VOID DIA_Talas_ABOUT_STEH_Info()
     AI_Output (other, self ,"DIA_Talas_ABOUT_STEH_15_11"); //Doœæ sprytne. Zada³ sobie sporo trudu. Mam jeszcze pytanie... Czy nikt nie próbowa³ go wykiwaæ?
 	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_12"); //Ale¿ sk¹d! Ludzie siê go boj¹. W koñcu posiada magiczne amulety! To wszystko jest cholernie zagmatwane. 
 	AI_Output (other, self ,"DIA_Talas_ABOUT_STEH_15_13"); //Có¿, bêdê musia³ coœ u niego kupiæ...
-	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_14"); //Nie! Nie uda ci siê. Zapewne ju¿ wie, ¿e siê na niego czaisz. Kilka dni temu zaprzesta³ handlowaæ i nie odpowiada na proœby Nowicjuszy. 
+	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_14"); //Nie! Nie uda Ci siê. Zapewne ju¿ wie, ¿e siê na niego czaisz. Kilka dni temu zaprzesta³ handlowaæ i nie odpowiada na proœby Nowicjuszy. 
 	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_15"); //Albo mu siê skoñczy³y b³yskotki, albo nas zwietrzy³. Mam nadziejê, ¿e nie trafi na moj¹ osobê.
 	
-	B_LogEntry               (CH3_StrangeResearcher,"Talas opowiedzia³ mi o tym jak przebiega tajemniczy proceder sprzeda¿y artefaktów. Wszystko odbywa siê bez kontaktu z podejrzanym handlarzem. Wiem tylko, ¿e zostawia on swoje towary na podeœcie za chat¹ Nyrasa i odbiera stamt¹d nale¿noœci. Pogadam z okolicznymi mieszkañcami i mo¿e uda mi siê coœ z nich wyci¹gn¹æ.");
+	B_LogEntry               (CH3_StrangeResearcher,"Talas opowiedzia³ mi o tym, jak przebiega tajemniczy proceder sprzeda¿y artefaktów. Wszystko odbywa siê bez kontaktu z podejrzanym handlarzem. Wiem tylko, ¿e zostawia on swoje towary na podeœcie za chat¹ Nyrasa i odbiera stamt¹d nale¿noœci. Pogadam z okolicznymi mieszkañcami i mo¿e uda mi siê coœ z nich wyci¹gn¹æ.");
 };
 
 //========================================
@@ -611,7 +611,7 @@ FUNC VOID DIA_Talas_KH_Tirutt_Info()
     AI_Output (other, self ,"DIA_Talas_KH_Tirutt_15_03"); //Wiêc nim zgin¹³ zapewne zd¹¿yliœcie zamieniæ s³owo na temat tego i owego.
     AI_Output (self, other ,"DIA_Talas_KH_Tirutt_03_04"); //Do czego zmierzasz?
     AI_Output (other, self ,"DIA_Talas_KH_Tirutt_15_05"); //Korona Hrodgira. Mówi ci to coœ?
-    AI_Output (self, other ,"DIA_Talas_KH_Tirutt_03_06"); //Mówi. Wiem gdzie ona siê znajduje. 
+    AI_Output (self, other ,"DIA_Talas_KH_Tirutt_03_06"); //Mówi. Wiem, gdzie ona siê znajduje. 
     AI_Output (other, self ,"DIA_Talas_KH_Tirutt_15_07"); //Co takiego?
     AI_Output (self, other ,"DIA_Talas_KH_Tirutt_03_08"); //Ale nie przyda ci siê to za wiele. Mia³em jeszcze jednego kumpla, który o niej wiedzia³. Poszed³ tam i nigdy nie wróci³.
     AI_Output (self, other ,"DIA_Talas_KH_Tirutt_03_09"); //Skoñczy³ w brzuchu wielkiego zêbacza, który tam grasuje.
@@ -661,7 +661,7 @@ FUNC VOID DIA_Talas_KH_Path_Info()
     AI_Output (self, other ,"DIA_Talas_KH_Path_03_02"); //¯e co? Chyba sobie ¿artujesz...
     AI_Output (other, self ,"DIA_Talas_KH_Path_15_03"); //Dostaniesz 200 sztuk rudy i wsparcie moje i Connora. 
     AI_Output (self, other ,"DIA_Talas_KH_Path_03_04"); //Nie ma mowy...
-    AI_Output (other, self ,"DIA_Talas_KH_Path_15_05"); //I kling¹ po ¿ebrach jeœli siê nie zgodzisz!
+    AI_Output (other, self ,"DIA_Talas_KH_Path_15_05"); //I kling¹ po ¿ebrach, jeœli siê nie zgodzisz!
     ConnorAngry();
     AI_Output (self, other ,"DIA_Talas_KH_Path_03_06"); //Dobra dobra. Pójdê z wami. 
     AI_Output (other, self ,"DIA_Talas_KH_Path_15_07"); //I w³aœnie to chcia³em us³yszeæ.
