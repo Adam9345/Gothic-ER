@@ -40,21 +40,8 @@ instance VLK_538_Huno (Npc_Default)
    B_SetFightSkills(self,30);
 	//-------- inventory --------                                    
 	EquipItem 		(self,	ItMw_1H_Sledgehammer_01);
-    CreateInvItems	(self,	ItMw_1H_Sledgehammer_01,1);
-	CreateInvItems	(self,	ItMiSwordRaw,		10);
-	CreateInvItems	(self,	ItMiSwordRawHot,	5);
-	CreateInvItems	(self,	ItMiSwordBladeHot,	5);
-	CreateInvItems	(self,	ItMiSwordBlade,		5);
-	CreateInvItems	(self,	ItMi_IronNugget,   10);
-	CreateInvItems	(self,	Gold01,			    5);
-	CreateInvItems	(self,	Pr_Wegiel,		    5);
-	CreateInvItems	(self,	Pr_SztabkaCiemnejStali,	 2);
-	CreateInvItems	(self,	Pr_SztabkaStali,		5);
-	CreateInvItems	(self,	Pr_SztabkaMagicznejStali,1);
-	
-	CreateInvItems	(self,	Plan_Miecz1H11,		1);
-	CreateInvItems	(self,	Plan1b,		1);
-//	CreateInvItems	(self,	ItRe_ArmorBelt,		1);
+
+
 	
 	//-------------Daily Routine-------------
 	daily_routine = Rtn_start_538;

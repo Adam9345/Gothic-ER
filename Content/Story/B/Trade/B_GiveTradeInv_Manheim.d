@@ -15,6 +15,7 @@ CreateInvItems  (self,ItFoBooze,5);
 CreateInvItems  (npc,ItRe_BerrysDrink,1);
 CreateInvItems  (npc,ItRe_Jam,1);
 CreateInvItems  (self,ItFo_Kompot_01,5);
+CreateInvItems  (self,ItMiScoop,1);
 };
 
 func void B_GiveManheimCH2 ()

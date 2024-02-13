@@ -249,7 +249,7 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
     AI_Output (self, other ,"DIA_Cord_IHaveStone_03_02"); //Co wydarzy³o siê w œrodku?
     AI_Output (other, self ,"DIA_Cord_IHaveStone_03_03"); //Spotka³em ledwie ¿ywego Kopacza. Opowiedzia³ mi o artefakcie, który rzekomo ma wp³yw na o¿ywieñców. 
 	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_04"); //W posiadaniu artefaktu by³ pewien nekromanta. Zabi³em go i zabra³em kamieñ.
-    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_05"); //Nekromanta? Cholera jasna, uda³o ci siê pokonaæ tego skurwiela? 
+    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_05"); //Nekromanta? I uda³o Ci siê go pokonaæ?
 	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_06"); //Jestem pod wra¿eniem. Zawsze trzymam siê z dala od mrocznej magii. 
 	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_07"); //Potrzebujê chwili odpoczynku.
 	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_08"); //Nic dziwnego! Nale¿y ci siê jak psu buda! Wracaj do Obozu, a my sprawdzimy czy nie krêci siê tu ¿aden œmieæ. 
@@ -308,7 +308,7 @@ FUNC INT DIA_Cord_CALL_OF_DUTY_Condition()
 FUNC VOID DIA_Cord_CALL_OF_DUTY_Info()
 {
     AI_Output (other, self ,"DIA_Cord_CALL_OF_DUTY_15_01"); //Przysy³a mnie Lee. Twoja stra¿ ma zaj¹æ siê obron¹ Wolnej Kopalni.
-    AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_02"); //W porz¹dku i tak mieliœmy siê tam udaæ.
+    AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_02"); //W porz¹dku, i tak mieliœmy siê tam udaæ.
     AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_03"); //Gorn jednak by³ tak nadgorliwy, ¿e postanowi³ sam zaj¹æ siê Stra¿nikami.
     AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_04"); //Natychmiast go zmienimy.
     B_LogEntry                     (CH5_ObronaWK,"Przekaza³em wiadomoœæ od Lee Cordowi.");
@@ -414,7 +414,7 @@ FUNC INT DIA_Cord_HELLO1233S_Condition()
 FUNC VOID DIA_Cord_HELLO1233S_Info()
 {
     AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_00");   //Odzyska³em zrabowane towary.
-    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Bardzo dobrze m³ody. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k.
+    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Bardzo dobrze, m³ody. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k.
     AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_02");   //Do tego mamy ich ³up.
     AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_03");   //Zgoda. Wracajmy.
     B_LogEntry(Obozowisko,"Rozmawia³em z Cordem i zameldowa³em o znalezieniu skradzionych rzeczy. Teraz pora na powrót do obóz i z³o¿enie koñcowego raportu Lee.");
@@ -453,10 +453,10 @@ FUNC VOID DIA_Cord_WOJOWNIK_Info()
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_03_00");    //Gratuluje, jesteœ teraz jednym z nas.
     AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_01");    //Zgadza siê.
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_02");    //Wiem, ¿e ju¿ wiele razy dowiod³eœ swej wartoœci. Co powiesz na ma³e polowanie?
-    AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_03");    //Zale¿y na co. Wola³bym by nie by³ to tuzin silnych Trolli.
+    AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_03");    //Zale¿y na co.
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_04");    //Chodzi o Cieniostwora. Wiem gdzie przebywa jeden osobnik. We dwóch na pewno damy mu radê.
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_05");    //Poza tym ka¿dy wojownik, nawet najlepszy potrzebuje æwiczeñ by podtrzymaæ formê.
-	AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_06");    //Jeœli tak stawiasz sprawê to zgadzam siê. 
+	AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_06");    //Jeœli tak stawiasz sprawê, to zgadzam siê. 
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_07");    //W takim razie przyjdŸ wieczorem.
 
 	
@@ -464,7 +464,7 @@ FUNC VOID DIA_Cord_WOJOWNIK_Info()
 	
 	Log_CreateTopic (PrawdziwyWojownik,LOG_MISSION);
 	Log_SetTopicStatus (PrawdziwyWojownik,LOG_RUNNING);
-    B_LogEntry(PrawdziwyWojownik,"Cord chce byœmy urz¹dzili sobie polowanie. Jego celem ma byæ Cieniostwór. Pomogê mu, w koñcu nie zaszkodzi trochê ma³ej rozrywki. Mam do niego przyjœæ wieczorem.");
+    B_LogEntry(PrawdziwyWojownik,"Cord chce, byœmy urz¹dzili sobie polowanie. Jego celem ma byæ Cieniostwór. Pomogê mu, w koñcu nie zaszkodzi trochê ma³ej rozrywki. Mam do niego przyjœæ wieczorem.");
 	
 };
 
@@ -566,7 +566,7 @@ if (Npc_KnowsInfo(hero,DIA_Najemnik_HELLO1))
 FUNC VOID DIA_Cord_PW_SLD_Info()
 {
     AI_Output (other, self ,"DIA_Cord_PW_SLD_15_01"); //Kwestiê pobitego Najemnika mamy za³atwion¹.
-    AI_Output (self, other ,"DIA_Cord_PW_SLD_03_02"); //To dobrze. Trzeba byæ solidarnym wobec swoich towarzyszy - to podstawowa zasada dobrego Najemnika.
+    AI_Output (self, other ,"DIA_Cord_PW_SLD_03_02"); //To dobrze. Trzeba byæ solidarnym wobec swoich towarzyszy.
     AI_Output (other, self ,"DIA_Cord_PW_SLD_15_03"); //Mo¿emy ruszaæ? 
     AI_Output (self, other ,"DIA_Cord_PW_SLD_03_04"); //Oczywiœcie.
 	Npc_ExchangeRoutine (SLD_709_Cord ,"CIENIOSTWOR2"); 

@@ -18,6 +18,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_StanleyChapter1Ingredients ();
 		B_Give_ZerronChapter1Books ();
 		B_GiveTradeInv_Silas1();
+		B_Give_HunoChapter1Ingredients();
 		
 		PrintDebugNpc	(PD_MISSION, "---=== DAS ERSTES KAPITEL ===---");
 
@@ -81,6 +82,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_TradeInv_Kagan2();
 		B_GiveTradeInv_Silas2();
 		B_Give_Items_GavilianCh2();
+		B_Give_HunoChapter2Ingredients();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW();
 		Wld_InsertNpc	(NOV_40074_DeadNovize,"WP_GRU_DEAD_NOV");
