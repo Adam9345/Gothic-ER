@@ -2,13 +2,13 @@ func void B_GiveTradeInv_Silas1()
 {
 	var C_Npc npc;
 	npc = Hlp_GetNpc(ORG_841_Silas);
-	CreateInvItems (self, ItFo_Honey_Plaster, 9);
-	CreateInvItems (self, ItFoApple, 3);
-	CreateInvItems (self, ItFo_wineberrys_01, 5);
-	CreateInvItems (self, ItFoRice, 8);
-	CreateInvItems (self, ItFoBooze,8);
-	CreateInvItems (self, ItFoWine, 5);
-	CreateInvItems (self, ItFoBeer, 3);
+	CreateInvItems (npc, ItFo_Honey_Plaster, 9);
+	CreateInvItems (npc, ItFoApple, 3);
+	CreateInvItems (npc, ItFo_wineberrys_01, 5);
+	CreateInvItems (npc, ItFoRice, 8);
+	CreateInvItems (npc, ItFoBooze,8);
+	CreateInvItems (npc, ItFoWine, 5);
+	CreateInvItems (npc, ItFoBeer, 3);
 
 };
 

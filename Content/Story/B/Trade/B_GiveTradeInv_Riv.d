@@ -9,10 +9,10 @@ func void B_GiverivFishFoodCH2 ()
 	CreateInvItems	(npc, ItFo_Fish2,4);
 	CreateInvItems	(npc, ItFo_Fish,3);
 	CreateInvItems	(npc, ItFo_Fish6,5);
-	CreateInvItems (self, itmi_bait_01, 8);
-	CreateInvItems (self, itmi_bait_02, 9);
-    CreateInvItems (self, ItWr_SoupFish3, 1);
-    //CreateInvItems (self, itmi_bait_02, 9);
+	CreateInvItems (npc, itmi_bait_01, 8);
+	CreateInvItems (npc, itmi_bait_02, 9);
+    CreateInvItems (npc, ItWr_SoupFish3, 1);
+    //CreateInvItems (npc, itmi_bait_02, 9);
 };
 
 func void B_GiverivFishFoodCH3 ()
@@ -26,8 +26,8 @@ func void B_GiverivFishFoodCH3 ()
 	CreateInvItems	(npc, ItFo_Fish6,5);
 
 	CreateInvItems	(npc, ItFo_Fish,3);
-	CreateInvItems (self, itmi_bait_01, 4);
-	CreateInvItems (self, itmi_bait_02, 4);
+	CreateInvItems (npc, itmi_bait_01, 4);
+	CreateInvItems (npc, itmi_bait_02, 4);
 };
 
 func void B_GiverivFishFoodCH4 ()
@@ -54,7 +54,7 @@ func void B_GiverivFishFoodCH5 ()
 	CreateInvItems	(npc, ItFo_Fish2,10);
 	CreateInvItems	(npc, ItFo_Fish,10);
 	CreateInvItems	(npc, ItFo_Fish6,5);
-	CreateInvItems (self, itmi_bait_01, 7);
-	CreateInvItems (self, itmi_bait_02, 5);
+	CreateInvItems (npc, itmi_bait_01, 7);
+	CreateInvItems (npc, itmi_bait_02, 5);
 
 };

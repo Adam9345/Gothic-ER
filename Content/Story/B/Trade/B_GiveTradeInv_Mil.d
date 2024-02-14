@@ -1,23 +1,24 @@
 
+
 func void B_Give_MilChapter1Ingredients ()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
-	CreateInvItems  (self,ItMiNugget,80);//handel
-	CreateInvItems  (self,ItFo_MeatStew,5);//
-	CreateInvItems  (self,ItWr_MeatStew,1);//
-	CreateInvItems  (self,ItWr_BrownShadowbeast,1);
-	CreateInvItems  (self,ItWr_WhiteScavenger,1);
+	CreateInvItems  (npc,ItMiNugget,80);//handel
+	CreateInvItems  (npc,ItFo_MeatStew,5);//
+	CreateInvItems  (npc,ItWr_MeatStew,1);//
+	CreateInvItems  (npc,ItWr_BrownShadowbeast,1);
+	CreateInvItems  (npc,ItWr_WhiteScavenger,1);
 };
 
 func void B_Give_MilChapter2Ingredients ()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
-	CreateInvItems  (self,ItAt_Wolf_02,1);//skóra warga
-	CreateInvItems  (self,ItAt_Lurker_02,1);//skóra jaszczura
-	CreateInvItems  (self,Plan_Miecz1H7,1);
-	CreateInvItems  (self,ItMiNugget,55);//handel
+	CreateInvItems  (npc,ItAt_Wolf_02,1);//skóra warga
+	CreateInvItems  (npc,ItAt_Lurker_02,1);//skóra jaszczura
+	CreateInvItems  (npc,Plan_Miecz1H7,1);
+	CreateInvItems  (npc,ItMiNugget,55);//handel
 };
 
 func void B_Give_MilChapter3Ingredients ()
@@ -36,14 +37,14 @@ func void B_Give_MilChapter3Ingredients ()
 	CreateInvItems	(npc, ItFo_mutton_01,5);
 	CreateInvItems	(npc, ItFoCheese,5);
 	//outlam
-	CreateInvItems (self, ItFo_Plants_Berrys_01, 10);
-	CreateInvItems (self, ItFo_Potion_Health_01, 2);
-	CreateInvItems (self, ItAt_Crawler_02, 2);
-	CreateInvItems (self, itmi_bait_01, 15);
-	CreateInvItems (self, itmi_bait_02, 12);
+	CreateInvItems (npc, ItFo_Plants_Berrys_01, 10);
+	CreateInvItems (npc, ItFo_Potion_Health_01, 2);
+	CreateInvItems (npc, ItAt_Crawler_02, 2);
+	CreateInvItems (npc, itmi_bait_01, 15);
+	CreateInvItems (npc, itmi_bait_02, 12);
 	
-	CreateInvItems  (self,itmiflask,10);
-	CreateInvItems  (self,ItMiNugget,112);//handel
+	CreateInvItems  (npc,itmiflask,10);
+	CreateInvItems  (npc,ItMiNugget,112);//handel
 
 };
 
@@ -58,15 +59,15 @@ func void B_Give_MilChapter4Ingredients ()
 	CreateInvItems	(npc, ItFo_mutton_01,5);
 	CreateInvItems	(npc, ItFoCheese,5);
 	//outlam
-	CreateInvItems (self, ItFo_Plants_Berrys_01, 15);
-	CreateInvItems (self, ItAt_Teeth_01, 5);
-    CreateInvItems (self, ItAt_Wolf_01, 5);
-    CreateInvItems (self, ItAt_Lurker_02, 5);
-	CreateInvItems (self, itmi_bait_01, 30);
-	CreateInvItems (self, itmi_bait_02, 30);
-	CreateInvItems (self, ItFo_Potion_Dex_02, 1);
-	CreateInvItems  (self,itmiflask,3);
-	CreateInvItems  (self,ItMiNugget,50);//handel
+	CreateInvItems (npc, ItFo_Plants_Berrys_01, 15);
+	CreateInvItems (npc, ItAt_Teeth_01, 5);
+    CreateInvItems (npc, ItAt_Wolf_01, 5);
+    CreateInvItems (npc, ItAt_Lurker_02, 5);
+	CreateInvItems (npc, itmi_bait_01, 30);
+	CreateInvItems (npc, itmi_bait_02, 30);
+	CreateInvItems (npc, ItFo_Potion_Dex_02, 1);
+	CreateInvItems  (npc,itmiflask,3);
+	CreateInvItems  (npc,ItMiNugget,50);//handel
 };
 
 func void B_Give_MilChapter5Ingredients ()
@@ -80,12 +81,12 @@ func void B_Give_MilChapter5Ingredients ()
 	CreateInvItems	(npc, ItFo_mutton_01,5);
 	CreateInvItems	(npc, ItFoCheese,5);
 	//outlam
-	CreateInvItems (self, ItFo_Plants_Berrys_01, 15);
-    CreateInvItems (self, ItAt_Lurker_02, 5);
-	CreateInvItems (self, itmi_bait_01, 30);
-	CreateInvItems (self, itmi_bait_02, 30);
-	CreateInvItems (self, ItFo_Potion_Dex_02, 1);
-	CreateInvItems  (self,itmiflask,5);
-	CreateInvItems  (self,ItMiNugget,200);//handel
+	CreateInvItems (npc, ItFo_Plants_Berrys_01, 15);
+    CreateInvItems (npc, ItAt_Lurker_02, 5);
+	CreateInvItems (npc, itmi_bait_01, 30);
+	CreateInvItems (npc, itmi_bait_02, 30);
+	CreateInvItems (npc, ItFo_Potion_Dex_02, 1);
+	CreateInvItems  (npc,itmiflask,5);
+	CreateInvItems  (npc,ItMiNugget,200);//handel
 };
 

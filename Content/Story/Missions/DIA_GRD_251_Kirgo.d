@@ -123,6 +123,7 @@ func void Info_Kirgo_Charge_Beer()
 {
 	AI_Output (other, self,"Info_Kirgo_Charge_Beer_15_00"); //Dobra, daj mi piwo!
 	AI_Output (self, other,"Info_Kirgo_Charge_Beer_05_01"); //Proszê bardzo!
+	AI_StandUp(Grd_251_Kirgo);
 	CreateInvItems (Grd_251_Kirgo, ItFoBeer,2);
 	B_GiveInvItems (Grd_251_Kirgo, hero, ItFoBeer, 1);
 	    AI_UseItem (hero, ItFoBeer);
