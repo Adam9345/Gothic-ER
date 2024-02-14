@@ -19,6 +19,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_ZerronChapter1Books ();
 		B_GiveTradeInv_Silas1();
 		B_Give_HunoChapter1Ingredients();
+		B_Give_BriamChapter1Ingredients ();
 		
 		PrintDebugNpc	(PD_MISSION, "---=== DAS ERSTES KAPITEL ===---");
 
@@ -83,6 +84,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_GiveTradeInv_Silas2();
 		B_Give_Items_GavilianCh2();
 		B_Give_HunoChapter2Ingredients();
+		B_Give_BriamChapter2Ingredients ();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW();
 		Wld_InsertNpc	(NOV_40074_DeadNovize,"WP_GRU_DEAD_NOV");
@@ -181,6 +183,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_TradeInv_Kagan3();
 		B_GiveTradeInv_Silas3();
 		B_Give_Items_GavilianCh3();
+		B_Give_BriamChapter3Ingredients ();
 
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW_Ch3();
@@ -472,6 +475,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_TradeInv_Kagan4();
 		B_GiveTradeInv_Silas4();
 		B_Give_Items_GavilianCh4();
+		B_Give_BriamChapter4Ingredients ();
 		//-------- globale Variablen --------
 		Saturas_BringFoci = 5;
 
@@ -780,6 +784,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_ZerronChapter5Books ();
 		B_GiveTradeInv_Silas5();
 		B_Give_Items_GavilianCh5();
+		B_Give_BriamChapter5Ingredients ();
 		//-------- Tagebucheinträge --------
 		B_LogEntry		(CH4_EnterTemple,	"Gorn nie by³ przekonany co do skutecznoœci mojego amuletu ochronnego. Có¿... Wkrótce na w³asnej skórze przekonam siê, kto ma racjê!");
 	
