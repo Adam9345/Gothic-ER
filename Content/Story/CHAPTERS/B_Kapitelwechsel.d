@@ -85,6 +85,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_Items_GavilianCh2();
 		B_Give_HunoChapter2Ingredients();
 		B_Give_BriamChapter2Ingredients ();
+		B_GiverivFishFoodCH2();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW();
 		Wld_InsertNpc	(NOV_40074_DeadNovize,"WP_GRU_DEAD_NOV");
@@ -184,7 +185,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_GiveTradeInv_Silas3();
 		B_Give_Items_GavilianCh3();
 		B_Give_BriamChapter3Ingredients ();
-
+		B_GiverivFishFoodCH3();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW_Ch3();
 
@@ -476,6 +477,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_GiveTradeInv_Silas4();
 		B_Give_Items_GavilianCh4();
 		B_Give_BriamChapter4Ingredients ();
+		B_GiverivFishFoodCH4();
 		//-------- globale Variablen --------
 		Saturas_BringFoci = 5;
 
@@ -723,8 +725,6 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		
 		B_ChangeGuild( Grd_40062_John, GIL_GRD );
 	
-	  
-	
 	}
 	//***************************************************************************
 	//	KAPITEL 5
@@ -785,6 +785,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_GiveTradeInv_Silas5();
 		B_Give_Items_GavilianCh5();
 		B_Give_BriamChapter5Ingredients ();
+		B_GiverivFishFoodCH5();
 		//-------- Tagebucheinträge --------
 		B_LogEntry		(CH4_EnterTemple,	"Gorn nie by³ przekonany co do skutecznoœci mojego amuletu ochronnego. Có¿... Wkrótce na w³asnej skórze przekonam siê, kto ma racjê!");
 	
