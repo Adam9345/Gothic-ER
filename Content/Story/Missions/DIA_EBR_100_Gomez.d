@@ -109,7 +109,7 @@ FUNC VOID DIA_Gomez_Hello_Info()
     {
 	Info_AddChoice		(DIA_Gomez_Hello,"By³em Kopaczem. Przeszed³em d³ug¹ drogê."				,DIA_Gomez_Hello_Buddler);
 	};
-	//z³a gildia
+	
 	}
 	else
 	{
@@ -119,35 +119,7 @@ FUNC VOID DIA_Gomez_Hello_Info()
 	Npc_SetTarget		(self,other);
 	AI_StartState		(self,ZS_ATTACK,1,"");
 	};
-	/***** STARY KOD ******
-	Info_ClearChoices	(DIA_Gomez_Hello);	
-	if (!Npc_KnowsInfo (hero, DIA_Torrez_NOWICJUSZ))
-	{
-	Info_AddChoice		(DIA_Gomez_Hello,"Mam nadziejê, ¿e nie bêdê musia³ udowodniæ, ¿e potrafiê pos³ugiwaæ siê broni¹." ,DIA_Gomez_Hello_KopfAb);
-	Info_AddChoice		(DIA_Gomez_Hello,"Bo wiêkszoœæ z twoich ludzi to leniwe ba³wany."									,DIA_Gomez_Hello_Spinner);
-	Info_AddChoice		(DIA_Gomez_Hello,"Przemierzy³em spor¹ czêœæ Kolonii i mam kontakty we wszystkich obozach."			,DIA_Gomez_Hello_Kontakte);
-	if (Diego_BringList == LOG_SUCCESS)
-    {
-	Info_AddChoice		(DIA_Gomez_Hello,"Przeszed³em test zaufania."							,DIA_Gomez_Hello_ThorusSays);
-	};
-		//kopacz
-	if (MIS_Kopacz == LOG_SUCCESS) && (MIS_TestOc == LOG_SUCCESS)
-    {
-	Info_AddChoice		(DIA_Gomez_Hello,"By³em Kopaczem. Przeszed³em d³ug¹ drogê."				,DIA_Gomez_Hello_Buddler);
-	};
-	//if (Npc_KnowsInfo(hero,DIA_Bartholo_DOWODY))
-    //{
-	//Info_AddChoice		(DIA_Gomez_Hello,"Wyda³em zdrajców i odzyska³em twoje dobra."							,DIA_Gomez_Hello_Golds);
-	//};
-	if (CanTellToGomezAboutSecretPath == TRUE)
-    {
-	Info_AddChoice		(DIA_Gomez_Hello,"Pomog³em odnaleŸæ ukryt¹ œcie¿kê do Wolnej Kopalni!"							,DIA_Gomez_Hello_MineENter);
-	};
-	}
-	else
-	{
-	//Info_AddChoice		(DIA_Gomez_Hello,"Mam aprobatê Magów Ognia. Chcê byæ Nowicjuszem Ognia."							,DIA_Gomez_Hello_Firenovize);
-	};*/
+	
 };
 
 //NIEAKTUALNE
@@ -199,17 +171,7 @@ func void DIA_Gomez_Hello_Buddler()
 	Info_ClearChoices	(DIA_Gomez_Hello);
 };
 
-func void DIA_Gomez_Hello_Golds()
-{
-    AI_Output (other, self,"DIA_Gomez_Hello_Buddler_15_00"); //Wyda³em zdrajców i odzyska³em twoje dobra.
-	AI_Output (self, other,"DIA_Gomez_Hello_Buddler_11_01"); //Ceniê sobie lojalnoœæ i przebieg³oœæ. Opowiedz mi jeszcze o swoich kontaktach w innych obozach.
-	B_GiveXP (200);
-	MIS_KosztemQuentina = LOG_SUCCESS;
-	hero_join_fn = false;
-    Log_SetTopicStatus       (CH1_KosztemQuentina, LOG_SUCCESS);
-    B_LogEntry                     (CH1_KosztemQuentina,"Gomez niezmiernie siê ucieszy³ z mojej postawy. Cz³onkostwo w Starym Obozie mam pewne. Wystarczy, ¿e wspomnê o moich kontaktach w innych obozach.");
-	gomez_kontakte = gomez_kontakte + 10;
-};
+
 
 func void DIA_Gomez_Hello_Kontakte()
 {
@@ -276,19 +238,8 @@ func void DIA_Gomez_Hello_Kontakte_Baals()
 	gomez_kontakte = gomez_kontakte + 1;
 };
 
-/*
-func void DIA_Gomez_Hello_Kontakte_Lee()
-{
-	AI_Output (other, self,"DIA_Gomez_Hello_Kontakte_Lee_15_00"); //Zu Lee.
-	AI_Output (self, other,"DIA_Gomez_Hello_Kontakte_Lee_11_01"); //Lee ist also ein guter Freund von dir, ja?
-	AI_Output (self, other,"DIA_Gomez_Hello_Kontakte_Lee_11_02"); //Dann sieht die Sache natürlich ANDERS AUS (zornig am ENDE)
 
-	AI_StopProcessInfos	(self);
-	Npc_SetPermAttitude	(self, ATT_HOSTILE);
-	Npc_SetTarget (self,other);
-	AI_StartState (self,ZS_ATTACK,1,"");
-};
-*/
+
 func void DIA_Gomez_Hello_Kontakte_Lares()
 {
 	AI_Output (other, self,"DIA_Gomez_Hello_Kontakte_Lares_15_00"); //Z Laresem.
@@ -426,7 +377,7 @@ FUNC INT DIA_Gomez_MagnatQuest_Condition()
 FUNC VOID DIA_Gomez_MagnatQuest_Info()
 {
     AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_01"); //Stra¿niku, podejdŸ tutaj! Mam dla ciebie specjalne zadanie.
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_02"); //Morok, mój zaufany cz³owiek, otrzyma³ specjalne zadanie.
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_02"); //Morok, mój zaufany cz³owiek, otrzyma³ ode mnie rozkazy.
     AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_03"); //Wraz z towarzyszami mia³ zbadaæ ma³¹ œwi¹tyniê w dolinie nieopodal obozu.
     AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_04"); //Od kilku dni nie ma od nich ¿adnych wieœci. Widocznie sobie nie radz¹.
     AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_05"); //IdŸ tam i spróbuj im pomóc.
@@ -465,8 +416,8 @@ FUNC VOID DIA_Gomez_SuperQuestSuccess_Info()
 {
     AI_Output (other, self ,"DIA_Gomez_SuperQuestSuccess_15_01"); //By³em w dolinie. Orkowie ze œwi¹tyni zostali wyeliminowani.
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_02"); //Doskonale. Wiem, ¿e mia³eœ w tym swój udzia³. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ wiêc na lepszy pancerz. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Tylko nie liczni mog¹ go nosiæ. IdŸ do Stone'a i poproœ go o ciê¿k¹ zbrojê. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ  na lepszy pancerz. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Tylko nieliczni mog¹ go nosiæ. IdŸ do Stone'a i poproœ go o ciê¿k¹ zbrojê. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Oczywiœcie bêdziesz mu musia³ za ni¹ zap³aciæ, ale to ju¿ nie moja sprawa. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_06"); //Mo¿esz odejœæ.
     B_LogEntry               (CH3_QuestForHeavyArmor,"Gomez by³ bardzo zadowolony z moich poczynañ w orkowych ruinach. Pozowli³ mi nawet na zakup ciê¿kiej zbroi Stra¿nika. Od teraz jestem ju¿ chyba kimœ wa¿nym w obozie.");
@@ -476,52 +427,6 @@ FUNC VOID DIA_Gomez_SuperQuestSuccess_Info()
     B_GiveXP (575);
 
     AI_StopProcessInfos	(self);
-};
-
-
-
-//========================================
-//-----------------> TempleIsClear
-//========================================
-
-INSTANCE DIA_Gomez_TempleIsClear (C_INFO)
-{
-   npc          = Ebr_100_Gomez;
-   nr           = 1;
-   condition    = DIA_Gomez_TempleIsClear_Condition;
-   information  = DIA_Gomez_TempleIsClear_Info;
-   permanent	= FALSE;
-   description	= "Oczyœciliœmy œwi¹tyniê.";
-};
-
-FUNC INT DIA_Gomez_TempleIsClear_Condition()
-{
-    if (MIS_BattleInTemple == LOG_SUCCESS) && (Kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Gomez_TempleIsClear_Info()
-{
-    AI_Output (other, self ,"DIA_Gomez_TempleIsClear_15_01"); //Oczyœciliœmy œwi¹tyniê.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_02"); //Naprawdê wam siê to uda³o?
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_03"); //Rewelacyjnie. O twoich dokonaniach mówi ju¿ ca³y Obóz.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_04"); //Jesteœ tu od niedawna, a nieŸle siê urz¹dzi³eœ.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_05"); //Nie wiem, jak do tego doszed³eœ i nie obchodzi mnie to.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_06"); //Umiesz sobie poradziæ, ch³opcze.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_07"); //Co byœ powiedzia³ na do³¹czenie do Magnatów?
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_08"); //Moglibyœmy razem panowaæ nad Koloni¹, kontrolowaæ handel i zarz¹dzaæ ludŸmi.
-    AI_Output (self, other ,"DIA_Gomez_TempleIsClear_03_09"); //Masz do tego smyka³kê. Co ty na to?
-    AI_Output (other, self ,"DIA_Gomez_TempleIsClear_15_10"); //Muszê siê zastanowiæ.
-    MIS_MagnatTrololo = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_MagnatTrololo, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MagnatTrololo, LOG_RUNNING);
-    B_LogEntry                     (CH1_MagnatTrololo,"Gomez zaproponowa³ mi do³¹czenie do grona Magnatów Starego Obozu. Kobiety, wino i ruda... nie sposób odmówiæ.");
-
-    B_GiveXP (300);
 };
 
 ////////////////////////////////////////////////////////////
@@ -587,169 +492,6 @@ FUNC void  DIA_EBR_100_Gomez_Wait4SC_Info()
 	Npc_SetTrueGuild	(GRD_8801_Gardist, GIL_EBR );	
 	Npc_SetPermAttitude (GRD_8801_Gardist, ATT_HOSTILE);
 };
-
-
-//========================================
-//-----------------> Magnateria1
-//========================================
-
-INSTANCE DIA_Gomez_Magnateria1 (C_INFO)
-{
-   npc          = Ebr_100_Gomez;
-   nr           = 2;
-   condition    = DIA_Gomez_Magnateria1_Condition;
-   information  = DIA_Gomez_Magnateria1_Info;
-   permanent	= FALSE;
-   description	= "Chcê zostaæ Magnatem.";
-};
-
-FUNC INT DIA_Gomez_Magnateria1_Condition()
-{
-    if (MIS_MagnatTrololo == LOG_RUNNING)
-    && (Kapitel <= 3)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Gomez_Magnateria1_Info()
-{
-	CreateInvItem		(self, ItAmArrow);
-	B_GiveInvItems      (self, hero, ItAmArrow, 1);
-	Npc_RemoveInvItem	(hero, ItAmArrow);
-
-    AI_Output (other, self ,"DIA_Gomez_Magnateria1_15_01"); //Chcê zostaæ Magnatem.
-    AI_Output (self, other ,"DIA_Gomez_Magnateria1_03_02"); //Wiedzia³em, ¿e nie bêdê ciê musia³ d³ugo namawiaæ.
-    AI_Output (self, other ,"DIA_Gomez_Magnateria1_03_03"); //Witaj wœród nas.
-    //B_LogEntry                     (CH1_MagnatTrololo,"Zosta³em Magnatem. ");
-	CreateInvItem		(other,EBR_ARMOR_L);
-	Log_SetTopicStatus       (CH1_MagnatTrololo, LOG_SUCCESS);
-    MIS_MagnatTrololo = LOG_SUCCESS;
-	Npc_SetTrueGuild (hero,GIL_EBR );
-	hero.guild = GIL_EBR;
-    B_GiveXP (1000);
-	liczba_straznikow = liczba_straznikow + 30; 
-	przychody_obozu = 300;
-	AI_EquipBestArmor	(other); 
-};
-
-//========================================
-//-----------------> NoImNot
-//========================================
-
-INSTANCE DIA_Gomez_NoImNot (C_INFO)
-{
-   npc          = Ebr_100_Gomez;
-   nr           = 3;
-   condition    = DIA_Gomez_NoImNot_Condition;
-   information  = DIA_Gomez_NoImNot_Info;
-   permanent	= FALSE;
-   description	= "Nie chcê byæ Magnatem.";
-};
-
-FUNC INT DIA_Gomez_NoImNot_Condition()
-{
-    if (MIS_MagnatTrololo == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Gomez_NoImNot_Info()
-{
-    AI_Output (other, self ,"DIA_Gomez_NoImNot_15_01"); //Nie chcê byæ Magnatem.
-    AI_Output (self, other ,"DIA_Gomez_NoImNot_03_02"); //To twój wybór. Szanujê to.
-	AI_Output (self, other ,"DIA_Gomez_NoImNot_03_03"); //WeŸ przynajmniej tê zbrojê. Zas³ugujesz na ni¹.
-    B_LogEntry                     (CH1_MagnatTrololo,"Zrezygnowa³em z propozycji Gomeza. Otrzyma³em zbrojê elitarnego Stra¿nika.");
-    Log_SetTopicStatus       (CH1_MagnatTrololo, LOG_FAILED);
-    MIS_MagnatTrololo = LOG_FAILED;
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> MagnatWork
-//========================================
-
-INSTANCE DIA_Gomez_MagnatWork (C_INFO)
-{
-   npc          = Ebr_100_Gomez;
-   nr           = 4;
-   condition    = DIA_Gomez_MagnatWork_Condition;
-   information  = DIA_Gomez_MagnatWork_Info;
-   permanent	= FALSE;
-   description	= "Co mam robiæ jako Magnat?";
-};
-
-FUNC INT DIA_Gomez_MagnatWork_Condition()
-{
-    if (Npc_GetTrueGuild(hero) == GIL_EBR)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Gomez_MagnatWork_Info()
-{
-    AI_Output (other, self ,"DIA_Gomez_MagnatWork_15_01"); //Co mam robiæ jako Magnat?
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_02"); //Mo¿esz wszystko.
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_03"); //Je¿eli chcesz, aby któryœ ze Stra¿ników ci pomóg³, po prostu poproœ go o to.
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_04"); //Mo¿esz im tak¿e zlecaæ zadania. Aby to zrobiæ, udaj siê do Thorusa.
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_05"); //Zadbaj o jak najlepsz¹ opiniê Starego Obozu w Kolonii.
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_06"); //Hojnie ciê za to wynagrodzê.
-    AI_Output (other, self ,"DIA_Gomez_MagnatWork_15_07"); //A co z Nowym Obozem?
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_08"); //Pos³uchaj, jeszcze nie jest tak Ÿle.
-    AI_Output (self, other ,"DIA_Gomez_MagnatWork_03_09"); //Musimy siê wstrzymaæ. Staraj siê robiæ wszystko tak, aby niczego siê nie spodziewali z naszej strony.
-    MIS_OpiniaOSO = LOG_RUNNING;
-	
-    Log_CreateTopic            (CH1_OpiniaOSO, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_OpiniaOSO, LOG_RUNNING);
-    B_LogEntry                     (CH1_OpiniaOSO,"Gomez kaza³ mi zadbaæ o opiniê Starego Obozu w Kolonii. G³ównie powinienem skupiæ siê na stosunkach z Nowym Obozem.");
-};
-
-//========================================
-//-----------------> PosunieciaTaktyczne
-//========================================
-
-INSTANCE DIA_Gomez_PosunieciaTaktyczne (C_INFO)
-{
-   npc          = Ebr_100_Gomez;
-   nr           = 1;
-   condition    = DIA_Gomez_PosunieciaTaktyczne_Condition;
-   information  = DIA_Gomez_PosunieciaTaktyczne_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Gomez_PosunieciaTaktyczne_Condition()
-{
-    if (OpiniaNC >= 40)
-    && (MIS_OpiniaOSO == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Gomez_PosunieciaTaktyczne_Info()
-{
-    AI_Output (self, other ,"DIA_Gomez_PosunieciaTaktyczne_03_01"); //S³ysza³em o twoich taktycznych posuniêciach.
-    AI_Output (self, other ,"DIA_Gomez_PosunieciaTaktyczne_03_02"); //Nowy Obóz ma nas nie tyle za przyjació³, co za wspólników.
-    AI_Output (self, other ,"DIA_Gomez_PosunieciaTaktyczne_03_03"); //Niczego siê nie spodziewaj¹ z naszej strony. Dobra robota.
-    AI_Output (other, self ,"DIA_Gomez_PosunieciaTaktyczne_15_04"); //A maj¹ siê czegoœ spodziewaæ?
-    AI_Output (self, other ,"DIA_Gomez_PosunieciaTaktyczne_03_05"); //To ju¿ nie twoje sprawy, ch³opcze.
-    AI_Output (self, other ,"DIA_Gomez_PosunieciaTaktyczne_03_06"); //IdŸ ju¿. Nie zapomnij o wynagrodzeniu.
-    B_LogEntry                     (CH1_OpiniaOSO,"Stosunki pomiêdzy Starym, a Nowym Obozem znacznie siê poprawi³y. Zadanie wykonane!");
-    Log_SetTopicStatus       (CH1_OpiniaOSO, LOG_SUCCESS);
-    MIS_OpiniaOSO = LOG_SUCCESS;
-
-    B_GiveXP (500);
-    CreateInvItems (self, ItMiNugget, 500);
-    B_GiveInvItems (self, other, ItMiNugget, 500);
-};
-
 instance dia_gomez_pickpocket(c_info) {
     npc = ebr_100_gomez;
     nr = 900;

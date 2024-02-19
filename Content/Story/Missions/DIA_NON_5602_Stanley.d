@@ -376,8 +376,8 @@ FUNC VOID DIA_Stanley_HELLO4_Info()
     AI_Output (self, other ,"DIA_Stanley_HELLO4_03_03"); //Jedna prowadzi ze Starego Obozu do kopalni, a druga do Nowego Obozu. Czêsto mo¿na tam spotkaæ tragarzy przenosz¹cych ró¿ne towary.
     AI_Output (self, other ,"DIA_Stanley_HELLO4_03_04"); //Raz by³em œwiadkiem napaœci Bandytów na taki konwój. Co to by³o za widowisko! PóŸnym wieczorem z lasu wy³oni³y siê pochodnie. Po chwili rozpocz¹³ siê szaleñczy taniec ostrzy.
     AI_Output (self, other ,"DIA_Stanley_HELLO4_03_05"); //Iskry, b³yski orê¿a, jêk rannych... Ca³oœæ trwa³a zaledwie chwilê. 
-    AI_Output (self, other ,"DIA_Stanley_HELLO4_03_06"); //Bandyci uciekli, gdy tylko zdobyli ³upy. Nie wiem nawet, gdzie znajduje siê ich Obóz. 
-    AI_Output (self, other ,"DIA_Stanley_HELLO4_03_07"); //Pamiêtam, jak nastêpnego dnia rano s³ysza³em g³oœne bluzgi Stanleya. NieŸle siê wtedy wkurzy³, skoro by³o go s³ychaæ a¿ tutaj.
+    AI_Output (self, other ,"DIA_Stanley_HELLO4_03_06"); //Bandyci uciekli, gdy tylko zdobyli ³upy. Nie wiem nawet, gdzie znajduje siê ich Obóz... 
+   
 };
 
 

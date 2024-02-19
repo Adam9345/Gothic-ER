@@ -74,7 +74,7 @@ FUNC INT DIA_Zick_ValuableInfo_Condition()
 FUNC VOID DIA_Zick_ValuableInfo_Info()
 {
     AI_Output (other, self ,"DIA_Zick_ValuableInfo_15_01"); //Myœlê, ¿e to tylko puste przechwa³ki.
-    AI_Output (self, other ,"DIA_Zick_ValuableInfo_03_02"); //Kolejny! Wszyscy myœlicie, ¿e osi¹gn¹³em to co mam tylko dlatego, ¿e Lewus jest moim bratankiem?
+    AI_Output (self, other ,"DIA_Zick_ValuableInfo_03_02"); //Kolejny! Wszyscy myœlicie, ¿e osi¹gn¹³em to co mam tylko dlatego, ¿e jestem bratankiem Lewusa?
 	AI_Output (self, other ,"DIA_Zick_ValuableInfo_03_03"); //Ju¿ ja wam kiedyœ poka¿ê. Nie zmuszaj mnie do wyci¹gania orê¿a!
 	AI_Output (other, self ,"DIA_Zick_ValuableInfo_15_04"); //Dobra, dobra, tylko przestañ siê wydzieraæ.
 	
