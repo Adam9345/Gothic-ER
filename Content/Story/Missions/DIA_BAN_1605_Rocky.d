@@ -133,42 +133,7 @@ FUNC VOID DIA_Rocky_POGADUCHY_Info()
     AI_Output (self, other ,"DIA_Rocky_POGADUCHY_03_03"); //Tak czy inaczej, nie powinno ciê to obchodziæ.
 };
 
-//========================================
-//-----------------> PAST
-//========================================
 
-INSTANCE DIA_Rocky_PAST (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 2;
-   condition    = DIA_Rocky_PAST_Condition;
-   information  = DIA_Rocky_PAST_Info;
-   permanent	= FALSE;
-   description	= "Opowiedz mi o swojej przesz³oœci.";
-};
-
-FUNC INT DIA_Rocky_PAST_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Rocky_POGADUCHY))
-    && (Npc_KnowsInfo (hero, DIA_Quentin_DOOBOZU))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_PAST_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_PAST_15_01"); //Opowiedz mi o swojej przesz³oœci.
-    AI_Output (self, other ,"DIA_Rocky_PAST_03_02"); //Có¿... Niegdyœ by³em marynarzem.
-    AI_Output (other, self ,"DIA_Rocky_PAST_15_03"); //Dlaczego trafi³eœ do Kolonii?
-    AI_Output (self, other ,"DIA_Rocky_PAST_03_04"); //Zacz¹³em zadawaæ siê z piratami. W koñcu zgarnêli mnie paladyni.
-    AI_Output (other, self ,"DIA_Rocky_PAST_15_05"); //Dlaczego w takim razie zszed³eœ na l¹d?
-    AI_Output (self, other ,"DIA_Rocky_PAST_03_06"); //¯ycie na morzu by³o ciê¿kie. Chcia³em siê wyrwaæ ze statku. Potrzebowa³em z³ota...
-    AI_Output (self, other ,"DIA_Rocky_PAST_03_07"); //Kradzie¿ by³a jedynym sposobem, by prze¿yæ.
-    AI_Output (other, self ,"DIA_Rocky_PAST_15_08"); //A wiêc znasz siê na tym?
-    AI_Output (self, other ,"DIA_Rocky_PAST_03_09"); //Mo¿e.
-};
 
 //========================================
 //-----------------> CHATA
@@ -200,91 +165,8 @@ FUNC VOID DIA_Rocky_CHATA_Info()
     AI_Output (self, other ,"DIA_Rocky_CHATA_03_03"); //Quentin to rozumie, dlatego mieszkam u niego.
 };
 
-//========================================
-//-----------------> ADVENTURE
-//========================================
-
-INSTANCE DIA_Rocky_ADVENTURE (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 2;
-   condition    = DIA_Rocky_ADVENTURE_Condition;
-   information  = DIA_Rocky_ADVENTURE_Info;
-   permanent	= FALSE;
-   description	= "Opowiedz mi jedn¹ z waszych przygód.";
-};
-
-FUNC INT DIA_Rocky_ADVENTURE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Rocky_CHATA))
-    {
-    return TRUE;
-    };
-};
 
 
-FUNC VOID DIA_Rocky_ADVENTURE_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_ADVENTURE_15_01"); //Opowiedz mi jedn¹ z waszych przygód. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_02"); //Chyba najbardziej utkwi³a mi w pamiêci historia odnalezienia doliny. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_03"); //Pewnej wrzeœniowej nocy postanowiliœmy uciec z Nowego Obozu. Wziêliœmy ze sob¹ kilku zaufanych ludzi i po prostu daliœmy nogê.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_04"); //Po drodze spotkaliœmy Jensa. By³ wtedy zwyczajnym ³achmyt¹. £azi³ noc¹ po lesie. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_05"); //Zgarnêliœmy go. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_06"); //Quentin zaproponowa³ iœæ w góry. Pozbyliœmy siê zêbaczy i poszliœmy dalej. W koñcu naszym oczom ukaza³a siê ta dolina.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_07"); //Usiedliœmy na œrodku i przysiêgliœmy sobie, ¿e bêdziemy zawsze trzymaæ siê razem, choæby nie wiem co!
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_08"); //Nikt nigdy nie zostawi swoich kumpli. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_09"); //Wtedy jeden z naszych opar³ siê o wielk¹ ska³ê. Rozleg³ siê g³oœny ryk, a ziemia zadr¿a³a.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_10"); //To by³ troll. Zacz¹³ st¹paæ w naszym kierunku. Nie wiedzieliœmy, co zrobiæ. Razem z Quentinem chwyciliœmy za broñ i rzuciliœmy siê na to monstrum.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_11"); //Reszta strzela³a z ³uków. Wprawdzie nic to nie da³o, ale przynajmniej nie zwiali jak Jens.
-    AI_Output (other, self ,"DIA_Rocky_ADVENTURE_15_12"); //Jens uciek³?
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_13"); //Tak. Sp³ywa³ gdzie pieprz roœnie. 
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_14"); //Z³ama³ przysiêgê... zaraz po jej z³o¿eniu.
-    AI_Output (other, self ,"DIA_Rocky_ADVENTURE_15_15"); //A jednak jest w Obozie.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_16"); //Za karê kazaliœmy mu polowaæ na wilki i przygotowaæ skóry na pancerze dla wszystkich Bandytów.
-    AI_Output (self, other ,"DIA_Rocky_ADVENTURE_03_17"); //Tak siê w to wczu³, ¿e zosta³ mistrzem w swoim fachu. 
-    AI_Output (other, self ,"DIA_Rocky_ADVENTURE_15_18"); //Ha ha. To ci dopiero historia.
-};
-
-//========================================
-//-----------------> BUDOWA_OBOZU
-//========================================
-
-INSTANCE DIA_Rocky_BUDOWA_OBOZU (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 1;
-   condition    = DIA_Rocky_BUDOWA_OBOZU_Condition;
-   information  = DIA_Rocky_BUDOWA_OBOZU_Info;
-   permanent	= FALSE;
-   description	= "A jak wygl¹da³a sprawa z budow¹ Obozu?";
-};
-
-FUNC INT DIA_Rocky_BUDOWA_OBOZU_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Rocky_ADVENTURE))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_BUDOWA_OBOZU_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_BUDOWA_OBOZU_15_01"); //A jak wygl¹da³a sprawa z budow¹ Obozu?
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_02"); //Có¿... Mieliœmy bardzo ma³o zasobów koniecznych do budowy wystarczaj¹co du¿ej iloœci chat.
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_03"); //Ju¿ teraz jest ma³o miejsca.
-    AI_Output (other, self ,"DIA_Rocky_BUDOWA_OBOZU_15_04"); //Sk¹d braki w surowcach? Przecie¿ drzew w Kolonii pod dostatkiem.
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_05"); //No w³aœnie! Quentin zabroni³ nam karczowania lasu. Powiedzia³, ¿e wtedy ujawnimy swoj¹ obecnoœæ.
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_06"); //Musieliœmy siê pos³u¿yæ tym, co by³o w dolinie. £ó¿ka zrobiliœmy z drewnianych desek i suchej trawy. Chaty z drewna, które by³o pod rêk¹. 
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_07"); //Reszta sprzêtów "przypadkiem" wpad³a w nasze rêce.
-    AI_Output (other, self ,"DIA_Rocky_BUDOWA_OBOZU_15_08"); //Ukraœæ kowad³o - to dopiero wyczyn! 
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_09"); //Ha ha. Racja. O tym ju¿ pogadaj z Punem. 
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_10"); //Dziêki m³ody.
-    AI_Output (other, self ,"DIA_Rocky_BUDOWA_OBOZU_15_11"); //Za co?
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_12"); //Sporo sobie przypomnia³em podczas naszych rozmów. Dobre czasy. 
-    AI_Output (self, other ,"DIA_Rocky_BUDOWA_OBOZU_03_13"); //No, dosyæ tych wspominek. Zmiataj do jakiejœ roboty.
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> GLUPIEC

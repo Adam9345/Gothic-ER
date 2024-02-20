@@ -81,14 +81,10 @@ FUNC VOID DIA_Raeuber_HELLO2_Info()
     AI_Output (other, self ,"DIA_Raeuber_HELLO2_15_01"); //Widzê, ¿e znasz siê na tej robocie.
     AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_02"); //Kucie prostych mieczy wcale nie jest takie trudne. 
     AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_03"); //Nawet ty z pewnoœci¹ byœ sobie poradzi³. Gorszych obiboków niegdyœ uczy³em.
-    AI_Output (other, self ,"DIA_Raeuber_HELLO2_15_04"); //Gdzie wczeœniej pracowa³eœ?
-    AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_05"); //Mia³em ma³¹ kuŸnie w jaskini niedaleko Khornis. Niestety, pewnego dnia nakryli mnie stra¿nicy. 
-    AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_06"); //Trafi³em na miesi¹c do lochu, a póŸniej tutaj. 
-    AI_Output (other, self ,"DIA_Raeuber_HELLO2_15_07"); //Od kiedy kucie broni jest nielegalne?
-    AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_08"); //To by³y ciê¿kie czasy. Stra¿ miejska potrzebowa³a broni. Ka¿dy kowal musia³ pracowaæ dzieñ i noc za ma³e pieni¹dze.
-    AI_Output (self, other ,"DIA_Raeuber_HELLO2_03_09"); //Bardziej op³aca³o mi siê potajemnie sprzedawaæ broñ bandytom. G³ównie dlatego tutaj trafi³em. Gdybym dogada³ siê z kupcami, mo¿e moje ¿ycie potoczy³oby siê inaczej.
+   
+   
 };
-
+/*
 //========================================
 //-----------------> HELLO3
 //========================================
@@ -135,7 +131,7 @@ FUNC VOID DIA_Raeuber_HELLO3_Info()
     AI_Output (other, self ,"DIA_Raeuber_HELLO3_15_19"); //Mo¿e czeka na odpowiedni moment?
     AI_Output (self, other ,"DIA_Raeuber_HELLO3_03_20"); //Mo¿e, ale dzisiaj... wolê o tym nie myœleæ.
 };
-
+*/
 //========================================
 //-----------------> SwordElement
 //========================================
