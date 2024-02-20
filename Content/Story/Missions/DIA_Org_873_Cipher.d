@@ -206,7 +206,7 @@ FUNC VOID DIA_Cipher_WhoSellElixier_Info()
 	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_18"); //Gdzie jest ta skrzynia? 
 	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_19"); //W ma³ym w¹wozie, pod starym mostem. T¹ drog¹ mo¿na siê dostaæ do obozu Aidana. Zazwyczaj stoj¹ tam jakieœ zbiry. 
 	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_20"); //Zjaw siê tam w nocy, a mo¿e spotkasz mojego wspólnika. Ja siê z nim nie widujê. Tylko tyle mogê ci powiedzieæ. 
-	
+	CreateInvItem (self, ItFo_Potion_Elixier_Egg);
     B_LogEntry                     (CH3_SellElixer,"Cipher wreszcie da³ mi jak¹œ wskazówkê. Nie zna on to¿samoœci swojego wspólnika, jednak zdradzi³ mi, ¿e dochodzi miêdzy nimi do wymiany pod starym mostem dziêki, któremu mo¿na siê ³atwo dostaæ do obozowiska Aidana. Znam to miejsce. Widzia³em tam niegdyœ dwóch rabusiów. Pod owym mostem mam szukaæ starej skrzyni. To w niej Cipher zostawia rudê, a jego wspólnik eliksiry. Muszê siê tam udaæ póŸn¹ noc¹ i spróbowaæ przy³apaæ handlarza.");
 
     AI_StopProcessInfos	(self);

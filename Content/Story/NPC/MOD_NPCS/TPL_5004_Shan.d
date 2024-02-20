@@ -13,12 +13,12 @@ id = 5004;
 
 //----------Statystyki----------
 
-attribute[ATR_STRENGTH] = 50;
+attribute[ATR_STRENGTH] = 80;
 attribute[ATR_DEXTERITY] = 60;
 attribute[ATR_MANA_MAX] = 100;
 attribute[ATR_MANA] = 100;
-attribute[ATR_HITPOINTS_MAX] = 200;
-attribute[ATR_HITPOINTS] = 200;
+attribute[ATR_HITPOINTS_MAX] = 640;
+attribute[ATR_HITPOINTS] = 640;
 
 //----------Wyglad----------
 
@@ -34,7 +34,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_MAGE,4);
 B_SetFightSkills(self,80);
 
 //----------Ekwipunek----------
-EquipItem		(self, ItMw_2H_Staff_02);
+EquipItem		(self, ItMw_2H_Sword_Light_02);
 CreateInvItems  (self,ItArRuneLight,1);
 CreateInvItems  (self,ItArRuneFireball,1);
 CreateInvItems  (self,ItArRuneThunderBolt,1);
