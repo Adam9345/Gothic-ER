@@ -36,10 +36,10 @@ func void CONN_BANN_HOS()
     Npc_SetTrueGuild (BAN_40032_Herszt,GIL_ORCSCOUT);
 	BAN_40032_Herszt.guild = GIL_ORCSCOUT;
 	
-   Npc_SetTrueGuild (Org_40137_Organisator,GIL_ORCSCOUT);
+    Npc_SetTrueGuild (Org_40137_Organisator,GIL_ORCSCOUT);
 	Org_40137_Organisator.guild = GIL_ORCSCOUT;
 	
-   Npc_SetTrueGuild (Org_40136_Organisator,GIL_ORCSCOUT);
+    Npc_SetTrueGuild (Org_40136_Organisator,GIL_ORCSCOUT);
 	Org_40136_Organisator.guild = GIL_ORCSCOUT;
 
 	
@@ -120,12 +120,12 @@ func void TRIA_ConnorZemsta_info()
 	
     TRIA_Finish(); // und Ende
 	CreateInvItems (BAN_40032_Herszt,     ItMi_ConnorItems     ,1);	 
-	
+	AI_Function(self, CONN_BANN_HOS);
 	
     B_LogEntry                     (TrudnaPrzeszlosc,"Dotarliœmy do bandziorów, którzy niegdyœ wykiwali Connora. Szykuje siê kolejna walka.");	
 
 	AI_StopProcessInfos (BAN_40032_Herszt);
-	CONN_BANN_HOS();
+	
 };
 
 instance dia_herszt_pickpocket(c_info) {
