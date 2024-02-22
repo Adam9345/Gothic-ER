@@ -73,40 +73,6 @@ INSTANCE MERTINOS_ARMOR(C_Item)
 	TEXT[5]					=	NAME_Value;				COUNT[5]	= value;
 };
 
-/******************************************************************************************/
-/**** SZATA ISENTHORA (ROZDZ. 4)
-/******************************************************************************************/
-INSTANCE ISENTHOR_ARMOR(C_Item)
-{
-	name 					=	"Szata Nekromanty Isenthora";
-
-	mainflag 				=	ITEM_KAT_ARMOR;
-	flags 					=	0;
-
-	protection [PROT_EDGE] 	= 	75;
-	protection [PROT_BLUNT] = 	75;
-	protection [PROT_POINT] = 	75;
-	protection [PROT_FIRE] 	= 	50;
-	protection [PROT_MAGIC] = 	28;
-
-	wear 					=	WEAR_TORSO;
-
- 	value 					=	protection [PROT_EDGE] * ARMOR_VALUE_MULTIPLIER;
-
-	owner 					= 	NON_3073_Czarny_Mag;
-
-	visual 					=	"dmbm.3ds";
-	visual_change 			=	"Hum_DMBM_ARMOR.asc";
-	visual_skin 			=	1;
-	material 				=	MAT_LEATHER;
-
-	description				=	name;
-	TEXT[1]					=	NAME_Prot_Edge;			COUNT[1]	= protection	[PROT_EDGE];
-	TEXT[2]					=	NAME_Prot_Point;		COUNT[2]	= protection	[PROT_POINT];
-	TEXT[3] 				=	NAME_Prot_Fire;			COUNT[3]	= protection	[PROT_FIRE];
-	TEXT[4]					=	NAME_Prot_Magic;		COUNT[4]	= protection	[PROT_MAGIC];
-	TEXT[5]					=	NAME_Value;				COUNT[5]	= value;
-};
 
 /******************************************************************************************/
 /**** NOWICJUSZE - ŒWI¥TYNIA ŒNI¥CEGO
