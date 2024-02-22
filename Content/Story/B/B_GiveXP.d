@@ -96,6 +96,9 @@ func void B_DeathXP()
 	{	
 		PrintDebugNpc	(PD_ZS_CHECK,	"...Opfer ist entweder nicht bewuﬂtlos oder kein Mensch!");
 		B_GiveXP (self.level * XP_PER_LEVEL_DEAD); 
+	}
+	else if (C_NpcIsMonster(self) && self.aivar[AIV_MM_ShrinkState]) {
+		B_GiveXP ((self.level * XP_PER_LEVEL_DEAD) / 2);
 	};
 };
 		
