@@ -215,7 +215,7 @@ INSTANCE DIA_Rocky_NAUKA (C_INFO)
 
 FUNC INT DIA_Rocky_NAUKA_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rocky_PAST))
+    if (Npc_KnowsInfo (hero, DIA_Rocky_POGADUCHY))
     {
     return TRUE;
     };
@@ -277,7 +277,7 @@ INSTANCE DIA_Rocky_Lehrer (C_INFO)
 
 FUNC INT DIA_Rocky_Lehrer_Condition()
 {	
-	if (Npc_KnowsInfo (hero, DIA_Rocky_PAST))
+	if (Npc_KnowsInfo (hero, DIA_Rocky_POGADUCHY))
 	{
 		return 1;	
 	};

@@ -3539,7 +3539,7 @@ FUNC VOID STARTUP_ABANDONEDMINE ()
 	Wld_InsertNpc		(Skeleton ,	"VM_PATH1");
 	
 	//-------- Enter --------
-	Wld_InsertNpc		(NON_3073_Czarny_Mag,"VM_MAGE");
+	
 	
 	
 	//wa¿ny npc #VIP
