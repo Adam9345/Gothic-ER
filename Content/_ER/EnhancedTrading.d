@@ -1028,6 +1028,11 @@ func void _eventTradeHandleEvent__EnhancedTrading (var int dummyVariable) {
 	if (cancel) {
 		MEM_WriteInt (ESP + 4, 0);
 		EDI = 0;
+
+		Trade_SetNpcContainerValue (0);
+		Trade_SetPlayerContainerValue (0);
+
+		TradeForceTransferAccept = 0;
 	};
 };
 
