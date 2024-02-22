@@ -210,21 +210,6 @@ DannyHelp_var = true;
 
 
 
-var int resp_demonow_kopalnia;
-if (Npc_IsDead(NON_3073_Czarny_Mag)) && (resp_demonow_kopalnia == false) && (Npc_GetDistToWP (hero, "VM_MAGE") < 5000)
-{
-	resp_demonow_kopalnia = true;
-	Wld_InsertNpc		(DemonMine,"ZL10");
-	Wld_InsertNpc		(DemonMine,"VM_PATH1");
-	Wld_InsertNpc		(DemonMine,"VM_SKE_BOW1");
-	Wld_InsertNpc		(Skeleton ,	"VM_SKG_1");
-	Wld_InsertNpc		(Skeleton ,	"VM_SKG_2");
-	Wld_InsertNpc		(Skeleton ,	"VM_SKG_3");
-	Wld_InsertNpc		(Skeleton ,	"VM_SKG_4");
-	
-	Wld_InsertNpc		(Zombie ,	"VM_ZOMBIE8");
-	Wld_InsertNpc		(Zombie ,	"VM_ZOMBIE6");
-};
 
 var int once_killJosh;
 if (Npc_HasItems (hero, itmi_joshpocket) >=1) && (!Npc_KnowsInfo (hero, DIA_Hysen_Fight)) && (once_killJosh == false)
