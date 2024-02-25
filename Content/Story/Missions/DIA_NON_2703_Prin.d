@@ -45,7 +45,7 @@ FUNC VOID DIA_prin_HELLO_Info()
 {
 	AI_Output (other, self ,"DIA_prin_HELLO_15_01"); //Kim jesteœ?
     AI_Output (self, other ,"DIA_prin_HELLO_03_02"); //Nazywam siê Prin. Jestem ³owc¹ orków. 
-    AI_Output (other, self ,"DIA_prin_HELLO_15_03"); //Jaka jest twoja specjalizacja? Czym siê zajmujesz w obozie?
+    AI_Output (other, self ,"DIA_prin_HELLO_15_03"); //Czym siê zajmujesz w obozie?
     AI_Output (self, other ,"DIA_prin_HELLO_03_04"); //Jestem traperem. Moim zadaniem s¹ zwiady, sprawdzanie terenu i tym podobne sprawy. 
 };
 
@@ -75,12 +75,11 @@ FUNC VOID DIA_prin_OrcLands_Info()
 {
     AI_Output (other, self ,"DIA_prin_OrcLands_15_01"); //Opowiedz mi o Ziemiach Orków.
     AI_Output (self, other ,"DIA_prin_OrcLands_03_02"); //To dosyæ rozleg³y teren. 
-    AI_Output (other, self ,"DIA_prin_OrcLands_15_03"); //Dlaczego jest tam tak niebezpiecznie?
-    AI_Output (self, other ,"DIA_prin_OrcLands_03_04"); //Wszêdzie krêc¹ siê orkowe patrole, wypatruj¹ce nie wiadomo czego. 
-	AI_Output (self, other ,"DIA_prin_OrcLands_03_05"); //Najwiêcej orków jest w³aœnie tutaj, przy granicy. W g³êbi nie pojawiaj¹ siê ju¿ tak licznie. Poza ich miastem, rzecz jasna.
-	AI_Output (self, other ,"DIA_prin_OrcLands_03_06"); //Nie brakuje tam jednak innych bestii - brzytw i k¹saczy. 
-	AI_Output (self, other ,"DIA_prin_OrcLands_03_07"); //Je¿eli mamy dobry pancerz, to k¹sacze nie s¹ zbyt wielkim zagro¿eniem. Jednak na brzytwy nale¿y szczególnie uwa¿aæ. 
-	AI_Output (self, other ,"DIA_prin_OrcLands_03_08"); //Ich stado mo¿e poszarpaæ dobrego wojownika na kawa³eczki w kilka chwil. 
+    AI_Output (self, other ,"DIA_prin_OrcLands_03_03"); //Wszêdzie krêc¹ siê orkowe patrole, wypatruj¹ce nie wiadomo czego. 
+	AI_Output (self, other ,"DIA_prin_OrcLands_03_04"); //Najwiêcej orków jest w³aœnie tutaj, przy granicy. W g³êbi nie pojawiaj¹ siê ju¿ tak licznie. Poza ich miastem, rzecz jasna.
+	AI_Output (self, other ,"DIA_prin_OrcLands_03_05"); //Jednak...nie brakuje tam innych bestii - brzytw i k¹saczy. 
+	AI_Output (self, other ,"DIA_prin_OrcLands_03_06"); //Je¿eli masz dobry pancerz, to k¹sacze nie s¹ zbyt wielkim zagro¿eniem. Brzytwy, to inna sprawa
+	AI_Output (self, other ,"DIA_prin_OrcLands_03_07"); //Ich stado mo¿e poszarpaæ dobrego wojownika na kawa³eczki w kilka chwil. 
 };
 
 //========================================
@@ -108,12 +107,12 @@ FUNC INT DIA_prin_SomeoneElse_Condition()
 FUNC VOID DIA_prin_SomeoneElse_Info()
 {
 	AI_Output (other, self ,"DIA_prin_SomeoneElse_15_01"); //Czy mieszka tu ktoœ inny?
-    AI_Output (self, other ,"DIA_prin_SomeoneElse_03_02"); //Na Ziemiach Orków? Z pewnoœci¹! 
-	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_03"); //Z tego co mi wiadomo nieopodal Miasta Orków nie ma nic ciekawego. Jednak ko³o bagna jest jaskinia, w której mieszka pewien Mag Ognia. 
+    	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_02"); //Na Ziemiach Orków? Z pewnoœci¹! 
+	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_03"); //Z tego co mi wiadomo, nieopodal Miasta Orków nie ma nic ciekawego. Jednak ko³o bagna jest jaskinia, w której mieszka pewien alchemik. 
 	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_04"); //Rozmawia³em z nim kiedyœ. Powiedzia³, ¿e szuka jakichœ kamieni przypominaj¹cych kryszta³y, czy coœ takiego.
 	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_05"); //Rzekomo prowadzi nad nimi badania. Nie znam siê na tym, wiêc nie mia³em zamiaru mu pomagaæ. Doradzi³em tylko, ¿eby uwa¿a³. 
 	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_06"); //Jest jeszcze wielka wie¿a. Trudno j¹ przeoczyæ. W nocy s³ychaæ stamt¹d okropne dŸwiêki. Lepiej siê tam nie zapuszczaj. 
-	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_07"); //Ciekawym miejscem jest te¿ jezioro w pobli¿u Cytadeli. Na jego œrodku znajduje siê stara, zatopiona wie¿a. Nigdy tam nie by³em, ale czuæ stamt¹d plugaw¹ magi¹ na kilometr.
+	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_07"); //Na œrodku jeziora, w pobli¿u cytadeli jest jeszcze jedna. Nigdy tam nie by³em, ale czuæ stamt¹d plugaw¹ magi¹ na kilometr.
 	AI_Output (self, other ,"DIA_prin_SomeoneElse_03_08"); //Tego miejsca równie¿ radzi³bym ci unikaæ.
 	B_GiveXP (100);
 };
@@ -143,14 +142,10 @@ FUNC INT DIA_prin_Teleport_Condition()
 FUNC VOID DIA_prin_Teleport_Info()
 {
 	AI_Output (other, self ,"DIA_prin_Teleport_15_01"); //Czy istnieje jakaœ runa teleportacji do tego miejsca?
-    AI_Output (self, other ,"DIA_prin_Teleport_03_02"); //Ten Mag Ognia, o którym ci wspomina³em... Kiedyœ wykonywa³em dla niego pewne zlecenie. Mia³em pozbyæ siê stada brzytw, które zapêdzi³y siê w okolice jego jaskini.
-	AI_Output (self, other ,"DIA_prin_Teleport_03_03"); //Gdy wykona³em zadanie, powiedzia³, ¿e nie ma dla mnie rudy. Zapyta³em wiêc, czy jest w stanie mi siê odwdziêczyæ w jakiœ inny sposób.
-	AI_Output (self, other ,"DIA_prin_Teleport_03_04"); //Poprosi³em go o zbadanie dla mnie tej tajemniczej p³yty znajduj¹cej siê nad naszym obozem. 
-	AI_Output (self, other ,"DIA_prin_Teleport_03_05"); //Wiesz, jestem uczulony na sprawy magii... Chcia³em, ¿eby ktoœ obeznany sprawdzi³, czy to staro¿ytne coœ nie stanowi dla nas zagro¿enia. 
-	AI_Output (self, other ,"DIA_prin_Teleport_03_06"); //Okaza³o siê, ¿e w tym miejscu kiedyœ zogniskowano moc magiczn¹... Czy jakoœ tak... Nie znam siê na tym!
-	AI_Output (self, other ,"DIA_prin_Teleport_03_07"); //W ka¿dym b¹dŸ razie mag stwierdzi³, ¿e nie stanowi to dla nas niebezpieczeñstwa. W ramach zap³aty za zlecenie przygotowa³ dla mnie kamieñ teleportacji. 
-	AI_Output (self, other ,"DIA_prin_Teleport_03_08"); //Powiedzia³, ¿e mogê siê dziêki niemu bezpiecznie tu przenieœæ. Nigdy jednak z niego nie skorzysta³em... Ju¿ ci mówi³em, ¿e nie param siê magi¹.
-	AI_Output (self, other ,"DIA_prin_Teleport_03_09"); //Jeœli siê nie boisz, to ci go sprzedam za równowartoœæ mojego zlecenia. To bêdzie jakieœ... 300 bry³ek rudy. Kupujesz?
+    	AI_Output (self, other ,"DIA_prin_Teleport_03_02"); //Ten alchemik, o którym ci wspomina³em... Kiedyœ wykonywa³em dla niego pewne zlecenie. 
+	AI_Output (self, other ,"DIA_prin_Teleport_03_03"); //W ramach nagrody, da³ mi runê teleportacyjn¹.
+	AI_Output (self, other ,"DIA_prin_Teleport_03_04"); //Powiedzia³, ¿e mogê siê dziêki niemu bezpiecznie tu przenieœæ. Nigdy jednak z niego nie skorzysta³em... Ju¿ ci mówi³em, ¿e nie param siê magi¹.
+	AI_Output (self, other ,"DIA_prin_Teleport_03_05"); //Jeœli siê nie boisz, to ci go sprzedam za równowartoœæ mojego zlecenia. To bêdzie jakieœ... 300 bry³ek rudy. Kupujesz?
 	
 	Log_CreateTopic (GE_TraderOW,LOG_NOTE);
 	B_LogEntry		(GE_TraderOW,"£owca orków Prin mo¿e mi sprzedaæ runê teleportu do obozu ³owców orków za cenê 300 bry³ek rudy.");
@@ -230,9 +225,9 @@ FUNC VOID DIA_Prin_PrzegrupowaniaOrkow_Info()
 {
 
 	AI_Output (other, self ,"DIA_Prin_PrzegrupowaniaOrkow_15_01"); //Zosta³em wys³any przez Wilsona. Mam siê dowiedzieæ co ustali³eœ.
-    AI_Output (self, other ,"DIA_Prin_PrzegrupowaniaOrkow_03_02"); //NajwyraŸniej ostatnie manewry Orków nie s¹ przypadkowe. Chyba szykuje siê coœ wiêkszego.
+    	AI_Output (self, other ,"DIA_Prin_PrzegrupowaniaOrkow_03_02"); //NajwyraŸniej ostatnie manewry Orków nie s¹ przypadkowe. Chyba szykuje siê coœ wiêkszego.
 	AI_Output (other, self ,"DIA_Prin_PrzegrupowaniaOrkow_15_03"); //Inwazja?
-	AI_Output (self, other ,"DIA_Prin_PrzegrupowaniaOrkow_03_04"); //Raczej mniejszy wypad ale i tak to groŸna sprawa. Atak z zaskoczenia mo¿e doprowadziæ do œmierci wielu ludzi.
+	AI_Output (self, other ,"DIA_Prin_PrzegrupowaniaOrkow_03_04"); //Raczej mniejszy wypad, ale i tak to groŸna sprawa. Atak z zaskoczenia mo¿e doprowadziæ do œmierci wielu ludzi.
 	AI_Output (self, other ,"DIA_Prin_PrzegrupowaniaOrkow_03_05"); //Na czele przegrupowuj¹cych siê oddzia³ów zauwa¿y³em trzech orkowych dowódców. To oni nadzoruj¹ ca³¹ akcjê.
 	AI_Output (other, self ,"DIA_Prin_PrzegrupowaniaOrkow_15_06"); //Muszê przekazaæ to Wilsonowi!
 	Snd_Play ("$ORC_HAPPY01");
@@ -307,7 +302,7 @@ FUNC VOID DIA_Prin_PO_Mapa_Info()
     AI_Output (other, self ,"DIA_Prin_PO_Mapa_15_06"); //Niech bêdzie, do zobaczenia w obozie.
 	AI_Output (self, other ,"DIA_Prin_PO_Mapa_03_07"); //Nie daj siê zabiæ.
 
-     B_LogEntry               (PrzegrupowaniaOrkow,"Przy jednym z orków znalaz³em jak¹œ mapê. Prin powiedzia³ ¿e to najprawdopodobniej punkty w których zosta³y rozmieszczone hordy orków. Muszê jak najszybciej powiadomiæ Wilsona...");
+     B_LogEntry               (PrzegrupowaniaOrkow,"Przy jednym z orków znalaz³em jak¹œ mapê. Prin powiedzia³, ¿e to najprawdopodobniej punkty w których zosta³y rozmieszczone hordy orków. Muszê jak najszybciej powiadomiæ Wilsona...");
 	 Npc_ExchangeRoutine(NON_2703_MYSLIWY,"Start");
 	 AI_StopProcessInfos	     (self); 
 };
