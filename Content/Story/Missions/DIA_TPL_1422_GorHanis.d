@@ -214,6 +214,7 @@ instance Info_GorHanis_ChargeGood (C_INFO)
 FUNC INT Info_GorHanis_ChargeGood_Condition()
 {
 	if (Npc_KnowsInfo (hero,Info_GorHanis_Charge)) && (kapitel < 4)
+	&& (TPL_1422_GorHanis.aivar[AIV_WASDEFEATEDBYSC] == FALSE)
 	{
 		return 1;
 	};
