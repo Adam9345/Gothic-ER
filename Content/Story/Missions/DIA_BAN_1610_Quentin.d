@@ -2335,8 +2335,8 @@ FUNC VOID DIA_Quentin_START_TRAIN_Info()
 	Info_ClearChoices(DIA_Quentin_START_TRAIN);
 	Info_AddChoice(DIA_Quentin_START_TRAIN,"Wróæ",DIA_Quentin_START_TRAIN_BACK);
 	
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
 	
 	
 };
@@ -2347,8 +2347,8 @@ func void DIA_Quentin_START_TRAIN_1H_1()
 	Info_ClearChoices(DIA_Quentin_START_TRAIN);
 	Info_AddChoice(DIA_Quentin_START_TRAIN,Dialog_Back,DIA_Quentin_START_TRAIN_BACK);
 	
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
 
 };
 
@@ -2360,8 +2360,8 @@ func void DIA_Quentin_START_TRAIN_1H_5()
 	Info_ClearChoices(DIA_Quentin_START_TRAIN);
 	Info_AddChoice(DIA_Quentin_START_TRAIN,Dialog_Back,DIA_Quentin_START_TRAIN_BACK);
 
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
-	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ dwurêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +1",B_GetLearnCostTalent(other,NPC_TALENT_1H,1),0),DIA_Quentin_START_TRAIN_1H_1);
+	Info_AddChoice(DIA_Quentin_START_TRAIN,B_BuildLearnString("Broñ jednorêczna +5",B_GetLearnCostTalent(other,NPC_TALENT_1H,5),0),DIA_Quentin_START_TRAIN_1H_5);
 
 
 };

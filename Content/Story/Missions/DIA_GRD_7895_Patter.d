@@ -147,19 +147,19 @@ FUNC VOID DIA_Patter_TEACH_Info()
         AI_Output (self, other ,"DIA_Patter_TEACH_03_02"); //Wielu rzeczy. Co konkretnie chcesz wiedzieæ?
 	Info_ClearChoices	(DIA_Patter_TEACH);
 	Info_AddChoice		(DIA_Patter_TEACH, DIALOG_BACK, DIA_Patter_TEACH_Back);
-    if (!Knows_GetLurkerMeat) {
+    if (Knows_GetLurkerMeat == false) {
         Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie miêsa topielców (150 bry³ek rudy, 1 PN)", DIA_Patter_TEACH_LurkerMeat);
     };
-    if (!Knows_GetMoleratW) {
+    if (Knows_GetMoleratW == false) {
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie w¹troby kretoszczurów (50 bry³ek rudy, 1 PN)", DIA_Patter_TEACH_MoleratW);
     };
-    if (!Knows_GetMoleratT) {
+    if (Knows_GetMoleratT == false) {
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie sad³a zwierz¹t (50 bry³ek rudy, 1 PN)", DIA_Patter_TEACH_MoleratT);
     };
-    if (!Knows_GetTrollGroundClaws) {
+    if (Knows_GetTrollGroundClaws == false) {
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie pazurów trolla ziemnego (150 bry³ek rudy, 1 PN)", DIA_Patter_TEACH_TrollGroundMoc);
     };
-    if (!Knows_GetTrutkaJaszczura) {
+    if (Knows_GetTrutkaJaszczura == false) {
     Info_AddChoice		(DIA_Patter_TEACH, "Zbieranie trucizny jaszczurów (30 bry³ek rudy, 1 PN)", DIA_Patter_TEACH_TruciznaJaszczurow12);
     };
     }

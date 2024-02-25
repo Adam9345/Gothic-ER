@@ -82,7 +82,7 @@ FUNC VOID Info_Diego_Gamestart_Info()
 	B_Kapitelwechsel(1); //WICHTIG!!!
 	Wld_SendTrigger ("EVT_OW_STARTLOCKOUT_MOVER"); 
 	Info_ClearChoices(Info_Diego_Gamestart );
-	Info_AddChoice	 (Info_Diego_Gamestart, "Zosta³em przy³apany na kradzie¿y ³adunku rudy. (+5 zrêcznoœæ)"	,Info_Diego_Gamestart_Choice_Dex);
+	Info_AddChoice	 (Info_Diego_Gamestart, "Zosta³em przy³apany na kradzie¿y ³adunku rudy. (+3 zrêcznoœæ)"	,Info_Diego_Gamestart_Choice_Dex);
 	Info_AddChoice	 (Info_Diego_Gamestart, "Mia³em ma³¹ sprzeczkê ze stra¿nikiem królewskim. (+3 si³a)"				,Info_Diego_Gamestart_Choice_Str);
 	Info_AddChoice	 (Info_Diego_Gamestart, "Królowi nie spodoba³y siê moje pogl¹dy.  (+5 mana)"				,Info_Diego_Gamestart_Choice_Man);
 	Info_AddChoice	 (Info_Diego_Gamestart, "Za niewinnoœæ.  (+2 do wszystkich atrybutów)"	,Info_Diego_Gamestart_Choice_All);
@@ -93,8 +93,8 @@ FUNC VOID Info_Diego_Gamestart_Choice_Dex()
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Dex_15_00"); //Zosta³em przy³apany na kradzie¿y ³adunku rudy.
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Dex_15_01"); //Niestety, facet, który mi pomaga³ wyda³ mnie stra¿y i zebra³ ca³¹ nagrodê. 
 	//PrintScreen	("Zrêcznoœæ +3", -1,-1,"FONT_OLD_20_WHITE.TGA",3);
-	PrintS_Ext ("Zrêcznoœæ + 5",COL_Olive) ;
-	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY]+5;
+	PrintS_Ext ("Zrêcznoœæ + 3",COL_Olive) ;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY]+3;
 	Info_ClearChoices(Info_Diego_Gamestart );
 };
 

@@ -295,7 +295,7 @@ func void Dia_scorpio_Teach_Crossbow_1()
 {
 	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,100);
 	Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
-	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,Dialog_Back,DIA_scorpio_Bow_BACK);
+	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,Dialog_Back,DIA_Scorpio_CROSSBOW_BACK);
 	
 	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_scorpio_Teach_Crossbow_1);
 	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_scorpio_Teach_Crossbow_5);
@@ -305,7 +305,7 @@ func void Dia_scorpio_Teach_Crossbow_5()
 {
 	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,100);
 	Info_ClearChoices(DIA_Scorpio_CROSSBOW_OKLEARN);
-	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,Dialog_Back,DIA_scorpio_Bow_BACK);
+	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,Dialog_Back,DIA_Scorpio_CROSSBOW_BACK);
 	
 	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1),0),Dia_scorpio_Teach_Crossbow_1);
 	Info_AddChoice(DIA_Scorpio_CROSSBOW_OKLEARN,B_BuildLearnString("Kusze +5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,5),0),Dia_scorpio_Teach_Crossbow_5);
