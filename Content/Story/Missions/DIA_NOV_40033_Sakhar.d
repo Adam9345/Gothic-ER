@@ -217,7 +217,7 @@ FUNC VOID DIA_Sakhar_WDC_BDFA_Info()
     AI_Output (self, other ,"DIA_Sakhar_WDC_BDFA_03_02"); //Jasne. Do dzie≥a.
     AI_Output (other, self ,"DIA_Sakhar_WDC_BDFA_15_03"); //Prowadü.
 	Npc_ExchangeRoutine(NOV_40033_Sakhar,"Guide");
-    AI_Output (self, other ,"DIA_Sakhar_WDC_BDFA_03_04"); //ChoÊ za mnπ.
+    AI_Output (self, other ,"DIA_Sakhar_WDC_BDFA_03_04"); //Chodü za mnπ.
 	Wld_InsertNpc				(BloodflySakhar1,"FP_ROAM_BLOOD_SAK1");
 	Wld_InsertNpc				(BloodflySakhar2,"FP_ROAM_BLOOD_SAK2");
 	Wld_InsertNpc				(BloodflySakhar3,"FP_ROAM_BLOOD_SAK3");
