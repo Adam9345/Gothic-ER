@@ -4,18 +4,18 @@
 // - control what items will trader buy from you
 // - selling price / buying prace
 
-const string ENHANCEDTRADING_FONT = "FONT_OLD_20_WHITE.TGA";
+const string ENHANCEDTRADING_FONT = "FONT_OLD_10_WHITE.TGA";
 
 func void EnhancedTrading_NotEnoughOre () {
-	PrintScreen ("Nie masz odpowiedniej iloœci rudy!", -1, 45, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
+	PrintScreen ("Nie masz odpowiedniej iloœci rudy!", -1, 97, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
 };
 
 func void EnhancedTrading_Trader_NotEnoughOre () {
-	PrintScreen ("Handlarz nie ma odpowiedniej iloœci rudy!", -1, 45, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
+	PrintScreen ("Handlarz nie ma odpowiedniej iloœci rudy!", -1, 97, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
 };
 
 func void EnhancedTrading_Trader_NotEnoughOre_Confirm () {
-	PrintScreen ("Stracisz bry³ki przy tej transakcji. Na pewno chcesz zaakceptowaæ?", -1, 45, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
+	PrintScreen ("Stracisz bry³ki przy tej transakcji. Na pewno chcesz zaakceptowaæ?", -1, 97, ENHANCEDTRADING_FONT, _TIME_MESSAGE_LOGENTRY);
 };
 
 func void Subtitles_ForTrading () {

@@ -22,7 +22,7 @@ func void craftingview_hide() {
         render_remove(craftingview_renderitem);
         craftingview_renderitem = 0;
     };
-    repeat(i, 8);
+    repeat(i, 10);
     hnd = mem_readintarray(_@(craftingviewtext), i);
     if(hlp_isvalidhandle(hnd)) {
         print_deletetext(hnd);
@@ -201,7 +201,8 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
             sb_destroy();
             end;
         };
-    }
+    };
+    /*
     else {
         recitem = _^(itm_getptr(recinst));
         craftingview_renderitem = render_additemcenterpxl(recinst, (print_screen / 2) - roundf(mulf(mkf(300), scalef)), (print_screen[1] / 2) + (yquartsize / 2), windowheight, windowheight);
@@ -218,6 +219,7 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
         armor_text = i2s(mem_readintarray(_@(recitem.protection), prot_magic));
         craftingviewtext[5] = print_extpxl(textxpos, textypos + (fh * 5), cs3(name_prot_magic, " ", armor_text), text_font_default, col_white, -1);
     };
+    */
 
     craftingview_isopen = true;
 };
@@ -239,7 +241,7 @@ func void craftingview_tabswitcher() {
         };
     };
 };
-
+/*
 func int pc_craftrecipeitem_max(var int recipeinst) {
     var int ptr;
     var c_recipe rec;
@@ -276,6 +278,7 @@ func int pc_craftrecipeitem_max(var int recipeinst) {
     end;
     return max;
 };
+*/
 
 func void craftingview_update() {
     var zcviewdialogchoice dlg;
@@ -346,6 +349,7 @@ func void craftingview_update() {
                         dlgnr = dlginstance.nr;
                         if(i == dlg.choiceselected) {
                             //armor_check = craftingview_checkarmors(dlgdescription);
+                            /*
                             if(mem_informationman.mode == cinfo_mgr_mode_choice) {
                                 choiceiteminstance = -1;
                                 if(potionalchemy_instance != (-1)) {
@@ -373,32 +377,35 @@ func void craftingview_update() {
                                         craftingview_hide();
                                     };
                                 }
+                                */
                                 /*
                                 else if(armor_check != (-1)) {
                                     craftingview_show(armor_check, 2, 1);
                                 }
                                 */
+                                /*
                                 else {
                                     craftingview_hide();
                                 };
                             }
-                            else if((dlgnr >= start_weapon_dlg_nr) && (dlgnr < start_weapon_dlg_nr + 100)) {
+                            */
+                            if((dlgnr >= start_weapon_dlg_nr) && (dlgnr < start_weapon_dlg_nr + 100)) {
                                 craftingview_show(mem_readintarray(_@(weaponrecipeinstance), dlgnr - start_weapon_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_potion_dlg_nr) && (dlgnr < start_potion_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(potionrecipeinstance), dlgnr - start_potion_dlg_nr), 1, 1);
+                                craftingview_show(mem_readintarray(_@(potionrecipeinstance), dlgnr - start_potion_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_meal_dlg_nr) && (dlgnr < start_meal_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(mealrecipeinstance), dlgnr - start_meal_dlg_nr), 1, 1);
+                                craftingview_show(mem_readintarray(_@(mealrecipeinstance), dlgnr - start_meal_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_scroll_dlg_nr) && (dlgnr < start_scroll_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(scrollrecipeinstance), dlgnr - start_scroll_dlg_nr), 1, 1);
+                                craftingview_show(mem_readintarray(_@(scrollrecipeinstance), dlgnr - start_scroll_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_armor_dlg_nr) && (dlgnr < start_armor_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(armorrecipeinstance), dlgnr - start_armor_dlg_nr), 1, 1);
+                                craftingview_show(mem_readintarray(_@(armorrecipeinstance), dlgnr - start_armor_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_other_dlg_nr) && (dlgnr < start_other_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(otherrecipeinstance), dlgnr - start_other_dlg_nr), 1, 1);
+                                craftingview_show(mem_readintarray(_@(otherrecipeinstance), dlgnr - start_other_dlg_nr), 0, 1);
                             }
                             /*
                             else if(armor_check != (-1)) {

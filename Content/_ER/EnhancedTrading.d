@@ -1028,11 +1028,6 @@ func void _eventTradeHandleEvent__EnhancedTrading (var int dummyVariable) {
 	if (cancel) {
 		MEM_WriteInt (ESP + 4, 0);
 		EDI = 0;
-
-		Trade_SetNpcContainerValue (0);
-		Trade_SetPlayerContainerValue (0);
-
-		TradeForceTransferAccept = 0;
 	};
 };
 
@@ -1087,6 +1082,30 @@ func void _eventTradeOnAccept__EnhancedTrading (var int dummyVariable) {
 			oCViewDialogTrade_TransferAccept ();
 		};
 	};
+};
+
+func void _hook_oCViewDialogTrade_OnAccept () {
+	_TradeOnAccept_Event_Break = FALSE;
+	Event_Execute (_TradeOnAccept_Event, 0);
+};
+
+func void _hook_oCViewDialogTrade_HandleEvent () {
+	//--> Safety check
+	if (!MEM_InformationMan.DlgTrade) { return; };
+
+	var oCViewDialogTrade dialogTrade;
+	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
+
+	if (!dialogTrade.IsActivated) { return; };
+	//<--
+
+	_TradeHandleEvent_Event_Break = FALSE;
+	Event_Execute (_TradeHandleEvent_Event, 0);
+};
+
+func void _hook_oCViewDialogTrade_OnExit () {
+	_TradeOnExit_Event_Break = FALSE;
+	Event_Execute (_TradeOnExit_Event, 0);
 };
 
 func void G1_TradeEvents_Init () {
