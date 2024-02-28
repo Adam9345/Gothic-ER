@@ -240,21 +240,12 @@ INSTANCE ItMi_Worek_Garp (C_Item)
 
 	visual 				=	"ItMi_Pocket.3ds";
 	material 			=	MAT_CLAY;
-	scemeName           =       "MAPSEALED";	
-	on_state[0]				=	UseOWorekGarp;
+
 	
 	description			= name;
 	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
 };
-func void UseOWorekGarp()
-{
-    CreateInvItems (self, ItMiNugget, 150);
-	CreateInvItems (self, ItMi_Stuff_OldCoin_01, 40);
-	if (Npc_IsPlayer(self))
-	{
-    Print ("Znaleziono kilkanaœcie przedmiotów.");
-	};
-};
+
 /*******************************************************************************************/
 INSTANCE ItMi_Worek_Glen (C_Item)
 {
