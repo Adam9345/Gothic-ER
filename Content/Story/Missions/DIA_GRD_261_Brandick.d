@@ -527,6 +527,7 @@ FUNC VOID GRD_261_Brandick_Amulet_ADD1()
 	AI_Output (self ,other,"GRD_261_Brandick_Amulet_ADD1_11_06");  //Na razie.
 	AI_Output (other,self ,"GRD_261_Brandick_Amulet_ADD1_15_07");  //Do zobaczenia.
 	B_GiveInvItems (other,self,Amulett_Brandick_01, 1);
+	Npc_RemoveInvItem(GRD_261_Brandick,	Amulett_Brandick_01);
 	B_GiveInvItems (self,other,ItMiNugget,300);
 	B_LogEntry               (CiekaweZnalezisko,"Wróci³em do Brandicka i odda³em magiczny medalion ponownie zdatny do u¿ytku. Stra¿nik by³ ze mnie zadowolony i wyp³aci³ mi umówione 300 bry³ek rudy.");
 	Log_SetTopicStatus       (CiekaweZnalezisko, LOG_SUCCESS);
