@@ -6,7 +6,7 @@ instance ORG_801_Lares (Npc_Default)
 	Npctype =				Npctype_Main;
 	guild =					GIL_ORG;      
 	level =					15;
-	
+	flags = 1;
 	voice =					11;
 	id =					801;
 
