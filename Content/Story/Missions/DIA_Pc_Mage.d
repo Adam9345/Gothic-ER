@@ -1821,7 +1821,7 @@ FUNC VOID DIA_PC_MAGE_SAMOPOCZUCIE_Info()
 {
     AI_Output (other, self ,"DIA_PC_MAGE_SAMOPOCZUCIE_15_01"); //Lepiej siê ju¿ czujesz? 
     AI_Output (self, other ,"DIA_PC_MAGE_SAMOPOCZUCIE_03_02"); //Ostatnie wydarzenia bardzo mnie zaskoczy³y. To wszystko sta³o siê tak szybko.
-    AI_Output (self, other ,"DIA_PC_MAGE_SAMOPOCZUCIE_03_03"); //Ludzie z którymi mia³em tyle wspólnego nagle odeszli. Ci, którzy zapewniali mi bezpieczeñstwo chcieli mnie zabiæ. 
+    AI_Output (self, other ,"DIA_PC_MAGE_SAMOPOCZUCIE_03_03"); //Ludzie, którzy byli dla mnie jak rodzina odeszli na zawsze. Ci, którzy zapewniali mi bezpieczeñstwo chcieli mnie zabiæ. 
     AI_Output (self, other ,"DIA_PC_MAGE_SAMOPOCZUCIE_03_04"); //To wszystko obudzi³o we mnie z³e wspomnienia... wojna, dezercja. Nie chcê o tym mówiæ. 
 };
 
@@ -1854,40 +1854,6 @@ FUNC VOID DIA_PC_MAGE_PLANY_Info()
     AI_Output (self, other ,"DIA_PC_MAGE_PLANY_03_02"); //Jeszcze o tym dok³adnie nie myœla³em.
     AI_Output (self, other ,"DIA_PC_MAGE_PLANY_03_03"); //Prawdopodobnie udam siê wraz z Gornem do Nowego Obozu.
     AI_Output (self, other ,"DIA_PC_MAGE_PLANY_03_04"); //Saturasowi i innym Magom Wody przyda siê moja pomoc.
-};
-
-//========================================
-//-----------------> RAVEN
-//========================================
-
-INSTANCE DIA_PC_MAGE_RAVEN (C_INFO)
-{
-   npc          = PC_MAGE;
-   nr           = 5;
-   condition    = DIA_PC_MAGE_RAVEN_Condition;
-   information  = DIA_PC_MAGE_RAVEN_Info;
-   permanent	= FALSE;
-   description	= "Spotka³em Kruka w okolicach placu wymian.";
-};
-
-FUNC INT DIA_PC_MAGE_RAVEN_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_pc_mage_PODAREK_MILTEN))
-    && (Npc_KnowsInfo (hero, DIA_Raven_GUEST))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_PC_MAGE_RAVEN_Info()
-{
-    AI_Output (other, self ,"DIA_PC_MAGE_RAVEN_15_01"); //Spotka³em Kruka w okolicach placu wymian.
-    AI_Output (other, self ,"DIA_PC_MAGE_RAVEN_15_02"); //Towarzyszy³o mu wielu uciekinierów ze Starego Obozu.
-    AI_Output (self, other ,"DIA_PC_MAGE_RAVEN_03_03"); //Kruka? 
-    AI_Output (self, other ,"DIA_PC_MAGE_RAVEN_03_04"); //Kruk od zawsze by³ wierny Gomezowi. Tak nagle go opuœci³?
-    AI_Output (self, other ,"DIA_PC_MAGE_RAVEN_03_05"); //Za³o¿ê siê, ¿e coœ kombinuje. Najlepiej bêdzie jak któryœ z nas bêdzie mia³ na niego oko.
-  
 };
 
 //========================================
@@ -1953,10 +1919,10 @@ FUNC VOID DIA_PC_MAGE_BEFORE_MAGE_Info()
 {
     AI_Output (other, self ,"DIA_PC_MAGE_BEFORE_MAGE_15_01"); //Kim by³eœ zanim zosta³eœ Magiem Ognia?
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_02"); //Ju¿ ci mówi³em, ¿e by³em Cieniem wykonuj¹cym specjalne zlecenia dla Magnatów.
-    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_03"); //Dobrze siê sprawowa³em, wiec Thorus zaproponowa³ mi awans. 
+    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_03"); //Pewnego dnia dziêki za³atwieniu dla Magnatów pewnej 'delikatnej sprawy' Thorus zaproponowa³ mi awans. 
 	AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_04"); //Mam z³e wspomnienia zwi¹zane z wojn¹, dlatego postanowi³em jednak zostaæ Magiem. Od tamtego czasu Thorus za mn¹ nie przepada. 
     AI_Output (other, self ,"DIA_PC_MAGE_BEFORE_MAGE_15_05"); //Nie o to pyta³em. Chodzi o to kim by³eœ przed zrzuceniem do Kolonii.
-    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_06"); //Ach, tak. Pochodzê z z Myrtany, z Montery.
+    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_06"); //Ach, tak. Pochodzê Sendar.
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_07"); //Swego czasu Król Rhobar si³¹ wciela³ do królewskiej armii zwyk³ych obywateli.
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_08"); //I mnie to nie ominê³o. S³u¿y³em przez jakiœ czas jako ¿o³nierz walcz¹c z orkami.
     AI_Output (other, self ,"DIA_PC_MAGE_BEFORE_MAGE_15_09"); //Ty, ¿o³nierzem?!?
@@ -1968,7 +1934,7 @@ FUNC VOID DIA_PC_MAGE_BEFORE_MAGE_Info()
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_15"); //Ukrad³em wiêc jedno jab³ko kupcowi na placu targowym.
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_16"); //Niestety zosta³em przy³apany przez stra¿ miejsk¹ i jeden z nich rozpozna³ u mnie tatua¿ armii królewskiej.
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_17"); //Reszty zapewne sam mo¿esz siê domyœliæ.   
-    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_18"); //W Kolonii do³¹czy³em do Starego Obozu, przyj¹³ mnie sam Diego. 
+    AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_18"); //Kiedy ju¿ trafi³em do Kolonii z ch³opakami, razem z Diego postanowiliœmy do³¹czyæ do Starego Obozu.
     AI_Output (self, other ,"DIA_PC_MAGE_BEFORE_MAGE_03_19"); //Dalsz¹ czêœæ tej historii ju¿ znasz.
 	
 };
@@ -2018,7 +1984,7 @@ INSTANCE DIA_PC_MAGE_JADRO (C_INFO)
    condition    = DIA_PC_MAGE_JADRO_Condition;
    information  = DIA_PC_MAGE_JADRO_Info;
    permanent	= FALSE;
-   description  = "Corristo mówi³, mi coœ na temat artefaktu zwanego j¹drem ognia.";
+   description  = "Corristo mówi³, mi coœ na temat artefaktu zwanego kryszta³em ognia.";
 };
 
 FUNC INT DIA_PC_MAGE_JADRO_Condition()
@@ -2030,7 +1996,7 @@ FUNC INT DIA_PC_MAGE_JADRO_Condition()
 };
 FUNC VOID DIA_PC_MAGE_JADRO_Info()
 {
-      AI_Output (other, self ,"DIA_PC_MAGE_JADRO_15_01"); //Corristo mówi³, mi coœ na temat artefaktu zwanego j¹drem ognia. Ponoæ mia³eœ go zlokalizowaæ.
+      AI_Output (other, self ,"DIA_PC_MAGE_JADRO_15_01"); //Corristo mówi³, mi coœ na temat artefaktu zwanego kryszta³em ognia. Ponoæ mia³eœ go zlokalizowaæ.
       AI_Output (self, other ,"DIA_PC_MAGE_JADRO_03_02"); //Studiowa³em prastare ksiêgi i uda³o mi siê znaleŸæ miejsce jego ukrycia.
       AI_Output (self, other ,"DIA_PC_MAGE_JADRO_03_03"); //Zleci³em kartografowi Grahamowi sporz¹dzenie mapy, która ukazywa³aby miejsce jego po³o¿enia.
 	  AI_Output (other, self ,"DIA_PC_MAGE_JADRO_15_04"); //Corristo kaza³ mi zdobyæ ten magiczny przedmiot.
@@ -2040,7 +2006,7 @@ FUNC VOID DIA_PC_MAGE_JADRO_Info()
 	  AI_Output (other, self ,"DIA_PC_MAGE_JADRO_15_08"); //Trzymaj siê.
    
   
-   B_LogEntry                 (JadroOgnia ,"Milten mówi, ¿e starannie przestudiowa³ ksiêgi i dziêki temu zyska³ wiedzê o po³o¿eniu j¹dra ognia. Powiedzia³, ¿e kartograf Graham mia³ za zadanie sporz¹dziæ mapê, która powinna nas doprowadziæ do tego magicznego przedmiotu.");
+   B_LogEntry                 (JadroOgnia ,"Milten mówi, ¿e starannie przestudiowa³ ksiêgi i dziêki temu zyska³ wiedzê o po³o¿eniu kryszta³u ognia. Powiedzia³, ¿e kartograf Graham mia³ za zadanie sporz¹dziæ mapê, która powinna nas doprowadziæ do tego magicznego przedmiotu.");
 
 	AI_StopProcessInfos	     (self);
 };
@@ -2188,17 +2154,15 @@ FUNC VOID DIA_PC_MAGE_ZL_TRANSLATE_Info()
 {
     AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_01"); //No i co z t¹ ksiêg¹?
     AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_02"); //Przygotuj siê na ,,ciekawe” wieœci...
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_03"); //Ta ksiêga jest zapisana w prastarym, demonicznym dialekcie. I to wiele mówi o czym traktuje ta ksiêga.
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_04"); //Opisuje siê w niej rytua³y przygotowywane dla mrocznego bóstwa imieniem Sattik. 
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_05"); //To z³owrogi pomiot. Defekt stworzony przez wierzenia naszych przodków. 
-    AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_06"); //Mogê ksiêgê z powrotem?
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_07"); //Po co ci ona?
-    AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_08"); //To bêdzie dowód w sprawie przeciwko komuœ.
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_09"); //Ten ktoœ ma na pewno swoje za uszami. Trzymaj.
+    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_03"); //Ta ksiêga zapisana zosta³a w prastarym jêzyku, który wygl¹da na jakiœ demoniczny dialekt, ale nie do koñca nim jest. 
+    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_04"); //Z tego czego siê dowiedzia³em, to zapisane w niej informacje odnosz¹ siê do jakiegoœ mrocznego rytua³u... rytua³u przemiany w jak¹œ potê¿n¹ istotê...
+    AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_05"); //O jakiej istocie mówisz?
+    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_06"); //Niestety nie wiem. W ksiêdze pojawia siê równie¿ wzmianka o rytualnym mordzie i poœwiêceniu ludzkiej krwi, a tak¿e pojawia siê imiê Sattik.
 	B_GiveInvItems (self,hero, ItWr_ZL_Sattik, 1);
-    AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_10"); //Dziêki za pomoc.
-    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_11"); //Nie ma sprawy.
-	B_LogEntry               (KsiegaDlaVictora,"Milten powiedzia³, ¿e tekst by³ zapisany w prastarym demonicznym dialekcie. Dotyczy³ sk³adania ludzi w ofierze pewnemu staremu zapomnianemu bóstwu. Wezmê t¹ ksiêgê i pójdê do Obozu Bandytów. Ale nie do Victora lecz do Quentina.");
+    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_07"); //Podejrzewam, ¿e to mo¿e to byæ jakiœ demon, a mo¿e i nie? Któremu sk³adano ofiary w postaci ludzi? Niestety nie jestem nekromant¹, ¿eby cokolwiek wiêcej powiedzieæ na ten temat.
+    AI_Output (other, self ,"DIA_PC_MAGE_ZL_TRANSLATE_15_08"); //Myœlê, ¿e tyle wystarczy. Dziêki za pomoc.
+    AI_Output (self, other ,"DIA_PC_MAGE_ZL_TRANSLATE_03_09"); //Nie ma sprawy.
+	B_LogEntry               (KsiegaDlaVictora,"Dowiedzia³em siê, ¿e ksi¹¿ka zapisana zosta³a w jakimœ prastarym jêzyku, który wygl¹dem przypomina demoniczny dialekt. Zawarte w niej informacje odnosz¹ siê do jakiegoœ mrocznego rytua³u przemiany w jak¹œ potê¿n¹ istotê oraz o przeprowadzeniu rytualnego mordu i poœwiêceniu ludzkiej krwi. W tekœcie pojawia siê te¿ imiê Sattik - byæ mo¿e demon albo jakiœ byt, któremu sk³adano ofiary. Niestety Milten nie by³ w stanie nic wiêcej powiedzieæ. Wezmê ksiêgê i zaniosê  Quentinowi, Victor nie mo¿e siê o tym dowiedzieæ.");
     AI_StopProcessInfos	(self);
 };
 

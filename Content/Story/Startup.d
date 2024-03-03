@@ -3544,7 +3544,7 @@ FUNC VOID STARTUP_ABANDONEDMINE ()
 	
 	//wa¿ny npc #VIP
 	Wld_InsertNpc		(NON_2094_Glest,"GLEST_VM");
-
+    Wld_InsertNpc		(NON_40168_UndeadGardist,"VM_MAGE"); 
 	//-------- Pelzacze --------
 	Wld_InsertNpc		(MinecrawlerWarrior,		"PE1");
 	Wld_InsertNpc		(Minecrawler,		"PE2");

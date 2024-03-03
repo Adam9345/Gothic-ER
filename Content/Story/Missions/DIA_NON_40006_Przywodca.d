@@ -50,7 +50,7 @@ func VOID Info_Przywodca_WhatS_Info()
 
 	AI_Output (self, other,"Info_Przywodca_WhatS_05_00"); //O mamy towarzystwo. S¹dz¹c po kiecce to Mag.
 	AI_Output (self, other,"Info_Przywodca_WhatS_05_01"); //Przeczuwam, ¿e zaraz siê rozerwiemy...
-	AI_Output (other,self, "Info_Przywodca_WhatS_15_02"); //Przyby³em po j¹dro ognia.
+	AI_Output (other,self, "Info_Przywodca_WhatS_15_02"); //Przyby³em po kryszta³ ognia.
     AI_Output (self, other,"Info_Przywodca_WhatS_05_03"); //Tak siê sk³ada, ¿e my byliœmy pierwsi. Nasi kumple ju¿ robi¹ to co trzeba. Zabierzemy kamieñ i sprzedamy za piêkn¹ sumkê.	
 	AI_Output (other,self, "Info_Przywodca_WhatS_15_04"); //Okradliœcie kartografa i chcecie przej¹æ coœ co nale¿y siê Magom z krêgu ognia.
 	AI_Output (self, other,"Info_Przywodca_WhatS_05_05"); //Mo¿e i okradliœmy. Nie pierwszy raz kogoœ skroiliœmy i zabiliœmy, ale chyba ¿adnego maga...

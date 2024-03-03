@@ -55,10 +55,9 @@ FUNC VOID DIA_Erens_HELLO1_Info()
 	AI_Output (self, other ,"DIA_Erens_HELLO1_03_07"); //PrzyjdŸ, gdy bêdziesz mia³ sto bry³ek rudy. Wtedy pójdziemy do Scatty'ego i zamówimy walkê.
 	
 	MIS_FightWithNaldur = LOG_RUNNING;
-	Log_CreateTopic          	(CH1_FightWithNaldur, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_FightWithNaldur, LOG_RUNNING);
-    B_LogEntry               		(CH1_FightWithNaldur,"Przechodzi³em sobie obok Kopacza Erensa, gdy ten nagle zacz¹³ mnie obra¿aæ i prowokowaæ. Zaproponowa³ mi, ¿e postawi sto bry³ek rudy, ¿eby zobaczyæ jak przegrywam z Naldurem. Nie dam mu tej przyjemnoœci i wygram walkê z jego kole¿k¹.");
-	B_LogEntry              		 (CH1_ZmianaLorenza,"Pozbawienie Erensa rudy to dobry sposób, na zmuszenie go do powrotu do Kopalni.");	
+
+
+	B_LogEntry              		 (CH1_ZmianaLorenza,"Przechodzi³em sobie obok Kopacza Erensa, gdy ten nagle zacz¹³ mnie obra¿aæ i prowokowaæ. Zaproponowa³ mi, ¿e postawi sto bry³ek rudy, ¿eby zobaczyæ jak przegrywam z Naldurem. Nie dam mu tej przyjemnoœci i wygram walkê z jego kole¿k¹. Pozbawienie Erensa rudy to dobry sposób, na zmuszenie go do powrotu do Kopalni.");	
 };
 
 //========================================
@@ -121,9 +120,7 @@ FUNC VOID DIA_Erens_NALDURWIN_Info()
 	AI_Output (self, other ,"DIA_Erens_NALDURWIN_03_01"); //Co ty sobie myœla³eœ, œmieciu?! Oczywiste by³o, ¿e Naldur ciê pokona. Dziêki tobie mam teraz tyle rudy, ¿e przez kilka tygodni nie bêdê musia³ nawet palcem kiwn¹æ.
 	AI_Output (self, other ,"DIA_Erens_NALDURWIN_03_02"); //Dziêki, mój ty wojowniku. Ha ha ha!
 	MIS_FightWithNaldur = LOG_FAILED;
-    Log_SetTopicStatus       (CH1_FightWithNaldur, LOG_FAILED);
-    B_LogEntry               (CH1_FightWithNaldur,"Erens wygra³ zak³ad, a ja nie popisa³em siê zbytnio ani sprytem, ani umiejêtnoœciami walki.");
-	B_LogEntry               (CH1_ZmianaLorenza,"Nie uda³o mi siê z Erensem. Przegra³em zak³ad i Kopacz ma teraz wiêcej rudy ni¿ mia³ wczeœniej. ");	
+	B_LogEntry               (CH1_ZmianaLorenza,"Erens wygra³ zak³ad, a ja nie popisa³em siê zbytnio ani sprytem, ani umiejêtnoœciami walki. Nie uda³o mi siê z Erensem. Przegra³em zak³ad i Kopacz ma teraz wiêcej rudy ni¿ mia³ wczeœniej. ");	
 };
 
 //========================================
@@ -158,9 +155,9 @@ FUNC VOID DIA_Erens_NALDURLOSE_Info()
 	AI_Output (other, self ,"DIA_Erens_NALDURLOSE_15_06"); //No, ruszaj siê. Spotykamy siê pod chat¹ Lorenzo. Wyruszymy, gdy tylko bêdzie gotowa kolejna zmiana. 
 	
 	MIS_FightWithNaldur = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_FightWithNaldur, LOG_SUCCESS);
-    B_LogEntry               (CH1_FightWithNaldur,"Erens nieŸle siê wkurzy³, gdy dowiedzia³ siê, ¿e wygra³em walkê z Naldurem.");
-	B_LogEntry               (CH1_ZmianaLorenza,"Erens zosta³ pozbawiony rudy. Musi siê teraz wybraæ do pracy w Kopalni, bo inaczej nie bêdzie mia³ za co ¿yæ.");	
+  
+
+	B_LogEntry               (CH1_ZmianaLorenza,"Erens nieŸle siê wkurzy³, gdy dowiedzia³ siê, ¿e wygra³em walkê z Naldurem. Zosta³ pozbawiony rudy. Musi siê teraz wybraæ do pracy w Kopalni, bo inaczej nie bêdzie mia³ za co ¿yæ.");	
 	B_GiveXP (100);
 	Npc_ExchangeRoutine (self,"lorenzo");
 };

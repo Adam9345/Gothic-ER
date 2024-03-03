@@ -778,97 +778,8 @@ FUNC INT DIA_Rocky_GoToMine_Condition()
 FUNC VOID DIA_Rocky_GoToMine_Info()
 {
     AI_Output (other, self ,"DIA_Rocky_GoToMine_15_01"); //Idziesz ze mn¹ do kopalni?
-    AI_Output (self, other ,"DIA_Rocky_GoToMine_03_02"); //No jasne. Tylko potrzebujê jakiegoœ pancerza.
-	AI_Output (self, other ,"DIA_Rocky_GoToMine_03_03"); //Skombinuj mi coœ, to pogadamy.
-	//CreateInvItems  (self,BAU_ARMOR_H,1);
-	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	//Npc_ExchangeRoutine (self,"pomoc");
-	//AI_StopProcessInfos	(self);
-	MIS_RockyArmor = LOG_RUNNING;
+    AI_Output (self, other ,"DIA_Rocky_GoToMine_03_02"); //No jasne. 
 
-    Log_CreateTopic      (CH4_RockyArmor, LOG_MISSION);
-    Log_SetTopicStatus   (CH4_RockyArmor, LOG_RUNNING);
-    B_LogEntry       	 (CH4_RockyArmor,"Je¿eli chcê, aby Rocky poszed³ ze mn¹ do kopalni, muszê za³atwiæ mu nowy pancerz.");
-
-};
-//========================================
-//-----------------> AddArmor
-//========================================
-
-INSTANCE DIA_Rocky_AddArmor (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 1;
-   condition    = DIA_Rocky_AddArmor_Condition;
-   information  = DIA_Rocky_AddArmor_Info;
-   permanent	= 1;
-   description	= "Mam dla ciebie pancerz...";
-};
-
-FUNC INT DIA_Rocky_AddArmor_Condition()
-{
-    if (MIS_RockyArmor == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_AddArmor_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_AddArmor_15_01"); //Mam dla ciebie pancerz...
-    AI_Output (self, other ,"DIA_Rocky_AddArmor_03_02"); //Œwietnie. Co dla mnie masz?
-
-    Info_ClearChoices		(DIA_Rocky_AddArmor);
-	Info_AddChoice		(DIA_Rocky_AddArmor, DIALOG_BACK, DIA_Quentin_DOOBOZU_BACK);
-	if (Npc_HasItems (other, BAU_ARMOR_H) >=1)
-    {	
-    Info_AddChoice		(DIA_Rocky_AddArmor, "ODDAJ: ciê¿ka zbroja Bandyty", DIA_Quentin_DOOBOZU_BANDITOSMID);
-	};
-	
-	if (Npc_HasItems (other, PiratArmor) >=1)
-    {		
-    Info_AddChoice		(DIA_Rocky_AddArmor, "ODDAJ: strój pirata", DIA_Quentin_DOOBOZU_PIRAT);
-	};
-
-};
-
-FUNC VOID DIA_Quentin_DOOBOZU_BACK ()
-{
-	Info_ClearChoices		(DIA_Rocky_AddArmor);
-};
-
-
-FUNC VOID DIA_Quentin_DOOBOZU_BANDITOSMID()
-{
-    AI_Output (other, self ,"DIA_Quentin_DOOBOZU_BANDITOSMID_15_01"); //Oto moja stara zbroja.
-    AI_Output (self, other ,"DIA_Quentin_DOOBOZU_BANDITOSMID_03_02"); //Wprawdzie to nic nadzwyczajnego, ale dziêki.
-    AI_Output (self, other ,"DIA_Quentin_DOOBOZU_BANDITOSMID_03_03"); //Œwietna robota.
-	B_giveXP (300);
-	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu moj¹ star¹ zbrojê. Jest gotowy ¿eby wyruszyæ.");
-	B_GiveInvItems      (hero, self, BAU_ARMOR_H, 1);
-    Info_ClearChoices		(DIA_Rocky_AddArmor);
-	DIA_Rocky_AddArmor.permanent	= 0;
-	AI_EquipBestArmor	(self); 
-    //AI_StopProcessInfos	(self);
-};
-
-FUNC VOID DIA_Quentin_DOOBOZU_PIRAT()
-{
-    AI_Output (other, self ,"DIA_Quentin_DOOBOZU_PIRAT_15_01"); //Oto strój pirata.
-    AI_Output (self, other ,"DIA_Quentin_DOOBOZU_PIRAT_03_02"); //Pirata? Wygl¹da fajnie, ale nie jest to raczej prawdziwy pancerz.
-    AI_Output (self, other ,"DIA_Quentin_DOOBOZU_PIRAT_03_03"); //Wola³bym coœ mocniejszego, ale skoro nie masz nic innego. Dziêki.
-	B_giveXP (300);
-	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu strój pirata. Jest gotowy ¿eby wyruszyæ.");
-	B_GiveInvItems      (hero, self, PiratArmor, 1);
-    Info_ClearChoices		(DIA_Rocky_AddArmor);
-	DIA_Rocky_AddArmor.permanent	= 0;
-	AI_EquipBestArmor	(self); 
-    //AI_StopProcessInfos	(self);
 };
 
 //========================================
@@ -887,7 +798,7 @@ INSTANCE DIA_Rocky_Follow (C_INFO)
 
 FUNC INT DIA_Rocky_Follow_Condition()
 {
-    if (MIS_RockyArmor == LOG_SUCCESS) 
+    if (Npc_KnowsInfo(hero,DIA_Rocky_GoToMine))
     {
     return TRUE;
     };
@@ -901,7 +812,6 @@ FUNC VOID DIA_Rocky_Follow_Info()
     Npc_ExchangeRoutine (BAN_1605_Rocky,"odb");
 	AI_StopProcessInfos	(self);
 	
-	//co to za syf?
     RockyRobiZaDoyle  = false;
 };
 

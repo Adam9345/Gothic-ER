@@ -669,7 +669,7 @@ FUNC VOID DIA_Scatty_WinWithNaldur_Info()
 {
     AI_Output (self, other ,"DIA_Scatty_WinWithNaldur_03_01"); //Wygra³eœ walkê z Naldurem. Zgodnie z umow¹ otrzymujesz swój wk³ad i sto bry³ek Erensa. 
 	AI_Output (self, other ,"DIA_Scatty_WinWithNaldur_03_02"); //Zrobi³eœ dobre wra¿enie. Osobiœcie siê cieszê, ¿e wreszcie ktoœ utar³ Erensowi nosa. Ten dziadek chyba ma tu za dobrze.
-    B_LogEntry               (CH1_FightWithNaldur,"Rozmawia³em ze Scattym, który wrêczy³ mi nagrodê za walkê. Teraz pora wróciæ i zobaczyæ reakcjê Erensa.");
+    B_LogEntry               (CH1_ZmianaLorenza,"Rozmawia³em ze Scattym, który wrêczy³ mi nagrodê za walkê. Teraz pora wróciæ i zobaczyæ reakcjê Erensa.");
 	CreateInvItems (self,itminugget,200);
 	B_GiveInvItems (self,other,itminugget,200);
 };
@@ -700,7 +700,7 @@ FUNC INT DIA_Scatty_LoseWithNaldur_Condition()
 FUNC VOID DIA_Scatty_LoseWithNaldur_Info()
 {
     AI_Output (self, other ,"DIA_Scatty_LoseWithNaldur_03_01"); //Przegra³eœ z Naldurem. A szkoda, bo liczy³em, ¿e utrzesz nosa Erensowi.
-    B_LogEntry               (CH1_FightWithNaldur,"Rozmawia³em ze Scattym, który szczerze ¿a³owa³, ¿e przegra³em. Nie mam odwagi spojrzeæ Erensowi w oczy, ale chyba bêdê musia³ to zrobiæ.");
+    B_LogEntry               (CH1_ZmianaLorenza,"Rozmawia³em ze Scattym, który szczerze ¿a³owa³, ¿e przegra³em. Nie mam odwagi spojrzeæ Erensowi w oczy, ale chyba bêdê musia³ to zrobiæ.");
 };
 
 //========================================

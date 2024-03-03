@@ -1139,7 +1139,7 @@ FUNC INT DIA_Lee_OBOZ1S_Condition()
 {
     if (Npc_IsDead (GRD_7894_Morok))
 	&& (Npc_KnowsInfo (hero,DIA_Patter_Oboz))
-	&& (Npc_HasItems (other, ItMi_VincentBag) >=3)
+	&& (Npc_HasItems (other, ItMi_StolenGoodsSLD) >=3)
 
     {
     return TRUE;
@@ -1153,7 +1153,7 @@ FUNC VOID DIA_Lee_OBOZ1S_Info()
     AI_Output (self, other ,"DIA_Lee_OBOZ1S_03_02"); //Dobra robota. Nie wskrzesimy tych, których wymordowali ale przynajmniej zrobiliœmy wszystko to co da³o siê zrobiæ.
     AI_Output (self, other ,"DIA_Lee_OBOZ1S_03_03"); //Gdzie zrabowane towary?
     AI_Output (other, self ,"DIA_Lee_OBOZ1S_15_04"); //Tutaj.
-	B_GiveInvItems (other,self,ItMi_VincentBag,3);
+	B_GiveInvItems (other,self,ItMi_StolenGoodsSLD,3);
 	AI_Output (self, other ,"DIA_Lee_OBOZ1S_03_05"); //Dziêkuje. Rozdam to moim ludziom jako premiê. Poprawi to ich morale w dzisiejszych ciê¿kich i krwawych czasach.
 	AI_Output (self, other ,"DIA_Lee_OBOZ1S_03_06"); //A oto twoja nagroda. 
     AI_Output (self, other ,"DIA_Lee_OBOZ1S_03_07"); //W pe³ni zas³u¿y³eœ na tê rudê.

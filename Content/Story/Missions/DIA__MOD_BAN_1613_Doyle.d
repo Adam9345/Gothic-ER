@@ -1276,12 +1276,6 @@ Func void Bandits_ABMine()
 	Wld_InsertNpc				(GRD_2653_Gardist,"OC1");	
 	Wld_InsertNpc				(GRD_2654_Gardist,"OC1");	
 
-	//bandyci na œcie¿ce 1.4
-	Wld_InsertNpc				(DEMON,"SPAWN_MOLERAT02_SPAWN01");	
-	Wld_InsertNpc				(ZOMBIE,"ZMYLKA1");	
-	Wld_InsertNpc				(ZOMBIE,"ZMYLKA1");	
-	Wld_InsertNpc				(ZOMBIE,"ZMYLKA2");	
-	Wld_InsertNpc				(ZOMBIE,"ZMYLKA2");	
 
      	Wld_SendTrigger("KOPALNIAEXIT");
 };
@@ -1398,7 +1392,7 @@ INSTANCE DIA_Raeuber_NoNareszcie (C_INFO)
 
 FUNC INT DIA_Raeuber_NoNareszcie_Condition()
 {
-    if (Npc_HasItems (hero, Focus_Corristo) >=1)
+    if (Npc_HasItems (hero, ItMi_Black_Crystal_ABM) >=1)
 	&& (Npc_KnowsInfo (hero, DIA_Raeuber_Spiepszam)) 
 	&& (Npc_GetTrueGuild(hero) == GIL_BAU)
 	
@@ -1417,15 +1411,11 @@ Ai_GotoNpc(BAN_1613_Doyle,hero);
     AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_04"); //Nic konkretnego. Grupa Stra¿ników zosta³a zaskoczona przez o¿ywieñców. W okolicy krêci³o siê te¿ kilka innych utrapieñ, ale jakoœ sobie poradzi³em.
     AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_05"); //Dobra nasza! Czyli mo¿emy zaj¹æ kopalniê?
  
-        AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_06"); //W sumie to tak. Mam ze sob¹ kamieñ, który powodowa³ to ca³e zamieszanie ze z³ymi si³ami.
-        AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_07"); //To œwietnie. Przeka¿ Quentinowi dobre informacje. Pewnie ma dla ciebie wynagrodzenie.
-        AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_08"); //My tutaj zostaniemy i bêdziemy pilnowaæ wejœcia.
-        AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_09"); //A, i zabierz ten kamieñ ze sob¹. Nie chcê mieæ z nim nic wspólnego.
-        AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_10"); //Myœla³em, ¿e podarujê ci go w prezencie. No, ale có¿...
-        AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_11"); //Nie denerwuj mnie!
-        AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_12"); //Dobra, ju¿ dobra. Uwa¿aj, bo go wyjmê!
-        AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_13"); //IdŸ ju¿.
-    B_LogEntry                     (CH4_BanditsInAbadonedMine,"Pokaza³em Doyle'owi artefakt odebrany nekromancie. Kaza³ mi udaæ siê z dobrymi wieœciami do Quentina. Wraz z Rockym i Chrisem postanowi³ pozostaæ tymczasowo na stra¿y.");
+    AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_06"); //Tak.
+    AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_07"); //To œwietnie. Przeka¿ Quentinowi dobre informacje. Pewnie ma dla ciebie wynagrodzenie.
+    AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_08"); //My tutaj zostaniemy i bêdziemy pilnowaæ wejœcia.
+    AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_09"); //IdŸ ju¿.
+    B_LogEntry                     (CH4_BanditsInAbadonedMine,"Kopalnia jest czysta. Doyle kaza³ mi udaæ siê z dobrymi wieœciami do Quentina. Wraz z Rockym i Chrisem postanowi³ pozostaæ tymczasowo na stra¿y.");
 	HeroMaArtefakt = false;
     B_GiveXP (2000);
 };

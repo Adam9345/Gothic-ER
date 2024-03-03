@@ -1258,8 +1258,6 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 {
     AI_Output (self, other ,"DIA_Quentin_AkcjaUkonczona_03_01"); //Ha Ha! Dawno nie by³o tu takiej rzezi! Dobra robota!
     AI_Output (self, other ,"DIA_Quentin_AkcjaUkonczona_03_02"); //Ch³opaki, zwijajmy siê zanim ktoœ reszta Stra¿ników zorientuje siê co siê sta³o. 
-    //AI_Output (other, self ,"DIA_Quentin_AkcjaUkonczona_15_03"); //A czego siê obawia³eœ?
-    //AI_Output (self, other ,"DIA_Quentin_AkcjaUkonczona_03_04"); //Zasadzki ze strony Gomeza. Ale to ju¿ nie wa¿ne... Stra¿nicy z obozu pewnie nawet nas nie dostrzegli.
     AI_Output (self, other ,"DIA_Quentin_AkcjaUkonczona_03_05"); //Chocia¿ pewnie te dupki s¹ zbyt zajête us³ugiwaniem Gomezowi...
 	AI_Output (other, self ,"DIA_Quentin_AkcjaUkonczona_15_06"); //Na mnie ju¿ pora...
 	AI_Output (self, other ,"DIA_Quentin_AkcjaUkonczona_03_07"); //Czekaj, gdzie chcesz iœæ? 
@@ -1700,8 +1698,8 @@ INSTANCE DIA_Quentin_PrzejscieDalej (C_INFO)
 
 FUNC INT DIA_Quentin_PrzejscieDalej_Condition()
 {
-    if ((Npc_KnowsInfo (hero, DIA_Quentin_iFindDoyle)) && (Npc_KnowsInfo (hero, DIA_Quentin_FoundDrax)) )
-	//|| (devmode_dia_DIA_Quentin_PrzejscieDalej == true)
+    if (kapitel ==4) //((Npc_KnowsInfo (hero, DIA_Quentin_iFindDoyle)) && (Npc_KnowsInfo (hero, DIA_Quentin_FoundDrax)) )
+	
     {
     return TRUE;
     };
@@ -1718,32 +1716,24 @@ FUNC VOID DIA_Quentin_PrzejscieDalej_Info()
     AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_06"); //Opuszczona Kopalnia, ch³opcze. Opuszczona Kopalnia...
     AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_07"); //Przypuszczam, ¿e chc¹ wznowiæ wydobycie. Nie wiem w jakim stanie jest ta kopalnia, ale to mo¿e im siê udaæ.
     AI_Output (other, self ,"DIA_Quentin_PrzejscieDalej_15_08"); //W takim razie musimy czym prêdzej im przeszkodziæ!
-    AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_09"); //Otó¿ to! Trzeba wys³aæ zorganizowana grupê Bandytów, którzy oczyszcz¹ kopalniê.
-    AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_10"); //Zadalibyœmy potê¿ny cios Gomezowi.
-    AI_Output (other, self ,"DIA_Quentin_PrzejscieDalej_15_11"); //I to pewnie ja otrzyma³em ten zaszczyt?
-    AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_12"); //Nie raz udowodni³eœ mi, ¿e jesteœ dobrym wojownikiem i œwietnym przywódc¹.
-    AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_13"); //Poproœ Doyle'a o pomoc. Eksplorowa³ ju¿ ongiœ jakieœ podziemia.
+    AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_13"); //Poproœ Doyle'a o pomoc. Eksplorowa³ ju¿ kiedyœ podziemia.
 	AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_14"); //Dobrze, ¿e uda³o ci siê go sprowadziæ. 
-	//log
+
+	MIS_FindFriends = LOG_RUNNING;
+    MIS_BanditsInAbadonedMine = LOG_RUNNING;
+	
 	B_LogEntry         (CH4_FindFriends,"Odnalaz³em obu Bandytów, co koñczy moje zadanie.");
     Log_SetTopicStatus (CH4_FindFriends, LOG_SUCCESS);
-	MIS_FindFriends = LOG_RUNNING;
-	//log 2
-    MIS_BanditsInAbadonedMine = LOG_RUNNING;
+
     Log_CreateTopic          (CH4_BanditsInAbadonedMine, LOG_MISSION);
     Log_SetTopicStatus       (CH4_BanditsInAbadonedMine, LOG_RUNNING);
     B_LogEntry               (CH4_BanditsInAbadonedMine,"Quentin znów ma plan. Tym razem muszê udaæ siê wraz z grupk¹ Bandytów do Opuszczonej Kopalni. Mamy pozbyæ siê Stra¿ników i zaj¹æ kopalniê dla siebie. Powinienem uprzednio pogadaæ z Doylem.");
-	//story func
-//    B_Story_FocusCorristoQuest ();
-	//stuff
+
 
 	Wld_InsertNpc				(GRD_2291_Stra¿nik,"OC1");
 	Wld_InsertNpc				(GRD_2292_Stra¿nik,"OC1");
 	Wld_InsertNpc				(GRD_2293_Stra¿nik,"OC1");
-	//prize --don't need
-    //CreateInvItems (self, ItMw_2H_Sword_02, 1);
-    //B_GiveInvItems (self, other, ItMw_2H_Sword_02, 1);
-	//exit
+
     AI_StopProcessInfos	(BAN_1610_Quentin);
 };
 
@@ -1764,7 +1754,6 @@ INSTANCE DIA_Quentin_MineIsClean (C_INFO)
 FUNC INT DIA_Quentin_MineIsClean_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Raeuber_NoNareszcie))
-    //&& (HeroMaArtefakt == false)
     {
     return TRUE;
     };
@@ -1775,13 +1764,12 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 {
     AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_01"); //Oczyœci³em kopalniê ze Stra¿ników i o¿ywieñców.
     AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_02"); //O¿ywieñców? Co tam do cholery siê dzia³o?
-    AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_03"); //Pewien nekromanta urz¹dzi³ tam sobie koszary dla swojej armii nieumar³ych. Uda³o mi siê go pokonaæ i odebraæ artefakt, który dawa³ mu moc. 
-	AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_04"); //Szkoda, ¿e jak zwykle musia³em wszystko zrobiæ sam. 
+    AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_03"); //Najprawdopodobniej jeden z wa¿niejszych gwardzistów którzy niegdyœ urzêdowali w kopalni zosta³ przeklêty. Reszty mo¿esz sie domyœleæ.
     AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_05"); //¯eby ci to wynagrodziæ dam ci coœ w nagrodê, weŸ to. Natychmiast wysy³am oddzia³ Bandytów do kopalni.
 	
-		B_GiveInvItems (self,other, ItMw_Sword_2h_WarriorFrenzy, 1);
+	B_GiveInvItems (self,other, ItMw_Sword_2h_WarriorFrenzy, 1);
     AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_06"); //Czym teraz mam siê zaj¹æ?
-    AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_07"); //Potrzebujemy jeszcze jakiegoœ doœwiadczonego Kopacza, który pokierowa³by ludŸmi.
+    AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_07"); //Potrzebujemy jeszcze jakiegoœ doœwiadczonego Kopacza, który pokierowa³by ludŸmi. 
     AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_08"); //Móg³byœ coœ zorganizowaæ?
     AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_09"); //Postaram siê.
 	//log
@@ -1792,7 +1780,7 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 	MIS_NewEnginer = LOG_RUNNING;
 	Log_CreateTopic          (CH4_NewEnginer, LOG_MISSION);
     Log_SetTopicStatus       (CH4_NewEnginer, LOG_RUNNING);
-    B_LogEntry               (CH4_NewEnginer,"Quentin natychmiast wys³a³ oddzia³ Bandytów do kopalni. Maj¹ zacz¹æ tam pracê, jednak najpierw potrzebny jest ktoœ z doœwiadczeniem, kto pokieruje wydobyciem. Muszê odnaleŸæ odpowiedniego cz³owieka. Sêk w tym, ¿e najlepsi in¿ynierowie byli w Starym Obozie... Byæ mo¿e któryœ z nich zwia³ do obozu na bagnie...");
+    B_LogEntry               (CH4_NewEnginer,"Quentin natychmiast wys³a³ oddzia³ Bandytów do kopalni. Maj¹ zacz¹æ tam pracê, jednak najpierw potrzebny jest ktoœ z doœwiadczeniem, kto pokieruje wydobyciem. Muszê odnaleŸæ odpowiedniego cz³owieka. Sêk w tym, ¿e najlepsi in¿ynierowie byli w Starym Obozie... Byæ mo¿e któryœ z nich zwia³ do obozu na bagnie, bêdê musia³ siê tam rozejrzeæ...");
 	//npcs
 	Wld_InsertNpc				(NON_3040_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3042_Bandyta,"KOPACZ");	
@@ -1801,18 +1789,16 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 	Wld_InsertNpc				(NON_3030_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3031_Bandyta,"KOPACZ");
 	Wld_InsertNpc				(NON_3032_Bandyta,"KOPACZ");	
-	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ");
+
 	Wld_InsertNpc				(NON_3038_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(BAN_1615_Luis,"KOPACZ");//luis
-	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
+	
 	Npc_ExchangeRoutine (BAN_1605_Rocky,"start");
 	Npc_ExchangeRoutine (BAN_1613_Doyle,"afterstart");
 	Npc_ExchangeRoutine (BAN_1607_Chris,"start");
     B_GiveXP (XP_ClearAbMine);
 	
-	CreateInvItems (self, ItMiNugget, 1000);
-    B_GiveInvItems (self, other, ItMiNugget, 1000);
 };
 
 //========================================
@@ -1845,7 +1831,6 @@ FUNC VOID DIA_Quentin_GuyWork_Info()
     AI_Output (self, other ,"DIA_Quentin_GuyWork_03_02"); //Kto to taki?
     AI_Output (other, self ,"DIA_Quentin_GuyWork_15_03"); //By³y Kopacz, który uciek³ ze Starego Obozu.
     AI_Output (self, other ,"DIA_Quentin_GuyWork_03_04"); //Z pewnoœci¹ ma sporo doœwiadczenia.
-    AI_Output (self, other ,"DIA_Quentin_GuyWork_03_05"); //WeŸ tê rudê.
 	if (Npc_KnowsInfo (hero, DIA_Quentin_NegocjacieNc))
 	{
 	AI_Output (self, other ,"DIA_Quentin_GuyWork_03_10"); //Powiedz Lee, ¿e wyœlê swoich ludzi.
@@ -1893,10 +1878,8 @@ FUNC VOID DIA_Quentin_Successasd_Info()
     AI_Output (self, other ,"DIA_Quentin_Successasd_03_03"); //Jednak wci¹¿ musimy byæ czujni.
     AI_Output (other, self ,"DIA_Quentin_Successasd_15_04"); //Jaki bêdzie kolejny cel Bandytów?
     AI_Output (self, other ,"DIA_Quentin_Successasd_03_05"); //Jak zawsze: prze¿yæ jak najd³u¿ej.
-    AI_Output (self, other ,"DIA_Quentin_Successasd_03_06"); //Mam nadziejê, ¿e sytuacja w Kolonii nied³ugo siê uspokoi.
-    AI_Output (self, other ,"DIA_Quentin_Successasd_03_07"); //A mo¿e wreszcie czeka nas wolnoœæ?
-    AI_Output (self, other ,"DIA_Quentin_Successasd_03_08"); //Kto wie? Mo¿e to ty nas ocalisz?
-    AI_Output (other, self ,"DIA_Quentin_Successasd_15_09"); //Chyba zbytnio mnie przeceniacie.
+    AI_Output (self, other ,"DIA_Quentin_Successasd_03_06"); //Mam nadziejê, ¿e sytuacja w Kolonii nied³ugo siê uspokoi. A mo¿e wreszcie czeka nas wolnoœæ?
+
 };
 
 //========================================
@@ -1928,12 +1911,7 @@ FUNC VOID DIA_Quentin_OldMine_Info()
     AI_Output (self, other ,"DIA_Quentin_OldMine_03_02"); //Od dawna nie mamy stamt¹d ¿adnych wieœci.
     AI_Output (self, other ,"DIA_Quentin_OldMine_03_03"); //Wybierz siê tam i zobacz, co siê tam wyprawia.
     AI_Output (self, other ,"DIA_Quentin_OldMine_03_04"); //Tylko nie idŸ prosto do obozu. Obserwuj z daleka. Nie chcia³bym ¿eby po tym wszystkim Stra¿nicy przerobili ciê na pasztet.
-	//log
-    MIS_BackToOldMine = LOG_RUNNING;
-    Log_CreateTopic          (CH4_BackToOldMine, LOG_MISSION);
-    Log_SetTopicStatus       (CH4_BackToOldMine, LOG_RUNNING);
-    B_LogEntry               (CH4_BackToOldMine,"Zapyta³em Quentina o to, co siê dzieje w Starej Kopalni. Sadzi³em, ¿e przywódca Bandytów bêdzie coœ wiedzia³ od swoich szpiegów. Ku mojemu zaskoczeniu niczego nowego nie wiedzia³ Zaproponowa³ mi, abym siê tam pokrêci³ i czegoœ dowiedzia³.");
-	//story func
+	
 	B_Story_BattleInOldMineCamp ();
 };
 
@@ -1967,60 +1945,31 @@ FUNC VOID DIA_Quentin_TalkAboutMine_Info()
     AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_02"); //I co siê tam dzieje?
     AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_03"); //Podobno Stra¿nicy sprzeciwili siê w³adzy Gomeza.
     AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_04"); //Zabili jakiegoœ Magnata. który mia³ tymczasowo zaj¹æ siê obozem.
-    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_05"); //Gomez jeszcze nie wie, ¿e utraci³ wp³ywy w obozie przy Starej Kopalni.
-    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_06"); //Gdy siê dowie, wpadnie w sza³.
-    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_07"); //I w³aœnie o to nam chodzi, ch³opcze!
-    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_08"); //Jak dobrze pójdzie, to wybij¹ siê sami.
-    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_09"); //Masz jakiœ plan?
-    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_10"); //Musisz znaleŸæ kogoœ, kto zaniesie informacje o tym co siê sta³o w kopalni do Starego Obozu.
-    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_11"); //Mo¿e znasz kogoœ kto uciek³, ale wci¹¿ ma dobre kontakty?
-    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_12"); //Nie wiem. Pomyœl, poszukaj, pogadaj i przyjdŸ do mnie póŸniej.
-    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_13"); //Zobaczê co da siê zrobiæ.
-	//log
-    B_LogEntry                     (CH4_BackToOldMine,"Quentin ucieszy³ siê z takiego obrotu sprawy. Mam znaleŸæ kogoœ, kto powie ludziom Gomeza o tym co sta³o siê w obozie przy Starej Kopalni.");
-	//story func
+    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_05"); //Jakikolwiek wp³yw starego obozu na kopalniê odszed³ w zapomnienie.
+    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_07"); //I w³aœnie o to nam chodzi³o, ch³opcze! Gomez wpakowa³ siê w niema³e k³opoty. Zosta³o mu ma³o ludzi do obrony obozu.
+    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_08"); //Nie musimy siê ju¿ obawiaæ Starego Obozu. Jest ich zbyt ma³o, aby cokolwiek zdzia³aæ. Jak dobrze pójdzie, to wybij¹ siê sami.
+	
+	AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_09"); //A ty, ch³opcze? Czym teraz siê zajmiesz?
+    AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_10"); //Pewnie bêdê pomaga³ Magom Wody nam siê st¹d wydostaæ.
+    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_11"); //W takim razie, powodzenia. Pamiêtaj, ¿e tutaj zawsze mo¿esz wróciæ.
+    AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_12"); //Masz tu kilka mikstur na drogê. Zrabowa³em je lata temu.
+	
 	B_Story_BattleInOldMineCamp ();
+    B_LogEntry               (CH4_BackToOldMine,"Potêga Gomeza podupad³a na tyle, ¿e Quentin odetchn¹³ z ulg¹. Obóz Bandytów jest na razie bezpieczny, a moja misja w nim dobiega koñca.");
+    Log_SetTopicStatus       (CH4_BackToOldMine, LOG_SUCCESS);
+    MIS_BackToOldMine = LOG_SUCCESS;
 	//experience
+    B_GiveXP (5000);
+	//prize
+    CreateInvItems (self, ItFo_Potion_Dex_02, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Dex_02, 1);
+	
+	CreateInvItems (self, ItFo_Potion_Health_Perma_02, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Health_Perma_02, 1);
     B_GiveXP (100);
 };
 
-//========================================
-//-----------------> ZlatwioneXDXD
-//========================================
 
-INSTANCE DIA_Quentin_ZlatwioneXDXD (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_ZlatwioneXDXD_Condition;
-   information  = DIA_Quentin_ZlatwioneXDXD_Info;
-   permanent	= FALSE;
-   description	= "Skorpion zaniesie do Starego Obozu informacjê o zdarzeniach z obozu przed kopalni¹.";
-};
-
-FUNC INT DIA_Quentin_ZlatwioneXDXD_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_TalkAboutMine))
-    && (przekupionyGRD == true)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_ZlatwioneXDXD_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_ZlatwioneXDXD_15_01"); //Skorpion zaniesie do Starego Obozu informacjê o zdarzeniach z obozu przed kopalni¹.
-    AI_Output (self, other ,"DIA_Quentin_ZlatwioneXDXD_03_02"); //Dobra robota. Nie wiem jak dogada³eœ siê ze Stra¿nikiem, ale liczy siê efekt. 
-    AI_Output (self, other ,"DIA_Quentin_ZlatwioneXDXD_03_03"); //Teraz skoro Gomez ju¿ o wszystkim wie, z pewnoœci¹ wys³a³ ju¿ tam kolejne oddzia³y swoich ludzi.
-    AI_Output (self, other ,"DIA_Quentin_ZlatwioneXDXD_03_04"); //Ponownie zakradnij siê w pobli¿e kopalni i zobacz co siê tam dzieje. 
-	//log
-    B_LogEntry                     (CH4_BackToOldMine,"Pora zobaczyæ skutki naszych dzia³añ... Mam wróciæ w okolice kopalni i siê rozejrzeæ.");
-	//experience
-    B_GiveXP (XP_SkorpioWork);
-	//exit
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> KoniecWatkuBandytow
@@ -2047,128 +1996,21 @@ FUNC INT DIA_Quentin_KoniecWatkuBandytow_Condition()
 
 FUNC VOID DIA_Quentin_KoniecWatkuBandytow_Info()
 {
-   // AI_Output (other, self ,"DIA_Quentin_KoniecWatkuBandytow_15_01"); //Uda³o nam siê!
+
     AI_Output (other, self ,"DIA_Quentin_KoniecWatkuBandytow_15_02"); //Rozmawia³em z Artegorem z obozu przed kopalni¹.
     AI_Output (other, self ,"DIA_Quentin_KoniecWatkuBandytow_15_03"); //Wszyscy nie ¿yj¹. Stra¿nicy wybili siê do nogi. Prze¿y³ tylko on.
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_04"); //Wiedzia³em! Wiedzia³em, ¿e nam siê uda!
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_05"); //Gomez wpakowa³ siê w niema³e k³opoty. Zosta³o mu ma³o ludzi do obrony obozu.
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_06"); //Wkrótce skoñczy ze sztyletem w gardle!
-    AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_07"); //Nie musimy siê ju¿ obawiaæ Starego Obozu. Jest ich zbyt ma³o, aby cokolwiek zdzia³aæ. 
+    AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_07"); //
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_08"); //A ty, ch³opcze? Czym teraz siê zajmiesz?
     AI_Output (other, self ,"DIA_Quentin_KoniecWatkuBandytow_15_09"); //Pewnie bêdê pomaga³ Magom Wody nam siê st¹d wydostaæ.
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_10"); //W takim razie, powodzenia. Pamiêtaj, ¿e tutaj zawsze mo¿esz wróciæ.
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_11"); //Masz tu kilka mikstur na drogê. Zrabowa³em je lata temu.
 	//log
-    B_LogEntry               (CH4_BackToOldMine,"Potêga Gomeza podupad³a na tyle, ¿e Quentin odetchn¹³ z ulg¹. Obóz Bandytów jest na razie bezpieczny, a moja misja w nim dobiega koñca.");
-    Log_SetTopicStatus       (CH4_BackToOldMine, LOG_SUCCESS);
-    MIS_BackToOldMine = LOG_SUCCESS;
-	//experience
-    B_GiveXP (5000);
-	//prize
-    CreateInvItems (self, ItFo_Potion_Dex_02, 1);
-    B_GiveInvItems (self, other, ItFo_Potion_Dex_02, 1);
-	
-	CreateInvItems (self, ItFo_Potion_Health_Perma_02, 1);
-    B_GiveInvItems (self, other, ItFo_Potion_Health_Perma_02, 1);
+   
 };
 
-///////////////////////////////////////////////////////////////////////////////////////////
-// Quentin
-// Rozdzia³ 4
-// Zadanie z piratami
-///////////////////////////////////////////////////////////////////////////////////////////
-
-//========================================
-//-----------------> RozmowaOPiratach
-//========================================
-
-INSTANCE DIA_Quentin_RozmowaOPiratach (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_RozmowaOPiratach_Condition;
-   information  = DIA_Quentin_RozmowaOPiratach_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Quentin_RozmowaOPiratach_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Raeuber_PiratArmorDoyle))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_RozmowaOPiratach_Info()
-{
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_01"); //Podobno spotka³eœ piratów w Kolonii.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_02"); //Tak. Spotka³em ich na pla¿y niedaleko Wie¿y Mgie³.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_03"); //Ich statek siê rozbi³ i zostali zaatakowani przez Stra¿ników.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_04"); //Gomez chyba do reszty zg³upia³.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_05"); //Patroluje ca³¹ Dolinê.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_06"); //Chcia³eœ coœ od tych piratów?
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_07"); //Dawno temu tak¿e by³em piratem.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_08"); //Nie jakimœ tam kapitanem. Zwyk³ym szczurem okrêtowym.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_09"); //Zawsze chcia³em mieæ swój w³asny kordelas. Tak jak inni piraci.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_10"); //Jednak zostalem z³apany i wtr¹cony tutaj.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_11"); //Da³eœ siê tak ³atwo z³apaæ?
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_12"); //Gdy mnie pochwycili nie by³em ju¿ piratem, tylko Bandyt¹.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_13"); //Mam zdobyæ dla ciebie ten kordelas?
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_14"); //By³bym ci bardzo wdziêczny.
-    AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_15"); //Oczywiœcie wynagrodzê ciê rud¹.
-    AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_16"); //No dobrze. Pogadam z tymi piratami.
-    MIS_QuentinsCutlass = LOG_RUNNING;
-
-    Log_CreateTopic            (CH4_QuentinsCutlass, LOG_MISSION);
-    Log_SetTopicStatus       (CH4_QuentinsCutlass, LOG_RUNNING);
-    B_LogEntry                     (CH4_QuentinsCutlass,"Quentin w m³odoœci by³ piratem. Gdy zobaczy³ mój piracki strój, wróci³y w nim stare wspomnienia. Mam udaæ siê do piratów i spróbowaæ zdobyæ kordelas.");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> KordelasJest
-//========================================
-
-INSTANCE DIA_Quentin_KordelasJest (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 2;
-   condition    = DIA_Quentin_KordelasJest_Condition;
-   information  = DIA_Quentin_KordelasJest_Info;
-   permanent	= FALSE;
-   description	= "Mam kordelas.";
-};
-
-FUNC INT DIA_Quentin_KordelasJest_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_RozmowaOPiratach))
-    && (Npc_HasItems (other, Kordelas) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_KordelasJest_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_KordelasJest_15_01"); //Mam kordelas.
-    AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_02"); //Poka¿ mi go!
-    AI_LookForItem (self,Kordelas);
-    B_LogEntry                     (CH4_QuentinsCutlass,"Quentin by³ bardzo zadowolony z nowej broni.");
-    Log_SetTopicStatus       (CH4_QuentinsCutlass, LOG_SUCCESS);
-    MIS_QuentinsCutlass = LOG_SUCCESS;
-
-    B_GiveXP (200);
-    AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_03"); //Wspania³e ostrze.
-    AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_04"); //Masz jaja, ch³opcze. Dziêki.
-    AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_05"); //Trzymaj swoj¹ dzia³kê.
-    CreateInvItems (self, ItMiNugget, 75);
-    B_GiveInvItems (self, other, ItMiNugget, 75);
-	B_GiveInvItems (other, self, Kordelas, 1);
-    AI_StopProcessInfos	(self);
-};
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Quentin
@@ -2270,7 +2112,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
     AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_01"); //Przyszed³em negocjowaæ.
     AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_02"); //Negocjowaæ? 
     AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_03"); //Przybywam z polecenia Lee. Mam ci z³o¿yæ propozycjê, w jego imieniu rzecz jasna.
-    AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_04"); //Chcemy wznowiæ wydobycie w tym miejscu, jednak nie mamy robotników. 
+    AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_04"); //Chcemy wznowiæ wydobycie w opuszczonej kopalni, jednak nie mamy robotników. 
     AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_05"); //Lee obiecuje wam czwart¹ czêœæ urobku w zamian za robotników.
     AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_06"); //Mam wys³aæ moich ludzi do kopalni?
     AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_07"); //Ju¿ mówi³em, ¿e czwart¹ wykopan¹ przez nich czêœæ bêdziecie mogli zatrzymaæ.
@@ -2278,7 +2120,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
     AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_09"); //Powiedz Lee, ¿e wyœlê kilku ludzi, ale przy okazji bêdziesz musia³ coœ dla mnie zrobiæ.
 	AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_10"); //Co takiego? 
 	AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_11"); //PrzyprowadŸ do pracy w kopalni jakiegoœ doœwiadczonego górnika. Moi ludzie kompletnie siê na tym nie znaj¹.
-    //B_LogEntry                     (CH4_NC_Mine,"Quentin niechêtnie, ale zgodzi³ siê na nasz¹ propozycjê.");
+ 
 	
 	Wld_InsertNpc				(NON_3040_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3042_Bandyta,"KOPACZ");	
@@ -2295,7 +2137,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 	MIS_NewEnginer = LOG_RUNNING;
     Log_CreateTopic            		(CH4_NewEnginer, LOG_MISSION);
     Log_SetTopicStatus       		(CH4_NewEnginer, LOG_RUNNING);
-    B_LogEntry                     	(CH4_NewEnginer,"Quentin zgodzi³ siê na propozycjê Lee. Przywódca Bandytów wyœle kilku swoich ludzi do kopalni, jednak poprosi³ mnie w zamian o przys³ugê. Mam przyprowadziæ jakiegoœ kompetentnego cz³owieka, który pokieruje jego ludŸmi. Tylko gdzie ja teraz znajdê kogoœ takiego...");
+    B_LogEntry                     	(CH4_NewEnginer,"Quentin zgodzi³ siê na propozycjê Lee. Przywódca Bandytów wyœle kilku swoich ludzi do kopalni, jednak poprosi³ mnie w zamian o przys³ugê. Mam przyprowadziæ jakiegoœ kompetentnego cz³owieka, który pokieruje jego ludŸmi. Sêk w tym, ¿e najlepsi in¿ynierowie byli w Starym Obozie... Byæ mo¿e któryœ z nich zwia³ do obozu na bagnie, bêdê musia³ siê tam rozejrzeæ...");
     B_GiveXP (300);
 };
 
@@ -2398,7 +2240,7 @@ FUNC INT DIA_Quentin_POSZUKIWACZE_Condition()
 FUNC VOID DIA_Quentin_POSZUKIWACZE_Info()
 {
     AI_Output (other, self ,"DIA_Quentin_POSZUKIWACZE_15_01"); //Connor wspomina³ ¿e ponoæ mia³eœ do mnie jak¹œ sprawê.
-    AI_Output (self, other ,"DIA_Quentin_POSZUKIWACZE_03_02"); //To prawda. Niedaleko naszego obozu zapuœci³a siê grupa Cieni-maruderów. Trzeba ich pos³aæ do piachu nim cokolwiek wywêsz¹. 
+    AI_Output (self, other ,"DIA_Quentin_POSZUKIWACZE_03_02"); //To prawda. Niedaleko naszego obozu zapuœci³a siê grupa cieni zwiadowców. Trzeba ich pos³aæ do piachu nim cokolwiek wywêsz¹. 
     AI_Output (self, other ,"DIA_Quentin_POSZUKIWACZE_03_03"); //Wytypowa³em was do tego zadania. 
     AI_Output (other, self ,"DIA_Quentin_POSZUKIWACZE_15_04"); //Ehh... jak nie jedno to dugie...
     AI_Output (self, other ,"DIA_Quentin_POSZUKIWACZE_03_05"); //Mówi³eœ coœ...? No tak myœla³em, powodzenia.
@@ -2416,7 +2258,7 @@ INSTANCE DIA_Quentin_Cienie (C_INFO)
    condition    = DIA_Quentin_Cienie_Condition;
    information  = DIA_Quentin_Cienie_Info;
    permanent	= FALSE;
-   description	= "Cienie-maruderzy nie ¿yj¹.";
+   description	= "Zwiadowcy ze starego obozu nie ¿yj¹.";
 };
 
 FUNC INT DIA_Quentin_Cienie_Condition()
@@ -2435,7 +2277,7 @@ FUNC INT DIA_Quentin_Cienie_Condition()
 
 FUNC VOID DIA_Quentin_Cienie_Info()
 {
-    AI_Output (other, self ,"DIA_Quentin_Cienie_15_01"); //Cienie-maruderzy nie ¿yj¹.
+    AI_Output (other, self ,"DIA_Quentin_Cienie_15_01"); //Zwiadowcy ze starego obozu nie ¿yj¹.
     AI_Output (self, other ,"DIA_Quentin_Cienie_03_02"); //Dobra robota. Stawili twardy opór?
     AI_Output (other, self ,"DIA_Quentin_Cienie_15_03"); //To cieniasy. Posz³o ³atwo zw³aszcza, ¿e Connor to zdolny ch³opak.
     AI_Output (self, other ,"DIA_Quentin_Cienie_03_04"); //Dobrze. Nale¿y siê wam nagroda. WeŸ tê rudê.
@@ -2561,7 +2403,7 @@ FUNC VOID DIA_Quentin_KH_END_Info()
     AI_Output (self, other ,"DIA_Quentin_KH_END_03_05"); //Jak uda³o siê wam j¹ zdobyæ?
     AI_Output (other, self ,"DIA_Quentin_KH_END_15_06"); //Zaliczyliœmy bli¿sze spotkanie z przeroœniêtym zêbaczem oraz z samym Hrodgirem reszt¹ jego bandy...
     AI_Output (self, other ,"DIA_Quentin_KH_END_03_07"); //To on ¿y³?
-    AI_Output (other, self ,"DIA_Quentin_KH_END_15_08"); //I tak i nie. Zapewne pad³ ofiar¹ kl¹twy. Wraz ze swoj¹ œwit¹.
+    AI_Output (other, self ,"DIA_Quentin_KH_END_15_08"); //I tak i nie. Zapewne pad³ ofiar¹ kl¹twy. Wraz ze swoimi ludŸmi.
     AI_Output (self, other ,"DIA_Quentin_KH_END_03_09"); //Có¿, ciekawa historia. Szczêœcie wam sprzyja³o, ¿e jakims cudem wyszliscie z tego ca³o.
     AI_Output (other, self ,"DIA_Quentin_KH_END_15_10"); //Racja, na mnie ju¿ pora. 
     AI_Output (self, other ,"DIA_Quentin_KH_END_03_11"); //Wkrótce bêdê mia³ dla Ciebie kolejn¹ sprawê do za³atwienia. Masz talent ch³opcze. 
@@ -2736,13 +2578,13 @@ if (!Npc_KnowsInfo(hero,DIA_Victor_ZL_PRAY))
 FUNC VOID DIA_Quentin_ZL_NDAY_Info()
 {
     AI_Output (other, self ,"DIA_Quentin_ZL_NDAY_15_01"); //No i co ze spraw¹ Victora?
-	//Npc_RemoveInvItems(BAN_40067_Victor, ItAt_MeatBug_01, 3);
+	
     AI_Output (self, other ,"DIA_Quentin_ZL_NDAY_03_02"); //ZnaleŸliœmy przy nim jego dziennik. Ten bydlak zarzyna³ naszych ludzi i sk³ada³ w ofierze jakiemuœ mrocznemu bo¿kowi!
     AI_Output (self, other ,"DIA_Quentin_ZL_NDAY_03_03"); //Dziêki tobie nie zabije ju¿ nikogo.
     AI_Output (other, self ,"DIA_Quentin_ZL_NDAY_15_04"); //A co siê z nim dzieje?
     AI_Output (self, other ,"DIA_Quentin_ZL_NDAY_03_05"); //Moi ludzie poszatkowali tego odszczepieñca,i dos³ownie chwilê temu.
 	B_KillNpc(BAN_40067_Victor); 
-    AI_Output (other, self ,"DIA_Quentin_ZL_NDAY_15_06"); //Jeden posraniec mniej...
+    AI_Output (other, self ,"DIA_Quentin_ZL_NDAY_15_06"); //Jeden pajac mniej...
     AI_Output (self, other ,"DIA_Quentin_ZL_NDAY_03_07"); //Teraz czas na przyjemniejsze rzeczy. Wyœwiadczy³eœ nam du¿¹ przys³ugê.
     AI_Output (self, other ,"DIA_Quentin_ZL_NDAY_03_08"); //WeŸ to w nagrodê.
 	B_GiveInvItems (self,other, itminugget, 100);

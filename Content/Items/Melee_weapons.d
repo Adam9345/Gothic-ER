@@ -3029,7 +3029,7 @@ INSTANCE ItRwUdOrcstaff (C_Item)
 
 INSTANCE ItMw_2H_OrcSword_02 (C_Item) // *** für Orcritter!!! ***
 {	
-	name 				=	"Grash Karrok"; 
+	name 				=	"Krush Morrok"; 
 
 	mainflag 			=	ITEM_KAT_NF;
 	flags 				=	ITEM_2HD_SWD;	

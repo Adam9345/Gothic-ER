@@ -164,7 +164,7 @@ INSTANCE CavalornWood (C_Item)
 /******************************************************************************************/
 INSTANCE ItMi_Focus_Corristo(C_Item)
 {	
-	name 				=	"J¹dro ognia";
+	name 				=	"Kryszta³ ognia";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MISSION;	

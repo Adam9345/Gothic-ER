@@ -1671,7 +1671,7 @@ INSTANCE ItWrMapCorristo(C_Item)
 
 	description				= name;
 	TEXT[0]					= "Pokazuje drogê do";
-	TEXT[1]					= "j¹dra ognia.";
+	TEXT[1]					= "kryszta³u ognia.";
 };
 
 	FUNC VOID UseItWrMapCorristo()
@@ -1702,7 +1702,7 @@ INSTANCE ItWrMapCorristo_Copy(C_Item)
 
 	description				= name;
 	TEXT[0]					= "Orygina³ mapy wskazuj¹cy";
-	TEXT[1]					= "drogê do j¹dra ognia.";
+	TEXT[1]					= "drogê do kryszta³u ognia.";
 	TEXT[2]					= "";
 	TEXT[5]					= NAME_Value;
 	COUNT[5]				= value;

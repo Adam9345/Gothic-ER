@@ -309,7 +309,7 @@ const string Zawirowania                = "Zawirowania w Starej Kopalni"; //+
 const string UkrytaSiarka               = "Ukryta siarka";          //+
 const string ZlodziejskaWspolpraca      = "Z³odziejska wspó³praca"; //+ 
 const string PrzesylkaCorristo          = "Przesy³ka z zewnêtrznego œwiata"; //+
-const string JadroOgnia                 = "J¹dro ognia";// + KDF
+const string JadroOgnia                 = "Kryszta³ ognia";// + KDF
 //10-
 const string PotworBramus               = "Potwór"; // +
 const string Kastragir                  = "Tajemniczy Kastagir"; //+ 

@@ -1,4 +1,5 @@
 //========================================
+//========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
 
@@ -573,7 +574,7 @@ INSTANCE DIA_Artegor_EveryoneDie (C_INFO)
 
 FUNC INT DIA_Artegor_EveryoneDie_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Quentin_ZlatwioneXDXD))
+    if (Npc_KnowsInfo (hero, DIA_Quentin_OldMine))
     {
     return TRUE;
     };

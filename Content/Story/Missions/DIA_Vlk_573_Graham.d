@@ -243,7 +243,7 @@ FUNC INT DIA_Graham_JadroCorristo_Condition()
 
 FUNC VOID DIA_Graham_JadroCorristo_Info()
 {	
-	AI_Output (other, self,"DIA_Graham_JadroCorristo_15_00"); //Przyszed³em po mapê wskazuj¹c¹ drogê do j¹dra ognia.
+	AI_Output (other, self,"DIA_Graham_JadroCorristo_15_00"); //Przyszed³em po mapê wskazuj¹c¹ drogê do kryszta³u ognia.
 	AI_Output (self, other,"DIA_Graham_JadroCorristo_02_01"); //Eeee... jest pewien problem.
 	AI_Output (other, self,"DIA_Graham_JadroCorristo_15_02"); //Jaki?
 	AI_Output (self, other,"DIA_Graham_JadroCorristo_02_03"); //Mam tylko kopiê tej mapy. 
@@ -255,7 +255,7 @@ FUNC VOID DIA_Graham_JadroCorristo_Info()
 	AI_Output (self, other,"DIA_Graham_JadroCorristo_02_09"); //Proszê, oto ona. 
 	AI_Output (other, self,"DIA_Graham_JadroCorristo_15_10"); //Dziêkuje. Zatem wyruszam na zaznaczone na mapie miejsce.
 	AI_Output (other, self,"DIA_Graham_JadroCorristo_15_11"); //Do zobaczenia.
-    B_LogEntry                 (JadroOgnia ,"Kartograf Graham mia³ z³e wieœci. Ktoœ ukrad³ mapê prowadz¹c¹ do j¹dra ognia. Da³ mi kopiê mapy. Muszê prêdko udaæ siê na miejsce bo najwyraŸniej ktoœ œciga siê ze mn¹ w drodze po ten artefakt.");
+    B_LogEntry                 (JadroOgnia ,"Kartograf Graham mia³ z³e wieœci. Ktoœ ukrad³ mapê prowadz¹c¹ do kryszta³u ognia. Da³ mi kopiê mapy. Muszê prêdko udaæ siê na miejsce bo najwyraŸniej ktoœ œciga siê ze mn¹ w drodze po ten artefakt.");
   
    
 	

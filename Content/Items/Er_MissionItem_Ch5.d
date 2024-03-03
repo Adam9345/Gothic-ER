@@ -183,7 +183,7 @@ INSTANCE ItWr_OM_T(C_Item)
 					Doc_Show		( nDocID 	);
 	};
 //-------------------------------------------------------	
-INSTANCE ItMi_VincentBag (C_Item)
+INSTANCE ItMi_StolenGoodsSLD (C_Item)
 {
 	name 				=	"Skradzione towary";
 
@@ -202,13 +202,18 @@ INSTANCE ItMi_VincentBag (C_Item)
 };
 
 //-------------------------------------------------------	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+INSTANCE ItMi_Black_Crystal_ABM (C_Item)
+{
+	name 				=	"Czarny kryszta³";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MULTI;
+
+	value 				=	0;
+
+	visual 				=	"ER_BLACK_CRYSTAL_CH5.3DS";
+	material 			=	MAT_CLAY;
+
+	description			= name;
+	TEXT[2]				= "Pulsuje mroczn¹ energi¹.";
+};	

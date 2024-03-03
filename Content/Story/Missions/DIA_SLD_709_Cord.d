@@ -193,6 +193,7 @@ INSTANCE DIA_Cord_SpottedNearMine (C_INFO)
 FUNC INT DIA_Cord_SpottedNearMine_Condition()
 {
     if (MIS_SupportForQuentin == LOG_RUNNING)
+
     {
     return TRUE;
     };
@@ -236,7 +237,7 @@ INSTANCE DIA_Cord_IHaveStone (C_INFO)
 FUNC INT DIA_Cord_IHaveStone_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Cord_SpottedNearMine))
-    && (Npc_HasItems (hero, Focus_Corristo) >=1)
+   	&& (Npc_HasItems (hero, ItMi_Black_Crystal_ABM) >=1)
     {
     return TRUE;
     };
@@ -246,16 +247,9 @@ FUNC INT DIA_Cord_IHaveStone_Condition()
 FUNC VOID DIA_Cord_IHaveStone_Info()
 {
     AI_Output (other, self ,"DIA_Cord_IHaveStone_15_01"); //By³em w kopalni.
-    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_02"); //Co wydarzy³o siê w œrodku?
-    AI_Output (other, self ,"DIA_Cord_IHaveStone_03_03"); //Spotka³em ledwie ¿ywego Kopacza. Opowiedzia³ mi o artefakcie, który rzekomo ma wp³yw na o¿ywieñców. 
-	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_04"); //W posiadaniu artefaktu by³ pewien nekromanta. Zabi³em go i zabra³em kamieñ.
-    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_05"); //Nekromanta? I uda³o Ci siê go pokonaæ?
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_06"); //Jestem pod wra¿eniem. Zawsze trzymam siê z dala od mrocznej magii. 
-	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_07"); //Potrzebujê chwili odpoczynku.
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_08"); //Nic dziwnego! Nale¿y ci siê jak psu buda! Wracaj do Obozu, a my sprawdzimy czy nie krêci siê tu ¿aden œmieæ. 
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_09"); //W sumie, skoro kopalnia jest ju¿ w miarê bezpiecznym miejscem, to mo¿esz zaproponowaæ Lee, aby wys³a³ tu paru ludzi. 
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //Kolejne Ÿród³o rudy da³oby nam przewagê.
-	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_11"); //Zobaczê, co da siê zrobiæ. 
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //Rozumiem ¿e wewn¹trz jest ju¿ bezpiecznie? Doskona³a robota. IdŸ powiadomiæ o tym Lee.
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //My tu jeszcze trochê powêszymy.
+	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_11"); //W porz¹dku.
 	
 	//nowe zadanie 
 	MIS_NC_Mine = LOG_RUNNING;
@@ -267,7 +261,7 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
 	//stare zadanie z kopalni¹
 	MIS_SupportForQuentin = LOG_SUCCESS;
     Log_SetTopicStatus       (CH4_SupportForQuentin, LOG_SUCCESS);
-	B_LogEntry               (CH4_SupportForQuentin,"Pozby³em siê nekromanty, który przywo³ywaj o¿ywieñców w kopalni i opowiedzia³em o tym Cordowi. Moje zadanie dobieg³o koñca. Po kolejne instrukcje powinienem siê udaæ do Lee.");
+	B_LogEntry               (CH4_SupportForQuentin,"Moje zadanie dobieg³o koñca. Po kolejne instrukcje powinienem siê udaæ do Lee.");
 	B_GiveXP (500); 
 	
     AI_StopProcessInfos	(self);
@@ -403,7 +397,7 @@ INSTANCE DIA_Cord_HELLO1233S (C_INFO)
 
 FUNC INT DIA_Cord_HELLO1233S_Condition()
 {
-    if (Npc_HasItems (hero, ItMi_VincentBag)>=3)
+    if (Npc_HasItems (hero, ItMi_StolenGoodsSLD)>=3)
 	&& (Npc_KnowsInfo(hero,DIA_Lee_OBOZ1))
     {
     return TRUE;
@@ -414,7 +408,7 @@ FUNC INT DIA_Cord_HELLO1233S_Condition()
 FUNC VOID DIA_Cord_HELLO1233S_Info()
 {
     AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_00");   //Odzyska³em zrabowane towary.
-    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Bardzo dobrze, m³ody. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k.
+    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Œwietnie. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k. 
     AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_02");   //Do tego mamy ich ³up.
     AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_03");   //Zgoda. Wracajmy.
     B_LogEntry(Obozowisko,"Rozmawia³em z Cordem i zameldowa³em o znalezieniu skradzionych rzeczy. Teraz pora na powrót do obóz i z³o¿enie koñcowego raportu Lee.");
@@ -451,12 +445,12 @@ FUNC INT DIA_Cord_WOJOWNIK_Condition()
 FUNC VOID DIA_Cord_WOJOWNIK_Info()
 {
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_03_00");    //Gratuluje, jesteœ teraz jednym z nas.
-    AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_01");    //Zgadza siê.
+   //xxxxxxxxxxxxxxxxxx AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_01");    //Zgadza siê.
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_02");    //Wiem, ¿e ju¿ wiele razy dowiod³eœ swej wartoœci. Co powiesz na ma³e polowanie?
     AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_03");    //Zale¿y na co.
-	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_04");    //Chodzi o Cieniostwora. Wiem gdzie przebywa jeden osobnik. We dwóch na pewno damy mu radê.
+	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_04");    //Na Cieniostwora. Wiem gdzie przebywa jeden osobnik. We dwóch na pewno damy mu radê.
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_05");    //Poza tym ka¿dy wojownik, nawet najlepszy potrzebuje æwiczeñ by podtrzymaæ formê.
-	AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_06");    //Jeœli tak stawiasz sprawê, to zgadzam siê. 
+	AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_06");    //Niech ci bêdzie, mo¿emy zapolowaæ na tego cieniostwora.
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_07");    //W takim razie przyjdŸ wieczorem.
 
 	
@@ -486,7 +480,7 @@ INSTANCE DIA_Cord_GO_SHADOW (C_INFO)
 FUNC INT DIA_Cord_GO_SHADOW_Condition()
 {
 	if (Npc_KnowsInfo(hero,DIA_Cord_WOJOWNIK))
-	 && (Wld_IsTime(18,00,04,00))
+	&& (Wld_IsTime(18,00,05,00))
 	
 {
     return TRUE;
@@ -495,16 +489,16 @@ FUNC INT DIA_Cord_GO_SHADOW_Condition()
 FUNC VOID DIA_Cord_GO_SHADOW_Info()
 {
     AI_Output (other, self ,"DIA_Cord_GO_SHADOW_15_01"); //ChodŸmy zapolowaæ na tego cieniostwora.
-    AI_Output (self, other ,"DIA_Cord_GO_SHADOW_03_02"); //Dobrze, nie powinien tak szybko opuœcic swojego ¿erowiska.
-	
+    AI_Output (self, other ,"DIA_Cord_GO_SHADOW_03_02"); //Dobrze, nie powinien tak szybko opuœciæ swojego ¿erowiska.
+	AI_Output (self, other ,"DIA_Cord_GO_SHADOW_03_03"); //Pod¹¿aj za mn¹. 
 	Npc_ExchangeRoutine (SLD_709_Cord ,"CIENIOSTWOR"); 
 	SLD_709_Cord.aivar[AIV_PARTYMEMBER] = TRUE;	
 	Wld_InsertNpc(ShadowbeastCord, "PTH9");
-	Wld_InsertNpc 	(ORG_40166_Rozbojnik,        "WP_BDT_CENTRE");
+	Wld_InsertNpc 	(ORG_40166_Rozbojnik,          "WP_BDT_CENTRE");
   	Wld_InsertNpc 	(ORG_40163_Rozbojnik,          "WP_BDT_CENTRE");
   	Wld_InsertNpc 	(ORG_40164_Rozbojnik,          "WP_BDT_CENTRE");
-  	Wld_InsertNpc 	(ORG_40165_Rozbojnik,       "WP_BDT_CENTRE");
-  	Wld_InsertNpc 	(SLD_40167_Najemnik,       "WP_BDT_CENTRE");
+  	Wld_InsertNpc 	(ORG_40165_Rozbojnik,          "WP_BDT_CENTRE");
+  	Wld_InsertNpc 	(SLD_40167_Najemnik,           "WP_BDT_CENTRE");
 };
 //========================================
 //-----------------> PW_SUKINSYNY
@@ -534,10 +528,10 @@ FUNC INT DIA_Cord_PW_SUKINSYNY_Condition()
 FUNC VOID DIA_Cord_PW_SUKINSYNY_Info()
 {
     AI_Output (self, other ,"DIA_Cord_PW_SUKINSYNY_03_01"); //Nêdzne sukinsyny.
-    AI_Output (other, self ,"DIA_Cord_PW_SUKINSYNY_15_02"); //Na szczêœcie ju¿ po nich.
-    AI_Output (self, other ,"DIA_Cord_PW_SUKINSYNY_03_03"); //Widaæ, ¿e ten Najemnik nieŸle oberwa³. Daj mu ten napój udrawiaj¹cy.
-    AI_Output (other, self ,"DIA_Cord_PW_SUKINSYNY_15_04"); //W porz¹dku.
-    AI_Output (self, other ,"DIA_Cord_PW_SUKINSYNY_03_05"); //Potem bêdziemy mogli ruszaæ dalej.
+   
+    AI_Output (self, other ,"DIA_Cord_PW_SUKINSYNY_03_02"); //Widaæ, ¿e ten Najemnik nieŸle oberwa³. Daj mu ten napój udrawiaj¹cy.
+    AI_Output (other, self ,"DIA_Cord_PW_SUKINSYNY_15_03"); //W porz¹dku.
+    AI_Output (self, other ,"DIA_Cord_PW_SUKINSYNY_03_04"); //Potem bêdziemy mogli ruszaæ dalej.
     CreateInvItems (self, ItFo_Potion_Health_01, 1);
     B_GiveInvItems (self, other, ItFo_Potion_Health_01, 1);
 };
@@ -553,7 +547,7 @@ INSTANCE DIA_Cord_PW_SLD (C_INFO)
    condition    = DIA_Cord_PW_SLD_Condition;
    information  = DIA_Cord_PW_SLD_Info;
    permanent	= FALSE;
-   description	= "Kwestiê pobitego Najemnika mamy za³atwion¹.";
+   description	= "Za³atwione.";
 };
 
 FUNC INT DIA_Cord_PW_SLD_Condition()
@@ -565,7 +559,7 @@ if (Npc_KnowsInfo(hero,DIA_Najemnik_HELLO1))
 };
 FUNC VOID DIA_Cord_PW_SLD_Info()
 {
-    AI_Output (other, self ,"DIA_Cord_PW_SLD_15_01"); //Kwestiê pobitego Najemnika mamy za³atwion¹.
+    AI_Output (other, self ,"DIA_Cord_PW_SLD_15_01"); //Za³atwione.
     AI_Output (self, other ,"DIA_Cord_PW_SLD_03_02"); //To dobrze. Trzeba byæ solidarnym wobec swoich towarzyszy.
     AI_Output (other, self ,"DIA_Cord_PW_SLD_15_03"); //Mo¿emy ruszaæ? 
     AI_Output (self, other ,"DIA_Cord_PW_SLD_03_04"); //Oczywiœcie.
@@ -600,7 +594,7 @@ FUNC VOID DIA_Cord_BESTIA_Info()
 {
     AI_Output (self, other ,"DIA_Cord_BESTIA_03_00");    //Twarda bestia.
     AI_Output (other, self ,"DIA_Cord_BESTIA_03_01");    //Tak, ale to zawsze wiêksza satysfakcja.
-    AI_Output (self, other ,"DIA_Cord_BESTIA_15_02");    //Kolejny raz udowodni³eœ, ¿e œwietny z ciebie wojownik. Jako nagrodê weŸ trofeum z Cieniostora i te 100 bry³ek rudy.
+    AI_Output (self, other ,"DIA_Cord_BESTIA_15_02");    //Kolejny raz udowodni³eœ, ¿e œwietny z ciebie wojownik. Jako nagrodê weŸ trofeum z Cieniostora, i te 100 bry³ek rudy.
     AI_Output (other, self ,"DIA_Cord_BESTIA_03_03");    //Dziêki. Nie ma to jak dobre polowanie!
 	AI_Output (self, other ,"DIA_Cord_BESTIA_15_04");    //Pewnie, ¿e tak. Do zobaczenia w Obozie.
 	AI_Output (other, self ,"DIA_Cord_BESTIA_03_05");    //Trzymaj siê.
@@ -640,3 +634,6 @@ func void dia_cord_pickpocket_doit() {
 func void dia_cord_pickpocket_back() {
     info_clearchoices(dia_cord_pickpocket);
 };
+
+
+ //AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Œwietnie. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k. 

@@ -1125,7 +1125,7 @@ FUNC VOID DIA_Corristo_Jadro_Info()
     AI_Output (self, other ,"DIA_Corristo_Jadro_03_04"); //Tego mia³ dowiedzieæ siê Milten. I wedle tego co s³ysza³em zdoby³ tê informacjê.
     AI_Output (self, other ,"DIA_Corristo_Jadro_03_05"); //Powinieneœ z nim o tym porozmawiaæ.
     AI_Output (other, self ,"DIA_Corristo_Jadro_15_06"); //Zajmê siê tym.
-    AI_Output (self, other ,"DIA_Corristo_Jadro_03_07"); //Im szybciej, tym lepiej. IdŸ i zdob¹dŸ j¹dro ognia dla naszego krêgu.
+    AI_Output (self, other ,"DIA_Corristo_Jadro_03_07"); //Im szybciej, tym lepiej. IdŸ i zdob¹dŸ Kryszta³ ognia dla naszego krêgu.
   
 	  Log_CreateTopic            (JadroOgnia , LOG_MISSION);
       Log_SetTopicStatus         (JadroOgnia , LOG_RUNNING);	
@@ -1144,7 +1144,7 @@ INSTANCE DIA_Corristo_JajoOgnia (C_INFO)
    condition    = DIA_Corristo_JajoOgnia_Condition;
    information  = DIA_Corristo_JajoOgnia_Info;
    permanent	= FALSE;
-   description	= "Mam j¹dro ognia.";
+   description	= "Mam kryszta³ ognia.";
 };
 
 FUNC INT DIA_Corristo_JajoOgnia_Condition()
@@ -1160,7 +1160,7 @@ FUNC INT DIA_Corristo_JajoOgnia_Condition()
 
 FUNC VOID DIA_Corristo_JajoOgnia_Info()
 {
-    AI_Output (other, self ,"DIA_Corristo_JajoOgnia_15_01"); //Mam j¹dro ognia.
+    AI_Output (other, self ,"DIA_Corristo_JajoOgnia_15_01"); //Mam kryszta³ ognia.
     AI_Output (self, other ,"DIA_Corristo_JajoOgnia_03_02"); //Dobrze siê spisa³eœ.
     AI_Output (other, self ,"DIA_Corristo_JajoOgnia_15_03"); //By³y pewne komplikacje ale podo³a³em im.
     AI_Output (self, other ,"DIA_Corristo_JajoOgnia_03_04"); //Bardzo dobrze. W koñcu jesteœ magiem ognia. Daj mi kamieñ.
@@ -1173,7 +1173,7 @@ FUNC VOID DIA_Corristo_JajoOgnia_Info()
 	B_GiveInvItems (self,other, ItFo_Potion_Mana_02, 4);
 	B_GiveInvItems (self,other, ItFo_Potion_Mana_Perma_03, 2);
 	B_GiveInvItems (other,self, ItMi_Focus_Corristo, 1);
-    B_LogEntry                     (JadroOgnia ,"Po walce zdoby³em kamieñ. Nastêpnie uda³em siê do Corristo a ten by³ ze mnie zadowolony. W zamian za j¹dro ognia otrzyma³em spor¹ sumkê w rudzie. Kr¹g Magów Ognia zyska³ to czego chcia³.");
+    B_LogEntry                     (JadroOgnia ,"Po walce zdoby³em kamieñ. Nastêpnie uda³em siê do Corristo a ten by³ ze mnie zadowolony. W zamian za kryszta³ ognia otrzyma³em spor¹ sumkê w rudzie. Kr¹g Magów Ognia zyska³ to czego chcia³.");
     JO_END = TRUE;
     B_GiveXP (300);
 	Log_SetTopicStatus         (JadroOgnia , LOG_SUCCESS);	

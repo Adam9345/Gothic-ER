@@ -47,7 +47,7 @@ var int MIS_ZmianaLorenza;
 const string CH1_ZmianaLorenza 				= "Nowa zmiana do Kopalni";
 
 var int MIS_FightWithNaldur;
-const string CH1_FightWithNaldur 			= "Pojedynek z Naldurem";
+
 
 
 var int MIS_ToOldMine;
@@ -242,8 +242,7 @@ const string CH4_GardistsInBC     			= "Bandyci bez obozu";
 var int MIS_FindFriends;
 const string CH4_FindFriends      			= "OdnaleŸæ przyjació³";
 
-var int MIS_QuentinsCutlass;
-const string CH4_QuentinsCutlass      		= "Kordelas dla Quentina";
+
 
 var int MIS_BanditsInAbadonedMine;
 const string CH4_BanditsInAbadonedMine      = "Bandyci i opuszczona kopalnia";
@@ -252,7 +251,6 @@ var int MIS_NewEnginer;
 const string CH4_NewEnginer      			= "Robotnik do kopalni";
 
 var int MIS_BackToOldMine;
-const string CH4_BackToOldMine      		= "Sytuacja w Starej Kopalni";
 
 var int MIS_RockyArmor;
 const string CH4_RockyArmor      			= "Nowy pancerz dla Bandyty";

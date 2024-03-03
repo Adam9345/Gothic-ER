@@ -14,12 +14,12 @@ instance BAN_40067_Victor (Npc_Default)
 
 	//-------- abilities --------
 
-	attribute[ATR_STRENGTH] =		80;
+	attribute[ATR_STRENGTH] =		100;
 	attribute[ATR_DEXTERITY] =		80;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	350;
-	attribute[ATR_HITPOINTS] =		350;
+	attribute[ATR_HITPOINTS_MAX] =	950;
+	attribute[ATR_HITPOINTS] =		950;
 
 	//-------- visuals --------
 	// 				animations
