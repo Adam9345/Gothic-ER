@@ -208,8 +208,7 @@ FUNC VOID DIA_Cord_SpottedNearMine_Info()
     AI_Output (self, other ,"DIA_Cord_SpottedNearMine_03_03"); //Przys³a³ nas Lee. W okolicy kopalni i na œcie¿kach krêci³o siê sporo Stra¿ników. Pozbyliœmy siê ich. Gdy usiedliœmy, by odpocz¹æ pojawili siê kolejni Stra¿nicy i o¿ywieñcy.
     AI_Output (other, self ,"DIA_Cord_SpottedNearMine_15_04"); //Byliœcie wewn¹trz kopalni?
     AI_Output (self, other ,"DIA_Cord_SpottedNearMine_03_05"); //Oszala³eœ?! Przecie¿ tam roi siê od tych piekielnych istot. Nawet Stra¿nicy zaczêli uciekaæ. Wpadli w nasz¹ zasadzkê... he he.
-    AI_Output (other, self ,"DIA_Cord_SpottedNearMine_15_06"); //No, dobra, czyli muszê zejœæ na dó³ i zobaczyæ, co takiego siê tam dzieje.
-    AI_Output (self, other ,"DIA_Cord_SpottedNearMine_15_07"); //My zostaniemy tutaj i bêdziemy pilnowaæ wejœcia. W ka¿dej chwili mog¹ siê pojawiæ kolejni Stra¿nicy. Dopilnujemy, ¿eby nie zaszli ciê od ty³u.
+    AI_Output (self, other ,"DIA_Cord_SpottedNearMine_15_06"); //My zostaniemy tutaj i bêdziemy pilnowaæ wejœcia. W ka¿dej chwili mog¹ siê pojawiæ kolejni Stra¿nicy. Dopilnujemy, ¿eby nie zaszli ciê od ty³u.
  
 	//zadanie - wpis
 	B_LogEntry                     (CH4_SupportForQuentin,"Sytuacja nie wygl¹da za dobrze. W okolicy kopalni krêci siê sporo Stra¿ników. Bêdê musia³ zostawiæ Najemników i Bandytów na stra¿y, a do kopalni zejœæ sam.");
@@ -272,48 +271,7 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
    AI_StopProcessInfos	(self);
 };
 
-//#####################################################################################
-//####### ROZDZIA£ 5
-//####### ZASTÊPSTWO DLA GORNA
-//#####################################################################################
-//========================================
-//-----------------> CALL_OF_DUTY
-//========================================
 
-INSTANCE DIA_Cord_CALL_OF_DUTY (C_INFO)
-{
-   npc          = SLD_709_Cord;
-   nr           = 1;
-   condition    = DIA_Cord_CALL_OF_DUTY_Condition;
-   information  = DIA_Cord_CALL_OF_DUTY_Info;
-   permanent	= FALSE;
-   description	= "Przysy³a mnie Lee. Twoja stra¿ ma zaj¹æ siê obron¹ Wolnej Kopalni.";
-};
-
-FUNC INT DIA_Cord_CALL_OF_DUTY_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Lee_OBRONA_WK))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Cord_CALL_OF_DUTY_Info()
-{
-    AI_Output (other, self ,"DIA_Cord_CALL_OF_DUTY_15_01"); //Przysy³a mnie Lee. Twoja stra¿ ma zaj¹æ siê obron¹ Wolnej Kopalni.
-    AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_02"); //W porz¹dku, i tak mieliœmy siê tam udaæ.
-    AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_03"); //Gorn jednak by³ tak nadgorliwy, ¿e postanowi³ sam zaj¹æ siê Stra¿nikami.
-    AI_Output (self, other ,"DIA_Cord_CALL_OF_DUTY_03_04"); //Natychmiast go zmienimy.
-    B_LogEntry                     (CH5_ObronaWK,"Przekaza³em wiadomoœæ od Lee Cordowi.");
-
-    B_GiveXP (200);
-	AI_StopProcessInfos	(self);
-	//Rutyny Najemników id¹cych do Kot³a.
-    Npc_ExchangeRoutine (SLD_709_Cord,"FMDef");
-	Npc_ExchangeRoutine (SLD_735_Soeldner,"FMDef");
-	Npc_ExchangeRoutine (SLD_736_Soeldner,"FMDef");
-};
 //------------------------------------------------------------------------------------1.6.1-------------------------------------------------------------------
 //========================================
 //-----------------> Obozowisko Moroka
@@ -408,9 +366,9 @@ FUNC INT DIA_Cord_HELLO1233S_Condition()
 FUNC VOID DIA_Cord_HELLO1233S_Info()
 {
     AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_00");   //Odzyska³em zrabowane towary.
-    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Œwietnie. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k. 
+    AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Œwietnie. Pomœciliœmy wszystkich, którzy polegli z ich r¹k. 
     AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_02");   //Do tego mamy ich ³up.
-    AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_03");   //Zgoda. Wracajmy.
+    AI_Output (other, self ,"DIA_Cord_HELLO1233S_15_03");   //Wracajmy.
     B_LogEntry(Obozowisko,"Rozmawia³em z Cordem i zameldowa³em o znalezieniu skradzionych rzeczy. Teraz pora na powrót do obóz i z³o¿enie koñcowego raportu Lee.");
 	SLD_709_Cord.aivar[AIV_PARTYMEMBER] = FALSE;
 	SLD_737_Torlof.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -445,7 +403,6 @@ FUNC INT DIA_Cord_WOJOWNIK_Condition()
 FUNC VOID DIA_Cord_WOJOWNIK_Info()
 {
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_03_00");    //Gratuluje, jesteœ teraz jednym z nas.
-   //xxxxxxxxxxxxxxxxxx AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_01");    //Zgadza siê.
     AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_02");    //Wiem, ¿e ju¿ wiele razy dowiod³eœ swej wartoœci. Co powiesz na ma³e polowanie?
     AI_Output (other, self ,"DIA_Cord_WOJOWNIK_03_03");    //Zale¿y na co.
 	AI_Output (self, other ,"DIA_Cord_WOJOWNIK_15_04");    //Na Cieniostwora. Wiem gdzie przebywa jeden osobnik. We dwóch na pewno damy mu radê.
@@ -595,8 +552,8 @@ FUNC VOID DIA_Cord_BESTIA_Info()
     AI_Output (self, other ,"DIA_Cord_BESTIA_03_00");    //Twarda bestia.
     AI_Output (other, self ,"DIA_Cord_BESTIA_03_01");    //Tak, ale to zawsze wiêksza satysfakcja.
     AI_Output (self, other ,"DIA_Cord_BESTIA_15_02");    //Kolejny raz udowodni³eœ, ¿e œwietny z ciebie wojownik. Jako nagrodê weŸ trofeum z Cieniostora, i te 100 bry³ek rudy.
-    AI_Output (other, self ,"DIA_Cord_BESTIA_03_03");    //Dziêki. Nie ma to jak dobre polowanie!
-	AI_Output (self, other ,"DIA_Cord_BESTIA_15_04");    //Pewnie, ¿e tak. Do zobaczenia w Obozie.
+    AI_Output (other, self ,"DIA_Cord_BESTIA_03_03");    //Dziêki.
+	AI_Output (self, other ,"DIA_Cord_BESTIA_15_04");    //Do zobaczenia w Obozie.
 	AI_Output (other, self ,"DIA_Cord_BESTIA_03_05");    //Trzymaj siê.
 	
 	Npc_ExchangeRoutine (SLD_709_Cord ,"start"); 
@@ -636,4 +593,4 @@ func void dia_cord_pickpocket_back() {
 };
 
 
- //AI_Output (self, other ,"DIA_Cord_HELLO1233S_03_01");   //Œwietnie. Dostali nauczkê a my pomœciliœmy wszystkich, którzy polegli z ich r¹k. 
+

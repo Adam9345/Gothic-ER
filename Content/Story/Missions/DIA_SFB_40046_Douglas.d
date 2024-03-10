@@ -135,7 +135,7 @@ FUNC VOID DIA_DOUGLAS_SIARKA1_Info()
     AI_Output (self, other,"DIA_DOUGLAS_SIARKA1_09_04"); //Dziêkuje. Wiedz, ¿e siê odwdziêczê.
 	AI_Output (self, other,"DIA_DOUGLAS_SIARKA1_09_05"); //Masz tu mapê z zaznaczonym miejsce, ukrycia siarki.
 	
-	CreateInvItems (self, ItDouglasMap, 1);
+	B_GiveInvItems (self, ItDouglasMap, 1);
     B_GiveInvItems (self, other, ItDouglasMap, 1);
 	
 	
