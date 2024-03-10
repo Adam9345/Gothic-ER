@@ -285,7 +285,7 @@ PROTOTYPE Mst_Default_Addon_SwampGolem(C_Npc)
 {
 	//----- Monster ----
 	name							=	"Bagienny golem";
-	guild							=	GIL_SWAMPSHARK;
+	guild							=	GIL_GOLEM;
 	aivar[AIV_MM_REAL_ID]			= 	ID_STONEGOLEM;
 	level							=	25;
 
@@ -325,7 +325,7 @@ senses						= SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	
 	aivar[AIV_MM_PercRange]		= 1500;
 	aivar[AIV_MM_DrohRange]		= 1500;
-	aivar[AIV_MM_AttackRange]	= 900;
+	aivar[AIV_MM_AttackRange]	= 1500;
 	aivar[AIV_MM_DrohTime]		= 0;
 	aivar[AIV_MM_FollowTime]	= 5;
 	aivar[AIV_MM_FollowInWater] = TRUE;

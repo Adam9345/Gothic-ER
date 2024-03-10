@@ -38,6 +38,6 @@ B_KillNpc			(VLK_7003_Abel);
 };
 
 B_ExchangeRoutine	(GRD_7001_Artegor, "stay");
-B_ChangeGuild    (GRD_7001_Artegor,GIL_NONE);  
+B_ChangeGuild       (GRD_7001_Artegor,GIL_NONE);  
 B_SetPermAttitude	(GRD_7001_Artegor,	ATT_NEUTRAL);
 };

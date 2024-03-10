@@ -396,8 +396,8 @@ func void B_InitMonsterAttitudes ()
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_DEMON			);
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_WOLF			);
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_SHADOWBEAST		);
-	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_BLOODFLY		);
-	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_SWAMPSHARK		);
+	B_SetGuildAttitude	(GIL_GOLEM,			ATT_NEUTRAL,	GIL_BLOODFLY		);
+	B_SetGuildAttitude	(GIL_GOLEM,			ATT_NEUTRAL,	GIL_SWAMPSHARK		);
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_ZOMBIE			);
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_UNDEADORC		);
 	B_SetGuildAttitude	(GIL_GOLEM,			ATT_HOSTILE,	GIL_SKELETON		);
