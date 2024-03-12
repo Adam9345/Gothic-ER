@@ -1,4 +1,4 @@
-//poprawione i sprawdzone -  
+//poprawione i sprawdzone -  Dargomir
 
 //========================================
 //-----------------> OPCJA *KONIEC* 
