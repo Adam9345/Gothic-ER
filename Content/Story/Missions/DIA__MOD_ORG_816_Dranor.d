@@ -51,12 +51,12 @@ FUNC VOID DIA_Organisator_Fight_Info()
 {
     AI_Output (other, self ,"DIA_Organisator_Fight_15_01"); //Ty chyba masz coœ na sumieniu.
     AI_Output (self, other ,"DIA_Organisator_Fight_03_02"); //Zostaw mnie w spokoju.
-    AI_Output (other, self ,"DIA_Organisator_Fight_15_03"); //Doœæ tego, gdzie s¹ precjoza Cronosa. 
+    AI_Output (other, self ,"DIA_Organisator_Fight_15_03"); //Doœæ tego, gdzie s¹ kosztownoœci Cronosa. 
 	AI_Output (self, other ,"DIA_Organisator_Fight_03_04"); //Nie mam pojêcia, przysiêgam!
-	AI_Output (self, other ,"DIA_Organisator_Fight_03_05"); //Umówiliœmy siê z Vincentem. Ja kradnê sakiewkê, a on j¹ sprzedaje za jakiœ czas w Starym Obozie. Mia³ nie wzbudzaæ podejrzeñ.
+	AI_Output (self, other ,"DIA_Organisator_Fight_03_05"); //Umówiliœmy siê z Vincentem. Ja kradnê sakiewkê, a on j¹ sprzedaje po jakimœ czasie w Starym Obozie. Mia³ nie wzbudzaæ podejrzeñ.
 	AI_Output (self, other ,"DIA_Organisator_Fight_03_06"); //Dzieñ wczeœniej zap³aci³ mi za robotê z góry 50 bry³ek rudy. Nie mam pojêcia, gdzie siê teraz ukrywa. 
 	AI_Output (self, other ,"DIA_Organisator_Fight_03_07"); //Powiedzia³ tylko, ¿e ma œwietn¹ kryjówkê w pobli¿u obozu. Mówi³, ¿e nikt przenigdy go tam nie znajdzie.
-	AI_Output (self, other ,"DIA_Organisator_Fight_03_08"); //Masz, weŸ tê rudê, któr¹ zarobi³em. I tak wkrótce trafiê do piachu.
+	AI_Output (self, other ,"DIA_Organisator_Fight_03_08"); //Masz, weŸ rudê, któr¹ zarobi³em. I tak pewnie wkrótce skoñcze w piachu.
 	AI_DrawWeapon		(self);
 	AI_Output (other, self ,"DIA_Organisator_Fight_15_09"); //Nie rób nic pochopnie!
 	
@@ -93,9 +93,9 @@ FUNC VOID DIA_Organisator_HI_AbsolutlySukinsyn_Info()
     AI_Output (other, self ,"DIA_Organisator_HI_AbsolutlySukinsyn_15_03"); //S³ucham?
     AI_Output (self, other ,"DIA_Organisator_HI_AbsolutlySukinsyn_03_04"); //Nie rozumiesz? Won natrêcie!
     AI_Output (self, other ,"DIA_Organisator_HI_AbsolutlySukinsyn_03_05"); //A jak nie odejdziesz to mogê ci pomóc!
-    AI_Output (other, self ,"DIA_Organisator_HI_AbsolutlySukinsyn_15_06"); //Ktoœ tu ma problemy z utrzymaniem nerwów w ryzach.
-    AI_Output (other, self ,"DIA_Organisator_HI_AbsolutlySukinsyn_15_07"); //Ale dobrze skoro chcesz. Bywaj.
-    AI_Output (self, other ,"DIA_Organisator_HI_AbsolutlySukinsyn_03_08"); //Sam masz problem dupku. 
+    AI_Output (other, self ,"DIA_Organisator_HI_AbsolutlySukinsyn_15_06"); //Ktoœ tu jest chyba bardzo nerwowy.
+    AI_Output (other, self ,"DIA_Organisator_HI_AbsolutlySukinsyn_15_07"); //Ale dobrze, jak chcesz. Bywaj.
+    AI_Output (self, other ,"DIA_Organisator_HI_AbsolutlySukinsyn_03_08"); //Odwal siê ode mnie, dupku. 
     AI_Output (self, other ,"DIA_Organisator_HI_AbsolutlySukinsyn_03_09"); //Dostaniesz jeszcze lekcjê ¿ycia w Kolonii.
     AI_StopProcessInfos	(self);
 };
