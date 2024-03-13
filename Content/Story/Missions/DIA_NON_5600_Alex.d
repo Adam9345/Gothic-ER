@@ -297,7 +297,8 @@ FUNC INT DIA_Alex_GiveSArmor_Condition()
 {
     if (MIS_JobInHuntersCamp == LOG_SUCCESS)
     {
-    return TRUE;
+        var int AFIP_ShowItem; AFIP_ShowItem = HUN_ARMOR_L;
+        return TRUE;
     };
 };
 
@@ -305,8 +306,6 @@ FUNC INT DIA_Alex_GiveSArmor_Condition()
 FUNC VOID DIA_Alex_GiveSArmor_Info()
 {
     
-    var int AFIP_ShowItem;
-	AFIP_SetChoiceItem  (DIA_Alex_GiveSArmor,HUN_ARMOR_L);
     AI_Output (other, self ,"DIA_Alex_GiveSArmor_15_01"); //Daj mi ubranie myœliwego.
     if (Npc_HasItems (hero, ItMiNugget)>=300)
     {
@@ -424,6 +423,7 @@ FUNC INT DIA_Alex_GivMeHArmor_Condition()
 {
     if (MIS_TheftInHuntersCamp == LOG_SUCCESS) && (zbroja_mysliwego_buy == false)
     {
+        var int AFIP_ShowItem; AFIP_ShowItem = NON_WOLF_ARMOR;
     return TRUE;
     };
 };
@@ -431,8 +431,6 @@ FUNC INT DIA_Alex_GivMeHArmor_Condition()
 
 FUNC VOID DIA_Alex_GivMeHArmor_Info()
 {
-    var int AFIP_ShowItem;
-	AFIP_SetChoiceItem  (DIA_Alex_GivMeHArmor,NON_WOLF_ARMOR);
     AI_Output (other, self ,"DIA_Alex_GivMeHArmor_15_01"); //Daj mi zbrojê myœliwego.
 	if (Kapitel == 1)
 	{
