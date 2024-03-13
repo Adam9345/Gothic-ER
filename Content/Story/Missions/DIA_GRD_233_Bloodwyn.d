@@ -356,10 +356,10 @@ FUNC int DIA_Bloodwyn_TroublesSolved_Condition()
 
 FUNC VOID DIA_Bloodwyn_TroublesSolved_Info()
 {
-	AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_00"); //Proszê, proszê, nowy bohater z Bractwa! Zaraz siê zrzygam z radoœci!
-	AI_Output(other, self, "DIA_Bloodwyn_TroublesSolved_15_01"); //Daruj sobie. Tym razem nieco przesadzi³eœ. Musia³em po³o¿yæ temu kres.
-	AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_02"); //Taaa... I ta banda naæpanych ³ysoli dalej podbiera nam ludzi. Ale oczywiœcie to ty masz racje.
-	AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_03"); //Przynajmniej na razie...
+    AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_00"); //Proszê, proszê, to nasz nowy bohater z Sekty! Trzymajcie mnie bo pêknê ze œmiechu!
+    AI_Output(other, self, "DIA_Bloodwyn_TroublesSolved_15_01"); //Daruj sobie. Tym razem ty i twoi ludzie przesadziliœcie.
+    AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_02"); //Taaa... Chyba nie zdajesz sobie sprawy co w³aœnie zrobi³eœ...
+    AI_Output(self, other, "DIA_Bloodwyn_TroublesSolved_03_03"); //Powiem ci jedynie ¿e, cholernie tego po¿a³ujesz kolego, czas poka¿e, kiedy...
 };
 
 //#####################################################################
