@@ -418,7 +418,7 @@ FUNC VOID DIA_Gomez_SuperQuestSuccess_Info()
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_02"); //Doskonale. Wiem, ¿e mia³eœ w tym swój udzia³. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ  na lepszy pancerz. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Tylko nieliczni mog¹ go nosiæ. IdŸ do Stone'a i poproœ go o ciê¿k¹ zbrojê. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Oczywiœcie bêdziesz mu musia³ za ni¹ zap³aciæ, ale to ju¿ nie moja sprawa. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Oczywiœcie bêdziesz musia³ za ni¹ zap³aciæ, ale to ju¿ nie moja sprawa. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_06"); //Mo¿esz odejœæ.
     B_LogEntry               (CH3_QuestForHeavyArmor,"Gomez by³ bardzo zadowolony z moich poczynañ w orkowych ruinach. Pozowli³ mi nawet na zakup ciê¿kiej zbroi Stra¿nika. Od teraz jestem ju¿ chyba kimœ wa¿nym w obozie.");
     Log_SetTopicStatus       (CH3_QuestForHeavyArmor, LOG_SUCCESS);
