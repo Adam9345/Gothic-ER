@@ -47,11 +47,11 @@ FUNC INT DIA_Thompson_HELLO1_Condition()
 FUNC VOID DIA_Thompson_HELLO1_Info()
 {
     AI_Output (other, self ,"DIA_Thompson_HELLO1_15_01"); //Dobre maj¹ tu piwo?
-    AI_Output (self, other ,"DIA_Thompson_HELLO1_03_02"); //Ca³kiem dobre, importowane prosto z Myrtany. Król stara siê, aby Gomezowi i jego ludziom ¿y³o siê tu ca³kiem dobrze. 
+    AI_Output (self, other ,"DIA_Thompson_HELLO1_03_02"); //Nawet dobre, importowane prosto z Myrtany. Król stara siê, aby Gomezowi i jego ludziom ¿y³o siê tu ca³kiem dobrze. 
 	AI_Output (self, other ,"DIA_Thompson_HELLO1_03_03"); //Jestem Thompson, w³aœnie zosta³em przys³any do Obozu ze Starej Kopalni. Odpracowa³em ju¿ swoje, wiêc Ian pozwoli³ mi odpocz¹æ.
     AI_Output (other, self ,"DIA_Thompson_HELLO1_15_04"); //Wygl¹dasz na doœæ silnego jak na Kopacza.
     AI_Output (self, other ,"DIA_Thompson_HELLO1_03_05"); //No có¿, ka¿dy Kopacz ma przesz³oœæ, pewnie zdziwi³byœ siê kim byli inni, zanim zostali zrzuceni za Barierê. 
-    AI_Output (self, other ,"DIA_Thompson_HELLO1_03_06"); //Najwiêkszym problemem tutaj w Kolonii jest wybicie siê, musisz siê sporo nalataæ dla Magnatów, Guru czy innych szych, aby ¿yæ na godnym poziomie.
+    AI_Output (self, other ,"DIA_Thompson_HELLO1_03_06"); //Najtrudniejsze w Kolonii to wybiæ siê, musisz siê sporo nalataæ dla Magnatów, Guru czy innych wa¿niaków, aby ¿yæ na godnym poziomie.
     AI_Output (other, self ,"DIA_Thompson_HELLO1_15_07"); //Rozumiem. Widzê te¿, ¿e masz niez³¹ broñ, inni Kopacze, których widzia³em zazwyczaj u¿ywaj¹ do walki kilofów lub pa³ek.
     AI_Output (self, other ,"DIA_Thompson_HELLO1_03_08"); //Eee no tak... znalaz³em ten miecz ee... w kopalni przy zw³okach jednego ze Stra¿ników.
     AI_Output (other, self ,"DIA_Thompson_HELLO1_15_09"); //Jasne.
@@ -82,7 +82,7 @@ FUNC INT DIA_Thompson_TIMETODIE_Condition()
 
 FUNC VOID DIA_Thompson_TIMETODIE_Info()
 {
-    AI_Output (other, self ,"DIA_Thompson_TIMETODIE_15_01"); //Witaj ponownie, Kopaczu. Widzê, ¿e twoje próby wybicia siê zdenerwowa³y pewnych ludzi.
+    AI_Output (other, self ,"DIA_Thompson_TIMETODIE_15_01"); //Witaj ponownie, Kopaczu. Widzê, ¿e twoje starania o wybicie siê, zirytowa³y pewnych ludzi...
 	AI_Output (self, other ,"DIA_Thompson_TIMETODIE_03_02"); //Pos³uchaj, nie wiem co on ci powiedzia³, ale chcê to wyjaœniæ. ChodŸ za mn¹. To nie jest dobre miejsce.
 	Npc_ExchangeRoutine (self, "guide");
 	AI_StopProcessInfos (self);
@@ -123,7 +123,7 @@ FUNC VOID DIA_Thompson_FIGHT_Info()
     AI_Output (self, other ,"DIA_Thompson_FIGHT_03_02"); //Ach, wiêc zdajê siê ¿e pozna³eœ Willa. Czego ten ³ajdak ode mnie chce?
     AI_Output (other, self ,"DIA_Thompson_FIGHT_15_03"); //Twojej g³owy, a ja zaraz mu j¹ dostarczê.
     AI_Output (self, other ,"DIA_Thompson_FIGHT_03_04"); //CO? Moi kumple nie puszcz¹ ci tego p³azem.
-    AI_Output (other, self ,"DIA_Thompson_FIGHT_15_05"); //Ch³opaki, zaczynamy zabawê!
+    AI_Output (self, other ,"DIA_Thompson_FIGHT_03_05"); //Ch³opaki, zaczynamy zabawê!
 	//Npc_ExchangeRoutine (self, "start");
 	AI_StopProcessInfos (self);
 	Npc_SetPermAttitude (self, ATT_HOSTILE);

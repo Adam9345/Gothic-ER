@@ -51,7 +51,7 @@ FUNC VOID DIA_Blade_GoToMine_Info()
     AI_Output (self, other ,"DIA_Blade_GoToMine_03_02"); //Dopiero co tutaj trafi³eœ, tak? 
     AI_Output (other, self ,"DIA_Blade_GoToMine_15_03"); //Mo¿e...
     AI_Output (self, other ,"DIA_Blade_GoToMine_03_04"); //Nazywam siê Kosa i mam dla ciebie propozycjê. Mogê ci pomóc zostaæ Kretem. 
-    AI_Output (self, other ,"DIA_Blade_GoToMine_03_05"); //Zostaj¹c cz³onkiem obozu zyskasz szacunek, pracê i Ÿród³o dochodu. 
+    AI_Output (self, other ,"DIA_Blade_GoToMine_03_05"); //W ten sposób zostaj¹c cz³onkiem naszego obozu, zyskasz szacunek, pracê i Ÿród³o dochodu. 
     AI_Output (self, other ,"DIA_Blade_GoToMine_03_06"); //Nie idŸ do Starego Obozu. Gomez to pod³y oszust i wyzyskiwacz. W Bractwie natomiast zrobi¹ ci pranie mózgu.
     AI_Output (self, other ,"DIA_Blade_GoToMine_03_07"); //Nowy Obóz to najlepsze miejsce dla skazañców, którzy chc¹ czuæ choæ odrobinê wolnoœci w tym piekle.
 
@@ -161,9 +161,9 @@ FUNC VOID DIA_Blade_InFreeMineCamp_Info()
     AI_Output (other, self ,"DIA_Blade_InFreeMineCamp_15_05"); //Dziêki...
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_06"); //Ach, jeszcze jedno! Prawie zapomnia³em. Nie wchodŸ do wnêtrza Kopalni. 
     AI_Output (other, self ,"DIA_Blade_InFreeMineCamp_15_07"); //CO?! Przecie¿ mam tam pracowaæ!
-    AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_08"); //Kopalnia jest ju¿ obsadzona. Potrzebujemy ludzi na powierzchni. Trzeba przygotowywaæ podpory, kopaæ to, co jest na zewn¹trz...
+    AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_08"); //Kopalnia jest ju¿ obsadzona. Potrzebujemy ludzi na powierzchni. Trzeba przygotowywaæ podpory, i wydobywaæ to, co jest na zewn¹trz...
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_09"); //Roboty jest mnóstwo. Mamy swoje powody, ¿eby nie wpuszczaæ niektórych osób do Kopalni.
-    AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_10"); //Po prostu siê tym nie interesuj, a wszystko bêdzie w porz¹dku.
+    AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_10"); //Po prostu siê tym nie interesuj, przynajmniej na razie, a wszystko bêdzie w porz¹dku.
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_11"); //No, idŸ ju¿. Poradzisz sobie!
     B_LogEntry                     (CH1_PathToFreeMine,"Kosa zaprowadzi³ mnie do Kopalni. Zasady które mi przedstawi³ s¹ dosyæ dziwne. Mam pracowaæ na zewn¹trz i nie interesowaæ siê wnêtrzem Kopalni. Od Swineya dostanê ekwipunek. ");
     Log_SetTopicStatus       (CH1_PathToFreeMine, LOG_SUCCESS);
@@ -257,16 +257,16 @@ FUNC VOID DIA_Blade_HELLO1_Info()
     AI_Output (other, self ,"DIA_Blade_HELLO1_03_06"); //Kim jest twój zleceniodawca?
     AI_Output (self, other ,"DIA_Blade_HELLO1_15_07"); //Tego nie mogê ci zdradziæ.
     AI_Output (other, self ,"DIA_Blade_HELLO1_15_08"); //Powiedz mi chocia¿ o co chodzi z tym cholernym p³aszczem?!
-    AI_Output (self, other ,"DIA_Blade_HELLO1_03_09"); //To sposób oznaczenia celu. Cz³owiek, który dokona zabójstwa nigdy nie by³ w Starym Obozie. Nie zna Magnatów, a dziêki temu p³aszczowi ³atwo siê zorientuje, kogo ma sprz¹tn¹æ. 
+    AI_Output (self, other ,"DIA_Blade_HELLO1_03_09"); //To po prostu znak. Cz³owiek, który dokona zabójstwa nigdy nie by³ w Starym Obozie. Nie zna Magnatów, a dziêki temu p³aszczowi ³atwo siê zorientuje, kogo ma sprz¹tn¹æ. 
     AI_Output (self, other ,"DIA_Blade_HELLO1_03_10"); //Zabójca, którego wybra³em do tej roboty to prawdziwy profesjonalista. Na kontynencie nale¿a³ do bandy Ortegi. Jednak, gdy trafi³ do Kolonii nie do³¹czy³ do ¿adnego obozu i ¿y³ w ukryciu. 
 	AI_Output (self, other ,"DIA_Blade_HELLO1_03_11"); //Odnalaz³em go, zaproponowa³em pracê, a on siê zgodzi³. 
-    AI_Output (other, self ,"DIA_Blade_HELLO1_15_12"); //Do jasnej cholery! Czemu akurat z futra jakiegoœ bia³ego wilka?!
+    AI_Output (other, self ,"DIA_Blade_HELLO1_15_12"); //Ale, cholera, czemu akurat z futra jakiegoœ bia³ego wilka?!
     AI_Output (self, other ,"DIA_Blade_HELLO1_03_13"); //O to ju¿ pytaj Mila. Mo¿e chcia³ ciê sprawdziæ?
-    AI_Output (other, self ,"DIA_Blade_HELLO1_15_14"); //Nie wa¿ne. Jak mam ci pomóc? I najwa¿niejsze: ile mi za to zap³acisz?
-    AI_Output (self, other ,"DIA_Blade_HELLO1_03_15"); //Konkrety. Dobrze. Za robotê dostaniesz 500 bry³ek rudy. Zabójstwo Magnata to nie byle co.
+    AI_Output (other, self ,"DIA_Blade_HELLO1_15_14"); //Dobra, nie wa¿ne. Jak mam ci pomóc? I najwa¿niejsze: ile mi za to zap³acisz?
+    AI_Output (self, other ,"DIA_Blade_HELLO1_03_15"); //Konkrety... Dobrze... Za robotê dostaniesz 500 bry³ek rudy. Zabójstwo Magnata to nie byle co.
     AI_Output (other, self ,"DIA_Blade_HELLO1_15_16"); //A co mam robiæ? 
     AI_Output (self, other ,"DIA_Blade_HELLO1_03_17"); //IdŸ do Starego Obozu i zobacz co siê tam dzieje. Potem wróæ jak najszybciej do mnie. 
-	AI_Output (other, self ,"DIA_Blade_HELLO1_15_18"); //Nie ma potrzeby. Mogê ci wszystko opowiedzieæ od razu. Stra¿nicy na zamku pij¹ piwo i objadaj¹ siê pieczonym miêsem, Magnaci debatuj¹ w sali Gomeza, Kopacze przesia...
+	AI_Output (other, self ,"DIA_Blade_HELLO1_15_18"); //Nie ma potrzeby. Mogê ci wszystko opowiedzieæ od razu. Stra¿nicy na zamku pij¹ piwo i objadaj¹ siê pieczonym miêsiwem. Magnaci debatuj¹ w sali Gomeza, Kopacze przesiadu...
 	AI_Output (self,other  ,"DIA_Blade_HELLO1_03_19"); //Przestañ siê zgrywaæ i ruszaj siê. Muszê wiedzieæ jak wygl¹da sytuacja. Nie ma czasu. 
     B_LogEntry                     (CH3_ScarMurder,"Mam iœæ do Starego Obozu i zobaczyæ co siê tam dzieje. Kosa i jego pracownik ju¿ chyba podjêli jakieœ dzia³ania.");
     AI_StopProcessInfos	(self);
@@ -317,12 +317,12 @@ FUNC VOID DIA_Blade_BACK_FROM_OC_Info()
     AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_05"); //Chyba nie. Przynajmniej tak wynika³o z rozmowy z Thorusem.
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_06"); //Nie zjawi³ siê na miejscu spotkania. Pewnie ma k³opoty. Musisz mu pomóc.
     AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_07"); //Dlaczego ja?
-    AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_08"); //Jeœli go z³api¹, mo¿e zacz¹æ sypaæ, a wtedy wojnê ze Starym Obozem mam pewn¹. Gdyby Lee siê dowiedzia³ zabi³by nas od razu.
+    AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_08"); //Jeœli go z³api¹, mo¿e zacz¹æ sypaæ, a wtedy wojnê ze Starym Obozem mamy jak w banku. Gdyby Lee siê dowiedzia³ zabi³by nas od razu.
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_09"); //IdŸ ponownie do Starego Obozu i odszukaj naszego cz³owieka. Razem musicie jakoœ uciec. 
     AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_10"); //Jak go poznam?
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_11"); //Nazywa siê Snake. Powiedz mu, ¿e ja ciê przysy³am. 
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_12"); //Ale jeœli siê zdradzisz i powiesz, któremuœ z ludzi Gomeza, ¿e to ja ciê przysy³am, bêdziesz musia³ po sobie posprz¹taæ. Rozumiesz?
-    AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_13"); //Tak, nikt ma o niczym nie wiedzieæ.
+    AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_13"); //Tak, nikt nie ma o niczym wiedzieæ.
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_14"); //Dobrze, ¿e siê rozumiemy. A teraz idŸ, bo nie ma czasu do stracenia.
     B_LogEntry                     (CH3_ScarMurder,"Sytuacja nieco wymknê³a siê spod kontroli. Magnat nie ¿yje, ale to nie znaczy, ¿e sprawa jest zamkniêta. Snake, zabójca, którego wynaj¹³ Kosa najpewniej zosta³ w Starym Obozie i nie mo¿e uciec. Muszê mu pomóc, zanim Stra¿nicy go z³api¹ i ca³a akcja pójdzie na marne. Z poprzedniej rozmowy z Thorusem wiem, ¿e nasz cz³owiek powinien nosiæ zbroje Stra¿ników. Pewnie to dziêki niej jeszcze ¿yje. ");
     AI_StopProcessInfos	(self);
@@ -372,9 +372,9 @@ FUNC VOID DIA_Blade_SNAKESESCAPE_Info()
     else
     {
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_08"); //Rozmawia³em ju¿ z nim. Nie by³ z ciebie zbyt zadowolony. Podobno zebra³o ci siê na oszczêdzanie Stra¿ników.
-        AI_Output (other, self ,"DIA_Blade_SNAKESESCAPE_15_09"); //S³uchaj, uzna³em, ¿e œmieræ tego cz³owieka bêdzie zbêdna.
-        AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_10"); //Uczestnicz¹c w zabójstwie Magnata powinieneœ ka¿dego Stra¿nika, który ciê zdemaskowa³ uznawaæ za wroga...
-        AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_11"); //To tak na przysz³oœæ...
+        AI_Output (other, self ,"DIA_Blade_SNAKESESCAPE_15_09"); //Po prostu uzna³em, ¿e œmieræ tamtego cz³owieka bêdzie niepotrzebna.
+        AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_10"); //Uczestnicz¹c w zabójstwie Magnata powinieneœ ka¿dego Stra¿nika, który ciê zdemaskowa³ traktowaæ jak wroga...
+        AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_11"); //Mam nadziejê, ¿e nastênym razem bêdziesz m¹drzejszy...
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_12"); //Oto twoja ruda. 
         B_LogEntry                     (CH3_ScarMurder,"Odebra³em od Kosy nagrodê za pomoc w wykonaniu zadania. Jeœli chcê dowiedzieæ siê wiêcej o sensie ca³ego tego zadania, powinienem pogadaæ z Orikiem.");
 		Log_SetTopicStatus       (CH3_ScarMurder, LOG_SUCCESS);
@@ -460,11 +460,11 @@ FUNC INT DIA_Blade_Next_Condition()
 FUNC VOID DIA_Blade_Next_Info()
 {
     AI_Output (other, self ,"DIA_Blade_Next_15_01"); //Co dalej?
-    AI_Output (self, other ,"DIA_Blade_Next_03_02"); //B¹dŸ cicho. Musisz koniecznie dostaæ siê na plac zamkowy.
+    AI_Output (self, other ,"DIA_Blade_Next_03_02"); //Cicho! Musisz koniecznie dostaæ siê na plac zamkowy.
     AI_Output (self, other ,"DIA_Blade_Next_03_03"); //Gdy ju¿ bêdziesz na placu, idŸ w kierunku siedziby Magnatów. Na pewno zaczepi¹ ciê Stra¿nicy.
-    AI_Output (self, other ,"DIA_Blade_Next_03_04"); //Powiedz im, ¿e chcê siê spotkaæ z Blizn¹ w pobli¿u kaplicy Innosa. Najlepiej natychmiast.
-    AI_Output (self, other ,"DIA_Blade_Next_03_05"); //Wed³ug instrukcji, które otrzyma³em musisz powiedzieæ, ¿e nazywam siê Spike. To chyba jego dawny przyjaciel.
-    AI_Output (self, other ,"DIA_Blade_Next_15_06"); //Je¿eli Stra¿nicy jednak nie bêd¹ ciê zaczepiaæ, to idŸ mu to powiedz osobiœcie.
+    AI_Output (self, other ,"DIA_Blade_Next_03_04"); //Powiedz im, ¿e Spike chcê siê spotkaæ z Blizn¹ w pobli¿u kaplicy Innosa. Najlepiej natychmiast.
+    AI_Output (self, other ,"DIA_Blade_Next_03_05"); //Wed³ug naszych Ÿróde³ Spike to chyba jego dawny przyjaciel.
+    AI_Output (self, other ,"DIA_Blade_Next_15_06"); //Je¿eli Stra¿nicy jednak nie bêd¹ ciê zaczepiaæ, to pójdŸ mu to powiedz osobiœcie.
 	AI_Output (self, other ,"DIA_Blade_Next_03_07"); //IdŸ ju¿.
 	
 	B_LogEntry                     (CH3_ScarMurder,"Mam powiedzieæ BliŸnie, ¿e Stra¿nik Spike chce siê z nim spotkaæ przy kaplicy Innosa.");
@@ -506,7 +506,7 @@ FUNC VOID DIA_Blade_Guardnians_Info()
 	AI_Output (other, self ,"DIA_Blade_Guardnians_15_01"); //Stra¿nicy id¹ tu razem z Blizn¹!
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_02"); //Cholera jasna. Ale spapra³eœ! Mia³ przyjœæ sam!
     AI_Output (other, self ,"DIA_Blade_Guardnians_15_03"); //Co teraz zrobimy? Potrzebny nam plan! Szybko.
-    AI_Output (self, other ,"DIA_Blade_Guardnians_03_04"); //Ja muszê zabiæ Bliznê. Postaram siê to zrobiæ szybko. Mam specjalny miecz.
+    AI_Output (self, other ,"DIA_Blade_Guardnians_03_04"); //Ja muszê zabiæ Bliznê. Postaram siê to zrobiæ szybko. Mam specjaln¹ broñ.
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_05"); //Ty postaraj siê prze¿yæ. Wypij szybko tê miksturê. Zwiêkszy twoj¹ si³ê. 
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_06"); //Musimy jakoœ sobie poradziæ.
     B_LogEntry                     (CH3_ScarMurder,"Cholera... spapra³em sprawê. Blizna idzie w naszym kierunku wraz z dwoma najlepszymi Stra¿nikami. Muszê prze¿yæ i odci¹gn¹æ uwagê Stra¿ników. Z naciskiem na prze¿yæ.");
@@ -544,7 +544,7 @@ FUNC INT DIA_Blade_Wygrana_Condition()
 
 FUNC VOID DIA_Blade_Wygrana_Info()
 {
-    AI_Output (self, other ,"DIA_Blade_Wygrana_03_01"); //Cholera, uda³o nam siê! Spadamy! Ruszaj siê.
+    AI_Output (self, other ,"DIA_Blade_Wygrana_03_01"); //Tak! Uda³o nam siê! Spadamy! Ruszaj siê.
     B_LogEntry                     (CH3_ScarMurder,"Uda³o nam siê. Musimy uciekaæ z Obozu.");
 	czas_ucieczki_scar = 20;
     B_GiveXP (300);
@@ -580,7 +580,7 @@ FUNC VOID DIA_Blade_QuestSukces_Info()
 {
     AI_Output (other, self ,"DIA_Blade_QuestSukces_15_01"); //Ju¿ po wszystkim. 
     AI_Output (other, self ,"DIA_Blade_QuestSukces_15_02"); //Dobra robota!
-    AI_Output (self, other ,"DIA_Blade_QuestSukces_03_03"); //Masz racjê. To by³o coœ wyj¹tkowego. Orik bêdzie zadowolony.
+    AI_Output (self, other ,"DIA_Blade_QuestSukces_03_03"); //Masz racjê. To by³o niesamowite. Orik bêdzie zadowolony.
     AI_Output (other, self ,"DIA_Blade_QuestSukces_15_04"); //Orik?
     AI_Output (self, other ,"DIA_Blade_QuestSukces_03_05"); //Cholera, wygada³em siê. 
     AI_Output (other, self ,"DIA_Blade_QuestSukces_15_06"); //Wyjaœnisz mi to?
@@ -632,8 +632,8 @@ FUNC VOID DIA_Blade_Defend_NC_Info()
 {
     AI_Output (other, self ,"DIA_Blade_Defend_NC_15_01"); //Niedaleko obozu znajduj¹ siê stra¿nicy Gomeza.
     AI_Output (self, other ,"DIA_Blade_Defend_NC_03_02"); //Domyœlam siê, ¿e mamy siê ich pozbyæ.
-    AI_Output (other, self ,"DIA_Blade_Defend_NC_15_03"); //S³uszny domys³.
-    AI_Output (self, other ,"DIA_Blade_Defend_NC_03_04"); //Zatem prowadŸ. Pora pogruchotaæ im koœci
+    AI_Output (other, self ,"DIA_Blade_Defend_NC_15_03"); //S³usznie siê domyœlasz.
+    AI_Output (self, other ,"DIA_Blade_Defend_NC_03_04"); //Zatem prowadŸ. Pora pogruchotaæ im koœci.
     AI_Output (other, self ,"DIA_Blade_Defend_NC_15_05"); //Jasne. Idziemy.
     SLD_704_Blade.aivar[AIV_PARTYMEMBER] = TRUE;
     Npc_ExchangeRoutine	(self, "NcAttack");

@@ -164,7 +164,7 @@ FUNC INT DIA_Joel_LECI_Condition()
 FUNC VOID DIA_Joel_LECI_Info()
 {
     AI_Output (other, self ,"DIA_Joel_LECI_15_01"); //Jak leci?
-    AI_Output (self, other ,"DIA_Joel_LECI_15_02"); //NieŸle. Tak jak mówi³em mam ma³o pracy.
+    AI_Output (self, other ,"DIA_Joel_LECI_03_02"); //NieŸle. Tak jak mówi³em mam ma³o pracy.
 };
 /*
 //========================================
