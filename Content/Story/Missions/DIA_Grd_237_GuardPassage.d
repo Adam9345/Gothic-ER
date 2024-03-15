@@ -38,7 +38,8 @@ FUNC VOID Info_Grd_237_FirstWarn_Info()
 {
 	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_01"); //Lepiej st¹d zmykaj. Za t¹ barykad¹ zaczynaj¹ siê ziemie orków!
 	AI_Output			(hero, self,"Info_Grd_237_FirstWarn_15_02"); //Jest tu niebezpiecznie?
-	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_03"); //Ujmê to tak: mo¿esz równie dobrze oddaæ mi ca³¹ swoj¹ rudê. Za kilka minut i tak nie bêdzie ci potrzebna, bo bêdziesz gryz³ ziemiê!
+	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_03"); //Ujmê to tak: mo¿esz równie dobrze oddaæ mi ca³¹ swoj¹ rudê ju¿ teraz.
+	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_04"); //Za kilka minut i tak nie bêdziesz jej potrzebowa³, bo bêdziesz gryz³ ziemiê!
 
 	hero.aivar[AIV_LASTDISTTOWP] 		= Npc_GetDistToWP (hero,Grd_237_CHECKPOINT);
 
@@ -53,7 +54,7 @@ func void Info_Grd_237_FirstWarn_Info_RETREAT ()
 	Info_ClearChoices	(Info_Grd_237_FirstWarn);
 
 	AI_Output			(hero, self,"Info_Grd_237_FirstWarn_15_04"); //Chyba lepiej bêdzie, jeœli zawrócê.
-	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_05"); //Szkoda, bardzo chêtnie zaj¹³bym siê twoj¹ rud¹.
+	AI_Output			(self, hero,"Info_Grd_237_FirstWarn_07_05"); //Szkoda, bardzo chêtnie zaopiekowa³bym siê twoj¹ rud¹.
 
 	hero.aivar[AIV_GUARDPASSAGE_STATUS] = AIV_GPS_FIRSTWARN;
 
