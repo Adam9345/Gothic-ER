@@ -76,7 +76,7 @@ FUNC VOID DIA_Vart_HELLO2_Info()
     AI_Output (other, self ,"DIA_Vart_HELLO2_15_01"); //Sk¹d siê tu wzi¹³eœ?
     AI_Output (self, other ,"DIA_Vart_HELLO2_03_02"); //Kiedyœ by³em Kopaczem, ale uciek³em z kopalni.
     AI_Output (self, other ,"DIA_Vart_HELLO2_03_03"); //Ca³y swój urobek odda³em jednemu Stra¿nikowi za pomoc w ucieczce.
-    AI_Output (other, self ,"DIA_Vart_HELLO2_15_04"); //Kim by³ ten Stra¿nik?
+    AI_Output (other, self ,"DIA_Vart_HELLO2_15_04"); //Co to za Stra¿nik?
     AI_Output (self, other ,"DIA_Vart_HELLO2_03_05"); //Nazywa³ siê Drake.
 };
 
@@ -115,8 +115,8 @@ FUNC VOID DIA_Vart_HELLO3_Info()
 	}
 	else
 	{
-	AI_Output (self, other ,"DIA_Vart_HELLO3_03_04"); //Chyba niezbyt wiele wiesz o walce, co? 
-	AI_Output (self, other ,"DIA_Vart_HELLO3_03_05"); //Nie mam zamiaru ubijaæ potworów za ciebie.
+	AI_Output (self, other ,"DIA_Vart_HELLO3_03_04"); //Chyba niewiele wiesz o walce, co? 
+	AI_Output (self, other ,"DIA_Vart_HELLO3_03_05"); //Nie mam zamiaru ubodwalaæ ca³ej roboty za ciebie.
 	AI_Output (self, other ,"DIA_Vart_HELLO3_03_06"); //PrzyjdŸ, gdy bêdziesz silniejszy. 
 	};
 };

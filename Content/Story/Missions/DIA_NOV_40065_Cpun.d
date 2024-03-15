@@ -49,7 +49,7 @@ FUNC VOID DIA_Cpun_Gruzlik_Info()
 {
     AI_Output (other, self ,"DIA_Cpun_Gruzlik_15_01"); //Zostaw Fortuno w spokoju.
     AI_Output (self, other ,"DIA_Cpun_Gruzlik_03_02"); //Ale ta zielona krowa ma wielkie wymiona! Stary!
-    AI_Output (other, self ,"DIA_Cpun_Gruzlik_15_03"); //Ca³kiem naæpany.
+    AI_Output (other, self ,"DIA_Cpun_Gruzlik_15_03"); //Goœæ jest ca³kiem naæpany.
     AI_Output (self, other ,"DIA_Cpun_Gruzlik_03_04"); //Bêdê robi co bêdê chcia³. Sam jesteœ naæpany palancie.
     AI_Output (other, self ,"DIA_Cpun_Gruzlik_15_05"); //Dobra dostaniesz trochê po g³ówce i ci przejdzie.
     AI_Output (self, other ,"DIA_Cpun_Gruzlik_03_06"); //Dawaaaaj! Ty pomiocie Beliara z trzema g³owami!
@@ -84,7 +84,7 @@ if (Npc_KnowsInfo(hero,DIA_Cpun_Gruzlik))
 };
 FUNC VOID DIA_Cpun_Gruzlik_2_Info()
 {
-    AI_Output (other, self ,"DIA_Cpun_Gruzlik_2_15_01"); //No i jak? Mo¿e masz jeszcze coœ do powiedzenia?
+    AI_Output (other, self ,"DIA_Cpun_Gruzlik_2_15_01"); //No i jak? Masz mo¿e jeszcze coœ do powiedzenia?
     AI_Output (self, other ,"DIA_Cpun_Gruzlik_2_03_02"); //Ahhh... Moje gnaty!
     AI_Output (other, self ,"DIA_Cpun_Gruzlik_2_15_03"); //Odwal siê od Fortuno albo powtórzymy zabawê.
     AI_Output (self, other ,"DIA_Cpun_Gruzlik_2_03_04"); //Tak tak.. Zje¿d¿aj palancie...
