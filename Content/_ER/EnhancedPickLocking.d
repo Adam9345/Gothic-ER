@@ -385,6 +385,50 @@ func int API_GetSymbolIntValue (var string symbolName, var int defaultValue) {
 	return + GetSymbolIntValue (symbID);
 };
 
+func void FF_CheckActionKey () {
+	var int actionKey; actionKey = MEM_GetKey ("keyAction"); actionKey = MEM_KeyState (actionKey);
+	var int secondaryActionKey; secondaryActionKey = MEM_GetSecondaryKey ("keyAction"); secondaryActionKey = MEM_KeyState (secondaryActionKey);
+
+	PC_ActionKeyPressed = FALSE;
+
+	if (((actionKey == KEY_PRESSED) || (actionKey == KEY_HOLD)) || ((secondaryActionKey == KEY_PRESSED) || (secondaryActionKey == KEY_HOLD))) {
+		PC_ActionKeyPressed = TRUE;
+	};
+
+	if (PC_ActionKeyPressed != PC_ActionKeyPressedLast) {
+		if (!PC_ActionKeyPressed) {
+			if (_PlayerActionKeyReleased_Event) {
+				Event_Execute (_PlayerActionKeyReleased_Event, 0);
+			};
+		};
+	} else {
+		if (PC_ActionKeyPressed) {
+			PC_ActionKeyHeld = TRUE;
+			if (_PlayerActionKeyHeld_Event) {
+				Event_Execute (_PlayerActionKeyHeld_Event, 0);
+			};
+		};
+	};
+
+	PC_ActionKeyPressedLast = PC_ActionKeyPressed;
+
+	if (!PC_ActionKeyPressed) {
+		FF_Remove (FF_CheckActionKey);
+	};
+};
+
+func void _hook_oCAIHuman_PC_ActionMove () {
+	PC_ActionKeyPressed = MEM_ReadInt (ESP + 4);
+
+	//If actionKey is pressed together with other keys ... then this function no longer register actionKey as pressed :-/
+	//So we will add frame function that will check if keyAction is pressed / held there
+	if (PC_ActionKeyPressed) {
+		if (PC_ActionKeyPressed != PC_ActionKeyPressedLast) {
+			FF_ApplyOnceExtGT (FF_CheckActionKey, 0, -1);
+		};
+	};
+};
+
 func void G12_GetActionKey_Init () {
 	PC_ActionKeyPressed = 0;
 	PC_ActionKeyPressedLast = PC_ActionKeyPressed;
