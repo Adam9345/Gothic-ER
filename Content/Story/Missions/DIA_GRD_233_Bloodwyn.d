@@ -285,6 +285,10 @@ FUNC INT Info_Bloodwyn_PayForJesse_Condition()
 	};
 };
 
+DIA_Karczmarz_HeroIsGrd_03_03
+
+DIA_Raeuber_WYPAD_15_08
+
 FUNC VOID Info_Bloodwyn_PayForJesse_Info()
 {	
 	AI_Output (other, self,"Info_Bloodwyn_PayForJesse_15_00"); //Jesse przysy³a mnie, ¿ebym zap³aci³ jego 10 bry³ek.
@@ -292,11 +296,11 @@ FUNC VOID Info_Bloodwyn_PayForJesse_Info()
 	{
 		AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_01"); //Powinieneœ raczej zap³aciæ SWOJE 10 bry³ek.
 	};
-	AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_02"); //Zapomnij o tym facecie, Jesse i tak d³ugo nie poci¹gnie.
+	AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_02"); //Zapomnij o tym goœciu, Jesse i tak d³ugo nie poci¹gnie.
 	if (Npc_HasItems(other,itminugget) >= 10)
 	{
 		AI_Output (other, self,"Info_Bloodwyn_PayForJesse_15_03"); //Nie - zap³acê za niego. Masz tu jego 10 bry³ek i zostaw go w spokoju.
-		AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_04"); //Dobra, jak sobie chcesz.
+		AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_04"); //Dobra, jak sobie chcesz, kolego.
 		Jesse_PayForMe = LOG_SUCCESS;
 		B_GiveInvItems 	    (other, self, itminugget, 10);
 		 B_LogEntry               (CH1_HelpJesse,"Odda³em 10 bry³ek rudy Bloodowynowi.");
@@ -307,6 +311,7 @@ FUNC VOID Info_Bloodwyn_PayForJesse_Info()
 		AI_Output (self, other,"Info_Bloodwyn_PayForJesse_08_06"); //To znak, cz³owieku! Przemyœl to sobie. P³ac¹c za tego goœcia, wyrzucasz rudê w b³oto!
 	};
 };
+
 /*------------------------------------------------------------------------
 //							GARDIST GEWORDEN							//
 ------------------------------------------------------------------------*/
