@@ -138,7 +138,7 @@ func void DIA_Snipes_Lehrer_Lockpick()
 	{
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick_05_01"); //Nie w¹tpiê! Có¿... Pocz¹tki nie s¹ zbyt trudne.
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick_05_02"); //Przede wszystkim musisz uwa¿aæ, ¿eby nie z³amaæ wytrycha.
-		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick_05_03"); //Musisz byæ bardzo cierpliwy. Wtedy nie bêdziesz potrzebowa³ tylu wytrychów, he he!
+		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick_05_03"); //B¹dŸ cierpliwy, a nie bêdziesz potrzebowa³ zbyt wiel wytrychów.
 	};
 	B_GiveInvItems (hero, self, itminugget, 300);
 		Npc_RemoveInvItems (self, itminugget, 300);
@@ -157,7 +157,7 @@ func void DIA_Snipes_Lehrer_Lockpick2()
 	if (B_teachthieftalent(self,other,NPC_TALENT_PICKLOCK))
 	{
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick2_05_01"); //Gdy nabierzesz ju¿ trochê doœwiadczenia, nauczysz siê rozpoznawaæ dŸwiêk, jaki wydaje wytrych zanim pêknie.
-		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick2_05_02"); //Myœlê, ¿e powinieneœ sobie z tym poradziæ. Ws³uchaj siê uwa¿nie w dŸwiêki jakie wydaje otwierany zamek, a nie bêdziesz potrzebowa³ tylu wytrychów, he, he!
+		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick2_05_02"); //To charakterystyczne trzeszczenie prê¿¹cego siê wytrychu. Ws³uchaj siê uwa¿nie w dŸwiêki jakie wydaje otwierany zamek, a liczba potzrebnych ci wytrychów bêdzie maleæ.
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Lockpick2_05_03"); //Prawdziwy mistrz w tym fachu potrafi otworzyæ ka¿d¹ skrzyniê nie ³ami¹c ani jednego wytrycha.
 	};
 	B_GiveInvItems (hero, self, itminugget, 600);
@@ -205,7 +205,7 @@ func void DIA_Snipes_Lehrer_Pickpocket2()
 	if (B_teachthieftalent(self,other,NPC_TALENT_PICKPOCKET))
 	{		
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Pickpocket2_05_01"); //Có¿, chyba rzeczywiœcie potrafisz ju¿ wystarczaj¹co du¿o, ¿eby opanowaæ zaawansowane sztuczki.
-		AI_Output (self, other,"DIA_Snipes_Lehrer_Pickpocket2_05_02"); //Ale musisz pamiêtaæ, ¿e nawet mistrzowie z³odziejscy od czasu do czasu zostaj¹ z³apani.
+		AI_Output (self, other,"DIA_Snipes_Lehrer_Pickpocket2_05_02"); //Ale musisz pamiêtaæ, ¿e nawet mistrzowscy z³odzieje mog¹ zostaæ przy³apani.
 		AI_Output (self, other,"DIA_Snipes_Lehrer_Pickpocket2_05_03"); //Uwa¿aj na siebie.
 	};
 		B_GiveInvItems (hero, self, itminugget, 500);
@@ -354,7 +354,7 @@ FUNC VOID DIA_Snipes_POGADUCHY_K4_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_POGADUCHY_K4_15_01"); //Widzê, ¿e i tym razem uda³o ci siê wykiwaæ Stra¿ników!
     AI_Output (self, other ,"DIA_Snipes_POGADUCHY_K4_03_02"); //Hehe... Masz racjê. Choæ tym razem myœla³em, ¿e nam siê nie uda.
-    AI_Output (self, other ,"DIA_Snipes_POGADUCHY_K4_03_03"); //Uciekliœmy dos³ownie w ostatniej chwili. Jak chcesz znaæ szczegó³y, to gadaj z Wê¿em.
+    AI_Output (self, other ,"DIA_Snipes_POGADUCHY_K4_03_03"); //Uciekliœmy dos³ownie w ostatniej chwili. Jak chcesz poznac szczegó³y, to pogadaj z Wê¿em.
 };
 
 //========================================
@@ -421,12 +421,12 @@ FUNC VOID DIA_Snipes_OBITE_PYSKI_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_01"); //Chcia³bym siê czegoœ dowiedzieæ.
     AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_02"); //Tego czy dobrze siê czuje? Tak, stary czuje siê œwietnie zw³aszcza jeœli masz dla mnie trochê rudy hehe...
-	AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_03"); //Nie za nic. Dam ci parê bry³ek jeœli powiesz mi coœ wa¿nego.
+	AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_03"); //Ktoœ tu mnie nauczy³, ¿e: "Nie ma nic za darmo!" Dam ci parê bry³ek jeœli powiesz mi coœ wa¿nego.
     AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_04"); //A co chcesz wiedzieæ? 
     AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_05"); //Sk¹d bior¹ siê tajemnicze obra¿enia u czêœci Kopaczy?
-    AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_06"); //Znam kogoœ kto powinien ci to wyjaœniæ.
+    AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_06"); //Znam kogoœ kto powinien umieæ ci to wyjaœniæ.
 	AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_07"); //Kto to jest?
-	AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_08"); //¯eby to stwierdziæ potrzebuje sakiewki ze 100 bry³kami rudy w rêku, m³ody.
+	AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_08"); //¯eby toudzieliæ tej informacji potrzebuje sakiewki ze 100 bry³kami rudy w rêku, m³ody.
 				    B_LogEntry               (ObitePyski,"Snipes chcê za fatygê 100 bry³ek rudy. Chyba bêdê je musia³ mu zap³aciæ, jeœli chce dowiedzieæ siê wiêcej.");
 
 };
@@ -491,14 +491,14 @@ FUNC VOID DIA_Snipes_Grom_Info_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_01"); //Wiesz coœ na temat surowca zwanego srebrnym gromem?
     AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_02"); //Oprócz tego, ¿e jest rzadki jak gówno Gomeza?
-	AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_03"); //Poetyckie porównanie.
+	AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_03"); //Có¿ za poetyckie porównanie.
     AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_04"); //Mo¿e wiem. Mo¿e nie wiem. To zale¿y ile za to dostanê. Proste.
     AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_05"); //Mo¿e 30 bry³ek rudy?
     AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_06"); //Co najmniej 50.
 	AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_07"); //Mo¿e jednak 40?
 	AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_08"); //To ja powiem 51.
 	AI_Output (other, self ,"DIA_Snipes_Grom_Info_15_09"); //W ostatecznoœci mo¿e byæ 50.
-	AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_10"); //No to mi tyle daj.
+	AI_Output (self, other ,"DIA_Snipes_Grom_Info_03_10"); //No i nie mo¿na by³o tak od razu..?
 				   
  B_LogEntry               (MieczGorBoby,"Rozmawia³em ze Snipsem. Sprzeda mi informacjê na temat posiadaczy ,,srebrnego gromu” w zamian za 50 bry³ek rudy.");
 };
@@ -532,13 +532,13 @@ FUNC VOID DIA_Snipes_Grom_Info_Ore_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_Grom_Info_Ore_15_01"); //Proszê.
 	B_GiveInvItems (other,self, itminugget, 50);
-    AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_02"); //Dziêki. A teraz moje informacje. Wiem o dwóch ludziach, którzy mieli w posiadaniu ten surowiec. Pierwszy to Grimes.
+    AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_02"); //Dziêki. Wiem o dwóch ludziach, którzy mielibyli w posiadaniu tego surowca. Jeden to Grimes.
 	AI_Output (other, self ,"DIA_Snipes_Grom_Info_Ore_15_03"); //Ju¿ z nim rozmawia³em.
     AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_04"); //A drugi to Glen.
-    AI_Output (other, self ,"DIA_Snipes_Grom_Info_Ore_15_05"); //A to przydatna informacja...
+    AI_Output (other, self ,"DIA_Snipes_Grom_Info_Ore_15_05"); //O! A to przydatna informacja...
     AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_06"); //No widzisz, interesy ze mn¹ to przyjemnoœæ dla obu stron.
 	AI_Output (other, self ,"DIA_Snipes_Grom_Info_Ore_15_07"); //Dobra. Dziêki za informacje.
-	AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_08"); //Na razie koleœ.
+	AI_Output (self, other ,"DIA_Snipes_Grom_Info_Ore_03_08"); //Na razie, przyjacielu.
 	
 				     B_LogEntry               (MieczGorBoby,"Snipes powiedzia³, ¿e Glen by³ w posiadaniu ,,srebrnego gromu”, muszê siê zatem do niego udaæ.");
 
@@ -574,7 +574,7 @@ FUNC VOID DIA_Snipes_Oprawca_Info()
     AI_Output (self, other ,"DIA_Snipes_Oprawca_03_02"); //Jeœli nie jest p³atna to daruj sobie.
     AI_Output (other, self ,"DIA_Snipes_Oprawca_15_03"); //Dam ci 50 bry³ek rudy. Musisz okraœæ stra¿nika Winstona.
     AI_Output (other, self ,"DIA_Snipes_Oprawca_15_04"); //Potrzebny mi jego osobisty dziennik.
-    AI_Output (self, other ,"DIA_Snipes_Oprawca_03_05"); //Facet lubi sobie goln¹æ. Skroiæ go to jak przespaæ siê z prostytutk¹, ³atwizna.
+    AI_Output (self, other ,"DIA_Snipes_Oprawca_03_05"); //Facet lubi sobie goln¹æ. Skroiæ go to jak oszukaæ dzieciaka - ³atwizna.
     AI_Output (self, other ,"DIA_Snipes_Oprawca_03_06"); //Ale najpierw ruda, nie dam siê wyrolowaæ.
      B_LogEntry               (Oprawca,"Rozmawia³em ze Snipesem. Zaproponowa³em mu 50 bry³ek rudy za okradzenie Winstona. Przysta³ na moj¹ propozycjê.");
 };
@@ -636,12 +636,12 @@ if (Npc_KnowsInfo(hero,DIA_Snipes_Oprawca_Ruda))
 FUNC VOID DIA_Snipes_Oprawca_Dziennik_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_01"); //No i jak tam? Masz dziennik Winstona?
-    AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_02"); //Posz³o ³atwo tak jak myœla³em, mam go.
+    AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_02"); //No pytasz dzika czy sra w lesie. Pewnie, ¿e mam.
     AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_03"); //No to dawaj.
     AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_04"); //Trzymaj. Widzê, ¿e idziesz na wojnê z tym zabijak¹, ryzykowna gra. Ale mo¿e jak ja te¿ lubisz ryzykowaæ?
 	B_GiveInvItems (self,other, ItWr_WinstonBook, 1);
-    AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_05"); //Nie lubiê niesprawiedliwoœci.
-    AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_06"); //Tylko nie straæ kilku zêbów z tego powodu...
+    AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_05"); //Nie tolerujê niesprawiedliwoœci.
+    AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_06"); //Byleby ta tolerancja nie kosztowa³a ciê kilku zêbów...
     AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_07"); //Nie musisz siê o to martwiæ.
     AI_Output (other, self ,"DIA_Snipes_Oprawca_Dziennik_15_08"); //Trzymaj siê.
     AI_Output (self, other ,"DIA_Snipes_Oprawca_Dziennik_03_09"); //Do zobaczyska.
