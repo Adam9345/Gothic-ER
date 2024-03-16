@@ -236,7 +236,7 @@ FUNC VOID DIA_Huno_FakeMagicOre_Info()
 	AI_Output (other,self,"DIA_Huno_FakeMagicOre_15_02"); //Powiedzmy, ¿e chcê zrobiæ koledze dowcip. Umiesz coœ takiego zrobiæ?
 	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_03"); //No dobra, bêdê siê musia³ z tym pobawiæ, ale tylko za CZTERDZIEŒÆI bry³ek rudy, jasne?
 	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_04"); //A, i jeszcze jedno! Efekt nie bêdzie trwa³y. Po jakimœ czasie wyjdzie na jaw, ¿e to ¿art. Jeœli ten twój kole¿ka zacznie za bardzo d³ubaæ...
-	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_05"); //... to mo¿e siê dokopaæ do prawdy. Miej to na uwadze. 
+	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_05"); //...to mo¿e siê dokopaæ do prawdy. Miej to na uwadze. 
 	B_LogEntry               (CH1_ZmianaLorenza,"Zapyta³em Huno, czy móg³by stworzyæ coœ co bêdzie przypominaæ czarn¹ rud¹. Zrobi to za czterdzieœci bry³ek rudy. To pozwoli mi przekonaæ Togarda do przy³¹czania siê do organizowanej zmiany do Kopalni.");	
 };
 
@@ -379,7 +379,7 @@ FUNC VOID DIA_Huno_SellPlan_Info()
     AI_Output (other, self ,"DIA_Huno_SellPlan_15_01"); //Sprzedaj mi plan.
     if (Npc_HasItems (hero, ItMiNugget)>=100)
     {
-        AI_Output (self, other ,"DIA_Huno_SellPlan_03_02"); //Jasne. Jest twój.
+        AI_Output (self, other ,"DIA_Huno_SellPlan_03_02"); //Jasne. Proszê jest twój.
         CreateInvItems (self, WhistlerSwordPlan, 1);
         B_GiveInvItems (self, other, WhistlerSwordPlan, 1);
         B_GiveInvItems (other, self, ItMiNugget, 100);
@@ -387,7 +387,7 @@ FUNC VOID DIA_Huno_SellPlan_Info()
     }
     else
     {
-        AI_Output (self, other ,"DIA_Huno_SellPlan_03_03"); //Nie masz rudy.
+        AI_Output (self, other ,"DIA_Huno_SellPlan_03_03"); //Nie masz tyle rudy.
         DIA_Huno_SellPlan.permanent = true;
     };
 };
@@ -471,7 +471,7 @@ FUNC INT DIA_Huno_JARAJ_Condition()
 FUNC VOID DIA_Huno_JARAJ_Info()
 {
     AI_Output (other, self ,"DIA_Huno_JARAJ_15_01"); //Zechcesz zapaliæ?
-    AI_Output (self, other ,"DIA_Huno_JARAJ_03_02"); //Co? Ja... nie. Nie mogê. W przesz³oœci du¿o pali³em. Nie mogê do tego wracaæ.
+    AI_Output (self, other ,"DIA_Huno_JARAJ_03_02"); //Co? Ja... nie. Nie mogê. W przesz³oœci du¿o pali³em. Nie chcê do tego wracaæ.
 
     Info_ClearChoices		(DIA_Huno_JARAJ);
     Info_AddChoice		(DIA_Huno_JARAJ, "Ca³y dzieñ ciê¿ko pracujesz. Nale¿y ci siê chwila wytchnienia.", DIA_Huno_JARAJ_PRZY_PRACY);
@@ -483,8 +483,8 @@ FUNC VOID DIA_Huno_JARAJ_PRZY_PRACY()
 {
     AI_Output (other, self ,"DIA_Huno_JARAJ_PRZY_PRACY_15_01"); //Ca³y dzieñ ciê¿ko pracujesz. Nale¿y ci siê chwila wytchnienia.
     AI_Output (other, self ,"DIA_Huno_JARAJ_PRZY_PRACY_15_02"); //Ta przeklêta Kolonia potrafi doprowadziæ cz³owieka do sza³u. 
-    AI_Output (other, self ,"DIA_Huno_JARAJ_PRZY_PRACY_15_03"); //Lepiej zapal, odstresuj siê... Czym siê przejmowaæ?
-    AI_Output (self, other ,"DIA_Huno_JARAJ_PRZY_PRACY_03_04"); //No dobra. Jednego sobie zapalê, ale tylko jednego.
+    AI_Output (other, self ,"DIA_Huno_JARAJ_PRZY_PRACY_15_03"); //Zapal sobie, odstresuj siê... Czym tu siê przejmowaæ?
+    AI_Output (self, other ,"DIA_Huno_JARAJ_PRZY_PRACY_03_04"); //No i namówi³. Mo¿e jednego sobie zapalê. Ale tylko jednego!
     B_GiveInvItems (other, self, RecruitJoint, 1);
     AI_UseItem (self, RecruitJoint);
     AI_Output (self, other ,"DIA_Huno_JARAJ_PRZY_PRACY_03_05"); //Och... Od razu lepiej.
@@ -541,7 +541,7 @@ FUNC INT DIA_Huno_HELLO2_Condition()
 FUNC VOID DIA_Huno_HELLO2_Info()
 {
     AI_Output (other, self ,"DIA_Huno_HELLO2_15_01"); //Jeszcze jednego?
-    AI_Output (self, other ,"DIA_Huno_HELLO2_03_02"); //A, tak. Chêtnie.
+    AI_Output (self, other ,"DIA_Huno_HELLO2_03_02"); //Skoro czêstujesz...
     B_GiveInvItems (other, self, ItMiJoint_1, 1);
     B_LogEntry                     (CH1_Druggy,"Huno z chêci¹ zapali³ drugiego skrêta. ");
     AI_UseItem (self, itmijoint_1);
@@ -706,13 +706,13 @@ if (Npc_KnowsInfo(hero,DIA_Skip_Oprawca))
 FUNC VOID DIA_Huno_Oprawca_Info()
 {
     AI_Output (other, self ,"DIA_Huno_Oprawca_15_01"); //Witaj. Obi³o ci siê o uszy imiê Winston?
-    AI_Output (self, other ,"DIA_Huno_Oprawca_03_02"); //Eeeee... Tak by³ u mnie w miarê niedawno. Mówi³, ¿e kopacze w starej kopalni bêd¹ dostawaæ miecze do obrony przed pe³zaczami.
+    AI_Output (self, other ,"DIA_Huno_Oprawca_03_02"); //Eeeee... Tak by³ u mnie w miarê niedawno. Mówi³, ¿e kopacze w Starej Kopalni bêd¹ dostawaæ miecze do obrony przed pe³zaczami.
     AI_Output (self, other ,"DIA_Huno_Oprawca_03_03"); //Wyda³o mi siê dziwne, ¿e ka¿¹ im dŸwigaæ jeszcze wiêcej ¿elastwa. Ale co ja tam wiem.
     AI_Output (self, other ,"DIA_Huno_Oprawca_03_04"); //Chcia³ tanie miecze to je wyku³em. Jak na swoj¹ bardzo nisk¹ cenê nie s¹ takie z³e.
-    AI_Output (other, self ,"DIA_Huno_Oprawca_15_05"); //Aha. Rzuci³o ci siê coœ jeszcze w oczy?
+    AI_Output (other, self ,"DIA_Huno_Oprawca_15_05"); //Rozumiem. Rzuci³o ci siê coœ jeszcze w oczy?
     AI_Output (self, other ,"DIA_Huno_Oprawca_03_06"); //Niespecjalnie. Jak dobiliœmy targu to zwo³a³ tragarzy i zapisa³ coœ w swoim dzienniku.
-    AI_Output (other, self ,"DIA_Huno_Oprawca_15_07"); //Interesuj¹ce. Teraz albo pójœæ tropem dziennika albo tych tragarzy.
-    AI_Output (self, other ,"DIA_Huno_Oprawca_03_08"); //Pamiêtam pewnego kopacza. Ma na imiê Brennus, teraz chyba przebywa gdzieœ w pobli¿u Gravo.
+    AI_Output (other, self ,"DIA_Huno_Oprawca_15_07"); //Interesuj¹ce. Teraz mogê pójœæ tropem dziennika albo tych tragarzy.
+    AI_Output (self, other ,"DIA_Huno_Oprawca_03_08"); //Pamiêtam pewnego kopacza. Ma na imiê Brennus, teraz chyba przebywa blisko Gravo.
     AI_Output (other, self ,"DIA_Huno_Oprawca_15_09"); //Dziêki za pomoc.
     AI_Output (self, other ,"DIA_Huno_Oprawca_03_10"); //Có¿, wracam do roboty.
 	  B_LogEntry               (Oprawca,"Huno powiedzia³, ¿e Winston by³ u niego po miecze dla kopaczy. Ten drañ chcia³ przechytrzyæ swoich mocodawców, zagarniaj¹c resztê rudy dla siebie. Ale potrzebuje dowodów. Huno wspomina³ o dzienniku Winstona i tragarzu o imieniu Brennus. Dziennik móg³by mu ukraœæ dla mnie ktoœ kto ma do tego smyka³kê w kopalni a Brennus powinien byæ gdzieœ w pobli¿u Gravo. Któr¹ œcie¿kê wybiorê zale¿y ju¿ ode mnie.");
