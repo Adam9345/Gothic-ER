@@ -724,7 +724,14 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_SetPermAttitude	(GRD_7008_Tukash,	ATT_FRIENDLY);
 		
 		B_ChangeGuild( Grd_40062_John, GIL_GRD );
-	
+
+		var C_NPC manheim; manheim 	= Hlp_GetNpc (GRD_2036_Karczmarz);
+	  	manheim.flags = 0;
+		Npc_ClearInventory(manheim);
+
+		var C_NPC perrick; perrick 	= Hlp_GetNpc (STT_40052_Perrick);
+	  	perrick.flags = 0;
+		//Npc_ClearInventory(manheim);
 	}
 	//***************************************************************************
 	//	KAPITEL 5
