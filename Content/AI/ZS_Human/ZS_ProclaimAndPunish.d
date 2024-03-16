@@ -44,7 +44,7 @@ func void ZS_ProclaimAndPunish ()
 	//-------- NSC will mit Fernkampfwaffe 'bestrafen' und steht weiter weg ! --------
 	if ( (Npc_IsInFightMode(self, FMODE_FAR) || Npc_IsInFightMode(self, FMODE_MAGIC)) && (Npc_GetDistToNpc(self,hero)>PERC_DIST_DIALOG) )
 	{
-		Npc_SetTarget 	(self,	other );
+		Npc_SetTarget 	(self,	hero );
 		AI_StartState 	(self,	ZS_Attack,	0,	"");			// sofortiges Angreifen ohne 'Proclaim'
 	};
 
@@ -60,10 +60,10 @@ func int ZS_ProclaimAndPunish_Loop ()
 		PrintDebugNpc	(PD_ZS_CHECK, "...Verfolgung dauert schon zu lange!");
 		AI_ContinueRoutine(self);
 	}
-	else if (Npc_GetDistToNpc(self, other) > PERC_DIST_DIALOG)
+	else if (Npc_GetDistToNpc(self, hero) > PERC_DIST_DIALOG)
 	{
 		PrintDebugNpc	(PD_ZS_CHECK, "...noch NICHT in Dialogreichweite!");
-		AI_GotoNpc		(self,	other);
+		AI_GotoNpc		(self,	hero);
 	}
 	else
 	{
@@ -80,7 +80,7 @@ func void ZS_ProclaimAndPunish_End ()
 	PrintDebugNpc		(PD_ZS_FRAME, "ZS_ProclaimAndPunish_End");
 
 	//-------- SC mittlerweile bewuﬂtlos/tot ? --------
-	if (C_NpcIsDown(other))
+	if (C_NpcIsDown(hero))
 	{
 		PrintDebugNpc	(PD_ZS_CHECK, "...SC mittlerweile am Boden!");
 		return;
@@ -157,7 +157,7 @@ func void ZS_ProclaimAndPunish_End ()
 	};
 
 	//-------- Nun gibt's endlich Haue ! --------
-	Npc_SetTarget		(self,  other);
+	Npc_SetTarget		(self,  hero);
 	AI_StartState		(self, 	ZS_Attack, 0, "");
 };
 
