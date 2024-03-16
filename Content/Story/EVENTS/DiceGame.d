@@ -413,7 +413,7 @@ func void pc_playdicegame_throwbones_info() {
     npcfourcount = 0;
     npcfivecount = 0;
     npcsixcount = 0;
-    FF_ApplyOnceExtGT(throwDicesWithDelay, 0, 1);
+    FF_ApplyOnceExtGT(throwDicesWithDelay, 1000, 1);
     startdicegamematch = 3;
 };
 
