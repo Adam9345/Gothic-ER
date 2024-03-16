@@ -295,5 +295,4 @@ func void LeGo_Init(var int flags) {
     };
 
     MEM_Info(ConcatStrings(LeGo_Version, " wurde erfolgreich initialisiert."));
-	Install_Character_Menu_Hook();
 };

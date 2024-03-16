@@ -31,7 +31,7 @@ print ("aivar INVINCIBLE fixed!");
 const int _mod_init = 0;
 
 func VOID INIT_GLOBAL() {
-	MEM_InitAll();
+	//MEM_InitAll();
 	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
 
 	//G12_OnDmg_Event_Init ();
@@ -40,12 +40,16 @@ func VOID INIT_GLOBAL() {
 		AF_ItemPreview_Init();
 		Init_CraftingSystem();
 		TorchHotKey_Init();
-		G1_EnhancedTrading_Init();
-		GFA_Init(GFA_ALL);
 		G1_EnhancedPickLocking_Init();
+
+		Install_Character_Menu_Hook();
 
 		_mod_init = 1;
 	};
+
+	G1_EnhancedTrading_Init();
+	GFA_Init(GFA_ALL);
+
 };
 
 
