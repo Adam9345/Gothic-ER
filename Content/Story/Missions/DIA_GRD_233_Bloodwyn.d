@@ -285,10 +285,6 @@ FUNC INT Info_Bloodwyn_PayForJesse_Condition()
 	};
 };
 
-DIA_Karczmarz_HeroIsGrd_03_03
-
-DIA_Raeuber_WYPAD_15_08
-
 FUNC VOID Info_Bloodwyn_PayForJesse_Info()
 {	
 	AI_Output (other, self,"Info_Bloodwyn_PayForJesse_15_00"); //Jesse przysy³a mnie, ¿ebym zap³aci³ jego 10 bry³ek.
