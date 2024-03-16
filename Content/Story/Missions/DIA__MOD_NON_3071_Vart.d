@@ -48,7 +48,7 @@ FUNC VOID DIA_Vart_HELLO1_Info()
     AI_Output (self, other ,"DIA_Vart_HELLO1_03_02"); //Tak, jestem czeladnikiem Cavalorna.
     AI_Output (self, other ,"DIA_Vart_HELLO1_03_03"); //Nazywam siê Vart.
     AI_Output (self, other ,"DIA_Vart_HELLO1_03_04"); //Jednak nie mogê ciê niczego nauczyæ.
-    AI_Output (self, other ,"DIA_Vart_HELLO1_03_05"); //Zbyt s³abo siê na tym znam.
+    AI_Output (self, other ,"DIA_Vart_HELLO1_03_05"); //Za s³abo siê na tym znam.
 	polujvart = false;
 };
 
@@ -115,8 +115,8 @@ FUNC VOID DIA_Vart_HELLO3_Info()
 	}
 	else
 	{
-	AI_Output (self, other ,"DIA_Vart_HELLO3_03_04"); //Chyba niewiele wiesz o walce, co? 
-	AI_Output (self, other ,"DIA_Vart_HELLO3_03_05"); //Nie mam zamiaru ubodwalaæ ca³ej roboty za ciebie.
+	AI_Output (self, other ,"DIA_Vart_HELLO3_03_04"); //Chyba nie za wiele wiesz o walce, co? 
+	AI_Output (self, other ,"DIA_Vart_HELLO3_03_05"); //Nie mam zamiaru odwalaæ ca³ej roboty za ciebie.
 	AI_Output (self, other ,"DIA_Vart_HELLO3_03_06"); //PrzyjdŸ, gdy bêdziesz silniejszy. 
 	};
 };

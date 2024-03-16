@@ -112,15 +112,15 @@ FUNC VOID DIA_Templer_WDC_GetOut_Info()
     AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_01"); //Mówi³em ju¿... Wynoœ siê st¹d w podskokach!
     AI_Output (other, self ,"DIA_Templer_WDC_GetOut_15_02"); //Spokojnie... Chcia³em Ciê tylko poinformowaæ, ¿e wo³aj¹ ciê na plac treningowy.
     AI_Output (other, self ,"DIA_Templer_WDC_GetOut_15_03"); //Ponoæ organizuj¹ jakieœ zawody, czy coœ...
-    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_04"); //Turniej! To mo¿e byæ dobra okazja, by zostaæ zauwa¿onym...
-    AI_Output (other, self ,"DIA_Templer_WDC_GetOut_15_05"); //Zapewne.
+    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_04"); //Turniej mówisz..
+    AI_Output (other, self ,"DIA_Templer_WDC_GetOut_15_05"); //To mo¿e byæ dobra okazja, byœ zosta³ zauwa¿onym...
     AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_06"); //Ale co z pilnowaniem mistrza Cor Caloma?
     AI_Output (other, self ,"DIA_Templer_WDC_GetOut_15_07"); //Ja ciê zast¹piê. Obijesz parê ³bów i wrócisz.
     AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_08"); //Chyba ¿artujesz? TY? Naprawdê? Nie wydaje mi siê, byœ by³ w stanie pokonaæ nawet rannego b³otnego wê¿a...
-    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_09"); //Ale niech stracê. Postoisz tu a ja w tym czasie wezmê udzia³ w turnieju.
-    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_10"); //Mistrz i tak niczego nie zauwa¿y. Jest zbyt zajêty swoimi badaniami.
-    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_12"); //Tylko jest ma³y problem. Zawsze walczy³em na arenie moim ulubionym mieczem. Teraz jest w naprawie u kowala Darriona.
-    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_13"); //Przynieœ mi go. Tylko siê poœpiesz!
+    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_09"); //Ale niech bêdzie. Postoisz tu a ja w tym czasie wezmê udzia³ w tym turnieju.
+    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_10"); //Mistrz zapewne i tak niczego nie zauwa¿y. Jest zbyt zajêty swoimi badaniami.
+    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_12"); //Tylko jest ma³y problem. Zawsze walczy³em na arenie moim ulubionym mieczem.
+    AI_Output (self, other ,"DIA_Templer_WDC_GetOut_03_13"); //Ostanio odda³em go do ostrzenia kowalowi Darrionowi. Przynieœ mi go. Tylko siê poœpiesz!
 
 	B_LogEntry               (WiazankaDlaCorCaloma,"Ochroniarz Caloma ma miecz u naprawy u obozowego kowala Darriona. Muszê siê do niego udaæ I odebraæ broñ.");
     AI_StopProcessInfos	(self);
@@ -157,10 +157,10 @@ FUNC VOID DIA_Templer_WDC_SWORD_Info()
     AI_Output (other, self ,"DIA_Templer_WDC_SWORD_15_03"); //Trzymaj.
 	B_GiveInvItems (other,self, ITMW_CalomGuardSWD, 1);
 	AI_EquipBestMeleeWeapon	(Tpl_1406_Templer);                    
-    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_04"); //Dobra idê na plac treningowy.
+    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_04"); //No dobra, d³ugo mi znie zejdzie...
     AI_Output (other, self ,"DIA_Templer_WDC_SWORD_15_05"); //Powodzenia...
 	Npc_ExchangeRoutine(Tpl_1406_Templer,"Arena");
-    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_06"); //Zwyciêstwo ju¿ mam w kieszeni! Jestem zbyt dobry!
+    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_06"); //Obêdzie siê bez. Zwyciêstwo ju¿ mam w kieszeni! Jestem na to za dobry!
     AI_Output (other, self ,"DIA_Templer_WDC_SWORD_15_07"); //Z pewnoœci¹...
 	B_LogEntry               (WiazankaDlaCorCaloma,"Da³em ochroniarzowi Caloma jego miecz a ten w podnieceniu pobieg³ na plac treningowy. Droga wolna.");
     AI_StopProcessInfos	(self);
@@ -191,7 +191,7 @@ FUNC VOID DIA_Templer_WDC_TURNIEJ_Info()
     AI_Output (self, other ,"DIA_Templer_WDC_TURNIEJ_03_01"); //Ty gnido! Oszuka³eœ mnie, nie by³o ¿adnego turnieju!
     AI_Output (other, self ,"DIA_Templer_WDC_TURNIEJ_15_02"); //Ahhh... Widocznie coœ pomyli³em.
     AI_Output (self, other ,"DIA_Templer_WDC_TURNIEJ_03_03"); //Jeœli mistrzowi Calomowi cokolwiek zginê³o, to poszatkuje ciê i rzucê na po¿arcie b³otnym wê¿om!
-    AI_Output (other, self ,"DIA_Templer_WDC_TURNIEJ_15_04"); //Jestem pewien, ¿e nic mu nie zginê³o... A mo¿e nawet przyby³o trochê zmarszczek ze z³oœci...
+    AI_Output (other, self ,"DIA_Templer_WDC_TURNIEJ_15_04"); //Jestem pewien, ¿e nic mu nie zginê³o... A raczej nawet przyby³o trochê zmarszczek ze z³oœci...
     AI_StopProcessInfos	(self);
 };
 //========================================
