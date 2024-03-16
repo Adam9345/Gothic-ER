@@ -87,7 +87,7 @@ func void setStealNuggets(var int maxNuggets) {
 };
 
 func int e_beklauen(var int theftdex, var int theftnugget) {
-    if((npc_gettalentskill(other, npc_talent_pickpocket) >= 1) && (GetAdditionalAivar(self, NpcWasPickPocket) == false)) {
+    if((npc_gettalentskill(other, npc_talent_pickpocket) >= 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == false)) {
 		
         if(npc_isinstate(self, zs_talk)) {
 			setStealChance(self);
@@ -110,7 +110,7 @@ func int e_beklauen(var int theftdex, var int theftnugget) {
 };
 
 func void b_givethiefxp() {
-	b_givexp(thiefxp * kapitel);
+	b_givexp(thiefxp);
 };
 
 func void d_beklauen() {
@@ -121,7 +121,7 @@ func void d_beklauen() {
 		prints_ext("Kradzie¿ udana", col_lime);
         snd_play("Geldbeutel");
         b_giveinvitems(self, other, itminugget, theftnuggetglob);
-        SetAdditionalAivar(self, NpcWasPickPocket, true);
+        self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = true;
         b_givethiefxp();
 		
 		if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {
@@ -129,7 +129,7 @@ func void d_beklauen() {
 			countOfSteals += 1;
 			countOfStealsForDex += 1;
 		
-			if (countOfStealsForDex >= 20 && other.attribute[5] < 100) {
+			if (countOfStealsForDex >= 20) {
 				other.attribute[5] = other.attribute[5] + 1;
 				b_raiseattribute(atr_dexterity, 1);
 				countOfStealsForDex = 0;
