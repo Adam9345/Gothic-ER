@@ -51,7 +51,7 @@ FUNC VOID DIA_Snipes_ABOUT_TEACH_Info()
 {
     AI_Output (other, self ,"DIA_Snipes_ABOUT_TEACH_15_01"); //Mo¿esz mnie czegoœ nauczyæ?
     AI_Output (self, other ,"DIA_Snipes_ABOUT_TEACH_03_02"); //Ha! Dawno nikt mnie o to nie pyta³!
-    AI_Output (self, other ,"DIA_Snipes_ABOUT_TEACH_03_03"); //Mogê nauczyæ ciê opró¿niaæ sakiewki i skrzynie.
+    AI_Output (self, other ,"DIA_Snipes_ABOUT_TEACH_03_03"); //Mogê nauczyæ ciê jak opró¿niaæ sakiewki i skrzynie.
 	//notatka
 	Log_CreateTopic   	(GE_TeacherOM,LOG_NOTE);
 	B_LogEntry			(GE_TeacherOM,"Snipes mo¿e mnie nauczyæ okradania, skradania oraz otwierania zamków.");
@@ -79,10 +79,10 @@ FUNC INT DIA_Snipes_Lehrer_Condition()
 	};
 };
 
-FUNC VOID DIA_Snipes_Lehrer_Info()
+FUNC VOID D
 {
-	AI_Output (other, self,"DIA_Snipes_Lehrer_15_00"); //Czego mo¿esz mnie nauczyæ?
-	AI_Output (self, other,"DIA_Snipes_Lehrer_05_01"); //To zale¿y... A co chcesz wiedzieæ?
+	AI_Output (other, self,"DIA_Snipes_Lehrer_15_00"); //Chcia³bym nauczyæ siê sztuki z³odziejskiej?
+	AI_Output (self, other,"DIA_Snipes_Lehrer_05_01"); //A czego dok³adnie chcesz wiedzieæsiê nauczyæ?
 	
 
 	Info_ClearChoices	(DIA_Snipes_Lehrer );
