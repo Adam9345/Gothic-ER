@@ -1012,7 +1012,6 @@ INSTANCE DIA_Lee_OBRONA_ENDQUEST (C_INFO)
 FUNC INT DIA_Lee_OBRONA_ENDQUEST_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Outlam_CALL_OF_DUTY))
-    && (Npc_KnowsInfo (hero, DIA_Cord_CALL_OF_DUTY))
     {
     return TRUE;
     };
