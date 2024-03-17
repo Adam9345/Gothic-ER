@@ -1,11 +1,6 @@
 
 func void Mod_Menu_HSkills ()
 {
-
-	if(!mem_gothoptexists("KEYS", "menuHunterSkills")) {
-        mem_setkey("menuHunterSkills", key_semicolon);
-    };
-
 if (MEM_KeyPressed(MEM_GetKey("menuHunterSkills"))) && (InfoManager_HasFinished ())
 {
   UseFunc1Skills ();
@@ -28,11 +23,55 @@ print ("aivar INVINCIBLE fixed!");
 //func void INIT_GLOBAL()
 //{
 
+func void Mod_SetGothicIni() {
+	if(!MEM_GothOptExists("KEYS", "menuHunterSkills")) {
+        MEM_SetKey("menuHunterSkills", KEY_SEMICOLON);
+    };
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "newLearnPointsWithoutBonuses")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "newLearnPointsWithoutBonuses", "0");
+	};
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "scaleWeaponsWithDex")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex", "0");
+	};
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds", "0");
+	};
+};
+
+func void Mod_SetNewLearnPoints() {
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "newLearnPointsWithoutBonuses"))) {
+		newLearnPointsWithoutBonuses = 1;
+
+		if (!newStrength) {
+			newStrength = 10;
+		};
+
+		if (!newDexterity) {
+			newDexterity = 10;
+		};
+
+		if (!newManaMax) {
+			newManaMax = 10;
+		};
+	};
+};
+
+func void Mod_ScaleWeaponsForDex() {
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex"))) {
+		InitDamage();
+	};
+};
+
 const int _mod_init = 0;
 
 func VOID INIT_GLOBAL() {
 	//MEM_InitAll();
 	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
+
+	Mod_SetGothicIni();
 
 	//G12_OnDmg_Event_Init ();
 	if (!_mod_init) {
@@ -44,12 +83,15 @@ func VOID INIT_GLOBAL() {
 
 		Install_Character_Menu_Hook();
 
+		Mod_SetNewLearnPoints();
+
 		_mod_init = 1;
 	};
 
 	G1_EnhancedTrading_Init();
 	GFA_Init(GFA_ALL);
 
+	Mod_ScaleWeaponsForDex();
 };
 
 

@@ -205,6 +205,20 @@ func string B_BuildLearnString (var string text, var int lp, var int ore)
 		msg = ConcatStrings(msg,NAME_LearnPostfixP);	// Bsp: "Zweihandkampf Stufe 1 (200 Erz, 20 Lernpunkte)"
 	};
 
+	if (newLearnPointsWithoutBonuses) {
+		if (Hlp_StrCmp(text, NAME_LearnDexterity_1) || Hlp_StrCmp(text, NAME_LearnDexterity_5)) {
+			msg = ConcatStrings(msg, cs4(" (", i2s(newDexterity), "/", "100)"));
+		};
+
+		if (Hlp_StrCmp(text, NAME_LearnStrength_1) || Hlp_StrCmp(text, NAME_LearnStrength_5)) {
+			msg = ConcatStrings(msg, cs4(" (", i2s(newStrength), "/", "100)"));
+		};
+
+		if (Hlp_StrCmp(text, NAME_LearnMana_1) || Hlp_StrCmp(text, NAME_LearnMana_5)) {
+			msg = ConcatStrings(msg, cs4(" (", i2s(newManaMax), "/", "100)"));
+		};
+	};
+
 	return msg;
 };
 

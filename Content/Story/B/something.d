@@ -1,21 +1,210 @@
+var int newStrength;
+var int newDexterity;
+var int newManaMax;
 
+func int countCostAttributeOld (var int ATR, var C_NPC typ) {
+	var int attributeCost;
+
+	if (ATR == ATR_STRENGTH) {
+		if (typ.attribute[ATR_STRENGTH] >= 90)
+		{
+			attributeCost = 5;
+			public_str_cost = 5;
+		}
+		else if (typ.attribute[ATR_STRENGTH] >= 75)
+		{
+			attributeCost = 4;
+			public_str_cost = 4;
+		}
+		else if (typ.attribute[ATR_STRENGTH] >= 50)
+		{
+			attributeCost = 3;
+			public_str_cost = 3;
+		}
+		else if (typ.attribute[ATR_STRENGTH] >= 25)
+		{
+			attributeCost = 2;
+			public_str_cost = 2;
+		}
+		else if (typ.attribute[ATR_STRENGTH] < 25)
+		{
+			attributeCost = 1;
+			public_str_cost = 1;
+		};
+	} else if (ATR == ATR_DEXTERITY) {
+	//wyliczanie kosztów atrybutu ZRÊCZNOŒÆ
+		if (typ.attribute[ATR_DEXTERITY] >= 90)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (typ.attribute[ATR_DEXTERITY] >= 75)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (typ.attribute[ATR_DEXTERITY] >= 50)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (typ.attribute[ATR_DEXTERITY] >= 25)
+		{
+			attributeCost = 1;
+			public_dex_cost = 1;
+		}
+		else if (typ.attribute[ATR_DEXTERITY] < 25)
+		{
+			attributeCost = 1;
+			public_dex_cost = 1;
+		};
+	} else if (ATR == ATR_MANA_MAX) {
+	//wyliczanie kosztów atrybutu MANA MAX
+		if (typ.attribute[ATR_MANA_MAX] >= 90)
+		{
+			attributeCost = 3;
+			public_man_cost = 3;
+		}
+		else if (typ.attribute[ATR_MANA_MAX] >= 75)
+		{
+			attributeCost = 2;
+			public_man_cost = 2;
+		}
+		else if (typ.attribute[ATR_MANA_MAX] >= 50)
+		{
+			attributeCost = 2;
+			public_man_cost = 2;
+		}
+		else if (typ.attribute[ATR_MANA_MAX] >= 25)
+		{
+			attributeCost = 1;
+			public_man_cost = 1;
+		}
+		else if (typ.attribute[ATR_MANA_MAX] < 25)
+		{
+			attributeCost = 1;
+			public_man_cost = 1;
+		};
+	};
+
+	return attributeCost;
+};
+
+func int countCostAttribute(var int ATR) {
+	var int attributeCost;
+
+	if (ATR == ATR_STRENGTH) {
+		if (newStrength >= 90)
+		{
+			attributeCost = 5;
+			public_str_cost = 5;
+		}
+		else if (newStrength >= 75)
+		{
+			attributeCost = 4;
+			public_str_cost = 4;
+		}
+		else if (newStrength >= 50)
+		{
+			attributeCost = 3;
+			public_str_cost = 3;
+		}
+		else if (newStrength >= 25)
+		{
+			attributeCost = 2;
+			public_str_cost = 2;
+		}
+		else if (newStrength < 25)
+		{
+			attributeCost = 1;
+			public_str_cost = 1;
+		};
+	} else if (ATR == ATR_DEXTERITY) {
+		if (newDexterity >= 90)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (newDexterity >= 75)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (newDexterity >= 50)
+		{
+			attributeCost = 2;
+			public_dex_cost = 2;
+		}
+		else if (newDexterity >= 25)
+		{
+			attributeCost = 1;
+			public_dex_cost = 1;
+		}
+		else if (newDexterity < 25)
+		{
+			attributeCost = 1;
+			public_dex_cost = 1;
+		};
+	} else if (ATR == ATR_MANA_MAX) {
+		if (newManaMax >= 90)
+		{
+			attributeCost = 3;
+			public_man_cost = 3;
+		}
+		else if (newManaMax >= 75)
+		{
+			attributeCost = 2;
+			public_man_cost = 2;
+		}
+		else if (newManaMax >= 50)
+		{
+			attributeCost = 2;
+			public_man_cost = 2;
+		}
+		else if (newManaMax >= 25)
+		{
+			attributeCost = 1;
+			public_man_cost = 1;
+		}
+		else if (newManaMax < 25)
+		{
+			attributeCost = 1;
+			public_man_cost = 1;
+		};
+	};
+
+	return attributeCost;
+
+};
 
 func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 {
 	// --------- Umwandeln von var in const
 	var int Typ_Atr;
-	
+
 	if 		(ATR == ATR_STRENGTH)	
 	{	
-	Typ_Atr = typ.attribute[ATR_STRENGTH];	
+		if (newLearnPointsWithoutBonuses) {
+			Typ_Atr = newStrength;
+		} else {
+			Typ_Atr = typ.attribute[ATR_STRENGTH];
+		};
 	}
 	else if (ATR == ATR_DEXTERITY)	
 	{	
-	Typ_Atr = typ.attribute[ATR_DEXTERITY];	
+		if (newLearnPointsWithoutBonuses) {
+			Typ_Atr = newDexterity;
+		} else {
+			Typ_Atr = typ.attribute[ATR_DEXTERITY];	
+		};
 	}
 	else if (ATR == ATR_MANA_MAX)	
-	{	
-	Typ_Atr = typ.attribute[ATR_MANA_MAX];	
+	{
+		if (newLearnPointsWithoutBonuses) {
+			Typ_Atr = newManaMax;
+		} else {
+			Typ_Atr = typ.attribute[ATR_MANA_MAX];
+		};		
 	};
 	
 	// --------- Steigern oder verbieten	
@@ -27,82 +216,15 @@ func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 	var int koszt_punktu_dex;
 	var int koszt_punktu_mana;
 	//wyliczanie kosztów atrybutu SI£A
-	if (typ.attribute[ATR_STRENGTH] >= 90)
-	{
-	koszt_punktu_str = 5;
-	public_str_cost = 5;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 75)
-	{
-	koszt_punktu_str = 4;
-	public_str_cost = 4;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 50)
-	{
-	koszt_punktu_str = 3;
-	public_str_cost = 3;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 25)
-	{
-	koszt_punktu_str = 2;
-	public_str_cost = 2;
-	}
-	else if (typ.attribute[ATR_STRENGTH] < 25)
-	{
-	koszt_punktu_str = 1;
-	public_str_cost = 1;
-	};
-	//wyliczanie kosztów atrybutu ZRÊCZNOŒÆ
-	if (typ.attribute[ATR_DEXTERITY] >= 90)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 75)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 50)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 25)
-	{
-	koszt_punktu_dex = 1;
-	public_dex_cost = 1;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] < 25)
-	{
-	koszt_punktu_dex = 1;
-	public_dex_cost = 1;
-	};
-	//wyliczanie kosztów atrybutu MANA MAX
-	if (typ.attribute[ATR_MANA_MAX] >= 90)
-	{
-	koszt_punktu_mana = 3;
-	public_man_cost = 3;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 75)
-	{
-	koszt_punktu_mana = 2;
-	public_man_cost = 2;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 50)
-	{
-	koszt_punktu_mana = 2;
-	public_man_cost = 2;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 25)
-	{
-	koszt_punktu_mana = 1;
-	public_man_cost = 1;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] < 25)
-	{
-	koszt_punktu_mana = 1;
-	public_man_cost = 1;
+
+	if (newLearnPointsWithoutBonuses) {
+		koszt_punktu_str = countCostAttribute(ATR_STRENGTH);
+		koszt_punktu_dex = countCostAttribute(ATR_DEXTERITY);
+		koszt_punktu_mana = countCostAttribute(ATR_MANA_MAX);
+	} else {
+		koszt_punktu_str = countCostAttributeOld(ATR_STRENGTH, typ);
+		koszt_punktu_dex = countCostAttributeOld(ATR_DEXTERITY, typ);
+		koszt_punktu_mana = countCostAttributeOld(ATR_MANA_MAX, typ);
 	};
 	
 	if 	(ATR == ATR_STRENGTH)	
@@ -117,6 +239,10 @@ func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_str*10);
 		
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_str;
+
+				if (newLearnPointsWithoutBonuses) {
+					newStrength = newStrength + AtrPlus;
+				};
 				
 				typ.attribute[ATR_STRENGTH] = typ.attribute[ATR_STRENGTH] + AtrPlus;
 		
@@ -124,6 +250,7 @@ func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 				PrintSTRING2 = ConcatStrings(PrintString, " = ");
 				atrwartosc =  IntToString(hero.attribute[ATR_STRENGTH]);
 				PrintSTRING3 = ConcatStrings(PrintSTRING2, atrwartosc);
+				//PrintS_Ext(ConcatStrings("Punkty si³y: ", IntToString(newStrength)), COL_Lime);
 				PrintS_Ext(PrintSTRING3, COL_Lime);
 				//PrintScreen	(PrintSTRING, -1,-1,"FONT_OLD_20_WHITE.TGA",1);				
 var string pri1;
@@ -170,6 +297,10 @@ var string pri4;
 				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_dex*10);
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_dex;
 				
+				if (newLearnPointsWithoutBonuses) {
+					newDexterity = newDexterity + AtrPlus;
+				};
+
 				typ.attribute[ATR_DEXTERITY] = typ.attribute[ATR_DEXTERITY] + AtrPlus;
 		
 				//PrintScreen	(PrintSTRING, -1,-1,"FONT_OLD_20_WHITE.TGA",1);			
@@ -178,6 +309,7 @@ var string pri4;
 				PrintSTRING2 = ConcatStrings(PrintString, " = ");
 				atrwartosc =  IntToString(hero.attribute[ATR_DEXTERITY]);
 				PrintSTRING3 = ConcatStrings(PrintSTRING2, atrwartosc);
+				//PrintS_Ext(ConcatStrings("Punkty zrêcznoœci: ", IntToString(newDexterity)), COL_Lime);
 				PrintS_Ext(PrintSTRING3, COL_Lime);				
 var string pri1d;
 var string pri2d;
@@ -220,6 +352,10 @@ var string pri4d;
 				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_mana*10);
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_mana;
 				
+				if (newLearnPointsWithoutBonuses) {
+					newManaMax = newManaMax + AtrPlus;
+				};
+
 				typ.attribute[ATR_MANA_MAX] = typ.attribute[ATR_MANA_MAX] + AtrPlus;
 		
 				//PrintScreen	(PrintSTRING, -1,-1,"FONT_OLD_20_WHITE.TGA",1);	
@@ -228,6 +364,7 @@ var string pri4d;
 				PrintSTRING2 = ConcatStrings(PrintString, " = ");
 				atrwartosc =  IntToString(hero.attribute[ATR_MANA_MAX]);
 				PrintSTRING3 = ConcatStrings(PrintSTRING2, atrwartosc);
+				//PrintS_Ext(ConcatStrings("Punkty many: ", IntToString(newManaMax)), COL_Lime);
 				PrintS_Ext(PrintSTRING3, COL_Lime);				
 var string pri1m;
 var string pri2m;
@@ -260,84 +397,14 @@ var string pri4m;
 	};
 	};
 	
-	
 	//wyliczanie kosztów atrybutu SI£A
-	if (typ.attribute[ATR_STRENGTH] >= 90)
-	{
-	koszt_punktu_str = 5;
-	public_str_cost = 5;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 75)
-	{
-	koszt_punktu_str = 4;
-	public_str_cost = 4;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 50)
-	{
-	koszt_punktu_str = 3;
-	public_str_cost = 3;
-	}
-	else if (typ.attribute[ATR_STRENGTH] >= 25)
-	{
-	koszt_punktu_str = 2;
-	public_str_cost = 2;
-	}
-	else if (typ.attribute[ATR_STRENGTH] < 25)
-	{
-	koszt_punktu_str = 1;
-	public_str_cost = 1;
+	if (newLearnPointsWithoutBonuses) {
+		koszt_punktu_str = countCostAttribute(ATR_STRENGTH);
+		koszt_punktu_dex = countCostAttribute(ATR_DEXTERITY);
+		koszt_punktu_mana = countCostAttribute(ATR_MANA_MAX);
+	} else {
+		koszt_punktu_str = countCostAttributeOld(ATR_STRENGTH, typ);
+		koszt_punktu_dex = countCostAttributeOld(ATR_DEXTERITY, typ);
+		koszt_punktu_mana = countCostAttributeOld(ATR_MANA_MAX, typ);
 	};
-	//wyliczanie kosztów atrybutu ZRÊCZNOŒÆ
-	if (typ.attribute[ATR_DEXTERITY] >= 90)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 75)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 50)
-	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] >= 25)
-	{
-	koszt_punktu_dex = 1;
-	public_dex_cost = 1;
-	}
-	else if (typ.attribute[ATR_DEXTERITY] < 25)
-	{
-	koszt_punktu_dex = 1;
-	public_dex_cost = 1;
-	};
-	//wyliczanie kosztów atrybutu MANA MAX
-	if (typ.attribute[ATR_MANA_MAX] >= 90)
-	{
-	koszt_punktu_mana = 3;
-	public_man_cost = 3;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 75)
-	{
-	koszt_punktu_mana = 2;
-	public_man_cost = 2;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 50)
-	{
-	koszt_punktu_mana = 2;
-	public_man_cost = 2;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] >= 25)
-	{
-	koszt_punktu_mana = 1;
-	public_man_cost = 1;
-	}
-	else if (typ.attribute[ATR_MANA_MAX] < 25)
-	{
-	koszt_punktu_mana = 1;
-	public_man_cost = 1;
-	};
-
 };

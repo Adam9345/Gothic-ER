@@ -947,6 +947,10 @@ var int GrabarzIsDead1;
 
 const int MIS_DP_RiordianR = 0;
 
+var int newLearnPointsWithoutBonuses;
+var int scaleWeaponsWithDex;
+var int kopaczNotBlockOtherGuilds;
+
 
 
 

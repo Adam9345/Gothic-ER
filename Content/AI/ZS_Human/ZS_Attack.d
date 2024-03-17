@@ -2,23 +2,227 @@
 // *************************************************************************************
 
 
-func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
+func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int dmgDescriptorPtr) { 
     // Diese Funktion anpassen, wenn ihr den Schaden verändern wollt! 'dmg' ist der von Gothic berechnete Schaden.
+
+	var oSDamageDescriptor dmgDesc; dmgDesc = _^(dmgDescriptorPtr);
+
+	var C_NPC attInst;
+	var C_NPC victimInst; 
+
+	if (attackerPtr) {
+		attInst = _^(attackerPtr);
+	};
+
+	if (victimInst) {
+		victimInst = _^(victimPtr);
+	};
+
+	if (Hlp_GetInstanceID(attInst) == Hlp_GetInstanceID(hero)) {
+
+		var C_ITEM weapon; weapon = Npc_GetReadiedWeapon(attInst);
+
+		var int scaleDexDmg;
+
+		var int randomNumber; randomNumber = r_MinMax(1, 100);
+
+		var int randNumCrtHits; randNumCrtHits = r_MinMax(1, 3);
+
+		if (Hlp_IsValidItem(weapon)) {
+
+			if (weapon.flags & ITEM_BOW) {
+
+				var int hitCrtDamage;
+
+				if (randomNumber <= Npc_GetTalentValue(attInst, NPC_TALENT_BOW)) {
+					if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) < 30 
+					&& randNumCrtHits == 1) {
+
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 2;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("30: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2);
+						};
+					} else if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) < 60
+					&& Npc_GetTalentValue(attInst, NPC_TALENT_BOW) >= 30 
+					&& randNumCrtHits == 2) {
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 3;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("60: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 3) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 3);
+						};
+
+					} else if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) <= 100
+					&& Npc_GetTalentValue(attInst, NPC_TALENT_BOW) >= 60 
+					&& randNumCrtHits == 3) {
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 3;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("100: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 3) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 3);
+						};
+					} else {
+						scaleDexDmg = weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3 - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("Else: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2 - 2);
+						};
+					};
+				} else {
+					scaleDexDmg = weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3 - victimInst.protection[PROT_POINT];
+
+					//print(ConcatStrings("WOutCrt: ", i2s(scaleDexDmg)));
+
+					if (scaleDexDmg > weapon.damageTotal * 2) {
+						scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2 - 8);
+					};
+				};
+
+				if (scaleDexDmg < 0) {
+					scaleDexDmg = dmg;
+				};
+				
+				return scaleDexDmg;
+			};
+		}  else if (Npc_HasReadiedMeleeWeapon(attInst)) {
+			if (weapon.flags & ITEM_SWD && (weapon.cond_atr[2] == ATR_DEXTERITY || weapon.cond_atr[1] == ATR_DEXTERITY)) {	
+				
+				if (randomNumber <= Npc_GetTalentValue(attInst, NPC_TALENT_1H)) {
+					scaleDexDmg = 2 * ((weapon.damageTotal / 2) + attInst.attribute[ATR_DEXTERITY] - victimInst.protection[PROT_EDGE] - 4);
+				} else {
+					scaleDexDmg = (weapon.damageTotal / 2) + attInst.attribute[ATR_DEXTERITY] - victimInst.protection[PROT_EDGE] - 4;
+				};
+
+				if (scaleDexDmg < 0) {
+					return dmg;
+				};
+
+				return scaleDexDmg;
+			};
+		};
+	} else if (C_NpcIsHuman(attInst) && Hlp_GetInstanceID(attInst) != Hlp_GetInstanceID(hero) 
+	&& attInst.guild != GIL_BDT 
+	&& attInst.guild != GIL_ORCSCOUT) {
+		weapon = Npc_GetReadiedWeapon(attInst);
+
+		randomNumber = r_MinMax(1, 100);
+
+		randNumCrtHits = r_MinMax(1, 3);
+
+		if (Hlp_IsValidItem(weapon)) {
+
+			if (weapon.flags & ITEM_BOW) {
+
+				if (randomNumber <= Npc_GetTalentValue(attInst, NPC_TALENT_BOW)) {
+					if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) < 30 
+					&& randNumCrtHits == 1) {
+
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 2;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("30: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2);
+						};
+					} else if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) < 60
+					&& Npc_GetTalentValue(attInst, NPC_TALENT_BOW) >= 30 
+					&& randNumCrtHits == 2) {
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 2;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("60: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2);
+						};
+
+					} else if (Npc_GetTalentValue(attInst, NPC_TALENT_BOW) <= 100
+					&& Npc_GetTalentValue(attInst, NPC_TALENT_BOW) >= 60 
+					&& randNumCrtHits == 3) {
+						hitCrtDamage = (weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3) * 2;
+						scaleDexDmg = hitCrtDamage - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("100: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2);
+						};
+					} else {
+						scaleDexDmg = weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3 - victimInst.protection[PROT_POINT];
+
+						//print(ConcatStrings("Else: ", i2s(scaleDexDmg)));
+
+						if (scaleDexDmg > weapon.damageTotal * 2) {
+							scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2 - 2);
+						};
+					};
+				} else {
+					scaleDexDmg = weapon.damageTotal + attInst.attribute[ATR_DEXTERITY] / 3 - victimInst.protection[PROT_POINT];
+
+					//print(ConcatStrings("WOutCrt: ", i2s(scaleDexDmg)));
+
+					if (scaleDexDmg > weapon.damageTotal * 2) {
+						scaleDexDmg = r_MinMax(weapon.damageTotal, weapon.damageTotal * 2 - 8);
+					};
+				};
+
+				if (scaleDexDmg < 0) {
+					scaleDexDmg = dmg;
+				};
+				
+				return scaleDexDmg;
+			};
+		}  else if (Npc_HasReadiedMeleeWeapon(attInst)) {
+			if (weapon.flags & ITEM_SWD && (weapon.cond_atr[2] == ATR_DEXTERITY || weapon.cond_atr[1] == ATR_DEXTERITY)) {	
+				
+				if (randomNumber <= Npc_GetTalentValue(attInst, NPC_TALENT_1H)) {
+					scaleDexDmg = 2 * ((weapon.damageTotal / 2) + attInst.attribute[ATR_DEXTERITY] - victimInst.protection[PROT_EDGE] - 4);
+				} else {
+					scaleDexDmg = (weapon.damageTotal / 2) + attInst.attribute[ATR_DEXTERITY] - victimInst.protection[PROT_EDGE] - 4;
+				};
+
+				if (scaleDexDmg < 0) {
+					return dmg;
+				};
+
+				return scaleDexDmg;
+			};
+		};
+	};
+
     return dmg;
 };
+
+var int _DMG_DmgDesc;
     
-    
-func void _DMG_OnDmg() {
-    EAX = DMG_OnDmg(ECX, MEM_ReadInt(MEM_ReadInt(ESP+548)+4), EAX);
-	print ("_DMG_OnDmg");
+func void _DMG_OnDmg_Post() {
+    EAX = DMG_OnDmg(ECX, MEM_ReadInt(MEM_ReadInt(ESP+548)+4), EAX, _DMG_DmgDesc);
+	//print ("_DMG_OnDmg");
 };
+
+func void _DMG_OnDmg_Pre() {
+    _DMG_DmgDesc = ESI;
+	//print ("_DMG_OnDmg");
+};
+
 func void InitDamage() {
     const int dmg = 0;
-    if (dmg) { return; };
-    HookEngineF(7567329, 6, _DMG_OnDmg);
-    dmg = 1;
-	//CheckPoison (self);
-	print ("InitDamage");
+	if (dmg) { return; };
+	HookEngineF(7567329/*0x66CAC7*/, 6, _DMG_OnDmg_Post);
+	const int oCNpc__OnDamage_Hit = 7541776;
+	HookEngineF(oCNpc__OnDamage_Hit, 7, _DMG_OnDmg_Pre);
+	dmg = 1;
 };
 
 func void ZS_Attack ()
@@ -40,7 +244,6 @@ func void ZS_Attack ()
 	B_WhirlAround		(self,	other);
 	B_SelectWeapon		(self,	other);
     AI_SetWalkmode 		(self,	NPC_RUN);			
-
 };
 
 func int ZS_Attack_Loop()
@@ -49,6 +252,7 @@ func int ZS_Attack_Loop()
 
 	Npc_GetTarget		(self);
 	PrintGlobals		(PD_ZS_DETAIL);
+
 	//-------- Wenn Gegner Bewußtlos oder Tod... --------
 	if (C_NpcIsDown(other) || !Hlp_IsValidNpc(other))
 	{
@@ -179,22 +383,22 @@ func int ZS_Attack_Loop()
 	||	(self.npctype==NPCTYPE_MINE_AMBIENT)
 	||	(self.fight_Tactic == FAI_HUMAN_COWARD)
 	{
-		if ( (self.fight_Tactic == FAI_HUMAN_COWARD) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 2) ) )
+		if ( (self.fight_Tactic == FAI_HUMAN_COWARD) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 6) ) )
 		{
 			PrintDebugNpc(PD_ZS_CHECK, "...coward flees!" );
 			AI_StartState( self, ZS_Flee, 0, "" );			
 		};
-		if ( (self.fight_Tactic == FAI_HUMAN_STRONG) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 4 * 3) ) )
+		if ( (self.fight_Tactic == FAI_HUMAN_STRONG) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 12) ) )
 		{
 			PrintDebugNpc(PD_ZS_CHECK, "...strong flees!" );
 			AI_StartState( self, ZS_Flee, 0, "" );
 		};	  
-		if ( (self.fight_Tactic == FAI_HUMAN_MAGE) && (self.attribute[ATR_MANA] < (self.attribute[ATR_MANA_MAX] / 5)) )
+		if ( (self.fight_Tactic == FAI_HUMAN_MAGE) && (self.attribute[ATR_MANA] < (self.attribute[ATR_MANA_MAX] / 8)) )
 		{
 			PrintDebugNpc(PD_ZS_CHECK, "...mage flees!" );
 			AI_StartState( self, ZS_Flee, 0, "" );
 		};
-		if ( (self.fight_Tactic == FAI_HUMAN_RANGED) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 3)) )
+		if ( (self.fight_Tactic == FAI_HUMAN_RANGED) && (self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 5)) )
 		{
 			PrintDebugNpc(PD_ZS_CHECK, "...ranged fighter flees!" );
 			AI_StartState( self, ZS_Flee, 0, "" );
