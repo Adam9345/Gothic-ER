@@ -863,9 +863,9 @@ Doc_PrintLine	( nDocID,  0, "0 Pozyskiwanie sad³a");
 };
 if (Knows_GetTrollGroundClaws == true)
 {
-Doc_PrintLine	( nDocID,  0, "1 Usuwanie k³ów trolla ziemnego");
+Doc_PrintLine	( nDocID,  0, "1 Usuwanie pazurów trolla ziemnego");
 } else {
-Doc_PrintLine	( nDocID,  0, "0 Usuwanie k³ów trolla ziemnego");
+Doc_PrintLine	( nDocID,  0, "0 Usuwanie pazurów trolla ziemnego");
 };
 if (Knows_GetTrutkaJaszczura == true)
 {
