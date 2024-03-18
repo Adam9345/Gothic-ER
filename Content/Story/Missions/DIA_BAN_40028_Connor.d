@@ -285,6 +285,8 @@ FUNC VOID DIA_Connor_Items_Info()
 	BAN_40028_Connor.aivar[AIV_PARTYMEMBER] = FALSE;
     Npc_ExchangeRoutine(self,"Start");
 	Connor_Friend = TRUE;
+    Npc_SetTrueGuild(self, GIL_BAU);
+    self.guild = GIL_BAU;
 	B_GiveInvItems          (hero, self, ItMi_ConnorItems, 1);
 	Npc_RemoveInvItems      (self, ItMi_ConnorItems,1);
     B_LogEntry              (TrudnaPrzeszlosc,"Dawni ,,przyjaciele” Connora nale¿¹ ju¿ do przesz³oœci. Teraz Connor w podziêce sta³ siê moim dobrym kompanem. Ponadto mo¿e nauczyæ mnie zrêcznoœci i akrobatyki. Przyda mi siê taki towarzysz w tak bezwzglêdnym miejscu jak Kolonia karna. Pora wróciæ i zdaæ raport Quentinowi.");	

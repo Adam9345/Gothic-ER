@@ -32,17 +32,15 @@ FUNC VOID DIA_HersztORG_EXIT_Info()
 
 func void CONN_BANN_HOS()
 {
-
     Npc_SetTrueGuild (BAN_40032_Herszt,GIL_ORCSCOUT);
 	BAN_40032_Herszt.guild = GIL_ORCSCOUT;
-	
+	/*
     Npc_SetTrueGuild (Org_40137_Organisator,GIL_ORCSCOUT);
 	Org_40137_Organisator.guild = GIL_ORCSCOUT;
 	
     Npc_SetTrueGuild (Org_40136_Organisator,GIL_ORCSCOUT);
 	Org_40136_Organisator.guild = GIL_ORCSCOUT;
-
-	
+	*/
 
 };
 
