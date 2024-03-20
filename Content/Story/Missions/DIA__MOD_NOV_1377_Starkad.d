@@ -200,57 +200,6 @@ FUNC VOID DIA_Patros_QUEST1_OK_Info()
 };
 
 //========================================
-//-----------------> Dostawa
-//========================================
-
-INSTANCE DIA_Patros_Dostawa (C_INFO)
-{
-   npc          = NOV_1377_Starkad;
-   nr           = 3;
-   condition    = DIA_Patros_Dostawa_Condition;
-   information  = DIA_Patros_Dostawa_Info;
-   permanent	= FALSE;
-   description	= "Mam dostawê od Emanuela.";
-};
-
-FUNC INT DIA_Patros_Dostawa_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Emanuel_REPUTACJA))
-    && (Npc_HasItems (other, ItFoMutton) >=30)
-    && (Npc_HasItems (other, ItFoSoup) >=5)
-   // && (Npc_HasItems (other, ItFoCrawlersoup) >=10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Patros_Dostawa_Info()
-{
-    AI_Output (other, self ,"DIA_Patros_Dostawa_15_01"); //Mam dostawê od Emanuela.
-    AI_Output (self, other ,"DIA_Patros_Dostawa_15_02"); //Dlaczego nie przyszed³ sam? Mia³ siê spotkaæ z Shine. To on ma rudê.
-	AI_Output (other, self ,"DIA_Patros_Dostawa_15_03"); //Emanuel nie mia³ czasu i przys³a³ mnie. Shine nie ¿yje. Napad³o go kilku Nowicjuszy, którzy widocznie wiedzieli o transakcji. 
-	AI_Output (self, other ,"DIA_Patros_Dostawa_15_04"); //Cholera, nastêpnym razem muszê byæ ostro¿niejszy. A co z rud¹? Pewnie mam ci zap³aciæ. Bêdzie z tym problem...
-	if Npc_HasItems (other, rudaemanuela) || Npc_KnowsInfo (hero, DIA_Emanuel_RUDAOK)
-	{
-	AI_Output (other, self ,"DIA_Patros_Dostawa_15_05"); //Nie trzeba. Zabi³em tych zdrajców i znalaz³em to czego szuka³em. 
-	AI_Output (self, other ,"DIA_Patros_Dostawa_15_06"); //Doskonale. A wiêc jedyn¹ strat¹ jak¹ ponieœliœmy jest Shine...
-	}
-	else
-	{
-	AI_Output (other, self ,"DIA_Patros_Dostawa_15_07"); //Spróbujê jej jeszcze poszukaæ.  
-	AI_Output (self, other ,"DIA_Patros_Dostawa_15_08"); //Przeszukaj dok³adnie okolice miejsca transakcji. Przecie¿ ci Nowicjusze nie zapadli siê pod ziemiê, a do Obozu wróciæ siê nie odwa¿¹. 
-	AI_Output (self, other ,"DIA_Patros_Dostawa_15_09"); //Ju¿ ja bym przetrzepa³ tych sukinsynów!
-	};
-	
-	B_GiveInvItems (other, self, ItFoMutton, 30);
-	B_GiveInvItems (other, self, ItFoSoup, 5);
-    B_LogEntry                     (CH1_EmanuelsDeals,"Zanios³em towary Starkadowi i powiedzia³em mu o tym co siê wydarzy³o.");
-
-    B_GiveXP (150);
-};
-
-//========================================
 //-----------------> LifeIDsa
 //========================================
 

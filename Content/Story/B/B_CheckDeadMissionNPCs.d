@@ -15,13 +15,7 @@ func void B_CheckDeadMissionNPCs ()
 		B_LogEntry   (CH1_BuntZbieraczy,"Lewus nie ¿yje. Nasz plan siê powiód³. Muszê porozmawiaæ z Rufusem.");
 		};
 	};
-	if (Hlp_GetInstanceID(NOV_1373_Novize) ==  Hlp_GetInstanceID(self))
-	{
-	if (MIS_EmanuelsDeals == LOG_RUNNING)
-		{
-			B_LogEntry	(CH1_EmanuelsDeals,"Nied³ugo musia³em szukaæ. Przy po³udniowej bramie do Starego Obozu znalaz³em kolejnych Nowicjuszy. Tym razem ¿ywych i agresywnych. Rozprawi³em siê z nimi. Muszê teraz poszukaæ rudy Emanuela i wróciæ do niego.");
-	};
-	};
+	
 	
 	if (Hlp_GetInstanceID(GRD_3085_Nek) ==  Hlp_GetInstanceID(self)) && (MIS_WheresNek == LOG_RUNNING)
 	{

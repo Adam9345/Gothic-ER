@@ -414,38 +414,6 @@ INSTANCE ItMi_FakeJoints (C_Item)
 	TEXT[2]				= "ta przeklêta Kolonia";
 	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
 };
-//---------------------------------------------------------
-INSTANCE ItMi_BloodyShirt (C_Item)
-{
-	name 				=	"Zakrwawiona koszula";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Pocket.3ds";
-	material 			=	MAT_LEATHER;
-	
-	scemeName         = "MAPSEALED";
-	description			= name;
-	TEXT[2]				= "U¯YJ, aby zbadaæ.";
-	//TEXT[2]				= "ta przeklêta Kolonia";
-	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
-	on_state 				= Use_BloodyShirt;
-};
-
-func void Use_BloodyShirt ()
-{
-var int used_shirt;
-if (used_shirt == false) && (MIS_EmanuelsDeals == LOG_RUNNING)
-{
-used_shirt = true;
- B_LogEntry               (CH1_EmanuelsDeals,"Przy jaskini znalaz³em cia³o martwego Nowicjusza. Jego ubranie by³o silnie przekrwione. Myœlê, ¿e mo¿e mnie ono zaprowadziæ do pozosta³ych rabusiów. ");
- B_GiveXP (50);
-};
-};
-
 
 //---------------------------------------------------------
 

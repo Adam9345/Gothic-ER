@@ -180,8 +180,7 @@ const string CH4_BanditNeedPsionicHelp 		= "Co siê dzieje u Bandytów?";
 var int MIS_EmanuelDelivery;
 const string CH1_EmanuelDelivery     		= "Dostawa dla Emanuela";
 
-var int MIS_EmanuelsDeals;
-const string CH1_EmanuelsDeals      		= "Handel Emanuela";
+
 
 var int MIS_BanditCave;
 const string CH1_BanditCave      			= "Dostawa z Nowego Obozu";

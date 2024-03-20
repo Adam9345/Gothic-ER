@@ -242,12 +242,6 @@ B_LogEntry        (CH1_HunterHugo,"Znalaz³em jaskiniê, jednak wydajê siê byæ ona
 
 
 //************RUDA EMANUELA
-var int hero_saw_die_shine;
-if (Npc_GetDistToWP (hero, "ER_WD_QUEST_TRUP_01") < 1000) && (hero_saw_die_shine == false) && (MIS_EmanuelsDeals == LOG_RUNNING)
-{
-hero_saw_die_shine = true;
-B_LogEntry                     (CH1_EmanuelsDeals,"W jaskini znalaz³em cia³o Shine i jakiegoœ Nowicjusza. NajwyraŸniej walczyli. Nie widzê, aby któryœ z nich mia³ rudê. Na pewno w napadzie brali udzia³ tak¿e inni Nowicjusze. Cia³a s¹ œwie¿e, wiêc myœlê, ¿e nie uciekli daleko. Muszê ich poszukaæ i odebraæ rudê.");
-};
 
 
 if (Npc_IsDead(BAN_40067_Victor)) && (Npc_KnowsInfo(hero,DIA_Victor_ZL_PRAY)) && (VictorZL_Dead == false)
