@@ -46,9 +46,9 @@ FUNC VOID DIA_Gestath_HELLO1_Info()
     AI_Output (other, self ,"DIA_Gestath_HELLO1_15_01"); //Kim jesteœ?
     AI_Output (self, other ,"DIA_Gestath_HELLO1_03_02"); //Nazywam siê Gestath. Jestem myœliwym.
     AI_Output (other, self ,"DIA_Gestath_HELLO1_15_03"); //Znasz siê na swoim fachu?
-    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_04"); //Jasne! Potrafiê te¿ uszyæ pancerz. Razem z Wilkiem pracujemy nad zbroj¹, która sk³ada³aby siê z p³ytek pancerzy pe³zaczy.
-    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_05"); //To by by³o coœ! Niestety, nie jesteœmy nawet w po³owie pracy nad konceptem. 
-    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_06"); //Wiesz... trzeba to wszystko dobrze rozplanowaæ, ¿eby nie uwiera³o podczas chodzenia.
+    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_04"); //Jasne! Potrafiê te¿ szyæ pancerze. Razem z Wilkiem pracujemy nad zbroj¹, która wykorzystuje pancerze pe³zaczy.
+    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_05"); //To bêdzie dopiero coœ! Niestety, nie jesteœmy nawet w po³owie pracy nad konceptem. 
+    AI_Output (self, other ,"DIA_Gestath_HELLO1_03_06"); //Wiesz... to bardzo trudny materia³ w obróbce, wiêc trzeba to wszystko dobrze rozplanowaæ...
 };
 //========================================
 //-----------------> LAZY
@@ -74,13 +74,13 @@ if (Npc_KnowsInfo (hero, DIA_Gestath_HELLO1))
 FUNC VOID DIA_Gestath_LAZY_Info()
 {
     AI_Output (other, self ,"DIA_Gestath_LAZY_15_01"); //Nie nudzisz siê tutaj?
-    AI_Output (self, other ,"DIA_Gestath_LAZY_03_02"); // Lubiê to miejsce I tych ludzi. Ale szczerze chcia³bym spróbowaæ czegoœ nowego.
-    AI_Output (self, other ,"DIA_Gestath_LAZY_03_03"); // Wybiliœmy wiêkszoœæ okolicznej zwierzyny. Teraz chodzenie po górach I ska³ach nie przynosi ju¿ prawie ³upu.
-    AI_Output (self, other ,"DIA_Gestath_LAZY_03_04"); //Teraz potrzebuje nowych wyzwañ. Tak¿e ³owieckich.
+    AI_Output (self, other ,"DIA_Gestath_LAZY_03_02"); //Lubiê to miejsce I tych ludzi. Ale szczerze chcia³bym spróbowaæ czegoœ nowego.
+    AI_Output (self, other ,"DIA_Gestath_LAZY_03_03"); //Wybiliœmy wiêkszoœæ okolicznej zwierzyny. Teraz ³owy w pobliskich górach i ska³ach nie s¹ ju¿ tak owocne.
+    AI_Output (self, other ,"DIA_Gestath_LAZY_03_04"); //Potrzebuje nowych wyzwañ. Tak¿e ³owieckich.
     AI_Output (other, self ,"DIA_Gestath_LAZY_15_05"); //Co zamierzasz?
-    AI_Output (other, self ,"DIA_Gestath_LAZY_15_06"); //Póki co posiedzê jeszcze tutaj a potem nie wiem. Mo¿e pójdê gdzie zawieje wiatr.
-    AI_Output (other,self  ,"DIA_Gestath_LAZY_15_07"); //Rozumiem. Choæ tu nie masz najgorzej.
-    AI_Output (self, other ,"DIA_Gestath_LAZY_03_08"); //Gdybym Ÿle siê tu czu³ to ju¿ by mnie tu nie by³o.
+    AI_Output (other, self ,"DIA_Gestath_LAZY_15_06"); //Póki co posiedzê jeszcze tutaj, a potem nie wiem. Mo¿e pójdê tam gdzie mnie poniesie wiatr.
+    AI_Output (other,self  ,"DIA_Gestath_LAZY_15_07"); //Rozumiem. Choæ tu zdaje siê, nie masz najgorzej.
+    AI_Output (self, other ,"DIA_Gestath_LAZY_03_08"); //Gdyby by³o mi tu Ÿle, to bym tu nie tkwi³. Nie ma obowi¹zku siedzieæ tam gdzie nas kuje w dupê.
 };
 
 
@@ -137,8 +137,8 @@ FUNC INT DIA_Gestath_HELLO3_Condition()
 FUNC VOID DIA_Gestath_HELLO3_Info()
 {
     AI_Output (other, self ,"DIA_Gestath_HELLO3_15_01"); //Skupujesz jakieœ skóry?
-    AI_Output (self, other ,"DIA_Gestath_HELLO3_03_02"); //Kupiê od ciebie skóry orkowych psów za rozs¹dn¹ cenê.
-    AI_Output (self, other ,"DIA_Gestath_HELLO3_03_03"); //Tylko nie zawracaj mi dupy jedn¹ sztuk¹. Przynieœ mi chocia¿ piêæ. 
+    AI_Output (self, other ,"DIA_Gestath_HELLO3_03_02"); //Tak. Chêtnie kupiê skóry orkowych psów, oczywiœcie za rozs¹dn¹ cenê.
+    AI_Output (self, other ,"DIA_Gestath_HELLO3_03_03"); //Tylko nie zawracaj mi dupy pojedynczymi sztukami. Przynieœ mi chocia¿ z piêæ. 
     AI_Output (other, self ,"DIA_Gestath_HELLO3_15_04"); //No dobra, jak bêdê coœ mia³ to wpadnê.
     B_LogEntry          (GE_Skup,"Gestath skupuje skóry orkowych psów. Jeœli bêdê mia³ przynajmniej piêæ sztuk, chêtnie je ode mnie odkupi.");
 };
@@ -214,13 +214,13 @@ FUNC VOID DIA_Gestath_LOWCA_Info()
 FUNC VOID DIA_Gestath_LOWCA_EXPERIENCE()
 {
     AI_Output (other, self ,"DIA_Gestath_LOWCA_EXPERIENCE_15_01"); //Jesteœ doœwiadczonym myœliwym. To szansa na nowe trofea.
-    AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_02"); //Jakby nie patrzeæ w okolicy s¹ tylko wilki i œcierwojady. Masz racjê.
+    AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_02"); //W sumie... Jakby nie patrzeæ w okolicy s¹ tylko wilki i œcierwojady.
     AI_Output (other, self ,"DIA_Gestath_LOWCA_EXPERIENCE_15_03"); //Pomyœl jaki zyska³byœ szacunek, gdybyœ posiada³ pancerz ze skóry orkowego psa.
     AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_04"); //Ha! Przekona³eœ mnie. To by by³o wspania³e.
     AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_05"); //Gdzie dok³adnie jest ten obóz ³owców?
     AI_Output (other, self ,"DIA_Gestath_LOWCA_EXPERIENCE_15_06"); //£owcy orków obozuj¹ we wnêce skalnej œciany.
-    AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_07"); //Jakiej œciany skalnej?
-    AI_Output (other, self ,"DIA_Gestath_LOWCA_EXPERIENCE_15_08"); //Tej przy przejœciu na ziemie orków. To naturalna palisada dziel¹ca ziemie ludzi i orków.
+    AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_07"); //Której skalnej œciany?
+    AI_Output (other, self ,"DIA_Gestath_LOWCA_EXPERIENCE_15_08"); //Tej przy przejœciu na ziemie orków. To naturalna granica dziel¹ca nasze ziemi od tych bestii.
     AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_09"); //Ach, ju¿ wiem o czym mówisz. Wkrótce siê tam wybiorê.
 
     Npc_ExchangeRoutine (self, "hunters");//fix
@@ -235,7 +235,7 @@ FUNC VOID DIA_Gestath_LOWCA_HELP()
 {
     AI_Output (other, self ,"DIA_Gestath_LOWCA_HELP_15_01"); //Oni naprawdê potrzebuj¹ twojej pomocy.
     AI_Output (self, other ,"DIA_Gestath_LOWCA_HELP_03_02"); //A co mnie to obchodzi? Czy ja ci wygl¹dam na dobrodzieja?
-    AI_Output (self, other ,"DIA_Gestath_LOWCA_HELP_03_03"); //Jak nie mog¹ sobie poradziæ to niech siê stamt¹d wynosz¹. Te¿ mi coœ!
+    AI_Output (self, other ,"DIA_Gestath_LOWCA_HELP_03_03"); //Jak tam nie daj¹ rady to niech siê stamt¹d wynosz¹. Te¿ mi coœ!
     Info_ClearChoices		(DIA_Gestath_LOWCA);
     AI_StopProcessInfos	(self);
 	gestah_lowca = false;
@@ -271,7 +271,7 @@ FUNC VOID DIA_Gestath_OBOZ_BANDYTOW_Info()
     AI_Output (other, self ,"DIA_Gestath_OBOZ_BANDYTOW_15_01"); //Nie wybierasz siê do Obozu Bandytów?
     AI_Output (self, other ,"DIA_Gestath_OBOZ_BANDYTOW_03_02"); //Ja? Nie jestem tam potrzebny. Poza tym nie mam ochoty nadstawiaæ karku za tych samobójców!
     AI_Output (self, other ,"DIA_Gestath_OBOZ_BANDYTOW_03_03"); //Gdy wszystko siê nieco uspokoi, planujê uciec w góry, schroniæ siê w jakieœ jaskini i nieco zapolowaæ.
-    AI_Output (self, other ,"DIA_Gestath_OBOZ_BANDYTOW_03_04"); //Prêdzej czy póŸniej Bariera opadnie, a wtedy siê wzbogacê. 
+    AI_Output (self, other ,"DIA_Gestath_OBOZ_BANDYTOW_03_04"); //Prêdzej czy póŸniej Bariera padnie, a wtedy bêde bogaty. 
 };
 
 instance dia_gestath_pickpocket(c_info) {
