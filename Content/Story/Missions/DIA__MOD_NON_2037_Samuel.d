@@ -81,11 +81,11 @@ FUNC VOID DIA_Samuel_TADE_Info()
 
     Info_ClearChoices		(DIA_Samuel_TADE);
 	Info_AddChoice		(DIA_Samuel_TADE, DIALOG_BACK, DIA_Samuel_TADE_BACK);
-    Info_AddChoice		(DIA_Samuel_TADE, "[Zupa z kretoszczura - 15 bry³ek]", DIA_Samuel_TADE_MoleratSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "[Potrawka z chrz¹szcza - 15 bry³ek rudy]", DIA_Samuel_TADE_SnafSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "[Zupa ze œcierwojada - 15 bry³ek rudy]", DIA_Samuel_TADE_ScaSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "[Zupa z pe³zacza - 16 bry³ek rudy]", DIA_Samuel_TADE_CraSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "[Zupa serowa - 16 bry³ek rudy]", DIA_Samuel_TADE_ChesseSoup);
+    Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z kretoszczura - 15 bry³ek>", DIA_Samuel_TADE_MoleratSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Potrawka z chrz¹szcza - 15 bry³ek rudy>", DIA_Samuel_TADE_SnafSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa ze œcierwojada - 15 bry³ek rudy>", DIA_Samuel_TADE_ScaSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z pe³zacza - 16 bry³ek rudy>", DIA_Samuel_TADE_CraSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa serowa - 16 bry³ek rudy>", DIA_Samuel_TADE_ChesseSoup);
 };
 
 FUNC VOID DIA_Samuel_TADE_MoleratSoup()

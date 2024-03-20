@@ -79,7 +79,7 @@ FUNC INT DIA_Snipes_Lehrer_Condition()
 	};
 };
 
-FUNC VOID D
+FUNC VOID DIA_Snipes_Lehrer_Info()
 {
 	AI_Output (other, self,"DIA_Snipes_Lehrer_15_00"); //Chcia³bym nauczyæ siê sztuki z³odziejskiej?
 	AI_Output (self, other,"DIA_Snipes_Lehrer_05_01"); //A czego dok³adnie chcesz wiedzieæsiê nauczyæ?

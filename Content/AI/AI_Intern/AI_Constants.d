@@ -14,7 +14,7 @@ const int 	AIV_PCISSTRONGER				= 1;
 const int 	AIV_BEENATTACKED				= 2; 
 const int 	AIV_HIGHWAYMEN					= 3;
 const int	AIV_HAS_ERPRESSED				= 4; // MH: 0 = Nein, 1 = SC hat gezahlt, 2 = SC wollte sich nicht erpressen lassen, es kam zum Kampf
-const int 	AIV_BEGGAR						= 5;
+const int 	AIV_PLAYERHASPICKEDMYPOCKET		= 5;
 const int	AIV_OBSERVEINTRUDER				= 6;
 const int	AIV_FINDABLE					= 7; // MH: Für Info_FindNPC
 const int 	AIV_PLUNDERED					= 8;	// wird gesetzt sobald der Körper geplündert wurde und gelöscht, wenn der NSC ohnmächtig/tot wird

@@ -23,8 +23,10 @@ func int ZS_MagicFreeze()
 {
 	PrintDebugNpc		(PD_MAGIC,	"ZS_MagicFreeze");
 	PrintGlobals		(PD_MAGIC);
-
-	Npc_PercEnable		(self, PERC_ASSESSMAGIC		,	ZS_MagicFreeze);
+	
+	if (Hlp_GetInstanceID(self) != Hlp_GetInstanceID(hero)) {
+		Npc_PercEnable		(self, PERC_ASSESSMAGIC		,	ZS_MagicFreeze);
+	};
 
 	// Opfer wird in Bodystate Unconscious versetzt
 	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))

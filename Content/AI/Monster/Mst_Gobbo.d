@@ -103,6 +103,7 @@ INSTANCE YGobbo (Mst_Default_GreenGobbo)
 //------------------------------------------------------------
 	protection	[PROT_BLUNT]		=	5;
 	protection	[PROT_EDGE]			=	5;
+	protection	[PROT_POINT]		=	8;
 };
 
 

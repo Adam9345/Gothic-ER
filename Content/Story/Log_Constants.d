@@ -200,6 +200,7 @@ const string	CH4_MCPlateArmor		=	"Zbroja z pancerzy pe³zaczy";
 const string	CH4_UluMulu				=	"Poszukiwania ULU-MULU";
 const string	CH4_EnterTemple			=	"Droga do œwi¹tyni Œni¹cego";
 const string	CH4_SldToKdW			= 	"Przyjêcie w poczet Magów Wody";
+const string	CH4_BackToOldMine		= 	"Powrót do starej kopalni";
 
 //---------------------------------------------------------------------
 //	KAPITEL 5
@@ -294,6 +295,7 @@ const string 	CH1_BANDITOS_RINGS      =   "Piêæ pierœcieni";
 const string CH1_UCieczkaShrata    		= "Nowe miejsce dla Shrata";
 const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
 const string CH1_DziwnyJosep    		= "Dziwne zachowania";
+const string CH1_FightWithNaldur    	= "Pojedynek z Naldurem";
 
 
 

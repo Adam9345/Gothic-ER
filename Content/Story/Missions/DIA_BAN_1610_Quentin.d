@@ -891,7 +891,7 @@ FUNC VOID DIA_Quentin_HELLO112_Info()
     Log_SetTopicStatus       (CH1_PSIcampWORK, LOG_SUCCESS);
     MIS_PSIcampWORK = LOG_SUCCESS;
 	//prize
-	B_GiveInvItems (other, self, ItMiNugget, 130);
+	B_GiveInvItems (self, other, ItMiNugget, 130);
     CreateInvItems (self, ItMiNugget, 130);
     B_GiveXP (XP_JobInOldMine);
 };
