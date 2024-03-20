@@ -199,54 +199,7 @@ FUNC VOID DIA_Patros_QUEST1_OK_Info()
 	B_GiveXP (200);
 };
 
-//========================================
-//-----------------> LifeIDsa
-//========================================
 
-INSTANCE DIA_Patros_LifeIDsa (C_INFO)
-{
-   npc          = NOV_1377_Starkad;
-   nr           = 1;
-   condition    = DIA_Patros_LifeIDsa_Condition;
-   information  = DIA_Patros_LifeIDsa_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Patros_LifeIDsa_Condition()
-{
-    if (listLearn == true)
-    && (Kapitel == 4)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Patros_LifeIDsa_Info()
-{
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_01"); //Ca³e szczêœcie, ¿e ciê widzê.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_02"); //Byli u ciebie Poszukiwacze?
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_03"); //A wiêc tak nazywaj¹ siê te istoty.
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_04"); //Zjawili siê noc¹. Chcieli bym stan¹³ po ich stronie, ale odmówi³em.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_05"); //Wiêc jakim cudem ¿yjesz?
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_06"); //Nie mam pojêcia. Ucieka³em przed tymi postaciami, a¿ nagle przesta³y mnie œcigaæ.
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_07"); //Mo¿liwe, ¿e coœ je przestraszy³o.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_08"); //Lub ktoœ... W którym miejscu to siê sta³o?
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_09"); //Skoñczyli mnie œcigaæ na pomostach w centrum Obozu.
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_10"); //Mo¿liwe, ¿e to ktoœ z góry.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_11"); //Wiesz, gdzie mo¿e siê znajdowaæ Czarny Mag?
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_12"); //Jaki Czarny Mag? 
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_13"); //Czarny Mag stoi za pojawieniem siê Poszukiwaczy w Kolonii.
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_14"); //W takim razie nie mam pojêcia, gdzie móg³by egzystowaæ.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_15"); //Mo¿liwe, ¿e wskazówki przy cia³ach doprowadz¹ mnie do jego kryjówki.
-    AI_Output (self, other ,"DIA_Patros_LifeIDsa_03_16"); //Opowiedz mi o tym.
-    AI_Output (other, self ,"DIA_Patros_LifeIDsa_15_17"); //Teraz nie mam czasu. Mo¿e póŸniej.
-    AI_StopProcessInfos	(self);
-	B_LogEntry                     (CH1_WlakaZczarym,"Patros jest ostatnim ¿yj¹cym z listy. Poszukiwacze porzucili za nim poœcig. Wypada³oby ustaliæ dlaczego.");
-	Wld_InsertNpc				(NON_3072_Jefrey,"PSI_START");
-    B_GiveXP (300);
-};
 
 // poprawione b³êdy - 30 paŸdziernik 2012
 //========================================
@@ -260,7 +213,7 @@ INSTANCE DIA_Patros_PLOTY (C_INFO)
    condition    = DIA_Patros_PLOTY_Condition;
    information  = DIA_Patros_PLOTY_Info;
    permanent	= FALSE;
-   description	= "Masz mo¿e jakieœ plotki?";
+   description	= "S³ysza³eœ mo¿e jakieœ plotki?";
 };
 
 FUNC INT DIA_Patros_PLOTY_Condition()
@@ -270,7 +223,7 @@ FUNC INT DIA_Patros_PLOTY_Condition()
 
 FUNC VOID DIA_Patros_PLOTY_Info()
 {
-    AI_Output (other, self ,"DIA_Patros_PLOTY_15_01"); //Masz mo¿e jakieœ plotki?
+    AI_Output (other, self ,"DIA_Patros_PLOTY_15_01"); //S³ysza³eœ mo¿e jakieœ plotki?
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_02"); //Ludzie mówi¹, ¿e jeden z Nowicjuszy rozpocz¹³ badania na w³asn¹ rêkê.
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_03"); //Podobno przesiaduje w pobli¿u ma³ej palisady przy placu Baal Tondrala.
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_04"); //Je¿eli Shan siê o tym dowie, zacznie go szukaæ.
