@@ -529,8 +529,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 	damageTotal			= 	22;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	30;
+	
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	25;
@@ -539,7 +538,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -558,8 +557,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 	damageTotal			= 	7;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	30;
+
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	30;
@@ -568,7 +566,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -590,8 +588,7 @@ INSTANCE ItRw_Crossbow_02(C_Item)
 	damageTotal			= 	45;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	45;
+	
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	50;
@@ -599,7 +596,7 @@ INSTANCE ItRw_Crossbow_02(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -618,8 +615,7 @@ INSTANCE ItRw_Crossbow_02_Z(C_Item)
 	damageTotal			= 	30;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	45;
+	
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	50;
@@ -627,7 +623,7 @@ INSTANCE ItRw_Crossbow_02_Z(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -646,8 +642,7 @@ INSTANCE ItRw_Crossbow_02_S(C_Item)
 	damageTotal			= 	22;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	45;
+	
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	50;
@@ -655,7 +650,7 @@ INSTANCE ItRw_Crossbow_02_S(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Pamiêta czasy tworzenia bariery...";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -676,8 +671,7 @@ INSTANCE ItRw_Crossbow_03(C_Item)
 	damageTotal			= 	63;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	60;
+	
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	70;
@@ -685,7 +679,7 @@ INSTANCE ItRw_Crossbow_03(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -705,8 +699,6 @@ INSTANCE ItRw_Crossbow_03_Z(C_Item)
 	damageTotal			= 	37;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	60;
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	70;
@@ -714,7 +706,7 @@ INSTANCE ItRw_Crossbow_03_Z(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -737,8 +729,7 @@ INSTANCE ItRw_Crossbow_04(C_Item)
 	damageTotal			= 	75;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	90;
+
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	80;
@@ -746,7 +737,7 @@ INSTANCE ItRw_Crossbow_04(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -764,8 +755,6 @@ INSTANCE ItRw_Crossbow_04_Z(C_Item)
 	damageTotal			= 	52;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	110;
 	
 	cond_atr[1]   		= 	ATR_STRENGTH;
 	cond_value[1]  		= 	100;
@@ -773,7 +762,7 @@ INSTANCE ItRw_Crossbow_04_Z(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -946,13 +935,13 @@ INSTANCE ItRw_Er_Crossbow_L01(C_Item)
 	damageTotal			= 	45;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	35;
 	visual 				=	"ItRwCrossbow1.mms";
 
 	description			= name;
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -969,13 +958,13 @@ INSTANCE ItRw_Er_Crossbow_L02(C_Item)
 	damageTotal			= 	52;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	40;
 	visual 				=	"ItRwCrossbow1.mms";
 
 	description			= name;
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -992,13 +981,13 @@ INSTANCE ItRw_Er_Crossbow_L03(C_Item)
 	damageTotal			= 	60;
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
-	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	45;
 	visual 				=	"ItRwCrossbow2.mms";
 
 	description			= name;
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= "Kusza lekka";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1017,7 +1006,7 @@ INSTANCE ItRw_Er_Crossbow_H01(C_Item)
 	damagetype			=	DAM_POINT;
 	munition			=	ItAmBolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	45;
+	cond_value[2]  		= 	50;
 	visual 				=	"ItRwCrossbow4.mms";
 
 	description			= name;
