@@ -422,7 +422,7 @@ B_SetFightSkills(self,80);
 	                                 
 	CreateInvItems (self, ItLsTorch, 1);
 	CreateInvItem (self, ItMi_Stuff_OldCoin_02);
-	CreateInvItem (self, ItMi_BloodyShirt);
+	//CreateInvItem (self, ItMi_BloodyShirt);
 	
 	//-------------Daily Routine-------------
 	daily_routine = Rtn_start_7047;
