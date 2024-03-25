@@ -80,6 +80,7 @@ func VOID INIT_GLOBAL() {
 		Init_CraftingSystem();
 		TorchHotKey_Init();
 		G1_EnhancedPickLocking_Init();
+		G12_EnhancedInfoManager_Init();
 
 		Install_Character_Menu_Hook();
 
