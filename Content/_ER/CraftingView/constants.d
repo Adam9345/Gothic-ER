@@ -73,3 +73,5 @@ const int start_armor_dlg_nr = 10400;
 const int start_other_dlg_nr = 10500;
 
 const string TEXT_FONT_DEFAULT = "Font_old_10_white.tga";
+
+const int quantityText = 0;

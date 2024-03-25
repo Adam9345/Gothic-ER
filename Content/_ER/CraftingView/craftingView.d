@@ -29,6 +29,12 @@ func void craftingview_hide() {
     };
     end;
 
+    hnd = quantityText;
+
+    if (hlp_isvalidhandle(hnd)) {
+        print_deletetext(hnd);
+    };
+
     craftingview_isopen = false;
 };
 
@@ -99,6 +105,7 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
     var int j;
     var int count;
     var string armor_text;
+    var int quantityTextPos;
 
     cv_currentitem = recinst;
     cv_currentmode = mode;
@@ -121,8 +128,10 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
 
     if (windowwidth > 1000) {
         textypos = (print_screen[1] / 2) + (yquartsize / 2) - 90;
+        quantityTextPos = (print_screen / 2) - roundf(mulf(mkf(200), scalef-1));
     } else {
         textypos = (print_screen[1] / 2) + (yquartsize / 2) - 60;
+        quantityTextPos = (print_screen / 2) - roundf(mulf(mkf(200), scalef-1)) - roundf(mulf(mkf(200), scalef-1)) - 30;
     };
 
     if(mode != 2) {
@@ -160,11 +169,11 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
             sbi(invitems);
             sb("/");
             if(recipe_isrequireditemmultiuse(rec, i) || !recipe_isrequireditemmultiuse(rec, i)) {
-                sbi(recipe_getrequireditemamount(rec, i));
-                if(invitems > recipe_getrequireditemamount(rec, i)) {
+                sbi(recipe_getrequireditemamount(rec, i) * amount);
+                if(invitems > recipe_getrequireditemamount(rec, i) * amount) {
                     //color = rgba(100, 200, 255, 255);
                     color = rgba(50, 255, 50, 255);
-                } else if(invitems < recipe_getrequireditemamount(rec, i)) {
+                } else if(invitems < recipe_getrequireditemamount(rec, i) * amount) {
                     color = rgba(255, 50, 50, 255);
                 }
                 else {
@@ -180,7 +189,9 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
             };
             //mem_writeintarray(_@(craftingviewtext), i + 2 + offset, print_extpxl(textxpos, textypos + (fh * i + 1 + offset), sb_tostring(), text_font_default, color, -1));
             mem_writeintarray(_@(craftingviewtext), i + 2, print_extpxl(textxpos, textypos + (fh * i + 1), sb_tostring(), text_font_default, color, -1));
+
             sb_destroy();
+            
             end;
         }
         else 
@@ -201,6 +212,8 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
             sb_destroy();
             end;
         };
+
+        quantityText = print_extpxl(textcenter + quantityTextPos - 160, textyposh, i2s(quantity), text_font_default, rgba(255, 255, 255, 255), -1);
     };
     /*
     else {
@@ -236,8 +249,31 @@ func void craftingview_tabswitcher() {
                 else {
                     craftingview_selectedtab = 0;
                 };
-                craftingview_show(cv_currentitem, cv_currentmode, cv_currentamount);
+
+                if (quantity > 1) {
+                    craftingview_show(cv_currentitem, cv_currentmode, quantity);
+                } else {
+                    craftingview_show(cv_currentitem, cv_currentmode, 1);
+                };
             };
+
+            if (key == KEY_PERIOD && (PLAYER_MOBSI_PRODUCTION == MOBSI_COOKING 
+            || PLAYER_MOBSI_PRODUCTION == MOBSI_COOKPAN
+            || PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)) {
+                quantity += 1;
+                craftingview_show(cv_currentitem, cv_currentmode, quantity);
+            };
+
+            if (key == KEY_COMMA && (PLAYER_MOBSI_PRODUCTION == MOBSI_COOKING 
+            || PLAYER_MOBSI_PRODUCTION == MOBSI_COOKPAN
+            || PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)) {
+                quantity -= 1;
+                if (quantity <= 0) {
+                    quantity = 1;
+                };
+                craftingview_show(cv_currentitem, cv_currentmode, quantity);
+            };
+
         };
     };
 };
@@ -396,7 +432,7 @@ func void craftingview_update() {
                                 craftingview_show(mem_readintarray(_@(potionrecipeinstance), dlgnr - start_potion_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_meal_dlg_nr) && (dlgnr < start_meal_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(mealrecipeinstance), dlgnr - start_meal_dlg_nr), 0, 1);
+                                craftingview_show(mem_readintarray(_@(mealrecipeinstance), dlgnr - start_meal_dlg_nr), 0, quantity);
                             }
                             else if((dlgnr >= start_scroll_dlg_nr) && (dlgnr < start_scroll_dlg_nr + 100)) {
                                 craftingview_show(mem_readintarray(_@(scrollrecipeinstance), dlgnr - start_scroll_dlg_nr), 0, 1);
@@ -405,7 +441,7 @@ func void craftingview_update() {
                                 craftingview_show(mem_readintarray(_@(armorrecipeinstance), dlgnr - start_armor_dlg_nr), 0, 1);
                             }
                             else if((dlgnr >= start_other_dlg_nr) && (dlgnr < start_other_dlg_nr + 100)) {
-                                craftingview_show(mem_readintarray(_@(otherrecipeinstance), dlgnr - start_other_dlg_nr), 0, 1);
+                                craftingview_show(mem_readintarray(_@(otherrecipeinstance), dlgnr - start_other_dlg_nr), 0, quantity);
                             }
                             /*
                             else if(armor_check != (-1)) {

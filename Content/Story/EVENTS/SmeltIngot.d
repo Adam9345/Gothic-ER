@@ -45,7 +45,8 @@ FUNC VOID DIA_PC_Hero_Smelt_EXIT_Info()
 	SztabkaCiemnejStali = False;
 	SztabkaZlota = False;
 	SmeltIngot = False;
-	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;				  		
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+	quantity = 1;				  		
 	AI_StopProcessInfos	(self);
 };
 
@@ -238,7 +239,7 @@ INSTANCE PC_Pr_SztabkaStali_01 (C_INFO)
 	condition		= PC_Pr_SztabkaStali_01_Condition;
 	information		= PC_Pr_SztabkaStali_01_Info;
 	permanent		= TRUE;
-	description		= "Wytop 1 sztabkê stali"; 
+	description		= "Wytop sztabkê stali"; 
 };
 
 FUNC INT PC_Pr_SztabkaStali_01_Condition()
@@ -259,62 +260,22 @@ FUNC VOID PC_Pr_SztabkaStali_01_Info ()
       
 
 		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaStali.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Wytopi³eœ sztabki", COL_WHITE);
+		} else {
+			PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_Pr_SztabkaStali.recipeitem,quantity);
 		SztabkaStali = False;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("10x Bry³ka ¿elaza"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("10x Bry³ka ¿elaza"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     SztabkaStali = False;
     };	
   //  AI_StopProcessInfos(self);
 };
-
-
-//***************************************************************************************
-INSTANCE PC_Pr_SztabkaStali_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaStali5Id;
-	npc				= PC_Hero;
-	condition		= PC_Pr_SztabkaStali_05_Condition;
-	information		= PC_Pr_SztabkaStali_05_Info;
-	permanent		= TRUE;
-	description		= "Wytop 5 sztabek stali"; 
-};
-
-FUNC INT PC_Pr_SztabkaStali_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)
-	&& (SztabkaStali == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_Pr_SztabkaStali_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_Pr_SztabkaStali5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaStali5);
-      
-
-		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaStali5.recipeitem,5);
-		SztabkaStali = False;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("50x Bry³ka ¿elaza"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-   SztabkaStali = False;
-    };	
-   // AI_StopProcessInfos(self);
-};
-//***************************************************************************************
 INSTANCE PC_Pr_SztabkaMagicznejStali_01 (C_INFO)
 {
 	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaMagicznejStaliId;
@@ -322,7 +283,7 @@ INSTANCE PC_Pr_SztabkaMagicznejStali_01 (C_INFO)
 	condition		= PC_Pr_SztabkaMagicznejStali_01_Condition;
 	information		= PC_Pr_SztabkaMagicznejStali_01_Info;
 	permanent		= TRUE;
-	description		= "Wytop 1 sztabkê magicznej stali"; 
+	description		= "Wytop sztabkê magicznej stali"; 
 };
 
 FUNC INT PC_Pr_SztabkaMagicznejStali_01_Condition()
@@ -343,61 +304,23 @@ FUNC VOID PC_Pr_SztabkaMagicznejStali_01_Info ()
       
 
 		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaMagicznejStali.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Wytopi³eœ sztabki", COL_WHITE);
+		} else {
+			PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_Pr_SztabkaMagicznejStali.recipeitem,quantity);
 		SztabkaMagicznejStali = False;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("60x Bry³ka rudy"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("60x Bry³ka rudy"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     SztabkaMagicznejStali = False;
     };	
    // AI_StopProcessInfos(self);
 };
 
-
-//***************************************************************************************
-INSTANCE PC_Pr_SztabkaMagicznejStali_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaMagicznejStali5Id;
-	npc				= PC_Hero;
-	condition		= PC_Pr_SztabkaMagicznejStali_05_Condition;
-	information		= PC_Pr_SztabkaMagicznejStali_05_Info;
-	permanent		= TRUE;
-	description		= "Wytop 5 sztabek magicznej stali"; 
-};
-
-FUNC INT PC_Pr_SztabkaMagicznejStali_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)
-	&& (SztabkaMagicznejStali == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_Pr_SztabkaMagicznejStali_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_Pr_SztabkaMagicznejStali5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaMagicznejStali5);
-
-		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaMagicznejStali5.recipeitem,5);
-		SztabkaStali = False;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("300x Bry³ka rudy"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-   SztabkaStali = False;
-    };	
-   // AI_StopProcessInfos(self);
-};
-//***************************************************************************************
 INSTANCE PC_Pr_SztabkaCiemnejStali_01 (C_INFO)
 {
 	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaCiemnejStaliId;
@@ -405,7 +328,7 @@ INSTANCE PC_Pr_SztabkaCiemnejStali_01 (C_INFO)
 	condition		= PC_Pr_SztabkaCiemnejStali_01_Condition;
 	information		= PC_Pr_SztabkaCiemnejStali_01_Info;
 	permanent		= TRUE;
-	description		= "Wytop 1 sztabkê ciemnej stali"; 
+	description		= "Wytop sztabkê ciemnej stali"; 
 };
 
 FUNC INT PC_Pr_SztabkaCiemnejStali_01_Condition()
@@ -425,63 +348,24 @@ FUNC VOID PC_Pr_SztabkaCiemnejStali_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaCiemnejStali);
 
 		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaCiemnejStali.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Wytopi³eœ sztabki", COL_WHITE);
+		} else {
+			PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_Pr_SztabkaCiemnejStali.recipeitem,quantity);
 		SztabkaCiemnejStali = False;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("60x Bry³ka rudy"                  ,2, 64, "FONT_OLD_10_WHITE.TGA", 2);
-	PrintScreen ("10x Bry³ka ¿elaza"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("60x Bry³ka rudy"                  ,2, 64, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("10x Bry³ka ¿elaza"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     SztabkaCiemnejStali = False;
     };	
    // AI_StopProcessInfos(self);
 };
 
-
-//***************************************************************************************
-INSTANCE PC_Pr_SztabkaCiemnejStali_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaCiemnejStali5Id;
-	npc				= PC_Hero;
-	condition		= PC_Pr_SztabkaCiemnejStali_05_Condition;
-	information		= PC_Pr_SztabkaCiemnejStali_05_Info;
-	permanent		= TRUE;
-	description		= "Wytop 5 sztabek ciemnej stali"; 
-};
-
-FUNC INT PC_Pr_SztabkaCiemnejStali_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)
-	&& (SztabkaCiemnejStali == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_Pr_SztabkaCiemnejStali_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_Pr_SztabkaCiemnejStali5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaCiemnejStali5);
-
-		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaCiemnejStali5.recipeitem,5);
-		SztabkaCiemnejStali = False;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("300x Bry³ka rudy"                 ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
-	PrintScreen ("50x Bry³ka ¿elaza"                ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
-    SztabkaCiemnejStali = False;
-    };	
-  //  AI_StopProcessInfos(self);
-};
-//***************************************************************************************
 INSTANCE PC_Pr_SztabkaZlota_01 (C_INFO)
 {
 	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaZlotaId;
@@ -489,7 +373,7 @@ INSTANCE PC_Pr_SztabkaZlota_01 (C_INFO)
 	condition		= PC_Pr_SztabkaZlota_01_Condition;
 	information		= PC_Pr_SztabkaZlota_01_Info;
 	permanent		= TRUE;
-	description		= "Wytop 1 sztabkê z³ota"; 
+	description		= "Wytop sztabkê z³ota"; 
 };
 
 FUNC INT PC_Pr_SztabkaZlota_01_Condition()
@@ -508,57 +392,18 @@ FUNC VOID PC_Pr_SztabkaZlota_01_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaZlota);
    
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaZlota.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Wytopi³eœ sztabki", COL_WHITE);
+		} else {
+			PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_Pr_SztabkaZlota.recipeitem,quantity);
 		SztabkaZlota = False;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("12x Bry³ka z³ota"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    SztabkaZlota = False;
-    };	
-   // AI_StopProcessInfos(self);
-};
-
-
-//***************************************************************************************
-INSTANCE PC_Pr_SztabkaZlota_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_Pr_SztabkaZlota5Id;
-	npc				= PC_Hero;
-	condition		= PC_Pr_SztabkaZlota_05_Condition;
-	information		= PC_Pr_SztabkaZlota_05_Info;
-	permanent		= TRUE;
-	description		= "Wytop 5 sztabek z³ota"; 
-};
-
-FUNC INT PC_Pr_SztabkaZlota_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)
-	&& (SztabkaZlota == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_Pr_SztabkaZlota_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_Pr_SztabkaZlota5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_Pr_SztabkaZlota5);
-      
-
-		
-		PrintS_Ext("Wytopi³eœ sztabkê", COL_WHITE);
-		CreateInvItems (self, Recipe_Pr_SztabkaZlota5.recipeitem,5);
-		SztabkaZlota = False;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("60x Bry³ka z³ota"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("12x Bry³ka z³ota"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     SztabkaZlota = False;
     };	
    // AI_StopProcessInfos(self);

@@ -38,7 +38,8 @@ FUNC VOID DIA_PC_Hero_Cook_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	CookingFood = FALSE;
-	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;				 
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+	quantity = 1;				 
 	AI_StopProcessInfos	(self);
 };
 
@@ -125,8 +126,12 @@ FUNC VOID PC_ItFo_CheeseSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_CheeseSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_CheeseSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_CheeseSoup.recipeitem,quantity);
 	}
     else 
     {
@@ -169,8 +174,12 @@ FUNC VOID PC_ItFo_CrawlerSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_CrawelSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_CrawelSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_CrawelSoup.recipeitem,quantity);
 	}
     else 
     {
@@ -214,8 +223,12 @@ FUNC VOID PC_ItFo_ScavengerSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_ScaSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_ScaSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_ScaSoup.recipeitem,quantity);
 	}
     else 
     {
@@ -259,8 +272,12 @@ FUNC VOID PC_ItFo_MoleratSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_MoleratSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_MoleratSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_MoleratSoup.recipeitem,quantity);
 	}
     else 
     {
@@ -305,8 +322,12 @@ FUNC VOID PC_ItFo_MeatbugSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_SnafSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_SnafSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_SnafSoup.recipeitem,quantity);
 	}
     else 
     {
@@ -350,8 +371,12 @@ FUNC VOID PC_ItFo_Kompot01_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_BerrysDrink);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_BerrysDrink.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_BerrysDrink.recipeitem,quantity);
 	}
     else 
     {
@@ -395,8 +420,12 @@ FUNC VOID PC_ItFo_GhoranWine_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_GhoranWine);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_GhoranWine.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_GhoranWine.recipeitem,quantity);
 	}
     else 
     {
@@ -443,8 +472,12 @@ FUNC VOID PC_ItFo_Konfitura_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_Jam);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_Jam.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_Jam.recipeitem,quantity);
 	}
     else 
     {
@@ -490,8 +523,12 @@ FUNC VOID PC_ItFo_MeatStew_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_MeatStew);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_MeatStew.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_MeatStew.recipeitem,quantity);
 	}
     else 
     {
@@ -535,8 +572,12 @@ FUNC VOID PC_ItFo_MushroomStew_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_MushroomStew);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_MushroomStew.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_MushroomStew.recipeitem,quantity);
 	}
     else 
     {
@@ -583,8 +624,12 @@ FUNC VOID PC_ItFo_BigCasserole_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_BigCasserole);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_BigCasserole.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_BigCasserole.recipeitem,quantity);
 	}
     else 
     {
@@ -631,8 +676,12 @@ FUNC VOID PC_ItFo_HotWine_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_HotWine);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_HotWine.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_HotWine.recipeitem,quantity);
 	}
     else 
     {
@@ -679,8 +728,12 @@ FUNC VOID PC_ItFo_SoupFish2_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_SoupFish2);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_SoupFish2.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_SoupFish2.recipeitem,quantity);
 	}
     else 
     {
@@ -727,8 +780,12 @@ FUNC VOID PC_ItFo_SoupFish3_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_SoupFish3);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_SoupFish3.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_SoupFish3.recipeitem,quantity);
 	}
     else 
     {
@@ -775,8 +832,12 @@ FUNC VOID PC_ItFo_SoupFish4_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_SoupFish4);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_SoupFish4.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_SoupFish4.recipeitem,quantity);
 	}
     else 
     {
@@ -824,8 +885,12 @@ FUNC VOID PC_ItFo_SoupFish5_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_SoupFish5);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_SoupFish5.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_SoupFish5.recipeitem,quantity);
 	}
     else 
     {
@@ -873,8 +938,12 @@ FUNC VOID PC_ItFo_LurkerSoup_Info ()
 	{
 		removeIngredientsFromPlayerInv(Recipe_LurkerSoup);
 		
-		PrintS_Ext("Potrawa gotowa!", COL_WHITE);
-		CreateInvItems (self, Recipe_LurkerSoup.recipeitem,1);
+		if (quantity > 1) {
+			PrintS_Ext("Potrawy gotowe!", COL_WHITE);
+		} else {
+			PrintS_Ext("Potrawa gotowa!", COL_WHITE);
+		};
+		CreateInvItems (self, Recipe_LurkerSoup.recipeitem,quantity);
 	}
     else 
     {
