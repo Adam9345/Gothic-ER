@@ -33,7 +33,7 @@ INSTANCE Info_Grabarz_Hello(C_INFO)
 	condition	= Info_Grabarz_Hello_Condition;
 	information	= Info_Grabarz_Hello_Info;
 	permanent	= 0;
-	description = "ZnajdŸ sobie lepsze miejsce. Tu w Kotle tylko przeszkadzasz...";
+	description = "hs@FF0000 ZnajdŸ sobie lepsze miejsce. Tu w Kotle tylko przeszkadzasz...";
 };                       
 
 FUNC INT Info_Grabarz_Hello_Condition()
@@ -201,7 +201,7 @@ FUNC VOID DIA_Grabarz_HI_GRABCIO_Info()
 
     Info_ClearChoices		(DIA_Grabarz_HI_GRABCIO);
     Info_AddChoice		(DIA_Grabarz_HI_GRABCIO, "Pójdê sobie...", DIA_Grabarz_LEFT);
-    Info_AddChoice		(DIA_Grabarz_HI_GRABCIO, "Chyba czas daæ ci lekcjê pokory.", DIA_Grabarz_LESSON);
+    Info_AddChoice		(DIA_Grabarz_HI_GRABCIO, "hs@FF0000 Chyba czas daæ ci lekcjê pokory.", DIA_Grabarz_LESSON);
 };
 
 FUNC VOID DIA_Grabarz_LEFT()

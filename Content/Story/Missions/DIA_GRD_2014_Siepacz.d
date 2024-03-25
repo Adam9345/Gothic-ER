@@ -66,7 +66,7 @@ INSTANCE DIA_Siepacz_ATAK (C_INFO)
    condition    = DIA_Siepacz_ATAK_Condition;
    information  = DIA_Siepacz_ATAK_Info;
    permanent	= FALSE;
-   description	= "Zginiesz!";
+   description	= "hs@FF0000 Zginiesz!";
 };
 
 FUNC INT DIA_Siepacz_ATAK_Condition()

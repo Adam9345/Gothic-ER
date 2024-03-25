@@ -138,7 +138,7 @@ INSTANCE DIA_Mirzo_Caught (C_INFO)
    condition    = DIA_Mirzo_Caught_Condition;
    information  = DIA_Mirzo_Caught_Info;
    permanent	= FALSE;
-   description	= "Mam ciê!";
+   description	= "hs@FF0000 Mam ciê!";
 };
 
 FUNC INT DIA_Mirzo_Caught_Condition()

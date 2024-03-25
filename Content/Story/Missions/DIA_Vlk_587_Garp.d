@@ -468,7 +468,7 @@ INSTANCE DIA_Garp_PP_ORE (C_INFO)
    condition    = DIA_Garp_PP_ORE_Condition;
    information  = DIA_Garp_PP_ORE_Info;
    permanent	= FALSE;
-   description	= "Przysy³a mnie Pascal. Masz mu oddaæ zaleg³¹ rudê!";
+   description	= "hs@FF0000 Przysy³a mnie Pascal. Masz mu oddaæ zaleg³¹ rudê!";
 };
 
 FUNC INT DIA_Garp_PP_ORE_Condition()

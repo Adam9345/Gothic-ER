@@ -108,7 +108,7 @@ INSTANCE DIA_Herek_Anlegen (C_INFO)
 	condition		= DIA_Herek_Anlegen_Condition;
 	information		= DIA_Herek_Anlegen_Info;
 	permanent		= 0;
-	description		= "Myœlisz, ¿e taki twardziel z ciebie? Mo¿e spróbujesz szczêœcia ze mn¹?!";
+	description		= "hs@FF0000 Myœlisz, ¿e taki twardziel z ciebie? Mo¿e spróbujesz szczêœcia ze mn¹?!";
 };
 
 FUNC INT DIA_Herek_Anlegen_Condition()

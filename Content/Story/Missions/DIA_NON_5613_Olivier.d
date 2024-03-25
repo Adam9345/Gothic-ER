@@ -245,7 +245,7 @@ INSTANCE DIA_Olivier_Pobicie (C_INFO)
    condition    = DIA_Olivier_Pobicie_Condition;
    information  = DIA_Olivier_Pobicie_Info;
    permanent	= FALSE;
-   description	= "Chyba muszê nauczyæ ciê szacunku dla cudzej pracy.";
+   description	= "hs@FF0000 Chyba muszê nauczyæ ciê szacunku dla cudzej pracy.";
 };
 
 FUNC INT DIA_Olivier_Pobicie_Condition()

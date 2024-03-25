@@ -265,7 +265,9 @@ FUNC VOID DIA_Lorenzo_GET_GUILD_Info()
 	B_LogEntry     (CH1_BringList,"Do³¹czy³em do Kopaczy, wiêc nie bêdê mia³ ju¿ problemów z wejœciem do Starej Kopalni.");
 	hero.guild = GIL_VLK;
 	Npc_SetTrueGuild (hero,GIL_VLK);
-	HeroJoinToOC ();
+    if (!kopaczNotBlockOtherGuilds) {
+        HeroJoinToOC ();
+    };
 	
 	
 };

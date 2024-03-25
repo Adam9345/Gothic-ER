@@ -83,7 +83,7 @@ FUNC VOID DIA_Nek_Exposed_Info()
 	AI_Output (self, other ,"DIA_Nek_Exposed_03_06"); //S³uchaj, nie mam teraz zbyt du¿o rudy. 100 bry³ek wystarczy? Nie mów nikomu, ¿e mnie widzia³eœ.
 	
 	Info_ClearChoices	(DIA_Nek_Exposed);
-	Info_AddChoice		(DIA_Nek_Exposed, "Chc¹ trupa to bêd¹ go mieli.", DIA_Nek_Exposed_KILL);
+	Info_AddChoice		(DIA_Nek_Exposed, "hs@FF0000 Chc¹ trupa to bêd¹ go mieli.", DIA_Nek_Exposed_KILL);
 	Info_AddChoice		(DIA_Nek_Exposed, "Umowa stoi. Powiem im, ¿e nie ¿yjesz.", DIA_Nek_Exposed_OK);
 	Info_AddChoice		(DIA_Nek_Exposed, "To trochê za ma³o.", DIA_Nek_Exposed_MONEY);
 	

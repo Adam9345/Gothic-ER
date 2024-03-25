@@ -54,7 +54,7 @@ FUNC VOID DIA_Grd_215_Torwache_First_Info()
 	AI_Output (self, other,"DIA_Grd_215_Torwache_First_06_02"); //Chyba nie przyszed³eœ tu, ¿eby sprawiaæ k³opoty, co?
 	
 	Info_ClearChoices	(DIA_Grd_215_Torwache_First );
-	Info_AddChoice		(DIA_Grd_215_Torwache_First,"Jasne, zamierzam przej¹æ kontrolê nad ca³ym Obozem!"		,DIA_Grd_215_Torwache_First_Trouble);
+	Info_AddChoice		(DIA_Grd_215_Torwache_First,"hs@FF0000 Jasne, zamierzam przej¹æ kontrolê nad ca³ym Obozem!"		,DIA_Grd_215_Torwache_First_Trouble);
 	Info_AddChoice		(DIA_Grd_215_Torwache_First,"Chcia³em siê tylko trochê rozejrzeæ."		,DIA_Grd_215_Torwache_First_JustLooking);
 	if (Npc_KnowsInfo(hero,Info_Diego_Kolonie))
 	{
@@ -207,7 +207,7 @@ FUNC VOID DIA_Torwache_NORTH_BANDYTA_Info()
 	AI_Output (self, other,"DIA_Torwache_NORTH_BANDYTA_00"); //Hej! Co to za pancerz? Gadaj, sk¹d go masz? Chwila, poznajê! To pancerz Bandyty! Zmiesza³eœ siê z band¹ Quentina?!
 	
 	Info_ClearChoices	(DIA_Torwache_NORTH_BANDYTA );
-	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"Tak, nale¿ê do bandy Quentina. Masz jakiœ problem?"		,DIA_Torwache_NORTH_BANDYTA1);
+	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"hs@FF0000 Tak, nale¿ê do bandy Quentina. Masz jakiœ problem?"		,DIA_Torwache_NORTH_BANDYTA1);
 	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"Nie, pracujê sam."		,DIA_Torwache_NORTH_BANDYTA2);
 };
 
@@ -228,7 +228,7 @@ func void DIA_Torwache_NORTH_BANDYTA2()
 	AI_Output (self, other,"DIA_Torwache_NORTH_BANDYTA2_01"); //Doprawdy? Pracujesz na w³asn¹ rêkê? To sk¹d masz ten pancerz?
 	
 	Info_ClearChoices	(DIA_Torwache_NORTH_BANDYTA );
-	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"Uszy³ go dla mnie pewien myœliwy."					,DIA_Torwache_NORTH_BANDYTA2A);
+	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"hs@FF0000 Uszy³ go dla mnie pewien myœliwy."					,DIA_Torwache_NORTH_BANDYTA2A);
 	Info_AddChoice		(DIA_Torwache_NORTH_BANDYTA,"Zdj¹³em go z jednego martwego Bandyty. Napad³ na mnie w lesie. Musia³em siê broniæ. Akurat jego pancerz by³ niezniszczony i przypad³ mi do gustu."	,DIA_Torwache_NORTH_BANDYTA2B);
 };
 

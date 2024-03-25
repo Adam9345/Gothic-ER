@@ -35,7 +35,7 @@ INSTANCE DIA_GRD_278_Gardist_LeaveMe (C_INFO)
 	condition		= DIA_GRD_278_Gardist_LeaveMe_Condition;
 	information		= DIA_GRD_278_Gardist_LeaveMe_Info;
 	permanent		= 0;
-	description		= "Wzywa was Ian. Podobno ma dla was jak¹œ nagrodê.";
+	description		= "hs@FF0000 Wzywa was Ian. Podobno ma dla was jak¹œ nagrodê.";
 };
 
 FUNC int DIA_GRD_278_Gardist_LeaveMe_Condition()
@@ -49,7 +49,7 @@ FUNC int DIA_GRD_278_Gardist_LeaveMe_Condition()
 FUNC VOID DIA_GRD_278_Gardist_LeaveMe_Info()
 {
 	AI_Output (other, self,"DIA_GRD_278_Gardist_LeaveMe_15_00"); //Wzywa was Ian. Podobno ma dla was jak¹œ nagrodê.
-	AI_Output (self, other,"DIA_GRD_278_Gardist_LeaveMe_01_01"); //Kpisz sobie?! Nie mieliœmy i mamy nic wspólnego z tym idiot¹. Ale ty zaraz bêdziesz mia³ – z mieczem w brzuchu!
+	AI_Output (self, other,"DIA_GRD_278_Gardist_LeaveMe_01_01"); //Kpisz sobie?! Nie mieliœmy i nie mamy nic wspólnego z tym idiot¹. Ale ty zaraz bêdziesz mia³ – z mieczem w brzuchu!
 
 	AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);

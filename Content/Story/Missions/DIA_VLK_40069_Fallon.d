@@ -126,7 +126,7 @@ FUNC VOID DIA_Fallon_JOHN_NUGGET_Info()
     AI_Output (self, other ,"DIA_Fallon_JOHN_NUGGET_03_06"); //Nie ma mowy. Nie zgodzê siê na to!
 	Info_ClearChoices	(DIA_Fallon_JOHN_NUGGET);
     Info_AddChoice		(DIA_Fallon_JOHN_NUGGET, "I tak nic nie wskórasz. Jeœli nawet nie dasz mi rudy to John...", DIA_Fallon_JOHNN);
-    Info_AddChoice		(DIA_Fallon_JOHN_NUGGET, "Dawaj t¹ rudê œmieciu.", DIA_Fallon_JOHNY);
+    Info_AddChoice		(DIA_Fallon_JOHN_NUGGET, "hs@FF0000 Dawaj t¹ rudê œmieciu.", DIA_Fallon_JOHNY);
 };
 
 FUNC VOID DIA_Fallon_JOHNN()

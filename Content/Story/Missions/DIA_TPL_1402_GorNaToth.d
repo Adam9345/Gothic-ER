@@ -114,7 +114,7 @@ FUNC VOID DIA_GorNaToth_AngarTalked_Info()
 {
 	AI_Output (self, other,"DIA_GorNaToth_AngarTalked_11_00"); //Rozmawia³eœ z Cor Angarem? I co powiedzia³?
 	Info_ClearChoices		(DIA_GorNaToth_AngarTalked);
-	Info_AddChoice			(DIA_GorNaToth_AngarTalked,	"Powiedzia³, ¿e jesteœ niegodny, by nosiæ zbrojê Œwi¹tynnego Stra¿nika.",DIA_GorNaToth_AngarTalked_Unworthy);	
+	Info_AddChoice			(DIA_GorNaToth_AngarTalked,	"hs@FF0000 Powiedzia³, ¿e jesteœ niegodny, by nosiæ zbrojê Œwi¹tynnego Stra¿nika.",DIA_GorNaToth_AngarTalked_Unworthy);	
 	Info_AddChoice			(DIA_GorNaToth_AngarTalked,	"Powiedzia³, ¿e nigdy nie lubi³ b³otnych wê¿y.",DIA_GorNaToth_AngarTalked_Shark);	
 	Info_AddChoice			(DIA_GorNaToth_AngarTalked,	"Kaza³ mi zg³osiæ siê do niego, gdy ju¿ zostanê Œwi¹tynnym Stra¿nikiem.",DIA_GorNaToth_AngarTalked_Normal);	
 };

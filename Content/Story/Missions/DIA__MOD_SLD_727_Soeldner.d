@@ -29,7 +29,7 @@ FUNC VOID DIA_Soldier_WARN_FLINT_Info()
 
     Info_ClearChoices		(DIA_Soldier_WARN_FLINT);
     Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To wyrzucony z kopalni Kret. Ma trafiæ do na pola ry¿owe.", DIA_Soldier_WARN_FLINT_KRET);
-    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To zbieg z pól ry¿owych. Uda³o mi siê go z³apaæ.", DIA_Soldier_WARN_FLINT_ZBIEG);
+    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "hs@FF0000 To zbieg z pól ry¿owych. Uda³o mi siê go z³apaæ.", DIA_Soldier_WARN_FLINT_ZBIEG);
 };
 
 FUNC VOID DIA_Soldier_WARN_FLINT_KRET()

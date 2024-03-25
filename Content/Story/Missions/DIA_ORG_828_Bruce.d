@@ -127,7 +127,7 @@ INSTANCE DIA_Bruce_BITKA2 (C_INFO)
    condition    = DIA_Bruce_BITKA2_Condition;
    information  = DIA_Bruce_BITKA2_Info;
    permanent	= FALSE;
-   description	= "Chcia³em tylko...";
+   description	= "hs@FF0000 Chcia³em tylko...";
 };
 
 FUNC INT DIA_Bruce_BITKA2_Condition()

@@ -191,7 +191,7 @@ INSTANCE DIA_Harlok_Darrion (C_INFO)
    condition    = DIA_Harlok_Darrion_Condition;
    information  = DIA_Harlok_Darrion_Info;
    permanent	= FALSE;
-   description	= "Ponoæ dziwnie krêci³eœ siê obok Darriona.";
+   description	= "hs@FF0000 Ponoæ dziwnie krêci³eœ siê obok Darriona.";
 };
 
 FUNC INT DIA_Harlok_Darrion_Condition()

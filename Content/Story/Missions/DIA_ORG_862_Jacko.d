@@ -89,7 +89,7 @@ FUNC void  ORG_862_Jacko_GUARD_Info()
 	Info_Clearchoices	(ORG_862_Jacko_GUARD);
 	Info_Addchoice		(ORG_862_Jacko_GUARD,"Jestem tu, ¿eby was ostrzec."	,ORG_862_Jacko_GUARD_Templer);
 	Info_Addchoice		(ORG_862_Jacko_GUARD,"Chcê wiedzieæ ile ta informacja jest dla ciebie warta."	,ORG_862_Jacko_GUARD_InfoWert);
-	Info_Addchoice		(ORG_862_Jacko_GUARD,"Aby po³o¿yæ kres ca³ej tej sprawie!"	,ORG_862_Jacko_GUARD_Angriff);
+	Info_Addchoice		(ORG_862_Jacko_GUARD,"hs@FF0000 Aby po³o¿yæ kres ca³ej tej sprawie!"	,ORG_862_Jacko_GUARD_Angriff);
 };  
 
 func void ORG_862_Jacko_GUARD_Templer()
@@ -205,7 +205,7 @@ instance  ORG_862_Jacko_Rosliny (C_INFO)
 	information		= ORG_862_Jacko_Rosliny_Info;
 	important		= 0;
 	permanent		= 0;
-	description		= "Przyszed³em po roœliny, które ukradliœcie pewnemu Szkodnikowi. "; 
+	description		= "hs@FF0000 Przyszed³em po roœliny, które ukradliœcie pewnemu Szkodnikowi. "; 
 };
 
 FUNC int  ORG_862_Jacko_Rosliny_Condition()

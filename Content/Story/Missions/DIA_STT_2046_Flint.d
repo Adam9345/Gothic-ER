@@ -230,7 +230,7 @@ INSTANCE DIA_Flint_NewCamRulez (C_INFO)
    condition    = DIA_Flint_NewCamRulez_Condition;
    information  = DIA_Flint_NewCamRulez_Info;
    permanent	= FALSE;
-   description	= "Zginiesz w imiê Nowego Obozu!";
+   description	= "hs@FF0000 Zginiesz w imiê Nowego Obozu!";
 };
 
 FUNC INT DIA_Flint_NewCamRulez_Condition()

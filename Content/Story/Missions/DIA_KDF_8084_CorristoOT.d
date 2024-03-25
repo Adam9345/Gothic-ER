@@ -10,7 +10,7 @@ INSTANCE DIA_CorristoOT_ENDE (C_INFO)
    condition    = DIA_CorristoOT_ENDE_Condition;
    information  = DIA_CorristoOT_ENDE_Info;
    permanent	= FALSE;
-   description	= "Zginiesz, zdrajco!";
+   description	= "hs@FF0000 Zginiesz, zdrajco!";
 };
 
 FUNC INT DIA_CorristoOT_ENDE_Condition()

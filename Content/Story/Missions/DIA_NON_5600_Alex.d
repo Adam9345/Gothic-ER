@@ -1133,7 +1133,7 @@ FUNC VOID DIA_Alex_PNA_ALEX_GETNUGG_Info()
     Info_ClearChoices   (DIA_Alex_PNA_ALEX_GETNUGG);
     Info_AddChoice		(DIA_Alex_PNA_ALEX_GETNUGG, "Oto ruda (Daj 500 Bry쿮k)", DIA_Alex_PNA_NUGG_500);
 	Info_AddChoice		(DIA_Alex_PNA_ALEX_GETNUGG, "Oto ruda (Daj 400 Bry쿮k)", DIA_Alex_PNA_NUGG_400);
-	Info_AddChoice		(DIA_Alex_PNA_ALEX_GETNUGG, "Oto ruda (Daj 300 Bry쿮k)", DIA_Alex_PNA_NUGG_300);
+	Info_AddChoice		(DIA_Alex_PNA_ALEX_GETNUGG, "hs@FF0000 Oto ruda (Daj 300 Bry쿮k)", DIA_Alex_PNA_NUGG_300);
 };
 
 FUNC VOID DIA_Alex_PNA_NUGG_500()

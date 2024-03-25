@@ -59,7 +59,7 @@ instance  DIA_Bullit_AufsMAul (C_INFO)
 	condition	= DIA_Bullit_AufsMAul_Condition;
 	information	= DIA_Bullit_AufsMAul_Info;
 	permanent	= 0;
-	description = "Przyszed³em pogruchotaæ ci szczêkê.";
+	description = "hs@FF0000 Przyszed³em pogruchotaæ ci szczêkê.";
 };                       
 
 FUNC int  DIA_Bullit_AufsMAul_Condition()

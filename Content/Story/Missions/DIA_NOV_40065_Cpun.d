@@ -35,7 +35,7 @@ INSTANCE DIA_Cpun_Gruzlik (C_INFO)
    condition    = DIA_Cpun_Gruzlik_Condition;
    information  = DIA_Cpun_Gruzlik_Info;
    permanent	= FALSE;
-   description	= "Zostaw Fortuno w spokoju.";
+   description	= "hs@FF0000 Zostaw Fortuno w spokoju.";
 };
 
 FUNC INT DIA_Cpun_Gruzlik_Condition()

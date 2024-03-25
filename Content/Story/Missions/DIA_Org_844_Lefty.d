@@ -92,7 +92,7 @@ FUNC VOID DIA_Lefty_First_Info()
 	
 	Info_ClearChoices	(DIA_Lefty_First );
 	Info_AddChoice		(DIA_Lefty_First,"Mo¿e innym razem."				,DIA_Lefty_First_Later);
-	Info_AddChoice		(DIA_Lefty_First,"Sam sobie noœ tê wodê!"	,DIA_Lefty_First_Never);
+	Info_AddChoice		(DIA_Lefty_First,"hs@FF0000 Sam sobie noœ tê wodê!"	,DIA_Lefty_First_Never);
 	Info_AddChoice		(DIA_Lefty_First,"Jasne, chêtnie wam pomogê."			,DIA_Lefty_First_Yes);
 };
 
@@ -211,7 +211,7 @@ instance DIA_Lefty_NeverAgain (C_INFO)
 	condition	= DIA_Lefty_NeverAgain_Condition;
 	information	= DIA_Lefty_NeverAgain_Info;
 	permanent	= 1;
-	description	= "Od tej pory mo¿esz sam sobie biegaæ z t¹ wod¹!";
+	description	= "hs@FF0000 Od tej pory mo¿esz sam sobie biegaæ z t¹ wod¹!";
 };                       
 
 FUNC int DIA_Lefty_NeverAgain_Condition()
@@ -272,7 +272,7 @@ FUNC VOID DIA_Lefty_PERM_Info()
 	Info_ClearChoices	(DIA_Lefty_PERM );
 	Info_AddChoice		(DIA_Lefty_PERM,"Chcia³em zobaczyæ, co u ciebie s³ychaæ."												,DIA_Lefty_PERM_Nothing);
 	Info_AddChoice		(DIA_Lefty_PERM,"Zbieracze wygl¹daj¹ na spragnionych."														,DIA_Lefty_PERM_Durstig);
-	Info_AddChoice		(DIA_Lefty_PERM,"Mam ochotê roz³adowaæ czêœæ drzemi¹cej we mnie z³oœci..."	,DIA_Lefty_PERM_AufsMaul);
+	Info_AddChoice		(DIA_Lefty_PERM,"hs@FF0000 Mam ochotê roz³adowaæ czêœæ drzemi¹cej we mnie z³oœci..."	,DIA_Lefty_PERM_AufsMaul);
 
 };	
 
@@ -1015,7 +1015,7 @@ INSTANCE DIA_Lefty_Plaga (C_INFO)
    condition    = DIA_Lefty_Plaga_Condition;
    information  = DIA_Lefty_Plaga_Info;
    permanent	= FALSE;
-   description	= "Ry¿owy Ksi¹¿e potrzebuje cz³owieka do pilnowania magazynu.";
+   description	= "hs@FF0000 Ry¿owy Ksi¹¿e potrzebuje cz³owieka do pilnowania magazynu.";
 };
 
 FUNC INT DIA_Lefty_Plaga_Condition()

@@ -52,7 +52,7 @@ FUNC VOID DIA_MadNovize_HATE_Info()
     AI_Output (self, other ,"DIA_MadNovize_HATE_03_01"); //Czego tu szukasz, ¿a³osny cz³owieku?! Przerywasz nasze mod³y do Œni¹cego.
 
     Info_ClearChoices		(DIA_MadNovize_HATE);
-    Info_AddChoice		(DIA_MadNovize_HATE, "Doœæ tego. Zginiecie, zdrajcy!", DIA_MadNovize_HATE_DIE);
+    Info_AddChoice		(DIA_MadNovize_HATE, "hs@FF0000 Doœæ tego. Zginiecie, zdrajcy!", DIA_MadNovize_HATE_DIE);
     Info_AddChoice		(DIA_MadNovize_HATE, "Dlaczego tu jesteœcie?", DIA_MadNovize_HATE_WHY);
 };
 
@@ -89,7 +89,7 @@ FUNC VOID DIA_MadNovize_HATE_WHY()
     AI_Output (other, self ,"DIA_MadNovize_HATE_WHY_15_03"); //Dla niego niezbyt dobrze siê to skoñczy³o...
     AI_Output (self, other ,"DIA_MadNovize_HATE_WHY_03_04"); //Ale my w przeciwieñstwie do niego jesteœmy ju¿ przygotowani! ŒNI¥CY PRZYBYWAJ!
     Info_ClearChoices		(DIA_MadNovize_HATE);
-	Info_AddChoice		(DIA_MadNovize_HATE, "Wracajcie do obozu. Powinniœcie byæ czêœci¹ spo³ecznoœci.", DIA_MadNovize_HATE_SOCIAL);
+	Info_AddChoice		(DIA_MadNovize_HATE, "hs@FF0000 Wracajcie do obozu. Powinniœcie byæ czêœci¹ spo³ecznoœci.", DIA_MadNovize_HATE_SOCIAL);
     Info_AddChoice		(DIA_MadNovize_HATE, "Wcale nie jesteœcie przygotowani!", DIA_MadNovize_HATE_LOSERS);
 };
 

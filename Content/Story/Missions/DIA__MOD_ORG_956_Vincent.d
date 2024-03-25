@@ -33,7 +33,7 @@ INSTANCE DIA_Vincent_THIEFF (C_INFO)
    condition    = DIA_Vincent_THIEFF_Condition;
    information  = DIA_Vincent_THIEFF_Info;
    permanent	= FALSE;
-   description	= "No proszê, co za wspania³a kryjówka.";
+   description	= "hs@FF0000 No proszê, co za wspania³a kryjówka.";
 };
 
 FUNC INT DIA_Vincent_THIEFF_Condition()

@@ -174,7 +174,7 @@ INSTANCE DIA_Hugo_PICKPOCKET(C_INFO)
 	condition    = DIA_Hugo_PICKPOCKET_Condition;
 	information  = DIA_Hugo_PICKPOCKET_Info;
 	permanent    = TRUE;
-	 description = "Kradzie¿ kiesz.";
+	 description = "hs@FFA000 Kradzie¿ kiesz.";
 };
 
 FUNC INT DIA_Hugo_PICKPOCKET_Condition()

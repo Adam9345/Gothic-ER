@@ -720,8 +720,8 @@ FUNC VOID DIA_OKYL_ZDECH_Info()
 	
 	    Info_ClearChoices (DIA_OKYL_ZDECH);
 	    Info_AddChoice    (DIA_OKYL_ZDECH,"¯a³uje tego czynu. Oto ruda."                        ,DIA_OKYL_KARA);
-	    Info_AddChoice    (DIA_OKYL_ZDECH,"Nie mam rudy."                           ,DIA_OKYL_MORD);
-	    Info_AddChoice    (DIA_OKYL_ZDECH,"Nie mam zamiaru p³aciæ."                                      ,DIA_OKYL_MORK);
+	    Info_AddChoice    (DIA_OKYL_ZDECH,"hs@FF0000 Nie mam rudy."                           ,DIA_OKYL_MORD);
+	    Info_AddChoice    (DIA_OKYL_ZDECH,"hs@FF0000 Nie mam zamiaru p³aciæ."                                      ,DIA_OKYL_MORK);
 	
 	
 	

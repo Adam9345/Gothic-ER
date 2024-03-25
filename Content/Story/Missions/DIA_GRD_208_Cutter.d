@@ -66,9 +66,9 @@ FUNC VOID DIA_Cutter_DISS_BANDIT_Info()
     AI_Output (self, other ,"DIA_Cutter_DISS_BANDIT_03_13"); //To jak? Dogadamy siê?
 
     Info_ClearChoices		(DIA_Cutter_DISS_BANDIT);
-    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "Masz tê rudê i daj mi spokój.", DIA_Cutter_DISS_BANDIT_GIVE_ORE);
-    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "Nie mam tyle rudy. ", DIA_Cutter_DISS_BANDIT_NIE_MAM);
-    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "Zapomnij. Nie uda ci siê mnie zastraszyæ!", DIA_Cutter_DISS_BANDIT_ZAPOMNIJ);
+    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "hs@FFA000 Masz tê rudê i daj mi spokój.", DIA_Cutter_DISS_BANDIT_GIVE_ORE);
+    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "hs@FF0000 Nie mam tyle rudy. ", DIA_Cutter_DISS_BANDIT_NIE_MAM);
+    Info_AddChoice		(DIA_Cutter_DISS_BANDIT, "hs@FF0000 Zapomnij. Nie uda ci siê mnie zastraszyæ!", DIA_Cutter_DISS_BANDIT_ZAPOMNIJ);
 };
 
 FUNC VOID DIA_Cutter_DISS_BANDIT_GIVE_ORE()

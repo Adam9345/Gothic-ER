@@ -68,7 +68,7 @@ INSTANCE DIA_Jim_TMQ_NEC (C_INFO)
    condition    = DIA_Jim_TMQ_NEC_Condition;
    information  = DIA_Jim_TMQ_NEC_Info;
    permanent	= FALSE;
-   description	= "Sk¹d masz tak¹ wiedzê o nekromancji?";
+   description	= "hs@FF0000 Sk¹d masz tak¹ wiedzê o nekromancji?";
 };
 
 FUNC INT DIA_Jim_TMQ_NEC_Condition()

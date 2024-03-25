@@ -58,7 +58,7 @@ FUNC VOID  DIA_Rabus_First_Info()
 	
 	
 	Info_ClearChoices	(DIA_Rabus_First);
-	Info_AddChoice		(DIA_Rabus_First, "Po¿a³ujesz tego co zrobi³eœ. Giñ!", DIA_Rabus_First_Add1);
+	Info_AddChoice		(DIA_Rabus_First, "hs@FF0000 Po¿a³ujesz tego co zrobi³eœ. Giñ!", DIA_Rabus_First_Add1);
     Info_AddChoice		(DIA_Rabus_First, "Jesteœ zwyk³ym robakiem. Nie warto brudziæ sobie tob¹ r¹k.", DIA_Rabus_First_Add2);
 	
 };

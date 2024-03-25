@@ -35,7 +35,7 @@ INSTANCE DIA_Kil_THIEF (C_INFO)
    condition    = DIA_Kil_THIEF_Condition;
    information  = DIA_Kil_THIEF_Info;
    permanent	= FALSE;
-   description	= "Oddawajcie co nie wasze, parszywi z³odzieje!";
+   description	= "hs@FF0000 Oddawajcie co nie wasze, parszywi z³odzieje!";
 };
 
 FUNC INT DIA_Kil_THIEF_Condition()

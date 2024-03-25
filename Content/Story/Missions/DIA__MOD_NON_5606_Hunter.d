@@ -72,7 +72,7 @@ INSTANCE DIA_Hunter_HELLO2 (C_INFO)
    condition    = DIA_Hunter_HELLO2_Condition;
    information  = DIA_Hunter_HELLO2_Info;
    permanent	= FALSE;
-   description	= "Chyba muszê nauczyæ ciê kultury.";
+   description	= "hs@FF0000 Chyba muszê nauczyæ ciê kultury.";
 };
 
 FUNC INT DIA_Hunter_HELLO2_Condition()

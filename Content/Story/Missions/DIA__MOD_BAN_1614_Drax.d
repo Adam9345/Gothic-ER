@@ -502,7 +502,7 @@ FUNC VOID DIA_Drax_PRZYJECIE_Info()
 	AI_Output (self, other ,"DIA_Drax_PRZYJECIE_03_13"); //Dobrze siê zastanów. Choæ to, ¿e zawracasz mi g³owê jest chyba równoznaczne z tym, ¿e jesteœ pewien czego tak naprawdê chcesz.
 	Info_ClearChoices	(DIA_Drax_PRZYJECIE);
 	Info_AddChoice		(DIA_Drax_PRZYJECIE,"Jestem gotowy, by do was do³¹czyæ.",DIA_Drax_PRZYJECIE_TRUE);
-	Info_AddChoice		(DIA_Drax_PRZYJECIE,"Jeszcze to przemyœlê.",DIA_Drax_PRZYJECIE_LOSE); 
+	Info_AddChoice		(DIA_Drax_PRZYJECIE,"hs@FF0000 Jeszcze to przemyœlê.",DIA_Drax_PRZYJECIE_LOSE); 
 	}
 	else
 	{
@@ -870,9 +870,19 @@ INSTANCE DIA_Drax_JustGetGuild (C_INFO)
 
 FUNC INT DIA_Drax_JustGetGuild_Condition()
 {
-	if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) && (Npc_GetTrueGuild (hero) == GIL_NONE) 
-    {
-    return TRUE;
+    if (kopaczNotBlockOtherGuilds) {
+        if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) 
+        && ((Npc_GetTrueGuild (hero) == GIL_NONE) 
+        || (Npc_GetTrueGuild (hero) == GIL_VLK)) 
+        {
+        return TRUE;
+        };
+    } else {
+        if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) 
+        && ((Npc_GetTrueGuild (hero) == GIL_NONE)) 
+        {
+        return TRUE;
+        };
     };
 };
 

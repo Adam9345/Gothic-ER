@@ -221,7 +221,7 @@ FUNC VOID DIA_DungeonGuard_Triggered_Info()
 	
 	Info_ClearChoices	(DIA_DungeonGuard_Triggered);
     Info_AddChoice		(DIA_DungeonGuard_Triggered, "Dobra, zabieram siê st¹d.", DIA_Ernesto_OkIBack);
-    Info_AddChoice		(DIA_DungeonGuard_Triggered, "Chêtnie pomyszkuje w tym magazynie. Na pewno ma sporo do zaoferowania.", DIA_Ernesto_NoILoveYAss);
+    Info_AddChoice		(DIA_DungeonGuard_Triggered, "hs@FF0000 Chêtnie pomyszkuje w tym magazynie. Na pewno ma sporo do zaoferowania.", DIA_Ernesto_NoILoveYAss);
 };
 
 FUNC VOID DIA_Ernesto_OkIBack()

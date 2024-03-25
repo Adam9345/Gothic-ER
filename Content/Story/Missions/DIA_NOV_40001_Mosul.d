@@ -33,7 +33,7 @@ INSTANCE DIA_Mosul_Hello(C_INFO)
 	condition	= DIA_Mosul_Hello_Condition;
 	information	= DIA_Mosul_Hello_Info;
 	permanent	= false;
-	description = "Oddaj figurkê, któr¹ ukrad³eœ!";
+	description = "hs@FF0000 Oddaj figurkê, któr¹ ukrad³eœ!";
 };                       
 
 FUNC INT DIA_Mosul_Hello_Condition()

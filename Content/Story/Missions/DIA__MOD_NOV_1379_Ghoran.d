@@ -390,7 +390,7 @@ FUNC VOID DIA_Ghoran_PICKPOCKET_Info()
 {
 	Info_ClearChoices	(DIA_Ghoran_PICKPOCKET);
 	Info_AddChoice		(DIA_Ghoran_PICKPOCKET, DIALOG_BACK 	                                    ,DIA_Ghoran_PICKPOCKET_BACK);
-	Info_AddChoice		(DIA_Ghoran_PICKPOCKET, "(Kradzie¿ tej receptury bêdzie doœæ ryzykowna.)"	,DIA_Ghoran_PICKPOCKET_DoIt);
+	Info_AddChoice		(DIA_Ghoran_PICKPOCKET, "hs@FFA000 (Kradzie¿ tej receptury bêdzie doœæ ryzykowna.)"	,DIA_Ghoran_PICKPOCKET_DoIt);
 };
 
 FUNC VOID DIA_Ghoran_PICKPOCKET_DoIt()
