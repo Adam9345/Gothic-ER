@@ -370,7 +370,7 @@ FUNC VOID DIA_Outlam_Zagadka_Info()
 {
     AI_Output (other, self ,"DIA_Outlam_Zagadka_15_01"); //Chyba rozwi¹za³em zagadkê.
     AI_Output (self, other ,"DIA_Outlam_Zagadka_03_02"); //I jak?
-    AI_Output (other, self ,"DIA_Outlam_Zagadka_15_03"); //W górach znalaz³em szcz¹tki starszego mê¿czyzny. Mia³ przy magiczny kryszta³. Wed³ug pamiêtnika, kilka lat temu ukrad³ go z Kot³a.
+    AI_Output (other, self ,"DIA_Outlam_Zagadka_15_03"); //W górach znalaz³em szcz¹tki starszego mê¿czyzny. Mia³ przy sobie magiczny kryszta³. Wed³ug pamiêtnika, kilka lat temu ukrad³ go z Kot³a.
     AI_Output (other, self ,"DIA_Outlam_Zagadka_15_04"); //Przypuszczam, ¿e to jego pamiêtnik. Po prostu przywia³ go tu wiatr. 
     AI_Output (self, other ,"DIA_Outlam_Zagadka_03_05"); //W górach ³atwo o wiatr. To co mówisz ma sens. W nagrodê mo¿esz zachowaæ kryszta³.
     B_LogEntry                     (CH1_FlyingBook,"Tajemnica rozwi¹zana. Pamiêtnik nale¿a³ do starca z gór, który przed laty ukrad³ magiczny kryszta³ z Wolnej Kopalni.");
