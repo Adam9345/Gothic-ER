@@ -39,6 +39,22 @@ func void Mod_SetGothicIni() {
 	if (!Mem_GothOptExists("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds")) {
 		MEM_SetGothOpt("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds", "0");
 	};
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "disableGuildsGreeting")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "disableGuildsGreeting", "0");
+	};
+};
+
+func void Mod_DisableGuildsGreeting() {
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "disableGuildsGreeting"))) {
+		disableGuildsGreeting = 1;
+	};
+};
+
+func void Mod_EnableKopaczNotBlockOtherGuilds() {
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds"))) {
+		kopaczNotBlockOtherGuilds = 1;
+	};
 };
 
 func void Mod_SetNewLearnPoints() {
@@ -85,6 +101,8 @@ func VOID INIT_GLOBAL() {
 		Install_Character_Menu_Hook();
 
 		Mod_SetNewLearnPoints();
+		Mod_EnableKopaczNotBlockOtherGuilds();
+		Mod_DisableGuildsGreeting();
 
 		_mod_init = 1;
 	};
