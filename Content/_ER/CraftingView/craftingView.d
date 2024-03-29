@@ -257,16 +257,12 @@ func void craftingview_tabswitcher() {
                 };
             };
 
-            if (key == KEY_PERIOD && (PLAYER_MOBSI_PRODUCTION == MOBSI_COOKING 
-            || PLAYER_MOBSI_PRODUCTION == MOBSI_COOKPAN
-            || PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)) {
+            if (key == KEY_PERIOD) {
                 quantity += 1;
                 craftingview_show(cv_currentitem, cv_currentmode, quantity);
             };
 
-            if (key == KEY_COMMA && (PLAYER_MOBSI_PRODUCTION == MOBSI_COOKING 
-            || PLAYER_MOBSI_PRODUCTION == MOBSI_COOKPAN
-            || PLAYER_MOBSI_PRODUCTION	==	MOBSI_SMELTINGOT)) {
+            if (key == KEY_COMMA) {
                 quantity -= 1;
                 if (quantity <= 0) {
                     quantity = 1;
