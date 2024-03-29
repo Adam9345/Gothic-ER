@@ -248,7 +248,7 @@ FUNC VOID DIA_Kastagir_ZLECENIE()
     AI_Output (self ,other,"DIA_Kastagir_ZLECENIE_11_03");  //Ale wiem co nale¿y zrobiæ.
 	AI_Output (other,self ,"DIA_Kastagir_ZLECENIE_15_04");  //Mianowicie?
 	AI_Output (self ,other,"DIA_Kastagir_ZLECENIE_11_05");  //Trzeba pozyskaæ pewn¹ ksiêgê. Informacje o niej ma zapewne Mag Uturiel – samotnik mieszkaj¹cy na ziemiach orków. Prawdopodobnie ukry³ siê w którejœ z grot.
-	AI_Output (self ,other,"DIA_Kastagir_ZLECENIE_11_06");  //Zdob¹dŸ on niego t¹ ksiêgê, a popchniesz tê sprawê znacz¹co dalej.
+	AI_Output (self ,other,"DIA_Kastagir_ZLECENIE_11_06");  //Zdob¹dŸ od niego t¹ ksiêgê, a popchniesz tê sprawê znacz¹co dalej.
 	AI_Output (other,self ,"DIA_Kastagir_ZLECENIE_15_07");  //A jej tytu³?
 	AI_Output (self ,other,"DIA_Kastagir_ZLECENIE_11_08");  //,,Potêga Magicznych Kryszta³ów”
 	AI_Output (other,self ,"DIA_Kastagir_ZLECENIE_15_09");  //Niech bêdzie, ale pamiêtaj, ¿e nie robiê tego za darmo.

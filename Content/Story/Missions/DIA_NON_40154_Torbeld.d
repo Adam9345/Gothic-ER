@@ -53,7 +53,7 @@ FUNC VOID DIA_Torbeld_HELLO1_Info()
     AI_Output (self, other ,"DIA_Torbeld_HELLO1_03_06"); //Moja droga na ka¿dym etapie dawa³a mi coœ co pozwoli³o przetrwaæ tutaj. Jako robotnik w kamienio³omie nabra³em du¿ej si³y a póŸniej jako gladiator wytrzyma³oœci na ból i determinacji.
     AI_Output (other, self ,"DIA_Torbeld_HELLO1_15_07"); //Jak z robotnika sta³eœ siê gladiatorem?
     AI_Output (self, other ,"DIA_Torbeld_HELLO1_03_08"); //By³em m³ody, silny ale t³uczenie i roz³upywanie m³otem kamienia nie by³o mi w smak. Pewien cz³owiek szuka³ talentów do areny gladiatorów swego wuja. Poszed³em tam i nauczy³em siê walki.
-    AI_Output (self, other ,"DIA_Torbeld_HELLO1_03_09"); //PóŸniej nawet by³em mistrzem ale moja alegria na porz¹dkowych sprawi³a, ¿e... Czaszka pewnego stra¿nika miejskiego siê roz³upa³a.
+    AI_Output (self, other ,"DIA_Torbeld_HELLO1_03_09"); //PóŸniej nawet by³em mistrzem ale moja alergia na porz¹dkowych sprawi³a, ¿e... Czaszka pewnego stra¿nika miejskiego siê roz³upa³a.
     AI_Output (other, self ,"DIA_Torbeld_HELLO1_15_10"); //Z twoim udzia³em jak mniemam?
     AI_Output (self, other ,"DIA_Torbeld_HELLO1_03_11"); //Taa nikt nie patrzy³, ¿e to szuja. Zabójstwo to zabójstwo. Wyrok i zrzucenie pod barierê. Potem pobyt w Starym Obozie. I gdy mia³em ju¿ zostaæ jego cz³onkiem pojawi³ siê Wilson a reszte ju¿ znasz.
 };
@@ -93,7 +93,7 @@ FUNC VOID DIA_Torbeld_New_members_Info()
     AI_Output (self, other ,"DIA_Torbeld_New_members_03_10"); //Straciliœmy sporo towarzyszy. Wojownik dochodzi do si³y i potêgi d³ugo a czêsto ginie w jednej chwili.
     AI_Output (self, other ,"DIA_Torbeld_New_members_03_11"); //I jeszcze jedno. Potrzebujemy dobrych ludzi ale i takich, którzy umiej¹ wspó³pracowaæ w grupie. A ty mi wygl¹dasz na goœcia lubi¹cego dzia³ania w pojedynkê.
     AI_Output (other, self ,"DIA_Torbeld_New_members_15_12"); //Twierdzisz, ¿e do was nie pasuje?
-    AI_Output (self, other ,"DIA_Torbeld_New_members_03_13"); //Tego nie powiedzia³em ale jesteœmy ostro¿ni. Na pocz¹tek trzeba rekurta przeszkoliæ.
+    AI_Output (self, other ,"DIA_Torbeld_New_members_03_13"); //Tego nie powiedzia³em ale jesteœmy ostro¿ni. Na pocz¹tek trzeba rekruta przeszkoliæ.
     AI_Output (self, other ,"DIA_Torbeld_New_members_03_14"); //Musi æwiczyæ i poznaæ nasze zasady, zwyczaje. Tak by we wspólnej akcji komunikowa³ siê bez s³ów. A nie ¿eby swoj¹ niedyskrecj¹ przyczyni³ siê do œmierci swojej i swych towarzyszy.
     AI_Output (other, self ,"DIA_Torbeld_New_members_15_15"); //Rozumiem. Ma to sens skoro ryzyko jest tak wielkie.
     AI_Output (self, other ,"DIA_Torbeld_New_members_03_16"); //Jest. Ale satysfakcja z ka¿dej prze¿ytej potyczki z orkami tym bardziej.
