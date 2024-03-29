@@ -96,7 +96,6 @@ func VOID INIT_GLOBAL() {
 		Init_CraftingSystem();
 		TorchHotKey_Init();
 		G1_EnhancedPickLocking_Init();
-		G12_EnhancedInfoManager_Init();
 
 		Install_Character_Menu_Hook();
 
@@ -106,6 +105,7 @@ func VOID INIT_GLOBAL() {
 
 		_mod_init = 1;
 	};
+	G12_EnhancedInfoManager_Init();
 
 	G1_EnhancedTrading_Init();
 	GFA_Init(GFA_ALL);
