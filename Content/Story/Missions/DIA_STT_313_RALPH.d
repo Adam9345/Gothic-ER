@@ -91,7 +91,7 @@ func VOID DIA_Ralph_Camp_Info()
 	AI_Output (self, other,"DIA_Ralph_Camp_04_03"); //Niby dok¹d? Zreszt¹ smród w sumie przesta³ mi ju¿ przeszkadzaæ. 
 	AI_Output (self, other,"DIA_Ralph_Camp_04_04"); //Ponadto zauwa¿, ¿e tej alejki nie pilnuje ¿aden Stra¿nik. Nikt nie zabiera mi rudy i mam œwiêty spokój. 
 	AI_Output (other, self,"DIA_Ralph_Camp_15_05"); //No dobra. Wróæmy jeszcze do tematu okolicy.
-	AI_Output (self, other,"DIA_Ralph_Camp_04_06"); //Co ty jeszcze chcesz ode mnie wiedzieæ? To najbiedniejsza czêœæ Obozu. Ca³oœæ tutejszego ¿ycia krêci siê wokó³ interesu z aren¹.
+	AI_Output (self, other,"DIA_Ralph_Camp_04_06"); //Ech, strasznie uparty jesteœ, wiesz? Ta czêœæ Obozu uchodzi za najbiedniejsz¹. Ca³e tutejsze ¿ycie krêci siê wokó³ interesów zwi¹zanych z aren¹.
 	AI_Output (self, other,"DIA_Ralph_Camp_04_07"); //Scatty zarabia krocie na tych durniach ogl¹daj¹cych walki. 
 	AI_Output (self, other,"DIA_Ralph_Camp_04_08"); //Spore znaczenie ma kuŸnia. Znajduje siê wy¿ej. O, tam. Z pewnoœci¹ widzisz dym buchaj¹cy z komina pieca.
 	AI_Output (self, other,"DIA_Ralph_Camp_04_09"); //Huno jest szanowany. Nie jest wprawdzie mistrzem kowalstwa, ale potrafi te¿ nanieœæ proste ozdoby na miecz. Co szczególnie cieszy Œwistaka.

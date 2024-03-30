@@ -86,10 +86,10 @@ FUNC VOID DIA_Fallon_HI_FALLO_Info()
     AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_04"); //Pewien idiota.
     AI_Output (other, self ,"DIA_Fallon_HI_FALLO_15_05"); //Jaki idiota?
     AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_06"); //Któregoœ dnia zamieszka³ ko³o mnie pewien cz³owiek. W dzieñ I w nocy urz¹dza³ libacje alkohole z kole¿kami.
-    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_07"); //Wydzieraj¹c siê, przeklinaj¹c I przygrywaj¹c sobie na lutni. Naskar¿y³em na niego do w³adz ale ¿aden po¿¹dkowy siê nie pojawi³.
-    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_08"); //I pewnego dnia przebra³a siê miara. Zak³u³em dokucznika sztyletem. I zrzucono mnie tutaj. O ile siê nie mylê dwa I pó³ roku temu.
+    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_07"); //Wydzieraj¹c siê, przeklinaj¹c I przygrywaj¹c sobie na lutni. Naskar¿y³em na niego do w³adz, ale ¿aden z tych obiboków ze stra¿y siê nie raczy³ siê pojawiæ.
+    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_08"); //I pewnego dnia miarka siê przebra³a. ZadŸga³em dokucznika sztyletem. I tak wyl¹dowa³em tutaj.
     AI_Output (other, self ,"DIA_Fallon_HI_FALLO_15_09"); //Dlaczego do³¹czy³eœ do Kopaczy?
-    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_10"); //A do kogo mia³em? To by³ najlepszy wœród z³ych wyborów. Bo wszêdzie by³o bardziej lub mniej Ÿle.
+    AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_10"); //A jaki mia³em wybór? Stary Obóz to by³o mniejsze z³o. Wszêdzie indziej by³o znacznie gorzej.
     AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_11"); //Jedynie Magnaci... ale oni s¹ poza wszelk¹ kategori¹. Ponoæ kiedyœ byli zwyk³ymi skazañcami.
     AI_Output (self, other ,"DIA_Fallon_HI_FALLO_03_12"); //Chcia³bym zobaczyæ Gomeza w ³achmanach. To by³by ciekawy widok.
     AI_Output (other, self ,"DIA_Fallon_HI_FALLO_15_13"); //Z pewnoœci¹. Ale obawiam siê, ¿e sam Gomez nie chêtnie znów przywdzia³by taki strój.
