@@ -1600,8 +1600,8 @@ FUNC VOID DIA_THORUS_FlintFindPath_Info()
 	AI_Output (self, other ,"DIA_THORUS_FlintFindPath_NOPE_23"); //Dziwi mnie twoja bezinteresownoœæ. Czego ode mnie oczekujesz? Chcesz siê spotkaæ z Gomezem? A mo¿e liczy siê tylko ruda.
 	
 	Info_ClearChoices (DIA_Thorus_FlintFindPath);
-	Info_AddChoice (DIA_THORUS_FlintFindPath,"Chcê siê spotkaæ z Gomezem.",DIA_THORUS_FlintFindPath_GOMEZ);
-	Info_AddChoice (DIA_THORUS_FlintFindPath,"Wystarczy mi ruda.",DIA_THORUS_FlintFindPath_ORE);
+	Info_AddChoice (DIA_THORUS_FlintFindPath,"hs@FFA000 Chcê siê spotkaæ z Gomezem.",DIA_THORUS_FlintFindPath_GOMEZ);
+	Info_AddChoice (DIA_THORUS_FlintFindPath,"hs@FFA000 Wystarczy mi ruda.",DIA_THORUS_FlintFindPath_ORE);
 	
 	MIS_FlintsOffer = LOG_FAILED;
     Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);

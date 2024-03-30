@@ -114,7 +114,9 @@ if(self.guild < GIL_SEPERATOR_HUM)
 	// NSC begrüßt dich, wenn der Spieler ihn angesprochen hat
 	if (!hero.aivar[AIV_IMPORTANT])
 	{
-		B_GuildGreetings ();
+		if (!disableGuildsGreeting) {
+			B_GuildGreetings ();
+		};
 	};
 	
 	// Equipment gestohlen?

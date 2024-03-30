@@ -45,6 +45,7 @@ FUNC VOID DIA_PC_Hero_CookPan_EXIT_Info()
 	CookMeat = FALSE;				  			  
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+	quantity = 1;
 	AI_StopProcessInfos	(self);
 };
 
@@ -204,7 +205,7 @@ INSTANCE PC_MuttonRaw_01 (C_INFO)
 	condition		= PC_MuttonRaw_01_Condition;
 	information		= PC_MuttonRaw_01_Info;
 	permanent		= TRUE;
-	description		= "Usma¿ 1 sztukê miêsa"; 
+	description		= "Usma¿ surowe miêso"; 
 };
 
 FUNC INT PC_MuttonRaw_01_Condition()
@@ -225,111 +226,20 @@ FUNC VOID PC_MuttonRaw_01_Info ()
       
 
 		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_Mutton.recipeitem,1);
+		PrintS_Ext(cs3("Przygotowa³eœ ", i2s(quantity), "x miêso"), COL_WHITE);
+		CreateInvItems (self, Recipe_Mutton.recipeitem,quantity);
 		MuttonRaw = true;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!"         , COL_RED);
-	PrintScreen ("1x surowe miêso"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("1x surowe miêso"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     MuttonRaw = true;
     };	
   //  AI_StopProcessInfos(self);
 };
 
 
-//***************************************************************************************
-INSTANCE PC_MuttonRaw_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_Mutton5Id;
-	npc				= PC_Hero;
-	condition		= PC_MuttonRaw_05_Condition;
-	information		= PC_MuttonRaw_05_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ 5 sztuk miêsa"; 
-};
-
-FUNC INT PC_MuttonRaw_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MuttonRaw == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MuttonRaw_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_Mutton5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_Mutton5);
-		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_Mutton5.recipeitem,5);
-		MuttonRaw = true;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!"         , COL_RED);
-	PrintScreen ("5x surowe miêso"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MuttonRaw = true;
-    };	
-   // AI_StopProcessInfos(self);
-};
-var int MuttonRawAmount;
-//***************************************************************************************
-INSTANCE PC_MuttonRaw_All (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_MuttonAllId;
-	npc				= PC_Hero;
-	condition		= PC_MuttonRaw_All_Condition;
-	information		= PC_MuttonRaw_All_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ wszystkie sztuki miêsa"; 
-};
-
-FUNC INT PC_MuttonRaw_All_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MuttonRaw == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MuttonRaw_All_Info ()
-{
-	if(playerHasRequiredIngredients(Recipe_MuttonAll))
-	{
-		
-	MuttonRawAmount = Npc_hasitems (hero, ItFoMuttonRaw);
-		
-		
-    if (MuttonRawAmount >0)
-    {
-			removeIngredientsFromPlayerInv(Recipe_MuttonAll);
-			
-			CreateInvItems (hero, Recipe_MuttonAll.recipeitem,MuttonRawAmount);
-			
-			var string WriteMutton;
-			
-			WriteMutton = ConcatStrings (InttoString (MuttonRawAmount)," sztuk miêsa usma¿ono.");
-			PrintScreen (WriteMutton,-1,75,"FONT_OLD_10_WHITE.tga",3);
-	};
-	
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!"              , COL_RED);
-	PrintScreen ("Surowe miêso"                        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MuttonRaw = true;
-    };	
-   // AI_StopProcessInfos(self);
-};
-//***************************************************************************************
 INSTANCE PC_MoleratLiver_01 (C_INFO)
 {
 	nr       		= start_other_dlg_nr + Recipe_MoleratWSId;
@@ -337,7 +247,7 @@ INSTANCE PC_MoleratLiver_01 (C_INFO)
 	condition		= PC_MoleratLiver_01_Condition;
 	information		= PC_MoleratLiver_01_Info;
 	permanent		= TRUE;
-	description		= "Usma¿ 1 w¹trobe kretoszczura"; 
+	description		= "Usma¿ w¹trobê kretoszczura"; 
 };
 
 FUNC INT PC_MoleratLiver_01_Condition()
@@ -358,119 +268,19 @@ FUNC VOID PC_MoleratLiver_01_Info ()
       
 
 		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_MoleratWS.recipeitem,1);
+		PrintS_Ext(cs3("Przygotowa³eœ ", i2s(quantity), "x miêso"), COL_WHITE);
+		CreateInvItems (self, Recipe_MoleratWS.recipeitem,quantity);
 		MoleratLiver = true;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("1x w¹troba kretoszczura"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("1x w¹troba kretoszczura"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     MoleratLiver = true;
     };	
    // AI_StopProcessInfos(self);
 };
 
-
-//***************************************************************************************
-INSTANCE PC_MoleratLiver_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_MoleratWS5Id;
-	npc				= PC_Hero;
-	condition		= PC_MoleratLiver_05_Condition;
-	information		= PC_MoleratLiver_05_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ 5 w¹trób kretoszczura"; 
-};
-
-FUNC INT PC_MoleratLiver_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MoleratLiver == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MoleratLiver_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_MoleratWS5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_MoleratWS5);
-      
-
-		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_MoleratWS5.recipeitem,5);
-		MuttonRaw = False;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("5x w¹troba kretoszczura"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MoleratLiver = True;
-    };	
-   // AI_StopProcessInfos(self);
-};
-var int MoleratLiverAmount;
-//***************************************************************************************
-INSTANCE PC_MoleratLiver_All (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_MoleratWSAllId;
-	npc				= PC_Hero;
-	condition		= PC_MoleratLiver_All_Condition;
-	information		= PC_MoleratLiver_All_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ wszystkie w¹troby kretoszczura"; 
-};
-
-//var int MoleratLiverAmount;
-
-FUNC INT PC_MoleratLiver_All_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MoleratLiver == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MoleratLiver_All_Info ()
-{
-
-
-    if(playerHasRequiredIngredients(Recipe_MoleratWSAll))
-	
-	{
-		
-	MoleratLiverAmount = Npc_hasitems (hero, ItFo_MoleratW);
-		
-		
-    if (MoleratLiverAmount >0)
-    {
-			removeIngredientsFromPlayerInv(Recipe_MoleratWSAll);
-			
-			CreateInvItems (hero, Recipe_MoleratWSAll.recipeitem,MoleratLiverAmount);
-			
-			var string WriteLiver;
-			
-			WriteLiver = ConcatStrings (InttoString (MoleratLiverAmount)," sztuk w¹tróbki kretoszczura usma¿ono.");
-			PrintScreen (WriteLiver,-1,75,"FONT_OLD_10_WHITE.tga",3);
-	};
-	
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!"              , COL_RED);
-	PrintScreen ("W¹troba kretoszczura"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MoleratLiver = True;
-    };	
-	
-   // AI_StopProcessInfos(self);
-};
-//***************************************************************************************
 INSTANCE PC_MuttonLurker_01 (C_INFO)
 {
 	nr       		= start_other_dlg_nr + Recipe_MuttonLurkerCookedId;
@@ -478,7 +288,7 @@ INSTANCE PC_MuttonLurker_01 (C_INFO)
 	condition		= PC_MuttonLurker_01_Condition;
 	information		= PC_MuttonLurker_01_Info;
 	permanent		= TRUE;
-	description		= "Usma¿ 1 sztukê miêsa"; 
+	description		= "Usma¿ miêso topielca"; 
 };
 
 FUNC INT PC_MuttonLurker_01_Condition()
@@ -499,108 +309,16 @@ FUNC VOID PC_MuttonLurker_01_Info ()
       
 
 		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_MuttonLurkerCooked.recipeitem,1);
+		PrintS_Ext(cs3("Przygotowa³eœ ", i2s(quantity), "x miêso"), COL_WHITE);
+		CreateInvItems (self, Recipe_MuttonLurkerCooked.recipeitem,quantity);
 		MuttonLurker = true;
 	}
     else 
     {
     PrintS_Ext  ("Brakuje ci sk³adników!"         , COL_RED);
-	PrintScreen ("1x surowe miêso topielca"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("1x surowe miêso topielca"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
     MuttonLurker = true;
     };	
   //  AI_StopProcessInfos(self);
 };
 
-
-//***************************************************************************************
-INSTANCE PC_MuttonLurker_05 (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_MuttonLurkerCooked5Id;
-	npc				= PC_Hero;
-	condition		= PC_MuttonLurker_05_Condition;
-	information		= PC_MuttonLurker_05_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ 5 sztuk miêsa"; 
-};
-
-FUNC INT PC_MuttonLurker_05_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MuttonLurker == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MuttonLurker_05_Info ()
-{
-	if (playerHasRequiredIngredients(Recipe_MuttonLurkerCooked5))
-	{
-		removeIngredientsFromPlayerInv(Recipe_MuttonLurkerCooked5);
-		
-		PrintS_Ext("Przygotowa³eœ miêso!", COL_WHITE);
-		CreateInvItems (self, Recipe_MuttonLurkerCooked5.recipeitem,5);
-		MuttonLurker = true;
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!"         , COL_RED);
-	PrintScreen ("5x surowe miêso topielca"                ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MuttonLurker = true;
-    };	
-   // AI_StopProcessInfos(self);
-};
-var int MuttonLurkerAmount;
-//***************************************************************************************
-INSTANCE PC_MuttonLurker_All (C_INFO)
-{
-	nr       		= start_other_dlg_nr + Recipe_MuttonLurkerCookedAllId;
-	npc				= PC_Hero;
-	condition		= PC_MuttonLurker_All_Condition;
-	information		= PC_MuttonLurker_All_Info;
-	permanent		= TRUE;
-	description		= "Usma¿ wszystkie sztuki miêsa"; 
-};
-
-FUNC INT PC_MuttonLurker_All_Condition()
-{	
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_COOKPAN)
-	&& (MuttonLurker == TRUE)
-   
-	{		
-			return TRUE;
-	};
-};
-
-FUNC VOID PC_MuttonLurker_All_Info ()
-{
-	if(playerHasRequiredIngredients(Recipe_MuttonLurkerCookedAll))
-	{
-		
-	MuttonLurkerAmount = Npc_hasitems (hero, ItFo_muttonLurker);
-		
-		
-    if (MuttonLurkerAmount >0)
-    {
-			removeIngredientsFromPlayerInv(Recipe_MuttonLurkerCookedAll);
-			
-			CreateInvItems (hero, Recipe_MuttonLurkerCookedAll.recipeitem,MuttonLurkerAmount);
-			
-			var string WriteMuttonLurker;
-			
-			WriteMuttonLurker = ConcatStrings (InttoString (MuttonLurkerAmount)," sztuk miêsa topielca usma¿ono.");
-			PrintScreen (WriteMuttonLurker,-1,75,"FONT_OLD_10_WHITE.tga",3);
-	};
-	
-	}
-    else 
-    {
-    PrintS_Ext  ("Brakuje ci sk³adników!"              , COL_RED);
-	PrintScreen ("Surowe miêso topielca"                        ,2, 62, "FONT_OLD_10_WHITE.TGA", 2);
-    MuttonLurker = true;
-    };	
-   // AI_StopProcessInfos(self);
-};
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -60,7 +60,7 @@ INSTANCE DIA_Will_HELLO2 (C_INFO)
    condition    = DIA_Will_HELLO2_Condition;
    information  = DIA_Will_HELLO2_Info;
    permanent	= FALSE;
-   description	= "Chyba chcesz dostaæ w mordê.";
+   description	= "hs@FF0000 Chyba chcesz dostaæ w mordê.";
 };
 
 FUNC INT DIA_Will_HELLO2_Condition()

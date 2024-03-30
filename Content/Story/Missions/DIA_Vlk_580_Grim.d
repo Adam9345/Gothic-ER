@@ -107,7 +107,7 @@ INSTANCE DIA_Grim_ReadyToGo (C_INFO)
 	condition		= DIA_Grim_ReadyToGo_Condition;
 	information		= DIA_Grim_ReadyToGo_Info;
 	permanent		= 0;
-	description		= "Jestem gotowy. Chodümy po ten amulet.";
+	description		= "hs@FFA000 Jestem gotowy. Chodümy po ten amulet.";
 };
 
 FUNC INT DIA_Grim_ReadyToGo_Condition()

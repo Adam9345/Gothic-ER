@@ -35,7 +35,7 @@ INSTANCE DIA_Podejrzanys_HELLO1 (C_INFO)
    condition    = DIA_Podejrzanys_HELLO1_Condition;
    information  = DIA_Podejrzanys_HELLO1_Info;
    permanent	= FALSE;
-   description	= "Co to podziwiasz architekoniczny geniusz Starego Obozu?";
+   description	= "hs@FF0000 Co to podziwiasz architekoniczny geniusz Starego Obozu?";
 };
 
 FUNC INT DIA_Podejrzanys_HELLO1_Condition()

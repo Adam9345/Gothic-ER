@@ -57,7 +57,7 @@ FUNC VOID DIA_Uciekinier_HELLO_Info()
 	AI_Output (self, other ,"DIA_Uciekinier_HELLO_03_09"); //Co za ironia... Do Kolonii trafi³em w³aœnie za kradzie¿. Znów da³em siê z³apaæ.
 	Info_ClearChoices	(DIA_Uciekinier_HELLO);
 	Info_AddChoice		(DIA_Uciekinier_HELLO,"Ka¿dy zas³uguje na drug¹ szansê.",DIA_Uciekinier_HELLO_Litosc);
-	Info_AddChoice		(DIA_Uciekinier_HELLO,"Przekroczy³eœ pewne granice. To twój koniec.",DIA_Uciekinier_HELLO_Smierc);
+	Info_AddChoice		(DIA_Uciekinier_HELLO,"hs@FF0000 Przekroczy³eœ pewne granice. To twój koniec.",DIA_Uciekinier_HELLO_Smierc);
 };
 
 func void DIA_Uciekinier_HELLO_Litosc ()

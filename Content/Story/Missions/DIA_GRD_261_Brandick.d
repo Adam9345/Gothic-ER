@@ -584,7 +584,7 @@ INSTANCE DIA_Brandick_Silver_Nugg_Robb (C_INFO)
    condition    = DIA_Brandick_Silver_Nugg_Robb_Condition;
    information  = DIA_Brandick_Silver_Nugg_Robb_Info;
    permanent	= FALSE;
-   description	= "Ukradnij srebrny grom. (Wymagana zrêcznoœæ - 50)";
+   description	= "hs@FFA000 Ukradnij srebrny grom. (Wymagana zrêcznoœæ - 50)";
 };
 
 FUNC INT DIA_Brandick_Silver_Nugg_Robb_Condition()

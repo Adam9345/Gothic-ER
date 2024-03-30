@@ -151,7 +151,7 @@ INSTANCE DIA_Duch_TokasFire (C_INFO)
    condition    = DIA_Duch_TokasFire_Condition;
    information  = DIA_Duch_TokasFire_Info;
    permanent	= FALSE;
-   description	= "Tokas kaza³ mi ciê spaliæ.";
+   description	= "hs@FF0000 Tokas kaza³ mi ciê spaliæ.";
 };
 
 FUNC INT DIA_Duch_TokasFire_Condition()

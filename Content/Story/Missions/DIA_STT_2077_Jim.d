@@ -305,7 +305,7 @@ FUNC VOID DIA_Jim_OBIETNICA_Info()
 
     Info_ClearChoices		(DIA_Jim_OBIETNICA);
     Info_AddChoice		(DIA_Jim_OBIETNICA, "Co mam zrobiæ?", DIA_Jim_OBIETNICA_POMOGE);
-    Info_AddChoice		(DIA_Jim_OBIETNICA, "Nie zamierzam ci pomagaæ.", DIA_Jim_OBIETNICA_NIE_DAM);
+    Info_AddChoice		(DIA_Jim_OBIETNICA, "hs@FF0000 Nie zamierzam ci pomagaæ.", DIA_Jim_OBIETNICA_NIE_DAM);
 };
 
 FUNC VOID DIA_Jim_OBIETNICA_POMOGE()

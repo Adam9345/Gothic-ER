@@ -164,7 +164,7 @@ INSTANCE DIA_Melvin_BG_DRINK (C_INFO)
    condition    = DIA_Melvin_BG_DRINK_Condition;
    information  = DIA_Melvin_BG_DRINK_Info;
    permanent	= FALSE;
-   description	= "Dawne przyzwyczajenia ciê nie opuœci³y...";
+   description	= "hs@FF0000 Dawne przyzwyczajenia ciê nie opuœci³y...";
 };
 
 FUNC INT DIA_Melvin_BG_DRINK_Condition()

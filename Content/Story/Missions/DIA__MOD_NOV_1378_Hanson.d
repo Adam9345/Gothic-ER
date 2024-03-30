@@ -167,7 +167,7 @@ FUNC VOID DIA_Hanson_QUEST2_D_Info()
 	AI_Output (self, other ,"DIA_Hanson_QUEST2_D_03_13"); //Wiem, ¿e nie puœcisz mnie ¿ywcem, dlatego bêdê walczy³ jak wojownik.
 	Info_ClearChoices	(DIA_Hanson_QUEST2_D);
 	Info_AddChoice		(DIA_Hanson_QUEST2_D,"(Puœæ Hansona wolno)", DIA_Hanson_QUEST2_D_FREE);
-	Info_AddChoice		(DIA_Hanson_QUEST2_D,"(Zabij Hansona)",DIA_Hanson_QUEST2_D_KILL);
+	Info_AddChoice		(DIA_Hanson_QUEST2_D,"hs@FF0000 (Zabij Hansona)",DIA_Hanson_QUEST2_D_KILL);
 };
 
 FUNC VOID DIA_Hanson_QUEST2_D_FREE ()

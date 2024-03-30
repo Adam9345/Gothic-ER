@@ -341,7 +341,7 @@ instance  Org_826_Mordrag_Fight (C_INFO)
 	condition	= Org_826_Mordrag_Fight_Condition;
 	information	= Org_826_Mordrag_Fight_Info;
 	permanent	= 0;
-	description = "W tym Obozie nie ma miejsca dla ludzi takich jak ty!";
+	description = "hs@FFA000 W tym Obozie nie ma miejsca dla ludzi takich jak ty!";
 };                       
 
 FUNC int  Org_826_Mordrag_Fight_Condition()
@@ -358,11 +358,11 @@ FUNC VOID  Org_826_Mordrag_Fight_Info()
 	AI_Output (self, other,"Org_826_Mordrag_Fight_11_01"); //S³ucham?
 	
 	Info_ClearChoices(Org_826_Mordrag_Fight);
-	Info_AddChoice   (Org_826_Mordrag_Fight, "Wynoœ siê st¹d i nigdy nie wracaj!" 					,Info_Mordrag_Fight_GetAway);
+	Info_AddChoice   (Org_826_Mordrag_Fight, "hs@FF0000 Wynoœ siê st¹d i nigdy nie wracaj!" 					,Info_Mordrag_Fight_GetAway);
 	if (zlecil_Thorus == true)
 	{
-	Info_AddChoice	 (Org_826_Mordrag_Fight, "Nie tolerujemy tu ludzi, którzy okradaj¹ Magnatów!" 	,Info_Mordrag_Fight_OreBarons);
-	Info_AddChoice	 (Org_826_Mordrag_Fight, "Przysy³a mnie Thorus. Mam siê ciebie pozbyæ raz na zawsze." 		,Info_Mordrag_Fight_Thorus);
+	Info_AddChoice	 (Org_826_Mordrag_Fight, "hs@FF0000 Nie tolerujemy tu ludzi, którzy okradaj¹ Magnatów!" 	,Info_Mordrag_Fight_OreBarons);
+	Info_AddChoice	 (Org_826_Mordrag_Fight, "hs@FF0000 Przysy³a mnie Thorus. Mam siê ciebie pozbyæ raz na zawsze." 		,Info_Mordrag_Fight_Thorus);
 	};
 };
 

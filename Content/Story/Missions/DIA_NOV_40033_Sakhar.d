@@ -366,6 +366,7 @@ FUNC VOID DIA_Sakhar_ZD_NIGHT_Info()
     AI_Output (other, self ,"DIA_Sakhar_ZD_NIGHT_15_03"); //Bêdzie dobrze. A teraz prowadŸ, w stronê z której s³ysza³eœ te diabelskie odg³osy.
     AI_Output (self, other ,"DIA_Sakhar_ZD_NIGHT_03_04"); //Zgoda.
 		B_LogEntry               (ZachciankiDiliona,"Uda³em siê z Sakharem na zwiad przekonamy siê sk¹d bior¹ siê podejrzane wrzaski. Sakhar podejrzewa, ¿e chodzi o coœ demonicznego.");
+    self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Npc_ExchangeRoutine(NOV_40033_Sakhar,"GZD");
 	Wld_InsertNpc				(HarpieSak1,"FP_ROAM_BLOOD_SAK1");
 	Wld_InsertNpc				(HarpieSak2,"FP_ROAM_BLOOD_SAK2");
@@ -413,6 +414,7 @@ FUNC VOID DIA_Sakhar_ZD_HARPY_Info()
     AI_Output (other, self ,"DIA_Sakhar_ZD_HARPY_15_05"); //W takim razie zajrzyj nied³ugo do Fortuno.
     AI_Output (self, other ,"DIA_Sakhar_ZD_HARPY_03_06"); //Tak zrobiê.
 		B_LogEntry               (ZachciankiDiliona,"Tajemnicze krzyki pochodzi³y od stada harpii, które z jakiegoœ powodu siê tu pojawi³y. Zapewne nadlecia³y z gór. Teraz Sakhar powinien spaæ spokojnie I zachowywaæ siê jak dawniej. Fortuno znów bêdzie mia³ w nim sta³ego klienta.");
+    self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(NOV_40033_Sakhar,"Start");
 };
 

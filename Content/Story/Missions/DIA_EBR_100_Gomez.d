@@ -35,7 +35,7 @@ instance DIA_Gomez_Fault (C_INFO)
 	condition	= DIA_Gomez_Fault_Condition;
 	information	= DIA_Gomez_Fault_Info;
 	permanent	= 0;
-	description	= "Przychodzê zaoferowaæ swoje us³ugi.";
+	description	= "hs@FF0000 Przychodzê zaoferowaæ swoje us³ugi.";
 };                       
 
 FUNC int DIA_Gomez_Fault_Condition()
@@ -71,7 +71,7 @@ instance DIA_Gomez_Hello (C_INFO)
 	condition	= DIA_Gomez_Hello_Condition;
 	information	= DIA_Gomez_Hello_Info;
 	permanent	= 1;
-	description	= "Przychodzê zaoferowaæ swoje us³ugi.";
+	description	= "hs@FFA000 Przychodzê zaoferowaæ swoje us³ugi.";
 };                       
 
 FUNC int DIA_Gomez_Hello_Condition()
@@ -91,7 +91,7 @@ FUNC VOID DIA_Gomez_Hello_Info()
 	
 	Info_ClearChoices	(DIA_Gomez_Hello);	
 	//opcje podstawowe
-	Info_AddChoice		(DIA_Gomez_Hello,"Mam nadziejê, ¿e nie bêdê musia³ udowodniæ, ¿e potrafiê pos³ugiwaæ siê broni¹." 	,DIA_Gomez_Hello_KopfAb);
+	Info_AddChoice		(DIA_Gomez_Hello,"hs@FF0000 Mam nadziejê, ¿e nie bêdê musia³ udowodniæ, ¿e potrafiê pos³ugiwaæ siê broni¹." 	,DIA_Gomez_Hello_KopfAb);
 	Info_AddChoice		(DIA_Gomez_Hello,"Bo wiêkszoœæ z twoich ludzi to leniwe ba³wany."									,DIA_Gomez_Hello_Spinner);
 	Info_AddChoice		(DIA_Gomez_Hello,"Przemierzy³em spor¹ czêœæ Kolonii i mam kontakty we wszystkich obozach."			,DIA_Gomez_Hello_Kontakte);
 	//test zaufania
@@ -186,7 +186,7 @@ func void DIA_Gomez_Hello_Kontakte()
 	Info_AddChoice		(DIA_Gomez_Hello,"Z Cor Kalomem"	,DIA_Gomez_Hello_Kontakte_Kalom);
 	if (gomez_kontakte < 3)
 	{
-	Info_AddChoice		(DIA_Gomez_Hello,"Z Y'Berionem."	,DIA_Gomez_Hello_Kontakte_YBerion);
+	Info_AddChoice		(DIA_Gomez_Hello,"hs@FF0000 Z Y'Berionem."	,DIA_Gomez_Hello_Kontakte_YBerion);
 	};
 };
 

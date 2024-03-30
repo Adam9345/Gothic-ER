@@ -260,7 +260,7 @@ FUNC VOID DIA_Garp_AKCJA1_Info()
 {
     AI_Output (other, self ,"DIA_Garp_AKCJA1_15_01"); //Zaczynajmy.
     AI_Output (self, other ,"DIA_Garp_AKCJA1_03_02"); //Dobra. Poczekaj, a¿ zagadam Stra¿nika.
-    Npc_ExchangeRoutine (GRD_2035_Dracon,"wlam");
+    B_ExchangeRoutine (GRD_2035_Dracon, "wlam");
     Npc_ExchangeRoutine (Vlk_587_Garp,"wlam");
 	AI_StopProcessInfos	(self);
 };
@@ -468,7 +468,7 @@ INSTANCE DIA_Garp_PP_ORE (C_INFO)
    condition    = DIA_Garp_PP_ORE_Condition;
    information  = DIA_Garp_PP_ORE_Info;
    permanent	= FALSE;
-   description	= "Przysy³a mnie Pascal. Masz mu oddaæ zaleg³¹ rudê!";
+   description	= "hs@FF0000 Przysy³a mnie Pascal. Masz mu oddaæ zaleg³¹ rudê!";
 };
 
 FUNC INT DIA_Garp_PP_ORE_Condition()

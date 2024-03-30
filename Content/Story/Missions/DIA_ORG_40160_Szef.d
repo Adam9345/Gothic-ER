@@ -11,7 +11,7 @@ INSTANCE DIA_Szef_EXIT(C_INFO)
 	condition	= DIA_Szef_EXIT_Condition;
 	information	= DIA_Szef_EXIT_Info;
 	permanent	= TRUE;
-	description     = "KONIEC";
+	description     = "hs@FF0000 KONIEC";
 };
 
 FUNC INT DIA_Szef_EXIT_Condition()

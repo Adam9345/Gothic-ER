@@ -283,7 +283,7 @@ instance DIA_SLD_753_Baloro_SC_wills_wissen (C_INFO)
 	information	= DIA_SLD_753_Baloro_SC_wills_wissen_Info;
 	important	= 0;	
 	permanent	= 0;
-	description 	= "Widzê, ¿e bêdê ci musia³ daæ nauczkê.";
+	description 	= "hs@FF0000 Widzê, ¿e bêdê ci musia³ daæ nauczkê.";
 	
 };                       
 

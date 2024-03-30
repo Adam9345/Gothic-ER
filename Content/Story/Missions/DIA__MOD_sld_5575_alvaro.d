@@ -112,7 +112,7 @@ FUNC VOID DIA_alvaro_HELLO1_Info()
 
     Info_ClearChoices	(DIA_alvaro_HELLO1);
     Info_AddChoice		(DIA_alvaro_HELLO1, "Dobrze pójdê sobie.", DIA_alvaro_HELLO1_OK);
-	Info_AddChoice		(DIA_alvaro_HELLO1, "To ty tu jesteœ mistrzem irytowania zarozumialcu.", DIA_alvaro_IDIOT_NO);
+	Info_AddChoice		(DIA_alvaro_HELLO1, "hs@FF0000 To ty tu jesteœ mistrzem irytowania zarozumialcu.", DIA_alvaro_IDIOT_NO);
 };
 
 FUNC VOID DIA_alvaro_HELLO1_OK()

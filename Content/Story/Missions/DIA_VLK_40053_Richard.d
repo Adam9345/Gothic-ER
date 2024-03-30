@@ -86,7 +86,7 @@ FUNC VOID DIA_Richard_Why_Info()
     AI_Output (other, self ,"DIA_Richard_Why_15_01"); //Dlaczego jest z tob¹ tak Ÿle?
     AI_Output (self, other ,"DIA_Richard_Why_03_02"); //Zawsze lubi³em graæ w koœci z innymi kopaczami. Parê tygodni temu czu³em, ¿e mi siê poszczêœci.
     AI_Output (self, other ,"DIA_Richard_Why_03_03"); //Postawi³em wiêc prawie ca³¹ swoja rudê i przegra³em. Wkrótce moje zapasy ¿ywnoœci siê skoñczy³y a na now¹ nie by³o mnie staæ.
-    AI_Output (self, other ,"DIA_Richard_Why_03_04"); //Pewnego dnia znalaz³em jakiegoœ niebieskiego grzyba i od k¹d go zjad³em to wszystko siê zacze³o.
+    AI_Output (self, other ,"DIA_Richard_Why_03_04"); //Pewnego dnia znalaz³em jakiegoœ niebieskiego grzyba i odk¹d go zjad³em to wszystko siê zacze³o.
     AI_Output (self, other ,"DIA_Richard_Why_03_05"); //Grimes poradzi³ mi bym wys³a³ kogoœ by pomówi³ z jakimœ Magiem na temat lekarstwa.
 	
 	

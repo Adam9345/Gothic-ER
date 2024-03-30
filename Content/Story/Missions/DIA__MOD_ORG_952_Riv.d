@@ -244,7 +244,7 @@ FUNC VOID DIA_Riv_PICKPOCKET_Info()
 {
 	Info_ClearChoices	(DIA_Riv_PICKPOCKET);
 	Info_AddChoice		(DIA_Riv_PICKPOCKET, DIALOG_BACK 	                            ,DIA_Riv_PICKPOCKET_BACK);
-	Info_AddChoice		(DIA_Riv_PICKPOCKET, "(Kradzie¿ przepisu bêdzie doœæ trudna.)"	,DIA_Riv_PICKPOCKET_DoIt);
+	Info_AddChoice		(DIA_Riv_PICKPOCKET, "hs@FFA000 (Kradzie¿ przepisu bêdzie doœæ trudna.)"	,DIA_Riv_PICKPOCKET_DoIt);
 };
 
 FUNC VOID DIA_Riv_PICKPOCKET_DoIt()

@@ -91,11 +91,11 @@ FUNC VOID DIA_Grd_216_DustyZoll_Info()
 {
 	AI_Output			(self, other,"DIA_Grd_216_Dusty_Zoll_13_00"); //Stój! Dok¹d zabierasz naszego drogiego przyjaciela?
 	Info_ClearChoices	(DIA_Grd_216_DustyZoll);
-	Info_AddChoice		(DIA_Grd_216_DustyZoll,"Nie twój interes!" ,DIA_Grd_216_DustyZoll_PissOff);
-	Info_AddChoice		(DIA_Grd_216_DustyZoll,"Udajemy siê do Obozu Bractwa." ,DIA_Grd_216_DustyZoll_ToPSI);
+	Info_AddChoice		(DIA_Grd_216_DustyZoll,"hs@FF0000 Nie twój interes!" ,DIA_Grd_216_DustyZoll_PissOff);
+	Info_AddChoice		(DIA_Grd_216_DustyZoll,"hs@FF0000 Udajemy siê do Obozu Bractwa." ,DIA_Grd_216_DustyZoll_ToPSI);
 	if (Npc_HasItems (other,itminugget) >= 100)
 	{
-		Info_AddChoice	(DIA_Grd_216_DustyZoll,"Idziemy siê przespacerowaæ. A oto 100 bry³ek rudy." ,DIA_Grd_216_DustyZoll_LittleWalk);
+		Info_AddChoice	(DIA_Grd_216_DustyZoll,"hs@FFA000 Idziemy siê przespacerowaæ. A oto 100 bry³ek rudy." ,DIA_Grd_216_DustyZoll_LittleWalk);
 	};
 };
 

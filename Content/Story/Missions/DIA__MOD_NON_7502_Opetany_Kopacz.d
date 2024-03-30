@@ -59,7 +59,7 @@ INSTANCE DIA_Opetany_Kopacz_HELLO2 (C_INFO)
    condition    = DIA_Opetany_Kopacz_HELLO2_Condition;
    information  = DIA_Opetany_Kopacz_HELLO2_Info;
    permanent	= FALSE;
-   description	= "Koniec tego dobrego! Szkoda, ¿e Stra¿nicy nie zagonili was do kopalni.";
+   description	= "hs@FF0000 Koniec tego dobrego! Szkoda, ¿e Stra¿nicy nie zagonili was do kopalni.";
 };
 
 FUNC INT DIA_Opetany_Kopacz_HELLO2_Condition()

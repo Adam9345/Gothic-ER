@@ -423,8 +423,8 @@ func VOID DIA_Matt_Angry_Info()
 	AI_Output (self, other,"DIA_Matt_Angry_04_03"); //Oddaj mi czêœæ rudy. Wiem, ¿e j¹ masz. Sto bry³ek rudy za³atwi sprawê.
 	
 	Info_ClearChoices	(DIA_Matt_Angry);
-    Info_AddChoice		(DIA_Matt_Angry, "Masz, weŸ to.", DIA_Matt_Angry_Give);
-    Info_AddChoice		(DIA_Matt_Angry, "Zapomnij. Ruda nie nale¿a³a do mnie!", DIA_Matt_Angry_FuckYou);
+    Info_AddChoice		(DIA_Matt_Angry, "hs@FFA000 Masz, weŸ to.", DIA_Matt_Angry_Give);
+    Info_AddChoice		(DIA_Matt_Angry, "hs@FF0000 Zapomnij. Ruda nie nale¿a³a do mnie!", DIA_Matt_Angry_FuckYou);
 };
 
 func void DIA_Matt_Angry_Give ()

@@ -208,7 +208,7 @@ INSTANCE DIA_Bandyta_TalkWithQuentin (C_INFO)
    condition    = DIA_Bandyta_TalkWithQuentin_Condition;
    information  = DIA_Bandyta_TalkWithQuentin_Info;
    permanent	= FALSE;
-   description	= "Oszuka³eœ mnie!";
+   description	= "hs@FF0000 Oszuka³eœ mnie!";
 };
 
 FUNC INT DIA_Bandyta_TalkWithQuentin_Condition()

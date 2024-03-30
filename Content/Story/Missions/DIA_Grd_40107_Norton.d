@@ -69,7 +69,7 @@ FUNC VOID DIA_Norton_HELLO1_BeerYes()
     AI_UseItem (self, ItFoBeer);
     AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_04"); //Wiesz, piêkne jest ¿ycie Stra¿nika. Masz pod sob¹ wszystkie Cienie i tych z³amanych kopaczy.
     AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_05"); // Od tych drugich mo¿esz wyci¹gn¹æ jak¹œ rudê. A czasem pójdzie siê w konwoju do Starej Kopalni. 
-    AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_06"); //A najwiêksza frajda to walka z Bandytami! Pamiêtam jak paru rozp³ata³em a jednemu rozbi³em tak czerep, ¿e mózg by³o widaæ.
+    AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_06"); //Najwiêksz¹ frajdê stanowi³a walka z Bandytami! Pamiêtam jak kilku z nich rozp³ata³em. Heh, jednemu tak rozbi³em ³eb, ¿e a¿ mózg by³o widaæ... Uch, nieprzyjemny widok.
     AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_07"); //By³em zaskoczony, ¿e taka ³achudra w ogóle go ma!
     AI_Output (self, other ,"DIA_Norton_HELLO1_BeerYes_03_08"); //A teraz dawaj kolejne piwo.
     NortonBeer = TRUE;
@@ -184,7 +184,7 @@ FUNC VOID DIA_Norton_Beer_Othniella_Info()
     AI_UseItem (self, ItFoBeer);
     AI_Output (self, other ,"DIA_Norton_Beer_Othniella_03_03"); //Wiesz ta ca³a Othnielia... Haha zar¿n¹³em j¹ jak dorodne prosiê.
     AI_Output (self, other ,"DIA_Norton_Beer_Othniella_03_04"); //Wbi³em miecz i wypru³em kiszki.
-    AI_Output (other, self ,"DIA_Norton_Beer_Othniella_15_05"); //Czy to przez trafi³eœ pod Barierê panie gadu³o? Kim by³a ta Othnielia?
+    AI_Output (other, self ,"DIA_Norton_Beer_Othniella_15_05"); //A wiêc dlatego trafi³eœ pod Barierê? Kim by³a ta Othinelia?
     AI_Output (self, other ,"DIA_Norton_Beer_Othniella_03_06"); //Niee trafi³eeem tu z zupe³nie innego powoodu! 
     AI_Output (self, other ,"DIA_Norton_Beer_Othniella_03_07"); //A co do Othnielii?! To nie twoja sprawawa! I tak ju¿ zaza du¿o ci powiedzia³em!
     AI_Output (other, self ,"DIA_Norton_Beer_Othniella_15_08"); //Chyba ju¿ nic wiêcej z ciebie nie wyci¹gnê. Ale ta Othnielia... To imiê coœ mi mówi...
@@ -330,9 +330,9 @@ FUNC INT DIA_Norton_HI_KILLER_Condition()
 FUNC VOID DIA_Norton_HI_KILLER_Info()
 {
     AI_Output (other, self ,"DIA_Norton_HI_KILLER_15_01"); //Kim jesteœ?
-    AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_02"); //A co œlepy jesteœ? Kobiet¹ Gomeza. Dajcie mi si³ê!
+    AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_02"); //A co nie widaæ? Kobiet¹ Gomeza. Dureñ.
     AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_03"); //Gadasz ze Stra¿nikiem I to œwietnym wiêc nie marnuj mojego czasu na takie pytania.
-    AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_04"); //Nie wiêm sk¹d siê przypl¹ta³eœ ale nabierz trochê og³ady œwierzaku.
+    AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_04"); //Nie wiem sk¹d przyszed³eœ, ale dobrze ci radzê: nabierz trochê og³ady œwie¿aku.
     AI_Output (other, self ,"DIA_Norton_HI_KILLER_15_05"); //Co robi³eœ w czasach przed barier¹?
     AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_06"); //Nic ci do tego. I nie mówiê co zrobi³em przed laty. A ju¿ na pewno nie tobie.
     AI_Output (self, other ,"DIA_Norton_HI_KILLER_03_07"); //Przestañ zawracaæ mi dupê. Najlepiej zabierz st¹d gnaty I przestañ mnie denerwowaæ.

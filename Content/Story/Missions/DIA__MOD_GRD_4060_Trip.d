@@ -202,8 +202,8 @@ FUNC VOID DIA_Trip_WARN_BANDIT_Info()
 	GRD_4060_Trip.guild = GIL_NONE;
 	Npc_SetTrueGuild (GRD_4060_Trip,GIL_NONE);
     Info_ClearChoices	(DIA_Trip_WARN_BANDIT);
-    Info_AddChoice		(DIA_Trip_WARN_BANDIT, "I tak nic z tym nie zrobisz.", DIA_Trip_WARN_BANDIT_PRZYZNAJ_SIE);
-    Info_AddChoice		(DIA_Trip_WARN_BANDIT, "Pos³uchaj, nie jestem Bandyt¹. ", DIA_Trip_WARN_BANDIT_WYMOWKI);
+    Info_AddChoice		(DIA_Trip_WARN_BANDIT, "hs@FF0000 I tak nic z tym nie zrobisz.", DIA_Trip_WARN_BANDIT_PRZYZNAJ_SIE);
+    Info_AddChoice		(DIA_Trip_WARN_BANDIT, "hs@FF0000 Pos³uchaj, nie jestem Bandyt¹. ", DIA_Trip_WARN_BANDIT_WYMOWKI);
 };
 
 FUNC VOID DIA_Trip_WARN_BANDIT_PRZYZNAJ_SIE()

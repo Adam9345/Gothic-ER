@@ -223,7 +223,7 @@ INSTANCE DIA_Mazin_ALCO (C_INFO)
    condition    = DIA_Mazin_ALCO_Condition;
    information  = DIA_Mazin_ALCO_Info;
    permanent	= FALSE;
-   description	= "Sk¹d Gor Na Lin bierze alkohol?";
+   description	= "hs@FFA000 Sk¹d Gor Na Lin bierze alkohol?";
 };
 
 FUNC INT DIA_Mazin_ALCO_Condition()

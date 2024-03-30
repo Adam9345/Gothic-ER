@@ -435,5 +435,7 @@ const int INVCAM_Z_RING_STANDARD 		= 45;
 
 const int NPC_TALENT_MINING = 100;
 
+const int quantity = 1;
+
 
 

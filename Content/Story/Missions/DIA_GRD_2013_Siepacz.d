@@ -69,7 +69,7 @@ INSTANCE DIA_Siepacz_WALKA (C_INFO)
    condition    = DIA_Siepacz_WALKA_Condition;
    information  = DIA_Siepacz_WALKA_Info;
    permanent	= FALSE;
-   description	= "Szykuj siê na œmieræ!";
+   description	= "hs@FF0000 Szykuj siê na œmieræ!";
 };
 
 FUNC INT DIA_Siepacz_WALKA_Condition()

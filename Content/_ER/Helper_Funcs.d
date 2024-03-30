@@ -54,7 +54,7 @@ func int playerHasRequiredIngredients(var int recipe) {
 
     //while(i < rec.totalrequired);
     repeat(i, rec.totalrequired);
-        if (Npc_HasItems(hero, mem_readintarray(_@(rec.requireditem), i)) >= mem_readintarray(_@(rec.requireditemamount), i)) {
+        if (Npc_HasItems(hero, mem_readintarray(_@(rec.requireditem), i)) >= mem_readintarray(_@(rec.requireditemamount), i) * quantity) {
             if (i == rec.totalrequired - 1) {
                 return true;
             };
@@ -76,7 +76,7 @@ func void removeIngredientsFromPlayerInv(var int recipe) {
 
     //while(i < rec.totalrequired);
     repeat(i, rec.totalrequired);
-        Npc_RemoveInvItems(hero, mem_readintarray(_@(rec.requireditem), i), mem_readintarray(_@(rec.requireditemamount), i));
+        Npc_RemoveInvItems(hero, mem_readintarray(_@(rec.requireditem), i), mem_readintarray(_@(rec.requireditemamount), i) * quantity);
 
         //i += 1;
     end;

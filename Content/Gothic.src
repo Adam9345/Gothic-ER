@@ -255,6 +255,13 @@ AI\ORC\TESTORCSLAVE.D
 _ER\NEWPICKPOCKETSYSTEM\NPPS_CONSTANTS.D
 _ER\NEWPICKPOCKETSYSTEM\NPPS_FUNCS.D
 
+_ER\EnhancedTrading.d
+_ER\EnhancedTradingConfig.d
+_ER\GFA\GFA_G1.src
+_ER\EnhancedPickLocking.d
+_ER\EnhancedPickLockingConfig.d
+_ER\EnhancedInfoManager\EnhancedinfoManager.src
+
 STORY\NPC\*.D
 STORY\NPC\MOD_NPCS\*.D
 
@@ -265,11 +272,6 @@ _ER\Regeneracja.D
 _ER\SHA_GWM.D
 _ER\FastTravelMap_HK.d
 _ER\torchHotKey.d
-_ER\EnhancedTrading.d
-_ER\EnhancedTradingConfig.d
-_ER\GFA\GFA_G1.src
-_ER\EnhancedPickLocking.d
-_ER\EnhancedPickLockingConfig.d
 
 STORY\STARTUP.D
 

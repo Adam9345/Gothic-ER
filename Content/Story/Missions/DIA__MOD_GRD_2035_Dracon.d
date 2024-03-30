@@ -81,9 +81,9 @@ FUNC INT Info_Grd_2035_FirstWarn_Condition()
 {
 	if ((hero.aivar[AIV_GUARDPASSAGE_STATUS]== AIV_GPS_BEGIN)
 	&&  (self.aivar[AIV_PASSGATE]			== FALSE		) 
-	&&	(Npc_GetAttitude(self,hero)			!= ATT_FRIENDLY	) 
-	&&	(Hlp_StrCmp(Npc_GetNearestWP(self), "PATROL1")		))
-	&&  (Npc_GetTrueGuild(hero) != GIL_GRD) || (Npc_GetTrueGuild(hero) == GIL_NONE)
+	//&&	(Npc_GetAttitude(self,hero)			!= ATT_FRIENDLY	) 
+	&&	(Hlp_StrCmp(Npc_GetNearestWP(self), Grd_Dracon_CHECKPOINT)		))
+	&&  (Npc_GetTrueGuild(hero) != GIL_GRD)
 	{
 		return TRUE;
 	};
@@ -121,10 +121,10 @@ FUNC INT Info_Grd_2035_LastWarn_Condition()
 {
 	if ((hero.aivar[AIV_GUARDPASSAGE_STATUS]		== AIV_GPS_FIRSTWARN				)
 	&&  (self.aivar[AIV_PASSGATE]					== FALSE		) 
-	&&	(Npc_GetAttitude(self,hero)					!= ATT_FRIENDLY	) 
+	//&&	(Npc_GetAttitude(self,hero)					!= ATT_FRIENDLY	) 
 	&&  (Npc_GetDistToWP(hero,Grd_Dracon_CHECKPOINT)	< (hero.aivar[AIV_LASTDISTTOWP]-100))
-	&&	(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)										)) 
-	&&  (Npc_GetTrueGuild(hero) != GIL_GRD) || (Npc_GetTrueGuild(hero) == GIL_NONE)
+	&&	(Hlp_StrCmp(Npc_GetNearestWP(self),Grd_Dracon_CHECKPOINT)										)) 
+	&&  (Npc_GetTrueGuild(hero) != GIL_GRD)
 	{
 		return TRUE;
 	};
@@ -157,9 +157,9 @@ FUNC INT Info_Grd_2035_Attack_Condition()
 {
 	if ((hero.aivar[AIV_GUARDPASSAGE_STATUS]		== AIV_GPS_LASTWARN					)
 	&&  (self.aivar[AIV_PASSGATE]					== FALSE		) 
-	&&	(Npc_GetAttitude(self,hero)					!= ATT_FRIENDLY	) 
+	//&&	(Npc_GetAttitude(self,hero)					!= ATT_FRIENDLY	) 
 	&&  (Npc_GetDistToWP(hero,Grd_Dracon_CHECKPOINT)	< (hero.aivar[AIV_LASTDISTTOWP]-100))
-	&&	(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)										)) 
+	&&	(Hlp_StrCmp(Npc_GetNearestWP(self),Grd_Dracon_CHECKPOINT)										)) 
 	&&  (Npc_GetTrueGuild(hero) != GIL_GRD) //|| (Npc_GetTrueGuild(hero) == GIL_NONE)
 	{
 		return 			TRUE;

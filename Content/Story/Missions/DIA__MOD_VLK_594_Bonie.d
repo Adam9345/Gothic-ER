@@ -55,8 +55,8 @@ FUNC VOID DIA_Bonie_WARN_Info()
 
     Info_ClearChoices		(DIA_Bonie_WARN);
     Info_AddChoice		(DIA_Bonie_WARN, "Nie masz prawa pobieraæ op³at!", DIA_Bonie_WARN_LAW);
-    Info_AddChoice		(DIA_Bonie_WARN, "Zaraz usunê ciê z drogi!", DIA_Bonie_WARN_FIGHT);
-    Info_AddChoice		(DIA_Bonie_WARN, "Oto 20 bry³ek rudy.", DIA_Bonie_WARN_PAY);
+    Info_AddChoice		(DIA_Bonie_WARN, "hs@FF0000 Zaraz usunê ciê z drogi!", DIA_Bonie_WARN_FIGHT);
+    Info_AddChoice		(DIA_Bonie_WARN, "hs@FFA000 Oto 20 bry³ek rudy.", DIA_Bonie_WARN_PAY);
 };
 
 FUNC VOID DIA_Bonie_WARN_LAW()

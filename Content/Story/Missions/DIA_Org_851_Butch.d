@@ -153,7 +153,7 @@ FUNC VOID DIA_Butch_CzasZaplaty_Info()
     AI_Output (self, other ,"DIA_Butch_CzasZaplaty_03_02"); //Doprawdy? S¹dzisz, ¿e siê ciebie bojê?
 
     Info_ClearChoices		(DIA_Butch_CzasZaplaty);
-    Info_AddChoice		(DIA_Butch_CzasZaplaty, "Nie mam czasu na zabawy. Dawaj rudê, bo po¿a³ujesz.", DIA_Butch_CzasZaplaty_DAJESZ);
+    Info_AddChoice		(DIA_Butch_CzasZaplaty, "hs@FF0000 Nie mam czasu na zabawy. Dawaj rudê, bo po¿a³ujesz.", DIA_Butch_CzasZaplaty_DAJESZ);
     Info_AddChoice		(DIA_Butch_CzasZaplaty, "Czego chcesz za rudê? Dogadajmy siê. Byle szybko.", DIA_Butch_CzasZaplaty_DOGADAJMY_SIE);
 };
 

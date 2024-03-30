@@ -135,7 +135,7 @@ INSTANCE DIA_GorNaTokas_Sword (C_INFO)
    condition    = DIA_GorNaTokas_Sword_Condition;
    information  = DIA_GorNaTokas_Sword_Info;
    permanent	= FALSE;
-   description	= "Oddaj mi swój miecz!";
+   description	= "hs@FF0000 Oddaj mi swój miecz!";
 };
 
 FUNC INT DIA_GorNaTokas_Sword_Condition()

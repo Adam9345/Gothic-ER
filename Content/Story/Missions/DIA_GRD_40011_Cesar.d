@@ -370,7 +370,7 @@ INSTANCE DIA_GRD_40011_Cesar_Attack (C_INFO)
 	condition	= DIA_GRD_40011_Cesar_Attack_Condition;
 	information	= DIA_GRD_40011_Cesar_Attack_Info;
 	permanent	= 0;
-	description = "Tak czy siak twoi ludzie pozostawili nas sam na sam.";
+	description = "hs@FF0000 Tak czy siak twoi ludzie pozostawili nas sam na sam.";
 };                       
 
 FUNC INT DIA_GRD_40011_Cesar_Attack_Condition()

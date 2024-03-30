@@ -60,7 +60,7 @@ INSTANCE DIA_Oczekujacy_HELLO2 (C_INFO)
    condition    = DIA_Oczekujacy_HELLO2_Condition;
    information  = DIA_Oczekujacy_HELLO2_Info;
    permanent	= FALSE;
-   description	= "Trochê kultury by ci nie zaszkodzi³o, œmieciu.";
+   description	= "hs@FF0000 Trochê kultury by ci nie zaszkodzi³o, œmieciu.";
 };
 
 FUNC INT DIA_Oczekujacy_HELLO2_Condition()
@@ -92,7 +92,7 @@ INSTANCE DIA_Oczekujacy_Attack (C_INFO)
    condition    = DIA_Oczekujacy_Attack_Condition;
    information  = DIA_Oczekujacy_Attack_Info;
    permanent	= FALSE;
-   description	= "(krzywo spójrz i wywo³aj bójkê)";
+   description	= "hs@FF0000 (krzywo spójrz i wywo³aj bójkê)";
 };
 
 FUNC INT DIA_Oczekujacy_Attack_Condition()

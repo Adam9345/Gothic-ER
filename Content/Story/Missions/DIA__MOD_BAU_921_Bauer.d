@@ -9,7 +9,7 @@ INSTANCE DIA_BauerTraitor_Kill (C_INFO)
 	condition	= DIA_BauerTraitor_Kill_Condition;
 	information	= DIA_BauerTraitor_Kill_Info;
 	permanent	= 0;
-	description	= "To twój koniec.";
+	description	= "hs@FF0000 To twój koniec.";
 };                       
 
 FUNC INT DIA_BauerTraitor_Kill_Condition()

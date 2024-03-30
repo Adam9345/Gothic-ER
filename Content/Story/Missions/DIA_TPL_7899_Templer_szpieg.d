@@ -66,7 +66,7 @@ FUNC VOID DIA_Templer_HELLO1_Info()
     AI_Output (self, other ,"DIA_Templer_HELLO1_03_15"); //Jeden z nich powiedzia³, ¿e je¿eli jestem szpiegiem z bagna, to mnie zabij¹.
 
     Info_ClearChoices	(DIA_Templer_HELLO1);
-    Info_AddChoice		(DIA_Templer_HELLO1, "Jeœli nie oni, to ja!", DIA_Templer_HELLO1_ZGINIESZ);
+    Info_AddChoice		(DIA_Templer_HELLO1, "hs@FF0000 Jeœli nie oni, to ja!", DIA_Templer_HELLO1_ZGINIESZ);
     Info_AddChoice		(DIA_Templer_HELLO1, "Dobra. Pomogê ci.", DIA_Templer_HELLO1_HELP);
 };
 
