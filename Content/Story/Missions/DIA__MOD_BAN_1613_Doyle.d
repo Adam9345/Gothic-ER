@@ -779,6 +779,8 @@ FUNC VOID DIA_Raeuber_SPADAMY_Info()
     B_LogEntry(CH1_Rozpierdol1,"Mam zabraæ wszystkie ³upy i dokumenty po czym wróciæ do Obozu i donieœæ o wszystkim Quentinowi.");
 
     B_GiveXP (XP_AtakNaplacWymian);
+
+    self.aivar[AIV_PARTYMEMBER] = FALSE;
 	
 	Npc_ExchangeRoutine (self,"start");
     AI_StopProcessInfos	(self);
