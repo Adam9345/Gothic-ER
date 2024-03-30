@@ -201,10 +201,10 @@ INSTANCE HUN_ARMOR_L(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	=	8;
-	protection [PROT_BLUNT] = 	8;
-	protection [PROT_POINT] = 	8;
-	protection [PROT_FIRE] 	= 	2;
+	protection [PROT_EDGE] 	=	10;
+	protection [PROT_BLUNT] = 	10;
+	protection [PROT_POINT] = 	10;
+	protection [PROT_FIRE] 	= 	5;
 	protection [PROT_MAGIC] = 	0;
 
 	value 					=	300;

@@ -305,7 +305,7 @@ FUNC INT DIA_Alex_GiveSArmor_Condition()
 
 FUNC VOID DIA_Alex_GiveSArmor_Info()
 {
-    
+    var int AFIP_ShowItem;
     AI_Output (other, self ,"DIA_Alex_GiveSArmor_15_01"); //Daj mi ubranie myœliwego.
     if (Npc_HasItems (hero, ItMiNugget)>=300)
     {
