@@ -45,8 +45,8 @@ daily_routine = Rtn_start_2035;
 };
 FUNC VOID Rtn_start_2035 ()
 {
-TA_Guard (06,12,18,00,"PATROL1");
-TA_Guard (18,00,06,12,"PATROL1");
+TA_GuardPassage (06,12,18,00,"PATROL1");
+TA_GuardPassage (18,00,06,12,"PATROL1");
 };
 FUNC VOID Rtn_wlam_2035 ()
 {
