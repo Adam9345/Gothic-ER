@@ -717,7 +717,7 @@ instance Helmet2(C_Item)
 instance ITHE_Helmet2(C_Item)
 {
         name = "He³m myœliwych";
-        mainflag = ITEM_KAT_NF; 
+        mainflag = ITEM_KAT_ARMOR; 
         flags = 0;
         protection[PROT_EDGE]  = 5;
         protection[PROT_BLUNT] = 5;
