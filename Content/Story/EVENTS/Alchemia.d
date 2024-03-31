@@ -51,6 +51,7 @@ FUNC VOID DIA_PC_Hero_Brewing_EXIT_Info()
 	BrewingPoison = FALSE;
 	PrepareTobacco = FALSE;
 	PLAYER_MOBSI_PRODUCTION	= MOBSI_NONE;
+	quantity = 1;
 	AI_StopProcessInfos	(self);
 };
 
@@ -142,8 +143,8 @@ func void DIA_PC_Hero_LifePotions_FullRegenerate_Info ()
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_04);
 		Print ("Uwarzy³eœ miksturê");
-		CreateInvItem (hero, Recipe_Potion_Health_04.recipeitem);
-		B_giveXP (20);
+		CreateInvItems (hero, Recipe_Potion_Health_04.recipeitem, quantity);
+		B_giveXP (20 * quantity);
     }
     else
     {
@@ -176,8 +177,8 @@ func void DIA_PC_Hero_LifePotions_Eliksir_Info ()
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_03);
 		Print ("Uwarzy³eœ miksturê");
-		CreateInvItem (hero, Recipe_Potion_Health_03.recipeitem);
-		B_giveXP (15);
+		CreateInvItems (hero, Recipe_Potion_Health_03.recipeitem, quantity);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -209,9 +210,9 @@ func void DIA_PC_Hero_LifePotions_Wyciag_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Health_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_02);
-		CreateInvItem (hero, Recipe_Potion_Health_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Health_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -243,9 +244,9 @@ func void DIA_PC_Hero_LifePotions_EsencjaV2_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Health_01v2))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_01v2);
-		CreateInvItem (hero, Recipe_Potion_Health_01v2.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Health_01v2.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -277,9 +278,9 @@ func void DIA_PC_Hero_LifePotions_Esencja_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Health_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_01);
-		CreateInvItem (hero, Recipe_Potion_Health_01.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Health_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -348,9 +349,9 @@ func void DIA_PC_Hero_ManaPotions_FullRegenerate_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_04))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_04);
-		CreateInvItem (hero, Recipe_Potion_Mana_04.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_04.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (20);
+		B_giveXP (20 * quantity);
     }
     else
     {
@@ -382,9 +383,9 @@ func void DIA_PC_Hero_ManaPotions_EliksirM_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_03))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_03);
-		CreateInvItem (hero, Recipe_Potion_Mana_03.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_03.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -416,9 +417,9 @@ func void DIA_PC_Hero_ManaPotions_WyciagM_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_02);
-		CreateInvItem (hero, Recipe_Potion_Mana_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -450,9 +451,9 @@ func void DIA_PC_Hero_ManaPotions_EsencjaM2_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_01v2))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_01v2);
-		CreateInvItem (hero, Recipe_Potion_Mana_01v2.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_01v2.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -484,9 +485,9 @@ func void DIA_PC_Hero_ManaPotions_EsencjaM_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_01);
-		CreateInvItem (hero, Recipe_Potion_Mana_01.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (5);
+		B_giveXP (5 * quantity);
     }
     else
     {
@@ -558,9 +559,9 @@ func void DIA_PC_Hero_SpecialPotions_MAGE_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Master_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Master_02);
-		CreateInvItem (hero, Recipe_Potion_Master_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Master_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -593,9 +594,9 @@ func void DIA_PC_Hero_SpecialPotions_KING_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Master_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Master_01);
-		CreateInvItem (hero, Recipe_Potion_Master_01.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Master_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -628,9 +629,9 @@ func void DIA_PC_Hero_SpecialPotions_HPT1_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_HealthTime_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_HealthTime_01);
-		CreateInvItem (hero, Recipe_Potion_HealthTime_01.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_HealthTime_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -663,9 +664,9 @@ func void DIA_PC_Hero_SpecialPotions_MAST1_Info ()
 	if (playerHasRequiredIngredients(Recipe_PotionTime_Master_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_PotionTime_Master_01);
-		CreateInvItem (hero, Recipe_PotionTime_Master_01.recipeitem);
+		CreateInvItems (hero, Recipe_PotionTime_Master_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -698,9 +699,9 @@ func void DIA_PC_Hero_SpecialPotions_MANT1_Info ()
 	if (playerHasRequiredIngredients(Recipe_PotionTime_Mana_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_PotionTime_Mana_01);
-		CreateInvItem (hero, Recipe_PotionTime_Mana_01.recipeitem);
+		CreateInvItems (hero, Recipe_PotionTime_Mana_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -733,9 +734,9 @@ func void DIA_PC_Hero_SpecialPotions_DEXT1_Info ()
 	if (playerHasRequiredIngredients(Recipe_PotionTime_Dex_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_PotionTime_Dex_01);
-		CreateInvItem (hero, Recipe_PotionTime_Dex_01.recipeitem);
+		CreateInvItems (hero, Recipe_PotionTime_Dex_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -768,9 +769,9 @@ func void DIA_PC_Hero_SpecialPotions_STRT1_Info ()
 	if (playerHasRequiredIngredients(Recipe_PotionTime_Strength_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_PotionTime_Strength_01);
-		CreateInvItem (hero, Recipe_PotionTime_Strength_01.recipeitem);
+		CreateInvItems (hero, Recipe_PotionTime_Strength_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -803,9 +804,9 @@ func void DIA_PC_Hero_SpecialPotions_PLAGUE_Info ()
 	if (playerHasRequiredIngredients(Recipe_ItMis_Drug))
     {
 		removeIngredientsFromPlayerInv(Recipe_ItMis_Drug);
-		CreateInvItem (hero, Recipe_ItMis_Drug.recipeitem);
+		CreateInvItems (hero, Recipe_ItMis_Drug.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (150);
+		B_giveXP (150 * quantity);
     }
     else
     {
@@ -957,9 +958,9 @@ func void DIA_PC_Hero_SpecialPotions_EN_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Mana_Perma_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Mana_Perma_02);
-		CreateInvItem (hero, Recipe_Potion_Mana_Perma_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Mana_Perma_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -992,9 +993,9 @@ func void DIA_PC_Hero_SpecialPotions_HP_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Health_Perma_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Health_Perma_02);
-		CreateInvItem (hero, Recipe_Potion_Health_Perma_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Health_Perma_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -1027,9 +1028,9 @@ func void DIA_PC_Hero_SpecialPotions_DEX_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Dex_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Dex_02);
-		CreateInvItem (hero, Recipe_Potion_Dex_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Dex_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -1062,9 +1063,9 @@ func void DIA_PC_Hero_SpecialPotions_STR_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Strength_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Strength_02);
-		CreateInvItem (hero, Recipe_Potion_Strength_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Strength_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (50);
+		B_giveXP (50 * quantity);
     }
     else
     {
@@ -1097,10 +1098,10 @@ func void DIA_PC_Hero_SpecialPotions_Q3_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Haste_03))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Haste_03);
-		CreateInvItem (hero, Recipe_Potion_Haste_03.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Haste_03.recipeitem, quantity);
 		//Npc_RemoveInvItems (hero, ItMi_Alchemy_Syrianoil_01, 1);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -1133,9 +1134,9 @@ func void DIA_PC_Hero_SpecialPotions_Q2_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Haste_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Haste_02);
-		CreateInvItem (hero, Recipe_Potion_Haste_02.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Haste_02.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -1168,9 +1169,9 @@ func void DIA_PC_Hero_SpecialPotions_Q1_Info ()
 	if (playerHasRequiredIngredients(Recipe_Potion_Haste_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Potion_Haste_01);
-		CreateInvItem (hero, Recipe_Potion_Haste_01.recipeitem);
+		CreateInvItems (hero, Recipe_Potion_Haste_01.recipeitem, quantity);
 		Print ("Uwarzy³eœ miksturê");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -1240,9 +1241,9 @@ func void DIA_PC_Hero_Alcohol_Sztylet_Info ()
 	if (playerHasRequiredIngredients(Recipe_CiosSztyletu))
     {
 		removeIngredientsFromPlayerInv(Recipe_CiosSztyletu);
-		CreateInvItem (hero, Recipe_CiosSztyletu.recipeitem);
+		CreateInvItems (hero, Recipe_CiosSztyletu.recipeitem, quantity);
 		Print ("Przygotowa³eœ Cios sztyletu!");
-		B_giveXP (40);
+		B_giveXP (40 * quantity);
     }
     else
     {
@@ -1274,9 +1275,9 @@ func void DIA_PC_Hero_Alcohol_Bimber_Info ()
 	if (playerHasRequiredIngredients(Recipe_Bimber))
     {
 		removeIngredientsFromPlayerInv(Recipe_Bimber);
-		CreateInvItem (hero, Recipe_Bimber.recipeitem);
+		CreateInvItems (hero, Recipe_Bimber.recipeitem, quantity);
 		Print ("Przygotowa³eœ bimber!");
-		B_giveXP (25);
+		B_giveXP (25 * quantity);
     }
     else
     {
@@ -1309,9 +1310,9 @@ func void DIA_PC_Hero_Alcohol_HoneyBeer_Info ()
 	if (playerHasRequiredIngredients(Recipe_HoneyBeer))
     {
 		removeIngredientsFromPlayerInv(Recipe_HoneyBeer);
-		CreateInvItem (hero, Recipe_HoneyBeer.recipeitem);
+		CreateInvItems (hero, Recipe_HoneyBeer.recipeitem, quantity);
 		Print ("Przygotowa³eœ piwo miodowe!");
-		B_giveXP (25);
+		B_giveXP (25 * quantity);
     }
     else
     {
@@ -1344,9 +1345,9 @@ func void DIA_PC_Hero_Alcohol_Honey1_Info ()
 	if (playerHasRequiredIngredients(Recipe_HoneyAlco))
     {
 		removeIngredientsFromPlayerInv(Recipe_HoneyAlco);
-		CreateInvItem (hero, Recipe_HoneyAlco.recipeitem);
+		CreateInvItems (hero, Recipe_HoneyAlco.recipeitem, quantity);
 		Print ("Przygotowa³eœ miód pitny!");
-		B_giveXP (25);
+		B_giveXP (25 * quantity);
     }
     else
     {
@@ -1379,9 +1380,9 @@ func void DIA_PC_Hero_Alcohol_Absynt_Info ()
 	if (playerHasRequiredIngredients(Recipe_Absynt))
     {
 		removeIngredientsFromPlayerInv(Recipe_Absynt);
-		CreateInvItem (hero, Recipe_Absynt.recipeitem);
+		CreateInvItems (hero, Recipe_Absynt.recipeitem, quantity);
 		Print ("Przygotowa³eœ absynt!");
-		B_giveXP (25);
+		B_giveXP (25 * quantity);
     }
     else
     {
@@ -1414,9 +1415,9 @@ func void DIA_PC_Hero_Alcohol_Nalewkaplants_Info ()
 	if (playerHasRequiredIngredients(Recipe_NalewkaPlants))
     {
 		removeIngredientsFromPlayerInv(Recipe_NalewkaPlants);
-		CreateInvItem (hero, Recipe_NalewkaPlants.recipeitem);
+		CreateInvItems (hero, Recipe_NalewkaPlants.recipeitem, quantity);
 		Print ("Przygotowa³eœ nalewkê!");
-		B_giveXP (25);
+		B_giveXP (25 * quantity);
     }
     else
     {
@@ -1449,9 +1450,9 @@ func void DIA_PC_Hero_Alcohol_Nalewkaberrys_Info ()
 	if (playerHasRequiredIngredients(Recipe_NalewkaBerrys))
     {
 		removeIngredientsFromPlayerInv(Recipe_NalewkaBerrys);
-		CreateInvItem (hero, Recipe_NalewkaBerrys.recipeitem);
+		CreateInvItems (hero, Recipe_NalewkaBerrys.recipeitem, quantity);
 		Print ("Przygotowa³eœ nalewkê!");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -1484,9 +1485,9 @@ func void DIA_PC_Hero_Alcohol_NalewkaApple_Info ()
 	if (playerHasRequiredIngredients(Recipe_NalewkaApple))
     {
 		removeIngredientsFromPlayerInv(Recipe_NalewkaApple);
-		CreateInvItem (hero, Recipe_NalewkaApple.recipeitem);
+		CreateInvItems (hero, Recipe_NalewkaApple.recipeitem, quantity);
 		Print ("Przygotowa³eœ nalewkê!");
-		B_giveXP (10);
+		B_giveXP (10 * quantity);
     }
     else
     {
@@ -1518,9 +1519,9 @@ func void DIA_PC_Hero_Alcohol_VinoAlco_Info ()
 	if (playerHasRequiredIngredients(Recipe_Wine))
     {
 		removeIngredientsFromPlayerInv(Recipe_Wine);
-		CreateInvItem (hero, Recipe_Wine.recipeitem);
+		CreateInvItems (hero, Recipe_Wine.recipeitem, quantity);
 		Print ("Przygotowa³eœ wino!");
-		B_giveXP (30);
+		B_giveXP (30 * quantity);
     }
     else
     {
@@ -1552,9 +1553,9 @@ func void DIA_PC_Hero_Alcohol_RiceAlco_Info ()
 	if (playerHasRequiredIngredients(Recipe_Booze))
     {
 		removeIngredientsFromPlayerInv(Recipe_Booze);
-		CreateInvItem (hero, Recipe_Booze.recipeitem);
+		CreateInvItems (hero, Recipe_Booze.recipeitem, quantity);
 		Print ("Przygotowa³eœ ry¿ówkê!");
-		B_giveXP (30);
+		B_giveXP (30 * quantity);
     }
     else
     {
@@ -1623,9 +1624,9 @@ func void DIA_PC_Hero_Trucizny_Large_Info ()
 	if (playerHasRequiredIngredients(Recipe_Alchemy_trucizna_03))
     {
 		removeIngredientsFromPlayerInv(Recipe_Alchemy_trucizna_03);
-		CreateInvItem (hero, Recipe_Alchemy_trucizna_03.recipeitem);
+		CreateInvItems (hero, Recipe_Alchemy_trucizna_03.recipeitem, quantity);
 		Print ("Przygotowa³eœ truciznê");
-		B_giveXP (30);
+		B_giveXP (30 * quantity);
     }
     else
     {
@@ -1657,9 +1658,9 @@ func void DIA_PC_Hero_Trucizny_Medium_Info ()
 	if (playerHasRequiredIngredients(Recipe_Alchemy_trucizna_02))
     {
 		removeIngredientsFromPlayerInv(Recipe_Alchemy_trucizna_02);
-		CreateInvItem (hero, Recipe_Alchemy_trucizna_02.recipeitem);
+		CreateInvItems (hero, Recipe_Alchemy_trucizna_02.recipeitem, quantity);
 		Print ("Przygotowa³eœ truciznê");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1691,9 +1692,9 @@ func void DIA_PC_Hero_Trucizny_Little_Info ()
 	if (playerHasRequiredIngredients(Recipe_Alchemy_trucizna_01))
     {
 		removeIngredientsFromPlayerInv(Recipe_Alchemy_trucizna_01);
-		CreateInvItem (hero, Recipe_Alchemy_trucizna_01.recipeitem);
+		CreateInvItems (hero, Recipe_Alchemy_trucizna_01.recipeitem, quantity);
 		Print ("Przygotowa³eœ truciznê!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1761,9 +1762,9 @@ func void DIA_PC_Hero_Tyton_Alch_QUEST4_Info ()
 	if (playerHasRequiredIngredients(Recipe_Joint_Plant))
     {
 		removeIngredientsFromPlayerInv(Recipe_Joint_Plant);
-		CreateInvItem (hero, Recipe_Joint_Plant.recipeitem);
+		CreateInvItems (hero, Recipe_Joint_Plant.recipeitem, quantity);
 		Print ("Przygotowa³eœ jointa!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1795,9 +1796,9 @@ func void DIA_PC_Hero_Tyton_Alch_QUEST3_Info ()
 	if (playerHasRequiredIngredients(Recipe_Joint_Mush))
     {
 		removeIngredientsFromPlayerInv(Recipe_Joint_Mush);
-		CreateInvItem (hero, Recipe_Joint_Mush.recipeitem);
+		CreateInvItems (hero, Recipe_Joint_Mush.recipeitem, quantity);
 		Print ("Przygotowa³eœ jointa!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1829,9 +1830,9 @@ func void DIA_PC_Hero_Tyton_Alch_QUEST2_Info ()
 	if (playerHasRequiredIngredients(Recipe_Joint_Honey))
     {
 		removeIngredientsFromPlayerInv(Recipe_Joint_Honey);
-		CreateInvItem (hero, Recipe_Joint_Honey.recipeitem);
+		CreateInvItems (hero, Recipe_Joint_Honey.recipeitem, quantity);
 		Print ("Przygotowa³eœ jointa!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1863,9 +1864,9 @@ func void DIA_PC_Hero_Tyton_Alch_QUEST1_Info ()
 	if (playerHasRequiredIngredients(Recipe_Joint_Apple))
     {
 		removeIngredientsFromPlayerInv(Recipe_Joint_Apple);
-		CreateInvItem (hero, Recipe_Joint_Apple.recipeitem);
+		CreateInvItems (hero, Recipe_Joint_Apple.recipeitem, quantity);
 		Print ("Przygotowa³eœ jointa!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1897,9 +1898,9 @@ func void DIA_PC_Hero_Tyton_Alch_Ziolo_Info ()
 	if (playerHasRequiredIngredients(Recipe_Tuton_4))
     {
 		removeIngredientsFromPlayerInv(Recipe_Tuton_4);
-		CreateInvItem (hero, Recipe_Tuton_4.recipeitem);
+		CreateInvItems (hero, Recipe_Tuton_4.recipeitem, quantity);
 		Print ("Przygotowa³eœ tytoñ!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1931,9 +1932,9 @@ func void DIA_PC_Hero_Tyton_Alch_Little_Info ()
 	if (playerHasRequiredIngredients(Recipe_Tuton_1))
     {
 		removeIngredientsFromPlayerInv(Recipe_Tuton_1);
-		CreateInvItem (hero, Recipe_Tuton_1.recipeitem);
+		CreateInvItems (hero, Recipe_Tuton_1.recipeitem, quantity);
 		Print ("Przygotowa³eœ tytoñ!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1965,9 +1966,9 @@ func void DIA_PC_Hero_Tyton_Alch_Medium_Info ()
 	if (playerHasRequiredIngredients(Recipe_Tuton_2))
     {
 		removeIngredientsFromPlayerInv(Recipe_Tuton_2);
-		CreateInvItem (hero, Recipe_Tuton_2.recipeitem);
+		CreateInvItems (hero, Recipe_Tuton_2.recipeitem, quantity);
 		Print ("Przygotowa³eœ tytoñ!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {
@@ -1999,9 +2000,9 @@ func void DIA_PC_Hero_Tyton_Alch_Large_Info ()
 	if (playerHasRequiredIngredients(Recipe_Tuton_3))
     {
 		removeIngredientsFromPlayerInv(Recipe_Tuton_3);
-		CreateInvItem (hero, Recipe_Tuton_3.recipeitem);
+		CreateInvItems (hero, Recipe_Tuton_3.recipeitem, quantity);
 		Print ("Przygotowa³eœ tytoñ!");
-		B_giveXP (15);
+		B_giveXP (15 * quantity);
     }
     else
     {

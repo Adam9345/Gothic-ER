@@ -40,7 +40,8 @@ FUNC VOID DIA_PC_Hero_Pound_EXIT_Info()
 {
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 	PoundingSeeds = False;
-	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;				   
+	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+	quantity = 1;				   
 	AI_StopProcessInfos	(self);
 };
 
@@ -129,12 +130,12 @@ FUNC VOID PC_Pound_Flameberry_Info ()
 
 		
 		PrintS_Ext("Utar³eœ nasiona.", COL_WHITE);
-		CreateInvItems (self, Recipe_Plants_utarteJagody_01.recipeitem,1);
+		CreateInvItems (self, Recipe_Plants_utarteJagody_01.recipeitem,quantity);
 	}
     else 
     {
 	PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("1x Ogniocierñ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("1x Ogniocierñ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
 	
     };	
 
@@ -170,12 +171,12 @@ FUNC VOID PC_Pound_SwampHerb_Info ()
 
 		
 		PrintS_Ext("Utar³eœ nasiona.", COL_WHITE);
-		CreateInvItems (self, Recipe_Plants_PapkaZziela.recipeitem,1);
+		CreateInvItems (self, Recipe_Plants_PapkaZziela.recipeitem,quantity);
 	}
     else 
     {
 	PrintS_Ext  ("Brakuje ci sk³adników!", COL_RED);
-	PrintScreen ("1x Bagienne Ziele"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	//PrintScreen ("1x Bagienne Ziele"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
 	
     };	
 

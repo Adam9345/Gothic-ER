@@ -40,6 +40,7 @@ FUNC VOID DIA_PC_Hero_Smith_EXIT_Info()
 	SmithBelt = FALSE;
 	SmithWeapon = FALSE;
 	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
+	quantity = 1;
 	AI_StopProcessInfos	(self);
 };
 
@@ -134,8 +135,8 @@ FUNC VOID PC_ItMw_Addon_BanditTrader_Info ()
 		removeIngredientsFromPlayerInv(Recipe_BanditTrader);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_BanditTrader.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_BanditTrader.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -179,8 +180,8 @@ FUNC VOID PC_ItMw_Miecz1H6_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H6);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H6.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H6.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -224,8 +225,8 @@ FUNC VOID PC_ItMw_Miecz1H11_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H11);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H11.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H11.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -269,8 +270,8 @@ FUNC VOID PC_ItMw_Miecz1H15_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H15);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H15.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H15.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -316,8 +317,8 @@ FUNC VOID PC_ItMw_1H_Sword_04_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan1b);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan1b.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan1b.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -362,8 +363,8 @@ FUNC VOID PC_ItMw_1H_Sword_Long_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan1c);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan1c.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan1c.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -415,8 +416,8 @@ FUNC VOID PC_ItMw_Miecz1H7_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H7);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H7.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H7.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -464,8 +465,8 @@ FUNC VOID PC_ItMw_Miecz1H9_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H9);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H9.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H9.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -512,8 +513,8 @@ FUNC VOID PC_ItMw_Miecz1H8_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz1H8);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz1H8.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz1H8.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -561,8 +562,8 @@ FUNC VOID PC_ItMw_Rapier_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Rapier);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Rapier.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Rapier.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -607,8 +608,8 @@ FUNC VOID PC_ItMw_2H_Sword_Light_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan3b);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan3b.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan3b.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -654,8 +655,8 @@ FUNC VOID PC_ItMw_2H_Sword_Light_04_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan3);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan3.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan3.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -701,8 +702,8 @@ FUNC VOID PC_ItMw_2H_Axe_light_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan5c);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan5c.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan5c.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -748,8 +749,8 @@ FUNC VOID PC_ItMw_2H_AxeHevay_100_Info ()
 		removeIngredientsFromPlayerInv(Recipe_2H_AxeHevay_100);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_2H_AxeHevay_100.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_2H_AxeHevay_100.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -798,8 +799,8 @@ FUNC VOID PC_ItMw_2H_Sword_02_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan4b);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan4b.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan4b.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -845,8 +846,8 @@ FUNC VOID PC_ItMw_Miecz2H5_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Miecz2H5);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Miecz2H5.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Miecz2H5.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -891,8 +892,8 @@ FUNC VOID PC_ItMw_2H_Axe_Heavy_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_Plan7b);
 		
 		PrintS_Ext("Stworzy³eœ broñ!", COL_WHITE);
-		CreateInvItems (self, Recipe_Plan7b.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_Plan7b.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -969,8 +970,8 @@ FUNC VOID PC_ItBE_Addon_Leather_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_LeatherBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_LeatherBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_LeatherBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1013,8 +1014,8 @@ FUNC VOID PC_ItBE_Addon_SLD_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_SldBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_SldBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_SldBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1058,8 +1059,8 @@ FUNC VOID PC_ItBE_Addon_NOV_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_FNovBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_FNovBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_FNovBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1104,8 +1105,8 @@ FUNC VOID PC_ItRe_GrdBelt_Info ()
 		removeIngredientsFromPlayerInv(Recipe_GrdBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_GrdBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_GrdBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1150,8 +1151,8 @@ FUNC VOID PC_ItBE_Addon_KDF_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_KdfBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_KdfBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_KdfBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1196,8 +1197,8 @@ FUNC VOID PC_ItBE_Addon_MC_Info ()
 		removeIngredientsFromPlayerInv(Recipe_CrawlerBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_CrawlerBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_CrawlerBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1242,8 +1243,8 @@ FUNC VOID PC_ItBe_Addon_STR_5_Info ()
 		removeIngredientsFromPlayerInv(Recipe_StrengthBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_StrengthBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_StrengthBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1289,8 +1290,8 @@ FUNC VOID PC_ItBe_Addon_STR_10_Info ()
 		removeIngredientsFromPlayerInv(Recipe_PowerBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_PowerBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_PowerBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1339,8 +1340,8 @@ FUNC VOID PC_ItBe_Addon_DEX_5_Info ()
 		removeIngredientsFromPlayerInv(Recipe_SkillBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_SkillBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_SkillBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1389,8 +1390,8 @@ FUNC VOID PC_ItBe_Addon_DEX_10_Info ()
 		removeIngredientsFromPlayerInv(Recipe_DexterityBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_DexterityBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_DexterityBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1439,8 +1440,8 @@ FUNC VOID PC_ItBe_Addon_Prot_EDGE_Info ()
 		removeIngredientsFromPlayerInv(Recipe_ArmorBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_ArmorBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_ArmorBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1486,8 +1487,8 @@ FUNC VOID PC_ItBe_Addon_Prot_Point_Info ()
 		removeIngredientsFromPlayerInv(Recipe_DefendBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_DefendBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_DefendBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1533,8 +1534,8 @@ FUNC VOID PC_ItBe_Addon_Prot_MAGIC_Info ()
 		removeIngredientsFromPlayerInv(Recipe_MagicArmorBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_MagicArmorBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_MagicArmorBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1580,8 +1581,8 @@ FUNC VOID PC_ItBe_Addon_Prot_FIRE_Info ()
 		removeIngredientsFromPlayerInv(Recipe_FireRunnerBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_FireRunnerBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_FireRunnerBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1627,8 +1628,8 @@ FUNC VOID PC_ItBe_Addon_Prot_EdgPoi_Info ()
 		removeIngredientsFromPlayerInv(Recipe_ProtectionBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_ProtectionBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_ProtectionBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1675,8 +1676,8 @@ FUNC VOID PC_ItBE_TPL_01_Info ()
 		removeIngredientsFromPlayerInv(Recipe_TempleBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_TempleBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_TempleBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
@@ -1721,8 +1722,8 @@ FUNC VOID PC_OrcHunterBelt_Recipe_Info ()
 		removeIngredientsFromPlayerInv(Recipe_OrcHunterBelt);
 
 		PrintS_Ext("Stworzy³eœ pas!", COL_WHITE);
-		CreateInvItems (self, Recipe_OrcHunterBelt.recipeitem,1);
-		DIA_PC_Hero_Smith_EXIT_Info();
+		CreateInvItems (self, Recipe_OrcHunterBelt.recipeitem,quantity);
+		//DIA_PC_Hero_Smith_EXIT_Info();
 	}
     else 
     {
