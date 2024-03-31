@@ -557,7 +557,7 @@ fight_tactic              =   FAI_HUMAN_STRONG;//FAI_HUMAN_RANGED;
 EquipItem (self,  ItRw_Crossbow_02_S);
 EquipItem (self, itmw_1h_sword_long_01);
 CreateInvItems	(self, ItAmBolt, 30);
-CreateInvItems	(self, ItKe_BrandickTower, 1);
+
 //-------------------------------------------------------------
 	
 };

@@ -671,22 +671,7 @@ INSTANCE ItKe_Freemine(C_Item)
 	description			= "Klucz do Wolnej Kopalni";
 
 };
-/********************************************************/
-INSTANCE ItKe_BrandickTower(C_Item)
-{
-	name 				=	"Klucz";
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	0;
-
-
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= name;
-	TEXT[1]				= "Nale¿a³ do nieumar³ego gwardzisty...";
-};
 /********************************************************/
 INSTANCE ItKe_US_GOBBO(C_Item)
 {
