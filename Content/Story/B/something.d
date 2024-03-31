@@ -35,23 +35,23 @@ func int countCostAttributeOld (var int ATR, var C_NPC typ) {
 	//wyliczanie kosztów atrybutu ZRÊCZNOŒÆ
 		if (typ.attribute[ATR_DEXTERITY] >= 90)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 5;
+			public_dex_cost = 5;
 		}
 		else if (typ.attribute[ATR_DEXTERITY] >= 75)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 4;
+			public_dex_cost = 4;
 		}
 		else if (typ.attribute[ATR_DEXTERITY] >= 50)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 3;
+			public_dex_cost = 3;
 		}
 		else if (typ.attribute[ATR_DEXTERITY] >= 25)
 		{
-			attributeCost = 1;
-			public_dex_cost = 1;
+			attributeCost = 2;
+			public_dex_cost = 2;
 		}
 		else if (typ.attribute[ATR_DEXTERITY] < 25)
 		{
@@ -122,23 +122,23 @@ func int countCostAttribute(var int ATR) {
 	} else if (ATR == ATR_DEXTERITY) {
 		if (newDexterity >= 90)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 5;
+			public_dex_cost = 5;
 		}
 		else if (newDexterity >= 75)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 4;
+			public_dex_cost = 4;
 		}
 		else if (newDexterity >= 50)
 		{
-			attributeCost = 2;
-			public_dex_cost = 2;
+			attributeCost = 3;
+			public_dex_cost = 3;
 		}
 		else if (newDexterity >= 25)
 		{
-			attributeCost = 1;
-			public_dex_cost = 1;
+			attributeCost = 2;
+			public_dex_cost = 2;
 		}
 		else if (newDexterity < 25)
 		{
