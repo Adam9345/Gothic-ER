@@ -15,10 +15,9 @@ if !(hero.attribute[ATR_HITPOINTS] == ATR_HITPOINTS_MAX)
 Func void REGHP_SMALL ()
 
 {	
-if !(hero.attribute[ATR_HITPOINTS] == ATR_HITPOINTS_MAX)
-&& !(hero.attribute[ATR_HITPOINTS] == 0)
+if (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX] && hero.attribute[ATR_HITPOINTS] >= 0)
 {   
- Npc_ChangeAttribute ( hero , ATR_HITPOINTS , +5 ) ; 
+ Npc_ChangeAttribute ( hero , ATR_HITPOINTS , +2 ) ; 
 
 };	 	
 };

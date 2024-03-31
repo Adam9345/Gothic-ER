@@ -1045,7 +1045,7 @@ INSTANCE ItRi_REGENS(C_Item)
 	
 	
 	TEXT[1]                 = "Punkty ¿ycia co 5 sek.";
-	TEXT[2]					= "+5";		
+	TEXT[2]					= "+2";		
 	TEXT[3] 				= "Pierœcieñ regeneracji zdrowia";
 	TEXT[4]		      		= "" ;
 	
@@ -1058,7 +1058,7 @@ INSTANCE ItRi_REGENS(C_Item)
 FUNC VOID Equip_ItRi_HRegenhp()
 {
    	
- FF_ApplyOnceExt(REGHP_SMALL, 5000, -1);
+ FF_ApplyOnceExtGT(REGHP_SMALL, 5000, -1);
 
 };
 	
