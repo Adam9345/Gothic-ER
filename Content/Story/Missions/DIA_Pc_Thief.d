@@ -36,7 +36,7 @@ FUNC VOID Info_Diego_Gamestart_Info()
 	public_str_cost = 1;
 	public_dex_cost = 1;
 	public_man_cost = 1;
-	
+
 	GoToOM = false;
 	HeroCanBuy_GRDHARMOR = false;
 	AutoHealth = false; //deaful setting
@@ -569,6 +569,11 @@ FUNC VOID Info_Diego_WoWaffe_Info()
 	AI_Output(self,hero,"Info_Diego_WoWaffe_11_02"); //Kopalniê nie trudno znaleŸæ. Le¿y parê metrów w dó³ kanionu.
 };
 
+func void equipDiegoBow() {
+	var c_npc Diego;    	Diego = Hlp_GetNpc(PC_THIEF);
+	AI_EquipBestRangedWeapon(Diego);
+};
+
 instance TRIA_BramaPlac (C_INFO)
 {
     npc         = PC_THIEF;
@@ -594,56 +599,56 @@ func void TRIA_BramaPlac_info()
     var c_npc Gardist; 		Gardist = Hlp_GetNpc(GRD_254_Orry);
 	
 
-	TRIA_Invite(Diego);
+	//TRIA_Invite(Diego);
     TRIA_Invite(Gardist); // Lade Gardist in diesen Dialog ein
     TRIA_Start();         // Starte das Gespräch
 
-    TRIA_Next(Diego);
+    //TRIA_Next(Diego);
 
-    DIAG_Reset();
+    //DIAG_Reset();
 	AI_Output (self, other, "TRIA_BramaPlac_0F"); //Zaraz to za³atwiê!
-	AI_TurnToNpc(self, GRD_254_Orry);
+	AI_TurnToNpc(self, Gardist);
     AI_Output (self, other, "TRIA_BramaPlac_00"); //Cholera, ruszaæ siê ch³opaki!
 
-    TRIA_Cam("CAMERASTART");
+    //TRIA_Cam("CAMERASTART");
 
     // Held redet nun mit Gardist (self = Gardist, other = Hero)
     TRIA_Next(Gardist);
-	DIAG_Reset();
+	//DIAG_Reset();
 	AI_GotoNpc(self, other);
-    DIAG("No", 0, 1);
-	AI_TurnToNpc (self,PC_THIEF);
+    //DIAG("No", 0, 1);
+	AI_TurnToNpc (self,Diego);
     AI_Output (self, other, "TRIA_BramaPlac_04"); //A kogó¿ my tu mamy, toæ to Diego. Myœla³em, ¿e zostaniesz chwilê d³u¿ej, dlatego zamkn¹³em.
 
     // Held redet nun wieder mit Diego (self = Diego, other = Hero)
     TRIA_Next(Diego);
-	DIAG_Reset();
+	//DIAG_Reset();
     // Held soll sich jetzt fragend Artikulieren
-    DIAG("NotSure", 0, 1);
-	AI_TurnToNpc(self, GRD_254_Orry);
+    //DIAG("NotSure", 0, 1);
+	AI_TurnToNpc(self, Gardist);
     AI_Output (self, other, "TRIA_BramaPlac_05"); //Nie, spodziewa³em siê przesy³ki z zewn¹trz, ale jej nie otrzyma³em. 
 	AI_Output (self, other, "TRIA_BramaPlac_06"); //Bullit czêsto siê tu zjawia?
 
     //AI_TurnToNpc(other, self);
 
     // Kamerafahrt Ende
-    TRIA_Cam("");
+    //TRIA_Cam("");
 
     // Diego soll zornig reagieren
 	TRIA_Next(Gardist);
-	DIAG_Reset();
-    DIAG("Angry", 0, 4);
-	AI_TurnToNpc (self,PC_THIEF);
+	//DIAG_Reset();
+    //DIAG("Angry", 0, 4);
+	AI_TurnToNpc (self,Diego);
     AI_Output (self, other, "TRIA_BramaPlac_07"); //Ta... Co jakiœ czas wpada.
 
     // Held soll sich jetzt wieder normal bewegen
 	TRIA_Next(Diego);
-    DIAG_Reset();
-	AI_TurnToNpc(self, GRD_254_Orry);
+    //DIAG_Reset();
+	AI_TurnToNpc(self, Gardist);
     AI_Output (self, other, "TRIA_BramaPlac_08"); //Bêdê siê musia³ tym zaj¹æ. No, otwieraj ju¿!
 	TRIA_Next(gardist);
-    DIAG_Reset();
-	AI_TurnToNpc (self,PC_THIEF);
+    //DIAG_Reset();
+	AI_TurnToNpc (self,Diego);
 	AI_Output (self, other, "TRIA_BramaPlac_09"); //Robi siê!
 
     TRIA_Finish(); // und Ende
@@ -653,7 +658,9 @@ func void TRIA_BramaPlac_info()
 	Wld_SendUnTrigger ("EVT_OW_STARTLOCKOUT_MOVER"); 
 	Wld_SetObjectRoutine (20,00,"EVT_OW_STARTLOCKOUT_MOVER",1);
 	Wld_SetObjectRoutine (06,00,"EVT_OW_STARTLOCKOUT_MOVER",0);
-	AI_StopProcessInfos (PC_THIEF);
+
+	AI_Function(Diego, equipDiegoBow);
+	AI_StopProcessInfos (self);
 };
 
 
