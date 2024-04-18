@@ -101,13 +101,13 @@ INSTANCE DIA_Claw_AlchemyLearn (C_INFO)
    nr           = 888;
    condition    = DIA_Claw_AlchemyLearn_Condition;
    information  = DIA_Claw_AlchemyLearn_Info;
-   permanent	= FALSE;
+   permanent	= TRUE;
    description	= "Nauka alchemii. (10 punktów nauki, 200 bry³ek rudy)";
 };
 
 FUNC INT DIA_Claw_AlchemyLearn_Condition()
 {
-    if (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) == 0) &&  (Npc_KnowsInfo (hero, DIA_Claw_HELLO1))
+    if (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) <= 1) &&  (Npc_KnowsInfo (hero, DIA_Claw_HELLO1))
     {
     return TRUE;
     };
