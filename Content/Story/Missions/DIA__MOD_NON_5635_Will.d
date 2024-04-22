@@ -122,6 +122,7 @@ FUNC VOID DIA_Will_HELLO3_Info()
 	{
 	AI_Output (self, other ,"DIA_Will_HELLO3_03_05"); //Ale nie wygl¹dasz mi na kogoœ, kto móg³by siê zaj¹æ t¹ spraw¹.
 	AI_Output (self, other ,"DIA_Will_HELLO3_03_06"); //Wróæ do mnie jak siê trochê podszkolisz i lepiej poznasz to miejsce.
+    Prints_Ext("Wymagany 2 rozdzia³", COL_WHITE);
 	can_killthopson_dia = false; 
 	};
 };
