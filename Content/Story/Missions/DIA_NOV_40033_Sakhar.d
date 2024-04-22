@@ -216,6 +216,7 @@ FUNC VOID DIA_Sakhar_WDC_BDFA_Info()
     AI_Output (other, self ,"DIA_Sakhar_WDC_BDFA_15_01"); //Zapolujmy na lataj¹ce robale!
     AI_Output (self, other ,"DIA_Sakhar_WDC_BDFA_03_02"); //Jasne. Do dzie³a.
     AI_Output (other, self ,"DIA_Sakhar_WDC_BDFA_15_03"); //ProwadŸ.
+    self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Npc_ExchangeRoutine(NOV_40033_Sakhar,"Guide");
     AI_Output (self, other ,"DIA_Sakhar_WDC_BDFA_03_04"); //ChodŸ za mn¹.
 	Wld_InsertNpc				(BloodflySakhar1,"FP_ROAM_BLOOD_SAK1");
@@ -261,6 +262,7 @@ FUNC VOID DIA_Sakhar_WDC_BLDF_DEAD_Info()
     AI_Output (other, self ,"DIA_Sakhar_WDC_BLDF_DEAD_15_05"); //Dziêkuje w imieniu nozdrzy mieszkañców tego obozu...
     AI_Output (self, other ,"DIA_Sakhar_WDC_BLDF_DEAD_03_06"); //Haha. Równy z ciebie facet.
     AI_Output (other, self ,"DIA_Sakhar_WDC_BLDF_DEAD_15_07"); //Na razie.
+    self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(NOV_40033_Sakhar,"Start");
 	 B_LogEntry               (WiazankaDlaCorCaloma,"Ja I Sakhar pozbyliœmy siê jadowitych krwiopijców. Teraz mo¿e zmieniæ miejsce pracy co uwolni z opresji nozdrza Darriona. Pora wróciæ do kowala.");
     AI_StopProcessInfos	(self);
