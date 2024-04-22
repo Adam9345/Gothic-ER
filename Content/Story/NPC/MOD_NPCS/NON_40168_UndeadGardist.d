@@ -4,7 +4,7 @@ instance NON_40168_UndeadGardist (Npc_Default)
 //edit by Nocturn
 //----------Info ogolne---------
 
-name = "Nieumar≈Çy gwardzista";
+name = "Nieumar≥y gwardzista";
 Npctype = Npctype_Main;
 guild = GIL_GRD;
 level = 45;
