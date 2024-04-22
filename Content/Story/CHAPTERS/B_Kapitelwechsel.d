@@ -95,14 +95,16 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		
 		//-------- InExtremo vorbereiten --------
 		B_InsertInExtremo();
+
+		if (Hlp_IsValidNpc (VLK_580_Grim))
+		&& (!Npc_IsDead (VLK_580_Grim)) {
+			Mdl_SetVisualBody (VLK_580_Grim,"hum_body_Naked0",2,1,"Hum_Head_Thief", 72,  2, stt_ARMOR_M);
+			Npc_RemoveInvItems (VLK_580_Grim, VLK_ARMOR_M,1);
+			EquipItem (VLK_580_Grim, ItMw_1H_Sword_02);
+		};
 		
 		introducechapter ("Rozdzia³ 2","Gniazdo pe³zaczy","chapter2.tga","levelup.wav", 6000);
 		
-		
-		 
-		Mdl_SetVisualBody (VLK_580_Grim,"hum_body_Naked0",2,1,"Hum_Head_Thief", 72,  2, stt_ARMOR_M);
-		Npc_RemoveInvItems (VLK_580_Grim, VLK_ARMOR_M,1);
-		EquipItem (VLK_580_Grim, ItMw_1H_Sword_02);
 		//introducechapter ("Chapter 2","The Minecrawler's nest","chapter2.tga","levelup.wav", 6000);
 	}
 	
