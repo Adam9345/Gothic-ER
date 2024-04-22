@@ -81,21 +81,27 @@ FUNC VOID DIA_Samuel_TADE_Info()
 
     Info_ClearChoices		(DIA_Samuel_TADE);
 	Info_AddChoice		(DIA_Samuel_TADE, DIALOG_BACK, DIA_Samuel_TADE_BACK);
-    Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z kretoszczura - 15 bry³ek>", DIA_Samuel_TADE_MoleratSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "<Potrawka z chrz¹szcza - 15 bry³ek rudy>", DIA_Samuel_TADE_SnafSoup);
+    Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z kretoszczura - 16 bry³ek>", DIA_Samuel_TADE_MoleratSoup);
+    AFIP_SetChoiceItem(DIA_Samuel_TADE_MoleratSoup, ItRe_MoleratSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Potrawka z chrz¹szcza - 16 bry³ek rudy>", DIA_Samuel_TADE_SnafSoup);
+    AFIP_SetChoiceItem(DIA_Samuel_TADE_SnafSoup, ItRe_SnafSoup);
 	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa ze œcierwojada - 15 bry³ek rudy>", DIA_Samuel_TADE_ScaSoup);
-	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z pe³zacza - 16 bry³ek rudy>", DIA_Samuel_TADE_CraSoup);
+    AFIP_SetChoiceItem(DIA_Samuel_TADE_ScaSoup, ItRe_ScaSoup);
+	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa z pe³zacza - 15 bry³ek rudy>", DIA_Samuel_TADE_CraSoup);
+    AFIP_SetChoiceItem(DIA_Samuel_TADE_CraSoup, ItRe_CrawelSoup);
 	Info_AddChoice		(DIA_Samuel_TADE, "<Zupa serowa - 16 bry³ek rudy>", DIA_Samuel_TADE_ChesseSoup);
+    AFIP_SetChoiceItem(DIA_Samuel_TADE_ChesseSoup, ItRe_CheeseSoup);
 };
 
 FUNC VOID DIA_Samuel_TADE_MoleratSoup()
 {
+    var int AFIP_ShowItem;
     AI_Output (other, self ,"DIA_Samuel_TADE_MoleratSoup_15_01"); //Daj mi przepis na zupê z kretoszczura.
-    if (Npc_HasItems (hero, ItMiNugget)>=15)
+    if (Npc_HasItems (hero, ItMiNugget)>=16)
     {
         CreateInvItems (self, ItRe_MoleratSoup, 1);
         B_GiveInvItems (self, other, ItRe_MoleratSoup, 1);
-        B_GiveInvItems (other, self, ItMiNugget, 15);
+        B_GiveInvItems (other, self, ItMiNugget, 16);
     }
     else
     {
@@ -104,12 +110,13 @@ FUNC VOID DIA_Samuel_TADE_MoleratSoup()
 	};
 	func void DIA_Samuel_TADE_SnafSoup ()
 	{
+    var int AFIP_ShowItem;
 	AI_Output (other, self ,"DIA_Samuel_TADE_SnafSoup_15_01"); //Daj mi przepis na tê potrawkê.
-	if (Npc_HasItems (hero, ItMiNugget)>=15)
+	if (Npc_HasItems (hero, ItMiNugget)>=16)
     {
         CreateInvItems (self, ItRe_SnafSoup, 1);
         B_GiveInvItems (self, other, ItRe_SnafSoup, 1);
-        B_GiveInvItems (other, self, ItMiNugget, 15);
+        B_GiveInvItems (other, self, ItMiNugget, 16);
     }
     else
     {
@@ -118,6 +125,7 @@ FUNC VOID DIA_Samuel_TADE_MoleratSoup()
 };
 	func void DIA_Samuel_TADE_ScaSoup ()
 	{
+    var int AFIP_ShowItem;
 	AI_Output (other, self ,"DIA_Samuel_TADE_ScaSoup_15_01"); //Daj mi przepis na tê zupê.
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
     {
@@ -132,12 +140,13 @@ FUNC VOID DIA_Samuel_TADE_MoleratSoup()
 };
 	func void DIA_Samuel_TADE_CraSoup ()
 	{
+    var int AFIP_ShowItem;
 	AI_Output (other, self ,"DIA_Samuel_TADE_CraSoup_15_01"); //Daj mi przepis na tê zupê z pe³zacza.
-	if (Npc_HasItems (hero, ItMiNugget)>=16)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
     {
         CreateInvItems (self, ItRe_CrawelSoup, 1);
         B_GiveInvItems (self, other, ItRe_CrawelSoup, 1);
-        B_GiveInvItems (other, self, ItMiNugget, 16);
+        B_GiveInvItems (other, self, ItMiNugget, 15);
     }
     else
     {
@@ -146,6 +155,7 @@ FUNC VOID DIA_Samuel_TADE_MoleratSoup()
 };
 	func void DIA_Samuel_TADE_ChesseSoup ()
 	{
+    var int AFIP_ShowItem;
 	AI_Output (other, self ,"DIA_Samuel_TADE_ChesseSoup_15_01"); //Daj mi przepis na zupê serow¹.
 	if (Npc_HasItems (hero, ItMiNugget)>=16)
     {
