@@ -250,7 +250,7 @@ FUNC INT DIA_Pascal_PP_GIVE_ARMOR_Condition()
 FUNC VOID DIA_Pascal_PP_GIVE_ARMOR_Info()
 {
      AI_Output (other, self ,"DIA_Pascal_PP_GIVE_ARMOR_15_01"); //Daj mi ten strój.
-     if (hero.attribute[ATR_STRENGTH] > 34)
+     if (hero.attribute[ATR_STRENGTH] > 34) ||  (hero.attribute[ATR_DEXTERITY] > 34)
 	 {
 	
     AI_Output (self, other ,"DIA_Pascal_PP_GIVE_ARMOR_03_02"); //Masz.

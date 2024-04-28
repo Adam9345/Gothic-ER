@@ -165,7 +165,7 @@ FUNC VOID DIA_Blade_InFreeMineCamp_Info()
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_09"); //Roboty jest mnóstwo. Mamy swoje powody, ¿eby nie wpuszczaæ niektórych osób do Kopalni.
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_10"); //Po prostu siê tym nie interesuj, przynajmniej na razie, a wszystko bêdzie w porz¹dku.
     AI_Output (self, other ,"DIA_Blade_InFreeMineCamp_03_11"); //No, idŸ ju¿. Poradzisz sobie!
-    B_LogEntry                     (CH1_PathToFreeMine,"Kosa zaprowadzi³ mnie do Kopalni. Zasady które mi przedstawi³ s¹ dosyæ dziwne. Mam pracowaæ na zewn¹trz i nie interesowaæ siê wnêtrzem Kopalni. Od Swineya dostanê ekwipunek. ");
+    B_LogEntry                     (CH1_PathToFreeMine,"Kosa zaprowadzi³ mnie do Kopalni. Zasady które mi przedstawi³ s¹ dosyæ dziwne. Mam pracowaæ na zewn¹trz i nie interesowaæ siê wnêtrzem Kopalni. Od Swineya dostanê ekwipunek oraz zostanê kretem. ");
     Log_SetTopicStatus       (CH1_PathToFreeMine, LOG_SUCCESS);
     MIS_PathToFreeMine = LOG_SUCCESS;
 
