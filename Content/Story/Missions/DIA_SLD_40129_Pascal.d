@@ -307,8 +307,8 @@ FUNC VOID DIA_Pascal_PP_End_Info()
     AI_Output (self, other ,"DIA_Pascal_PP_End_03_02"); //No to dawaj.
 	B_GiveInvItems (other,self, ItMi_PP_PascalOre, 1);
 	
-    AI_Output (self, other ,"DIA_Pascal_PP_End_03_03"); //Co do twojej nagrody to gdzieœ j¹ zapodzia³em po pijaku. Ale spokojnie... .znajdê. PrzyjdŸ do mnie jutro.
-    AI_Output (other, self ,"DIA_Pascal_PP_End_15_04"); //Niech cie diabli! Widzimy siê jutro, i nie próbuj mnie wykiwaæ.
+    AI_Output (self, other ,"DIA_Pascal_PP_End_03_03"); //Co do twojej nagrody, to gdzieœ j¹ zapodzia³em po pijaku. Ale spokojnie... znajdê. PrzyjdŸ do mnie jutro.
+    AI_Output (other, self ,"DIA_Pascal_PP_End_15_04"); //Niech ciê diabli! Widzimy siê jutro, i nie próbuj mnie wykiwaæ.
     AI_Output (self, other ,"DIA_Pascal_PP_End_03_05"); //Hej, nie zapêdzasz siê trochê? Uspokój siê, dotrzymam s³owa.
     AI_Output (other, self ,"DIA_Pascal_PP_End_15_06"); //To siê oka¿e...
 	Npc_SetPermAttitude (Grd_216_Torwache, ATT_NEUTRAL);

@@ -278,7 +278,7 @@ FUNC INT DIA_Hargos_ZND_GoBack_Condition()
 };
 FUNC VOID DIA_Hargos_ZND_GoBack_Info()
 {
-    AI_Output (self, other ,"DIA_Hargos_ZND_GoBack_03_01"); //Zmywajmy siê z st¹d.
+    AI_Output (self, other ,"DIA_Hargos_ZND_GoBack_03_01"); //Zmywajmy siê st¹d.
     AI_Output (other, self ,"DIA_Hargos_ZND_GoBack_15_02"); //Racja, lepiej ju¿ chodŸmy.
     AI_Output (self, other ,"DIA_Hargos_ZND_GoBack_03_03"); //Wystarczy mi na dziœ tych niemi³ych niespodzianek. Za mn¹.
 	Npc_ExchangeRoutine(self,"GuideBackC");

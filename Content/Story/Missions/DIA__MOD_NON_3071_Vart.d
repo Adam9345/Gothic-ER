@@ -118,6 +118,8 @@ FUNC VOID DIA_Vart_HELLO3_Info()
 	AI_Output (self, other ,"DIA_Vart_HELLO3_03_04"); //Chyba nie za wiele wiesz o walce, co? 
 	AI_Output (self, other ,"DIA_Vart_HELLO3_03_05"); //Nie mam zamiaru odwalaæ ca³ej roboty za ciebie.
 	AI_Output (self, other ,"DIA_Vart_HELLO3_03_06"); //PrzyjdŸ, gdy bêdziesz silniejszy. 
+    Prints_Ext("Wymagany 2 rozdzia³", COL_WHITE);
+
 	};
 };
 
