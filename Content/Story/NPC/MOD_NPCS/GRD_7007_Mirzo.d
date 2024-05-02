@@ -56,7 +56,8 @@ TA_Sleep (00,15,05,20,"OMC_BED_MIRZO");
 FUNC VOID Rtn_spisek_7007 ()
 {
 TA_Guard (02,30,00,00,"OMC_OREWAGON_GUARD"); 
-TA_Smalltalk (00,10,02,30,"MIRZO_SPISEK"); //with OW_PATH_07_21_GUARD_LEFT
+TA_Stand (00,10,02,30,"OW_PATH_266");
+//TA_Smalltalk (00,10,02,30,"MIRZO_SPISEK"); //with OW_PATH_07_21_GUARD_LEFT
 };
 FUNC VOID Rtn_spisek2_7007 ()
 {

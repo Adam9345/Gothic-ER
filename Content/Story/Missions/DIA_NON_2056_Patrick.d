@@ -160,6 +160,15 @@ Info_ClearChoices		(DIA_Patrick_HELLO3);
 //-----------------> IanQuest
 //========================================
 
+func void changeMirzoRoutine () {
+    if (Npc_GetDistToWP(GRD_7007_Mirzo, "OW_PATH_266") < 500) {
+        Npc_ClearAIQueue(GRD_7007_Mirzo);
+        B_ExchangeRoutine (GRD_7007_Mirzo, "spisek2");
+
+        FF_Remove(changeMirzoRoutine);
+    };
+};
+
 INSTANCE DIA_Patrick_IanQuest (C_INFO)
 {
    npc          = NON_2056_Patrick;
@@ -198,6 +207,8 @@ FUNC VOID DIA_Patrick_IanQuest_Info()
     AI_Output (self, other ,"DIA_Patrick_IanQuest_03_14"); //Nie ma sprawy.
     B_LogEntry                     (CH1_FoodForOldMine,"W koñcu jakieœ konkrety. Patrick twierdzi, ¿e widzia³ jak Mirzo opuszcza³ obóz po zmroku. Lepiej poczekam, do pó³nocy i zacznê go œledziæ.");
 	Npc_ExchangeRoutine (GRD_7007_Mirzo, "spisek");
+
+    FF_ApplyOnceExtGT (changeMirzoRoutine, 1000, -1);
 };
 
 
