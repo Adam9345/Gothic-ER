@@ -29,6 +29,7 @@ func void B_Give_MilChapter3Ingredients ()
 	CreateInvItems	(npc, ItFo_Fish4,4);
 	CreateInvItems	(npc, ItFo_Fish3,2);
 	CreateInvItems	(npc, ItFo_Fish2,1);
+	CreateInvItems	(npc, ItWr_BigCasserole,1);
 	CreateInvItems	(npc, ItFo_Fish,4);
 	CreateInvItems	(npc, ItFo_Sausage,1);
 	CreateInvItems	(npc, ItFoApple,5);
