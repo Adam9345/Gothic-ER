@@ -21,7 +21,7 @@ INSTANCE ItRe_MoleratSoup (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   UsePrzepisMoleratSoup;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	
 	TEXT[2]                 = "Bonus P¯: 45";
@@ -72,7 +72,7 @@ INSTANCE ItRe_SnafSoup (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   UsePrzepisSnafSoup;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	TEXT[2]                 = "Bonus P¯: 38";
 	TEXT[5]				=   NAME_Value;
@@ -116,7 +116,7 @@ func void UsePrzepisSnafSoup ()
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   CheeseSoup_Rec;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	TEXT[2]                 = "Bonus P¯: 48";
 	TEXT[5]				= NAME_Value;
@@ -162,7 +162,7 @@ INSTANCE ItRe_CrawelSoup (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   UsePrzepisKRW;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
     TEXT[2]                 = "Bonus P¯: 30";
     TEXT[3]                 = "Bonus Mana: 15";
@@ -208,7 +208,7 @@ INSTANCE ItRe_ScaSoup (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   UsePrzepisSCA;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	TEXT[2]                 = "Bonus P¯: 55";
 	TEXT[5]				= 	NAME_Value;
@@ -253,7 +253,7 @@ INSTANCE ItRe_BerrysDrink (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   BerrysDrink;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	TEXT[2]                 = "Bonus P¯: 50";
 	TEXT[5]				= 	NAME_Value;
@@ -298,7 +298,7 @@ INSTANCE ItRe_Jam (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   KonfituraRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
 	TEXT[2]                 = "Bonus P¯: 45";
 	TEXT[5]				= 	NAME_Value;
@@ -344,7 +344,7 @@ INSTANCE ItWr_GhoranWine (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   GhoranWineRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
     TEXT[1]             =   "Specjalne wino Ghorana.";
 	TEXT[2]                 = "Bonus P¯: 50";
@@ -390,7 +390,7 @@ INSTANCE ItWr_MushroomStew (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   MushroomStewRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 35";
@@ -437,7 +437,7 @@ INSTANCE ItWr_MeatStew (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   MeatStewRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 65";
@@ -485,7 +485,7 @@ INSTANCE ItWr_BigCasserole (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   MeatBigCasserole;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 60";
@@ -533,7 +533,7 @@ INSTANCE ItRe_HotWine (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   HotWineRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: -50";
@@ -579,7 +579,7 @@ INSTANCE ItWr_SoupFish2 (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   SoupFish2Recipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 48";
@@ -624,7 +624,7 @@ INSTANCE ItWr_SoupFish3 (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   SoupFish3Recipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 75";
@@ -671,7 +671,7 @@ INSTANCE ItWr_SoupFish4 (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   SoupFish4Recipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus Mana: 75";
@@ -719,7 +719,7 @@ INSTANCE ItWr_SoupFish5 (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   SoupFish5Recipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 90";
@@ -766,7 +766,7 @@ INSTANCE ItRe_LurkerSoup (C_Item)
 	visual 				=	"ER_FOOD_RECIPE.3DS";
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   LurkerSoupRecipe;
-	scemeName			=	"MAP";
+	scemeName			=	"MAPSEALED";
 	description			=   name;
   
 	TEXT[2]                 = "Bonus P¯: 120";
@@ -824,7 +824,7 @@ INSTANCE Plan_BanditTrader(C_Item) //do kupienia u Huana
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_BanditTrader;
 
 	description				= name;
@@ -839,7 +839,7 @@ INSTANCE Plan_BanditTrader(C_Item) //do kupienia u Huana
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -868,7 +868,7 @@ INSTANCE Plan_Miecz1H6(C_Item)
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H6;
 
 	description				= name;
@@ -883,7 +883,7 @@ INSTANCE Plan_Miecz1H6(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -912,7 +912,7 @@ INSTANCE Plan_Miecz1H11(C_Item) //handel Huno
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H11;
 
 	description				= name;
@@ -927,7 +927,7 @@ INSTANCE Plan_Miecz1H11(C_Item) //handel Huno
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -956,7 +956,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H15;
 
 	description				= name;
@@ -971,7 +971,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1000,7 +1000,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan1b;
 
 	description				= 	name;
@@ -1015,7 +1015,7 @@ INSTANCE Plan_Miecz1H15(C_Item) //handel Huan
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1043,7 +1043,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan1c;
 
 	description				= 	name;
@@ -1058,7 +1058,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1086,7 +1086,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_DaggerOfMurder;
 
 	description				= name;
@@ -1101,7 +1101,7 @@ INSTANCE Plan1c(C_Item) //kamien ogniskuj¹cy milten
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1131,7 +1131,7 @@ INSTANCE Plan_Miecz1H7(C_Item) //do kupienia u Mila
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H7;
 
 	description				= 	name;
@@ -1146,7 +1146,7 @@ INSTANCE Plan_Miecz1H7(C_Item) //do kupienia u Mila
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1174,7 +1174,7 @@ INSTANCE Plan_Miecz1H9(C_Item) //do znalezienia w skrzyni w Wie¿y Mgie³
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H9;
 
 	description				= 	name;
@@ -1189,7 +1189,7 @@ INSTANCE Plan_Miecz1H9(C_Item) //do znalezienia w skrzyni w Wie¿y Mgie³
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1217,7 +1217,7 @@ INSTANCE Plan_Miecz1H8(C_Item)
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz1H8;
 
 	description				= name;
@@ -1233,7 +1233,7 @@ INSTANCE Plan_Miecz1H8(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1262,7 +1262,7 @@ INSTANCE Plan_Rapier(C_Item) //do kupienia u Darriona
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Rapier;
 
 	description				= name;
@@ -1277,7 +1277,7 @@ INSTANCE Plan_Rapier(C_Item) //do kupienia u Darriona
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()	  ;	
+		nDocID = 	Doc_Create	()	  ;	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	); 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1305,7 +1305,7 @@ INSTANCE Plan3b(C_Item) //handlarz: Darrion, ch4
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan3b;
 
 	description				= 	name;
@@ -1320,7 +1320,7 @@ INSTANCE Plan3b(C_Item) //handlarz: Darrion, ch4
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1348,7 +1348,7 @@ INSTANCE Plan3(C_Item) //handlarz Scorpio, ch4
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan3;
 
 	description				= name;
@@ -1363,7 +1363,7 @@ INSTANCE Plan3(C_Item) //handlarz Scorpio, ch4
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1390,7 +1390,7 @@ INSTANCE Plan5c(C_Item) //handlarz: Martin, ch4
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan5c;
 
 	description				= name;
@@ -1405,7 +1405,7 @@ INSTANCE Plan5c(C_Item) //handlarz: Martin, ch4
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1434,7 +1434,7 @@ INSTANCE ItRe_2H_AxeHevay_100(C_Item) //handlarz: Gavilian ch3/ huan
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use2HAxeHeavy100;
 
 	description				= name;
@@ -1449,7 +1449,7 @@ INSTANCE ItRe_2H_AxeHevay_100(C_Item) //handlarz: Gavilian ch3/ huan
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1479,7 +1479,7 @@ INSTANCE Plan4b(C_Item) //miasto orków, podziemia
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan4b;
 
 	description				= 	name;
@@ -1494,7 +1494,7 @@ INSTANCE Plan4b(C_Item) //miasto orków, podziemia
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 										Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1522,7 +1522,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	Use_Plan_Miecz2H5;
 
 	description				= name;
@@ -1537,7 +1537,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	();	
+		nDocID = 	Doc_Create	();	
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	       ); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"           ); 	
@@ -1566,7 +1566,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_SMITH_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	UsePlan7b;
 
 	description				= 	name;
@@ -1581,7 +1581,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1614,7 +1614,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	LeatherBeltRecipe;
 
 	description				= 	name;
@@ -1629,7 +1629,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1662,7 +1662,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	SldBeltRecipe;
 
 	description				= 	name;
@@ -1677,7 +1677,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1708,7 +1708,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	FNovBeltRecipe;
 
 	description				= 	name;
@@ -1723,7 +1723,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1754,7 +1754,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	GrdBeltRecipe;
 
 	description				= 	name;
@@ -1769,7 +1769,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1800,7 +1800,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	KdfBeltRecipe;
 
 	description				= 	name;
@@ -1815,7 +1815,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1845,7 +1845,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	CrawlerBeltRecipe;
 
 	description				= 	name;
@@ -1860,7 +1860,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1890,7 +1890,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	StrengthBeltRecipe;
 
 	description				= 	name;
@@ -1905,7 +1905,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1935,7 +1935,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	PowerBeltRecipe;
 
 	description				= 	name;
@@ -1950,7 +1950,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga",0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -1979,7 +1979,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	SkillBeltRecipe;
 
 	description				= 	name;
@@ -1994,7 +1994,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2023,7 +2023,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	DexterityBeltRecipe;
 
 	description				= 	name;
@@ -2038,7 +2038,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2067,7 +2067,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	ArmorBeltRecipe;
 
 	description				= 	name;
@@ -2082,7 +2082,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2113,7 +2113,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	DefendBeltRecipe;
 
 	description				= 	name;
@@ -2128,7 +2128,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2159,7 +2159,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	MagicArmorBeltRecipe;
 
 	description				= 	name;
@@ -2174,7 +2174,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	{
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2205,7 +2205,7 @@ INSTANCE Plan_Miecz2H5(C_Item)
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	FireRunnerBeltRecipe;
 
 	description				= 	name;
@@ -2220,7 +2220,7 @@ FUNC VOID FireRunnerBeltRecipe()
 {
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2251,7 +2251,7 @@ INSTANCE ItRe_ProtectionBelt(C_Item) //handlarze: Cavalorn, Huan
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	ProtectionBeltRecipe;
 
 	description				= 	name;
@@ -2266,7 +2266,7 @@ FUNC VOID ProtectionBeltRecipe()
 {
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2297,7 +2297,7 @@ FUNC VOID ProtectionBeltRecipe()
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	TempleBeltRecipe;
 
 	description				= 	name;
@@ -2312,7 +2312,7 @@ FUNC VOID TempleBeltRecipe()
 {
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
@@ -2345,7 +2345,7 @@ FUNC VOID TempleBeltRecipe()
 	visual 					=	"ER_BELT_RECIPE.3DS";
 	material 				=	MAT_LEATHER;
 
-	scemeName				=	"MAP";	
+	scemeName				=	"MAPSEALED";	
 	on_state[0]				=	OrcHunterBeltRecipe;
 
 	description				= 	name;
@@ -2360,7 +2360,7 @@ FUNC VOID OrcHunterBeltRecipe()
 {
 		var int nDocID;
 		
-		nDocID = 	Doc_CreateMap	()			  ;							// DocManager 
+		nDocID = 	Doc_Create	()			  ;							// DocManager 
 					Doc_SetPages	( nDocID, 1 );                         
 					Doc_SetPage 	( nDocID, 0, "Letters.tga", 	0	);  //  1 -> DO NOT SCALE 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"); 	
