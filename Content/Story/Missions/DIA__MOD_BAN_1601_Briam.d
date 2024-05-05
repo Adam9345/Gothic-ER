@@ -52,10 +52,10 @@ FUNC INT DIA_Briam_WhoYou_Condition()
 FUNC VOID DIA_Briam_WhoYou_Info()
 {
     AI_Output (other, self ,"DIA_Briam_WhoYou_15_01"); //Kim jesteœ?
-    AI_Output (self, other ,"DIA_Briam_WhoYou_03_02"); //Nazywam siê Briam, jestem alchemikiem. G³ównie zajmujê siê destylacj¹ gorza³ki i robieniem skrêtów.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_02"); //Nazywam siê Briam, jestem alchemikiem. G³ównie zajmujê siê destylacj¹ gorza³ki i krêceniem blantów.
     AI_Output (self, other ,"DIA_Briam_WhoYou_03_03"); //Czesem jednak zdarza siê, ¿e przyrz¹dzê jak¹œ miksturê.
-    AI_Output (self, other ,"DIA_Briam_WhoYou_03_04"); //Ale to raczej rzadko. Mam tu tylko pospolite sk³adniki, sam wiesz. Kontakty z magami s¹ doœæ ograniczone.
-    AI_Output (self, other ,"DIA_Briam_WhoYou_03_05"); //Przygotwywanie u¿ywek to chyba najwa¿niejsza robota w Obozie. Bandyci lubi¹ piæ i paliæ.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_04"); //Ale to raczej rzadko. Mam tu tylko pospolite sk³adniki, sam wiesz. Kontakty z magami s¹ te¿ doœæ ograniczone.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_05"); //Preparacja u¿ywek to chyba najwa¿niejsza robota tu w  Obozie. Bandyci lubi¹ siê napiæ jak i zapaliæ.
     AI_Output (other, self ,"DIA_Briam_WhoYou_15_07"); //Móg³byœ nauczyæ mnie alchemii?
 	AI_Output (self, other ,"DIA_Briam_WhoYou_03_08"); //Jasne! Kiedyœ terminowa³em u alchemika Constantino, ale to by³o w czasach kiedy mia³ jeszcze bujne w³osy.
 
@@ -91,7 +91,7 @@ FUNC VOID DIA_Briam_LifeInCamp_Info()
     AI_Output (other, self ,"DIA_Briam_LifeInCamp_15_01"); //Jak ci siê tu ¿yje?
     AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_02"); //Nie jest Ÿle. Ka¿dy zajmuje siê swoj¹ robot¹ i nie wchodzi innym w drogê.
     AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_03"); //Quentin dobrze zarz¹dza Obozem i sprawiedliwie dzieli rudê.
-    AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_04"); //Zobaczysz, wkrótce siê st¹d wyrwiemy i sprzedamy rudê za z³oto.
+    AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_04"); //Zobaczysz, wkrótce siê st¹d wyrwiemy i wymienimy rudê za z³oto.
 };
 
 //========================================
@@ -119,16 +119,16 @@ FUNC INT DIA_Briam_WorkInCamp_Condition()
 FUNC VOID DIA_Briam_WorkInCamp_Info()
 {
     AI_Output (other, self ,"DIA_Briam_WorkInCamp_15_01"); //Opowiedz mi o waszej organizacji pracy.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_03"); //To proste. Ka¿dy ma wyznaczone jakieœ zadanie.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_04"); //Wiêkszoœæ Bandytów pracuje na rzecz Obozu, a czêœæ wykonuje swoj¹ robotê na zewn¹trz.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_05"); //Dziêki temu mamy jedzenie, wódkê i przedmioty potrzebne do przetrwania
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_03"); //To proste. Ka¿dy ma tu wyznaczone jakieœ zadanie.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_04"); //Wiêkszoœæ Bandytów wykonuje prace w samym Obozu, a czêœæ pracuje poza nim.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_05"); //Dziêki temu mamy jedzenie, gorza³e i przedmioty potrzebne do przetrwania
     AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_06"); //Od czasu do czasu przychodzi tu jakiœ wys³annik z innego obozu.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_07"); //Zazwyczaj prosz¹ nas o wykonanie jakiegoœ zadania, na które szkoda im w³asnych ludzi.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_08"); //Po prostu najmujemy siê do zleceñ, których nikt nie chce ruszyæ.
-    AI_Output (other, self ,"DIA_Briam_WorkInCamp_15_09"); //Czy inne obozy wami gardz¹? Tak mam to rozumieæ?
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_07"); //Zazwyczaj przychodz¹ z jakimiœ problemami, na które szkoda im w³asnych ludzi.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_08"); //Wówczas najmujemy siê do zleceñ, których nikt nie chce ruszaæ.
+    AI_Output (other, self ,"DIA_Briam_WorkInCamp_15_09"); //Czyli inne obozy wami pogardzaj¹? Tak mam to rozumieæ?
     AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_10"); //Niby tak, ale czasem zarabiamy po kilka tysiêcy bry³ek. Szczególnie dobrze p³ac¹ Guru.
     AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_11"); //Oczywiœcie, je¿eli uda nam siê prze¿yæ.
-    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_12"); //Najczêœciej jednak wysy³amy doœwiadczonych ludzi takich jak Rocky, Doyle czy Martin. Oni wiedz¹ co robi¹.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_12"); //Najczêœciej jednak wysy³amy doœwiadczonych ludzi takich jak Rocky, Doyle czy Martin. Ci goœcie wiedz¹ co robi¹.
 };
 
 //========================================
@@ -201,12 +201,12 @@ FUNC VOID DIA_Briam_RAYAN_Info()
     AI_Output (other, self ,"DIA_Briam_RAYAN_15_01"); //Wiesz coœ o œmierci Rayana?
     AI_Output (self, other ,"DIA_Briam_RAYAN_03_02"); //W³aœnie mia³em iœæ pogadaæ na ten temat z Jensem. To prawda, ¿e Kereth coœ kombinuje? 
 	AI_Output (other, self ,"DIA_Briam_RAYAN_15_03"); //Tak. Masz jakieœ u¿ytecznie informacje?
-    AI_Output (self, other ,"DIA_Briam_RAYAN_03_04"); //Chyba mam. Wczeœniej wydawa³y mi siê niewa¿ne, ale w œwietle tego, co siê dzieje mog¹ byæ kluczowe.
+    AI_Output (self, other ,"DIA_Briam_RAYAN_03_04"); //Chyba mam. Wczeœniej wydawa³y mi siê niewa¿ne, ale w œwietle tego, co siê dzieje mog¹ byæ doœæ istotne.
 	AI_Output (other, self ,"DIA_Briam_RAYAN_15_05"); //Zamieniam siê w s³uch.
     AI_Output (self, other ,"DIA_Briam_RAYAN_03_06"); //Widzia³em jak Kereth chowa³ do skrzyni miecz Jensa. To by³o póŸnym wieczorem. Wraca³ sk¹dœ. Na pocz¹tku myœla³em, ¿e po prostu odkupi³ tê broñ. 
     AI_Output (self, other ,"DIA_Briam_RAYAN_03_07"); //No, ale skoro s¹ skonfliktowani...
     AI_Output (other, self ,"DIA_Briam_RAYAN_15_08"); //Wychodzi³oby na to, ¿e Kereth sam rujnuje grób swojego brata, ¿eby wykurzyæ Jensa z Obozu. 
-	AI_Output (self, other ,"DIA_Briam_RAYAN_03_09"); //Kawa³ sukinsyna z niego. Lepiej szybko naprostujcie tê sprawê. 
+	AI_Output (self, other ,"DIA_Briam_RAYAN_03_09"); //Kawa³ sukinsyna z niego. Lepiej szybko wyprostujcie tê sprawê. 
 	
 	B_LogEntry     (CH1_DestroyedGrave,"Briam przedstawi³ doœæ wa¿n¹ sprawê. Twierdzi, ¿e widzia³ jak Kereth póŸn¹ noc¹ chowa do swojej skrzyni miecz Jensa.");
 };
@@ -274,13 +274,13 @@ FUNC VOID DIA_Briam_NewWeedRun_Info()
 {
     AI_Output (other, self ,"DIA_Briam_NewWeedRun_15_01"); //Czego potrzebujesz?
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_02"); //Rozmawia³em ostatnio z moim przyjacielem z Nowego Obozu.
-    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_03"); //Nazywa siê Sharky. Mo¿liwe, ¿e go znasz.
-    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_04"); //W ka¿dym razie dowiedzia³em siê od niego, ¿e niejaki Cor Kalom opracowa³ przepis na niesamowite ziele.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_03"); //Nazywa siê Sharky. Pewnie go znasz.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_04"); //W ka¿dym razie dowiedzia³em siê od niego, ¿e jeden z guru - Cor Kalom opracowa³ recepturê na niesamowite ziele.
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_05"); //Podobno skrêty s¹ perfekcyjne, jednak nie trafi³y na sprzeda¿. Kalom uzna³, ¿e bêd¹ je paliæ wy³¹cznie najwy¿si cz³onkowie Sekty.
 	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_06"); //To gówno musi nieŸle dawaæ w czaszkê, skoro elity trzymaj¹ je wy³¹cznie da siebie.
-    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_07"); //Chcia³bym, abyœ zdoby³ dla mnie ten przepis. Moglibyœmy na tym sporo zarobiæ.
-    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_08"); //Niestety nie mam pojêcia jak dotrzeæ do osoby, która ma przepis na skrêty. 
-	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_09"); //Jedyna poszlaka jak¹ mam jest fakt, ¿e Nowicjusz, który posiada recepturê zajmuje siê testowaniem magicznych substancji dla Guru. 
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_07"); //Chcia³bym, abyœ zdoby³ dla mnie t¹ recepturê. Moglibyœmy na tym sporo zarobiæ.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_08"); //Niestety nie mam pojêcia jak dotrzeæ do osoby, która przechowuje ten przepis. 
+	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_09"); //Jedyna poszlaka prowadzi do jakiegoœ Nowicjusza, który zajmuje siê testowaniem magicznych substancji dla Guru. 
 	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_10"); //Znasz kogoœ takiego? Có¿, jeœli nie, to bêdziesz musia³ poznaæ. 
 	
 	//log
