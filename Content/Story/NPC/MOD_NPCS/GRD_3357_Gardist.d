@@ -5,7 +5,7 @@ instance GRD_3357_Gardist (Npc_Default)
 //----------Info ogolne----------
 
 name 		=	NAME_Gardist;
-Npctype = Npctype_Rogue;
+Npctype = Npctype_Main;
 guild = GIL_BDT;
 level = 30;
 voice = 13;
