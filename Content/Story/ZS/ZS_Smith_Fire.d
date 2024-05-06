@@ -6,6 +6,8 @@ func void ZS_Smith_Fire ()
 {
     PrintDebugNpc (PD_TA_FRAME,"ZS_Smith_Fire");
     
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);    
 	B_StartUseMob	(self,	"BSFIRE");	
 };

@@ -6,6 +6,8 @@ func void ZS_HerbAlchemy()
 {
     PrintDebugNpc (PD_TA_FRAME,"ZS_HerbAlchemy");
     
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);	
 	if !(C_BodyStateContains(self,BS_MOBINTERACT))
 	{

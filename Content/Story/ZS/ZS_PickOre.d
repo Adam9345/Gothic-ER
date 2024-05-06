@@ -6,6 +6,8 @@ func void ZS_PickOre()
 {
     PrintDebugNpc (PD_TA_FRAME,"ZS_PickOre");
 
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);    
 
     if (self.aivar[AIV_DONTUSEMOB] == 1)

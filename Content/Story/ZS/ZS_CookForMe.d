@@ -8,6 +8,8 @@ func void ZS_CookForMe ()
     
 	B_SetPerception (self);
 
+	AI_Wait(self, 1);
+
 	if (!C_BodyStateContains(self, BS_MOBINTERACT))
 	{
 		AI_SetWalkmode (self,NPC_WALK);		// Walkmode für den Zustand

@@ -7,6 +7,8 @@ func void ZS_WorkMob()
 {
 	PrintDebugNpc 		(PD_TA_FRAME,"ZS_WorkMob");
 	
+	AI_Wait (self, 1);
+
 	B_SetPerception		(self);    
 	AI_SetWalkmode 		(self,	NPC_WALK);
 

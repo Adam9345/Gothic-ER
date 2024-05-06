@@ -6,6 +6,8 @@ FUNC VOID ZS_RoastScavenger ()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_RoastScavenger");
 	
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);    
 
 	if !(C_BodyStateContains(self,BS_MOBINTERACT))

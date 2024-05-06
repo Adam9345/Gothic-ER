@@ -6,7 +6,9 @@ FUNC VOID ZS_Cook ()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_Cook");
 	
-	B_SetPerception (self);    
+	B_SetPerception (self);
+
+	AI_Wait (self, 1);    
 
 	if (!C_BodyStateContains(self, BS_MOBINTERACT))
 	{

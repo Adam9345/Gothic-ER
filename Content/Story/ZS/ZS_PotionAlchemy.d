@@ -6,6 +6,8 @@ func void ZS_PotionAlchemy()
 {
     PrintDebugNpc (PD_TA_FRAME,"ZS_PotionAlchemy");
     
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);    
 
 	if !(C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT))

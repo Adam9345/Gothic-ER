@@ -6,6 +6,8 @@ func void ZS_Smith_Cool ()
 {
     PrintDebugNpc	(PD_TA_FRAME,	"ZS_Smith_Cool");
     
+	AI_Wait (self, 1);
+
 	B_SetPerception (self);    
 	B_StartUseMob	(self,	"BSCOOL");	
 };
