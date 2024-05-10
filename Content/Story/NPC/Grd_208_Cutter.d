@@ -36,7 +36,7 @@ instance GRD_208_Cutter (Npc_Default)
 			
 	//-------- inventory --------
 	
-	EquipItem	(self, ItMw_1H_Sword_03);
+	EquipItem	(self, ItMw_1H_Sword_Grd_Master);
 	EquipItem	(self, ItRw_Crossbow_01);
 	CreateInvItems	(self, ItAmBolt, 10);
     B_CreateAmbientInv (self);

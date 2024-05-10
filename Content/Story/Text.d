@@ -521,7 +521,7 @@ const string _STR_MESSAGE_WHEEL_STUCKS		= "Ko³owrót siê zaci¹³!"					;
 
 // Bidschrimausgabe beim storybedingten Transfer von Items
 const string _STR_MESSAGE_ITEM_GIVEN		= " Przedmiot oddany."								;	//SPACE davor wichtig, weil Trennzeichen
-const string _STR_MESSAGE_ITEMS_GIVEN		= " przedmioty oddane."							;
+const string _STR_MESSAGE_ITEMS_GIVEN		= " przedmioty oddane."						     	;
 const string _STR_MESSAGE_ORE_GIVEN			= " bry³ek straty."									;
 const string _STR_MESSAGE_ITEM_TAKEN		= " Przedmiot otrzymany."							;
 const string _STR_MESSAGE_ITEMS_TAKEN		= " przedmioty otrzymane."							;

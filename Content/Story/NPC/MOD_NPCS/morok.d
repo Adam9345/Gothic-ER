@@ -33,7 +33,7 @@ Mdl_SetModelFatness(self,0);
 B_SetFightSkills(self,70);
 
 //----------Ekwipunek----------
-EquipItem		(self, ItMw_1H_Sword_05);
+EquipItem		(self, ItMw_1H_Sword_Grd_Master);
 EquipItem		(self, ItRw_Crossbow_02_Z);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;
@@ -91,7 +91,7 @@ Mdl_SetModelFatness(self,0);
 
 B_SetFightSkills(self,70);
 //----------Ekwipunek----------
-EquipItem		(self, ItMw_1H_Sword_05);
+EquipItem		(self, ItMw_1H_Sword_Grd_Master);
 EquipItem		(self, ItRw_Crossbow_02_Z);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;

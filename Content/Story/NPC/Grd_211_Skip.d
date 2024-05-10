@@ -37,7 +37,7 @@ instance GRD_211_Skip (Npc_Default)
 	//----------Handlarz_aivar------
 	self.aivar[AIV_NPCISTRADER] = true;
 	//-------- inventory --------
-	EquipItem	(self, ItMw_1H_Sword_02);
+	EquipItem	(self, ItMw_1H_Sword_Grd_Master);
 	
 	CreateInvItems	(self, ItMiNugget, 400);
 	B_CreateAmbientInv (self);

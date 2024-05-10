@@ -36,7 +36,7 @@ instance Grd_205_Scorpio (Npc_Default)
    B_SetFightSkills(self,70);
 	//-------- inventory --------
 	
-	EquipItem	(self, ItMw_1H_Sword_03);
+	EquipItem	(self, ItMw_1H_Sword_Grd_Master);
 B_CreateAmbientInv (self);
 	
 	

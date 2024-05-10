@@ -1195,3 +1195,31 @@ INSTANCE ItMw_2h_DragonLick (C_Item)
 	TEXT[5]				= 	NAME_Value;
 	
 };
+/*************************************************************************/
+INSTANCE ItMw_1H_Sword_Grd_Master (C_Item) 
+{	
+	
+	name 				=	"Porz¹dny miecz";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	44;
+
+	damageTotal			= 	44;
+	damagetype			=	DAM_EDGE;
+	range    			=  	130;		
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	40;
+	
+	visual 				=	"ItMw_1H_Sword_Grd_03.3DS";
+
+	description			= name;
+	
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
