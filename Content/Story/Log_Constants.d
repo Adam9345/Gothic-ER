@@ -187,7 +187,7 @@ const string	CH3_Stonehenge			=	"Kamieñ pod krêgiem";
 const string	CH3_Fortress			=	"Kamieñ z górskiej fortecy";
 const string	CH3_MonasteryRuin		=	"Kamieñ ze starego klasztoru";
 const string	CH3_TrollCanyon			=	"Kamieñ z kanionu trolli";
-
+const string CH1_EmanuelsDeals = "Handel Emanuela";
 //---------------------------------------------------------------------
 //	KAPITEL 4
 //---------------------------------------------------------------------

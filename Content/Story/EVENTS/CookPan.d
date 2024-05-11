@@ -80,10 +80,10 @@ FUNC INT PC_CookPaning_Weapon_Condition ()
 FUNC VOID PC_CookPaning_Weapon_Info()
 {
 	CookMeat = TRUE;
-	if (CookingFirstTime = != TRUE)
+	if (CookingPanFirstTime != TRUE)
 	{
-	CookingFirstTime = TRUE;
-	PrintScreen ("Naciœnij < lub > aby zmieniæ iloœæ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	CookingPanFirstTime = TRUE;
+	PrintS_Ext  ("Naciœnij < lub > aby zmieniæ iloœæ.", COL_GREEN);
 	};
 };
 //*******************************************************

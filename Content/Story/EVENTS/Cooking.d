@@ -72,10 +72,11 @@ FUNC VOID PC_Cooking_Food_Info()
 {
 	CookingFood = TRUE;
 	
-	if (CookingFirstTime = != TRUE)
+	if (CookingFirstTime != TRUE)
 	{
 	CookingFirstTime = TRUE;
-	PrintScreen ("Naciœnij < lub > aby zmieniæ iloœæ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	
+	PrintS_Ext  ("Naciœnij < lub > aby zmieniæ iloœæ.", COL_GREEN);
 	};
 	
 	

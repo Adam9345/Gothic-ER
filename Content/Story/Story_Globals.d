@@ -933,7 +933,7 @@ var int MIS_Fire_Novize;
 
 var int mis_firenovize;
 
-
+var int MIS_EmanuelsDeals;
 
 var int MIS_Stan_gerarda;
 var int MIS_ObronaWK;
