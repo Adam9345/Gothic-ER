@@ -13,7 +13,8 @@ FUNC VOID COOKPAN_S1 ()
 var int MuttonRaw;
 var int MoleratLiver;
 var int MuttonLurker;
-var int CookMeat;				 
+var int CookMeat;		
+var int CookingPanFirstTime;		 
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -79,6 +80,11 @@ FUNC INT PC_CookPaning_Weapon_Condition ()
 FUNC VOID PC_CookPaning_Weapon_Info()
 {
 	CookMeat = TRUE;
+	if (CookingFirstTime = != TRUE)
+	{
+	CookingFirstTime = TRUE;
+	PrintScreen ("Naciœnij < lub > aby zmieniæ iloœæ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	};
 };
 //*******************************************************
 INSTANCE PC_CookPaning_Stop (C_Info)

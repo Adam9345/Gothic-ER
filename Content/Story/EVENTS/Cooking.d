@@ -46,6 +46,7 @@ FUNC VOID DIA_PC_Hero_Cook_EXIT_Info()
 //*******************************************************
 //Spezielle Tränke 
 //*******************************************************
+var int CookingFirstTime;
 //----------------------
 INSTANCE PC_Cooking_Food (C_Info)
 {
@@ -70,6 +71,14 @@ FUNC INT PC_Cooking_Food_Condition ()
 FUNC VOID PC_Cooking_Food_Info()
 {
 	CookingFood = TRUE;
+	
+	if (CookingFirstTime = != TRUE)
+	{
+	CookingFirstTime = TRUE;
+	PrintScreen ("Naciœnij < lub > aby zmieniæ iloœæ"                   ,2, 68, "FONT_OLD_10_WHITE.TGA", 2);
+	};
+	
+	
 };
 //*******************************************************
 INSTANCE PC_Cooking_Stop (C_Info)
