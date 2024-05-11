@@ -301,7 +301,7 @@ FUNC VOID DIA_Arnold_NP_GoToMe_Info()
 	IKnowArnold = TRUE;
 	Info_ClearChoices(DIA_Arnold_NP_GoToMe);
 	Info_AddChoice	 (DIA_Arnold_NP_GoToMe, "Nie. ¯ycie mi jeszcze mi³e." ,DIA_Arnold_NOILIKEBEARS);
-	Info_AddChoice	 (DIA_Arnold_NP_GoToMe, "Liczba misów w Kolonii ulegnie redukcji.",DIA_Arnold_KILLBEARS);
+	Info_AddChoice	 (DIA_Arnold_NP_GoToMe, "Liczba misiów w Kolonii ulegnie redukcji.",DIA_Arnold_KILLBEARS);
 
 	
 };
@@ -319,7 +319,7 @@ FUNC VOID DIA_Arnold_NOILIKEBEARS()
 };
 FUNC VOID DIA_Arnold_KILLBEARS()
 {
-    AI_Output (other, self ,"DIA_Arnold_KILLBEARS_15_01"); //Liczba misów w Kolonii ulegnie redukcji.
+    AI_Output (other, self ,"DIA_Arnold_KILLBEARS_15_01"); //Liczba misiów w Kolonii ulegnie redukcji.
     AI_Output (self, other ,"DIA_Arnold_KILLBEARS_03_02"); //No i œwietnie! Takie podejœcie mi siê podoba.
     AI_Output (self, other ,"DIA_Arnold_KILLBEARS_03_03"); //Œmia³oœæ i odwaga! Chocia¿ kiedyœ mnie to zawiod³o... Ale mniejsza z tym.
     AI_Output (other, self ,"DIA_Arnold_KILLBEARS_15_04"); //No i co teraz?
