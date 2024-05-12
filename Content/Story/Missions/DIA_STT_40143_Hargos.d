@@ -319,6 +319,7 @@ FUNC VOID DIA_Hargos_ZND_OMINE_Info()
     AI_Output (self, other ,"DIA_Hargos_ZND_OMINE_03_07"); //Do zobaczenia.
 
 	B_GiveInvItems (other,self, ItMi_HargosWood, 3);
+    self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Npc_RemoveInvItems (STT_40143_Hargos, ItMi_HargosWood,3);
 	Npc_ExchangeRoutine(STT_40143_Hargos,"Start");
 	B_LogEntry               (ZapotrzebowanieNaDrewno,"Dotarliœmy pod Star¹ Kopalnie. Odda³em niesione deski Hargosowi. Teraz mam udaæ siê po zap³atê do Spike’a. ");

@@ -389,6 +389,7 @@ FUNC VOID DIA_Chris_GoToAbMine_Info()
     AI_Output (other, self ,"DIA_Chris_GoToAbMine_15_03"); //Opuszczonej Kopalni przy placu wymian. Gomez wys³a³ tam oddzia³ Stra¿ników. Musimy siê ich pozbyæ. 
     AI_Output (self, other ,"DIA_Chris_GoToAbMine_03_04"); //Skoro tak stawiasz sprawê, to jasne, ¿e idê.
     AI_Output (other, self ,"DIA_Chris_GoToAbMine_15_05"); //Dobra. ChodŸ za mn¹. 
+    self.aivar[AIV_PARTYMEMBER] = TRUE;
     Npc_ExchangeRoutine (self, "FOLLOW");
     AI_StopProcessInfos	(self);
 };
