@@ -1,5 +1,5 @@
 const int AIV_MoreAivars = 3; //indeks aivara, w którym bêdzie przechowywany handle
-const int MAX_ADDITIONAL_AIVARS = 20; //iloœæ dodatkowych aivarów
+const int MAX_ADDITIONAL_AIVARS = 1; //iloœæ dodatkowych aivarów
 
 const int NpcWasPickPocket = 0;
 
