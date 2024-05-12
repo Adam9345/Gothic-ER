@@ -457,8 +457,7 @@ const string CH5_FoodForHunters      		= "Dostawa ¿ywnoœci";
 var int MIS_BigTroll;
 const string CH5_BigTroll      				= "Polowanie z Alexem";
 
-var int MIS_Upadek_Gomeza;
-const string CH5_Upadek_Gomeza      		= "Upadek Gomeza";
+
 
 //***Opuszczona kopalnia***
 //***Zmienne zadañ***

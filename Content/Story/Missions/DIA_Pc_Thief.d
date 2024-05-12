@@ -2324,48 +2324,6 @@ FUNC VOID DIA_PC_THIEF_CALA_PRAWDA_Info()
     AI_Output (self, other ,"DIA_PC_THIEF_CALA_PRAWDA_03_06"); //Wiedzia³em, ¿e mo¿na na tobie polegaæ, nawet jeœli nie chcesz pomóc, he he.
 };
 
-//========================================
-//-----------------> KILL_GOMEZ
-//========================================
-
-INSTANCE DIA_PC_THIEF_KILL_GOMEZ (C_INFO)
-{
-   npc          = PC_THIEF;
-   nr           = 2;
-   condition    = DIA_PC_THIEF_KILL_GOMEZ_Condition;
-   information  = DIA_PC_THIEF_KILL_GOMEZ_Info;
-   permanent	= FALSE;
-   description	= "Czy mogê ci w czymœ pomóc?";
-};
-
-FUNC INT DIA_PC_THIEF_KILL_GOMEZ_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_PC_THIEF_You_Hero)) && (KAPITEL == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_PC_THIEF_KILL_GOMEZ_Info()
-{
-    AI_Output (other, self ,"DIA_PC_THIEF_KILL_GOMEZ_15_01"); //Czy mogê ci w czymœ pomóc?
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_02"); //Owszem. Nie zamierzam odpuœciæ maj¹tku i s³awy.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_03"); //Niestety teraz jestem niepo¿¹dan¹ osob¹ w Starym Obozie i nie mogê dostaæ siê do œrodka.
-    AI_Output (other, self ,"DIA_PC_THIEF_KILL_GOMEZ_15_04"); //I co w zwi¹zku z tym?
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_05"); //Sta³eœ siê potê¿ny przyjacielu. ZnajdŸ sposób na dostanie siê do zamku.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_06"); //Gdy to zrobisz, idŸ do siedziby Magnatów i poder¿nij Gomezowi gard³o.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_07"); //Przy okazji wyœlij do Beliara jego przydupasów.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_08"); //Nigdy za nimi jakoœ nie przepada³em.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_09"); //Wierz mi, wszyscy ludzie na tym skorzystaj¹. A z œwiata zostanie usuniêty kolejny tyran.
-    AI_Output (other, self ,"DIA_PC_THIEF_KILL_GOMEZ_15_10"); //Skoro tak, to spróbujê.
-    AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_11"); //Œwietnie.
-    MIS_Upadek_Gomeza = LOG_RUNNING;
-
-    Log_CreateTopic          (CH5_Upadek_Gomeza, LOG_MISSION);
-    Log_SetTopicStatus       (CH5_Upadek_Gomeza, LOG_RUNNING);
-    B_LogEntry               (CH5_Upadek_Gomeza,"Diego poprosi³ mnie, abym znalaz³ jakiœ sposób na dostanie siê do zamku w Starym Obozie. Gdy ju¿ mi siê uda, mam poder¿n¹æ gard³o Gomezowi.");
-};
 
 //========================================
 //-----------------> SZEF_CIENI

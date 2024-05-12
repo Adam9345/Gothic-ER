@@ -1350,17 +1350,16 @@ FUNC INT DIA_Ash_PODAREK_LESTER_Condition()
 
 FUNC VOID DIA_Ash_PODAREK_LESTER_Info()
 {
-    AI_Output (self, hero ,"DIA_Ash_PODAREK_LESTER_03_01"); //Kogo ja widzê, to¿ to nasz bohater.
-    AI_Output (self, hero ,"DIA_Ash_PODAREK_LESTER_03_02"); //Cieszê siê, ¿e przyby³eœ. Zaczyna³em siê niepokoiæ.
-    AI_Output (hero, self ,"DIA_Ash_PODAREK_LESTER_03_03"); //Jak widaæ dotar³em.
+    AI_Output (self, hero  ,"DIA_Ash_PODAREK_LESTER_03_01"); //Kogo ja widzê, to¿ to nasz bohater.
+    AI_Output (self, hero  ,"DIA_Ash_PODAREK_LESTER_03_02"); //Cieszê siê, ¿e przyby³eœ. Zaczyna³em siê niepokoiæ.
+    AI_Output (hero, self  ,"DIA_Ash_PODAREK_LESTER_03_03"); //Jak widaæ dotar³em.
     AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_04"); //Tak, to oznacza, ¿e teraz jesteœ jednym z nas, na co w pe³ni zas³ugujesz.
-	// niepotrzebne! AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_05"); //Bractwo bez ciebie nigdy by siê nie pozbiera³o po upadku wiary w Œni¹cego.
-	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_06"); //Mam dla ciebie drobny podarek w imiê przyjaŸni.
-	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_07"); //WeŸ ten wywar z wnêtrznoœci pe³zaczy. 
-	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_08"); //Znalaz³em go przypadkiem w mojej chacie, gdy pakowa³em siê na wyprawê do Górskiej Fortecy.
-	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_09"); //Cor Kalom warzy³ takie dla Nowicjuszy, w celu wzmocnienia ich kontaktu ze Œni¹cym.
-    AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_10"); //Powinien zwiêkszyæ twoje si³y.
-	AI_Output (hero, self ,"DIA_Ash_PODAREK_LESTER_03_11"); //Dziêki!
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_05"); //Mam dla ciebie drobny podarek, w imiê przyjaŸni.
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_06"); //WeŸ ten wywar z wnêtrznoœci pe³zaczy. 
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_07"); //Znalaz³em go przypadkiem w mojej chacie, gdy pakowa³em siê na wyprawê do Górskiej Fortecy.
+	AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_08"); //Cor Kalom warzy³ takie dla Nowicjuszy, w celu wzmocnienia ich kontaktu ze Œni¹cym.
+    AI_Output (self, other ,"DIA_Ash_PODAREK_LESTER_03_09"); //Powinien zwiêkszyæ twoje si³y mentalne.
+	AI_Output (hero, self  ,"DIA_Ash_PODAREK_LESTER_03_10"); //Dziêki!
 	CreateInvItems (self, ItFo_Potion_Elixier_Egg, 1);
     B_GiveInvItems (self, other, ItFo_Potion_Elixier_Egg, 1);
 	B_LogEntry                     (CH4_4Friends,"Lester obdarowa³ mnie napojem z wnêtrznoœci pe³zaczy. Wreszcie dowiem siê, jakim œwiñstwem Cor Kalom odurza³ Nowicjuszy.");
@@ -1396,7 +1395,7 @@ FUNC VOID DIA_PC_Psionic_LORE_BRACTWO_Info()
     AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_02"); //Szczerze mówi¹c nie mam pojêcia.
     AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_03"); //Odk¹d wybra³em siê do Górskiej Fortecy, nie mia³em kontaktu z ¿adnym z moich braci.
     AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_04"); //Za kilka dni zamierzam udaæ siê z wizyt¹ do mojego mistrza, Baal Namiba. 
-  //  AI_Output (self, other ,"DIA_PC_Psionic_LORE_BRACTWO_03_05"); //Mam nadziejê, ¿e dowiem siê czegoœ ciekawego.
+  
 };
 
 //========================================
@@ -1425,7 +1424,7 @@ FUNC INT DIA_PC_Psionic_ANGAR_Condition()
 FUNC VOID DIA_PC_Psionic_ANGAR_Info()
 {
     AI_Output (other, self ,"DIA_PC_Psionic_ANGAR_15_01"); //Co mo¿esz mi powiedzieæ o Cor Angarze?
-    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_02"); //Myœlê, ¿e bêdzie dobrze zastêpowa³ Y'Beriona. 
+    AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_02"); //Myœlê, ¿e  dobrze bêdzie zastêpowa³ Y'Beriona. 
     AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_03"); //Jest rozs¹dny, twardy, a zarazem wyrozumia³y.
     AI_Output (self, other ,"DIA_PC_Psionic_ANGAR_03_04"); //Cieszê siê, ¿e Kalom opuœci³ Bractwo. Nie bêdzie zara¿a³ innych swoim jadem.
     AI_Output (other, self ,"DIA_PC_Psionic_ANGAR_15_05"); //Myœla³em, ¿e szanowa³eœ Cor Kaloma.
@@ -1467,9 +1466,7 @@ FUNC VOID DIA_PC_Psionic_SLEPPER_Info()
     AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_06"); //Nie ³udzi³bym siê, wydaje mi siê, ¿e Cor Kalom dosta³ siê do œwi¹tyni.
     AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_07"); //Lepiej szybko powstrzymaj tego szaleñca!
     AI_Output (other, self ,"DIA_PC_Psionic_SLEPPER_15_08"); //Nie martw siê, postaram siê tym zaj¹æ. 
-	// tak, ju¿ pójdê i go pokonam, Bezimienny taki nie jest, wyciête
-   // AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_09"); //Mam nadzieje, ¿e ci siê uda.
-   // AI_Output (self, other ,"DIA_PC_Psionic_SLEPPER_03_10"); //Choæ z drugiej strony udowodni³eœ nie raz, ¿e jesteœ prawdziwym bohaterem.
+	
 };
 
 //========================================
