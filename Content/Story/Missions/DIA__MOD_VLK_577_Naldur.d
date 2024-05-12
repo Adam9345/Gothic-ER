@@ -226,6 +226,7 @@ FUNC VOID DIA_Naldur_WIN_Info()
 {
     AI_Output (self, other ,"DIA_Naldur_WIN_03_01"); //Pokona³eœ mnie! Nie doceni³em twojej si³y. 
 	
+    self.npctype = npctype_MAIN;
 	B_ChangeGuild   		 (self,GIL_VLK);  
 	AI_StopProcessInfos	(self);
 };

@@ -40,47 +40,47 @@ FUNC void GUR_1212_MadCorKalom_Talk2SC_Info ()
 	Npc_SetTarget		(self, hero );
 	AI_StartState		(self, ZS_Attack, 0, "" );
 	
-	self.guild = GIL_GRD;
-	B_ChangeGuild   		 (self,GIL_GRD);  
+	//self.guild = GIL_GRD;
+	B_ChangeGuild   		 (self,GIL_BDT);  
 	
-	NOV_1370_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1370_Novize,GIL_GRD); 
+	//NOV_1370_Novize.guild = GIL_BDT;
+	B_ChangeGuild   		 (NOV_1370_Novize,GIL_BDT); 
 	
-	NOV_1369_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1369_Novize,GIL_GRD); 
+	//NOV_1369_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1369_Novize,GIL_BDT); 
 	
-	NOV_1368_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1368_Novize,GIL_GRD);
+	//NOV_1368_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1368_Novize,GIL_BDT);
 
-	NOV_1367_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1367_Novize,GIL_GRD); 
+	//NOV_1367_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1367_Novize,GIL_BDT); 
 
-	NOV_1366_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1366_Novize,GIL_GRD); 
+	//NOV_1366_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1366_Novize,GIL_BDT); 
 
-	NOV_1365_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1365_Novize,GIL_GRD); 
+	//NOV_1365_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1365_Novize,GIL_BDT); 
 
-	NOV_1364_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1364_Novize,GIL_GRD); 
+	//NOV_1364_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1364_Novize,GIL_BDT); 
 
-	NOV_1363_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1363_Novize,GIL_GRD); 	
+	//NOV_1363_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1363_Novize,GIL_BDT); 	
 	
-	NOV_1362_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1362_Novize,GIL_GRD); 
+	//NOV_1362_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1362_Novize,GIL_BDT); 
 	
-	NOV_1361_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1361_Novize,GIL_GRD); 
+	//NOV_1361_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1361_Novize,GIL_BDT); 
 	
-	NOV_1360_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1360_Novize,GIL_GRD);
+	//NOV_1360_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1360_Novize,GIL_BDT);
 
-	NOV_1359_Novize.guild = GIL_GRD;
-	B_ChangeGuild   		 (NOV_1359_Novize,GIL_GRD); 
+	//NOV_1359_Novize.guild = GIL_GRD;
+	B_ChangeGuild   		 (NOV_1359_Novize,GIL_BDT); 
 
 
-    Sleeper.guild = GIL_GRD;
-	B_ChangeGuild   		 (Sleeper,GIL_GRD); 
+    //Sleeper.guild = GIL_GRD;
+	B_ChangeGuild   		 (Sleeper,GIL_BDT); 
 
 };

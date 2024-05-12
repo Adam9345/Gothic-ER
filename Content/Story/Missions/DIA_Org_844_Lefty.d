@@ -709,16 +709,16 @@ FUNC VOID DIA_Lefty_LastFight_Info()
     AI_Output (self, other ,"DIA_Lefty_LastFight_03_01"); //Niczego siê nie nauczy³eœ. Posun¹³eœ siê za daleko.
     AI_Output (self, other ,"DIA_Lefty_LastFight_03_02"); //A to oznacza twój koniec.
     
-	B_ChangeGuild (self, GIL_DMB);
+	B_ChangeGuild (self, GIL_BDT);
 	
     AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
 	
-	B_ChangeGuild (Org_846_Schlaeger, GIL_DMB);
-	B_ChangeGuild (Org_845_Schlaeger, GIL_DMB);
-	B_ChangeGuild (BAU_900_Ricelord, GIL_DMB);
-	B_ChangeGuild (BAU_908_Bauer, GIL_DMB);
+	B_ChangeGuild (Org_846_Schlaeger, GIL_BDT);
+	B_ChangeGuild (Org_845_Schlaeger, GIL_BDT);
+	B_ChangeGuild (BAU_900_Ricelord, GIL_BDT);
+	B_ChangeGuild (BAU_908_Bauer, GIL_BDT);
 	//B_ChangeGuild (BAU_902_Pock, GIL_DMB);
 	
 	//B_ChangeGuild (BAU_920_Bauer, GIL_DMB);

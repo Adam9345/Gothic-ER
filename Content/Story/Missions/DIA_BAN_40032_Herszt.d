@@ -29,17 +29,23 @@ FUNC VOID DIA_HersztORG_EXIT_Info()
 //========================================
 
 
-
 func void CONN_BANN_HOS()
 {
-    Npc_SetTrueGuild (BAN_40032_Herszt,GIL_ORCSCOUT);
-	BAN_40032_Herszt.guild = GIL_ORCSCOUT;
 
-    Npc_SetTrueGuild (Org_40137_Organisator,GIL_ORCSCOUT);
-	Org_40137_Organisator.guild = GIL_ORCSCOUT;
+	var c_npc Herszt;    	Herszt = Hlp_GetNpc(BAN_40032_Herszt);
+	AI_EquipBestRangedWeapon(Herszt);
+
+    Npc_SetTrueGuild (BAN_40032_Herszt,GIL_BDT);
+	Npc_SetPermAttitude (BAN_40032_Herszt, ATT_HOSTILE);
+	BAN_40032_Herszt.guild = GIL_BDT;
+
+    Npc_SetTrueGuild (Org_40137_Organisator,GIL_BDT);
+	Npc_SetPermAttitude (Org_40137_Organisator, ATT_HOSTILE);
+	Org_40137_Organisator.guild = GIL_BDT;
 	
-    Npc_SetTrueGuild (Org_40136_Organisator,GIL_ORCSCOUT);
-	Org_40136_Organisator.guild = GIL_ORCSCOUT;
+    Npc_SetTrueGuild (Org_40136_Organisator,GIL_BDT);
+	Npc_SetPermAttitude (Org_40136_Organisator, ATT_HOSTILE);
+	Org_40136_Organisator.guild = GIL_BDT;
 
 };
 
@@ -74,44 +80,44 @@ func void TRIA_ConnorZemsta_info()
   
     TRIA_Next(Herszt);
 
-    DIAG_Reset();
+    //DIAG_Reset();
 	AI_TurnToNpc(self, BAN_40028_Connor);
 	AI_Output (self, other, "TRIA_ConnorZemsta_0F"); //O mamy naszego bohatera. Connor powrÛci≥! 
  
-    TRIA_Cam("CAMERASTART");
+    //TRIA_Cam("CAMERASTART");
   
     TRIA_Next(Connor);
-	DIAG_Reset();
+	//DIAG_Reset();
 	AI_GotoNpc(self, other);
-    DIAG("No", 0, 1);
+    //DIAG("No", 0, 1);
 	AI_TurnToNpc (self,BAN_40032_Herszt);
     AI_Output (self, other, "TRIA_ConnorZemsta_04"); //Tak pokazaÊ wam co znaczy moja zemsta.
 	
     TRIA_Next(Herszt);
-	DIAG_Reset();
+	//DIAG_Reset();
  
-    DIAG("NotSure", 0, 1);
+    //DIAG("NotSure", 0, 1);
 	AI_TurnToNpc(self, BAN_40028_Connor);
     AI_Output (self, other, "TRIA_ConnorZemsta_05"); //Taki gamoÒ? Trzymajcie mnie bo zdechnÍ ze úmiechu.
 	AI_Output (self, other, "TRIA_ConnorZemsta_06"); //Ciesz siÍ lepiej, øe nikt ciÍ wtedy nie zabi≥. A teraz wynoú sie stπd.
   
-    TRIA_Cam("");
+    //TRIA_Cam("");
 
 	TRIA_Next(Connor);
-	DIAG_Reset();
-    DIAG("Angry", 0, 4);
+	//DIAG_Reset();
+    //DIAG("Angry", 0, 4);
 	AI_TurnToNpc (self,BAN_40032_Herszt);
     AI_Output (self, other, "TRIA_ConnorZemsta_07"); //èle mnie zrozumia≥eú przyszed≥em was za≥atwiÊ.
 
  
 	TRIA_Next(Herszt);
-    DIAG_Reset();
+    //DIAG_Reset();
 	AI_TurnToNpc(self, BAN_40028_Connor);
     AI_Output (self, other, "TRIA_ConnorZemsta_08"); //Hahahah! S≥yszeliúcie? Ten maminsynek nam grozi!
 	AI_Output (self, other, "TRIA_ConnorZemsta_09"); //W takim razie dostaniesz czego chcesz! BraÊ tego m≥odocianego szczura i jego przydupasa.
 	
 	TRIA_Next(Connor);
-    DIAG_Reset();
+    //DIAG_Reset();
 	AI_TurnToNpc (self,BAN_40032_Herszt);
 	AI_Output (self, other, "TRIA_ConnorZemsta_10"); //Gryü piach frajerze!
 	

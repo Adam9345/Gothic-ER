@@ -435,8 +435,9 @@ func void Kastagir_Charged ()
 	NON_40009_Kastagir.attribute[ATR_HITPOINTS] = 1500;
 	NON_40009_Kastagir.attribute[ATR_HITPOINTS_MAX] = 1500;
     B_SetPermAttitude	(NON_40009_Kastagir,	ATT_HOSTILE);
+    B_SetPermAttitude	(DemonKastagir,	ATT_HOSTILE);
     B_ChangeGuild(NON_40009_Kastagir,GIL_DEMON); 
-
+    DemonKastagir.aivar[AIV_MM_Behaviour] =	HUNTER;
 
 
 };
