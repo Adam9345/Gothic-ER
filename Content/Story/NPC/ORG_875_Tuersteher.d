@@ -3,7 +3,7 @@ instance ORG_875_Tuersteher (Npc_Default)
 	//-------- primary data --------
 	
 	name =					Name_Tuersteher;
-	Npctype			= NPCTYPE_FRIEND;
+	Npctype			= NPCTYPE_MAIN;
 	guild =					GIL_ORG;      
 	level =					8;
 		

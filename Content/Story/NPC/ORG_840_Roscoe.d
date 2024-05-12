@@ -3,7 +3,7 @@ instance ORG_840_Roscoe (Npc_Default)
 	//-------- primary data --------
 	
 	name =					"Roscoe";
-	Npctype			= NPCTYPE_FRIEND;
+	Npctype			= NPCTYPE_MAIN;
 	guild =					GIL_ORG;       
 	level =					11;
 	

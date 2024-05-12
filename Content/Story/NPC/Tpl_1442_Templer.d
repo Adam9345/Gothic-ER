@@ -2,7 +2,7 @@ instance TPL_1442_Templer (Npc_Default)
 {
 	//-------- primary data --------
 	name =					Name_Templer;
-	Npctype					= NPCTYPE_FRIEND;
+	Npctype					= NPCTYPE_MAIN;
 	guild =							GIL_TPL;
 	level =							17;
 	

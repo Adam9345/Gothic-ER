@@ -3,7 +3,7 @@ instance ORG_804_Organisator (Npc_Default)
 	//-------- primary data --------
 	
 	name =					Name_Organisator;
-	Npctype			= NPCTYPE_FRIEND;
+	Npctype			= NPCTYPE_MAIN;
 	guild =					GIL_ORG;      
 	level =					15;
 

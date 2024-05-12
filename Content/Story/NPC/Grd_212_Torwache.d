@@ -3,7 +3,7 @@ instance GRD_212_Torwache (Npc_Default)
 	//-------- primary data --------
 	
 	name 		=	NAME_Torwache;
-	Npctype			= NPCTYPE_FRIEND;
+	Npctype			= NPCTYPE_MAIN;
 	guild 		=	GIL_GRD;
 	level 		=	15;
 	voice 		=	13;

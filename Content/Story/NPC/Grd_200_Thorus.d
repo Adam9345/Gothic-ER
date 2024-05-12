@@ -3,7 +3,7 @@ instance Grd_200_Thorus (Npc_Default)
 	//-------- primary data --------
 	
 	name 		=	"Thorus";
-	npctype		=	NPCTYPE_FRIEND;
+	npctype		=	NPCTYPE_MAIN;
 	guild 		=	GIL_GRD;
 	level 		=  	50;
 	voice 		=  	9;

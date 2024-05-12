@@ -3,7 +3,7 @@ instance GRD_218_Gardist (Npc_Default)
 	//-------- primary data --------
 	
 	name 		= 	NAME_Gardist;
-	Npctype			= NPCTYPE_FRIEND;
+	Npctype			= NPCTYPE_MAIN;
 	guild 		=	GIL_GRD;
 	level 		=	20;
 	voice		=	7;

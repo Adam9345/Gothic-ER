@@ -3,7 +3,7 @@ instance SLD_723_Soeldner (Npc_Default)
 	//-------- primary data --------
 	
 	name =							Name_Soeldner;
-	Npctype							= NPCTYPE_FRIEND;
+	Npctype							= NPCTYPE_MAIN;
 	guild =							GIL_SLD;       
 	level =							18;
 	
