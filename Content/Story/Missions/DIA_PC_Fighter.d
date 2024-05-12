@@ -1739,6 +1739,7 @@ FUNC VOID DIA_PC_Fighter_LevelUpBitch_Info()
 //---------------------------------------------------------------------
 //	Info ZASTEPSTWO
 //---------------------------------------------------------------------
+var int HeroGoToLeeFM;
 INSTANCE Info_Gorn_ZASTEPSTWO (C_INFO)
 {
 	npc			= PC_Fighter;
@@ -1767,57 +1768,24 @@ func VOID Info_Gorn_ZASTEPSTWO_Info()
 
 	AI_Output 			(hero, self,"Info_Gorn_ZASTEPSTWO_09_01"); //Problem Wolnej Kopalni zosta³ rozwi¹zany.
 	AI_Output 			(hero, self,"Info_Gorn_ZASTEPSTWO_09_02"); //Czy teraz stawisz siê na spotkanie?
-	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_15_03"); //Jasne, ale najpierw muszê poczekaæ na posi³ki od Lee.
-	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_09_04"); //Nie mo¿emy zostawiæ kopalni bez ¿adnej obrony.
-	AI_Output 			(hero, self,"Info_Gorn_ZASTEPSTWO_09_05"); //Mo¿e powinienem pomóc Lee?
-	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_09_06"); //Tak, mo¿esz. Mo¿e uda ci siê wszystko przyspieszyæ.
-	B_LogEntry			(CH4_4Friends,"Gorn powiedzia³, ¿e stawi siê spotkanie, je¿eli pomogê Lee w organizacji obrony Wolnej Kopalni."); 
-	ZM_PASCAL = TRUE;
-	MIS_ObronaWK = LOG_RUNNING;
-    Log_CreateTopic         (CH5_ObronaWK, LOG_MISSION);
-    Log_SetTopicStatus      (CH5_ObronaWK, LOG_RUNNING);
-	B_LogEntry				(CH5_ObronaWK,"Gorn powiedzia³, ¿e stawi siê spotkanie je¿eli pomogê Lee w organizacji obrony Wolnej Kopalni. W tym celu muszê udaæ siê do Lee."); 
-	AI_StopProcessInfos	(self);
+	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_15_03"); //Jasne, ruszam w drogê, a ty mo¿esz powiedzieæ Lee ¿eby przys³a³ tu paru ch³opaków.
+	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_09_04"); //Przez najbli¿sze kilka dni  stra¿nicy i tak siê nie pozbieraj¹, ale nie mo¿emy zostawiæ kopalni bez ¿adnej obrony. 
+	AI_Output 			(hero, self,"Info_Gorn_ZASTEPSTWO_09_05"); //Jasne. Do zobaczenia.
+	AI_Output 			(self, hero,"Info_Gorn_ZASTEPSTWO_09_06"); //Uwa¿aj na siebie.
+	B_LogEntry			(CH4_4Friends,"Gorn wyruszy³ na spotkanie, "); 
+
+    Info_ClearChoices	(Info_Gorn_ZASTEPSTWO);
+    Info_AddChoice		(Info_Gorn_ZASTEPSTWO, "(Udaj siê do Lee)", DIA_PC_Fighter_GoToLeeFM);
+    //Log_CreateTopic         (CH5_ObronaWK, LOG_MISSION);
+    //Log_SetTopicStatus      (CH5_ObronaWK, LOG_RUNNING);
+	//B_LogEntry				(CH5_ObronaWK,"Gorn powiedzia³, ¿e stawi siê spotkanie je¿eli pomogê Lee w organizacji obrony Wolnej Kopalni. W tym celu muszê udaæ siê do Lee."); 
+	//AI_StopProcessInfos	(self);
 };
-//========================================
-//-----------------> FREE_AND_FREE
-//========================================
-
-INSTANCE DIA_PC_Fighter_FREE_AND_FREE (C_INFO)
+FUNC VOID DIA_PC_Fighter_GoToLeeFM()
 {
-   npc          = PC_Fighter;
-   nr           = 1;
-   condition    = DIA_PC_Fighter_FREE_AND_FREE_Condition;
-   information  = DIA_PC_Fighter_FREE_AND_FREE_Info;
-   permanent	= FALSE;
-   description	= "Jesteœ wolny!";
-};
-
-FUNC INT DIA_PC_Fighter_FREE_AND_FREE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Lee_OBRONA_ENDQUEST))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_PC_Fighter_FREE_AND_FREE_Info()
-{
-    AI_Output (other, self ,"DIA_PC_Fighter_FREE_AND_FREE_15_01"); //Jesteœ wolny!
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_02"); //Œwietnie! Nareszcie mogê siê st¹d ruszyæ.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_03"); //Wiesz co? Równy z ciebie ch³op.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_04"); //ChodŸ ze mn¹ na spotkanie.
-    AI_Output (other, self ,"DIA_PC_Fighter_FREE_AND_FREE_15_05"); //A gdzie siê ono odbêdzie?
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_06"); //Niedaleko st¹d, w górach.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_07"); //W pobli¿u tego miejsca znajduje siê kamienny kr¹g, a pod nim krypta.
-    AI_Output (other, self ,"DIA_PC_Fighter_FREE_AND_FREE_15_08"); //Wiem ju¿ co to za miejsce. By³em tam z Miltenem.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_09"); //To dobrze, ¿e wiesz.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_10"); //Ja natychmiast siê tam udam. Ty przyjdŸ, jak tylko bêdziesz gotowy.
-    AI_Output (self, other ,"DIA_PC_Fighter_FREE_AND_FREE_03_11"); //Zaczekamy na ciebie. 
-    AI_Output (other, self ,"DIA_PC_Fighter_FREE_AND_FREE_15_12"); //Jasne, dziêki.
-
-    B_LogEntry                     (CH4_4Friends,"Gorn powiedzia³, ¿e spotkanie odbêdzie siê w pobli¿u kamiennego krêgu, który zwiedziliœmy z Miltenem. Powinienem siê tam udaæ. W koñcu nie ma w Kolonii nic cenniejszego, ni¿ kilku oddanych przyjació³. ");
+     Wld_PlayEffect("SLOW_BLITZ_FADE_IN_SLOW_OUT",hero,hero,0,0,0,FALSE);
+     AI_Teleport(hero,"NC_SMALL_CAVE_STAIRS");
+     B_LogEntry                     (CH4_4Friends,"Gorn wyruszy³ na spotkanie które odbêdzie siê w pobli¿u kamiennego krêgu który zwiedziliœmy z Miltenem, ja w tym czasie powinienem poinformowaæ Lee, aby przys³a³ kilku najemników do ochrony kopalni, przeka¿ê mu tê wiadomoœæ i sam udam siê na spotkanie. W koñcu nie ma w Kolonii nic cenniejszego, ni¿ kilku oddanych przyjació³. ");
 
     B_GiveXP (200);
 
@@ -1831,8 +1799,10 @@ FUNC VOID DIA_PC_Fighter_FREE_AND_FREE_Info()
 	{
 	Npc_ExchangeRoutine (PC_PSIONIC,"spotkanie");
 	};
-	AI_StopProcessInfos	(self);
-//rutyna
+	ZM_PASCAL = TRUE;
+	MIS_ObronaWK = LOG_RUNNING;
+	HeroGoToLeeFM = true;
+    AI_StopProcessInfos	(self);
 };
 
 //========================================
@@ -1851,7 +1821,7 @@ INSTANCE DIA_pc_fighter_PREZENT_GORN (C_INFO)
 
 FUNC INT DIA_pc_fighter_PREZENT_GORN_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE)) && (Npc_GetDistToWP (self, "SPT_GORN") < 2000)//blisko wp - if
+    if (Npc_KnowsInfo (hero, DIA_Lee_OBRONA_WK)) && (Npc_GetDistToWP (self, "SPT_GORN") < 2000)//blisko wp - if
     {
     return TRUE;
     };
@@ -1863,12 +1833,10 @@ FUNC VOID DIA_pc_fighter_PREZENT_GORN_Info()
     AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_01"); //Dobrze, ¿e jesteœ.
     AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_02"); //Lester ju¿ zacz¹³ siê obawiaæ, ¿e nie przyjdziesz.
     AI_Output (hero, self ,"DIA_pc_fighter_PREZENT_GORN_03_03"); //Có¿, mia³em kilka spraw na g³owie.
-    AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_04"); //To teraz nieistotne. 
-	AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_05"); //Mam tu coœ dla ciebie. Myœlê, ¿e zas³u¿y³eœ. 
-    AI_Output (hero, self ,"DIA_pc_fighter_PREZENT_GORN_03_06"); //Co to jest?
-	AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_07"); //Topór £aski. Mia³em tê broñ od wielu lat.
-	AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_08"); //Znalaz³em j¹ w starej krypcie. Nigdy jej nie u¿ywa³em, wolê swój topór. 
-	AI_Output (hero, self ,"DIA_pc_fighter_PREZENT_GORN_03_09"); //Dziêkujê, to wspania³y prezent.
+    AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_04"); //To teraz nieistotne. Mam tu coœ dla ciebie. Myœlê, ¿e zas³u¿y³eœ. 
+    AI_Output (hero, self ,"DIA_pc_fighter_PREZENT_GORN_03_05"); //Co to jest?
+	AI_Output (self, hero ,"DIA_pc_fighter_PREZENT_GORN_03_06"); //Topór £aski. Mia³em tê broñ od wielu lat. Znalaz³em j¹ w starej krypcie. Nigdy jej nie u¿ywa³em, wolê swój topór. 
+	AI_Output (hero, self ,"DIA_pc_fighter_PREZENT_GORN_03_07"); //Dziêkujê, to wspania³y prezent.
 	B_LogEntry                     (CH4_4Friends,"Gorn podarowa³ mi wspania³y, dwurêczny topór.");
 	//do zmiany
 	CreateInvItems (self, Gottfrieds_Axt, 1);
@@ -1916,7 +1884,7 @@ FUNC VOID DIA_PC_Fighter_FRIENDZONE_Info()
     AI_Output (self, other ,"DIA_PC_Fighter_FRIENDZONE_03_13"); //Chyba mu siê tam spodoba³o. Ponoæ pomimo rangi Nowicjusza, jest szanowany w Obozie. 
     AI_Output (self, other ,"DIA_PC_Fighter_FRIENDZONE_03_14"); //Mimo i¿ nasze losy potoczy³y siê nieco inaczej, nasza przyjaŸñ przetrwa³a. 
     AI_Output (self, other ,"DIA_PC_Fighter_FRIENDZONE_03_15"); //Ja z kolei wybra³em Nowy Obóz i pracê dla Magów Wody. 
-    //AI_Output (other, self ,"DIA_PC_Fighter_FRIENDZONE_15_16"); //Bardzo ciekawe.
+    
 };
 
 //========================================
@@ -1951,50 +1919,6 @@ FUNC VOID DIA_PC_Fighter_WHY_NEW_CAMP_Info()
     AI_Output (self, other ,"DIA_PC_Fighter_WHY_NEW_CAMP_03_05"); //To by³ mój ostatni dzieñ w Starym Obozie. Potem wszystko posz³o z górki.
     AI_Output (self, other ,"DIA_PC_Fighter_WHY_NEW_CAMP_03_06"); //Nie musia³em d³ugo staraæ siê o przyjêcie w szeregi Najemników. Szkodnikiem by³em doœæ krótko. Lee od razu doceni³ moj¹ si³ê.
    // AI_Output (other, self ,"DIA_PC_Fighter_WHY_NEW_CAMP_15_07"); //Rozumiem.
-};
-
-//========================================
-//-----------------> THORUS
-//========================================
-//UNLORE!!!! OFF!!
-INSTANCE DIA_PC_Fighter_THORUS (C_INFO)
-{
-   npc          = PC_Fighter;
-   nr           = 4;
-   condition    = DIA_PC_Fighter_THORUS_Condition;
-   information  = DIA_PC_Fighter_THORUS_Info;
-   permanent	= FALSE;
-   description	= "Co ³¹czy ciê z Thorusem?";
-};
-
-FUNC INT DIA_PC_Fighter_THORUS_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_PC_Fighter_WHY_NEW_CAMP)) && (KAPITEL == 10) //off
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_PC_Fighter_THORUS_Info()
-{
-    AI_Output (other, self ,"DIA_PC_Fighter_THORUS_15_01"); //Co ³¹czy ciê z Thorusem?
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_02"); //Nawet mi nie mów o tym sukinsynie.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_03"); //Pochodzimy z tego samego miejsca - z jeden z Po³udniowych Wysp.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_04"); //Za m³odu przez wiele lat trzymaliœmy siê razem, walcz¹c ze stra¿nikami królewskimi, pragn¹cymi zaj¹æ wyspê.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_05"); //Uwa¿a³em go za swojego przyjaciela, wiesz?
-    AI_Output (other, self ,"DIA_PC_Fighter_THORUS_15_06"); //Wiêc co siê sta³o?
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_07"); //Jak to co? Thorus zbrata³ siê z ludŸmi Rhobara.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_08"); //Wyda³ ca³¹ nasz¹ wioskê na pastwê tych okrutników!
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_09"); //Stra¿nicy królewscy wymordowali ca³¹ moj¹ rodzinê i wszystkich moich przyjació³.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_10"); //Tylko ja cudem ocala³em i uda³em siê na inn¹ wyspê.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_11"); //Tam chcia³em zapomnieæ o tym wszystkim.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_12"); //Thorus sam wpad³ w pu³apkê. Ludzie Rhobara aresztowali go i zosta³ skazany na ciê¿kie prace w Kolonii Górniczej.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_13"); //To by³o jeszcze d³ugo przed powstaniem Bariery.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_14"); //Pracuj¹c w kopalni, zbrata³ siê z Krukiem, praw¹ rêk¹ Gomeza.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_15"); //W³aœnie dziêki niemu do³¹czy³ do Starego Obozu i zosta³ szefem Stra¿ników. 
-    AI_Output (other, self ,"DIA_PC_Fighter_THORUS_15_16"); //Rozumiem.
-    AI_Output (self, other ,"DIA_PC_Fighter_THORUS_03_17"); //Kiedyœ zap³aci mi za zdradê. Jeszcze go dopadnê.
 };
 
 //========================================

@@ -488,51 +488,6 @@ FUNC VOID DIA_Outlam_TRADE_DIA_Info()
     AI_Output (self, other ,"DIA_Outlam_TRADE_DIA_03_02"); //No dawaj. A mo¿e chcesz coœ sprzedaæ?
 	B_ClearTreaderAmmo(self);
 };
-
-//#####################################################################################
-//####### ROZDZIA£ 5
-//####### ZASTÊPSTWO DLA GORNA
-//#####################################################################################
-//========================================
-//-----------------> CALL_OF_DUTY
-//========================================
-
-INSTANCE DIA_Outlam_CALL_OF_DUTY (C_INFO)
-{
-   npc          = SLD_2803_Outlam;
-   nr           = 1;
-   condition    = DIA_Outlam_CALL_OF_DUTY_Condition;
-   information  = DIA_Outlam_CALL_OF_DUTY_Info;
-   permanent	= FALSE;
-   description	= "Przysy³a mnie Lee. Myœliwi-najemnicy maj¹ zaj¹æ siê obron¹ Wolnej Kopalni.";
-};
-
-FUNC INT DIA_Outlam_CALL_OF_DUTY_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Lee_OBRONA_WK))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Outlam_CALL_OF_DUTY_Info()
-{
-    AI_Output (other, self ,"DIA_Outlam_CALL_OF_DUTY_15_01"); //Przysy³a mnie Lee. Myœliwi-najemnicy maj¹ zaj¹æ siê obron¹ Wolnej Kopalni.
-    AI_Output (self, other ,"DIA_Outlam_CALL_OF_DUTY_03_02"); //No tak, mog³em siê domyœliæ.
-    AI_Output (self, other ,"DIA_Outlam_CALL_OF_DUTY_03_03"); //Nasz obóz znajduje siê na tyle blisko Wolnej Kopalni, ¿e Lee na pewno to wykorzysta.
-    AI_Output (self, other ,"DIA_Outlam_CALL_OF_DUTY_03_04"); //Ale skoro taka jest wola szefa, to udamy siê tam.
-    AI_Output (other, self ,"DIA_Outlam_CALL_OF_DUTY_15_05"); //Œwietnie.
-    B_LogEntry                     (CH5_ObronaWK,"Ludzie Outlama udali siê do Wolnej Kopalni. ");
-
-    B_GiveXP (200);
-	//rutyny
-    AI_StopProcessInfos	(self);
-	Npc_ExchangeRoutine (SLD_2803_Outlam,"FMCstart");
-	Npc_ExchangeRoutine (SLD_2805_Najemnik,"FMCstart");
-	Npc_ExchangeRoutine (SLD_2802_Soldier,"FMCstart");
-};
-
 instance dia_outlam_pickpocket(c_info) {
     npc = sld_2803_outlam;
     nr = 900;

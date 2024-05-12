@@ -972,68 +972,32 @@ INSTANCE DIA_Lee_OBRONA_WK (C_INFO)
 
 FUNC INT DIA_Lee_OBRONA_WK_Condition()
 {
-    if (Npc_KnowsInfo (hero, Info_Gorn_ZASTEPSTWO))
+    if (HeroGoToLeeFM == true)
 
     {
     return TRUE;
     };
 };
-
 
 FUNC VOID DIA_Lee_OBRONA_WK_Info()
 {
-    AI_Output (other, self ,"DIA_Lee_OBRONA_WK_15_01"); //Przysy³a mnie Gorn. Mam ci pomóc w organizacji obrony.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_02"); //Ach tak! Dobrze, ¿e przyszed³eœ.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_03"); //Ju¿ ustali³em którzy z moich ludzi zajm¹ siê kopalni¹.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_04"); //Niestety, zagro¿enie ze strony Gomeza jeszcze nie minê³o i nie mia³em kogo wys³aæ do wybranych Najemników.
-    AI_Output (other, self ,"DIA_Lee_OBRONA_WK_15_05"); //Ja mogê im to przekazaæ.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_06"); //W porz¹dku. IdŸ zatem do Corda i Outlama. 
-    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_07"); //Przeka¿ im, ¿e kopalnie powierzam prowizorycznej stra¿y i myœliwym-najemnikom.
-    AI_Output (other, self ,"DIA_Lee_OBRONA_WK_15_08"); //Nie ma sprawy.
-    B_LogEntry                     (CH5_ObronaWk,"Lee wyznaczy³ do obrony kopalni ludzi Corda i Outlama. Mam im to przekazaæ.");
-
-    B_GiveXP (150);
-    AI_StopProcessInfos	(self);
-};
-//========================================
-//-----------------> OBRONA_ENDQUEST
-//========================================
-
-INSTANCE DIA_Lee_OBRONA_ENDQUEST (C_INFO)
-{
-   npc          = Sld_700_Lee;
-   nr           = 1;
-   condition    = DIA_Lee_OBRONA_ENDQUEST_Condition;
-   information  = DIA_Lee_OBRONA_ENDQUEST_Info;
-   permanent	= FALSE;
-   description	= "Zorganizowa³em obronê.";
-};
-
-FUNC INT DIA_Lee_OBRONA_ENDQUEST_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Outlam_CALL_OF_DUTY))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Lee_OBRONA_ENDQUEST_Info()
-{
-    AI_Output (other, self ,"DIA_Lee_OBRONA_ENDQUEST_15_01"); //Zorganizowa³em obronê.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_ENDQUEST_03_02"); //Dobra robota! Teraz Stra¿nicy mog¹ nam naskoczyæ.
-    AI_Output (self, other ,"DIA_Lee_OBRONA_ENDQUEST_03_03"); //Przeka¿ Gornowi, ¿e jest wolny.
-    B_LogEntry                     (CH5_ObronaWK,"Najemnicy zajm¹ siê Woln¹ Kopalni¹, a Gorn mo¿e w koñcu udaæ siê na spotkanie.");
-    Log_SetTopicStatus       (CH5_ObronaWK, LOG_SUCCESS);
+    AI_Output (other, self ,"DIA_Lee_OBRONA_WK_15_01"); //Przysy³a mnie Gorn. Powiedzia³, ¿e ju¿ mo¿esz wys³aæ kilku ludzi, do ochrony Wolnej Kopalni.
+    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_02"); //Ach tak! Dobra robota.
+    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_03"); //Ju¿ ustali³em którzy z moich ludzi bêd¹ pilnowali kopalni. Zajm¹ siê tym ludzie Outlama i kliku innych najemników.
+    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_04"); //Pos³a³em ju¿ do nich cz³owieka z t¹ informacj¹, tak¿e jedno mamy z g³owy.
+    AI_Output (self, other ,"DIA_Lee_OBRONA_WK_03_05"); //Na ten moment mo¿esz wróciæ do swoich obowi¹zków.
+    AI_Output (other, self ,"DIA_Lee_OBRONA_WK_15_06"); //Jasne. Zajrzê tu za jakiœ czas.
+    B_LogEntry                     (CH4_4Friends,"Lee wyznaczy³ ju¿ do obrony kopalni ludzi Outlama i pos³a³ do nich goñca. Teraz mogê wyruszyæ na spotkanie.");
     MIS_ObronaWK = LOG_SUCCESS;
-
-    B_GiveXP (400);
+	Npc_ExchangeRoutine (SLD_2803_Outlam,"FMCstart");
+	Npc_ExchangeRoutine (SLD_2805_Najemnik,"FMCstart");
+	Npc_ExchangeRoutine (SLD_2802_Soldier,"FMCstart");
+	
+    B_GiveXP (300);
     AI_StopProcessInfos	(self);
 };
-//----------------------------------------------------------------1.6.1-------------------------------------------
 
-
-
+//-ER+
 
 //========================================
 //-----------------> Obozowisko Moroka
