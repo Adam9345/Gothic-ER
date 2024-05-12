@@ -437,5 +437,7 @@ const int NPC_TALENT_MINING = 100;
 
 const int quantity = 1;
 
+const int ARENA_SIZE = 750;
+
 
 

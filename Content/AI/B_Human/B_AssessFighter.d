@@ -91,13 +91,13 @@ func void B_AssessFighter()
 			PrintDebugNpc	(PD_ZS_CHECK, "...Fighter ist im Dialog!" );				
 			return;
 		};
-		
+
 		//-------- Check auf Nahkampfwaffe! --------
 		if ( Npc_IsInFightMode(other, FMODE_MELEE) )
 		{
 			PrintDebugNpc	(PD_ZS_CHECK, "...Fighter führt Nahkampfwaffe!" );				
 		
-			if (Npc_GetDistToNpc(self,other) < HAI_DIST_MELEE)
+			if (Npc_GetDistToNpc(self,other) < HAI_DIST_MELEE && Npc_GetDistToWP(other, "OCR_ARENABATTLE") >= ARENA_SIZE)
 			{
 				PrintDebugNpc		(PD_ZS_CHECK, "...und ist in Nahkampfreichweite");
 	
@@ -116,7 +116,7 @@ func void B_AssessFighter()
 		{
 			PrintDebugNpc			(PD_ZS_CHECK, "...Fighter führt Fernkampfwaffe!");	
 						
-			if (Npc_GetDistToNpc(self,other) < HAI_DIST_RANGED)
+			if (Npc_GetDistToNpc(self,other) < HAI_DIST_RANGED && Npc_GetDistToWP(other, "OCR_ARENABATTLE") >= ARENA_SIZE)
 			{
 				PrintDebugNpc		(PD_ZS_CHECK, "...und ist in Fernkampfreichweite!");				
 				
