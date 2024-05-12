@@ -476,13 +476,13 @@ INSTANCE DIA_Drax_PRZYJECIE (C_INFO)
 
 FUNC INT DIA_Drax_PRZYJECIE_Condition()
 {
-  if (Npc_KnowsInfo (hero, DIA_Drax_O_BANDYTACH))
-  && (Npc_GetTrueGuild(other) == GIL_NONE)//fix logic
-  && (kapitel == 1)
- 
-  {
-    return TRUE;
-};
+    if (Npc_KnowsInfo (hero, DIA_Drax_O_BANDYTACH))
+    && (Npc_GetTrueGuild(other) == GIL_NONE)//fix logic
+    && (kapitel == 1)
+    
+    {
+        return TRUE;
+    };
 };
 
 FUNC VOID DIA_Drax_PRZYJECIE_Info()
@@ -870,19 +870,10 @@ INSTANCE DIA_Drax_JustGetGuild (C_INFO)
 
 FUNC INT DIA_Drax_JustGetGuild_Condition()
 {
-    if (kopaczNotBlockOtherGuilds) {
-        if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) 
-        && ((Npc_GetTrueGuild (hero) == GIL_NONE) 
-        || (Npc_GetTrueGuild (hero) == GIL_VLK)) 
-        {
-        return TRUE;
-        };
-    } else {
-        if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) 
-        && ((Npc_GetTrueGuild (hero) == GIL_NONE)) 
-        {
-        return TRUE;
-        };
+    if Npc_KnowsInfo (hero, DIA_Drax_DOOBOZU) && (kapitel == 1) 
+    && ((Npc_GetTrueGuild (hero) == GIL_NONE)) 
+    {
+    return TRUE;
     };
 };
 

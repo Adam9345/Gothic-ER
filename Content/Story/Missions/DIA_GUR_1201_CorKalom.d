@@ -240,18 +240,10 @@ instance  GUR_1201_CorKalom_JoinPSI (C_INFO)
 
 FUNC int  GUR_1201_CorKalom_JoinPSI_Condition()
 {
-	if (kopaczNotBlockOtherGuilds) {
-		if	((Npc_GetTrueGuild(hero) == GIL_NONE) || (Npc_GetTrueGuild(hero) == GIL_VLK))
-		&&	Npc_KnowsInfo(hero, GUR_1201_CorKalom_WannaJoin) 
-		{
-			return 1;
-		};
-	} else {
-		if	((Npc_GetTrueGuild(hero) == GIL_NONE))
-		&&	Npc_KnowsInfo(hero, GUR_1201_CorKalom_WannaJoin) 
-		{
-			return 1;
-		};
+	if	((Npc_GetTrueGuild(hero) == GIL_NONE))
+	&&	Npc_KnowsInfo(hero, GUR_1201_CorKalom_WannaJoin) 
+	{
+		return 1;
 	};
 };
 

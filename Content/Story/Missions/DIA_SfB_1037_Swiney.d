@@ -64,16 +64,9 @@ INSTANCE Info_Swiney_Schuerfer(C_INFO)
 
 FUNC INT Info_Swiney_Schuerfer_Condition()
 {
-	if (kopaczNotBlockOtherGuilds) {
-		if (Npc_KnowsInfo(hero,Info_Swiney_Hello)) && ((Npc_GetTrueGuild(other) == GIL_NONE) || (Npc_GetTrueGuild(other) == GIL_VLK))
-		{
-			return 1;
-		};
-	} else {
-		if (Npc_KnowsInfo(hero,Info_Swiney_Hello)) && ((Npc_GetTrueGuild(other) == GIL_NONE))
-		{
-			return 1;
-		};
+	if (Npc_KnowsInfo(hero,Info_Swiney_Hello)) && ((Npc_GetTrueGuild(other) == GIL_NONE))
+	{
+		return 1;
 	};
 };
 
