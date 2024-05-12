@@ -28,35 +28,6 @@ FUNC VOID DIA_Dracon_EXIT_Info()
 //-----------------> HELLO
 //========================================
 
-INSTANCE DIA_Dracon_HELLO (C_INFO)
-{
-   npc          = GRD_2035_Dracon;
-   nr           = 1;
-   condition    = DIA_Dracon_HELLO_Condition;
-   information  = DIA_Dracon_HELLO_Info;
-   permanent	= TRUE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Dracon_HELLO_Condition()
-{
-    if (kapitel == 10)
-	//(Npc_GetTrueGuild(hero) != GIL_GRD) || (Npc_GetTrueGuild(hero) == GIL_NONE)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Dracon_HELLO_Info()
-{
-    AI_Output (self, other ,"DIA_Dracon_HELLO_03_01"); //Nie mo¿esz tutaj wejœæ! Wynoœ siê.
-    AI_Output (other, self ,"DIA_Dracon_HELLO_15_02"); //Gdzie mogê têdy dojœæ?
-    AI_Output (self, other ,"DIA_Dracon_HELLO_03_03"); //Do magazynu. IdŸ ju¿.
-	AI_GotoWP (hero, "PATROL2");
-	AI_StopProcessInfos	(self);
-};
-
 CONST STRING	Grd_Dracon_CHECKPOINT		= "PATROL1";
 
 //***************************************************************

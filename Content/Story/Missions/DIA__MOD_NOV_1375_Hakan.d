@@ -233,43 +233,6 @@ FUNC VOID DIA_Hakan_LEKI_Info()
 // Seria zabójstw w Bractwie
 ///////////////////////////////////////////////////////////////////
 
-//========================================
-//-----------------> ABOUT_KILLER
-//========================================
-
-INSTANCE DIA_Hakan_ABOUT_KILLER (C_INFO)
-{
-   npc          = NOV_1375_Hakan;
-   nr           = 4;
-   condition    = DIA_Hakan_ABOUT_KILLER_Condition;
-   information  = DIA_Hakan_ABOUT_KILLER_Info;
-   permanent	= FALSE;
-   description	= "Wiesz coœ o ostatnim morderstwie?";
-};
-
-FUNC INT DIA_Hakan_ABOUT_KILLER_Condition()
-{
-    if (MIS_PsionicCSI == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-FUNC VOID DIA_Hakan_ABOUT_KILLER_Info()
-{
-    AI_Output (other, self ,"DIA_Hakan_ABOUT_KILLER_15_01"); //Wiesz coœ o ostatnim morderstwie?
-    AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_02"); //Chyba jako jedyny odwa¿y³em siê pójœæ i obejrzeæ cia³o.
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_03"); //Zauwa¿y³em, ¿e w trupa jest coœ wbite. Cholera, ten goœæ to jakiœ szaleniec. 
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_04"); //Zabójstwo z zimn¹ krwi¹, krwi¹, która sp³ywa³a mu po rêkach. Coœ okropnego. 
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_05"); //Zrozumiem wiele... walkê, wojnê, zemstê, ale to?
-	AI_Output (other, self ,"DIA_Hakan_ABOUT_KILLER_15_06"); //Masz jakieœ podejrzenia?
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_07"); //Nie. Talas ca³y czas bredzi, ¿e to na pewno Harlok. Nie wierzê w to. By³em w jego chacie i nie znalaz³em nic podejrzanego.
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_08"); //Zreszt¹ ten goœæ siê trochê uspokoi³. Po tej ca³ej aferze z przywo³aniem spokornia³. 
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_09"); //Mówi³ mi, ¿e wiele rzeczy ¿a³uje. Ufam mu. Spróbuj znaleŸæ inny punkt zaczepienia. W koñcu zginê³o trzech ludzi, a nie jeden.
-	AI_Output (self, other ,"DIA_Hakan_ABOUT_KILLER_03_10"); //Przeszukaj inne miejsca zbrodni i dopiero wtedy wyci¹gnij wnioski. Na razie nie masz nic konkretnego.
-	B_LogEntry               (CH3_PsionicCSI,"Hakan powiedzia³ mi, ¿e w cia³o ofiary wbito jakieœ przedmioty. Zdradzi³ te¿, ¿e Talas podejrzewa o zabójstwo Harloka. On siê z tym zdaniem jednak w ogóle nie zgadza. Poradzi³ mi, aby zbada³ inne miejsca zbrodni i dopiero wtedy wyci¹gn¹³ wnioski.");
-};
-
 instance dia_hakan_pickpocket(c_info) {
     npc = nov_1375_hakan;
     nr = 900;

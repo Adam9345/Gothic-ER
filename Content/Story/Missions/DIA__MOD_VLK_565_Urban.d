@@ -141,42 +141,6 @@ func void DIA_Urban_Beer_Gardists ()
 };
 
 //========================================
-//-----------------> BITKA
-//========================================
-
-INSTANCE DIA_Urban_BITKA (C_INFO)
-{
-   npc          = VLK_565_Buddler;
-   nr           = 1;
-   condition    = DIA_Urban_BITKA_Condition;
-   information  = DIA_Urban_BITKA_Info;
-   permanent	= 0;
-   important	= 1;
-};
-
-FUNC INT DIA_Urban_BITKA_Condition()
-{
-	if (kapitel == 10)//(Npc_GetDistToNpc (self,GRD_201_Jackal) < 1000) && MIS_ZmianaLorenza == LOG_RUNNING && UrbanIdzie == true
-	{
-    return TRUE;
-	};
-};
-
-FUNC VOID DIA_Urban_BITKA_Info()
-{
-	AI_Output (self, other ,"DIA_Urban_BITKA_03_01"); //Ju¿ dotarliœmy? To ten sukinsyn? Dawaj, lejemy go!
-	AI_StopProcessInfos (self);
-	var c_npc Szakal;    	Szakal = Hlp_GetNpc(GRD_201_Jackal); 
-    var c_npc Urban; 		Urban = Hlp_GetNpc(VLK_565_Buddler);
-	Npc_SetTarget (Urban,Szakal);
-    AI_StartState (Urban,ZS_ATTACK,1,"");
-	Npc_SetTarget (Szakal,Urban);
-    AI_StartState (Szakal,ZS_ATTACK,1,"");
-	UrbanPobity = true;
-	
-};
-
-//========================================
 //-----------------> OHMYHEAD
 //========================================
 

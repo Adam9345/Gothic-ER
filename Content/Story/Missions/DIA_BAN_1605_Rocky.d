@@ -22,85 +22,6 @@ FUNC VOID DIA_Rocky_EXIT_Info()
 	AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> EqDoWalki
-//========================================
-
-INSTANCE DIA_Rocky_EqDoWalki (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 1;
-   condition    = DIA_Rocky_EqDoWalki_Condition;
-   information  = DIA_Rocky_EqDoWalki_Info;
-   permanent	= FALSE;
-   description	= "Potrzebujemy ekwipunku.";
-};
-
-FUNC INT DIA_Rocky_EqDoWalki_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_nextWork22))
-	&& (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_EqDoWalki_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_EqDoWalki_15_01"); //Potrzebujemy ekwipunku.
-    AI_Output (self, other ,"DIA_Rocky_EqDoWalki_03_02"); //S³ysza³em ju¿ o waszych ambitnych planach. Jak zwykle muszê zostaæ w Obozie.
-    AI_Output (other, self ,"DIA_Rocky_EqDoWalki_15_03"); //Daj mi ten ekwipunek.
-    AI_Output (self, other ,"DIA_Rocky_EqDoWalki_03_04"); //Nie tak prêdko. Myœlisz, ¿e w godzinê naprawiê 15 skórzanych pancerzy?!
-    AI_Output (self, other ,"DIA_Rocky_EqDoWalki_03_05"); //Potrzebujê materia³ów.
-    AI_Output (self, other ,"DIA_Rocky_EqDoWalki_03_06"); //Przynieœ mi 30 k³ów i 10 wilczych skór.
-    AI_Output (self, other ,"DIA_Rocky_EqDoWalki_03_07"); //Tylko siê poœpiesz z tym wszystkim.
-	
-    MIS_materials4Rocky = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_materials4Rocky, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_materials4Rocky, LOG_RUNNING);
-    B_LogEntry                     (CH1_materials4Rocky,"Aby Rocky móg³ naprawiæ pancerze, potrzebuje 30 k³ów oraz 10 wilczych skór.");
-};
-//========================================
-//-----------------> Towary
-//========================================
-
-INSTANCE DIA_Rocky_Towary (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 1;
-   condition    = DIA_Rocky_Towary_Condition;
-   information  = DIA_Rocky_Towary_Info;
-   permanent	= FALSE;
-   description	= "Mam to, o co prosi³eœ.";
-};
-
-FUNC INT DIA_Rocky_Towary_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Rocky_EqDoWalki))
-    && (Npc_HasItems (other, ItAt_Teeth_01) >=30)
-    && (Npc_HasItems (other, ItAt_Wolf_01) >=10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_Towary_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_Towary_15_01"); //Mam to, o co prosi³eœ.
-    AI_Output (self, other ,"DIA_Rocky_Towary_03_02"); //Œwietnie. Daj mi to.
-    B_LogEntry                     (CH1_materials4Rocky,"Przynios³em Rockiemu materia³y potrzebne do naprawienia ekwipunku.");
-    Log_SetTopicStatus       (CH1_materials4Rocky, LOG_SUCCESS);
-    MIS_materials4Rocky = LOG_SUCCESS;
-    B_GiveInvItems (other, self, ItAt_Wolf_01, 10);
-    B_GiveInvItems (other, self, ItAt_Teeth_01, 30);
-
-
-    B_GiveXP (300);
-};
-
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Rocky
 // Rozdzia³ 1
@@ -665,35 +586,6 @@ FUNC VOID DIA_Rocky_WIN_O_Info()
     B_LogEntry                     (CH1_ConvoyAttack,"Uda³o nam siê. Rozgromiliœmy Stra¿ników. Pora wracaæ do Quentina.");
 
     B_GiveXP (XP_AtakNaKonwoj);
-};
-
-//========================================
-//-----------------> GivEq
-//========================================
-
-INSTANCE DIA_Rocky_GivEq (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 1;
-   condition    = DIA_Rocky_GivEq_Condition;
-   information  = DIA_Rocky_GivEq_Info;
-   permanent	= FALSE;
-   description	= "Rozdaæ ekwipunek Bandytom?";
-};
-
-FUNC INT DIA_Rocky_GivEq_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Rocky_Towary))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_GivEq_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_GivEq_15_01"); //Rozdaæ ekwipunek Bandytom?
-    AI_Output (self, other ,"DIA_Rocky_GivEq_03_02"); //Nie, sam to zrobiê. IdŸ do Quentina i powiedz, ¿e wszystko ju¿ zrobione.
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////

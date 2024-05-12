@@ -444,37 +444,6 @@ FUNC VOID Info_Thorus_Sukces234_Info()
 	B_giveXP (100);
 	AI_StopProcessInfos	(self);
 };
-//========================================
-//-----------------> WEJSCIE_BAU
-//========================================
-//off odsy³am do DIA_Thorus_BANDYTA_GATE
-INSTANCE DIA_THORUS_WEJSCIE_BAU (C_INFO)
-{
-   npc          = GRD_200_THORUS;
-   nr           = 1;
-   condition    = DIA_THORUS_WEJSCIE_BAU_Condition;
-   information  = DIA_THORUS_WEJSCIE_BAU_Info;
-   permanent	= FALSE;
-   description	= "Chcia³bym dostaæ siê do zamku.";
-};
-
-FUNC INT DIA_THORUS_WEJSCIE_BAU_Condition()
-{
-    if (Npc_GetTrueGuild (other)==GIL_BAU) && (!Npc_KnowsInfo(hero,Info_Thorus_BribeGuard)) && (KAPITEL == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_THORUS_WEJSCIE_BAU_Info()
-{
-    AI_Output (other, self ,"DIA_THORUS_WEJSCIE_BAU_15_01"); //Chcia³bym dostaæ siê do zamku.
-    AI_Output (self, other ,"DIA_THORUS_WEJSCIE_BAU_03_02"); //Chyba ¿artujesz, prêdzej do zamku wpuœci³bym Wrzoda. Nosisz pancerz jednego z tych sukinsynów, którzy atakuj¹ nasze konwoje. Zapomnij o tym. 
-    AI_Output (self, other ,"DIA_THORUS_WEJSCIE_BAU_03_03"); //Nie wiem czy jesteœ w bandzie Quentina, ale widzê, ¿e masz z nim jakiœ kontakt. Nie chcê mieæ z tob¹ nic wspólnego.
-    AI_Output (other, self ,"DIA_THORUS_WEJSCIE_BAU_15_04"); //A mo¿e ruda za³atwi sprawê?
-    AI_Output (self, other ,"DIA_THORUS_WEJSCIE_BAU_03_05"); //(spogl¹da)
-};
 
 // ************************************************************
 // 						Bribe Thorus					
@@ -1480,49 +1449,6 @@ FUNC VOID DIA_THORUS_Swadek_Info()
     AI_Output (self, other ,"DIA_THORUS_Swadek_03_04"); //No dobra, zobaczymy co mi powie. Mo¿esz ju¿ iœæ.
     Npc_ExchangeRoutine	(NON_7046_Skazaniec, "camp");
     B_GiveXP (100);
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-// DIALOG USUNIÊTY =======================
-//========================================
-INSTANCE DIA_THORUS_HahahaSpierdalaj (C_INFO)
-{
-   npc          = GRD_200_THORUS;
-   nr           = 1;
-   condition    = DIA_THORUS_HahahaSpierdalaj_Condition;
-   information  = DIA_THORUS_HahahaSpierdalaj_Info;
-   permanent	= FALSE;
-   description	= "Bartholo pozwoli³ mi rozmawiaæ z Gomezem.";
-};
-
-FUNC INT DIA_THORUS_HahahaSpierdalaj_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bartholo_DOWODY)) && (Npc_GetTrueGuild(other) == GIL_NONE) && (Kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_THORUS_HahahaSpierdalaj_Info()
-{
-    AI_Output (other, self ,"DIA_THORUS_HahahaSpierdalaj_15_01"); //Bartholo pozwoli³ mi rozmawiaæ z Gomezem.
-    AI_Output (self, other ,"DIA_THORUS_HahahaSpierdalaj_03_02"); //Widzia³em, ¿e o czymœ z nim rozmawia³eœ.
-    AI_Output (self, other ,"DIA_THORUS_HahahaSpierdalaj_03_03"); //No dobrze. Skoro taka jest jego wola, to mo¿esz wejœæ.
-	var C_NPC wache212; wache212 = Hlp_GetNpc(Grd_212_Torwache);
-	var C_NPC wache213; wache213 = Hlp_GetNpc(Grd_213_Torwache);
-	var C_NPC wache218; wache218 = Hlp_GetNpc(Grd_218_Gardist);
-	wache212.aivar[AIV_PASSGATE] = TRUE;
-	wache213.aivar[AIV_PASSGATE] = TRUE;
-	wache218.aivar[AIV_PASSGATE] = TRUE;   
-	MIS_KosztemQuentina = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_KosztemQuentina, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KosztemQuentina, LOG_RUNNING);
-    B_LogEntry                     (CH1_KosztemQuentina,"Zdecydowa³em siê porzuciæ Bandytów i iœæ prosto do Gomeza. Taka szansa ju¿ siê nie powtórzy.");
-
-    B_GiveXP (200);
     AI_StopProcessInfos	(self);
 };
 

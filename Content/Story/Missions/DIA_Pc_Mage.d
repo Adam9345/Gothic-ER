@@ -1748,10 +1748,10 @@ FUNC VOID DIA_PC_MAGE_SPOTKANIE_Info()
     AI_StopProcessInfos	(self);
     B_GiveXP (100);
 	//rutyna
-	if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE))
-	{
-	B_ExchangeRoutine (PC_MAGE,"spotkanie");
-	};
+	// if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE))
+	// {
+	// B_ExchangeRoutine (PC_MAGE,"spotkanie");
+	// };
     AI_StopProcessInfos	(self);
 };
 

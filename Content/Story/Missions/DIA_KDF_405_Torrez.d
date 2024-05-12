@@ -434,90 +434,6 @@ FUNC VOID DIA_Torrez_CourierQuest_Info()
 };
 
 
-//////////////////////////////////////////////////////////////////////////////////
-// USUNIÊTE POZOSTA£OŒÆI PO NOWICJUSZACH OGNIA
-// BY GOTHIC1210 PATCH 1.4.02
-//////////////////////////////////////////////////////////////////////////////////
-//========================================
-//-----------------> NOWICJUSZ
-//========================================
-
-INSTANCE DIA_Torrez_NOWICJUSZ (C_INFO)
-{
-   npc          = KDF_405_Torrez;
-   nr           = 1;
-   condition    = DIA_Torrez_NOWICJUSZ_Condition;
-   information  = DIA_Torrez_NOWICJUSZ_Info;
-   permanent	= FALSE;
-   description	= "Chcia³bym zostaæ Nowicjuszem Ognia.";
-};
-
-FUNC INT DIA_Torrez_NOWICJUSZ_Condition()
-{
-    if (Npc_GetTrueGuild(hero) == GIL_NONE)
-    && (Npc_KnowsInfo (hero, DIA_Jim_QUEST_END1))
-	&& (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torrez_NOWICJUSZ_Info()
-{
-    AI_Output (other, self ,"DIA_Torrez_NOWICJUSZ_15_01"); //Chcia³bym zostaæ Nowicjuszem Ognia.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_02"); //Doprawdy?
-    AI_Output (other, self ,"DIA_Torrez_NOWICJUSZ_15_03"); //Tak. Mam pierœcieñ i aprobatê Jima.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_04"); //To zmienia postaæ rzeczy. Przeszed³eœ test?
-    AI_Output (other, self ,"DIA_Torrez_NOWICJUSZ_15_05"); //Czy zadanie od Jima mo¿na uznaæ za stosowny test? Je¿eli tak, to przeszed³em.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_06"); //Doskonale. Przydasz nam siê. Gomez szuka pewnego cz³owieka do szpiegowskiego zadania.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_07"); //Pewnie bêdzie chcia³ ukryæ czêœæ zdobytych informacji przed nami, przed Magami Ognia.
-    AI_Output (other, self ,"DIA_Torrez_NOWICJUSZ_15_08"); //Co? Nie rozumiem.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_09"); //Przepraszam. Zamyœli³em siê. 
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_10"); //No dobrze. Przyjmiemy ciê, ale najpierw musisz zostaæ cz³onkiem Starego Obozu. 
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_11"); //IdŸ do Gomeza i powiedz mu, ¿e zyska³eœ aprobatê magów. Na potwierdzenie weŸ ten dokument.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_12"); //TYLKO B¥D DELIKATNY NA LITOŒÆ INNOSA. 
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_13"); //Gomez to bardzo porywczy cz³owiek.
-    AI_Output (other, self ,"DIA_Torrez_NOWICJUSZ_15_14"); //Dobrze. Bêdê pamiêta³.
-    AI_Output (self, other ,"DIA_Torrez_NOWICJUSZ_03_15"); //Wróæ potem do mnie.
-    B_LogEntry                     (CH1_FireNovize,"Mam delikatnie oznajmiæ Gomezowi, ¿e zyska³em aprobatê Magów Ognia.");
-	CreateInvItem(self, it_GlejtMagow);
-	B_GiveInvItems (self, hero, it_GlejtMagow, 1);
-    AI_StopProcessInfos	(self);
-};
-//========================================
-//-----------------> PRZYWILEJE
-//========================================
-
-INSTANCE DIA_Torrez_PRZYWILEJE (C_INFO)
-{
-   npc          = KDF_405_Torrez;
-   nr           = 1;
-   condition    = DIA_Torrez_PRZYWILEJE_Condition;
-   information  = DIA_Torrez_PRZYWILEJE_Info;
-   permanent	= FALSE;
-   description	= "Czy Nowicjuszom Ognia przys³uguj¹ jakieœ przywileje?";
-};
-
-FUNC INT DIA_Torrez_PRZYWILEJE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Torrez_NOWICJUSZ))
-    && (hero.guild == GIL_STT)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torrez_PRZYWILEJE_Info()
-{
-    AI_Output (other, self ,"DIA_Torrez_PRZYWILEJE_15_01"); //Czy Nowicjuszom Ognia przys³uguj¹ jakieœ przywileje?
-    AI_Output (self, other ,"DIA_Torrez_PRZYWILEJE_03_02"); //Ale¿ oczywiœcie! Nowicjusze Ognia maj¹ te same przywileje co Cienie.
-    AI_Output (self, other ,"DIA_Torrez_PRZYWILEJE_03_03"); //Mo¿esz swobodnie chodziæ po Wewnêtrznym Pierœcieniu i zamku.
-    AI_Output (self, other ,"DIA_Torrez_PRZYWILEJE_03_04"); //Ponadto Jim nauczy ciê pierwszych trzech Krêgów Magii. 
-};
-
-
 //========================================
 //-----------------> Gomez_success
 //========================================
@@ -564,48 +480,6 @@ FUNC VOID DIA_Torrez_Gomez_success_Info()
     B_LogEntry                     (CH1_fire_novize,"Dosta³em broñ i strój godny Nowicjusza Ognia. Mam pogadaæ z Torrezem, gdy otrzymam zlecenie od Kruka. ");
 
     B_GiveXP (250);
-};
-//========================================
-//-----------------> BRACTWO
-//========================================
-
-INSTANCE DIA_Torrez_BRACTWO (C_INFO)
-{
-   npc          = KDF_405_Torrez;
-   nr           = 1;
-   condition    = DIA_Torrez_BRACTWO_Condition;
-   information  = DIA_Torrez_BRACTWO_Info;
-   permanent	= FALSE;
-   description	= "Kruk kaza³ mi szpiegowaæ Bractwo.";
-};
-
-FUNC INT DIA_Torrez_BRACTWO_Condition()
-{
-    if (Raven_SpySect == LOG_RUNNING) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torrez_BRACTWO_Info()
-{
-    AI_Output (other, self ,"DIA_Torrez_BRACTWO_15_01"); //Kruk kaza³ mi szpiegowaæ Bractwo.
-    AI_Output (self, other ,"DIA_Torrez_BRACTWO_03_02"); //Doskonale. 
-    AI_Output (other, self ,"DIA_Torrez_BRACTWO_15_03"); //Jakieœ konkretne wskazówki? Mam ci coœ przynieœæ przy okazji?
-    AI_Output (self, other ,"DIA_Torrez_BRACTWO_03_04"); //Nie, nie. Dzia³aj spokojnie. A jak coœ wyszpiegujesz, to przyjdŸ natychmiast do mnie. 
-    AI_Output (self, other ,"DIA_Torrez_BRACTWO_03_05"); //Nie wahaj siê te¿ zajrzeæ, gdy bêdziesz potrzebowaæ pomocy z tym zadaniem.
-    AI_Output (self, other ,"DIA_Torrez_BRACTWO_03_06"); //Informacja o przedsiêwziêciach planowanych przez Bractwo jest dla nas bardzo wa¿na.
-    AI_Output (other, self ,"DIA_Torrez_BRACTWO_15_07"); //Muszê udaæ siê do Obozu Bractwa. Droga wzd³u¿ rzeki jest bardzo niebezpieczna...
-    AI_Output (self, other ,"DIA_Torrez_BRACTWO_03_08"); //Rozumiem. WeŸ te cztery eliksiry. Przydadz¹ ci siê podczas drogi.
-    B_LogEntry                     (CH1_firenovize,"Mam wykonaæ zadanie od Kruka i przy okazji informowaæ Torreza o postêpach. W razie problemów mogê zapytaæ go o radê.");
-
-    B_GiveXP (50);
-    CreateInvItems (self, ItFo_Potion_Mana_01, 2);
-    B_GiveInvItems (self, other, ItFo_Potion_Mana_01, 2);
-    CreateInvItems (self, ItFo_Potion_Health_01, 2);
-    B_GiveInvItems (self, other, ItFo_Potion_Health_01, 2);
-    AI_StopProcessInfos	(self);
 };
  
 //========================================

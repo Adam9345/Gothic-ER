@@ -1072,7 +1072,7 @@ FUNC INT Info_Gorn_GUARDNCRUNNING_Condition()
 {
 	if	Npc_KnowsInfo(hero, Info_Gorn_GUARDNC)
 	&&	!UrShak_SpokeOfUluMulu
-	&& (!Npc_KnowsInfo(hero, DIA_PC_Fighter_FREE_AND_FREE))
+	//&& (!Npc_KnowsInfo(hero, DIA_PC_Fighter_FREE_AND_FREE))
 	{
 		return TRUE;
 	};
@@ -1565,7 +1565,8 @@ INSTANCE Info_Gorn_FMWATCH (C_INFO)
 
 FUNC INT Info_Gorn_FMWATCH_Condition()
 {
-	if	Npc_KnowsInfo(hero, Info_Gorn_AFTERFM) && !Npc_KnowsInfo(hero, DIA_PC_Fighter_FREE_AND_FREE)
+	if	Npc_KnowsInfo(hero, Info_Gorn_AFTERFM) 
+	//&& !Npc_KnowsInfo(hero, DIA_PC_Fighter_FREE_AND_FREE)
 	{
 		return TRUE;
 	};
@@ -1981,88 +1982,6 @@ func void AttackNC_FW()
 	STT_2077_Jim.guild = GIL_GOBBO;
 	Npc_ExchangeRoutine	(STT_2077_Jim, "NewCampAttack");
 
-	
-	
-};
-//***************************************************************************
-//	Info CRONOS
-//***************************************************************************
-INSTANCE Info_Gorn_DefNC (C_INFO)
-{
-	npc			= PC_Fighter;
-	nr           = 2;
-	condition	= Info_Gorn_DefNC_Condition;
-	information	= Info_Gorn_DefNC_Info;
-	permanent	= FALSE;
-	description	= "W pobli¿u obozu pojawi³y siê odzia³y stra¿y. Trzeba je wyeliminowaæ.";
-};                       
-
-FUNC INT Info_Gorn_DefNC_Condition()
-{
-	if (Npc_KnowsInfo(hero, DIA_Myxir_KillWaransr_NC)) 
-	{
-		return TRUE;
-	};
-};
-
-func VOID Info_Gorn_DefNC_Info()
-{
-	AI_Output			(other,self ,"Info_Gorn_DefNC_15_01"); //W pobli¿u obozu pojawi³y siê odzia³y stra¿y. Trzeba je wyeliminowaæ.
-	Npc_ExchangeRoutine	(PC_Fighter, "NcAttack");
-	AI_Output			(self, other,"Info_Gorn_DefNC_09_02"); //Nie musisz powtarzaæ dwa razy. Te sukinsyny zaraz bêd¹ gryŸæ glebê.
-	AI_Output			(other,self ,"Info_Gorn_DefNC_15_03"); //Zatem chodŸ ze mn¹.
-	AI_Output			(self, other,"Info_Gorn_DefNC_09_04"); //W porz¹dku.
-
-	PC_Fighter.aivar[AIV_PARTYMEMBER] = TRUE;	
-	AttackNC_FW ();
-};
-
- 
-
-//***************************************************************************
-//	Info CRONOS
-//***************************************************************************
-INSTANCE Info_Gorn_NC_AWon (C_INFO)
-{
-	npc			= PC_Fighter;
-	nr           = 2;
-	condition	= Info_Gorn_NC_AWon_Condition;
-	information	= Info_Gorn_NC_AWon_Info;
-	permanent	= FALSE;
-	important   = TRUE;
-};                       
-
-FUNC INT Info_Gorn_NC_AWon_Condition()
-{
-     if (Npc_IsDead (GRD_40035_Gardist))
-	 && (Npc_IsDead (GRD_40036_Gardist))
-	 && (Npc_IsDead (GRD_40037_Gardist))
-	 && (Npc_IsDead (GRD_40038_Gardist))
-	 && (Npc_IsDead (STT_2077_Jim))
-	 && (Npc_KnowsInfo(hero, Info_Gorn_DefNC)) 
-	{
-		return TRUE;
-	};
-};
-
-func VOID Info_Gorn_NC_AWon_Info()
-{
-	AI_Output			(self, other,"Info_Gorn_NC_AWon_09_01"); //No to za³atwione.
-	AI_Output			(other,self ,"Info_Gorn_NC_AWon_14_02"); //Chcia³eœ powiedzieæ za³atwieni.
-	AI_Output			(self, other,"Info_Gorn_NC_AWon_09_03"); //To w jaki sposób sta³eœ siê potê¿ny w tej kolonii zas³uguje na niebywa³e uznanie.
-	AI_Output			(self, other,"Info_Gorn_NC_AWon_09_04"); //Dopiero co by³eœ zwyk³ym ¿ó³todziobem a teraz proszê.
-	Npc_ExchangeRoutine	(SLD_704_Blade,  "Start");
-	Npc_ExchangeRoutine	(SLD_737_Torlof, "Start");
-	Npc_ExchangeRoutine	(PC_Fighter    , "Start");
-	AI_Output			(other,self ,"Info_Gorn_NC_AWon_14_05"); //Jak widaæ wszêdzie mo¿na siê czegoœ nauczyæ...
-	AI_Output			(self, other,"Info_Gorn_NC_AWon_09_06"); //Wracamy do obozu. A ty pomów z Saturasem. Trzeba mu powiedzieæ, ¿e zagro¿enie minê³o.
-	AI_Output			(other,self ,"Info_Gorn_NC_AWon_14_07"); //Tak zrobiê. Trzymaj siê.
-	B_LogEntry               (OgnisteJaszczury,"Pokonaliœmy Stra¿ników. Pójdê teraz do Saturasa i zdam mu raport z misji, która zakoñczy siê sukcesem.");
-
-	PC_Fighter.aivar[AIV_PARTYMEMBER]      = FALSE;
-	SLD_737_Torlof.aivar[AIV_PARTYMEMBER]  = FALSE;
-	SLD_704_Blade.aivar[AIV_PARTYMEMBER]   = FALSE;
-	AI_Output			(self, other,"Info_Gorn_NC_AWon_09_08"); //Do zobaczenia.
 	
 	
 };

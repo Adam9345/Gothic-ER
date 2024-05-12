@@ -79,7 +79,7 @@ INSTANCE DIA_Jens_FirstArmorPrice (C_INFO)
 
 FUNC INT DIA_Jens_FirstArmorPrice_Condition()
 {
-	if (Npc_KnowsInfo (hero, DIA_Jens_HELLO1)) //&& (kapitel == 10)
+	if (Npc_KnowsInfo (hero, DIA_Jens_HELLO1))
 	{
     return TRUE;
 	};
@@ -553,11 +553,6 @@ AI_Output (other, self ,"DIA_Jens_SYTUACJA_15_01"); //Jak tam?
     {
         AI_Output (self, other ,"DIA_Jens_SYTUACJA_03_10"); //No nieŸle siê porobi³o. Drax chce sam zaatakowaæ Obóz? Nie podoba mi siê to.
     }
-    else if (Npc_KnowsInfo (hero, DIA_Quentin_DAEADALL))
-    {
-        AI_Output (self, other ,"DIA_Jens_SYTUACJA_03_11"); //Cholera, wiedzia³em, ¿e to siê tak skoñczy. Co za dureñ z tego Draxa. Zero trzeŸwego myœlenia.
-        AI_Output (self, other ,"DIA_Jens_SYTUACJA_03_12"); //Ty jesteœ m³ody. Uwa¿aj, ¿eby te¿ nie zostaæ taki narwañcem. Mamy nieŸle przechlapane. 
-}
 else if (Npc_KnowsInfo (hero, DIA_Quentin_findFriends))
 {
     AI_Output (self, other ,"DIA_Jens_SYTUACJA_03_13"); //Nasze ostatnie przygody napêdzi³y mi niez³ego stracha. 

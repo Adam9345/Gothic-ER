@@ -147,38 +147,6 @@ FUNC VOID DIA_Raeuber_WYPAD_Info()
 };
 
 //========================================
-//-----------------> Przejebane
-//========================================
-
-INSTANCE DIA_Raeuber_Przejebane (C_INFO)
-{
-   npc          = BAN_1613_Doyle;
-   nr           = 1;
-   condition    = DIA_Raeuber_Przejebane_Condition;
-   information  = DIA_Raeuber_Przejebane_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Raeuber_Przejebane_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_THORUS_HahahaSpierdalaj))
-    && C_NpcBelongsToOldCamp(hero)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Raeuber_Przejebane_Info()
-{
-    AI_Output (self, other ,"DIA_Raeuber_Przejebane_03_01"); //Oszuka³eœ nas i przy³¹czy³eœ siê do tych drani!
-    AI_Output (self, other ,"DIA_Raeuber_Przejebane_03_02"); //OdejdŸ, póki mam cierpliwoœæ.
-    wypierdalajBANDITOS = true;
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
 //-----------------> HelloNoGRD
 //========================================
 
@@ -611,14 +579,14 @@ func void AttackExchangeSquare()
 	
 	
 	
-	B_ChangeGuild    (GRD_2002_Stra¿nik,GIL_DMB);  
-	B_ChangeGuild    (GRD_2001_Stra¿nik,GIL_DMB);  
-	B_ChangeGuild    (GRD_2003_Stra¿nik,GIL_DMB);  
-	B_ChangeGuild    (GRD_2005_Stra¿nik,GIL_DMB);  
-	B_ChangeGuild    (VLK_2004_Robotnik,GIL_DMB);  
-	B_ChangeGuild    (GRD_254_Orry,GIL_DMB);  
-	B_ChangeGuild    (GRD_281_Gardist,GIL_DMB);  
-	B_ChangeGuild    (GRD_5099_Kwatermistrz,GIL_DMB);  
+	B_ChangeGuild    (GRD_2002_Stra¿nik,GIL_BDT);  
+	B_ChangeGuild    (GRD_2001_Stra¿nik,GIL_BDT);  
+	B_ChangeGuild    (GRD_2003_Stra¿nik,GIL_BDT);  
+	B_ChangeGuild    (GRD_2005_Stra¿nik,GIL_BDT);  
+	B_ChangeGuild    (VLK_2004_Robotnik,GIL_BDT);  
+	B_ChangeGuild    (GRD_254_Orry,GIL_BDT);  
+	B_ChangeGuild    (GRD_281_Gardist,GIL_BDT);  
+	B_ChangeGuild    (GRD_5099_Kwatermistrz,GIL_BDT);  
 	
 	
 	
@@ -1419,6 +1387,11 @@ Ai_GotoNpc(BAN_1613_Doyle,hero);
     AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_09"); //IdŸ ju¿.
     B_LogEntry                     (CH4_BanditsInAbadonedMine,"Kopalnia jest czysta. Doyle kaza³ mi udaæ siê z dobrymi wieœciami do Quentina. Wraz z Rockym i Chrisem postanowi³ pozostaæ tymczasowo na stra¿y.");
 	HeroMaArtefakt = false;
+
+    BAN_1613_Doyle.aivar[AIV_PARTYMEMBER] = FALSE;
+    BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = FALSE;
+    BAN_1607_Chris.aivar[AIV_PARTYMEMBER] = FALSE;
+
     B_GiveXP (2000);
 };
 //========================================

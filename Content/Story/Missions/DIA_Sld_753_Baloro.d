@@ -398,51 +398,6 @@ FUNC VOID DIA_SLD_753_Baloro_Angebotdochannehmen_Info()
 		};
 
 //========================================
-//-----------------> WpierdolAlboKasa
-//========================================
-
-INSTANCE DIA_Baloro_WpierdolAlboKasa (C_INFO)
-{
-   npc          = SLD_753_Baloro;
-   nr           = 1;
-   condition    = DIA_Baloro_WpierdolAlboKasa_Condition;
-   information  = DIA_Baloro_WpierdolAlboKasa_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Baloro_WpierdolAlboKasa_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Senyan_GoldMine))
-    && (Npc_GetDistToWP (self, "KARCZMA_NC") < 1000)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Baloro_WpierdolAlboKasa_Info()
-{
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_01"); //Ej, ty!
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_02"); //Tak, ty!
-    AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_03"); //O co chodzi?
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_04"); //Gadaj, gdzie jest kopalnia, albo dostaniesz w mordê!
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_05"); //Tutaj nikt ci nie pomo¿e.
-    AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_06"); //Sk¹d wiesz o kopalni?
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_07"); //Senyan mi powiedzia³, ¿e wiesz, gdzie ona jest.
-    AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_08"); //Pomagasz mu?
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_09"); //Nie zadawaj g³upich pytañ!
-    AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_10"); //Chwila! Nie wiem, gdzie jest ta kopalnia.
-    AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_11"); //Jestem tylko poœrednikiem.
-    AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_12"); //Zaczynasz mnie wkurzaæ.
-    B_LogEntry                     (CH2_GoldMine,"Baloro rzuci³ siê na mnie w karczmie. Senyan chcia³ zgarn¹æ z³oto z kopalni dla siebie i podzieliæ siê zyskami z Najemnikiem Baloro.");
-    AI_StopProcessInfos	(self);
-    Npc_SetPermAttitude (self, ATT_HOSTILE);
-    Npc_SetTarget (self, other);
-    AI_StartState (self, ZS_ATTACK, 1, "");
-};
-
-//========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
 

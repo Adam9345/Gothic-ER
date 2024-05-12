@@ -140,42 +140,6 @@ FUNC VOID DIA_Grd_215_Torwache_PERM_Info()
 	AI_Output (other, self,"DIA_Grd_215_Torwache_PERM_15_00"); //Coœ nowego?
 	AI_Output (self, other,"DIA_Grd_215_Torwache_PERM_06_01"); //Nie. Wszystko po staremu.
 };
-// *Script was make in Easy Dialog Maker (EDM)
-//========================================
-//-----------------> ARTO_BOSS
-//========================================
-
-INSTANCE DIA_Torwache_ARTO_BOSS (C_INFO)
-{
-   npc          = Grd_215_Torwache;
-   nr           = 1;
-   condition    = DIA_Torwache_ARTO_BOSS_Condition;
-   information  = DIA_Torwache_ARTO_BOSS_Info;
-   permanent	= FALSE;
-   description	= "Kim jesteœ?";
-};
-
-FUNC INT DIA_Torwache_ARTO_BOSS_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Arto_LetsGo))
-    && (Ebr_102_Arto.aivar[AIV_PARTYMEMBER] == TRUE)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torwache_ARTO_BOSS_Info()
-{
-    AI_Output (self, other ,"DIA_Torwache_ARTO_BOSS_03_01"); //Hej, gdzie siê wybieracie?
-    AI_Output (other, self ,"DIA_Torwache_ARTO_BOSS_15_02"); //Mam odeskortowaæ Arto do obozu przed kopalni¹. 
-    AI_Output (self, other ,"DIA_Torwache_ARTO_BOSS_03_03"); //Uwa¿ajcie na Bandytów. Zwiadowcy donieœli nam, ¿e widzieli du¿¹ grupê tych zbirów w lesie. 
-    AI_Output (self, other ,"DIA_Torwache_ARTO_BOSS_03_04"); //Przypuszczam, ¿e ktoœ wyniós³ z Obozu informacjê o twoim zadaniu.
-    AI_Output (other, self ,"DIA_Torwache_ARTO_BOSS_15_05"); //Niech zajmie siê tym ktoœ inny. Jak widzisz, mam teraz wa¿niejsze zlecenie. 
-    AI_Output (self, other ,"DIA_Torwache_ARTO_BOSS_03_06"); //Jasne, porozmawiam na ten temat z Thorusem. 
-    AI_StopProcessInfos	(self);
-};
-
 
 //========================================
 //-----------------> NORTH_BANDYTA

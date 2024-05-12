@@ -253,52 +253,6 @@ FUNC VOID DIA_Glen_SAKIEWKAPP_Info()
 };
 
 //========================================
-//-----------------> GoldMine
-//========================================
-
-INSTANCE DIA_Glen_GoldMine (C_INFO)
-{
-   npc          = VLK_583_Glen;
-   nr           = 1;
-   condition    = DIA_Glen_GoldMine_Condition;
-   information  = DIA_Glen_GoldMine_Info;
-   permanent	= FALSE;
-   description	= "Chcia³byœ siê st¹d wyrwaæ?";
-};
-
-FUNC INT DIA_Glen_GoldMine_Condition()
-{
-    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Glen_GoldMine_Info()
-{
-    AI_Output (other, self ,"DIA_Glen_GoldMine_15_01"); //Chcia³byœ siê st¹d wyrwaæ?
-    AI_Output (self, other ,"DIA_Glen_GoldMine_03_02"); //Co masz na myœli?
-    AI_Output (other, self ,"DIA_Glen_GoldMine_15_03"); //Mam na myœli pracê w ma³ej kopalni z³ota.
-    AI_Output (self, other ,"DIA_Glen_GoldMine_03_04"); //Znalaz³eœ ¿y³ê z³ota w tej dziurze?
-    AI_Output (self, other ,"DIA_Glen_GoldMine_03_05"); //Gdzie, do cholery?
-    AI_Output (other, self ,"DIA_Glen_GoldMine_15_06"); //Jeszcze nie wiem. Jestem tylko... poœrednikiem.
-    AI_Output (other, self ,"DIA_Glen_GoldMine_15_07"); //Mam zebraæ ekipê, która podejmie siê pracy.
-    AI_Output (self, other ,"DIA_Glen_GoldMine_03_08"); //No dobra. Raz siê ¿yje.
-    AI_Output (other, self ,"DIA_Glen_GoldMine_15_09"); //Spotykamy siê w karczmie w Nowym Obozie.
-    AI_Output (self, other ,"DIA_Glen_GoldMine_03_10"); //Zatem widzimy siê w karczmie.
-    B_LogEntry                     (CH2_GoldMine,"Glen bêdzie pracowaæ w kopalni z³ota.");
-
-    B_GiveXP (300);
-};
-
-
-
-
-
-
-
-//========================================
 //-----------------> NeedOre
 //========================================
 

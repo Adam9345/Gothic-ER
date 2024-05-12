@@ -227,41 +227,6 @@ func int Info_Tpl_1406_LastWarn_Info()
 	
 };
 
-
-//========================================
-//-----------------> WDC_TURNIEJ
-//========================================
-INSTANCE Info_Tpl_1406_LastWarnD (C_INFO)
-{
-	npc			= Tpl_1406_Templer;
-	nr			= 1;
-	condition	= Info_Tpl_1406_LastWarnD_Condition;
-	information	= Info_Tpl_1406_LastWarnD_Info;
-	permanent	= TRUE;
-	important	= TRUE;
-};                       
-
-FUNC INT Info_Tpl_1406_LastWarnD_Condition()
-{
-	if  (Npc_KnowsInfo(hero,DIA_Templer_WDC_GetOut))
-	&& !(Npc_HasItems (other, ITMW_CalomGuardSWD) >=1
-	&& (PerrickGiftForCalom != LOG_SUCCESS))
-	&& (kapitel == 10)
-	{
-		return TRUE;
-	};
-};
-
-func int Info_Tpl_1406_LastWarnD_Info()
-{
-	AI_Output (self, hero,"Info_Tpl_1406_LastWarnD_13_01"); 		//Wynocha po miecz, bo inaczej nakarmiê tob¹ b³otne wê¿e.
-
-	AI_GotoWP (hero, "PSI_PATH_12"); 
-	
-	AI_StopProcessInfos	(self);
-	
-};
-
 instance dia_kalomsguard_pickpocket(c_info) {
     npc = tpl_1406_templer;
     nr = 900;

@@ -551,39 +551,6 @@ FUNC VOID DIA_Talas_ABOUT_STEH_Info()
 };
 
 //========================================
-//-----------------> ABOUT_KILLER
-//========================================
-
-INSTANCE DIA_Talas_ABOUT_KILLER (C_INFO)
-{
-   npc          = Nov_1300_Talas;
-   nr           = 1;
-   condition    = DIA_Talas_ABOUT_KILLER_Condition;
-   information  = DIA_Talas_ABOUT_KILLER_Info;
-   permanent	= FALSE;
-   description	= "Masz jakieœ informacje o zabójstwie jakiego dokonano w okolicy?";
-};
-
-FUNC INT DIA_Talas_ABOUT_KILLER_Condition()
-{
-    if (MIS_PsionicCSI == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Talas_ABOUT_KILLER_Info()
-{
-    AI_Output (other, self ,"DIA_Talas_ABOUT_KILLER_15_01"); //Masz jakieœ informacje o zabójstwie jakiego dokonano w okolicy?
-    AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_02"); //Nie, dopiero co siê dowiedzia³em. Naprawdê makabryczna sprawa. 
-	AI_Output (other, self ,"DIA_Talas_ABOUT_KILLER_15_03"); //Znasz jakiegoœ zabijakê z okolicy?
-	AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_04"); //Rozmawia³am chwilê z Hakanem. Jeœli mia³bym wytypowaæ podejrzanego to powiedzia³bym, ¿e to Harlok. Ma blisko chatê i ponoæ trafi³ do Koloni za morderstwo.
-	AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_05"); //Mo¿e przypomnia³y mu siê stare czasy i poczu³ chêæ przelania krwi? Lepiej sprawdŸ jego chatê. Byæ mo¿e znajdziesz tam dowód i bêdziesz móg³ go oskar¿yæ.
-	B_LogEntry               (CH3_PsionicCSI,"Talas nie wie nic o zabójstwie, ale podejrzewa Harloka. Dowiedzia³em siê, ¿e rozmawia³ ostatnio na ten temat z Hakanem.");
-};
-
-//========================================
 //-----------------> KH_Tirutt
 //========================================
 

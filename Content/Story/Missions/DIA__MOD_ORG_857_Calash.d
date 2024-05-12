@@ -233,57 +233,6 @@ FUNC VOID DIA_Calash_Win_Info()
 };
 
 //========================================
-//-----------------> GoldMine
-//========================================
-
-INSTANCE DIA_Calash_GoldMine (C_INFO)
-{
-   npc          = ORG_857_Calash;
-   nr           = 4;
-   condition    = DIA_Calash_GoldMine_Condition;
-   information  = DIA_Calash_GoldMine_Info;
-   permanent	= FALSE;
-   description	= "Poszukujê kogoœ do ochrony kopalni z³ota.";
-};
-
-FUNC INT DIA_Calash_GoldMine_Condition()
-{ 
-    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Calash_GoldMine_Info()
-{
-    AI_Output (other, self ,"DIA_Calash_GoldMine_15_01"); //Poszukujê kogoœ do ochrony kopalni z³ota.
-    if (MIS_TrollGroundHunting == LOG_RUNNING)
-    {
-        AI_Output (self, other ,"DIA_Calash_GoldMine_03_02"); //Jeszcze nie pozbyliœmy siê trolla ziemnego, a ty ju¿ szukasz nastêpnej roboty.
-        AI_Output (other, self ,"DIA_Calash_GoldMine_15_03"); //No dobra. To weŸmy siê najpierw za tego trolla, a potem ci wszystko wyjaœniê.
-		DIA_Calash_GoldMine.permanent = true;
-    }
-    else
-    {
-        AI_Output (self, other ,"DIA_Calash_GoldMine_03_04"); //Kopalni z³ota?
-        AI_Output (other, self ,"DIA_Calash_GoldMine_15_05"); //Tak. Nie wiem, gdzie dok³adnie jest.
-        AI_Output (other, self ,"DIA_Calash_GoldMine_15_06"); //Stary kopacz Will znalaz³ ¿y³ê z³ota w Kolonii.
-        AI_Output (other, self ,"DIA_Calash_GoldMine_15_07"); //Mam znaleŸæ ludzi do pracy w jego kopalni.
-        AI_Output (self, other ,"DIA_Calash_GoldMine_03_08"); //Mam wydobywaæ z³oto? Nie jestem górnikiem.
-        AI_Output (other, self ,"DIA_Calash_GoldMine_15_09"); //Wola³bym ¿ebyœ pe³ni³ funkcje ochroniarza.
-        AI_Output (self, other ,"DIA_Calash_GoldMine_03_10"); //Hmm... Rozumiem. Nie chcecie nieproszonych goœci.
-        AI_Output (self, other ,"DIA_Calash_GoldMine_03_11"); //Pomogê wam. I tak nic mnie tu nie trzyma. 
-        B_LogEntry                     (CH2_GoldMine,"Calash bêdzie pracowa³ w kopalni z³ota jako ochroniarz.  ");
-		DIA_Calash_GoldMine.permanent = false;
-		Calash_gototavern = true;
-        B_GiveXP (400);
-    };
-    AI_StopProcessInfos	(self);
-};
-//----------------------------------------------------------------------1.6.1
-
-//========================================
 //-----------------> CALASH_PAS_JOIN
 //========================================
 

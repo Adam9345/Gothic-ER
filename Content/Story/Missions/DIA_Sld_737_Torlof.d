@@ -563,41 +563,6 @@ FUNC VOID DIA_Torlof_AAAS_Info()
 	 Npc_ExchangeRoutine(GRD_7895_Patter,"OMPREEND");
 };
 
-
-//========================================
-//-----------------> HELLO13r23
-//========================================
-
-INSTANCE DIA_Torlof_Gardist_AttackNC (C_INFO)
-{
-   npc          = Sld_737_Torlof;
-   nr           = 1;
-   condition    = DIA_Torlof_Gardist_AttackNC_Condition;
-   information  = DIA_Torlof_Gardist_AttackNC_Info;
-   permanent	= FALSE;
-   description	= "Nieopodal obozu pojawi³y siê oddzia³y stra¿y. Musimy je rozbiæ.";
-};
-
-FUNC INT DIA_Torlof_Gardist_AttackNC_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Myxir_KillWaransr_NC))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torlof_Gardist_AttackNC_Info()
-{
-    AI_Output (other, self ,"DIA_Torlof_Gardist_AttackNC_15_00");   //Nieopodal obozu pojawi³y siê oddzia³y stra¿y. Musimy je rozbiæ.
-    AI_Output (self, other ,"DIA_Torlof_Gardist_AttackNC_03_01");   //Nie ma innego wyjœcia. Liczê, ¿e damy sobie radê.
-    AI_Output (other, self ,"DIA_Torlof_Gardist_AttackNC_15_02");   //ChodŸ ze mn¹. 
-	SLD_737_Torlof.aivar[AIV_PARTYMEMBER] = TRUE;
-    AI_Output (self, other ,"DIA_Torlof_Gardist_AttackNC_03_03");   //Oczywiœcie. W koñcu walka to mój fach. Zajmiemy siê nimi odpowiednio.
-    Npc_ExchangeRoutine	(self, "NcAttack");
-};
-
-
 //========================================
 //-----------------> ZM_Camp
 //========================================

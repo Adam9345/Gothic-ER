@@ -134,8 +134,7 @@ INSTANCE DIA_Senyan_GOR_NA_LIN (C_INFO)
 
 FUNC INT DIA_Senyan_GOR_NA_LIN_Condition()
 {
-    if (!Npc_KnowsInfo (hero, DIA_Senyan_GoldMine))
-    && (Npc_KnowsInfo (hero, DIA_GorNaLin_HELLO1))
+    if (Npc_KnowsInfo (hero, DIA_GorNaLin_HELLO1))
     {
     return TRUE;
     };
@@ -472,45 +471,6 @@ FUNC VOID DIA_Senyan_Surprised_Info()
     AI_Output (other, self ,"DIA_Senyan_Surprised_15_01"); //Co ty tu robisz?
     AI_Output (self, other ,"DIA_Senyan_Surprised_03_02"); //Wykorzystujê wielk¹ szansê! Spadaj!
     AI_StopProcessInfos (self);
-};
-
-// NOPE
-
-//========================================
-//-----------------> GoldMine
-//========================================
-
-INSTANCE DIA_Senyan_GoldMine (C_INFO)
-{
-   npc          = SFB_1000_Senyan;
-   nr           = 1;
-   condition    = DIA_Senyan_GoldMine_Condition;
-   information  = DIA_Senyan_GoldMine_Info;
-   permanent	= FALSE;
-   description	= "Chcesz pracowaæ w kopalni z³ota?";
-};
-
-FUNC INT DIA_Senyan_GoldMine_Condition()
-{
-    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Senyan_GoldMine_Info()
-{
-    AI_Output (other, self ,"DIA_Senyan_GoldMine_15_01"); //Chcesz pracowaæ w kopalni z³ota?
-    AI_Output (self, other ,"DIA_Senyan_GoldMine_03_02"); //Kopalni z³ota powiadasz? A gdzie ona jest?
-    AI_Output (other, self ,"DIA_Senyan_GoldMine_15_04"); //Nie mogê ci powiedzieæ, bo sam nie wiem.
-    AI_Output (self, other ,"DIA_Senyan_GoldMine_03_05"); //Czegoœ tu nie rozumiem...
-    AI_Output (other, self ,"DIA_Senyan_GoldMine_15_06"); //Spotykamy siê na górnym piêtrze karczmy na jeziorze. Will ci wszystko wyjaœni.
-    AI_Output (self, other ,"DIA_Senyan_GoldMine_03_07"); //Dobra, zjawiê siê tam.
-    B_LogEntry                     (CH2_GoldMine,"Senyan przyjdzie na spotkanie do karczmy.");
-	Npc_ExchangeRoutine (self, "karczma");
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
 };
 
 instance dia_senyan_pickpocket(c_info) {

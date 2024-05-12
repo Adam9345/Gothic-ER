@@ -265,79 +265,6 @@ FUNC VOID DIA_Scar_HELLO3_Info()
         MIS_FightWithScar = LOG_FAILED;
     };
 };
-//========================================
-//-----------------> Sike
-//========================================
-
-INSTANCE DIA_Scar_Sike (C_INFO)
-{
-   npc          = Ebr_101_Scar;
-   nr           = 1;
-   condition    = DIA_Scar_Sike_Condition;
-   information  = DIA_Scar_Sike_Info;
-   permanent	= FALSE;
-   description	= "Spike chce siê z tob¹ spotkaæ.";
-};
-
-FUNC INT DIA_Scar_Sike_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Blade_Next))
-    //&& (scar_idzie == false)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Scar_Sike_Info()
-{
-    AI_Output (other, self ,"DIA_Scar_Sike_15_01"); //Spike chce siê z tob¹ spotkaæ.
-    AI_Output (self, other ,"DIA_Scar_Sike_03_02"); //Spike? Dawno go tu nie by³o. Czego chce?
-   Ebr_101_Scar.guild = GIL_NONE;
-   Npc_SetTrueGuild (Ebr_101_Scar,GIL_NONE);
-    Info_ClearChoices		(DIA_Scar_Sike);
-    Info_AddChoice		(DIA_Scar_Sike, "Chce z tob¹ pogadaæ o starych czasach.", DIA_Scar_Sike_Pogadac);
-    Info_AddChoice		(DIA_Scar_Sike, "Chyba chce, abyœ mu za³atwi³ awans w Obozie.", DIA_Scar_Sike_Awans);
-    Info_AddChoice		(DIA_Scar_Sike, "Nie wiem. Pewnie sam ci to powie.", DIA_Scar_Sike_NieWiem);
-};
-
-FUNC VOID DIA_Scar_Sike_Pogadac()
-{
-    AI_Output (other, self ,"DIA_Scar_Sike_Pogadac_15_01"); //Chce z tob¹ pogadaæ o starych czasach.
-    AI_Output (self, other ,"DIA_Scar_Sike_Pogadac_03_02"); //Starych czasach, mówisz? 
-    AI_Output (self, other ,"DIA_Scar_Sike_Pogadac_03_03"); //Coœ sobie przypominam.
-    AI_Output (self, other ,"DIA_Scar_Sike_Pogadac_03_04"); //STRA¯NICY! ZA MN¥!
-	Npc_ExchangeRoutine (GRD_8801_Gardist, "atak");
-	Npc_ExchangeRoutine (GRD_8800_Gardist, "atak");
-    Npc_ExchangeRoutine (self, "kill");
-    Info_ClearChoices		(DIA_Scar_Sike);
-	guardians_scar = true;
-    AI_StopProcessInfos	(self);
-};
-
-FUNC VOID DIA_Scar_Sike_Awans()
-{
-    AI_Output (other, self ,"DIA_Scar_Sike_Awans_15_01"); //Chyba chce, abyœ mu za³atwi³ awans w Obozie.
-    AI_Output (self, other ,"DIA_Scar_Sike_Awans_03_02"); //Awans? Wiedzia³em, ¿e ma jakiœ interes. 
-    Npc_ExchangeRoutine (self, "kill");
-    Info_ClearChoices		(DIA_Scar_Sike);
-	guardians_scar = false;
-    AI_StopProcessInfos	(self);
-};
-
-FUNC VOID DIA_Scar_Sike_NieWiem()
-{
-    AI_Output (other, self ,"DIA_Scar_Sike_NieWiem_15_01"); //Nie wiem. Pewnie sam ci to powie.
-    AI_Output (self, other ,"DIA_Scar_Sike_NieWiem_03_02"); //Nie mog³eœ wymyœliæ nic lepszego, marny ¿artownisiu? 
-    AI_Output (self, other ,"DIA_Scar_Sike_NieWiem_03_03"); //Poka¿ê ci, ¿e z Magnatów siê nie ¿artuje. Pójdê teraz do tej kaplicy razem z moimi Stra¿nikami. Ty pójdziesz z nami.
-    AI_Output (self, other ,"DIA_Scar_Sike_NieWiem_03_04"); //Je¿eli oka¿e siê, ¿e nic tam nie ma, to moi ch³opcy zrobi¹ z tob¹ porz¹dek.
-    Info_ClearChoices		(DIA_Scar_Sike);
-    Npc_ExchangeRoutine (self, "kill");
-	Npc_ExchangeRoutine (GRD_8801_Gardist, "atak");
-	Npc_ExchangeRoutine (GRD_8800_Gardist, "atak");
-    Info_ClearChoices		(DIA_Scar_Sike);
-	guardians_scar = true;
-};
 
 //========================================
 //-----------------> Nakryci
@@ -355,7 +282,7 @@ INSTANCE DIA_Scar_Nakryci (C_INFO)
 
 FUNC INT DIA_Scar_Nakryci_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Blade_Guardnians)) || (guardians_scar == true)
+    if (guardians_scar == true)
     && (Npc_GetDistToWP (self, "INNOS_BENCH2_OC") < 500)
     {
     return TRUE;
@@ -378,40 +305,6 @@ FUNC VOID DIA_Scar_Nakryci_Info()
 
     Npc_SetPermAttitude (GRD_8801_Gardist, ATT_HOSTILE);
 
-};
-
-
-//========================================
-//-----------------> NIeTen
-//========================================
-
-INSTANCE DIA_Scar_NIeTen (C_INFO)
-{
-   npc          = Ebr_101_Scar;
-   nr           = 2;
-   condition    = DIA_Scar_NIeTen_Condition;
-   information  = DIA_Scar_NIeTen_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Scar_NIeTen_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Scar_Sike))
-    && (guardians_scar == false)
-    && (Npc_GetDistToWP (self, "INNOS_BENCH2_OC") < 500)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Scar_NIeTen_Info()
-{
-    AI_Output (self, other ,"DIA_Scar_NIeTen_03_01"); //Zaczekaj! Ty! To nie jest Spike! O co tu chodzi?!
-Npc_SetPermAttitude (self, ATT_HOSTILE);
-    Npc_SetTarget (SLD_704_Blade, Ebr_101_Scar);
-    AI_StartState (SLD_704_Blade, ZS_ATTACK, 1, "");
 };
 
 instance dia_scar_pickpocket(c_info) {

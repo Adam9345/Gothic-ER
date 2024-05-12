@@ -268,6 +268,7 @@ instance  DIA_Lester_WeitWeg (C_INFO) //E2
 FUNC int  DIA_Lester_WeitWeg_Condition()
 {
 	var C_NPC namib; namib = Hlp_GetNpc(Gur_1204_BaalNamib);
+
 	if	(Npc_GetDistToNpc(other,namib) > 1000)
 	&&	(BaalNamib_Ansprechbar==FALSE)
 	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
@@ -310,6 +311,7 @@ instance  DIA_Lester_ShowHallo (C_INFO) //E2
 FUNC int  DIA_Lester_ShowHallo_Condition()
 {
 	var C_NPC namib; namib = Hlp_GetNpc(Gur_1204_BaalNamib);
+
 	if	(Npc_GetDistToNpc(other,namib) < 500)
 	&&	(BaalNamib_Ansprechbar==FALSE)
 	&&	(Lester_Show == TRUE)
@@ -1273,10 +1275,10 @@ func VOID Info_Lester_DIEGOMILTEN_Info()
 	};
 
 */
-	if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE))
-	{
-	Npc_ExchangeRoutine (PC_PSIONIC,"spotkanie");
-	};
+	// if (Npc_KnowsInfo (hero, DIA_PC_Fighter_FREE_AND_FREE))
+	// {
+	// Npc_ExchangeRoutine (PC_PSIONIC,"spotkanie");
+	// };
 	AI_StopProcessInfos(self);
 	
 };

@@ -286,50 +286,6 @@ FUNC VOID DIA_Patrick_Nieidz_Info()
  //   AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> Brothers
-//========================================
-
-INSTANCE DIA_Patrick_Brothers (C_INFO)
-{
-   npc          = NON_2056_Patrick;
-   nr           = 1;
-   condition    = DIA_Patrick_Brothers_Condition;
-   information  = DIA_Patrick_Brothers_Info;
-   permanent	= FALSE;
-   description	= "Wiesz coœ o Stra¿nikach z Bractwa?";
-};
-
-FUNC INT DIA_Patrick_Brothers_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Shan_Questdadasd))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Patrick_Brothers_Info()
-{
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_01"); //Wiesz coœ o Stra¿nikach z Bractwa?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_02"); //Chodzi ci o tych podobnych tobie?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_03"); //Zostali uwiêzieni za bram¹ do kopalni.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_04"); //Widzia³em tylko trzech.   
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_06"); //Masz zamiar ich odbiæ?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_07"); //Zapomnij o tym! Stra¿nicy od razu ciê poszatkuj¹.
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_08"); //Co wiêc mam zrobiæ?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_09"); //Podobno Bandyci chc¹ poinformowaæ Gomeza o tym, co siê tutaj sta³o.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_10"); //Je¿eli Magnat dowie siê, ¿e do reszty straci³ kontrolê nad tym miejscem, zaatakuje buntowników.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_11"); //Przy odrobinie szczêœcia powybijaj¹ siê nawzajem.
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_12"); //Gdzie znajdê tych Bandytów?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_13"); //Jeden z nich stoi przy jaskini i bada sytuacjê. 
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_14"); //Spróbuj zaoferowaæ mu swoj¹ pomoc.
-    B_LogEntry                     (CH1_HelpBrothersBra,"Kopacz Patrick zdradzi³ mi, ¿e moi Bracia z obozu na bagnie ¿yj¹, jednak s¹ uwiêzieni przez ludzi Artegora. Jedynym sposobem na dostanie siê do Stra¿ników Œwi¹tynnych jest pozbycie siê Artegora i ca³ej tej jego bandy. Podobno Bandyci maj¹ na to jakiœ sposób.");
-
-    B_GiveXP (50);
-
-};
-
 //-----------------------------------------------------------------------------------1.6.1--------------------------------------------------------
 
 //========================================

@@ -814,38 +814,6 @@ if (Npc_HasItems(other, ItMiNugget) >= 1000)
 // Ró¿ne dialogi
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-//========================================
-//-----------------> Zdrada
-//========================================
-
-INSTANCE DIA_Quentin_Zdrada (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_Zdrada_Condition;
-   information  = DIA_Quentin_Zdrada_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Quentin_Zdrada_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_THORUS_HahahaSpierdalaj))
-    && C_NpcBelongsToOldCamp(hero)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_Zdrada_Info()
-{
-    AI_Output (self, other ,"DIA_Quentin_Zdrada_03_01"); //Zdradzi³eœ nas. Uwierzyliœmy, ¿e chcesz byæ jednym z nas.
-    AI_Output (self, other ,"DIA_Quentin_Zdrada_03_02"); //Powinniœmy siê na ciebie rzuciæ, ale pamiêtamy co dla nas robi³eœ.
-    AI_Output (self, other ,"DIA_Quentin_Zdrada_03_03"); //OdejdŸ i ju¿ nigdy wiêcej siê tu nie zjawiaj.
-    AI_StopProcessInfos	(self);
-};
-
 
 
 //========================================
@@ -1306,44 +1274,6 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
     Log_SetTopicStatus       (CH4_GardistsCheckpoints, LOG_SUCCESS);
     MIS_GardistsCheckpoints = LOG_SUCCESS;
 };
-
-/////////// opcja usuniêta - dialog z Rockym jest pierwszy
-//========================================
-//-----------------> DAEADALL
-//========================================
-
-INSTANCE DIA_Quentin_DAEADALL (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_DAEADALL_Condition;
-   information  = DIA_Quentin_DAEADALL_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Quentin_DAEADALL_Condition()
-{
-    if (Npc_GetDistToWP (BAN_1610_Quentin, "QUEN") < 1000) && (Npc_KnowsInfo (hero, DIA_Quentin_AkcjaUkonczona)) && (kapitel == 10)
-    {
-    return FALSE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_DAEADALL_Info()
-{
-    AI_Output (self, other ,"DIA_Quentin_DAEADALL_03_01"); //Stój! Nie idŸ dalej!
-    AI_Output (other, self ,"DIA_Quentin_DAEADALL_15_02"); //Co? O co chodzi? Dlaczego nie jesteœcie w Obozie?
-    AI_Output (self, other ,"DIA_Quentin_DAEADALL_03_03"); //Stra¿nicy znaleŸli nasz Obóz! Tylko Rocky uciek³.
-    AI_Output (other, self ,"DIA_Quentin_DAEADALL_15_04"); //Musimy odbiæ nasz¹ kryjówkê!
-    AI_Output (self, other ,"DIA_Quentin_DAEADALL_03_05"); //Nie mamy innego wyjœcia. Porozmawiaj uprzednio z Rockym. Nieco go obdarli, ale najwa¿niejsze, ¿e ¿yje.
-	//log
-    
-	//exit
-    AI_StopProcessInfos	(self);
-};
-///////////
 
 //========================================
 //-----------------> Plan

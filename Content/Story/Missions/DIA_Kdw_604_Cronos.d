@@ -211,49 +211,6 @@ FUNC VOID DIA_Cronos_CourierFireMage_QuestCont_Info()
     AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> JosepAmulet
-//========================================
-
-INSTANCE DIA_Cronos_JosepAmulet (C_INFO)
-{
-   npc          = KDW_604_Cronos;
-   nr           = 1;
-   condition    = DIA_Cronos_JosepAmulet_Condition;
-   information  = DIA_Cronos_JosepAmulet_Info;
-   permanent	= FALSE;
-   description	= "Mam przy sobie taki amulet...";
-};
-
-FUNC INT DIA_Cronos_JosepAmulet_Condition()
-{
-    if (Npc_HasItems (other, JosepSamulet) >=1) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Cronos_JosepAmulet_Info()
-{
-    AI_Output (other, self ,"DIA_Cronos_JosepAmulet_15_01"); //Mam przy sobie taki amulet...
-	AI_Output (other, self ,"DIA_Cronos_JosepAmulet_15_02"); //Mia³ go jeden z myœliwych. Dodam, ¿e zachowywa³ siê dziwnie. Zupe³nie jakby coœ go opêta³o.
-	AI_Output (other, self ,"DIA_Cronos_JosepAmulet_15_03"); //Czy to mo¿e mieæ jakiœ zwi¹zek z tym amuletem? Przyznam, ¿e czujê siê nieswojo od kiedy go mam.
-    AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_04"); //Poka¿ mi ten artefakt, ch³opcze. 
-	AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_05"); //To niezwykle rzadka rzecz. Móg³ byæ wykuty nawet sto lat temu w kuŸni jakiegoœ szalonego kowala.
-	AI_Output (other, self ,"DIA_Cronos_JosepAmulet_15_06"); //Szalonego kowala? Mo¿esz mi powiedzieæ o tym coœ wiêcej?
-	AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_07"); //Widzê tutaj znaki pozwalaj¹ce na skumulowanie czarnej magii. W pierœcieniu, po wykuciu zosta³ zaklêty demon. 
-	AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_08"); //Naprawdê, niesamowite. D³ugo ju¿ go masz?
-	AI_Output (other, self ,"DIA_Cronos_JosepAmulet_15_09"); //Jakiœ czas...
-	AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_10"); //Musisz mieæ naprawdê siln¹ duszê, skoro stawia³eœ opór demonowi. Temu myœliwemu siê najwidoczniej nie uda³o. Có¿, nic dziwnego.
-	AI_Output (self, other ,"DIA_Cronos_JosepAmulet_03_11"); //Wezmê go i zabezpieczê. Dziêkujê, ¿e z tym do mnie przyszed³eœ.
-    B_GiveXP (150);
-    B_GiveInvItems (other, self, JosepSamulet, 1);
-    Npc_RemoveInvItems (self, JosepSamulet, 1);
-};
-
-
-
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 ////////////////   Kapitel 2        ///////////////

@@ -38,7 +38,7 @@ INSTANCE DIA_Whistler_IAmNew (C_INFO)
 
 FUNC INT DIA_Whistler_IAmNew_Condition()
 {	
-	if (Npc_GetTrueGuild(hero) == GIL_NONE) && (!Npc_KnowsInfo (hero,DIA_Whistler_WYNOCHA)) 
+	if (Npc_GetTrueGuild(hero) == GIL_NONE || Npc_GetTrueGuild(hero) == GIL_VLK) && (!Npc_KnowsInfo (hero,DIA_Whistler_WYNOCHA)) 
 	{
 		return 1;
 	};
@@ -293,19 +293,6 @@ FUNC VOID DIA_Whistler_MySword_Success_Info()
 	{
 	B_LogEntry (CH1_JoinOC,"Œwistak ucieszy³ siê, gdy wrêczy³em mu jego miecz. Szkoda tylko, ¿e nie mogê ju¿ zostaæ Cieniem.");
 	};
-	if (Npc_KnowsInfo (hero,DIA_Huno_SellPlan))
-	{
-	AI_Output (self,other,"DIA_Whistler_MySword_Success_11_03"); //Zaczekaj! To ostrze jest jakieœ podejrzane... 
-	AI_EquipBestMeleeWeapon	(self);
-	AI_ReadyMeleeWeapon		(self);
-	AI_PlayAni				(self, "T_1HSINSPECT");
-	AI_Output (self,other,"DIA_Whistler_MySword_Success_11_04"); //MYŒLISZ, ¯E JESTEM G£UPCEM? ¯E DAM SIÊ OSZUKAÆ?! SK¥D MASZ TÊ BROÑ?!
-	AI_Output (other,self,"DIA_Whistler_MySword_Success_11_05"); //Wyku³em j¹ w kuŸni... Plan mia³em od Huno. Zap³aci³em za niego rud¹ od ciebie.
-	AI_Output (self,other,"DIA_Whistler_MySword_Success_11_06"); //E.. co? Mówisz prawdê? Coœ nie mogê w to uwierzyæ.
-	AI_Output (other,self,"DIA_Whistler_MySword_Success_11_07"); //Nie chcesz, to nie wierz. To twoja sprawa.
-	AI_Output (self,other,"DIA_Whistler_MySword_Success_11_08"); //Jestem pod wra¿eniem...
-	B_GIVEXP (100);
-	};
 	Whistler_BuyMySword = LOG_SUCCESS;
 	B_GiveXP (XP_Whistlerssword);
     
@@ -403,64 +390,6 @@ FUNC VOID DIA_Whistler_KURFA_Info()
 	Npc_ExchangeRoutine (self,"start");
 	AI_StopProcessInfos	(self);
 };
-
-///**********************************************
-INSTANCE DIA_Whistler_Zdrada (C_INFO)
-{
-	npc			= STT_309_Whistler;
-	nr			= 1;
-	condition	= DIA_Whistler_Zdrada_Condition;
-	information	= DIA_Whistler_Zdrada_Info;
-	permanent	= 0;
-	IMPORTANT 	= 0;
-	description = "Pos³uchaj, Mordrag chce was wkopaæ!";
-};                       
-
-FUNC INT DIA_Whistler_Zdrada_Condition()
-{	
-	if (Npc_KnowsInfo (hero, DIA_Skaza_RAPORT)) && (!Npc_KnowsInfo (hero, DIA_Bartholo_DOWODY)) && (Kapitel == 10) 
-	{
-		return 1;
-	};
-};
-FUNC VOID DIA_Whistler_Zdrada_Info()
-{
-	AI_Output (other,self,"DIA_Whistler_Zdrada_15_00"); //Pos³uchaj, Mordrag chce was wkopaæ!
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_01"); //Co?!
-	AI_Output (other,self,"DIA_Whistler_Zdrada_15_02"); //Mordrag kaza³ mi znaleŸæ na was dowody! Chce siê was pozbyæ z Obozu!
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_03"); //Niby sk¹d o tym wiesz?
-	AI_Output (other,self,"DIA_Whistler_Zdrada_11_04"); //Powiedzia³ mi o tym. Chcia³em zostaæ Bandyt¹.
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_05"); //I teraz nagle nie chcesz?
-	AI_Output (other,self,"DIA_Whistler_Zdrada_11_06"); //Wolê zostaæ Cieniem. I jak dogadamy siê?
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_07"); //Podoba mi siê twoje podejœcie. Pomogê ci dostaæ siê do Obozu.
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_08"); //Musisz tylko zrobiæ jeszcze dwie rzeczy.
-	AI_Output (other,self,"DIA_Whistler_Zdrada_11_09"); //Co konkretnie?
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_10"); //Najpierw opowiedz mi co dok³adnie wie o mnie Mordrag.
-	AI_Output (other,self,"DIA_Whistler_Zdrada_11_11"); //Wie, ¿e okrad³eœ Magnatów. Ponadto powiedzia³, ¿e Z³y zabi³ Neka. By³ œwiadkiem obu waszych operacji.
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_12"); //Cholera! Nie wygl¹da to dobrze. IdŸ do Z³ego i mu o tym opowiedz. Powiedz, ¿e ma za³atwiæ problem z Mordragiem.
-	AI_Output (self,other,"DIA_Whistler_Zdrada_11_13"); //Ja przez ten czas zajmê siê twoj¹ opini¹ w Obozie. 
-	MIS_KosztemQuentina = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_KosztemQuentina, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KosztemQuentina, LOG_RUNNING);
-    B_LogEntry                     (CH1_KosztemQuentina,"Wyda³em Mordraga w rêce Œwistaka. Kaza³ mi pogadaæ ze Z³ym. Razem mamy siê zaj¹æ Mordragiem podczas, gdy Œwistak zajmie siê moj¹ opini¹ w Obozie.");
-
-    B_GiveXP (100);
-	MIS_SpysProblems = LOG_FAILED;
-	PrintScreen	("Anulowano zadanie: Problemy Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-    Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
-    B_LogEntry 	(CH1_SpysProblems,"Wyda³em Mordraga. Zostanê Cieniem.");
-	
-	MIS_NewsFromSpy = LOG_FAILED;
-	PrintScreen	("Anulowano zadanie: Raport od Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-	Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
-	B_LogEntry      	(CH1_NewsFromSpy,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
-	
-	//BANDITOS_CAMP = LOG_FAILED;
-	//PrintScreen	("Anulowano zadanie: Przyjêcie do Obozu Bandytów! ", 1,-1,"font_new_10_red.tga",2);	
-	//Log_SetTopicStatus       (CH1_BANDITOS_CAMP, LOG_FAILED);
-	//B_LogEntry                     (CH1_BANDITOS_CAMP,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
-	};
 	
 	// **************************************************
 // 					 Ich bin neu hier 2

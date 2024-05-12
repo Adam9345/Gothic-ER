@@ -423,7 +423,7 @@ INSTANCE DIA_Scorpio_GetInfos (C_INFO)
 
 FUNC INT DIA_Scorpio_GetInfos_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Quentin_TalkAboutMine)) || (Npc_KnowsInfo (hero, DIA_Martin_Trueasd))
+    if (Npc_KnowsInfo (hero, DIA_Quentin_TalkAboutMine))
     {
     return TRUE;
     };

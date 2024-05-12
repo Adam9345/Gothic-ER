@@ -252,49 +252,6 @@ FUNC VOID DIA_SZEFU_SectTeam_Info()
     B_GiveXP (150);
 };
 
-//========================================
-//-----------------> BANDYCI_POMOC
-//========================================
-//****** NIEAKTUALNE ********
-INSTANCE DIA_SZEFU_BANDYCI_POMOC (C_INFO)
-{
-   npc          = NON_2702_SZEFU;
-   nr           = 1;
-   condition    = DIA_SZEFU_BANDYCI_POMOC_Condition;
-   information  = DIA_SZEFU_BANDYCI_POMOC_Info;
-   permanent	= FALSE;
-   description	= "Bandyci potrzebuj¹ twojej pomocy!";
-};
-
-FUNC INT DIA_SZEFU_BANDYCI_POMOC_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Raeuber_VERY_IMPORTATN))
-    {
-    return FALSE;
-    };
-};
-
-
-FUNC VOID DIA_SZEFU_BANDYCI_POMOC_Info()
-{
-    AI_Output (other, self ,"DIA_SZEFU_BANDYCI_POMOC_15_01"); //Bandyci potrzebuj¹ twojej pomocy!
-    AI_Output (self, other ,"DIA_SZEFU_BANDYCI_POMOC_03_02"); //Co siê dzieje?
-    AI_Output (other, self ,"DIA_SZEFU_BANDYCI_POMOC_15_03"); //Stara Kopalnia zosta³a zalana przez podziemn¹ rzekê. Gomez straci³ ca³y autorytet. Po Kolonii krêc¹ siê patrole, które zabijaj¹ ka¿dego, kto nie jest z nimi.
-    AI_Output (other, self ,"DIA_SZEFU_BANDYCI_POMOC_15_04"); //Bandyci chc¹ zorganizowaæ atak na czêœæ posterunków Stra¿ników.
-    AI_Output (self, other ,"DIA_SZEFU_Quest12_03_07"); //Nigdzie nie jest ju¿ bezpiecznie. 
-    AI_Output (self, other ,"DIA_SZEFU_Quest12_03_08"); //Dobra, wyœlê wam moich dwóch najlepszych ludzi. Tyle musi wam wystarczyæ.
-	AI_Output (self, other ,"DIA_SZEFU_Quest12_03_09"); //Pójd¹ Rakus i Osko. 
-	
-	B_LogEntry                     (CH4_HuntersSupport,"Przekaza³em Wilsonowi proœbê o pomoc. Postanowi³ wys³aæ dwóch swoich najlepszych ludzi do pomocy.");
-	
-    //B_LogEntry                     (CH1_CavalornFuck,"Przez przypadek rozwi¹za³em problem Cavalorna z ³owcami orków.");
-    AI_StopProcessInfos	(self);
-	//Npc_ExchangeRoutine (self,"wait");
-	Npc_ExchangeRoutine (NON_2706_Osko,"wait");
-	Npc_ExchangeRoutine (NON_2705_Rakus,"wait");
-	//Npc_ExchangeRoutine (NON_2703_MYSLIWY,"wait");
-};
-
 
 //========================================
 //-----------------> ROBOTA

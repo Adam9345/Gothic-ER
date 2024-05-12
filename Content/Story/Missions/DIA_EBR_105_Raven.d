@@ -146,42 +146,6 @@ FUNC VOID DIA_Raven_Aufnahme_Info()
 };
 
 // **************************************
-//		Gomez sehen (Stt-Aufnahme)
-// **************************************
-
-instance DIA_Raven_EnterFireNov (C_INFO)
-{
-	npc			= Ebr_105_Raven;
-	nr			= 1;
-	condition	= DIA_Raven_EnterFireNov_Condition;
-	information	= DIA_Raven_EnterFireNov_Info;
-	permanent	= 0;
-	description	= "Chcê siê zobaczyæ z Gomezem. Thorus powiedzia³, ¿e mogê zostaæ Cieniem.";
-};                       
-
-FUNC int DIA_Raven_EnterFireNov_Condition()
-{
-	if (Npc_KnowsInfo(hero,DIA_Torrez_NOWICJUSZ)) && (Npc_HasItems (other, It_glejtmagow) >=1) && (Npc_GetTrueGuild(other) == GIL_NONE) && (Kapitel < 4)
-	{
-		return 0;
-	};
-};
-
-FUNC VOID DIA_Raven_EnterFireNov_Info()
-{
-	AI_Output (other, self,"DIA_Raven_EnterFireNov_15_00"); //Chcê siê zobaczyæ z Gomezem. Mam aprobatê od Magów Ognia.
-	AI_Output (self, other,"DIA_Raven_EnterFireNov_10_01"); //Poka¿ mi j¹.
-	CreateInvItem(self, it_GlejtMagow);
-	AI_UseItem (self, It_glejtmagow);
-	AI_Output (self, other,"DIA_Raven_Aufnahme_10_01"); //Dobrych ludzi nigdy nie za wielu. Chyba masz wystarczaj¹co równo pod sufitem. Mo¿esz siê nam przydaæ.
-	AI_Output (self, other,"DIA_Raven_Aufnahme_10_02"); //Zabiorê ciê do Gomeza. ChodŸ za mn¹, tylko niczego nie dotykaj!
-	
-	
-	AI_StopProcessInfos	(self);
-	Npc_ExchangeRoutine(self, "GUIDE");
-};
-
-// **************************************
 //		In Halle angekommen
 // **************************************
 
@@ -197,7 +161,7 @@ instance DIA_Raven_There (C_INFO)
 
 FUNC int DIA_Raven_There_Condition()
 {
-	if (( Npc_KnowsInfo(hero,DIA_Raven_Aufnahme)) || ( Npc_KnowsInfo(hero,DIA_Raven_EnterFireNov)))  && Hlp_StrCmp(Npc_GetNearestWP(self),"OCC_BARONS_GREATHALL_CENTER_MOVEMENT")  
+	if (( Npc_KnowsInfo(hero,DIA_Raven_Aufnahme))) && Hlp_StrCmp(Npc_GetNearestWP(self),"OCC_BARONS_GREATHALL_CENTER_MOVEMENT")  
 	{
 		return 1;
 	};

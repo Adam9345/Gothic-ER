@@ -135,87 +135,6 @@ FUNC VOID DIA_Robotnik_Give100OreNugget_Info()
     AI_StopProcessInfos	(self);
 };
 
-
-
-//========================================
-//-----------------> JEDZENIE
-//========================================
-
-INSTANCE DIA_Robotnik_JEDZENIE (C_INFO)
-{
-   npc          = VLK_2004_Robotnik;
-   nr           = 2;
-   condition    = DIA_Robotnik_JEDZENIE_Condition;
-   information  = DIA_Robotnik_JEDZENIE_Info;
-   permanent	= FALSE;
-   description	= "Gdzie jest teraz to jedzenie?";
-};
-
-FUNC INT DIA_Robotnik_JEDZENIE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Robotnik_JAKPRACA)) && (Kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Robotnik_JEDZENIE_Info()
-{
-    AI_Output (other, self ,"DIA_Robotnik_JEDZENIE_15_01"); //Gdzie jest teraz to jedzenie?
-    AI_Output (self, other ,"DIA_Robotnik_JEDZENIE_03_02"); //Schowali je do skrzyni. Kawa³ek szynki, 3 sztuki miêsa i 2 bochenki chleba.
-    AI_Output (other, self ,"DIA_Robotnik_JEDZENIE_15_03"); //Wiesz gdzie mo¿e byæ klucz?
-    AI_Output (self, other ,"DIA_Robotnik_JEDZENIE_03_04"); //Ma go ten Stra¿nik przy palisadzie. 
-    AI_Output (other, self ,"DIA_Robotnik_JEDZENIE_15_05"); //Mo¿e uda mi siê coœ z tym zrobiæ.
-	
-    Jedzenie_zplacu= LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_Jedzenie_zplacu, LOG_MISSION);
-    Log_SetTopicStatus         (CH1_Jedzenie_zplacu, LOG_RUNNING);
-    B_LogEntry                 (CH1_Jedzenie_zplacu,"Dwaj Stra¿nicy z placu wymian ukradli robotnikowi jedzenie. Ukryli je w skrzyni na placu wymian. Klucz ma jeden ze Stra¿ników. Muszê go zdobyæ i oddaæ jedzenie robotnikowi.");
-};
-
-//========================================
-//-----------------> QUESTOK
-//========================================
-
-INSTANCE DIA_Robotnik_QUESTOK (C_INFO)
-{
-   npc          = VLK_2004_Robotnik;
-   nr           = 3;
-   condition    = DIA_Robotnik_QUESTOK_Condition;
-   information  = DIA_Robotnik_QUESTOK_Info;
-   permanent	= FALSE;
-   description	= "Mam jedzenie!";
-};
-
-FUNC INT DIA_Robotnik_QUESTOK_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Robotnik_JEDZENIE))
-    && (Npc_HasItems (other, ItFo_mutton_01) >=1)
-    && (Npc_HasItems (other, ItFoMuttonRaw) >=3)
-    && (Npc_HasItems (other, ItFoLoaf) >=2)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Robotnik_QUESTOK_Info()
-{
-    AI_Output (other, self ,"DIA_Robotnik_QUESTOK_15_01"); //Mam jedzenie!
-    AI_Output (self, other ,"DIA_Robotnik_QUESTOK_03_02"); //Naprawdê ci siê uda³o?
-    AI_Output (self, other ,"DIA_Robotnik_QUESTOK_03_03"); //Nie chcê wszystkiego. Wezmê tylko miêso i bochenek chleba.
-    B_GiveInvItems (other, self, ItFoLoaf, 1);
-    B_GiveInvItems (other, self, ItFoMuttonRaw, 3);
-    B_LogEntry                     (CH1_Jedzenie_zplacu,"Uda³o mi siê zdobyæ jedzenie.");
-    Log_SetTopicStatus       (CH1_Jedzenie_zplacu, LOG_SUCCESS);
-    Jedzenie_zplacu = LOG_SUCCESS;
-
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
-};
-
 //========================================
 //-----------------> CIOTA
 //========================================
@@ -282,43 +201,6 @@ FUNC VOID DIA_Robotnik_INFOOKOPALNI_Info()
     AI_Output (self, other ,"DIA_Robotnik_INFOOKOPALNI_03_06"); //Poza tym krêci siê tam wiele groŸnych zwierz¹t. Mój przyjaciel tam zgin¹³.
     AI_Output (other, self ,"DIA_Robotnik_INFOOKOPALNI_15_07"); //Dziêkujê za informacjê.
     B_GiveXP (50);
-};
-
-//========================================
-//-----------------> ZDOBYC_KLUCZ
-//========================================
-
-INSTANCE DIA_Robotnik_ZDOBYC_KLUCZ (C_INFO)
-{
-   npc          = VLK_2004_Robotnik;
-   nr           = 6;
-   condition    = DIA_Robotnik_ZDOBYC_KLUCZ_Condition;
-   information  = DIA_Robotnik_ZDOBYC_KLUCZ_Info;
-   permanent	= FALSE;
-   description	= "Nie wiem, jak zabraæ klucz Stra¿nikowi.";
-};
-
-FUNC INT DIA_Robotnik_ZDOBYC_KLUCZ_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Stra¿nik_KLUCZ))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Robotnik_ZDOBYC_KLUCZ_Info()
-{
-    AI_Output (other, self ,"DIA_Robotnik_ZDOBYC_KLUCZ_15_01"); //Nie wiem, jak zabraæ klucz Stra¿nikowi.
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_02"); //Musimy opracowaæ jakiœ podstêp.
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_03"); //Wiesz co potrafi zjednoczyæ nawet Stra¿nika z Kopaczem?
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_04"); //Bandyci. Tak, atak Bandytów to coœ, czego nam potrzeba.
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_05"); //IdŸ jeszcze raz do tych imbecyli i powiedz, ¿e Orry potrzebuje pomocy w odparciu ataku Bandytów!
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_06"); //Potem poprosisz o klucz do skrzyñ, ¿eby wzi¹æ broñ dla siebie.
-    AI_Output (other, self ,"DIA_Robotnik_ZDOBYC_KLUCZ_15_07"); //Dobry plan.
-    AI_Output (self, other ,"DIA_Robotnik_ZDOBYC_KLUCZ_03_08"); //IdŸ ju¿.
-    B_LogEntry                     (CH1_Jedzenie_zplacu,"Mam ostrzec Stra¿ników przed atakiem Bandytów i poprosiæ o klucz do skrzyni.");
-    AI_StopProcessInfos	(self);
 };
 
 //========================================

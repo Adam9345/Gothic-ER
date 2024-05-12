@@ -289,48 +289,6 @@ FUNC VOID DIA_Sly_FAIL_SIPACZE_Info()
 };
 
 // **************************************************
-// 					AFTER ZDRADA
-// **************************************************
-
-instance DIA_STT_315_Sly_ZdradaMordraga (C_INFO)
-{
-	npc				= STT_315_Sly;
-	nr				= 1;
-	condition		= DIA_STT_315_Sly_ZdradaMordraga_Condition;
-	information		= DIA_STT_315_Sly_ZdradaMordraga_Info;
-	permanent		= 0;
-	description		= "Mordrag sporo o tobie wie.";
-	
-};
-
-FUNC int DIA_STT_315_Sly_ZdradaMordraga_Condition()
-{
-	if (Npc_GetTrueGuild(hero) == GIL_NONE) && (Npc_KnowsInfo (hero, DIA_Whistler_Zdrada))
-	{
-		return 1;
-	};
-};
-
-func void DIA_STT_315_Sly_ZdradaMordraga_Info()
-{
-	AI_Output (other, self,"DIA_STT_315_Sly_ZdradaMordraga_15_00"); //Mordrag sporo o tobie wie. Miêdzy innymi to, ¿e zabi³eœ Neka, a Œwistak okrad³ Magnatów.
-	AI_Output (self, other,"DIA_STT_315_Sly_ZdradaMordraga_10_01"); //Jak œmiesz!
-	AI_Output (other, self,"DIA_STT_315_Sly_ZdradaMordraga_15_02"); //Spokojnie! Jestem po waszej stronie. Œwistak ju¿ o wszystkim wie. Kaza³ nam rozprawiæ siê z Mordragiem.
-	AI_Output (self, other,"DIA_STT_315_Sly_ZdradaMordraga_10_03"); //Chcesz siê dostaæ do Obozu, tak? Wiêc to ty go zabijesz. Thorus bêdzie z ciebie zadowolony.
-	AI_Output (other, self,"DIA_STT_315_Sly_ZdradaMordraga_15_04"); //On te¿ nie przepada za Mordragiem?
-	AI_Output (self, other,"DIA_STT_315_Sly_ZdradaMordraga_10_05"); //Widzê, ¿e szybko siê uczysz. WeŸ ten miecz i miksturê. Przydadz¹ ci siê w walce. 
-	Thorus_MordragKo = LOG_RUNNING;
-	zlecil_Thorus = false;
-	Log_CreateTopic		(CH1_MordragKO, LOG_MISSION);
-	B_LogEntry			(CH1_MordragKO,"Z³y chce ¿ebym zabi³ Mordraga. Dziêki temu zyskam jego zaufanie. Pozosta³ymi Cieniami zajmie siê Œwistak.");
-	Log_SetTopicStatus	(CH1_MordragKO, LOG_RUNNING);
-	B_LogEntry                     (CH1_KosztemQuentina,"Mam zabiæ Mordraga. Z³y zadba³ o mój ekwipunek.");
-	CreateInvItems  (self,ItFo_PotionTime_Strength_01,1);
-	B_GiveInvItems  (self, hero, ItFo_PotionTime_Strength_01, 1);
-	CreateInvItems  (self,ItMw_1H_Sword_Short_05,1);
-	B_GiveInvItems  (self, hero, ItMw_1H_Sword_Short_05, 1);
-};
-// **************************************************
 // 					SUKCES
 // **************************************************
 //edit by  
@@ -347,7 +305,8 @@ instance DIA_STT_315_Sly_Sukces (C_INFO)
 
 FUNC int DIA_STT_315_Sly_Sukces_Condition() //poprawiony if g1210
 {
-	if (Npc_GetTrueGuild(hero) == GIL_NONE) && (kapitel == 10) && (Npc_KnowsInfo (hero, DIA_STT_315_Sly_ZdradaMordraga)) && ((Npc_KnowsInfo (hero, Org_826_Mordrag_HauAb)) || (Npc_IsDead(Org_826_Mordrag)))
+	return 0;
+	if (Npc_GetTrueGuild(hero) == GIL_NONE) && ((Npc_KnowsInfo (hero, Org_826_Mordrag_HauAb)) || (Npc_IsDead(Org_826_Mordrag)))
 	{
 		return 1;
 	};

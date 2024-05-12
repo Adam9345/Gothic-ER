@@ -132,7 +132,7 @@ FUNC INT DIA_Shan_QUEST1_Condition()
 FUNC VOID DIA_Shan_QUEST1_Info()
 {
     AI_Output (other, self ,"DIA_Shan_QUEST1_15_01"); //Od czego zaczynamy?
-    AI_Output (self, other ,"DIA_Shan_QUEST1_03_02"); //Podczas rytua³u przywo³ania Œni¹cego na palcu jak i w œwi¹tyni by³o niema³e zamieszanie.
+    AI_Output (self, other ,"DIA_Shan_QUEST1_03_02"); //Podczas rytua³u przywo³ania Œni¹cego na placu jak i w œwi¹tyni by³o niema³e zamieszanie.
 	AI_Output (other, self ,"DIA_Shan_QUEST1_15_03"); //Co w zwi¹zku z tym?
     AI_Output (self, other ,"DIA_Shan_QUEST1_03_04"); //Wszed³ tu jeden z Nowicjuszy i zabra³ Kostur Œwiat³a nale¿¹cy do Y'Beriona. 
     AI_Output (self, other ,"DIA_Shan_QUEST1_03_05"); //To bardzo wa¿ne, aby go odzyskaæ. Jest nam potrzebny do ceremonii pogrzebu Mistrza.
@@ -267,136 +267,6 @@ FUNC VOID DIA_Shan_QUEST2_WIN_Info()
 	AI_StopProcessInfos (self);
 };
 
-//========================================
-//-----------------> QUEST3
-//========================================
-
-INSTANCE DIA_Shan_QUEST3 (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 6;
-   condition    = DIA_Shan_QUEST3_Condition;
-   information  = DIA_Shan_QUEST3_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Shan_QUEST3_Condition()
-{
-    if (MIS_StrangeResearcher == LOG_SUCCESS)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_QUEST3_Info()
-{
-    AI_Output (self, other ,"DIA_Shan_QUEST3_03_01"); //Wróæmy do tego o czym wspomina³em...
-    AI_Output (self, other ,"DIA_Shan_QUEST3_03_02"); //Podczas twojej pracy na rzecz Bractwa sta³o siê coœ okropnego.
-	AI_Output (self, other ,"DIA_Shan_QUEST3_03_03"); //W Obozie dokonano trzech zabójstw. Jedno po drugim. Ka¿de kilka godzin po poprzednim.
-    AI_Output (other, self ,"DIA_Shan_QUEST3_15_04"); //Masz jakichœ podejrzanych?
-    AI_Output (self, other ,"DIA_Shan_QUEST3_03_05"); //Nie. Musisz popytaæ wœród ludzi, którzy krêcili siê ko³o miejsc zbrodni. Obejrzyj te¿ trupy.
-    AI_Output (self, other ,"DIA_Shan_QUEST3_03_06"); //Jeden le¿y za wielkim drzewem, na którym stoi chata Kaloma.
-    AI_Output (self, other ,"DIA_Shan_QUEST3_15_07"); //Drugi przy palisadzie - niedaleko Steha.
-    AI_Output (self, other ,"DIA_Shan_QUEST3_03_08"); //A trzeci na bagnie w pobli¿u chaty drwala.
-    AI_Output (other, self ,"DIA_Shan_QUEST3_15_09"); //W porz¹dku. Biorê siê do roboty.
-    MIS_PsionicCSI = LOG_RUNNING;
-	
-	Wld_InsertNpc				(NOV_5011_Martwy_Nowicjusz,"PSI_START");
-	B_KillNPC	(NOV_5011_Martwy_nowicjusz);
-	Wld_InsertNpc				(NOV_5010_Martwy_nowicjusz,"PSI_START");	
-	B_KillNPC	(NOV_5010_Martwy_nowicjusz);
-	Wld_InsertNpc				(NOV_5009_Martwy_nowicjusz,"PSI_START");	
-	B_KillNPC	(NOV_5009_Martwy_nowicjusz);
-    Log_CreateTopic            (CH3_PsionicCSI, LOG_MISSION);
-    Log_SetTopicStatus       (CH3_PsionicCSI, LOG_RUNNING);
-	
-    B_LogEntry                     (CH3_PsionicCSI,"Ktoœ zabi³ trzech Nowicjuszy z Obozu Bractwa. Mam ustaliæ kim jest zabójca. Cia³a le¿¹ na miejscach zbrodni: za drzewem na którym stoi laboratorium, przy palisadzie (okolice Steha) i na bagnach w pobli¿u chaty drwala.");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> KILLTOOL
-//========================================
-
-INSTANCE DIA_Shan_KILLTOOL (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 6;
-   condition    = DIA_Shan_KILLTOOL_Condition;
-   information  = DIA_Shan_KILLTOOL_Info;
-   permanent	= FALSE;
-   description	= "Znalaz³em narzêdzia zbrodni.";
-};
-
-FUNC INT DIA_Shan_KILLTOOL_Condition()
-{
-    if (MIS_StrangeResearcher == LOG_SUCCESS) && (Npc_HasItems (other, ItMw_SiekieraCSI) >=1) && (Npc_HasItems (other, ItMi_OstrzeCSI) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_KILLTOOL_Info()
-{
-	AI_Output (other, self ,"DIA_Shan_KILLTOOL_15_01"); //Znalaz³em narzêdzia zbrodni.
-    AI_Output (self, other ,"DIA_Shan_KILLTOOL_03_02"); //Poka¿ mi je.
-	AI_Output (other, self ,"DIA_Shan_KILLTOOL_15_03"); //To jakieœ ostrza i siekiery.
-    AI_Output (self, other ,"DIA_Shan_KILLTOOL_03_04"); //Siekiery nosi wielu Nowicjuszy. Wykorzystywali je do budowy chat.
-	AI_Output (self, other ,"DIA_Shan_KILLTOOL_03_05"); //Ale te ostrza s¹ jakieœ dziwne. Wygl¹daj¹ jak z tartaku. Rozmawia³eœ z Hansonem? Mo¿e to on jest zabójc¹?
-    B_LogEntry                     (CH3_PsionicCSI,"Pokaza³em narzêdzia zbrodni Shanowi. Powiedzia³ mi, ¿ebym sprawdzi³ Hansona, poniewa¿ tylko on pracuje w tartaku.");
-};
-
-
-//========================================
-//-----------------> QUEST3_OK
-//========================================
-
-INSTANCE DIA_Shan_QUEST3_OK (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 7;
-   condition    = DIA_Shan_QUEST3_OK_Condition;
-   information  = DIA_Shan_QUEST3_OK_Info;
-   permanent	= FALSE;
-   description	= "Rozmawia³em z zabójc¹.";
-};
-
-FUNC INT DIA_Shan_QUEST3_OK_Condition()
-{
-    if (MIS_PsionicCSI == LOG_RUNNING)
-    && (Npc_KnowsInfo (hero, DIA_Hanson_QUEST2_D))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_QUEST3_OK_Info()
-{
-    AI_Output (other, self ,"DIA_Shan_QUEST3_OK_15_01"); //Rozmawia³em z zabójc¹.
-    AI_Output (self, other ,"DIA_Shan_QUEST3_OK_03_02"); //Czy stanowi on jeszcze zagro¿enie?
-	AI_Output (other, self ,"DIA_Shan_QUEST3_OK_15_03"); //Nie, ju¿ nie.
-    AI_Output (self, other ,"DIA_Shan_QUEST3_OK_03_04"); //Kim on jest?
-    AI_Output (other, self ,"DIA_Shan_QUEST3_OK_15_05"); //To Hanson - miejscowy drwal. Powodem morderstw by³a zemsta za d³ugi.
-	AI_Output (self, other ,"DIA_Shan_QUEST3_OK_03_06"); //Ju¿ siê ba³em, ¿e to przez wp³yw Œni¹cego ludzie zaczynaj¹ zachowywaæ siê dziwnie.
-    AI_Output (other, self ,"DIA_Shan_QUEST3_OK_15_07"); //Bo faktycznie zaczynaj¹. Trac¹ wiarê i to sk³ania ich do ³amania zasad. Steh, Hanson... Ta lista wkrótce mo¿e siê wyd³u¿yæ.
-	AI_Output (other, self ,"DIA_Shan_QUEST3_OK_15_08"); //Bractwo zaczyna siê rozpadaæ.
-	AI_Output (self, other ,"DIA_Shan_QUEST3_OK_03_09"); //Spróbujê za³agodziæ sytuacjê. Porozmawiam z pozosta³ymi Guru. Powiem im, ¿eby dostosowali S³owo do nowych warunków.
-	AI_Output (self, other ,"DIA_Shan_QUEST3_OK_03_10"); //Mistrzu, twoja praca na razie jest zakoñczona. Muszê siê teraz zaj¹æ t¹ spraw¹. 
-    B_LogEntry               (CH3_PsionicCSI,"Opowiedzia³em Shanowi o Hansonie. Okazuje siê, ¿e sytuacja w Obozie robi siê coraz mniej ciekawa. Aby zapobiec kolejnym incydentom Shan porozmawia z pozosta³ymi Guru.");
-    Log_SetTopicStatus       (CH3_PsionicCSI, LOG_SUCCESS);
-    MIS_PsionicCSI = LOG_SUCCESS;
-
-    B_GiveXP (300);
-};
-
-
-
-
-
 //////////////////////////////////////////////
 //	Zadanie: Sprzeda¿ eliksirów
 //////////////////////////////////////////////
@@ -529,45 +399,6 @@ FUNC VOID DIA_Shan_LieAboutCaine_Info()
 };
 
 //========================================
-//-----------------> Questdadasd
-//========================================
-
-INSTANCE DIA_Shan_Questdadasd (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 1;
-   condition    = DIA_Shan_Questdadasd_Condition;
-   information  = DIA_Shan_Questdadasd_Info;
-   permanent	= FALSE;
-   description	= "Masz dla mnie jakieœ zadanie?";
-};
-
-FUNC INT DIA_Shan_Questdadasd_Condition()
-{
-    if (Kapitel == 10)
-    && (Npc_GetTrueGuild(hero) == GIL_TPL)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_Questdadasd_Info()
-{
-    AI_Output (other, self ,"DIA_Shan_Questdadasd_15_01"); //Masz dla mnie jakieœ zadanie?
-    AI_Output (self, other ,"DIA_Shan_Questdadasd_03_02"); //Akurat mia³em ciê prosiæ o pomoc.
-    AI_Output (self, other ,"DIA_Shan_Questdadasd_03_03"); //Podobno zawali³a siê Stara Kopalnia. 
-    AI_Output (self, other ,"DIA_Shan_Questdadasd_03_04"); //Wiesz co siê sta³o z naszymi braæmi z tego miejsca?
-    AI_Output (self, other ,"DIA_Shan_Questdadasd_03_05"); //Polowali na pe³zacze i nie wiem czy zdo³ali uciec.
-    AI_Output (self, other ,"DIA_Shan_Questdadasd_03_06"); //Spróbuj ich odszukaæ.
-    MIS_HelpBrothersBra = LOG_RUNNING;
-	B_ExchangeRoutine			(BAN_1603_Martin, "patrol");
-    Log_CreateTopic            (CH1_HelpBrothersBra, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HelpBrothersBra, LOG_RUNNING);
-    B_LogEntry                     (CH1_HelpBrothersBra,"Shan kaza³ mi sprawdziæ co sta³o siê z naszymi braæmi ze Starej Kopalni.");
-};
-
-//========================================
 //-----------------> Uwolnieni
 //========================================
 
@@ -616,75 +447,6 @@ FUNC VOID DIA_Shan_Uwolnieni_Info()
     B_GiveInvItems (self, other, ItMw_2H_Sword_Heavy_01, 1);
     AI_StopProcessInfos	(self);
 };
-
-//========================================
-//-----------------> BAN_THREAD
-//========================================
-
-INSTANCE DIA_Shan_BAN_THREAD (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 1;
-   condition    = DIA_Shan_BAN_THREAD_Condition;
-   information  = DIA_Shan_BAN_THREAD_Info;
-   permanent	= FALSE;
-   description	= "Co siê sta³o?";
-};
-
-FUNC INT DIA_Shan_BAN_THREAD_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Ezehiel_VERY_IMPORTANT))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_BAN_THREAD_Info()
-{
-    AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_01"); //Co siê sta³o?
-    AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_02"); //Dosz³y do nas wieœci o tym, co wyprawia Gomez.
-    if FMTaken
-    {
-        AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_03"); //Tak, te¿ o tym s³ysza³em. Stara Kopalnia zosta³a zalana przez podziemn¹ rzekê. Gomez oszala³.
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_04"); //Dobrze, ¿e jesteœ poinformowany.
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_05"); //S³ysza³em te¿ o planach Bandytów. Chcê, abyœ siê tym zaj¹³ i zda³ mi raport. 
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_06"); //Pogadaj z cz³owiekiem imieniem Drax. Ponoæ planuje on jak¹œ rewolucjê.
-        if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) && (MIS_HuntersSupport == LOG_SUCCESS)
-        {
-            AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_07"); //Ju¿ rozmawia³em z Draxem. Bandyci chc¹ pozbyæ siê patrolów Stra¿ników w okolicach Obozu.
-            AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_08"); //Pomog³em im zdobyæ wsparcie ³owców orków. Mam nadziejê, ¿e jakoœ sobie poradz¹.
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_09"); //To wszystko?
-            AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_10"); //Tak. Nic wiêcej siê nie wydarzy³o.
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_11"); //Có¿... Pozosta³o czekaæ nam na rozwój wydarzeñ.
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_12"); //Proponujê ci, abyœ uda³ siê w okolice Nowego Obozu. Grupa Najemników prowadzi tam walki ze Stra¿nikami.
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_13"); //Powinieneœ im pomóc.
-            AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_14"); //Dlaczego?
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_15"); //Stra¿nicy staj¹ siê coraz wiêkszym zagro¿eniem równie¿ dla naszego Obozu. 
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_16"); //Dlatego musisz wesprzeæ naszych braci z Nowego Obozu.
-			second_d_Shan = false;
-			go_help_torlof = true;
-			B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Od Shana nie dowiedzia³em siê nic nowego. Sytuacja w Kolonii jest kiepska. Moim zadaniem by³o wsparcie Bandytów w ich dzia³aniach. Uprzedzi³em polecenie Shana i ju¿ to zrobi³em. Teraz muszê iœæ do Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami.");
-        }
-        else
-        {
-            AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_17"); //No dobrze. Pójdê z nim pogadaæ.
-			second_d_Shan = true;
-			B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Shan martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
-   go_help_torlof = false;
-        };
-    }
-    else
-    {
-        AI_Output (other, self ,"DIA_Shan_BAN_THREAD_15_18"); //Dosta³em siê tutaj najszybciej jak siê da. Mo¿esz mi krótko streœciæ co siê dzieje?
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_19"); //Otó¿ Stara Kopalnia uleg³a zalaniu przez podziemn¹ rzekê. Gomez oszala³ i kaza³ swoim Stra¿nikom atakowaæ kogo popadnie.
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_20"); //Ponoæ Bandyci planuj¹ to ukróciæ. Musisz porozmawiaæ z niejakim Draxem. Goœæ ponoæ zajmuje siê t¹ wypraw¹.
-        AI_Output (self, other ,"DIA_Shan_BAN_THREAD_03_21"); //Gdy to zrobisz, wróæ zdaæ mi raport.
-		B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Shan martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
-   second_d_Shan = true;
-   go_help_torlof = false;
-    };
-};	
 	//========================================
 //-----------------> DRAX_IMPORTANT
 //========================================
@@ -725,45 +487,6 @@ FUNC VOID DIA_Shan_DRAX_IMPORTANT_Info()
 
     B_GiveXP (300);
     AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> HELP_TORLOF
-//========================================
-
-INSTANCE DIA_Shan_HELP_TORLOF (C_INFO)
-{
-   npc          = TPL_5004_Shan;
-   nr           = 2;
-   condition    = DIA_Shan_HELP_TORLOF_Condition;
-   information  = DIA_Shan_HELP_TORLOF_Info;
-   permanent	= FALSE;
-   description	= "Pomog³em Torlofowi. ";
-};
-
-FUNC INT DIA_Shan_HELP_TORLOF_Condition()
-{
-    if (MIS_TorlofNeedHelp == LOG_SUCCESS)
-    && (go_help_torlof == true) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shan_HELP_TORLOF_Info()
-{
-    AI_Output (other, self ,"DIA_Shan_HELP_TORLOF_15_01"); //Pomog³em Torlofowi. 
-    AI_Output (self, other ,"DIA_Shan_HELP_TORLOF_03_02"); //Œwietnie. Mo¿e to da Gomezowi do myœlenia. Ostatnio Stra¿nicy zabili Nowicjusza zbieraj¹cego zio³a. 
-    AI_Output (self, other ,"DIA_Shan_HELP_TORLOF_03_03"); //Nie podoba mi siê to. Je¿eli takie zdarzenia bêd¹ siê powtarzaæ, bêdziemy musieli przy³¹czyæ siê do tej wojny. 
-    AI_Output (self, other ,"DIA_Shan_HELP_TORLOF_03_04"); //Na razie mo¿esz ju¿ iœæ.
-    Log_SetTopicStatus       (CH4_BanditNeedPsionicHelp, LOG_SUCCESS);
-    MIS_BanditNeedPsionicHelp = LOG_SUCCESS;
-
-    B_GiveXP (250);
-    AI_StopProcessInfos	(self);
-    CreateInvItems (self, ItMiNugget, 250);
-    B_GiveInvItems (self, other, ItMiNugget, 250);
 };
 
 instance dia_shan_pickpocket(c_info) {
