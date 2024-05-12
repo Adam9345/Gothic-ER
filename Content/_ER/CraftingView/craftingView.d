@@ -128,10 +128,8 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
 
     if (windowwidth > 1000) {
         textypos = (print_screen[1] / 2) + (yquartsize / 2) - 90;
-        quantityTextPos = (print_screen / 2) - roundf(mulf(mkf(200), scalef-1));
     } else {
         textypos = (print_screen[1] / 2) + (yquartsize / 2) - 60;
-        quantityTextPos = (print_screen / 2) - roundf(mulf(mkf(200), scalef-1)) - roundf(mulf(mkf(200), scalef-1)) - 30;
     };
 
     if(mode != 2) {
@@ -213,7 +211,7 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
             end;
         };
 
-        quantityText = print_extpxl(textcenter + quantityTextPos - 160, textyposh, i2s(quantity), text_font_default, rgba(255, 255, 255, 255), -1);
+        quantityText = print_extpxl((print_screen / 2) + windowwidth / 2 - 50, textyposh, i2s(quantity), text_font_default, rgba(255, 255, 255, 255), -1);
     };
     /*
     else {
