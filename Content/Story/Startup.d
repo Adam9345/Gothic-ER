@@ -29,31 +29,31 @@ func void Mod_SetGothicIni() {
     };
 
 	if (!Mem_GothOptExists("EdycjaRozszerzona", "newLearnPointsWithoutBonuses")) {
-		MEM_SetGothOpt("EdycjaRozszerzona", "newLearnPointsWithoutBonuses", "0");
+		MEM_SetGothOpt("EdycjaRozszerzona", "newLearnPointsWithoutBonuses", "1");
 	};
 
 	if (!Mem_GothOptExists("EdycjaRozszerzona", "scaleWeaponsWithDex")) {
-		MEM_SetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex", "0");
-	};
-
-	if (!Mem_GothOptExists("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds")) {
-		MEM_SetGothOpt("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds", "0");
+		MEM_SetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex", "1");
 	};
 
 	if (!Mem_GothOptExists("EdycjaRozszerzona", "disableGuildsGreeting")) {
 		MEM_SetGothOpt("EdycjaRozszerzona", "disableGuildsGreeting", "0");
 	};
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "enableBloodSplats")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "enableBloodSplats", "0");
+	};
+
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "threatRedDialog")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "threatRedDialog", "0");
+	};
+
+	
 };
 
 func void Mod_DisableGuildsGreeting() {
 	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "disableGuildsGreeting"))) {
 		disableGuildsGreeting = 1;
-	};
-};
-
-func void Mod_EnableKopaczNotBlockOtherGuilds() {
-	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "kopaczNotBlockOtherGuilds"))) {
-		kopaczNotBlockOtherGuilds = 1;
 	};
 };
 
@@ -75,42 +75,66 @@ func void Mod_SetNewLearnPoints() {
 	};
 };
 
-func void Mod_ScaleWeaponsForDex() {
-	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex"))) {
-		InitDamage();
-	};
+func void Mod_NewDamageSystem() {
+	//if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex"))) {
+	InitDamage();
+	//};
 };
 
 const int _mod_init = 0;
 
 func VOID INIT_GLOBAL() {
-	//MEM_InitAll();
-	LeGo_Init (LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D & ~LeGo_Bloodsplats); 
+	MEM_InitAll();
 
-	Mod_SetGothicIni();
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "enableBloodSplats"))) {
+		LeGo_Init ((LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D));
+	} else {
+		LeGo_Init ((LeGo_All | LeGo_Buffs | LeGo_Render | LeGo_Draw3D) & ~(LeGo_Bloodsplats));
+	}; 
 
 	//G12_OnDmg_Event_Init ();
 	if (!_mod_init) {
-		Init_FastTravelMap_HK();
-		AF_ItemPreview_Init();
-		Init_CraftingSystem();
-		TorchHotKey_Init();
-		G1_EnhancedPickLocking_Init();
+		Mod_SetGothicIni();
+		// Init_FastTravelMap_HK();
+		// AF_ItemPreview_Init();
+		// Init_CraftingSystem();
+		// TorchHotKey_Init();
+		// G1_EnhancedPickLocking_Init();
 
-		Install_Character_Menu_Hook();
+		// Install_Character_Menu_Hook();
 
-		Mod_SetNewLearnPoints();
-		Mod_EnableKopaczNotBlockOtherGuilds();
-		Mod_DisableGuildsGreeting();
+		// Mod_SetNewLearnPoints();
+		// Mod_DisableGuildsGreeting();
 
 		_mod_init = 1;
 	};
+
+	AF_ItemPreview_Init();
+	Init_CraftingSystem();
+	Init_FastTravelMap_HK();
+	TorchHotKey_Init();
+	G1_EnhancedPickLocking_Init();
+	G1_EnhancedTrading_Init();
 	G12_EnhancedInfoManager_Init();
 
-	G1_EnhancedTrading_Init();
+	Install_Character_Menu_Hook();
+
+	Mod_SetNewLearnPoints();
+	Mod_DisableGuildsGreeting();
+
+	Mod_NewDamageSystem();
+
 	GFA_Init(GFA_ALL);
 
-	Mod_ScaleWeaponsForDex();
+	G1_PatchFireDamageMultiplication ();
+
+	// G12_PatchFightCombos ();
+	// G12_GetDefaultDialogueDistance ();
+	// G12_SetRainThroughVobs (false);
+	// G12_SetDisplayDialogueTime (1500, 30000);
+	// G12_SetPlayerTurnSpeed(castToIntF (0.1));
+
+	Init_XPForPicklocking ();
 };
 
 
@@ -3610,6 +3634,7 @@ FUNC VOID STARTUP_ABANDONEDMINE ()
 	//wa¿ny npc #VIP
 	Wld_InsertNpc		(NON_2094_Glest,"GLEST_VM");
     Wld_InsertNpc		(NON_40168_UndeadGardist,"VM_MAGE"); 
+	Npc_SetPermAttitude(NON_40168_UndeadGardist, ATT_HOSTILE);
 	//-------- Pelzacze --------
 	Wld_InsertNpc		(MinecrawlerWarrior,		"PE1");
 	Wld_InsertNpc		(Minecrawler,		"PE2");
