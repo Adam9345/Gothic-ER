@@ -6,8 +6,8 @@
 PROTOTYPE Mst_Default_OrcElite(C_Npc)			
 {
 	name							=	"Ork Elita";
-	guild							=	GIL_ORCSCOUT;
-	npctype							=	NPCTYPE_MAIN;
+	guild							=	GIL_ORCWARRIOR;
+	npctype							=	NPCTYPE_GUARD;
 	voice							=	18;
 	level							=	Level_OrcElite;
 //----------------------------------------------------------	
@@ -50,7 +50,7 @@ PROTOTYPE Mst_Default_OrcElite(C_Npc)
 	aivar[AIV_MM_FollowTime]	= FOLLOWTIME_LONG;
 	aivar[AIV_MM_FollowInWater] = FALSE;
 //-------------------------------------------------------------
-	start_aistate				= ZS_MM_AllScheduler;
+	start_aistate				= ZS_Orc_Guard;
 };
 //-------------------------------------------------------------
 func void Set_OrcElite_Visuals()
@@ -125,6 +125,8 @@ INSTANCE Ur_Gran	(Mst_Default_OrcElite)
 	//-------- inventory --------
 	EquipItem (self, ItMw_2H_OrcSword_02); //Wenn ihr noch dass beiliegende Orkschwert eingefügt habt, müsst ihr die Instance "Itmw2hOrcaxe04" durch "ItMw_2H_OrcElite_Sword" ersetzen.
 	CreateInvItem (self,Plan_Rapier); 
+
+	//aivar[AIV_MM_RestStart] 	= OnlyRoutine;
 };
 
 

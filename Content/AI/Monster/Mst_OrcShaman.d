@@ -5,8 +5,8 @@
 PROTOTYPE Mst_Default_OrcShaman(C_Npc)			
 {
 	name							=	"Ork-szaman";
-	guild							=	GIL_ORCSCOUT;
-	npctype							=	NPCTYPE_MAIN;
+	guild							=	gil_orcshaman;
+	npctype							=	NPCTYPE_GUARD;
 	level							=	30;
 //----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
@@ -85,7 +85,7 @@ INSTANCE Varrag_Harosh  (Mst_Default_OrcShaman)
 {
 	name  =	"Szaman Varrag-Harosh Potê¿ny";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -113,7 +113,7 @@ INSTANCE Orc_Guslarz_1  (Mst_Default_OrcShaman)
 {
 	name  =	"Szaman Nahen-Harrag";
 	level = Level_Nehen;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]				=	150;
 	attribute	[ATR_DEXTERITY]				=	130;
@@ -144,7 +144,7 @@ INSTANCE Shaman_Kastagir_03  (Mst_Default_OrcShaman)
 {
 	name  =	"Ork-szaman";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -172,7 +172,7 @@ INSTANCE Shaman_Kastagir_02  (Mst_Default_OrcShaman)
 {
 	name  =	"Ur-Drrak";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -200,7 +200,7 @@ INSTANCE Shaman_Kastagir_01  (Mst_Default_OrcShaman)
 {
 	name  =	"Ork-szaman";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -228,7 +228,7 @@ INSTANCE Shaman_TWO_01  (Mst_Default_OrcShaman)
 {
 	name  =	"Ork-szaman";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -256,7 +256,7 @@ INSTANCE Shaman_TWO_02  (Mst_Default_OrcShaman)
 {
 	name  =	"Ork-szaman";
 	level = Level_Varrag;
-	guild = GIL_ORCSCOUT;
+	//guild = GIL_ORCSCOUT;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;
@@ -284,7 +284,7 @@ INSTANCE Shaman_GWM_01  (Mst_Default_OrcShaman)
 {
 	name  =	"Ork-szaman";
 	level = Level_Varrag;
-	guild = GIL_SKELETON;
+	//guild = GIL_SKELETON;
 	//----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	100;
 	attribute	[ATR_DEXTERITY]		=	100;

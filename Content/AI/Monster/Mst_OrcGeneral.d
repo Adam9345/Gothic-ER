@@ -6,8 +6,8 @@
 PROTOTYPE Mst_Default_OrcGeneral(C_Npc)			
 {
 	name							=	"Ork-dowódca";
-	guild							=	GIL_ORCSCOUT;
-    npctype							=	NPCTYPE_MAIN;
+	guild							=	GIL_ORCWARRIOR;
+    npctype							=	NPCTYPE_GUARD;
 	voice							=	18;
 	level							=	45;
 //----------------------------------------------------------	
@@ -50,7 +50,7 @@ PROTOTYPE Mst_Default_OrcGeneral(C_Npc)
 	aivar[AIV_MM_FollowTime]	= FOLLOWTIME_LONG;
 	aivar[AIV_MM_FollowInWater] = FALSE;
 //-------------------------------------------------------------
-	start_aistate				= ZS_MM_AllScheduler;
+	start_aistate				= ZS_Orc_Guard;
 };
 //-------------------------------------------------------------
 func void Set_OrcGeneral_Visuals()

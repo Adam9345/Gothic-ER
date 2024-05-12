@@ -7,7 +7,7 @@ PROTOTYPE Mst_Default_OrcSlave(C_Npc)
 	name							=	"Ork-niewolnik";
 	guild							=	GIL_ORCSLAVE;
 	level							=	15;
-	npctype							=	NPCTYPE_MAIN;
+	npctype							=	NPCTYPE_GUARD;
 //----------------------------------------------------------	
 	attribute	[ATR_STRENGTH]		=	50;
 	attribute	[ATR_DEXTERITY]		=	50;
@@ -84,7 +84,7 @@ INSTANCE OrcSlave (Mst_Default_OrcSlave)
 INSTANCE OrcPeasantDance (Mst_Default_OrcSlave)
 {
 	//-------- general data --------
-	guild							=	GIL_ORCSCOUT;
+	guild							=	gil_orcwarrior;
 	name			=	"Ork";
 
 	//-------- visuals --------
@@ -104,7 +104,7 @@ INSTANCE OrcPeasantDance (Mst_Default_OrcSlave)
 INSTANCE OrcPeasantDrum (Mst_Default_OrcSlave)
 {
 	//-------- general data --------
-	guild							=	GIL_ORCSCOUT;
+	guild							=	gil_orcwarrior;
 	name			=	"Ork";
 
 	//-------- visuals --------

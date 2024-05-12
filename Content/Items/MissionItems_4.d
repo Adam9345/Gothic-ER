@@ -191,8 +191,8 @@ INSTANCE UluMulu(C_Item)
 	range    		=  	140;		
 	cond_atr[2]   	= 	ATR_STRENGTH;
 	cond_value[2]  	= 	30;
-   on_equip = Equip_UluMulu;
-   on_unequip = UnEquip_Ulumulu;
+   //on_equip = Equip_UluMulu;
+   //on_unequip = UnEquip_Ulumulu;
 	visual 			=	"ItMi_Amulet_Ulumulu_02.3ds";
 	
 	visual_skin 	=	0;

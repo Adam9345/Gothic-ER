@@ -6,7 +6,7 @@ PROTOTYPE Mst_Default_OrcScout(C_Npc)
 {
 	name							=	"Ork-myœliwy";
 	guild							=	GIL_ORCSCOUT;
-	npctype							=	NPCTYPE_MAIN;
+	npctype							=	NPCTYPE_GUARD;
 	voice							=	17;
 	level							=	Level_OrcHunter;
 //----------------------------------------------------------	
@@ -51,7 +51,7 @@ PROTOTYPE Mst_Default_OrcScout(C_Npc)
 	aivar[AIV_MM_FollowTime]	= FOLLOWTIME_LONG;
 	aivar[AIV_MM_FollowInWater] = FALSE;
 //-------------------------------------------------------------
-	start_aistate				= ZS_GuardPatrol;
+	start_aistate				= ZS_Orc_Guard;
 };
 //-------------------------------------------------------------
 func void Set_OrcScout_Visuals()

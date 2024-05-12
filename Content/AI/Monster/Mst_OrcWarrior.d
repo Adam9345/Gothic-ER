@@ -5,8 +5,8 @@
 PROTOTYPE Mst_Default_OrcWarrior(C_Npc)			
 {
 	name							=	"Ork-¿o³nierz";
-	guild							=	GIL_orcscout;
-	npctype							=	NPCTYPE_MAIN;
+	guild							=	gil_orcwarrior;
+	npctype							=	NPCTYPE_GUARD;
 	voice							=	17;
 	level							=	Level_OrcSoldier;
 //----------------------------------------------------------	
@@ -49,7 +49,7 @@ PROTOTYPE Mst_Default_OrcWarrior(C_Npc)
 	aivar[AIV_MM_FollowTime]	= FOLLOWTIME_LONG;
 	aivar[AIV_MM_FollowInWater] = FALSE;
 //-------------------------------------------------------------
-	start_aistate				= ZS_MM_AllScheduler;
+	start_aistate				= ZS_Orc_Guard;
 };
 //-------------------------------------------------------------
 func void Set_OrcWarrior_Visuals()
@@ -70,7 +70,7 @@ INSTANCE OrcWarrior1	(Mst_Default_OrcWarrior)
 	//-------- general --------
 	name							=	"Ork-wojownik";
 	level							=	Level_OrcWarrior;
-    guild							=	GIL_ORCSCOUT;
+    //guild							=	GIL_ORCSCOUT;
 	//-------- visual --------
 	Set_OrcWarrior_Visuals();
 
@@ -97,7 +97,7 @@ INSTANCE OrcWarrior2	(Mst_Default_OrcWarrior)
 	//-------- general --------
 	name							=	"Ork-¿o³nierz";
 	level							=	Level_OrcSoldier;
-    guild							=	GIL_ORCSCOUT;
+    //guild							=	GIL_ORCSCOUT;
 	//-------- visual --------
 	Set_OrcWarrior_Visuals();
 
@@ -124,7 +124,7 @@ INSTANCE OrcWarrior3	(Mst_Default_OrcWarrior)
 	//-------- general --------
 	name							=	"Ork-wiarus";
 	level							=	Level_OrcShaman;
-    guild							=	GIL_ORCSCOUT;
+    //guild							=	GIL_ORCSCOUT;
 	//-------- visual --------
 	Set_OrcWarrior_Visuals();
 
@@ -151,7 +151,7 @@ INSTANCE OrcWarrior4	(Mst_Default_OrcWarrior)
 	//-------- general --------
 	name							=	"Ork-stra¿nik";
 	level							=	Level_OrcElite;
-	guild							=	GIL_ORCSCOUT;
+	//guild							=	GIL_ORCSCOUT;
 	//-------- visual --------
 	Set_OrcWarrior_Visuals();
 
