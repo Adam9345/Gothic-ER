@@ -67,8 +67,8 @@ TA_Smoke (18,22,06,00,"PLACYKBR1");
 };
 func void rtn_delte_530 ()
 {
-TA_Stand (06,00,18,22,"WP_GRD_PLAC2");
-TA_Smoke (18,22,06,00,"WP_GRD_PLAC2");
+TA_Position (06,00,18,22,"WP_KRZYKACZ_CH4");
+TA_Position (18,22,06,00,"WP_KRZYKACZ_CH4");
 };
 
 instance VLK_599_GuyMine (Npc_Default)
@@ -122,11 +122,11 @@ instance VLK_599_GuyMine (Npc_Default)
 
 FUNC VOID Rtn_start_599 ()
 {
-	TA_Stand		(23,00,07,00,"GUY_ABMINE");
-	TA_Smoke	(07,00,08,00,"GUY_ABMINE");
-	TA_Boss	(08,00,17,00,"GUY_ABMINE"); 
-	TA_Stand	(17,00,19,05,"GUY_ABMINE");
-	TA_Boss  (19,05,23,00,"GUY_ABMINE");
+	TA_Stand		(23,00,07,00,"VM_PATH2");
+	TA_Smoke	(07,00,08,00,"VM_PATH2");
+	TA_Boss	(08,00,17,00,"VM_PATH2"); 
+	TA_Stand	(17,00,19,05,"VM_PATH2");
+	TA_Boss  (19,05,23,00,"VM_PATH2");
 };
 
 
