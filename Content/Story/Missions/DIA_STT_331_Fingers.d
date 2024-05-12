@@ -303,7 +303,7 @@ INSTANCE DIA_Fingers_Learnt (C_INFO)
 FUNC INT DIA_Fingers_Learnt_Condition()
 {	
 	if ( (Fingers_Learnt != LOG_SUCCESS) )
-	&& (Npc_GetTrueGuild (hero) == GIL_NONE)
+	&& (Npc_GetTrueGuild (hero) == GIL_NONE || Npc_GetTrueGuild (hero) == GIL_VLK)
 	&& ((MIS_DraxTest != LOG_RUNNING) || (MIS_DraxTest != LOG_SUCCESS) || (MIS_EasyJoinOC != LOG_RUNNING) || (MIS_EasyJoinOC != LOG_SUCCESS))
 	{
 		return 1;

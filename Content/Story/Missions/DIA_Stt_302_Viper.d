@@ -164,6 +164,8 @@ FUNC VOID DIA_Viper_INFOS_2_TALK_Info()
     AI_Output (self, other ,"DIA_Viper_INFOS_2_TALK_03_05"); //Niektórzy z nich s¹ naprawdê têpi, jak choæby Ulbert. Wystarczy mu wspomnieæ o ¿arciu, a opuœci swoje stanowisko, ha ha ha. 
     AI_Output (other, self ,"DIA_Viper_INFOS_2_TALK_15_06"); //Dziêki za radê.
     AI_Output (self, other ,"DIA_Viper_INFOS_2_TALK_03_07"); //Nie ma sprawy.
+
+    B_LogEntry		(CH2_StorageShed,	"W¹¿ powiedzia³ mi w jaki sposób mogê odci¹gn¹æ Ulberta. Wystarczy, ¿e wspomnê mu o jedzeniu.");
 };
 
 //========================================

@@ -192,7 +192,7 @@ func void DIA_GorBoba_SWORD_ADD()
 	AI_Output (other, self,"DIA_GorBoba_SWORD_ADD_15_04"); //Dobra.
 	Log_CreateTopic		(MieczGorBoby,	LOG_MISSION);
 	Log_SetTopicStatus	(MieczGorBoby,	LOG_RUNNING);
-	B_LogEntry               (MieczGorBoby,"Wojownik Œwi¹tynny Gor Boba powiedzia³, ¿e dowiedzia³ siê i¿ w kopalni odkryto cenny minera³ zwany ,,srebrnym gromem”. Gor Boba chcia³bym ulepszyæ sobie nim swój miecz. Obozowy kowal Darrion potrzebowa³by do tego 40 bry³ek tego surowca. Muszê udaæ siê do Starej Kopalni i pomówiæ z kilkoma osobami. Poleci³ mi bym zacz¹³ od hutnika Wê¿a.");
+	B_LogEntry               (MieczGorBoby,"Wojownik Œwi¹tynny Gor Boba powiedzia³, ¿e dowiedzia³ siê i¿ w kopalni odkryto cenny minera³ zwany ,,srebrnym gromem”. Gor Boba chcia³by ulepszyæ sobie nim swój miecz. Obozowy kowal Darrion potrzebowa³by do tego 40 bry³ek tego surowca. Muszê udaæ siê do Starej Kopalni i pomówiæ z kilkoma osobami. Poleci³ mi bym zacz¹³ od hutnika Wê¿a.");
 	BobaSwordR = TRUE;
 	
     AI_StopProcessInfos	(self);

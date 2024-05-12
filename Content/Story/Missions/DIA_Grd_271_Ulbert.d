@@ -175,7 +175,8 @@ instance  GRD_271_ULBERT_LOCK (C_INFO)
 
 FUNC int  GRD_271_ULBERT_LOCK_Condition()
 {
-	if ( Npc_KnowsInfo (hero ,GRD_271_ULBERT_DRUNK)) //||  ( Npc_KnowsInfo (hero ,DIA_ULBERT_BLACKORE))
+	if ( Npc_KnowsInfo (hero ,GRD_271_ULBERT_DRUNK) 
+	&&  Npc_KnowsInfo (hero, DIA_Viper_INFOS_2_TALK)) //||  ( Npc_KnowsInfo (hero ,DIA_ULBERT_BLACKORE))
 	{
 		return 1;
 	};
