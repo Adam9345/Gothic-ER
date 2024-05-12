@@ -62,9 +62,12 @@ func void ZS_AssessDefeat ()
 		//-------- Schützling einer Wache wurde umgehauen ! --------
 		if (C_ChargeWasAttacked(self, victim, other))
 		{ 
-			PrintDebugNpc		(PD_ZS_CHECK,	"...NSC ist Wache und ein Schützling wurde besiegt!" );
-			B_DrawWeapon		(self,	other);
-			AI_StartState	 	(self,  ZS_ProclaimAndPunish, 0, "");
+			if (Npc_GetPermAttitude(victim,other) != ATT_HOSTILE) {
+				PrintDebugNpc		(PD_ZS_CHECK,	"...NSC ist Wache und ein Schützling wurde besiegt!" );
+				B_DrawWeapon		(self,	other);
+				AI_StartState	 	(self,  ZS_ProclaimAndPunish, 0, "");
+				return;
+			};
 			return;
 		}
 		

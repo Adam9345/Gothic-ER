@@ -89,14 +89,20 @@ func void B_AssessFightSound ()
 		}
 		else
 		{
-			PrintGlobals	(PD_ZS_CHECK);
-			PrintDebugNpc	(PD_ZS_CHECK,	"...und der ist auch sauer bzw. flieht!" );
-			B_FullStop		(self);
-			Npc_SetTarget	(self,	other);
-			B_WhirlAround	(self,	other);
-			B_DrawWeapon	(self,	other);
-			AI_StartState 	(self,	ZS_ProclaimAndPunish, 0, "");
-			return;
+			if (Npc_GetPermAttitude(victim,other) != ATT_HOSTILE) {
+				PrintGlobals	(PD_ZS_CHECK);
+				PrintDebugNpc	(PD_ZS_CHECK,	"...und der ist auch sauer bzw. flieht!" );
+				B_FullStop		(self);
+				Npc_SetTarget	(self,	other);
+				B_WhirlAround	(self,	other);
+				B_DrawWeapon	(self,	other);
+				AI_StartState 	(self,	ZS_ProclaimAndPunish, 0, "");
+				return;
+			} else {
+				B_WhirlAround		(self,	victim);
+				AI_StartState 		(self,	ZS_WatchFight, 0, "");
+				return;
+			};
 		};
 	}
 

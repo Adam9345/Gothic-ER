@@ -27,6 +27,27 @@
 //						aus HAI_DIST_RANGED raus	-> Abbruch
 //	- Wartezeit abgelaufen							-> ZS_Attack
 //////////////////////////////////////////////////////////////////////////
+
+func int NpcIsFromTheSameCamp(var C_NPC npc) {
+    if (C_NpcBelongsToOldCamp(npc) && C_NpcBelongsToOldCamp(hero) && Npc_GetAttitude(npc, hero) <= ATT_ANGRY) {
+        return true;
+    };
+
+    if (C_NpcBelongsToNewCamp(npc) && C_NpcBelongsToNewCamp(hero) && Npc_GetAttitude(npc, hero) <= ATT_ANGRY) {
+        return true;
+    };
+
+    if (C_NpcBelongsToPsiCamp(npc) && C_NpcBelongsToPsiCamp(hero) && Npc_GetAttitude(npc, hero) <= ATT_ANGRY) {
+        return true;
+    };
+
+    if (npc.guild == GIL_BAU && hero.guild == GIL_BAU && Npc_GetAttitude(npc, hero) <= ATT_ANGRY) {
+        return true;
+    };
+
+    return false;
+};
+
 func void ZS_AssessFighter ()
 {	
 	PrintDebugNpc		(PD_ZS_FRAME,	"ZS_AssessFighter");	
@@ -91,6 +112,7 @@ func int ZS_AssessFighter_Loop ()
 	//######## SC in Nahkampfdistanz ! ########
 	if (Npc_GetDistToNpc(self,other) < HAI_DIST_ABORT_MELEE)
 	{
+		if (Npc_GetPermAttitude(victim, other) != ATT_HOSTILE) {
 		PrintDebugNpc		(PD_ZS_CHECK,	"...SC ist in Nahkampfdistanz!");
 
 		//---- Passender Kommentar ! ----
@@ -112,6 +134,7 @@ func int ZS_AssessFighter_Loop ()
 		{
 			PrintDebugNpc	(PD_ZS_CHECK, "...Zeit abgelaufen!");
 			AI_StartState 	(self,	ZS_AssessFighterWait,	0 ,	""); 
+		};
 		};
 	}
 
@@ -185,7 +208,7 @@ func void ZS_AssessFighterWait ()
 func int ZS_AssessFighterWait_Loop	()
 {	
 	PrintDebugNpc			(PD_ZS_LOOP,	"ZS_AssessFighterWait_Loop" );
-				
+
 	//-------- Hat sich der SC mittlerweile entfernt ? -------- 
 	if (Npc_GetDistToNpc(self,other) > HAI_DIST_ABORT_MELEE)
 	{
