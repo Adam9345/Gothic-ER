@@ -121,6 +121,9 @@ instance MENU_STATUS(C_MENU_DEF)
 	
 	items[66]	= "MENU_ITEM_TALENT_16_TITLE";
 	items[67]	= "MENU_ITEM_TALENT_16_SKILL";
+
+	items[68]   = "MENU_ITEM_KAPITEL_TITLE";
+	items[69]   = "MENU_ITEM_KAPITEL";
 		
 	//
 	// Eigenschaften
@@ -174,6 +177,23 @@ instance MENU_ITEM_PLAYERGUILD_TITLE(C_MENU_ITEM_DEF)
 instance MENU_ITEM_PLAYERGUILD(C_MENU_ITEM_DEF)
 {
 	posx =	1750;	posy = STAT_PLY_Y+STAT_DY*0;
+	dimx =  STAT_B_X1 - STAT_A_X2;
+	dimy =  STAT_DY;
+	fontName	=	STAT_FONT_DEFAULT;
+	flags		=	flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_KAPITEL_TITLE(C_MENU_ITEM_DEF)
+{
+	text[0]	 = "Rozdzia³:";
+	posx	 = STAT_A_X1;	posy = STAT_PLY_Y+STAT_DY*0 - 300;	
+	fontName	=	STAT_FONT_DEFAULT;
+	flags		=	flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_KAPITEL(C_MENU_ITEM_DEF)
+{
+	posx =	STAT_A_X3;	posy = STAT_PLY_Y+STAT_DY*0 - 300;
 	dimx =  STAT_B_X1 - STAT_A_X2;
 	dimy =  STAT_DY;
 	fontName	=	STAT_FONT_DEFAULT;
