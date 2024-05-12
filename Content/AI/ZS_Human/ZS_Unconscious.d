@@ -9,9 +9,18 @@ func void ZS_Unconscious ()
 	PrintDebugNpc		(PD_ZS_FRAME, "ZS_Unconscious" );				
 	C_ZSInit();
 	Npc_PercEnable  	(self , PERC_ASSESSMAGIC,		B_AssessMagic				);
+
+	if (Npc_GetPermAttitude(self, other) == ATT_HOSTILE && (Npc_IsPlayer(other) || Npc_GetPermAttitude(other, hero) != ATT_HOSTILE)) {
+		B_FullStop(self);
+		Npc_ChangeAttribute	(self, ATR_HITPOINTS, -self.attribute[ATR_HITPOINTS_MAX]);
+		AI_StartState (self, ZS_Dead, 0, "");
+		//B_KillNPC(self);
+		return;
+	};
+
 	Mdl_ApplyRandomAni	( self, "S_WOUNDED","T_WOUNDED_TRY");
 	Mdl_ApplyRandomAniFreq	( self, "S_WOUNDED", 8);
-	
+
 	self.aivar[AIV_PLUNDERED] = FALSE;
 	
 	//SN 24.09.00: für die PublisherDemo auskommentiert, da die Animationen noch nicht toll sind (Absprache mit Alex) -> wenn bessere Animationen da sind, wieder einkommentieren!
