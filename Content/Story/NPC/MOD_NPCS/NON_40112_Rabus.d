@@ -4,7 +4,7 @@ instance NON_40112_Herszt (Npc_Default)
 	
 	name =					"Herszt bandy";
 	Npctype			=       NPCTYPE_main;
-	guild 		    =         GIL_ORCSCOUT;        
+	guild 		    =         GIL_BDT;        
 	level           =					30;
 
 	

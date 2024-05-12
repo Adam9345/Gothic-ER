@@ -3,7 +3,7 @@ instance Stt_40134_Schatten (Npc_Default)
 	//-------- primary data --------
 	name 		=		"Zwiadowca";
 	npctype 	=		NPCTYPE_AMBIENT	;
-	guild 		=		GIL_ORCSCOUT;
+	guild 		=		GIL_BDT;
 	level 		=		7;
 
 	

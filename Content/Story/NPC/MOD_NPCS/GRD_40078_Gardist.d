@@ -3,7 +3,7 @@ instance GRD_40078_Gardist (Npc_Default)
 	//-------- primary data --------
 	
 	name 		=	NAME_Gardist;
-	guild 		=	GIL_ORCSCOUT;
+	guild 		=	GIL_BDT;
 	npctype		=	NPCTYPE_MAIN;
 	level 		=	50;
 	voice 		=	13;

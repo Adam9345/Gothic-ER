@@ -7,7 +7,7 @@ instance STT_40031_Zwiadowca (Npc_Default)
 
 name = "Zwiadowca";
 Npctype = Npctype_Main;
-guild = GIL_ORCSCOUT;
+guild = GIL_BDT;
 level = 15;
 voice = 7;
 id = 40031;

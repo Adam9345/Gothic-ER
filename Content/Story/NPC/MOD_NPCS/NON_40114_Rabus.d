@@ -7,7 +7,7 @@ instance NON_40114_Rabus (Npc_Default)
 
 name = "Zwiadowca";
 Npctype = Npctype_Main;
-guild = GIL_ORCSCOUT;
+guild = GIL_BDT;
 level = 15;
 voice = 6;
 id = 40114;

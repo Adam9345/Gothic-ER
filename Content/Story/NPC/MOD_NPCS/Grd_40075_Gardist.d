@@ -4,7 +4,7 @@ instance Grd_40075_Gardist (Npc_Default)
 	
 	name 		=	NAME_Gardist;
 	npctype		= 	NPCTYPE_MAIN;
-	guild 		=	GIL_ORCSCOUT;
+	guild 		=	GIL_BDT;
 	level 		=	50;
 	voice 		=	13;
 	id 			=	40075;

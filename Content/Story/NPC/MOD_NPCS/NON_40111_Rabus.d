@@ -7,7 +7,7 @@ instance NON_40111_Rabus (Npc_Default)
 
 name = "Nowicjusz - rabuœ";
 Npctype = Npctype_Main;
-guild = GIL_ORCSCOUT;
+guild = GIL_BDT;
 level = 15;
 voice = 7;
 id = 40111;
