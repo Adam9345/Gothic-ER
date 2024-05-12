@@ -249,7 +249,7 @@ func void ZS_Orc_Sleep_End ()
 func void ZS_Orc_Pray ()
 {
     PrintDebugNpc( PD_ZS_FRAME, "ZS_Orc_Pray" );
-	
+
 	OrcDefaultPercDoing();
 
 	AI_SetWalkmode( self, NPC_WALK );		// Walkmode für den Zustand
@@ -259,7 +259,7 @@ func void ZS_Orc_Pray ()
 	};
 };
 
-func void ZS_Orc_Pray_Loop ()
+func int ZS_Orc_Pray_Loop ()
 {
     PrintDebugNpc( PD_ZS_LOOP, "ZS_Orc_Pray_Loop" );
 
@@ -274,7 +274,19 @@ func void ZS_Orc_Pray_Loop ()
    		AI_PlayAniBS( self, "T_PRAY_RANDOM", BS_SIT );
    	};
 
+	if (Npc_GetDistToNpc(self, hero) <= 1500 && !C_OtherIsToleratedEnemy(self, hero)) {
+		Npc_ClearAIQueue 	( self);
+		AI_StandUp(self);
+		Npc_SetTarget	(self, hero);
+		AI_SetWalkmode( self, NPC_RUN );
+		AI_StartState 	(self, ZS_Attack, 1, "");
+
+		return LOOP_END;
+	};
+
 	AI_Wait( self, 1 );    
+
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Orc_Pray_End ()
