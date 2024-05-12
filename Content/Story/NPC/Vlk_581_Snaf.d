@@ -46,7 +46,8 @@ instance VLK_581_Snaf (Npc_Default)
 FUNC VOID Rtn_start_581 ()
 {
     TA_Cook		(08,00,22,00,"OCR_CAULDRON_2");
-	TA_Sleep		(22,00,08,00,"OCR_HUT_14");
+	TA_SitAround (22,00,22,30, "OCR_HUT_14");
+	TA_Sleep		(22,30,08,00,"OCR_HUT_14");
 };
 FUNC VOID Rtn_nockruka_581 ()
 {
