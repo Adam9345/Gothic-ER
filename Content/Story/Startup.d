@@ -3709,6 +3709,29 @@ FUNC VOID STARTUP_ABANDONEDMINE ()
 	Wld_InsertNpc (Minecrawler, "VM_HERO_SPAWN2");
 };
 
+var int banditsInMine;
+var int engineerInMine;
+
+FUNC VOID INIT_DYNAMIC_ABANDONEDMINE () {
+	if (MIS_BanditsInAbadonedMine == LOG_SUCCESS && !banditsInMine) {
+		Wld_InsertNpc		(NON_3040_Bandyta ,	"ZL3");
+		Wld_InsertNpc		(NON_3045_Bandyta ,	"ZL9");
+		Wld_InsertNpc		(NON_3030_Bandyta ,	"ZL5");
+		Wld_InsertNpc		(NON_3031_Bandyta ,	"ZL10");
+		Wld_InsertNpc		(NON_3038_Bandyta ,	"ZL2");
+		Wld_InsertNpc		(NON_3037_Bandyta ,	"ZL11");
+		Wld_InsertNpc		(NON_3044_Bandyta ,	"ZL8");
+		Wld_InsertNpc		(NON_3042_Bandyta ,	"ZL4");
+
+		banditsInMine = true;
+	};
+
+	if (MIS_NewEnginer == LOG_SUCCESS && !engineerInMine) {
+		Wld_InsertNpc		(VLK_599_GuyMine, "VM_PATH2");
+		engineerInMine = true;
+	};
+};
+
 FUNC VOID INIT_ABANDONEDMINE ()
 {
 	Wld_SetMobRoutine 	(00,00, "FIREPLACE", 1);
@@ -3717,6 +3740,7 @@ FUNC VOID INIT_ABANDONEDMINE ()
     B_InitMonsterAttitudes ();
 	B_InitGuildAttitudes();
 	INIT_GLOBAL(); 
+	INIT_DYNAMIC_ABANDONEDMINE();
 //	INIT_GLOBAL();
 	//LeGo_Init(LeGo_All);
 };
