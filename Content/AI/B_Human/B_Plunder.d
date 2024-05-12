@@ -61,7 +61,11 @@ func int B_CheckItem (var int category, var int slot)
 		// NEU: Nimmt nur Erz und davon nur die Hälfte!
 		if (Hlp_IsItem(item, ItMiNugget))
 		{
-			B_TransferItems(count/2);
+			if (count == 1) {
+				B_TransferItems (1);
+			} else {
+				B_TransferItems(count/2);
+			};
 			return TRUE;
 		};
 	
