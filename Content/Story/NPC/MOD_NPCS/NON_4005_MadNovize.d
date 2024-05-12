@@ -6,7 +6,7 @@ instance NON_4005_MadNovize (Npc_Default)
 
 name = NAME_MadNovice;
 Npctype = Npctype_Main;
-guild = GIL_GRD;
+guild = GIL_BDT;
 level = 35;
 voice = 7;
 id = 4005;
