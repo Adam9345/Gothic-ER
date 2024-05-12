@@ -80,7 +80,11 @@ PrintDebugNpc			(PD_ZS_FRAME, "B_AssessEnemy" );
 		
 			//-------- Also doch ein ganz ordin‰rer Feind! --------
 			B_FullStop			(self);
-			AI_StartState 		(self, 	ZS_AssessEnemy,	0,	"");
+			if (C_NpcIsOrc(self)) {
+				AI_StartState 		(self, 	ZS_Orc_Attack,	0,	"");
+			} else {
+				AI_StartState 		(self, 	ZS_AssessEnemy,	0,	"");
+			};
 		}		
 	
 		//######## ...dann muﬂ der Enemy ein MONSTER sein ########
