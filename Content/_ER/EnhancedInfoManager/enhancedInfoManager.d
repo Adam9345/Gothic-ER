@@ -314,7 +314,12 @@ func string Choice_ExtractModifier (var int strPtr, var string modifierID) {
 	MEM_WriteString (strPtr, s);
 
 	//Return modifier value
-	return modifierValue;
+
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "threatRedDialog"))) {
+		return modifierValue;
+	};
+
+	return InfoManagerDefaultDialogColorSelected;
 };
 
 //"modifierID@modifierValue "
