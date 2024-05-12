@@ -485,6 +485,12 @@ func void B_ChangeGuild(var int npcInstance, var int newGuild)
 	
 	Npc_SetTrueGuild(npc,newGuild);
 	npc.guild = newGuild;
+
+	if (newGuild == GIL_BDT) {
+		//npc.npctype = NPCTYPE_ROGUE;
+		Npc_SetAttitude(npc, ATT_HOSTILE);
+		Npc_SetTempAttitude(npc, ATT_HOSTILE);
+	};
 };
 
 //////////////////////////////////////////////////////////////////////////
