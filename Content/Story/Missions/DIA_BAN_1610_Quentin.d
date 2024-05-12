@@ -1772,8 +1772,7 @@ FUNC VOID DIA_Quentin_GuyWork_Info()
     B_LogEntry               (CH4_NewEnginer,"Powiedzia³em Quentinowi, ¿e Guy bêdzie dla niego pracowa³. Ten cz³owiek ma du¿e doœwiadczenie.");
 	Log_SetTopicStatus       (CH4_NewEnginer, LOG_SUCCESS);
 	//npc
-	B_ExchangeRoutine	(VLK_530_Guy, "delte");
-	Wld_InsertNpc		(VLK_599_GuyMine,"LOCATION_11_08");
+    RemoveNPC (VLK_530_Guy, "delte");
 	//experience
     B_GiveXP (200);
 };
