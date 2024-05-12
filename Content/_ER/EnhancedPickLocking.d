@@ -1,6 +1,6 @@
-const int oCAIHuman__PC_ActionMove = 6371936;
+//const int oCAIHuman__PC_ActionMove = 6371936;
 
-const int oCMobLockable__CanOpen = 6825920;
+//const int oCMobLockable__CanOpen = 6825920;
 
 //-- Internal variables
 var int PC_PickLockOutputVariation;

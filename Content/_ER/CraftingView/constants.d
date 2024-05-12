@@ -1,4 +1,4 @@
-const int ocinformationmanager__update = 7519888;
+//const int ocinformationmanager__update = 7519888;
 
 const int ocgame__handleevent_dfltcase = 6684404; //6684404
 

@@ -5,15 +5,15 @@
  *	They were modified to change multipliers for both inventory containers in case of both buying / selling containers.
  *
  */
-const int TRADE_SECTION_RIGHT_CONTAINER_G1 = 2;
-const int TRADE_SECTION_RIGHT_INVENTORY_G1 = 3;
+//const int TRADE_SECTION_RIGHT_CONTAINER_G1 = 2;
+//const int TRADE_SECTION_RIGHT_INVENTORY_G1 = 3;
 
-const int oCViewDialogTrade__OnAccept = 7514224;
-const int oCViewDialogTrade__OnExit = 7514800;
-const int oCViewDialogTrade__HandleEvent = 7510432;
+//const int oCViewDialogTrade__OnAccept = 7514224;
+//const int oCViewDialogTrade__OnExit = 7514800;
+//const int oCViewDialogTrade__HandleEvent = 7510432;
 
-const int oCViewDialogTrade__OnTransferLeft = 7512752;
-const int oCViewDialogTrade__OnTransferRight = 7513392;
+//const int oCViewDialogTrade__OnTransferLeft = 7512752;
+//const int oCViewDialogTrade__OnTransferRight = 7513392;
 
 //-- Internal variables
 var int TradeForceTransferAccept; //Variable indicating that player forced trading
@@ -45,7 +45,7 @@ func void Trade_SetBuyMultiplier (var int mulF) {
 		};
 	};
 };
-
+/*
 func string GetSymbolName (var int symbolIndex) {
 	var int symbPtr; symbPtr = MEM_GetSymbolByIndex (symbolIndex);
 
@@ -56,6 +56,7 @@ func string GetSymbolName (var int symbolIndex) {
 
 	return "";
 };
+*/
 
 func void Trade_SetSellMultiplier (var int mulF) {
 	var oCViewDialogTrade dialogTrade;

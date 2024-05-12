@@ -6,6 +6,9 @@ _INTERN\EngineClasses_G1\*.D
 _INTERN\Ikarus.D
 _INTERN\Float.D
 _INTERN\LeGo_G1\HEADER_G1.src
+_INTERN\engine_addresses_G1.D
+_INTERN\Patches\G1\*.D
+_INTERN\Patches\G12\*.D
 _ER\oSDamageDescriptor.D
 _ER\Trucizna.D
 _ER\AdditionalAIVars.d
@@ -212,6 +215,8 @@ AI\ZS_MONSTER\*.D
 STORY\B\B_GIVEDEATHINV.D
 
 AI\ZS_HUMAN\*.D
+
+_ER\SystemDamage\SystemDamage.d
 
 AI\ZS_BABE\B_SetBabeDefaultPerceptions.d
 AI\ZS_BABE\B_Babe_ObserveIntruder.d

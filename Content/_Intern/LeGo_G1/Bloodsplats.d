@@ -44,9 +44,9 @@ func void Bloodsplat(var int currDam) {
 
 	var int s; s = SB_New();
 	
-	//SB ("BLOODSPLAT");
-	//SBi(r_Max(BLOODSPLAT_TEX));
-	//SB (".TGA");
+	SB ("BLOODSPLAT");
+	SBi(r_Max(BLOODSPLAT_TEX));
+	SB (".TGA");
 
     View_SetTexture(ptr, SB_ToString());
 	

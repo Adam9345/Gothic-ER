@@ -16,14 +16,14 @@ func void Update_Menu_Item(var string name, var string val)
     
 func void Install_Character_Menu_Hook() 
 {
-   // const int done	= 0; 
+    const int done	= 0; 
        
 	
- //   if(!done) 
-	//{
+    if(!done) 
+    {
         HookEngineF(4678400, 6, Update_Character_Menu);
-   //   done = 1;
-   // };
+        done = 1;
+    };
 };
 //var int NPC_TALENT_MINING;
 var int NPC_TALENT_SMITH;	
@@ -77,4 +77,5 @@ func void Update_Character_Menu()
 	Update_Menu_Item("MENU_ITEM_TALENT_16_TITLE", Mining);
     Update_Menu_Item("MENU_ITEM_TALENT_16_SKILL", MiningState);
 	
+    Update_Menu_Item("MENU_ITEM_KAPITEL", IntToString(kapitel));
 };

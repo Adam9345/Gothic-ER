@@ -1,8 +1,8 @@
-const int MOUSE_WHEEL_UP = 2057;
-const int MOUSE_WHEEL_DOWN = 2058;
-const int zCViewDialogChoice__HandleEvent = 7703136;
-const int oCInformationManager__CollectChoices = 7524288;
-const int oCInformationManager__CollectInfos = 7523728;
+//const int MOUSE_WHEEL_UP = 2057;
+//const int MOUSE_WHEEL_DOWN = 2058;
+//const int zCViewDialogChoice__HandleEvent = 7703136;
+//const int oCInformationManager__CollectChoices = 7524288;
+//const int oCInformationManager__CollectInfos = 7523728;
 
 func string STR_TrimL(var string str, var string tok) {
     var int lenS; lenS = STR_Len(str);

@@ -331,3 +331,6 @@ const int MOUSE_XBUTTON2	= 528;
 const int MOUSE_XBUTTON3	= 529;
 const int MOUSE_XBUTTON4	= 530;
 const int MOUSE_XBUTTON5	= 531;
+
+const int MAX_CTRL_VOBS = 80;
+const int zMDL_MAX_ANIS_PARALLEL = 6;

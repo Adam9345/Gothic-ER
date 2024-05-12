@@ -10,7 +10,7 @@ class c_recipe {
     var string description;
 };
 
-class zCViewDialogChoice {
+/*class zCViewDialogChoice {
     var int _vtbl; //0
     var int refctr; //4
     var int hashindex; //8
@@ -96,7 +96,7 @@ class zCViewDialogChoice {
     var int choiceSelected; //int // sizeof 04h offset 100h
     var int choices; //int // sizeof 04h offset 104h
     var int lineStart; //int // sizeof 04h offset 108h
-};
+};*/
 /*
 class zcviewdialogchoice {
     var int _vtbl;
