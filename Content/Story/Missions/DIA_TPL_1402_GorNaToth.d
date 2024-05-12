@@ -215,14 +215,17 @@ FUNC void  TPL_1402_GorNaToth_ARMOR_Info()
 
 	Info_ClearChoices		(TPL_1402_GorNaToth_ARMOR);
 	Info_AddChoice			(TPL_1402_GorNaToth_ARMOR,	DIALOG_BACK	,	TPL_1402_GorNaToth_ARMOR_BACK);	
-	Info_AddChoice			(TPL_1402_GorNaToth_ARMOR,	B_BuildBuyArmorString(NAME_GorNaTothHeavyTpl,VALUE_TPL_ARMOR_H) ,TPL_1402_GorNaToth_ARMOR_H);	
-	Info_AddChoice			(TPL_1402_GorNaToth_ARMOR,	B_BuildBuyArmorString(NAME_GorNaTothTpl,VALUE_TPL_ARMOR_M),	TPL_1402_GorNaToth_ARMOR_M);	
+	Info_AddChoice			(TPL_1402_GorNaToth_ARMOR,	B_BuildBuyArmorString(NAME_GorNaTothHeavyTpl,VALUE_TPL_ARMOR_H) ,TPL_1402_GorNaToth_ARMOR_H);
+	AFIP_SetChoiceItem(TPL_1402_GorNaToth_ARMOR_H, TPL_ARMOR_H);	
+	Info_AddChoice			(TPL_1402_GorNaToth_ARMOR,	B_BuildBuyArmorString(NAME_GorNaTothTpl,VALUE_TPL_ARMOR_M),	TPL_1402_GorNaToth_ARMOR_M);
+	AFIP_SetChoiceItem(TPL_1402_GorNaToth_ARMOR_M, TPL_ARMOR_M);	
 
 
 };
 
 func void TPL_1402_GorNaToth_ARMOR_M ()
 {
+	var int AFIP_ShowItem;
 	AI_Output				(hero, self,"Info_GorNaToth_ARMOR_M_15_01"); //Potrzebujê wzmocnionej zbroi Stra¿ników Œwi¹tynnych.
 
 	if (Kapitel < 3)
@@ -252,6 +255,7 @@ func void TPL_1402_GorNaToth_ARMOR_M ()
 
 func void TPL_1402_GorNaToth_ARMOR_H ()
 {
+	var int AFIP_ShowItem;
 	AI_Output				(hero, self,"Info_GorNaToth_ARMOR_H_15_01"); //Chcia³bym otrzymaæ ciê¿k¹ zbrojê Stra¿y Œwi¹tynnej.
 
 	if (Kapitel < 4)

@@ -205,7 +205,9 @@ FUNC VOID DIA_Wolf_SellArmor_Info()
 		Info_ClearChoices 	(DIA_Wolf_SellArmor);
 		Info_Addchoice 		(DIA_Wolf_SellArmor,DIALOG_BACK							                          ,DIA_Wolf_SellArmor_BACK);
 		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfBandits,VALUE_ORG_ARMOR_M)     ,DIA_Wolf_SellArmor_M);
+		AFIP_SetChoiceItem(DIA_Wolf_SellArmor_M, ORG_ARMOR_M);
 		Info_Addchoice 		(DIA_Wolf_SellArmor,B_BuildBuyArmorString(NAME_WolfHeavyBandits,VALUE_ORG_ARMOR_H),DIA_Wolf_SellArmor_H);
+		AFIP_SetChoiceItem(DIA_Wolf_SellArmor_H, ORG_ARMOR_H);
 	}
 	else
 	{
@@ -220,6 +222,7 @@ func void DIA_Wolf_SellArmor_BACK()
 
 func void DIA_Wolf_SellArmor_M()
 {
+	var int AFIP_ShowItem;
 	AI_Output (other, self,"DIA_Wolf_SellArmor_M_15_01"); //Potrzebujê wzmocnionego pancerza.
 	
 	if (Npc_HasItems (hero,ItMinugget)< VALUE_ORG_ARMOR_M)
@@ -242,6 +245,7 @@ func void DIA_Wolf_SellArmor_M()
 
 func void DIA_Wolf_SellArmor_H()
 {
+	var int AFIP_ShowItem;
 	AI_Output (other,self,"DIA_Wolf_SellArmor_H_15_01"); //Mo¿esz mi sprzedaæ ciê¿ki pancerz?
 
 	if (Npc_HasItems (hero,ItMinugget) < VALUE_ORG_ARMOR_H) 

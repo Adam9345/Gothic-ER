@@ -1434,6 +1434,7 @@ FUNC int  PC_Thief_ARMOR_Condition()
 	if  ( Npc_GetTrueGuild (hero) == GIL_STT)
 	&&  (! Npc_HasItems(hero,STT_ARMOR_H))
 	{
+		var int AFIP_ShowItem; AFIP_ShowItem = STT_ARMOR_H;
 		return TRUE;
 	};
 

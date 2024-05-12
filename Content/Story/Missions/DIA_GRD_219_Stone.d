@@ -179,12 +179,15 @@ FUNC void  GRD_219_Stone_BETTERARMOR_Info()
 		
 	Info_ClearChoices		(GRD_219_Stone_BETTERARMOR);
 	Info_AddChoice			(GRD_219_Stone_BETTERARMOR,	DIALOG_BACK							,	GRD_219_Stone_BETTERARMOR_BACK);	
-	Info_AddChoice			(GRD_219_Stone_BETTERARMOR, B_BuildBuyArmorString(NAME_StoneHeavyGuards,VALUE_GRD_ARMOR_H)	,GRD_219_Stone_BETTERARMOR_H);	
-	Info_AddChoice			(GRD_219_Stone_BETTERARMOR,	B_BuildBuyArmorString(NAME_StoneGuards,VALUE_GRD_ARMOR_M)	,	GRD_219_Stone_BETTERARMOR_M);	
+	Info_AddChoice			(GRD_219_Stone_BETTERARMOR, B_BuildBuyArmorString(NAME_StoneHeavyGuards,VALUE_GRD_ARMOR_H)	,GRD_219_Stone_BETTERARMOR_H);
+	AFIP_SetChoiceItem(GRD_219_Stone_BETTERARMOR_H, GRD_ARMOR_H);	
+	Info_AddChoice			(GRD_219_Stone_BETTERARMOR,	B_BuildBuyArmorString(NAME_StoneGuards,VALUE_GRD_ARMOR_M)	,	GRD_219_Stone_BETTERARMOR_M);
+	AFIP_SetChoiceItem(GRD_219_Stone_BETTERARMOR_M, GRD_ARMOR_M);	
 };  
 
 func void GRD_219_Stone_BETTERARMOR_M ()
 {
+	var int AFIP_ShowItem;
 	AI_Output				(hero, self,"GRD_219_Stone_BETTERARMOR_Info_M_15_01"); //Chcia³bym dostaæ zwyk³y pancerz Stra¿nika.
 
 	if (Kapitel < 3)
@@ -208,6 +211,7 @@ func void GRD_219_Stone_BETTERARMOR_M ()
 
 func void GRD_219_Stone_BETTERARMOR_H ()
 {
+	var int AFIP_ShowItem;
 	AI_Output				(hero, self,"GRD_219_Stone_BETTERARMOR_Info_H_15_01"); //Chcia³bym dostaæ ciê¿k¹ zbrojê Stra¿nika.
 	if (HeroCanBuy_GRDHARMOR == false)
 	{

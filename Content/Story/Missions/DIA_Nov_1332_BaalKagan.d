@@ -343,16 +343,22 @@ func void DIA_BaalKagan_SUCCESS_TakeScrolls()
 	AI_Output			(self, other,"DIA_BaalKagan_SUCCESS_TakeScrolls_13_01"); //M¹dra decyzja. Wybierz trzy.
 	Info_ClearChoices(DIA_BaalKagan_SUCCESS);
 	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Uderzenie wiatru."	,DIA_BaalKagan_SUCCESS_TakeScrolls_Windfaust);
+	AFIP_SetChoiceItem(DIA_BaalKagan_SUCCESS_TakeScrolls_Windfaust, ItArScrollWindfist);
 	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Telekineza."	,DIA_BaalKagan_SUCCESS_TakeScrolls_Telekinese);
-	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Pirokinza."	,DIA_BaalKagan_SUCCESS_TakeScrolls_Pyrokinese);
+	AFIP_SetChoiceItem(DIA_BaalKagan_SUCCESS_TakeScrolls_Telekinese, ItArScrollTelekinesis);
+	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Pirokineza."	,DIA_BaalKagan_SUCCESS_TakeScrolls_Pyrokinese);
+	AFIP_SetChoiceItem(DIA_BaalKagan_SUCCESS_TakeScrolls_Pyrokinese, ItArScrollPyrokinesis);
 	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Sen."		,DIA_BaalKagan_SUCCESS_TakeScrolls_Schlaf);
+	AFIP_SetChoiceItem(DIA_BaalKagan_SUCCESS_TakeScrolls_Schlaf, ItArScrollSleep);
 	Info_AddChoice   (DIA_BaalKagan_SUCCESS, "Urok."		,DIA_BaalKagan_SUCCESS_TakeScrolls_Charme);
+	AFIP_SetChoiceItem(DIA_BaalKagan_SUCCESS_TakeScrolls_Charme, ItArScrollCharm);
 };
 //-----------------------------------------------------------------------
 	var int BaalKagan_drei;
 //-----------------------------------------------------------------------
 func void DIA_BaalKagan_SUCCESS_TakeScrolls_Windfaust()
 {
+	var int AFIP_ShowItem;
 	CreateInvItem(self, ItArScrollWindfist);
 	B_GiveInvItems(self, hero, ItArScrollWindfist, 1);
 	
@@ -366,6 +372,7 @@ func void DIA_BaalKagan_SUCCESS_TakeScrolls_Windfaust()
 
 func void DIA_BaalKagan_SUCCESS_TakeScrolls_Telekinese()
 {
+	var int AFIP_ShowItem;
 	CreateInvItem(self, ItArScrollTelekinesis);
 	B_GiveInvItems(self, hero, ItArScrollTelekinesis, 1);
 	
@@ -379,6 +386,7 @@ func void DIA_BaalKagan_SUCCESS_TakeScrolls_Telekinese()
 
 func void DIA_BaalKagan_SUCCESS_TakeScrolls_Pyrokinese()
 {
+	var int AFIP_ShowItem;
 	CreateInvItem(self, ItArScrollPyrokinesis);
 	B_GiveInvItems(self, hero, ItArScrollPyrokinesis, 1);
 	
@@ -392,6 +400,7 @@ func void DIA_BaalKagan_SUCCESS_TakeScrolls_Pyrokinese()
 
 func void DIA_BaalKagan_SUCCESS_TakeScrolls_Schlaf()
 {
+	var int AFIP_ShowItem;
 	CreateInvItem(self, ItArScrollSleep);
 	B_GiveInvItems(self, hero, ItArScrollSleep, 1);
 	
@@ -405,6 +414,7 @@ func void DIA_BaalKagan_SUCCESS_TakeScrolls_Schlaf()
 
 func void DIA_BaalKagan_SUCCESS_TakeScrolls_Charme()
 {
+	var int AFIP_ShowItem;
 	CreateInvItem(self, ItArScrollCharm);
 	B_GiveInvItems(self, hero, ItArScrollCharm, 1);
 	

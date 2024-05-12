@@ -762,6 +762,7 @@ FUNC int  KDF_402_Corristo_HEAVYARMOR_Condition()
 	if (Npc_GetTrueGuild (hero) == GIL_KDF)
 	&& (HeroBuyHeavKDFArmor == FALSE)
 	{
+		var int AFIP_ShowItem; AFIP_ShowItem = KDF_ARMOR_H;
 		return TRUE;
 	};
 
