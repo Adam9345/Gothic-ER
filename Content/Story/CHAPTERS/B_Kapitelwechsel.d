@@ -152,7 +152,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		//znikanie ze œwiata NPC Er.14.
 		B_ExchangeRoutine	(TPL_1406_Templer,"flee"); //ochroniarz kaloma
 		//B_ExchangeRoutine	(TPL_1455_GorBoba,"flee"); //gor boba
-		B_ExchangeRoutine	(TPL_3927_GorBoba,"flee"); 
+		RemoveNPC (TPL_3927_GorBoba, "flee");
 		//-------- InExtremo wegräumen --------
 		B_InExtremoStopMusic();	
 		B_KillInExtremo();
