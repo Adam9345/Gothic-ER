@@ -126,7 +126,7 @@ INSTANCE MENUITEM_MOD_DISABLE_GUILD_GREETING(C_MENU_ITEM_DEF)
 	text[0]		=	"Gildyjne przywitanie";
 	text[1]		= 	"Wy³¹cza przywitanie tych samych gildi."; // Kommentar
 	// Position und Dimension	
-	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*3;
+	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*1;
 	dimx		=	4000;	dimy		=	750;
 	// Aktionen
 	onSelAction[0]	= SEL_ACTION_UNDEF;
@@ -141,7 +141,7 @@ instance MENUITEM_MOD_DISABLE_GUILD_GREETING_CHOICE(C_MENU_ITEM_DEF)
 	text[0]		= 	"wy³|w³";
 	fontName	=   MENU_FONT_SMALL;
 	// Position und Dimension	
-	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*3 + MENU_CHOICE_YPLUS;
+	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*1 + MENU_CHOICE_YPLUS;
 	dimx 		= 2000;		dimy 		= MENU_CHOICE_DY;
 	// Aktionen
 	onChgSetOption													= "disableGuildsGreeting";
@@ -162,7 +162,7 @@ INSTANCE MENUITEM_MOD_THREAT_RED_DIALOGS(C_MENU_ITEM_DEF)
 	text[0]		=	"Czerwone dialogi";
 	text[1]		= 	"Podœwietlenie na czerwono ryzykownych dialogów."; // Kommentar
 	// Position und Dimension	
-	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*4;
+	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*2;
 	dimx		=	4000;	dimy		=	750;
 	// Aktionen
 	onSelAction[0]	= SEL_ACTION_UNDEF;
@@ -177,7 +177,7 @@ instance MENUITEM_MOD_THREAT_RED_DIALOGS_CHOICE(C_MENU_ITEM_DEF)
 	text[0]		= 	"wy³|w³";
 	fontName	=   MENU_FONT_SMALL;
 	// Position und Dimension	
-	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*4 + MENU_CHOICE_YPLUS;
+	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*2 + MENU_CHOICE_YPLUS;
 	dimx 		= 2000;		dimy 		= MENU_CHOICE_DY;
 	// Aktionen
 	onChgSetOption													= "threatRedDialog";
@@ -199,7 +199,7 @@ INSTANCE MENUITEM_MOD_ENABLE_BLOODSPLATS(C_MENU_ITEM_DEF)
 	text[0]		=	"Krew na ekranie";
 	text[1]		= 	"W³¹cza krew na ekranie podczas otrzymywania obra¿eñ."; // Kommentar
 	// Position und Dimension	
-	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*5;
+	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*3;
 	dimx		=	4000;	dimy		=	750;
 	// Aktionen
 	onSelAction[0]	= SEL_ACTION_UNDEF;
@@ -214,7 +214,7 @@ instance MENUITEM_MOD_ENABLE_BLOODSPLATS_CHOICE(C_MENU_ITEM_DEF)
 	text[0]		= 	"wy³|w³";
 	fontName	=   MENU_FONT_SMALL;
 	// Position und Dimension	
-	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*5 + MENU_CHOICE_YPLUS;
+	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*3 + MENU_CHOICE_YPLUS;
 	dimx 		= 2000;		dimy 		= MENU_CHOICE_DY;
 	// Aktionen
 	onChgSetOption													= "enableBloodSplats";
