@@ -32,9 +32,9 @@ func void Mod_SetGothicIni() {
 		MEM_SetGothOpt("EdycjaRozszerzona", "newLearnPointsWithoutBonuses", "1");
 	};
 
-	if (!Mem_GothOptExists("EdycjaRozszerzona", "scaleWeaponsWithDex")) {
-		MEM_SetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex", "1");
-	};
+	// if (!Mem_GothOptExists("EdycjaRozszerzona", "scaleWeaponsWithDex")) {
+	// 	MEM_SetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex", "1");
+	// };
 
 	if (!Mem_GothOptExists("EdycjaRozszerzona", "disableGuildsGreeting")) {
 		MEM_SetGothOpt("EdycjaRozszerzona", "disableGuildsGreeting", "0");
@@ -48,7 +48,9 @@ func void Mod_SetGothicIni() {
 		MEM_SetGothOpt("EdycjaRozszerzona", "threatRedDialog", "0");
 	};
 
-	
+	if (!Mem_GothOptExists("EdycjaRozszerzona", "randomizePicklockStr")) {
+		MEM_SetGothOpt("EdycjaRozszerzona", "randomizePicklockStr", "1");
+	};
 };
 
 func void Mod_DisableGuildsGreeting() {
@@ -79,6 +81,12 @@ func void Mod_NewDamageSystem() {
 	//if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "scaleWeaponsWithDex"))) {
 	InitDamage();
 	//};
+};
+
+func void Mod_RandomizePicklockStr() {
+	if (Str_ToInt(MEM_GetGothOpt("EdycjaRozszerzona", "randomizePicklockStr"))) {
+		Init_RandomizePicklocks();
+	};
 };
 
 const int _mod_init = 0;
@@ -135,6 +143,7 @@ func VOID INIT_GLOBAL() {
 	// G12_SetPlayerTurnSpeed(castToIntF (0.1));
 
 	Init_XPForPicklocking ();
+	Mod_RandomizePicklockStr();
 };
 
 
@@ -3634,7 +3643,6 @@ FUNC VOID STARTUP_ABANDONEDMINE ()
 	//wa¿ny npc #VIP
 	Wld_InsertNpc		(NON_2094_Glest,"GLEST_VM");
     Wld_InsertNpc		(NON_40168_UndeadGardist,"VM_MAGE"); 
-	Npc_SetPermAttitude(NON_40168_UndeadGardist, ATT_HOSTILE);
 	//-------- Pelzacze --------
 	Wld_InsertNpc		(MinecrawlerWarrior,		"PE1");
 	Wld_InsertNpc		(Minecrawler,		"PE2");

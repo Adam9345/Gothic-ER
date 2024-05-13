@@ -23,9 +23,12 @@ INSTANCE MENU_OPT_MOD(C_MENU_DEF)
 	items[7]		= "MENUITEM_MOD_ENABLE_BLOODSPLATS";
 	items[8]		= "MENUITEM_MOD_ENABLE_BLOODSPLATS_CHOICE";
 
-	items[9]		= "MENUITEM_MOD_BACK";
+	items[9]		= "MENUITEM_MOD_ENABLE_RANDOMIZE_PICKLOCK";
+	items[10]		= "MENUITEM_MOD_ENABLE_RANDOMIZE_PICKLOCK_CHOICE";
+
+	items[11]		= "MENUITEM_MOD_BACK";
 	
-	items[10]       = "MENUITEM_MOD_NOTE";
+	items[12]       = "MENUITEM_MOD_NOTE";
 	
 	flags = flags | MENU_SHOW_INFO;
 };
@@ -218,6 +221,37 @@ instance MENUITEM_MOD_ENABLE_BLOODSPLATS_CHOICE(C_MENU_ITEM_DEF)
 	dimx 		= 2000;		dimy 		= MENU_CHOICE_DY;
 	// Aktionen
 	onChgSetOption													= "enableBloodSplats";
+	onChgSetOptionSection 											= "EDYCJAROZSZERZONA";
+	// Weitere Eigenschaften	
+	flags		= flags & ~IT_SELECTABLE;
+	flags		= flags  | IT_TXT_CENTER | IT_EXTENDED_MENU;
+};
+
+INSTANCE MENUITEM_MOD_ENABLE_RANDOMIZE_PICKLOCK(C_MENU_ITEM_DEF)
+{
+	backpic		=	MENU_ITEM_BACK_PIC;
+	text[0]		=	"Losowanie szyfru";
+	text[1]		= 	"Ustawia losowy szyfr w skrzynkach po ponownym wczytaniu."; // Kommentar
+	// Position und Dimension	
+	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*4;
+	dimx		=	4000;	dimy		=	750;
+	// Aktionen
+	onSelAction[0]	= SEL_ACTION_UNDEF;
+	// Weitere Eigenschaften
+	flags			= flags | IT_EFFECTS_NEXT | IT_EXTENDED_MENU;
+};
+
+instance MENUITEM_MOD_ENABLE_RANDOMIZE_PICKLOCK_CHOICE(C_MENU_ITEM_DEF)
+{
+	backPic		=	MENU_CHOICE_BACK_PIC;
+	type		=	MENU_ITEM_CHOICEBOX;	
+	text[0]		= 	"wy³|w³";
+	fontName	=   MENU_FONT_SMALL;
+	// Position und Dimension	
+	posx		= 5000;		posy		= MENU_START_Y + MENU_DY*4 + MENU_CHOICE_YPLUS;
+	dimx 		= 2000;		dimy 		= MENU_CHOICE_DY;
+	// Aktionen
+	onChgSetOption													= "randomizePicklockStr";
 	onChgSetOptionSection 											= "EDYCJAROZSZERZONA";
 	// Weitere Eigenschaften	
 	flags		= flags & ~IT_SELECTABLE;
