@@ -1628,7 +1628,7 @@ INSTANCE DIA_Quentin_PrzejscieDalej (C_INFO)
 
 FUNC INT DIA_Quentin_PrzejscieDalej_Condition()
 {
-    if (kapitel == 4) //((Npc_KnowsInfo (hero, DIA_Quentin_iFindDoyle)) && (Npc_KnowsInfo (hero, DIA_Quentin_FoundDrax)) )
+    if (kapitel == 4) && ((Npc_KnowsInfo (hero, DIA_Quentin_iFindDoyle)) && (Npc_KnowsInfo (hero, DIA_Quentin_FoundDrax)) )
 	&& (Npc_GetTrueGuild(hero) == GIL_BAU)
     {
     return TRUE;
