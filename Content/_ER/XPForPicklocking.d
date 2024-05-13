@@ -35,7 +35,7 @@ func void oCMobLockablePicklock() {
 
 	if (MEM_ReadInt(STR_ToChar(pickLockChar)) == c) {
 		if (currCharCount >= STR_Len (mob.pickLockStr)) {
-			B_givexp (5 * currCharCount);
+			B_GiveXP (5 * STR_Len (mob.pickLockStr));
 			Prints_Ext("Zamek otworzony", rgba(144, 238, 50, 144));
 
 			currCharCount = 0;
