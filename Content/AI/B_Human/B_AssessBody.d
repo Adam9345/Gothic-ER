@@ -93,6 +93,7 @@ func void ZS_AssessBody_End()
 	&&  (C_NpcIsHuman (self))
 	{  
 		PrintDebugNpc	(PD_ZS_CHECK, "...kein purer Fernkämpfer und kein NSC-Freund!" );
+		AI_TurnToNPC(self,other);
 		AI_PlayAni		(self,	"T_PLUNDER");
 		if (Npc_HasItems(other,itminugget) > 0)
 		{
