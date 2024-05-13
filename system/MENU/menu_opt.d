@@ -8,16 +8,17 @@ INSTANCE MENU_OPTIONS(C_MENU_DEF)
  
 	items[0]	= "MENUITEM_OPT_HEADING";	
 
-	items[1]	= "MENUITEM_OPT_GAME";	
-	items[2]	= "MENUITEM_OPT_GRAPHICS";	
-	items[3]	= "MENUITEM_OPT_VIDEO";
-	items[4]	= "MENUITEM_OPT_AUDIO";	
-	items[5]	= "MENUITEM_OPT_CONTROLS";				
+	items[1]	= "MENUITEM_OPT_MOD";
+	items[2]	= "MENUITEM_OPT_GAME";	
+	items[3]	= "MENUITEM_OPT_GRAPHICS";	
+	items[4]	= "MENUITEM_OPT_VIDEO";
+	items[5]	= "MENUITEM_OPT_AUDIO";	
+	items[6]	= "MENUITEM_OPT_CONTROLS";				
 
-	items[6]	= "MENUITEM_PERF";
-	items[7]	= "MENUITEM_PERF_CHOICE";
+	items[7]	= "MENUITEM_PERF";
+	items[8]	= "MENUITEM_PERF_CHOICE";
 		
-	items[8]	= "MENUITEM_OPT_BACK";	
+	items[9]	= "MENUITEM_OPT_BACK";	
 		
 	defaultOutGame	= 0;	// PERFORMANCE-SETTINGS
 	defaultInGame	= 0;	// PERFORMANCE-SETTINGS	
@@ -39,6 +40,23 @@ INSTANCE MENUITEM_OPT_HEADING(C_MENU_ITEM_DEF)
 	
 	flags		= flags & ~IT_SELECTABLE;
 	flags		= flags | IT_TXT_CENTER;
+};
+
+INSTANCE MENUITEM_OPT_MOD(C_MENU_ITEM_DEF)
+{
+	backpic		= MENU_ITEM_BACK_PIC;
+	text[0]		= "Edycja Rozszerzona";
+	text[1]		= "Ustawienia dotycz¹ce edycji rozszerzonej.";  // Kommentar
+	
+	// Position und Dimension	
+	posx		= 0;		posy		= MENU_OPT_START_Y + MENU_OPT_DY*0 - 500;
+	dimx		= 8192;		dimy		= 750;
+	
+	// Aktionen
+	onSelAction[0]	= SEL_ACTION_STARTMENU;
+	onSelAction_S[0]= "MENU_OPT_MOD";	
+	// Weitere Eigenschaften	
+	flags = flags | IT_TXT_CENTER;
 };
 
 INSTANCE MENUITEM_OPT_GAME(C_MENU_ITEM_DEF)
