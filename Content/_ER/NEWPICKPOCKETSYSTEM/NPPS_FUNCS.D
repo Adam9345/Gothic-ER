@@ -1,156 +1,119 @@
+
+
+var int victimcount;
+var int victimlevel;
+var int thieflevel;
+const int THIEFXP = 20;
+const int THEFTDIFF = 10;
 var int theftdexglob;
-var int theftnuggetglob;
+var int theftgoldglob;
 
-var int countOfSteals;
-
-var int countOfStealsForDex;
-
-var int stealChance;
-
-var int bonusChance;
+const string PICKPOCKET_20 = "(Kradzie¿ tego mieszka bêdzie dziecinnie ³atwa.)";
+const string PICKPOCKET_40 = "(Kradzie¿ tego mieszka bêdzie doœæ prosta.)";
+const string PICKPOCKET_60 = "(Kradzie¿ tego mieszka bêdzie doœæ ryzykowna.)";
+const string PICKPOCKET_80 = "(Kradzie¿ tego mieszka bêdzie trudna.)";
+const string PICKPOCKET_100 = "(Kradzie¿ tego mieszka bêdzie diabelsko trudna.)";
+const string PICKPOCKET_120 = "(Kradzie¿ tego mieszka bêdzie graniczy³a z cudem.)";
 
 func string b_steal_message() {
-		var string steal_chance_msg;
-		steal_chance_msg = "Masz ";
-		steal_chance_msg = ConcatStrings(steal_chance_msg, inttostring(theftdexglob));
-		steal_chance_msg = ConcatStrings(steal_chance_msg, "%");
-		steal_chance_msg = ConcatStrings(steal_chance_msg, " szansy na kradzie¿");
-	
-		print(steal_chance_msg);
+
+        var int finalTheftDexGlob; finalTheftDexGlob = theftdexglob - THEFTDIFF;
+
+        if (finalTheftDexGlob < 0) {
+            finalTheftDexGlob = 0;
+        };
+
+        if (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 2) {
+            prints_ext (cs2("Wymagana zrêcznosæ: ", i2s(finalTheftDexGlob)), COL_White);
+        };
+
+        if (finalTheftDexGlob <= 20) {
+            print (PICKPOCKET_20);
+        } else if (finalTheftDexGlob <= 40) {
+            print (PICKPOCKET_40);
+        } else if (finalTheftDexGlob <= 60) {
+            print (PICKPOCKET_60);
+        } else if (finalTheftDexGlob <= 80) {
+            print (PICKPOCKET_80);
+        } else if (finalTheftDexGlob <= 100) {
+            print (PICKPOCKET_100);
+        } else if (finalTheftDexGlob <= 120) {
+            print (PICKPOCKET_120);
+        };
 };
 
-func void setStealChance(var C_NPC npc) {
+func void b_givethiefxp()
+{
+	VICTIMCOUNT = VICTIMCOUNT + 1;
+	if(VICTIMLEVEL == 0)
+	{
+		VICTIMLEVEL = 2;
+	};
+	if(VICTIMCOUNT >= VICTIMLEVEL)
+	{
+		THIEFLEVEL = THIEFLEVEL + 1;
+		VICTIMLEVEL = VICTIMCOUNT + THIEFLEVEL;
+	};
+	b_givexp(THIEFXP + (THIEFLEVEL * 10));
+};
 
-	var C_NPC her; her = hlp_getnpc(hero);
-
-	if(npc.guild == gil_none) {
-		stealChance = her.attribute[5] / 2;
-    };
-    if(npc.guild == gil_ebr) {
-		stealChance = her.attribute[5] / 6;
-    };
-    if(npc.guild == gil_grd) {
-        stealChance = her.attribute[5] / 4;
-    };
-    if(npc.guild == gil_stt) {
-        stealChance = her.attribute[5] / 3;
-    };
-    if(npc.guild == gil_kdf) {
-        stealChance = her.attribute[5] / 6;
-    };
-    if(npc.guild == gil_vlk) {
-        stealChance = her.attribute[5] / 2;
-    };
-    if(npc.guild == gil_kdw) {
-        stealChance = her.attribute[5] / 6;
-    };
-    if(npc.guild == gil_sld) {
-        stealChance = her.attribute[5] / 5;
-    };
-    if(npc.guild == gil_org) {
-        stealChance = her.attribute[5] / 3;
-    };
-    if(npc.guild == gil_bau) {
-        stealChance = her.attribute[5] / 2;
-    };
-    if(npc.guild == gil_sfb) {
-        stealChance = her.attribute[5] / 2;
-    };
-    if(npc.guild == gil_gur) {
-        stealChance = her.attribute[5] / 6;
-    };
-    if(npc.guild == gil_nov) {
-        stealChance = her.attribute[5] / 3;
-    };
-    if(npc.guild == gil_tpl) {
-        stealChance = her.attribute[5] / 5;
-    };
-    if(npc.guild == gil_dmb) {
-        stealChance = her.attribute[5] / 6;
-    };
-    /*
-    if(npc.guild == gil_bab) {
-        stealChance = her.attribute[5];
-    };
-    */
-	
-	if (stealChance <= 0) {
-		stealChance = 1;
+func void b_resetthieflevel()
+{
+	if(VICTIMCOUNT > THIEFLEVEL)
+	{
+		VICTIMCOUNT = VICTIMCOUNT - 1;
 	};
 };
 
-func void setStealNuggets(var int maxNuggets) {
-	var int randomNuggets; 
-	randomNuggets = r_MinMax(maxNuggets / 2, maxNuggets);
-	
-	theftnuggetglob = randomNuggets;
-};
-
-func int e_beklauen(var int theftdex, var int theftnugget) {
-    if((npc_gettalentskill(other, npc_talent_pickpocket) >= 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == false)) {
-		
-        if(npc_isinstate(self, zs_talk)) {
-			setStealChance(self);
-
-			if (npc_gettalentskill(other, npc_talent_pickpocket) == 1) {
-				theftdexglob = theftdex;
-			} else if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {
-				theftdexglob = theftdex + stealChance + bonusChance;
-			};
-			
-			if (theftdexglob >= 100) {
-				theftdexglob = 100;
-			};
-			
-			setStealNuggets(theftnugget);
-		
-        };
-        return true;
+func int e_beklauen(var int theftdex,var int theftgold)
+{
+    if (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 2) {
+        THEFTDEXGLOB = 20;
     };
+
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) >= 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE))
+	{
+        if(Npc_IsInState(self,zs_talk))
+        {
+            // if(theftdex <= 20)
+            // {
+            //     THEFTDEXGLOB = 10;
+            // }
+            // else
+            // {
+            //     THEFTDEXGLOB = theftdex;
+            // };
+            THEFTDEXGLOB = theftdex;
+            THEFTGOLDGLOB = theftgold;
+        };
+
+        return TRUE;
+	};
 };
 
-func void b_givethiefxp() {
-	b_givexp(thiefxp);
-};
+func void d_beklauen()
+{
 
-func void d_beklauen() {
+	if(other.attribute[ATR_DEXTERITY] >= THEFTDEXGLOB - THEFTDIFF)
+	{
+		b_giveinvitems(self,other,itminugget,THEFTGOLDGLOB);
+		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
+		b_givethiefxp();
+		Snd_Play("Geldbeutel");
+	}
+	else
+	{
+		b_resetthieflevel();
+		AI_StopProcessInfos(self);
 
-	var int randomNumber; randomNumber = r_MinMax(1, 100);
-
-    if(randomNumber <= theftdexglob) {
-		prints_ext("Kradzie¿ udana", col_lime);
-        snd_play("Geldbeutel");
-        b_giveinvitems(self, other, itminugget, theftnuggetglob);
-        self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = true;
-        b_givethiefxp();
-		
-		if (npc_gettalentskill(other, npc_talent_pickpocket) == 2) {
-		
-			countOfSteals += 1;
-			countOfStealsForDex += 1;
-		
-			if (countOfStealsForDex >= 20) {
-				other.attribute[5] = other.attribute[5] + 1;
-				b_raiseattribute(atr_dexterity, 1);
-				countOfStealsForDex = 0;
-			};
-		
-			if (countOfSteals >= 10) {
-				bonusChance += 1;
-				PrintScreen("Szansa kradzie¿y wzros³a",-1,20,"font_old_20_white.tga",4);
-				countOfSteals = 0;
-			};
-		};
-    }
-    else {
-		prints_ext("Kradzie¿ siê nie powiod³a", col_red);
+        prints_ext("Kradzie¿ siê nie powiod³a", col_red);
 
 		
         ai_stopprocessinfos(self);
 		B_Say(self,other,"$DIRTYTHIEF");
-	
-		Npc_SetTarget(self,other);
-	
-		AI_StartState(self,ZS_Attack,0,"");
-    };
+
+        Npc_SetTarget(self,other);
+
+        AI_StartState(self,ZS_Attack,0,"");
+	};
 };

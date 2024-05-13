@@ -1,38 +1,34 @@
-const int theftdiff = 10;
 
-const int thiefxp = 10;
 
-const int baseThfChanceVLK = 40;
+const int baseThfChanceVLK = 20;
 
-const int baseThfChanceSFB = 40;
+const int baseThfChanceSFB = 20;
 
-const int baseThfChanceBAU = 40;
+const int baseThfChanceBAU = 25;
 
-const int baseThfChanceSTT = 35;
+const int baseThfChanceSTT = 45;
 
-const int baseThfChanceNOV = 30;
+const int baseThfChanceNOV = 50;
 
-const int baseThfChanceORG = 35;
+const int baseThfChanceORG = 45;
 
-const int baseThfChanceSLD = 25;
+const int baseThfChanceSLD = 60;
 
-const int baseThfChanceTPL = 20;
+const int baseThfChanceTPL = 65;
 
-const int baseThfChanceGRD = 20;
+const int baseThfChanceGRD = 70;
 
-const int baseThfChanceKDF = 10;
+const int baseThfChanceKDF = 70;
 
-const int baseThfChanceKDW = 10;
+const int baseThfChanceKDW = 75;
 
-const int baseThfChanceGUR = 10;
+const int baseThfChanceGUR = 90;
 
-const int baseThfChanceEBR = 10;
+const int baseThfChanceEBR = 85;
 
-const int baseThfChanceDMB = 5;
+const int baseThfChanceDMB = 120;
 
-const int baseThfChanceNON = 45;
-
-const int baseThfChanceBAB = 45;
+const int baseThfChanceNON = 20;
 
 const string pickpocket_final = "(Dokonaj kradzie¿y kieszonkowej)";
 

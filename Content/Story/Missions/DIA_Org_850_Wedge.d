@@ -973,7 +973,7 @@ instance dia_wedge_pickpocket(c_info) {
 };
 
 func int dia_wedge_pickpocket_condition() {
-	e_beklauen(10, 30);
+	e_beklauen(80, 20);
 };
 
 func void dia_wedge_pickpocket_info() {
