@@ -80,7 +80,7 @@ PrintDebugNpc			(PD_ZS_FRAME, "B_AssessEnemy" );
 		
 			//-------- Also doch ein ganz ordinärer Feind! --------
 			B_FullStop			(self);
-			if (C_NpcIsOrc(self)) {
+			if (C_NpcIsOrc(self) && self.guild != GIL_ORCSHAMAN) {
 				AI_StartState 		(self, 	ZS_Orc_Attack,	0,	"");
 			} else {
 				AI_StartState 		(self, 	ZS_AssessEnemy,	0,	"");
