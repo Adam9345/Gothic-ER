@@ -1281,27 +1281,7 @@ FUNC INT Info_Saturas_XARDAS_Condition()
 		{
 			return TRUE;
 		};
-
-/*												
-		if 		(oldHeroGuild==GIL_GRD)
-		{
-			if (Npc_GetTrueGuild(hero)==GIL_SLD)
-			{
-				return TRUE;
-			};
-		}
-		else if (oldHeroGuild==GIL_KDF)
-		{
-			if (Npc_GetTrueGuild(hero)==GIL_KDW)
-			{
-				return TRUE;
-			};
-		}
-		else
-		{
-			return TRUE;
-		}; 											<***Björn***
-*/												
+	
 
 	};	
 };
@@ -1545,10 +1525,7 @@ func void KDW_600_Saturas_TIMESUP_JA1()
 {
 	AI_Output			(other, self,"KDW_600_Saturas_TIMESUP_Info_15_01"); //No wiesz...
 	AI_Output			(self, other,"KDW_600_Saturas_TIMESUP_Info_14_02"); //Wiesz? CO WIESZ?
-	//AI_Output			(other, self,"KDW_600_Saturas_TIMESUP_Info_15_03"); //Äh ... noch nicht ... ich bin aber schon unterwegs ...
-	//AI_Output			(self, other,"KDW_600_Saturas_TIMESUP_Info_14_04"); //Beeile dich, wir dürfen keine Zeit mehr verlieren!
-	//B_Story_CancelFindXardas();
-	//AI_StopProcessInfos(self);
+	
 };
 func void KDW_600_Saturas_TIMESUP_JA2()
 {
@@ -1569,48 +1546,6 @@ func void KDW_600_Saturas_TIMESUP_JA3()
 	AI_StopProcessInfos	(self);
 };
 
-
-
-
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////// SLD zu Magier		//////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
-// ****************************************
-// 			Aufnahme eines Sld 
-// ****************************************
-/*
-instance KDW_600_Saturas_HogeAUFNAHME (C_INFO)
-{
-	npc				= KDW_600_Saturas;
-	nr				= 10;
-	condition		= KDW_600_Saturas_HogeAUFNAHME_Condition;
-	information		= KDW_600_Saturas_HogeAUFNAHME_Info;
-	permanent		= 0;
-	description		= "Nefarius powiedzia³, ¿e mogê ju¿ za³o¿yæ szatê Maga Wody."; 
-};
-
-FUNC int  KDW_600_Saturas_HogeAUFNAHME_Condition()
-{	
-	if ( Npc_KnowsInfo(hero,Info_Saturas_MURDER) && (Npc_GetTrueGuild(hero)==GIL_SLD) )
-	{
-		return 1;
-	};
-};
-
-func void  KDW_600_Saturas_HogeAUFNAHME_Info()
-{
-	AI_Output(other, self,"KDW_600_Saturas_HogeAUFNAHME_15_00"); //Nefarius powiedzia³, ¿e mogê ju¿ za³o¿yæ szatê Maga Wody.
-	
-	
-	
-	AI_Output(self, other,"KDW_600_Saturas_NOMOREOC_Info_14_03"); //Zatem witaj w naszej spo³ecznoœci!
-	AI_Output(other, self,"KDW_600_Saturas_OATH_Info_15_01"); //Czy to oznacza, ¿e nale¿ê teraz do krêgu Magów Wody?
-	AI_Output(self, other,"KDW_600_Saturas_OATH_Info_14_02"); //Jeszcze nie. Najpierw musisz z³o¿yæ œluby Wody. 
-};
-	
 // ****************************************
 // 			Aufnahme eines Sld - Teil 2
 // ****************************************
@@ -1684,14 +1619,12 @@ FUNC INT DIA_Saturas_GRATULACJE_Z_KOPALNIA_Condition()
     return TRUE;
     };
 };
-
-
 FUNC VOID DIA_Saturas_GRATULACJE_Z_KOPALNIA_Info()
 {
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_01"); //S³ysza³em, ¿e wznowiliœcie wydobycie w Opuszczonej Kopalni.
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_02"); //Dobra robota. Ka¿de Ÿród³o rudy nam siê przyda. 
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_03"); //WeŸ tê skromn¹ czêœæ naszego urobku w nagrodê.
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
     AI_StopProcessInfos	(self);
 };
