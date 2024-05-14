@@ -14,6 +14,9 @@ func void ZS_Unconscious ()
 		B_FullStop(self);
 		Npc_ChangeAttribute	(self, ATR_HITPOINTS, -self.attribute[ATR_HITPOINTS_MAX]);
 		AI_StartState (self, ZS_Dead, 0, "");
+		if ((Npc_IsPlayer (other) || other.aivar[AIV_PARTYMEMBER]) && !Npc_IsPlayer(self)) {
+			B_GiveXP(self.level * 10);
+		};
 		//B_KillNPC(self);
 		return;
 	};
