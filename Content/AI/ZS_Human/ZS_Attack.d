@@ -249,6 +249,9 @@ func void ZS_Attack_End()
 		if (self.fight_tactic != FAI_HUMAN_RANGED)
 		{
 			PrintDebugNpc	(PD_ZS_CHECK,	"...Plünderbedingungen erüllt!");
+			B_FullStop (self);
+			AI_Wait (self, 1);
+			AI_RemoveWeapon (self);
 			AI_StartState	(self, ZS_AssessBody, 1, "");
 			return;
 		};

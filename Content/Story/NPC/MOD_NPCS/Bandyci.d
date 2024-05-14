@@ -15,7 +15,7 @@ instance NON_3045_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -62,7 +62,7 @@ instance NON_3031_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -110,7 +110,7 @@ instance NON_3037_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -210,7 +210,7 @@ instance NON_3044_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -309,7 +309,7 @@ instance NON_3038_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -358,7 +358,7 @@ instance NON_3040_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -407,7 +407,7 @@ instance NON_3042_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;
@@ -456,7 +456,7 @@ instance NON_3030_Bandyta (Npc_Default)
 
 //----------Info ogolne----------
 
-name = NAME_Raeuber;
+name = NAME_Buddler;
 Npctype = npctype_ambient;
 guild = GIL_BAU;
 level = 30;

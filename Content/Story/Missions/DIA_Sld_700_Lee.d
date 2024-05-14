@@ -1701,7 +1701,7 @@ instance dia_lee_pickpocket(c_info) {
 };
 
 func int dia_lee_pickpocket_condition() {
-	e_beklauen(10, 50);
+	e_beklauen(80, 40);
 };
 
 func void dia_lee_pickpocket_info() {

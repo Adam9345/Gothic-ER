@@ -57,6 +57,6 @@ TA_SitAround	(17,30,09,00,"PSI_34_HUT_IN");
 
 FUNC VOID Rtn_flee_3927 ()
 {
-TA_STAY (11,00,18,00,"");
-TA_STAY (18,00,11,00,"");
+TA_Position (06,00,18,22,"WP_KRZYKACZ_CH4");
+TA_Position (18,22,06,00,"WP_KRZYKACZ_CH4");
 };

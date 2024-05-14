@@ -10,6 +10,7 @@ Menu\Menu_Opt_Game_GFA.d
 menu\menu_main.d
 menu\menu_opt.d
 menu\menu_opt_game.d
+menu\menu_opt_mod.d
 menu\menu_opt_graphics.d
 menu\menu_opt_video.d
 menu\menu_opt_audio.d

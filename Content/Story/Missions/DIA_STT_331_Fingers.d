@@ -533,7 +533,7 @@ instance dia_fingers_pickpocket(c_info) {
 };
 
 func int dia_fingers_pickpocket_condition() {
-	e_beklauen(5, 45);
+	e_beklauen(100, 45);
 };
 
 func void dia_fingers_pickpocket_info() {

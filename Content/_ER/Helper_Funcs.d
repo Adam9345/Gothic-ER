@@ -104,3 +104,18 @@ func int setRequiredItemAmount(var int item) {
         return 1;
     };
 };
+
+func void RemoveNPC (var int npcInstance, var string rtn) {
+    var C_NPC npc;
+	npc = Hlp_GetNpc(npcInstance);
+
+	if (Hlp_IsValidNpc (npc))
+	&& (!Npc_IsDead (npc))
+	{
+		npc.flags = 0;
+		AI_Teleport (npc,"WP_KRZYKACZ_CH4");
+		Npc_ExchangeRoutine (npc,rtn);
+		AI_Teleport (npc,"WP_KRZYKACZ_CH4");
+		Npc_ChangeAttribute (npc, ATR_HITPOINTS, -npc.attribute[ATR_HITPOINTS_MAX]);
+	};
+};

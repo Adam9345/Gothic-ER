@@ -6,7 +6,7 @@ const int	XP_PER_LEVEL_DEAD			= 10;	// Erfahrungspunkte für das Töten eines Gegn
 
 func void B_GiveXP (var int add_xp)
 {
-	PrintDebugNpc	(PD_ZS_FRAME,	"B_GiveXP");
+	//PrintDebugNpc	(PD_ZS_FRAME,	"B_GiveXP");
 
 	if (hero.level == 0)
 	{

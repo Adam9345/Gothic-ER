@@ -469,7 +469,8 @@ FUNC INT DIA_Jens_BuyHeavyArmor_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Jens_HeavyArmor))
     {
-    return TRUE;
+        var int AFIP_ShowItem; AFIP_ShowItem = BAU_ARMOR_H;
+        return TRUE;
     };
 };
 

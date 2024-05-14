@@ -77,6 +77,8 @@ func void ZS_AssessBody_End()
 {
 	PrintDebugNpc		(PD_ZS_FRAME,	"ZS_AssessBody_End");
 
+	var int x;
+
 	//-------- Körper bereits geplündert? --------
 	// Wiederholung der Abfrage aus der ZS_AssessBody[_Begin], da der
 	// Körper vorhin noch nicht, jetzt aber schon geplündert sein könnte
@@ -91,9 +93,19 @@ func void ZS_AssessBody_End()
 	&&  (C_NpcIsHuman (self))
 	{  
 		PrintDebugNpc	(PD_ZS_CHECK, "...kein purer Fernkämpfer und kein NSC-Freund!" );
+		AI_TurnToNPC(self,other);
 		AI_PlayAni		(self,	"T_PLUNDER");
-		if (B_Plunder())
+		if (Npc_HasItems(other,itminugget) > 0)
 		{
+			x = Npc_HasItems(other,itminugget);
+
+			var int randX; randX = r_MinMax(1, x / 2);
+
+			if (randX <= 1) {
+				randX = 1;
+			};
+
+			B_GiveInvItems (other, self, itminugget, randX);
 			B_Say		(self,	other, "$ITookYourOre");
 		}
 		else
