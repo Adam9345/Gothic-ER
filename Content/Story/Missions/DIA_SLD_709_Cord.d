@@ -21,37 +21,6 @@ FUNC VOID DIA_SLD_709_Cord_Exit_Info()
 	AI_StopProcessInfos	( self );
 };
 
-//========================================
-//-----------------> SZKODNICY
-//========================================
-
-INSTANCE DIA_Cord_SZKODNICY (C_INFO)
-{
-   npc          = SLD_709_Cord;
-   nr           = 1;
-   condition    = DIA_Cord_SZKODNICY_Condition;
-   information  = DIA_Cord_SZKODNICY_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Cord_SZKODNICY_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Cronos_KRADZIEZ)) && (MIS_CronosArtifacts == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Cord_SZKODNICY_Info()
-{
-    AI_Output (self, other ,"DIA_Cord_SZKODNICY_03_01"); //Hej! Podobno pomagasz Cronosowi w poszukiwaniach Szkodników. Bardzo dobrze.
-    AI_Output (self, other ,"DIA_Cord_SZKODNICY_03_02"); //Mogê ci daæ wskazówkê: widzia³em dwóch Szkodników na polanie. Myœlê, ¿e rozbili tam obóz. 
-    AI_Output (other, self ,"DIA_Cord_SZKODNICY_15_03"); //Dziêki. Rozpocznê tam swoje poszukiwania.
-    B_LogEntry                     (CH1_MagicySzkodnicy,"Cord widzia³ dwóch Szkodników na polanie nad Nowym Obozem. Powinienem tam poszukaæ.");
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> ZAJECIE
