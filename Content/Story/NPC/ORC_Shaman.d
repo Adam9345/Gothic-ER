@@ -32,7 +32,7 @@ instance ORC_2200_Shaman (Mst_Default_OrcShaman)
 	B_Scale (self);
 	Mdl_SetModelFatness(self,0);
 	
-	fight_tactic	=	FAI_HUMAN_MAGE;
+	fight_tactic	=	FAI_HUMAN_STRONG;
 
 	//-------- Talente --------
 	Npc_SetTalentSkill		( self, NPC_TALENT_MAGE,		6);
