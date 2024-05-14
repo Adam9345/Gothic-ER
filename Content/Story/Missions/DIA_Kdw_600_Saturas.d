@@ -1525,7 +1525,10 @@ func void KDW_600_Saturas_TIMESUP_JA1()
 {
 	AI_Output			(other, self,"KDW_600_Saturas_TIMESUP_Info_15_01"); //No wiesz...
 	AI_Output			(self, other,"KDW_600_Saturas_TIMESUP_Info_14_02"); //Wiesz? CO WIESZ?
-	
+	//AI_Output			(other, self,"KDW_600_Saturas_TIMESUP_Info_15_03"); //Äh ... noch nicht ... ich bin aber schon unterwegs ...
+	//AI_Output			(self, other,"KDW_600_Saturas_TIMESUP_Info_14_04"); //Beeile dich, wir dürfen keine Zeit mehr verlieren!
+	//B_Story_CancelFindXardas();
+	//AI_StopProcessInfos(self);
 };
 func void KDW_600_Saturas_TIMESUP_JA2()
 {
@@ -1545,64 +1548,6 @@ func void KDW_600_Saturas_TIMESUP_JA3()
 	B_Story_CancelFindXardas();
 	AI_StopProcessInfos	(self);
 };
-
-
-
-
-
-	
-// ****************************************
-// 			Aufnahme eines Sld - Teil 2
-// ****************************************
-instance KDW_600_Saturas_HogeAUFNAHMETeil2 (C_INFO)
-{
-	npc				= KDW_600_Saturas;
-	nr				= 10;
-	condition		= KDW_600_Saturas_HogeAUFNAHMETeil2_Condition;
-	information		= KDW_600_Saturas_HogeAUFNAHMETeil2_Info;
-	permanent		= 0;
-	description		= "Jestem gotów do z³o¿enia œlubów."; 
-};
-
-FUNC int  KDW_600_Saturas_HogeAUFNAHMETeil2_Condition()
-{	
-	if ( (Npc_KnowsInfo(hero,KDW_600_Saturas_HogeAUFNAHME)) && (Npc_GetTrueGuild(hero)==GIL_SLD) )
-	{
-		return 1;
-	};
-};
-
-func void  KDW_600_Saturas_HogeAUFNAHMETeil2_Info()
-{
-	AI_GotoNpc 			(hero,self);
-	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_01"); //Jestem gotów do z³o¿enia œlubów.
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_03"); //Powtarzaj za mn¹ s³owa przysiêgi:
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_04"); //Przysiêgam, na wszechmocnych bogów...
-	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_05"); //Przysiêgam, na wszechmocnych bogów...
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_06"); //...Przysiêgam, na potêgê œwiêtej Wody...
-	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_07"); //...Przysiêgam, na potêgê œwiêtej Wody...
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_08"); //...¯e ma wiedza i me czyny teraz i na wieki stanowiæ bêd¹ jednoœæ z Wod¹...
-	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_09"); //...¯e ma wiedza i me czyny teraz i na wieki stanowiæ bêd¹ jednoœæ z Wod¹...
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_10"); //...Dopóki me cia³o nie powróci do królestwa Beliara, gdy Ÿród³o mego ¿ycia wyschnie.
-	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_11"); //...Dopóki me cia³o nie powróci do królestwa Beliara, gdy Ÿród³o mego ¿ycia wyschnie.
-	
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_14"); //Noœ tê szatê, jako symbol twojego przymierza ze œwiêt¹ Wod¹ i wszechmocnym Adanosem.
-	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_15"); //Po kostur zg³oœ siê do Nefariusa. 
-
-	CreateInvItem		(self,KDW_ARMOR_L);
-	B_GiveInvItems		(self,other,KDW_ARMOR_L,1);
-	AI_EquipBestArmor	(hero);
-	Snd_Play  			("MFX_Heal_Cast"); 
-	Npc_SetTrueGuild	(hero,GIL_KDW);
-	hero.guild = GIL_KDW;
-	//HeroJoinToNC ();
-	Log_CreateTopic		(CH4_SldToKdW,	LOG_NOTE);
-	B_LogEntry			(CH4_SldToKdW,	"Saturas przyj¹³ mnie w poczet Magów Wody.");
-
-	B_LogEntry			(GE_BecomeWatermage,"Cronos nareszcie przyj¹³ mnie w poczet Magów Wody. ");	 
-	AI_StopProcessInfos	(self);
-};
-*/
 //========================================
 //-----------------> GRATULACJE_Z_KOPALNIA
 //========================================
@@ -1631,7 +1576,7 @@ FUNC VOID DIA_Saturas_GRATULACJE_Z_KOPALNIA_Info()
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_01"); //S³ysza³em, ¿e wznowiliœcie wydobycie w Opuszczonej Kopalni.
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_02"); //Dobra robota. Ka¿de Ÿród³o rudy nam siê przyda. 
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_03"); //WeŸ tê skromn¹ czêœæ naszego urobku w nagrodê.
-    CreateInvItems (self, ItMiNugget, 100);
-    B_GiveInvItems (self, other, ItMiNugget, 100);
+    CreateInvItems (self, ItMiNugget, 300);
+    B_GiveInvItems (self, other, ItMiNugget, 300);
     AI_StopProcessInfos	(self);
 };
