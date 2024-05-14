@@ -1546,6 +1546,11 @@ func void KDW_600_Saturas_TIMESUP_JA3()
 	AI_StopProcessInfos	(self);
 };
 
+
+
+
+
+	
 // ****************************************
 // 			Aufnahme eines Sld - Teil 2
 // ****************************************
@@ -1619,6 +1624,8 @@ FUNC INT DIA_Saturas_GRATULACJE_Z_KOPALNIA_Condition()
     return TRUE;
     };
 };
+
+
 FUNC VOID DIA_Saturas_GRATULACJE_Z_KOPALNIA_Info()
 {
     AI_Output (self, other ,"DIA_Saturas_GRATULACJE_Z_KOPALNIA_03_01"); //S³ysza³em, ¿e wznowiliœcie wydobycie w Opuszczonej Kopalni.
