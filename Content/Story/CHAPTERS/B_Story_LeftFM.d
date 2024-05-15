@@ -26,6 +26,7 @@ func void B_Story_LeftFM()
 	//-------- Ur-Shak vor Orkstadt schicken --------
 	var C_NPC urshak;
 	urshak = Hlp_GetNpc(ORC_2200_Shaman);
+	urshak.fight_tactic	=	FAI_HUMAN_MAGE;
 	Npc_ExchangeRoutine(urshak, "LeftFM");
 
 	//-------- globale Variable setzen --------
