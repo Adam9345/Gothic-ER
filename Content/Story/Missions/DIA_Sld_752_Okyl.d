@@ -464,6 +464,11 @@ FUNC VOID DIA_OKYL_Lie_Info()
         B_GiveInvItems (self, other, ItMiNugget, 30);
         AI_StopProcessInfos	(self);
     };
+
+	MIS_AwansJakoKret = LOG_FAILED;
+
+    Log_SetTopicStatus       (CH1_AwansJakoKret, LOG_FAILED);
+    B_LogEntry               (CH1_AwansJakoKret,"Przysta³em na propozycjê Flinta, wiêc do³¹czenie do Szkodników sta³o siê niemo¿liwe");
 };
 
 //========================================
