@@ -3,7 +3,7 @@ instance TPL_1451_Templer (Npc_Default)
 	//-------- primary data --------
 	name 	=	NAME_MadTemplar2;
 	npctype =	NPCTYPE_GUARD;
-	guild 	=	GIL_UNDEADORC;//dawniej gil_gur, ale teraz guru mo¿e byæ player
+	guild 	=	GIL_BDT;//dawniej gil_gur, ale teraz guru mo¿e byæ player
 	level 	=	100;
 	
 	voice 	=	8;
@@ -30,7 +30,7 @@ instance TPL_1451_Templer (Npc_Default)
 	Mdl_SetVisual		(self,"HUMANS.MDS");
 	Mdl_ApplyOverlayMds	(self,"Humans_Mage.mds");
 	//			body mesh     ,bdytex,skin,head mesh     ,headtex,teethtex,ruestung	
-	Mdl_SetVisualBody (self,"hum_body_Naked0", 1, 1 ,"Hum_Head_Bald", 117,  2, TPL_ARMOR_M);
+	Mdl_SetVisualBody (self,"hum_body_Naked0", 1, 1 ,"Hum_Head_Bald", 117,  2, DarkTempler_Armor_H);
 
 	B_Scale (self);
 	Mdl_SetModelFatness(self,1);
