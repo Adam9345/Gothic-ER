@@ -149,7 +149,9 @@ func int ZS_Attack_Loop()
 	{
 		if (self.guild == GIL_ORCSHAMAN) {
 			if (Npc_GetStateTime(self) > 1) {
-				AI_Attack (self);
+				if (Npc_GetPermAttitude (self, other) == ATT_HOSTILE) {
+					AI_Attack (self);
+				};
 			};
 		} else {
 			AI_Attack			(self);

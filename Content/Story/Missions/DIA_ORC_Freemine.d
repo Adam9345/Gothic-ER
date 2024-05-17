@@ -590,7 +590,7 @@ FUNC VOID Info_FreemineOrc_TROLL2_Info()
 	AI_Output			(self, hero,"Info_FreemineOrc_TROLL2_17_03"); //Obcy szukaæ w górach na pó³noc. Ale uwa¿aæ na trolla ³apy!
 	AI_Output			(self, hero,"Info_FreemineOrc_TROLL2_17_04"); //Troll waln¹æ - Obcy spaœæ w dó³!
 
-	B_LogEntry			(CH4_UluMulu,	"Aby sporz¹dziæ Ulu-Mulu, Tarrok potrzebuje k³ów trolla. Te potê¿ne stworzy zamieszkuj¹ górzyste tereny w pó³nocnej czêœci Kolonii.");
+	B_LogEntry			(CH4_UluMulu,	"Aby sporz¹dziæ Ulu-Mulu, Tarrok potrzebuje k³ów trolla. Te potê¿ne stwory zamieszkuj¹ górzyste tereny w pó³nocnej czêœci Kolonii.");
 };
 
 //---------------------------------------------------------------------
