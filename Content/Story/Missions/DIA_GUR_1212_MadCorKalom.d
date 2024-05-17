@@ -11,7 +11,9 @@ instance  GUR_1212_MadCorKalom_Talk2SC (C_INFO)
 
 FUNC int  GUR_1212_MadCorKalom_Talk2SC_Condition()
 {
-	return TRUE;
+	if (Npc_GetDistToNpc (self, other) < 1000) {
+		return TRUE;
+	};
 };
 
 FUNC void GUR_1212_MadCorKalom_Talk2SC_Info ()
@@ -83,4 +85,13 @@ FUNC void GUR_1212_MadCorKalom_Talk2SC_Info ()
     //Sleeper.guild = GIL_GRD;
 	B_ChangeGuild   		 (Sleeper,GIL_BDT); 
 
+	AI_Function (hero, SetSleeperAttack);
+};
+
+func void SetSleeperAttack () {
+	FF_ApplyOnceExtGT (DelaySleeperAttack, 5000, 1);
+};
+
+func void DelaySleeperAttack () {
+	SLF_FIRE = TRUE;
 };
