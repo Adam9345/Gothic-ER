@@ -415,6 +415,7 @@ FUNC VOID DIA_Arnold_I_SEE_BEAR_Info()
     AI_Output (other, self ,"DIA_Arnold_I_SEE_BEAR_15_05"); //Dobra spróbuje sprowokowaæ pierwszego. 
     AI_Output (self, other ,"DIA_Arnold_I_SEE_BEAR_03_06"); //Jak tylko padnie za³atwimy drugiego do pary. 
     AI_Output (other, self ,"DIA_Arnold_I_SEE_BEAR_15_07"); //W porz¹dku.
+	self.aivar[AIV_PARTYMEMBER] = true;
 	 Npc_ExchangeRoutine(NON_40034_Arnold,"BearsAttack");
 	 B_LogEntry               (NiedzwiedziaPrzysluga," Dotarliœmy na miejsce. Zamiast jednego niedŸwiedzia s¹ dwie sztuki. Nasz niedŸwiedŸ chyba za³atwi³ sobie partnerkê i bilet na tamten œwiat. Pytanie czy dla nas czy dla siebie. Pora mo¿liwie pojedynczo upolowaæ te wielkie zwierzêta i oskurowaæ. Nie bêdzie ³atwo ale damy radê. Dwa niedŸwiedzie zostan¹ upolowane. Bêdê musia³ z odpowiedni¹ precyzj¹ œci¹gn¹æ z nich futra. W koñcu chce to sprzedaæ w dobrej cenie.");
 };
@@ -460,6 +461,7 @@ FUNC VOID DIA_Arnold_Bears_Are_Die_Info()
     AI_Output (self, other ,"DIA_Arnold_Bears_Are_Die_03_12"); //Dziêki za pomoc.
     AI_Output (other, self ,"DIA_Arnold_Bears_Are_Die_15_13"); //Polecam siê na przysz³oœæ.
 	Npc_ExchangeRoutine(NON_40034_Arnold,"start");
+	self.aivar[AIV_PARTYMEMBER] = false;
 	B_LogEntry               (NiedzwiedziaPrzysluga,"Po polowaniu rozmówi³em siê z Arnoldem. Zgodnie z logik¹ ka¿dy zgarn¹³ jedn¹ skórê dla siebie. Usatyskacjonowany ³owami myœliwy poleci³ mi bym sprzeda³ j¹ Gavilanowi w Kotle pod Woln¹ Kopalni¹. Ponoæ mo¿na przyzwoicie zarobiæ.");
     AI_StopProcessInfos	(self);
 };
