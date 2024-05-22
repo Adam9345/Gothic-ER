@@ -2833,6 +2833,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc				(SkeletonWarrior,"WP_JO_SKE_01");
     Wld_InsertNpc				(SkeletonWarrior,"WP_JO_SKE_04");
 	
+	Wld_InsertNpc				(MinecrawlerWarrior,"WP_ADD_28");
 	Wld_InsertNpc				(Minecrawler,"WP_ADD_28");
     Wld_InsertNpc				(Minecrawler,"WP_ADD_27");
 	//////////////////////////////////////////////////////////////////////////////////////////////////
