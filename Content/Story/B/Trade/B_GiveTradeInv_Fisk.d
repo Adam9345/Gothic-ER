@@ -21,6 +21,7 @@ func void B_Give_FiskChapter1Weapons ()
 	CreateInvItem (npc,ItMw_2H_Axe_Big_01);
 	CreateInvItem (npc,ItMw_2H_Sword_Old_02);
 	CreateInvItem (npc,ItMw_2H_Axe_Big_03);
+	CreateInvItem (npc,ItMw_2H_Axe_Big_04);
 	CreateInvItem (npc,ItMw_2H_Sword_New_01);
 	
 	CreateInvItem (npc,ItMw_Dagger);
@@ -38,17 +39,19 @@ func void B_Give_FiskChapter2Weapons ()
 	npc = Hlp_GetNpc(Stt_311_Fisk);
 	
 	//-------- Nahkampfwaffen --------
-	CreateInvItems	(self, ItKeLockpick,20);
+	CreateInvItems(self, ItKeLockpick,20);
 	CreateInvItem (npc,ItMw_1H_Sword_01);
 	CreateInvItem (npc,ItMw_1H_Sword_02);
 	CreateInvItem (npc,ItMw_1H_Sword_03);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
-	CreateInvItems (npc,ItMiNugget,170); 
-	
+	CreateInvItems(npc,ItMiNugget,170); 
+	CreateInvItem (npc,	ItMw_2H_Sword_New_02); 
 	//2h er lekkie 1.4.5.v7
-	CreateInvItem (npc,ItMw_2H_Axe_Big_04);
+	
 	CreateInvItem (npc,ItMw_2H_Sword_New_02);
+	CreateInvItem (npc,ItMw_2H_Axe_Big_05);
+	CreateInvItem (npc,ItMw_2h_Axe_Lumber_01);
 	
 	
 	//-------- Fernkampfwaffen --------
@@ -76,7 +79,7 @@ func void B_Give_FiskChapter3Weapons ()
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_01);
 	//er 1.4.5 v7 ch3
-	CreateInvItem	(npc,	ItMw_2H_Sword_New_02); 
+	
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
 	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
 	
