@@ -791,7 +791,7 @@ func void UsePerrickWR ()
 
 INSTANCE ItMi_BLA_ZWOJ (C_Item)
 {
-	name 				=	"Klinga Innosa";
+	name 				=	"Klinga Ognia";	
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MISSION;
