@@ -527,8 +527,7 @@ FUNC VOID DIA_Grim_Zjawa_Info()
     AI_Output (self, other ,"DIA_Grim_Zjawa_03_13"); //Ach bym bym by³ zapomnia³... WeŸ ten cholerny medalion, mo¿e do czegoœ siê przyda... 
 	CreateInvItem (self, ItMi_Zjawa_Amulet);
 	B_GiveInvItems (self,other, ItMi_Zjawa_Amulet, 1);
-    AI_Output (other, self ,"DIA_Grim_Zjawa_15_14"); //Dobra... ja ju¿ pójdê...
-    AI_Output (self, other ,"DIA_Grim_Zjawa_03_15"); //Powodzenia i obyœcie pozbyli siê tego cholerstwa!
+    AI_Output (self, other ,"DIA_Grim_Zjawa_03_14"); //Powodzenia i obyœcie pozbyli siê tego cholerstwa!
 	B_LogEntry               (Zjawa,"Grim jest odpowiedzialny za ca³y zamêt zwi¹zany ze zjaw¹. Zabra³ on jakiœ medalion z grobu le¿¹cego nieopodal obozu. Muszê siê rozmówiæ z Miltenem.");
     AI_StopProcessInfos	(self);
 };
@@ -704,7 +703,7 @@ FUNC VOID DIA_Grim_HELLO_IM_STT_Info()
     AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_01"); //Co tam u ciebie s³ychaæ?
     AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_02"); //Sporo siê dzieje. Próbuje siê w tym odnaleŸæ.
     AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_03"); //Ale widzê, ¿e i ty nie pró¿nujesz.
-    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_04"); //Tak. Wreszcie uda³o mi siê zaskarbiæ sobie na tyle powa¿ania tutejszych , ¿e Diego zgodzi³ siê mnie przyj¹æ.
+    AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_04"); //Tak. Wreszcie uda³o mi siê zaskarbiæ sobie na tyle powa¿ania tutejszych, ¿e Diego zgodzi³ siê mnie przyj¹æ.
     AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_05"); //Gratuluje.
     AI_Output (self, other ,"DIA_Grim_HELLO_IM_STT_03_06"); //Wreszcie nie bêdê czu³ siê tutaj obco. No i mo¿e co nieco zarobiê.
     AI_Output (other, self ,"DIA_Grim_HELLO_IM_STT_15_07"); //Zatem masz perspektywy na dalszy rozwój. Chcia³byœ kiedyœ zostaæ Stra¿nikiem?

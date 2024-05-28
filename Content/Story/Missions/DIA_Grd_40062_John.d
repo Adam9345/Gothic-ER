@@ -208,9 +208,15 @@ FUNC VOID DIA_John_Blachostka_END_Info()
     AI_Output (self, other ,"DIA_John_Blachostka_END_03_06"); //Ale wiedz, ¿e trzymam z nimi. A nawet z najwiêkszym z nich.
     AI_Output (other, self ,"DIA_John_Blachostka_END_15_07"); //Chodzi ci o Gomeza?
     AI_Output (self, other ,"DIA_John_Blachostka_END_03_08"); //No w³aœnie. To najpotê¿niejszy cz³owiek w Kolonii. A ci, którzy z nim trzymaj¹ s¹ tutaj wa¿nymi osobami.
+	if (Npc_GetTrueGuild(hero) == GIL_NONE)
+	{
     AI_Output (self, other ,"DIA_John_Blachostka_END_03_09"); //No i chyba zrazi³em kogoœ do Starego Obozu haha... Ale wiedz, ¿e warto byæ jednym z nas. Wtedy ¿aden Najemnik, Bandyta czy æpun z Sekty ci nie podskoczy.
+	}
+	
+	
     AI_Output (other, self ,"DIA_John_Blachostka_END_15_10"); //Nikomu ani s³owa, o tym ¿e ci pomog³em.
     AI_Output (self,other  ,"DIA_John_Blachostka_END_03_11"); //Dobrze. Zas³u¿y³eœ na tê przys³ugê.
+	
     B_LogEntry               (Blachostka,"Ten sukinsyn John po prostu mnie wyœmia³. Przyzna³ siê bezczelnie do tego co zrobi³ ale obieca³, ¿e nie wyjawi nikomu faktu o moim udziale w tym spisku. Nie bardzo wierzê temu podstêpnemu gadowi. Mimo, ¿e ostatecznie pochwali³ moje zdolnoœci.");
 	Log_SetTopicStatus	(Blachostka,	LOG_SUCCESS);
 	B_GiveXP(500);
@@ -435,7 +441,7 @@ FUNC INT DIA_John_Fightdie_Condition()
 };
 FUNC VOID DIA_John_Fightdie_Info()
 {
-    AI_Output (self, other ,"DIA_John_Fightdie_03_01"); //Spieprzaj st¹d nim cie poæwiartujê ofermo.
+    AI_Output (self, other ,"DIA_John_Fightdie_03_01"); //Wynoœ siê, st¹d nim cie poæwiartujê ofermo.
 	B_LogEntry               (Blachostka,"John darowa³ mi ¿ycie, by³ wœciek³y. Chyba nici z jego przyznania siê do kradzie¿y");
 	Npc_ExchangeRoutine(self,"Start");
     AI_StopProcessInfos	(self);

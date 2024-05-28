@@ -157,7 +157,7 @@ FUNC VOID DIA_Templer_WDC_SWORD_Info()
     AI_Output (other, self ,"DIA_Templer_WDC_SWORD_15_03"); //Trzymaj.
 	B_GiveInvItems (other,self, ITMW_CalomGuardSWD, 1);
 	AI_EquipBestMeleeWeapon	(Tpl_1406_Templer);                    
-    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_04"); //No dobra, d³ugo mi znie zejdzie...
+    AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_04"); //No dobra, d³ugo mi nie zejdzie...
     AI_Output (other, self ,"DIA_Templer_WDC_SWORD_15_05"); //Powodzenia...
 	Npc_ExchangeRoutine(Tpl_1406_Templer,"Arena");
     AI_Output (self, other ,"DIA_Templer_WDC_SWORD_03_06"); //Obêdzie siê bez. Zwyciêstwo ju¿ mam w kieszeni! Jestem na to za dobry!
@@ -219,7 +219,7 @@ FUNC INT Info_Tpl_1406_LastWarn_Condition()
 
 func int Info_Tpl_1406_LastWarn_Info()
 {
-	AI_Output (self, hero,"Info_Tpl_1406_LastWarn_13_01"); 		//Powiedzia³em, wynoœ siê z t¹d!
+	AI_Output (self, hero,"Info_Tpl_1406_LastWarn_13_01"); 		//Powiedzia³em, wynoœ siê st¹d.
 
 	AI_GotoWP (hero, "PSI_PATH_12"); 
 	

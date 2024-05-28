@@ -434,8 +434,8 @@ FUNC VOID DIA_Flint_Emil_Info()
     AI_Output (self, other ,"DIA_Flint_Emil_03_06"); //Poznaliœmy siê w Khorinis, jeszcze przed wojn¹ z orkami.
     AI_Output (self, other ,"DIA_Flint_Emil_03_07"); //Wspólnymi si³ami wyeliminowaliœmy kilka szych z górnego miasta. 
     AI_Output (other, self ,"DIA_Flint_Emil_15_08"); //Chcê wiedzieæ kim on jest.
-    AI_Output (self, other ,"DIA_Flint_Emil_03_09"); //¯arty sobie stroisz? Nie jestem konfidentem.
-    AI_Output (self, other ,"DIA_Flint_Emil_03_10"); //Zapomnij o tym!
+    AI_Output (self, other ,"DIA_Flint_Emil_03_09"); //¯arty sobie stroisz? Zapomnij o tym!
+   
 
     Info_ClearChoices		(DIA_Flint_Emil);
     Info_AddChoice		(DIA_Flint_Emil, "Mo¿e ciê jakoœ przekonam?", DIA_Flint_Emil_NoChoice);
