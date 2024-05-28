@@ -17,8 +17,8 @@ instance ORG_859_Aidan (Npc_Default)
 	attribute[ATR_DEXTERITY] =		50;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	200;
-	attribute[ATR_HITPOINTS] =		200;
+	attribute[ATR_HITPOINTS_MAX] =	350;
+	attribute[ATR_HITPOINTS] =		350;
 
 	//-------- visuals --------
 	// 				animations
