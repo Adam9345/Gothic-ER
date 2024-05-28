@@ -31,11 +31,9 @@ func void ORGQUARTZ_hostile()
   AI_Wait( NON_40019_Rabus, 6 ); 
   AI_Wait( NON_40020_Rabus, 6); 
   AI_Wait( ORG_40017_Pomocnik, 6); 
-  NON_40018_Rabus.guild = GIL_DEMON;
-  NON_40019_Rabus.guild = GIL_DEMON;
-  NON_40020_Rabus.guild = GIL_DEMON;
-
-
+  B_ChangeGuild (NON_40018_Rabus, GIL_BDT);
+  B_ChangeGuild (NON_40019_Rabus, GIL_BDT);
+  B_ChangeGuild (NON_40020_Rabus, GIL_BDT);
 
 };
 // ************************************************************
