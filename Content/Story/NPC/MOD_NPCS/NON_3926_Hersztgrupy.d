@@ -7,7 +7,7 @@ instance NON_3926_Hersztgrupy (Npc_Default)
 
 name = "Herszt Nowicjuszy - rabusiów";
 Npctype = Npctype_Main;
-guild = GIL_DMB;
+guild = GIL_BDT;
 level = 15;
 voice = 10;
 id = 3926;

@@ -7,7 +7,7 @@ instance NON_3924_Rabus (Npc_Default)
 
 name = "Nowicjusz - rabuœ";
 Npctype = Npctype_Main;
-guild = GIL_DMB;
+guild = GIL_BDT;
 level = 10;
 voice = 6;
 id = 3924;

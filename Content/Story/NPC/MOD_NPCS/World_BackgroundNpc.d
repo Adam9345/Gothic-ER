@@ -200,7 +200,7 @@ instance WD_7044_Bandit (Npc_Default)
 	
 	name =					NAME_Schlaeger;
 	Npctype =				Npctype_Main;
-	guild =						GIL_DMB;      
+	guild =						GIL_BDT;      
 	level =						15;
 	
 	voice =						6;

@@ -490,20 +490,20 @@ FUNC VOID DIA_Rocky_ROZPIERDUCHA_Info()
       self.aivar[AIV_PARTYMEMBER] = TRUE;
       Npc_ExchangeRoutine (self,"atak");
 	  Npc_ExchangeRoutine (GRD_5054_Gardist,"las");
-	  B_ChangeGuild    (GRD_5054_Gardist,GIL_DMB);
+	  B_ChangeGuild    (GRD_5054_Gardist,GIL_BDT);
 	  Npc_ExchangeRoutine (GRD_5053_Gardist,"las");
-	  B_ChangeGuild    (GRD_5053_Gardist,GIL_DMB);
+	  B_ChangeGuild    (GRD_5053_Gardist,GIL_BDT);
 	  Npc_ExchangeRoutine (GRD_5055_Eskorta,"las");
-	  B_ChangeGuild    (GRD_5055_Eskorta,GIL_DMB);
+	  B_ChangeGuild    (GRD_5055_Eskorta,GIL_BDT);
 	  Npc_ExchangeRoutine (VLK_5089_Tragaz,"las");
 	  CreateInvItems (VLK_5089_Tragaz, eq_z_napadu3, 1);
-	  B_ChangeGuild    (VLK_5089_Tragaz,GIL_DMB);
+	  B_ChangeGuild    (VLK_5089_Tragaz,GIL_BDT);
 	  Npc_ExchangeRoutine (VLK_5090_Tragaz,"las");
 	  CreateInvItems (VLK_5090_Tragaz, eq_z_napadu2, 1);
-	   B_ChangeGuild    (VLK_5090_Tragaz,GIL_DMB);
+	   B_ChangeGuild    (VLK_5090_Tragaz,GIL_BDT);
 	  Npc_ExchangeRoutine (VLK_5088_Tragaz,"las"); //1.24
 	  CreateInvItems (VLK_5088_Tragaz, eq_z_napadu1, 1); //poprawiony bug 1.4.5.
-	  B_ChangeGuild    (VLK_5088_Tragaz,GIL_DMB);
+	  B_ChangeGuild    (VLK_5088_Tragaz,GIL_BDT);
 
       AI_StopProcessInfos	(self);
 };

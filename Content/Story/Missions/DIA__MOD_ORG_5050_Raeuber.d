@@ -126,14 +126,14 @@ FUNC VOID DIA_Raeuber_DUREN_Info()
 	
 	if (kapitel < 4)
 	{
-	Npc_SetTrueGuild (self,GIL_DMB );
-	self.guild = GIL_DMB;
+	Npc_SetTrueGuild (self,GIL_BDT );
+	self.guild = GIL_BDT;
 	
-	Npc_SetTrueGuild (NON_5052_Raeuber,GIL_DMB );
-	NON_5052_Raeuber.guild = GIL_DMB;
+	Npc_SetTrueGuild (NON_5052_Raeuber,GIL_BDT );
+	NON_5052_Raeuber.guild = GIL_BDT;
 	
-	Npc_SetTrueGuild (NON_5051_Raeuber,GIL_DMB );
-	NON_5051_Raeuber.guild = GIL_DMB;
+	Npc_SetTrueGuild (NON_5051_Raeuber,GIL_BDT );
+	NON_5051_Raeuber.guild = GIL_BDT;
 	}
 	else
 	{

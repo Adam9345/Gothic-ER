@@ -5,7 +5,7 @@ instance NON_5051_Raeuber (Npc_Default)
 	
 	name =					NAME_Schlaeger;
 	npctype		=			npctype_ambient;
-	guild 		=			GIL_DMB;      
+	guild 		=			GIL_BDT;      
 	level =					9;
 	voice =					13;
 	id =					5051;

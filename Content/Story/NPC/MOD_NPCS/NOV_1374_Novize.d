@@ -3,7 +3,7 @@ instance NOV_1374_Novize (Npc_Default)
 	//-------- primary data --------
 	name 		=	"Nowicjusz - rabuœ";
 	Npctype 	=	npctype_main;
-	guild 		=	GIL_DMB;
+	guild 		=	GIL_BDT;
 	level 		=	4;
 	flags 		=	0;
 	

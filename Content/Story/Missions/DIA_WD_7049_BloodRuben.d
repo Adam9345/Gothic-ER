@@ -68,10 +68,12 @@ FUNC VOID DIA_BanditGhost_IMPORTANT_Info()
 	Wld_InsertNpc				(WD_7052_RubensBandit,"RUBEN_FRIEND1");	
 	SetGhost(WD_7052_RubensBandit, 60);
 	Npc_SetAttitude 	(WD_7052_RubensBandit, ATT_HOSTILE);
+    Npc_SetTempAttitude 	(WD_7052_RubensBandit, ATT_HOSTILE);
 	
 	
 	Wld_InsertNpc				(WD_7054_RubensBandit,"RUBEN_FRIEND2");	
 	SetGhost(WD_7054_RubensBandit, 60);
+    Npc_SetAttitude 	(WD_7054_RubensBandit, ATT_HOSTILE);
 	Npc_SetTempAttitude (WD_7054_RubensBandit, ATT_HOSTILE);	
 
 };

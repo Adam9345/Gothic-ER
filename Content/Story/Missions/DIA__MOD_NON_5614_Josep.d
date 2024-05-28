@@ -295,9 +295,9 @@ FUNC VOID DIA_Josep_Enemies_Info()
 	Npc_ExchangeRoutine (NON_5614_Josep,"guide2");
 	AI_StopProcessInfos	(NON_5614_Josep);
 	
-	B_ChangeGuild    (ORG_895_Organisator,GIL_DMB);
-	B_ChangeGuild    (ORG_896_Organisator,GIL_DMB);
-	B_ChangeGuild    (ORG_823_Zick,GIL_DMB);
+	B_ChangeGuild    (ORG_895_Organisator,GIL_BDT);
+	B_ChangeGuild    (ORG_896_Organisator,GIL_BDT);
+	B_ChangeGuild    (ORG_823_Zick,GIL_BDT);
 };
 
 ////////////////////////////////////////////////
