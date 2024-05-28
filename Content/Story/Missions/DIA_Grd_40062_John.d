@@ -211,7 +211,7 @@ FUNC VOID DIA_John_Blachostka_END_Info()
 	if (Npc_GetTrueGuild(hero) == GIL_NONE)
 	{
     AI_Output (self, other ,"DIA_John_Blachostka_END_03_09"); //No i chyba zrazi³em kogoœ do Starego Obozu haha... Ale wiedz, ¿e warto byæ jednym z nas. Wtedy ¿aden Najemnik, Bandyta czy æpun z Sekty ci nie podskoczy.
-	}
+	};
 	
 	
     AI_Output (other, self ,"DIA_John_Blachostka_END_15_10"); //Nikomu ani s³owa, o tym ¿e ci pomog³em.

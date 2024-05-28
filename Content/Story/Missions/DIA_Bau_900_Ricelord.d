@@ -321,7 +321,7 @@ FUNC VOID DIA_Ricelord_RingTheft_Info()
 	Npc_SetTarget (Bau_900_Ricelord, Org_844_Lefty);
     AI_StartState (Org_844_Lefty, ZS_ATTACK, 1, "");
 	
-	B_ChangeGuild (Org_844_Lefty, GIL_DMB);
+	B_ChangeGuild (Org_844_Lefty, GIL_BDT);
 };
 
 ////////////////////////////////////////////
