@@ -99,10 +99,12 @@ func void ZS_AssessBody_End()
 		{
 			x = Npc_HasItems(other,itminugget);
 
-			var int randX; randX = r_MinMax(1, x / 2);
+			var int randX;
 
-			if (randX <= 1) {
+			if (x == 1) {
 				randX = 1;
+			} else {
+				randX = r_MinMax(1, x / 2);
 			};
 
 			B_GiveInvItems (other, self, itminugget, randX);
