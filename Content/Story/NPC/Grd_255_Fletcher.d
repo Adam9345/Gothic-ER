@@ -99,8 +99,8 @@ FUNC VOID Rtn_zamek_255 ()
 
 FUNC VOID Rtn_nockruka_255 ()
 {
-	TA_PracticeSword	(07,00,18,00, "FLETCHER_NK");
-	TA_PracticeSword	(18,00,07,00, "FLETCHER_NK"); 
+	TA_Smalltalk	(07,00,18,00, "WP_FLETCHER_NK");
+	TA_Smalltalk	(18,00,07,00, "WP_FLETCHER_NK"); 
 };
 
 FUNC VOID Rtn_oc1_255 ()

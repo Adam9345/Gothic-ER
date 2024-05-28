@@ -63,8 +63,8 @@ func void Rtn_zaklady_210 ()
 
 FUNC VOID Rtn_nockruka_210 ()
 {
-    TA_StandAround			(01,00,06,00,"SCATTY_NK");
-	TA_PracticeSword		(06,00,01,00,"SCATTY_NK");	
+    TA_StandAround			(01,00,06,00,"WP_SCATTY_NK");
+	TA_PracticeSword		(06,00,01,00,"WP_SCATTY_NK");	
 };
 
 

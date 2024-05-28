@@ -53,6 +53,6 @@ FUNC VOID Rtn_Start_200 ()
 };
 FUNC VOID Rtn_nockruka_200 ()
 {	
-	TA_SitCampfire		(08,00,23,00,"THORUS_NK");
-    TA_SitCampfire	(23,00,08,00,"THORUS_NK");
+	TA_SitCampfire		(08,00,23,00,"WP_THORUS_NK");
+    TA_SitCampfire	(23,00,08,00,"WP_THORUS_NK");
 };

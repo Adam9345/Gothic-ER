@@ -328,8 +328,8 @@ TA_Sleep (23,00,06,00,"MYSLIWY_1");
 
 FUNC VOID Rtn_nockruka_5677 ()
 {
-TA_Smalltalk (06,00,08,33,"TOM_NK");
-TA_Smalltalk (08,33,06,00,"TOM_NK");
+TA_Lean (06,00,08,33,"WP_TOM_NK");
+TA_Lean (08,33,06,00,"WP_TOM_NK");
 };
 //===================================
 instance NON_5611_Jonas (Npc_Default)

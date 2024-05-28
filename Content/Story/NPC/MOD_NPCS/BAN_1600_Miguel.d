@@ -71,6 +71,6 @@ FUNC VOID Rtn_OMFull_1600 ()
 };
 FUNC VOID Rtn_nockruka_1600 ()
 {
-	TA_SitCampfire	(00,00,12,00,"MIGUEL_NK");	
-	TA_SitCampfire	(12,00,24,00,"MIGUEL_NK");
+	TA_Smalltalk	(00,00,12,00,"WP_MIGUEL_NK");	
+	TA_Smalltalk	(12,00,24,00,"WP_MIGUEL_NK");
 };

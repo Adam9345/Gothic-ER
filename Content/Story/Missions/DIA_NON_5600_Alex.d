@@ -1093,7 +1093,7 @@ FUNC VOID DIA_Alex_PNA_Fisk_Info()
    
     AI_Output (self, other ,"DIA_Alex_PNA_Fisk_03_01"); //Wspaniale aligatory s¹ martwe. Teraz je oskóruj a potem zabierz do starego obozu.
     AI_Output (other, self ,"DIA_Alex_PNA_Fisk_15_02"); //Do kogo?
-    AI_Output (self, other ,"DIA_Alex_PNA_Fisk_03_03"); //Do handlarza Fiska. To on ma wykonaæ  cenne przedmioty z tych skór.
+    AI_Output (self, other ,"DIA_Alex_PNA_Fisk_03_03"); //Do handlarza Fiska. To on ma wykonaæ cenne przedmioty z tych skór.
     AI_Output (other, self ,"DIA_Alex_PNA_Fisk_15_04"); //Zabiorê skóry, za³atwiê co trzeba i spotkamy siê w waszym obozie.
     AI_Output (self, other ,"DIA_Alex_PNA_Fisk_03_05"); //Zatem niech tak bêdzie.
     AI_Output (self, other ,"DIA_Alex_PNA_Fisk_03_06"); //Do zobaczenia.
@@ -1162,7 +1162,7 @@ FUNC VOID DIA_Alex_PNA_NUGG_400()
     AI_Output (other, self ,"DIA_Alex_PNA_NUGG_400_15_01"); //Oto ona.
 	B_GiveInvItems (other,self, itminugget, 400);
     AI_Output (self, other ,"DIA_Alex_PNA_NUGG_400_03_02"); //Dziêki. Jesteœ nie tylko œwietnym wojownikiem ale jesteœ tak¿e uczciwy. Nie zwia³eœ z nasz¹ rud¹.
-    AI_Output (self, other ,"DIA_Alex_PNA_NUGG_400_03_03"); //Jak bêdê mia³ do ciebie sprawê to ktoœ z moich ludzi siê z tob¹ skontaktuje. Acha o to twoja dzia³ka.
+    AI_Output (self, other ,"DIA_Alex_PNA_NUGG_400_03_03"); //Jak bêdê mia³ do ciebie sprawê to ktoœ z moich ludzi siê z tob¹ skontaktuje. Aha o to twoja dzia³ka.
     AI_Output (other, self ,"DIA_Alex_PNA_NUGG_400_15_04"); //W porz¹dku, przynajmniej na razie nie ruszam siê nigdzie poza barierê.
 	MIS_PNA = LOG_SUCCESS;
 	B_LogEntry               (PolowanieNaAligatory,"Da³em Alexowi rudê, któr¹ da³ mi Magnat Bartholo. Myœliwy odda³ mi moj¹ dzia³kê i widaæ by³o po nim du¿e zadowolenie. Alex liczy, ¿e w przysz³oœci uda siê jeszcze wiele zarobiæ na interesach z Magnatami.");

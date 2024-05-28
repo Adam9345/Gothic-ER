@@ -2803,7 +2803,7 @@ INSTANCE ItWr_OutlandersMassage (C_Item)
 	on_state[0]		=  OutlandersMassage;
 	scemeName		=	"MAPSEALED";
 	description		=  name;
-	TEXT[1]				= "Napisana przez Outlandera";
+	TEXT[1]				= "Napisana przez Skirnira";
 	TEXT[5]			= NAME_Value;
 	COUNT[5]		=	value;
 	
@@ -2827,7 +2827,7 @@ func void OutlandersMassage ()
 				
 					Doc_Show		( nDocID );
 					
-					B_RaiseAttribute	(ATR_DEXTERITY,	5);
+					B_RaiseAttribute	(ATR_DEXTERITY,	3);
 };
 
 INSTANCE ItMi_GhostsBagSpecial (C_Item)

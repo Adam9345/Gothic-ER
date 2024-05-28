@@ -70,9 +70,3 @@ FUNC VOID Rtn_OT_105 ()
 	TA_Guard		(20,00,07,00,"OCC_CENTER_1");
 };
 
-FUNC VOID Rtn_nockruka_105 ()
-{
-    TA_Stand 	(01,00,04,00,"RAVEN_NK");
-	TA_Smalltalk	(04,00,14,00,"RAVEN_NK");	
-	TA_Boss		(14,00,01,00,"RAVEN_NK");	
-};

@@ -831,7 +831,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		};
 		var C_NPC arushat; arushat = Hlp_GetNpc (ORC_Priest_5);
 		arushat.npctype = Npctype_Main;
-		//B_ExchangeRoutine (EBR_105_Raven,"nockruka");
+		
 		introducechapter ("Rozdzia³ 6","Le¿e Œni¹cego","chapter6.tga","levelup.wav", 6000);
 		//introducechapter ("Chapter 6","The sleeper's halls","chapter6.tga","levelup.wav", 6000);
 	};

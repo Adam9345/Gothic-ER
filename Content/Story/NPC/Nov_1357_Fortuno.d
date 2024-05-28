@@ -61,6 +61,6 @@ FUNC VOID Rtn_start_1357 ()
 };
 FUNC VOID Rtn_nockruka_1357 ()
 {
-    TA_SitCampfire 	(01,00,06,00,"FORTUNO_NK");
-	TA_SitCampfire	(06,00,01,00,"FORTUNO_NK");	
+    TA_SitCampfire 	(01,00,06,00,"WP_FORTUNO_NK");
+	TA_SitCampfire	(06,00,01,00,"WP_FORTUNO_NK");	
 };
