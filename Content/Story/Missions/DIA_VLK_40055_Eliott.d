@@ -52,7 +52,7 @@ FUNC VOID DIA_Eliott_HELLO1_Info()
     AI_Output (self, other ,"DIA_Eliott_HELLO1_03_02"); //Zostaw mnie w spokoju, ja nic nie mam!
     AI_Output (self, other ,"DIA_Eliott_HELLO1_03_03"); //Powiedz swojemu szefowi, ¿eby zostawi³ mnie w spokoju raz na zawsze!
     AI_Output (other, self ,"DIA_Eliott_HELLO1_15_04"); //Ale...
-    AI_Output (self, other ,"DIA_Eliott_HELLO1_03_05"); //Choæ wiem, ¿e on nie spocznie póki ktoœ nie znajdzie mnie martwego gdy siê za³amiê i skoñczê ze sob¹.
+    AI_Output (self, other ,"DIA_Eliott_HELLO1_03_05"); //Choæ wiem, ¿e on nie spocznie póki ktoœ nie znajdzie mnie martwego.
 };
 
 
@@ -79,7 +79,7 @@ if (Npc_KnowsInfo(hero,DIA_Eliott_HELLO1))
 };
 FUNC VOID DIA_Eliott_HELLO2_Info()
 {
-    AI_Output (other, self ,"DIA_Eliott_HELLO2_15_01"); //Cz³owieku nic od ciebie nie chce. Chcia³em po prostu porozmawiaæ.Przysy³a mnie kowal Fergus.
+    AI_Output (other, self ,"DIA_Eliott_HELLO2_15_01"); //Cz³owieku nic od ciebie nie chce. Chcia³em po prostu porozmawiaæ. Przysy³a mnie kowal Fergus.
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_02"); //Tak? Wybacz, jestem stale osaczony st¹d moja nerwowa reakcja.
     AI_Output (other, self ,"DIA_Eliott_HELLO2_15_03"); //Przez kogo?
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_04"); //Przez stra¿nika Winstona i jego kumpli, g³ównie równie¿ stra¿ników.

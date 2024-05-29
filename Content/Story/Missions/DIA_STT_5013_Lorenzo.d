@@ -256,7 +256,7 @@ FUNC VOID DIA_Lorenzo_GET_GUILD_Info()
 	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_03"); //Przy wejœciu zaczepi ciê Artegor. Powiedz, ¿e przysy³a ciê Lorenzo i ¿e do nas do³¹czy³eœ. Nie powinien robiæ k³opotów. 
 	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_04"); //Zw³aszcza jeœli zobaczy z wami Petro. Gdy ju¿ wejdziesz do Kopalni, twoim zwierzchnikiem stanie siê Ian. To on rz¹dzi w Kopalni.
 	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_05"); //Byæ mo¿e ³yknie twoj¹ historiê o zadaniu dla Diego. Jeœli nie, to bêdziesz musia³ wykopaæ okreœlon¹ iloœæ rudy. Ale to ju¿ z nim uzgodnisz.
-	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_06"); //Aha, nie dostaniesz od nas ¿adnego pancerza. Kup sobie ubranie robocze u Fiska, jeœli jeszcze tego nie zrobi³eœ.
+	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_06"); //Acha, nie dostaniesz od nas ¿adnego pancerza. Kup sobie ubranie robocze u Fiska, jeœli jeszcze tego nie zrobi³eœ.
 	AI_Output (self, other ,"DIA_Lorenzo_GET_GUILD_03_07"); //Jako ¿e dobrze siê spisa³eœ z t¹ zmian¹, mogê czêœciowo ufundowaæ ci uniform. Te sto bry³ek rudy bêdzie w sam raz na pocz¹tek. 
 	
 	CreateInvItems (self, itminugget,100);

@@ -298,7 +298,7 @@ if (Npc_KnowsInfo(hero,DIA_Harlok_AMM))
 FUNC VOID DIA_Darrion_Harlok_rob_Info()
 {
     AI_Output (other, self ,"DIA_Darrion_Harlok_rob_15_01"); //Mia³eœ racjê. Harlok ciê okrad³.
-    AI_Output (self, other ,"DIA_Darrion_Harlok_rob_03_02"); //Marna wsza z niego. Wiedzia³em….
+    AI_Output (self, other ,"DIA_Darrion_Harlok_rob_03_02"); //Wiedzia³em...
     AI_Output (other, self ,"DIA_Darrion_Harlok_rob_15_03"); //Oto twoja sakiewka
     AI_Output (self, other ,"DIA_Darrion_Harlok_rob_03_04"); //Dziêkuje. WeŸ to za fatygê. I co obudowa wygl¹da solidne czy¿ nie?
     AI_Output (other, self ,"DIA_Darrion_Harlok_rob_15_05"); //Oczywiœcie. Nie ma do czego siê przyczepiæ.
