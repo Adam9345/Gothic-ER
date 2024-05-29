@@ -190,11 +190,13 @@ if (Npc_KnowsInfo(hero,DIA_Caine_Gruzlik))
 FUNC VOID DIA_BaalNetbek_GRU_MUDPL_Info()
 {
     AI_Output (other, self ,"DIA_BaalNetbek_GRU_MUDPL_15_01"); //Potrzebuje roœlin z tej listy.
+	B_GiveInvItems (other,self, ItWr_GRU_List, 1);
     B_UseFakeScroll ();
     AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_02"); //Nie mam ¿adnej z tych wspania³ych roœlinek.
+	B_GiveInvItems (self,other, ItWr_GRU_List, 1);
     AI_Output (other, self ,"DIA_BaalNetbek_GRU_MUDPL_15_03"); //Cholera...
-    AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_04"); //Ale wiem gdzie s¹ nasiona B³otniaka przyjacielu.
-    AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_05"); //Niestety tamtejszy teren zamieszkuj¹ te okropne b³otne wê¿e a ja nie mam zamiaru sk¹czyæ w paszczy któregoœ z nich.
+    AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_04"); //Ale wiem gdzie s¹ nasiona B³otnika przyjacielu.
+    AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_05"); //Niestety tamtejszy teren zamieszkuj¹ te okropne b³otne wê¿e, a ja nie mam zamiaru sk¹czyæ w paszczy któregoœ z nich.
     AI_Output (other, self ,"DIA_BaalNetbek_GRU_MUDPL_15_06"); //Móg³byœ mi wskazaæ to mjejsce?
     AI_Output (self, other ,"DIA_BaalNetbek_GRU_MUDPL_03_07"); //A rozniesiesz po bagnie trochê nasionek?
     B_LogEntry               (Gruzlik,"Baal Netbek nie ma ¿adnej roœliny z listy. Jednak wie gdzie s¹ nasiona B³otnika. Mo¿e mnie tam zaprowadziæ jeœli obiecam, ¿e potem rozniosê po bagnie trochê jego nasion. Có¿, chyba mam lepsze rzeczy do roboty... Nie zaszkodzi jak przy pierwszej lepszej okazji wyrzucê woreczek zió³ a zajmê siê ratowaniem Fritza.");

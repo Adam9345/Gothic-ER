@@ -262,10 +262,9 @@ INSTANCE DIA_Fritz_HELLO1 (C_INFO)
 
 FUNC INT DIA_Fritz_HELLO1_Condition()
 {
-if (Npc_HasItems (other, ItWr_CaineToFritz) >=1)
-&& (Npc_HasItems (other, ItFo_Potion_Fritz01)>=1)
+if ((Npc_HasItems (other, ItWr_CaineToFritz) >=1) && (Npc_HasItems (other, ItFo_Potion_Fritz01)>=1) && (GRU_STRMIS == TRUE))
 && (Kapitel == 2) || (Kapitel == 3)
-&& (GRU_STRMIS == TRUE)
+
 {
     return TRUE;
 };

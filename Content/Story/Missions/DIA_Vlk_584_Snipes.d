@@ -426,7 +426,7 @@ FUNC VOID DIA_Snipes_OBITE_PYSKI_Info()
     AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_05"); //Sk¹d bior¹ siê tajemnicze obra¿enia u czêœci Kopaczy?
     AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_06"); //Znam kogoœ kto powinien umieæ ci to wyjaœniæ.
 	AI_Output (other, self ,"DIA_Snipes_OBITE_PYSKI_15_07"); //Kto to jest?
-	AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_08"); //¯eby toudzieliæ tej informacji potrzebuje sakiewki ze 100 bry³kami rudy w rêku, m³ody.
+	AI_Output (self, other ,"DIA_Snipes_OBITE_PYSKI_03_08"); //¯eby udzieliæ tej informacji potrzebuje sakiewki ze 100 bry³kami rudy w rêku, m³ody.
 				    B_LogEntry               (ObitePyski,"Snipes chcê za fatygê 100 bry³ek rudy. Chyba bêdê je musia³ mu zap³aciæ, jeœli chce dowiedzieæ siê wiêcej.");
 
 };

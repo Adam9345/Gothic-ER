@@ -219,7 +219,7 @@ FUNC VOID DIA_Alberto_Oprawca_Ruda_Info()
 {
     AI_Output (other, self ,"DIA_Alberto_Oprawca_Ruda_15_01"); //Trzymaj skoro musisz.
 	B_GiveInvItems (other,self, itminugget, 70);
-    AI_Output (self, other ,"DIA_Alberto_Oprawca_Ruda_03_02"); //Dziêki. Có¿ jeœli chodzi o tego Winstona to mo¿na by³o zas³yszeæ o nim pewne plotki w kopalni jakiœ czas temu.
+    AI_Output (self, other ,"DIA_Alberto_Oprawca_Ruda_03_02"); //Dziêki. Có¿ jeœli chodzi o tego Winstona to mo¿na by³o us³yszeæ o nim pewne plotki w kopalni jakiœ czas temu.
     AI_Output (self, other ,"DIA_Alberto_Oprawca_Ruda_03_03"); //Asghan Popad³ w konflikt z Fergusem – kowalem z obozu przed kopalni¹. Dlatego zlecenie na wykucie broni dla stra¿ników musia³o pójœæ do kogoœ innego.
     AI_Output (self, other ,"DIA_Alberto_Oprawca_Ruda_03_04"); //Winston dosta³ mnóstwo rudy i mia³ udaæ siê do starego obozu do Skipa by ten kaza³ Stone’owi wykuæ partiê ostrzy.
     AI_Output (other, self ,"DIA_Alberto_Oprawca_Ruda_15_05"); //Co by³o dalej?

@@ -204,14 +204,14 @@ if (Npc_KnowsInfo(hero,DIA_Darrion_Amulet_Oprawa))
 FUNC VOID DIA_Harlok_Darrion_Info()
 {
     AI_Output (other, self ,"DIA_Harlok_Darrion_15_01"); //Ponoæ dziwnie krêci³eœ siê obok Darriona.
-    AI_Output (self, other ,"DIA_Harlok_Darrion_03_02"); //Co to? Ten æwok myœli, ¿e mam na niego ochotê czy co? Hahahha
+    AI_Output (self, other ,"DIA_Harlok_Darrion_03_02"); //Co to? Ten æwok myœli, ¿e mam na niego ochotê czy co? 
     AI_Output (other, self ,"DIA_Harlok_Darrion_15_03"); //Zaraz nie bêdzie ci do œmiechu. Okrad³eœ go zabieraj¹c mu sakiewkê i coœ co nale¿a³o do mnie.
     AI_Output (self, other ,"DIA_Harlok_Darrion_03_04"); //Nawet jeœli... Co z tym zrobisz szczurku? Poskar¿ysz siê mamusi?!
     AI_DrawWeapon (other);
     AI_Output (other, self ,"DIA_Harlok_Darrion_15_05"); //Zaraz wsadzê ci ten miecz w dupe!
     AI_Output (self, other ,"DIA_Harlok_Darrion_03_06"); //No proszê. Sam siê prosisz o lanie frajerze. 
-	CreateInvItem (self, ItMi_Worek_Darrion);
-	CreateInvItem (self, Amulett_BrandickS_02);
+	CreateInvItem (Nov_1358_Harlok, ItMi_Worek_Darrion);
+	CreateInvItem (Nov_1358_Harlok, Amulett_BrandickS_02);
 	self.aivar[AIV_WASDEFEATEDBYSC]== FALSE;
     AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
@@ -245,9 +245,9 @@ FUNC INT DIA_Harlok_AMM_Condition()
 };
 FUNC VOID DIA_Harlok_AMM_Info()
 {
-    AI_Output (self, other ,"DIA_Harlok_AMM_03_01"); //Aaaaa... Moje kulasy...
+    AI_Output (self, other ,"DIA_Harlok_AMM_03_01"); //Aaaaa... Moje koœci...
     AI_Output (other, self ,"DIA_Harlok_AMM_15_02"); //Oooo proszê. Jednak zgubione rzeczy Darriona siê znalaz³y.
-    AI_Output (self, other ,"DIA_Harlok_AMM_03_03"); //ZejdŸ mi z oczu ty nadgorliwa kupo Orkowego ³ajna.
+    AI_Output (self, other ,"DIA_Harlok_AMM_03_03"); //ZejdŸ mi z oczu ty gnido.
     AI_Output (other, self ,"DIA_Harlok_AMM_15_04"); //Co to chcesz powtórki? 
     AI_Output (self, other ,"DIA_Harlok_AMM_03_05"); //Nie, nie... IdŸ ju¿ pewno siê œpieszysz.
     AI_Output (other, self ,"DIA_Harlok_AMM_15_06"); //Przynajmniej teraz masz racjê.
