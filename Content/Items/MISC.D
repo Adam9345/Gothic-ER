@@ -995,13 +995,13 @@ INSTANCE ItMi_Worek_Plants (C_Item)
 };
 func void UseOWorekPlants()
 {
-    CreateInvItems (self, ItFo_Plants_Nightshadow_01, 5);
+    CreateInvItems (self, ItMi_Alchemy_Zucker_01, 5);
 	CreateInvItems (self, ItFo_Plants_OrcHerb_01, 2);
-	CreateInvItems (self, ItFo_Plants_Flameberry_01, 3);
-	CreateInvItems (self, ItFo_Plants_OrcHerb_02, 4);
+	CreateInvItems (self, ItMi_Alchemy_Salt_01, 3);
+	CreateInvItems (self, ItFo_Plants_RavenHerb_01, 4);
 	if (Npc_IsPlayer(self))
 	{
-	PrintS_Ext	("Znaleziono kilkanaœcie zió³", COL_WHITE);
+	PrintS_Ext	("Znaleziono kilka sk³adników", COL_WHITE);
 	};
 };
 INSTANCE ItMi_Bandaz40 (C_Item)
