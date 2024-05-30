@@ -107,7 +107,7 @@ INSTANCE DIA_Claw_AlchemyLearn (C_INFO)
 
 FUNC INT DIA_Claw_AlchemyLearn_Condition()
 {
-    if (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) <= 1) &&  (Npc_KnowsInfo (hero, DIA_Claw_HELLO1))
+    if (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) == 0) &&  (Npc_KnowsInfo (hero, DIA_Claw_HELLO1))
     {
     return TRUE;
     };

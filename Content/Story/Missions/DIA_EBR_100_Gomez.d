@@ -416,7 +416,7 @@ FUNC VOID DIA_Gomez_SuperQuestSuccess_Info()
 {
     AI_Output (other, self ,"DIA_Gomez_SuperQuestSuccess_15_01"); //By³em w dolinie. Orkowie ze œwi¹tyni zostali wyeliminowani.
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_02"); //Doskonale. Wiem, ¿e mia³eœ w tym swój udzia³. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ  na lepszy pancerz. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ na lepszy pancerz. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Tylko nieliczni mog¹ go nosiæ. IdŸ do Stone'a i poproœ go o ciê¿k¹ zbrojê. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Oczywiœcie bêdziesz musia³ za ni¹ zap³aciæ, ale to ju¿ nie moja sprawa. 
     AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_06"); //Mo¿esz odejœæ.
