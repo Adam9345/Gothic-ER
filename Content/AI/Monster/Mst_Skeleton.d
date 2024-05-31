@@ -384,7 +384,7 @@ INSTANCE OrcSkeleton	(Mst_Default_Skeleton)
 	//-------- general --------
 	name							=	"Ork-szkielet";
 	level							=	Level_OrcSkeleton;
-	guild							=	GIL_ORCWARRIOR;
+	guild							=	GIL_UNDEADORC;
 	//-------- visual --------
 	Set_OrcSkeleton_Visuals();
 
