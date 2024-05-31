@@ -136,13 +136,9 @@ func void craftingview_show(var int recinst, var int mode, var int amount) {
         ptr = create (recinst);
 
         rec = _^ (ptr);
-        if (windowwidth > 1000) {
 
-            craftingview_renderitem = render_additemcenterpxl(rec.recipeitem, (print_screen / 2) - roundf(mulf(mkf(-100), scalef)), (print_screen[1] / 2) + (yquartsize / 2 +  + roundf(mulf(mkf(470), scalef))), windowheight-30, windowheight-30);
+        craftingview_renderitem = render_additemcenterpxl(rec.recipeitem, print_screen - windowwidth / 2 - windowwidth / 4,  (print_screen[1]) + (yquartsize), windowheight, windowheight);
 
-        } else {
-            craftingview_renderitem = render_additemcenterpxl(rec.recipeitem, (print_screen / 2) - roundf(mulf(mkf(-400), scalef)), (print_screen[1] / 2) + (yquartsize / 2 +  + roundf(mulf(mkf(650), scalef))), windowheight-30, windowheight-30);
-        };
         render_top(craftingview_renderitem);
 
         render_openview(craftingview_renderitem);
