@@ -215,9 +215,9 @@ FUNC INT DIA_Cord_IHaveStone_Condition()
 FUNC VOID DIA_Cord_IHaveStone_Info()
 {
     AI_Output (other, self ,"DIA_Cord_IHaveStone_15_01"); //By³em w kopalni.
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //Rozumiem ¿e wewn¹trz jest ju¿ bezpiecznie? Doskona³a robota. IdŸ powiadomiæ o tym Lee.
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //My tu jeszcze trochê powêszymy.
-	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_11"); //W porz¹dku.
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_02"); //Rozumiem ¿e wewn¹trz jest ju¿ bezpiecznie? Doskona³a robota. IdŸ powiadomiæ o tym Lee.
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_03"); //My tu jeszcze trochê powêszymy.
+	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_04"); //W porz¹dku.
 	
 	//nowe zadanie 
 	MIS_NC_Mine = LOG_RUNNING;

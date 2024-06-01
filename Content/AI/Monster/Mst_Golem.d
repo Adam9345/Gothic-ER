@@ -110,13 +110,13 @@ INSTANCE StoneGolem	(Mst_Default_Golem)
 
 INSTANCE DarkGolem	(Mst_Default_Golem)
 {
-	name	=	"Mroczny Golem";
+	name	=	"Kamienny Golem";
 	aivar[AIV_MM_REAL_ID]			= 	ID_STONEGOLEM;
-	protection	[PROT_BLUNT]		=	90;
-	protection	[PROT_EDGE]			=	90;
-	protection	[PROT_POINT]		=	100; // smo³a wci¹ga
-	protection	[PROT_FIRE]			=	50;
-	protection	[PROT_FLY]			=	50;  //chuj wi co to
+	protection	[PROT_BLUNT]		=	50;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	100; 
+	protection	[PROT_FIRE]			=	100;
+	protection	[PROT_FLY]			=	9999; 
 	protection	[PROT_MAGIC]		=	50;  
 //--------------------------------------------
 	Set_DarkGolem_Visuals();
