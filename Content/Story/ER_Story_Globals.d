@@ -322,9 +322,6 @@ const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
 var int MIS_ScarMurder;
 const string CH3_ScarMurder  				= "Blizna na sumieniu";//*kopalnia z³ota
 
-var int MIS_ThreeLords;
-const string CH4_ThreeLords     			= "Trzej Lordowie";
-
 var int MIS_RaportForLares;
 const string CH4_RaportForLares      		= "Ostrzec Bandytów";
 
