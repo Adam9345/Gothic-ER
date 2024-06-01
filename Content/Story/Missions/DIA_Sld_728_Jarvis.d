@@ -715,18 +715,16 @@ FUNC VOID DIA_Jarvis_PZ_Info()
 {
     AI_Output (other, self ,"DIA_Jarvis_PZ_15_01"); //Dosz³o do zamachu na Lee. 
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_02"); //Niemo¿liwe!
-    AI_Output (other, self ,"DIA_Jarvis_PZ_15_03"); //Niestety mo¿liwe. Orik nie ¿yje a ja œcigam zamachowców. Jednego ju¿ dosta³em w swoje rêce.
-    AI_Output (self, other ,"DIA_Jarvis_PZ_03_04"); //Zatem ten Szkodnik niedawno bieg tak szybko bo...
+    AI_Output (other, self ,"DIA_Jarvis_PZ_15_03"); //Niestety mo¿liwe. Orik nie ¿yje. a ja œcigam zamachowców. Jednego ju¿ dosta³em w swoje rêce.
+    AI_Output (self, other ,"DIA_Jarvis_PZ_03_04"); //Zatem ten Szkodnik niedawno bieg³ tak szybko bo...
     AI_Output (other, self ,"DIA_Jarvis_PZ_15_05"); //Bo nie by³ Szkodnikiem tylko przebranym zamachowcem.
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_06"); //¯e te¿ da³em siê zaskoczyæ!
     AI_Output (other, self ,"DIA_Jarvis_PZ_15_07"); //Wina nie le¿y po twojej stronie. 
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_08"); //Jeœli przebieg³ przed t¹ bramê to Szkodnicy przy pierwszej te¿ go przepuœcili. Wiêc pewnie gnojek jest ju¿ daleko.
     AI_Output (other, self ,"DIA_Jarvis_PZ_15_09"); //To sprawka Magnatów. Przestraszony skrytobójca zapewne pobieg³ schroniæ siê u nich.
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_10"); //A to pod³e dranie! Mordecze szuje najgorszego sortu. 
-    AI_Output (other, self ,"DIA_Jarvis_PZ_15_11"); //Pewnie ten ³achmyta liczy na jakiœ zysk za zabicie Orika.
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_12"); //Jeœli mo¿esz to udaj siê w okolice Starego Obozu. Mo¿e go jeszcze dopadniesz.
-    AI_Output (other, self ,"DIA_Jarvis_PZ_15_13"); //Bêdzie ciê¿ko ale kiedy nie jest... Dobra musze siê pospieszyæ.
-    AI_Output (other, self ,"DIA_Jarvis_PZ_15_14"); //Mo¿e jest jeszcze szansa , ¿e go z³apiê. Muszê siê rozejrzeæ przed nosem Gomeza.
+    AI_Output (other, self ,"DIA_Jarvis_PZ_15_14"); //Mo¿e jest jeszcze szansa, ¿e go z³apiê. Muszê siê rozejrzeæ przed Starym Obozem.
     AI_Output (self, other ,"DIA_Jarvis_PZ_03_15"); //Powodzenia i b¹dŸ ostro¿ny. Pomœcij Orika!
 	Wld_InsertNpc 	(ORG_40152_Podejrzany, "OC1");
 	B_LogEntry               (PodejrzaneZamieszanie,"Negatywnie zaskoczony Jarvis obrotem wydarzeñ poleci³ mi czym prêdzej udaæ siê w okolice Starego Obozu. Mo¿e jest jeszcze cieñ szansy, ¿e dorwê drugiego z zamachowców.");

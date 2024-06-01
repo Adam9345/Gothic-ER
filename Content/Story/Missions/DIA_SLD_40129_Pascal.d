@@ -411,7 +411,7 @@ INSTANCE DIA_SLD_40129_Pascal_ZM_WaitForMe (C_INFO)
    condition    = DIA_SLD_40129_Pascal_ZM_WaitForMe_Condition;
    information  = DIA_SLD_40129_Pascal_ZM_WaitForMe_Info;
    permanent	= FALSE;
-   description	= "Ja tej wa¿nej sprawie przez, któr¹ wzywa³ mnie Lee.";
+   description	= "Ja w tej wa¿nej sprawie przez, któr¹ wzywa³ mnie Lee.";
 };
 
 FUNC INT DIA_SLD_40129_Pascal_ZM_WaitForMe_Condition()
@@ -423,7 +423,7 @@ if (Npc_KnowsInfo(hero,DIA_Lee_ZM_YouHear))
 };
 FUNC VOID DIA_SLD_40129_Pascal_ZM_WaitForMe_Info()
 {
-    AI_Output (other, self ,"DIA_SLD_40129_Pascal_ZM_WaitForMe_15_01"); //Ja tej wa¿nej sprawie przez, któr¹ wzywa³ mnie Lee.
+    AI_Output (other, self ,"DIA_SLD_40129_Pascal_ZM_WaitForMe_15_01"); //Ja w tej wa¿nej sprawie przez, któr¹ wzywa³ mnie Lee.
     AI_Output (self, other ,"DIA_SLD_40129_Pascal_ZM_WaitForMe_03_02"); //O co chodzi?
     AI_Output (other, self ,"DIA_SLD_40129_Pascal_ZM_WaitForMe_15_03"); //W skrócie o to, ¿e myœliwi s¹ w niebezpieczeñstwie bo stra¿ zamierza napaœæ na ich obóz.
     AI_Output (self, other ,"DIA_SLD_40129_Pascal_ZM_WaitForMe_03_04"); //Cholera...

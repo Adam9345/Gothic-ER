@@ -53,7 +53,7 @@ FUNC VOID DIA_Podejrzany_HELLO1_Info()
     AI_Output (other, self ,"DIA_Podejrzany_HELLO1_15_04"); //Po dokonanym zabójstwie?
     AI_Output (self, other ,"DIA_Podejrzany_HELLO1_03_05"); //O czym ty do cholery....
     AI_Output (self, other ,"DIA_Podejrzany_HELLO1_03_06"); //Czego tu w ogóle szukasz?
-    AI_Output (other, self ,"DIA_Podejrzany_HELLO1_15_07"); //Cz³owieka , który próbowa³ zg³adziæ Lee - szefa Najemników.
+    AI_Output (other, self ,"DIA_Podejrzany_HELLO1_15_07"); //Cz³owieka, który próbowa³ zg³adziæ Lee - szefa Najemników.
     AI_Output (self, other ,"DIA_Podejrzany_HELLO1_03_08"); //Tutaj go nie ma!
     AI_Output (other, self ,"DIA_Podejrzany_HELLO1_15_09"); //Nie strugaj idioty. By³eœ jednym z trzech zamachowców. 
     AI_Output (self, other ,"DIA_Podejrzany_HELLO1_03_10"); //Nie!

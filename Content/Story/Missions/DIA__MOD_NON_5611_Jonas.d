@@ -423,7 +423,7 @@ FUNC VOID DIA_Jonas_ZM_Who_Info()
 {
     AI_Output (other, self ,"DIA_Jonas_ZM_Who_15_01"); //Co dok³adnie ciê sprowadza?
     AI_Output (self, other ,"DIA_Jonas_ZM_Who_03_02"); //Chodz¹ s³uchy ¿e stra¿nicy szykuj¹ siê do napadu na nasz obóz...
-    AI_Output (other, self ,"DIA_Jonas_ZM_Who_15_03"); //Alex przys³a³ mnie bym b³aga³ was o pomoc.
+    AI_Output (self, other ,"DIA_Jonas_ZM_Who_03_03"); //Alex przys³a³ mnie bym b³aga³ was o pomoc.
     AI_Output (other, self ,"DIA_Jonas_ZM_Who_15_04"); //Dlaczego ludzie Gomeza was atakuj¹? Przecie¿ teraz maj¹ doœæ zmartwieñ.
     AI_Output (self, other ,"DIA_Jonas_ZM_Who_03_05"); //Przecie¿ mamy sporo cennych zasobów wiesz... Skóry czy inne trofea myœliwskie.
     AI_Output (self, other ,"DIA_Jonas_ZM_Who_03_06"); //Teraz Gomez musi szukaæ ka¿dego zarobku by dalej mieæ pos³uch u swoich ludzi.

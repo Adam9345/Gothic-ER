@@ -1549,21 +1549,20 @@ if (Npc_KnowsInfo(hero,DIA_Torlof_PZ))
 };
 FUNC VOID DIA_Lee_I_Dead_PZ_Info()
 {
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_01"); //Nie... To ja powinienem by³ zgin¹æ....
-    AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_02"); //Bogowie.... Co tu siê sta³o?!
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_03"); //Byli przebrani za Szkodników. Ale to byli zamachowcy....
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_04"); //Orik mnie zas³oni³ i.... Przeklête dranie!
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_01"); //Nie... To ja powinienem by³ zgin¹æ...
+    AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_02"); //Bogowie... Co tu siê sta³o?!
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_03"); //Byli przebrani za Szkodników. Ale to byli zamachowcy...
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_04"); //Orik mnie zas³oni³ i... Przeklête dranie!
     AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_05"); //Gdzie pozostali dwaj?
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_06"); //Myœleli , ¿e mnie dostan¹ lecz gdy Orik zas³oni³ mnie w³asn¹ piersi¹ i sam przyj¹³ cios....
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_06"); //Myœleli, ¿e mnie dostan¹ lecz gdy Orik zas³oni³ mnie w³asn¹ piersi¹ i sam przyj¹³ cios...
     AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_07"); //Zdo³a³em ci¹æ toporem jednego z nich. Pozostali dwaj przestraszyli siê i uciekli.
     AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_08"); //A twoi wartownicy?
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_09"); //Myœleli , ¿e to zwyli Szkodnicy. Dali siê zaskoczyæ a tamci zwiali.
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_09"); //Myœleli, ¿e to Szkodnicy. Dali siê zaskoczyæ a tamci zwiali.
     AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_10"); //Mo¿e uda siê ich dopaœæ.
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_11"); //Jeœli mo¿esz wype³ni moj¹ proœbê. Pomœcij Orika zabijaj¹c tych dwóch sukinsynów.
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_11"); //Pomœcij Orika zabijaj¹c tych dwóch sukinsynów.
     AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_12"); //Najpierw muszê ustaliæ gdzie s¹.
     AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_13"); //Zatem poœpiesz siê. Liczy siê ka¿da minuta by wymierzyæ im sprawiedliwoœæ.
-    AI_Output (other, self ,"DIA_Lee_I_Dead_PZ_15_14"); //Ruszam.
-    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_15"); //Powodzena.
+    AI_Output (self, other ,"DIA_Lee_I_Dead_PZ_03_14"); //Powodzena.
 	B_LogEntry          (PodejrzaneZamieszanie,"Ktoœ próbowa³ skrytobójczo zabiæ Lee. Zgin¹³ jednak Orik broni¹c swego prze³o¿onego. Zamachowcy uciekli a ja muszê pod¹¿yæ ich tropem. Wczeœniej pomówiê z Torlofem jak chcia³.");
     AI_StopProcessInfos	(self);
 };

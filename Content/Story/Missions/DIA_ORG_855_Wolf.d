@@ -1146,7 +1146,7 @@ if (Npc_KnowsInfo(hero,DIA_Lee_ZM_YouHear))
 FUNC VOID DIA_Wolf_ZM_Guards_Info()
 {
     AI_Output (other, self ,"DIA_Wolf_ZM_Guards_15_01"); //Ludzie Gomeza chc¹ zaatakowaæ myœliwych.
-    AI_Output (self, other ,"DIA_Wolf_ZM_Guards_03_02"); //Niedobrze, trzeba wykiwaæ tych gnojków i wyci¹æ w pieñ!
+    AI_Output (self, other ,"DIA_Wolf_ZM_Guards_03_02"); //Nie dobrze, trzeba wykiwaæ tych gnojków i wyci¹æ w pieñ!
     AI_Output (self, other ,"DIA_Wolf_ZM_Guards_03_03"); //Oczywiœcie, ¿e z wami pójdê.
     AI_Output (other, self ,"DIA_Wolf_ZM_Guards_15_04"); //Œwietnie. Czekaj przed obozem.
 	Npc_ExchangeRoutine(ORG_855_Wolf,"ZMHunters");
