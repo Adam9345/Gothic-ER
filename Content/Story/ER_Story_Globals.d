@@ -612,6 +612,7 @@ var int Jacko_KS_Dead;
 var int MS_Chest_OF;
 var int MS_Chest_OT;
 var int LordSkeleton;
+var int CitadelEvt_01;
 var int ZW_JORU_ROUTINE;
 var int ZdrajcaGhaston;
 var int ZdrajcaGhaston1;
