@@ -2,8 +2,8 @@ instance TPL_1448_Templer (Npc_Default)
 {
 	//-------- primary data --------
 	name 	=	Name_MadTemplar;
-	npctype =	NPCTYPE_GUARD;
-	guild 	=	GIL_BDT;//dawniej gil_gur, ale teraz guru mo¿e byæ player
+	npctype =	NPCTYPE_MAIN;
+	guild 	=	GIL_UNDEADORC;//dawniej gil_gur, ale teraz guru mo¿e byæ player
 	level 	=	50;
 	
 	voice 	=	8;
@@ -59,6 +59,6 @@ FUNC VOID Rtn_start_1448 ()
 
 FUNC VOID Rtn_OT_1448 ()
 {
-     	TA_HostileGuard	(00,00,08,00,"TPL_152");
+    TA_HostileGuard	(00,00,08,00,"TPL_152");
 	TA_HostileGuard 	(08,00,24,00,"TPL_152");
 };

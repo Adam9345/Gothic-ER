@@ -2,8 +2,8 @@ instance TPL_1459_Templer (Npc_Default)
 {
 	//-------- primary data --------
 	name 	=	Name_MadTemplar;
-	npctype =	NPCTYPE_GUARD;
-	guild 	=	GIL_BDT;//dawniej gil_gur, ale teraz guru mo¿e byæ player
+	npctype =	NPCTYPE_MAIN;
+	guild 	=	GIL_UNDEADORC;//dawniej gil_gur, ale teraz guru mo¿e byæ player
 	level 	=	50;
 	
 	voice 	=	8;

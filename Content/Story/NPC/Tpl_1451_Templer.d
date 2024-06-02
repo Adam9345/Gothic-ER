@@ -2,7 +2,7 @@ instance TPL_1451_Templer (Npc_Default)
 {
 	//-------- primary data --------
 	name 	=	NAME_MadTemplar2;
-	npctype =	NPCTYPE_GUARD;
+	npctype =	NPCTYPE_MAIN;
 	guild 	=	GIL_BDT;//dawniej gil_gur, ale teraz guru mo¿e byæ player
 	level 	=	100;
 	
