@@ -15,6 +15,13 @@ func void B_AssessWarn ()
 		// JP:an dieser Stelle haben sich die Nsc´s immer weggehängt und nicht mehr plausibel reagiert, weil jeder an jeden Monster Warns gesendet hat,
 		// die dann aber als uninteressant wieder verworfen worden sind, deshalb werde ich hier mal versuchsweise den ZS_AssessMonster aufrufen
 		//return;
+
+		if (Hlp_StrCmp(MEM_World.worldFilename, "ORCTEMPEL.ZEN")) {
+			if (self.guild == other.guild) {
+				return;
+			};
+		};
+
 		AI_StandUp		(self);			// eventuelle Item-Interacts abbrechen
 		Npc_SetTarget	(self, other);
 		

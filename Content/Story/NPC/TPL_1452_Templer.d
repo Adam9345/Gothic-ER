@@ -2,7 +2,7 @@ instance TPL_1452_Templer (Npc_Default)
 {
 	//-------- primary data --------
 	name 	=	NAME_MadTemplar2;
-	npctype	=	NPCTYPE_GUARD;
+	npctype	=	NPCTYPE_MAIN;
 	guild 	=	GIL_BDT;//dawniej gil_gur, ale teraz guru mo¿e byæ player
 	level 	=	100;
 	
@@ -58,6 +58,6 @@ FUNC VOID Rtn_start_1452 ()
 
 FUNC VOID Rtn_OT_1452 ()
 {
-     	TA_HostileGuard	(08,00,22,00,"TPL_379"); 
+    TA_HostileGuard	(08,00,22,00,"TPL_379"); 
   	TA_HostileGuard	(22,00,08,00,"TPL_379"); 
 };
