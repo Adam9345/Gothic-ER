@@ -133,12 +133,7 @@ FUNC VOID DIA_Morok_GomezSendMe_Info()
     AI_Output (self, other ,"DIA_Morok_GomezSendMe_03_14"); //Do œwi¹tyni pewnie te¿ nie poszed³. Chyba, ¿e jest samobójc¹.
     AI_Output (other, self ,"DIA_Morok_GomezSendMe_15_15"); //W porz¹dku. Spróbujê odnaleŸæ tajemnicz¹ postaæ.
 	AI_Output (self, other ,"DIA_Morok_GomezSendMe_03_16"); //Ani mi siê wa¿ podchodziæ do œwi¹tyni! Orkowie ciê poszatkuj¹.
-    //MIS_SpyInRuins = LOG_RUNNING;
 
-    //Log_CreateTopic         (CH1_SzpiegoMoroka, LOG_MISSION);
-    //Log_SetTopicStatus      (CH1_SzpiegoMoroka, LOG_RUNNING);
-    //B_LogEntry              (CH1_SzpiegoMoroka,"Morok nakaza³ mi odszukanie nieznanego cz³owieka, który rzekomo równie¿ bada œwi¹tyniê. Powinienem go szukaæ w jej pobli¿u.");
-    //AI_StopProcessInfos	(self);
 	B_LogEntry              (CH3_QuestForHeavyArmor,"Morok nakaza³ mi odszukanie nieznanego cz³owieka, który rzekomo równie¿ bada œwi¹tyniê. Powinienem go szukaæ w jej pobli¿u.");
 };
 
@@ -173,7 +168,7 @@ FUNC VOID DIA_Morok_HelpSzpieg_Info()
     AI_Output (other, self ,"DIA_Morok_HelpSzpieg_15_03"); //Podobno œwi¹tynia roi siê od orków.
     AI_Output (self, other ,"DIA_Morok_HelpSzpieg_03_04"); //Tyle to i ja wiem, ch³opcze. Dobrze, ¿e to nie by³ ¿aden szpieg z Bractwa.
     B_LogEntry                     (CH3_QuestForHeavyArmor,"Puœci³em Stra¿nika Œwi¹tynnego wolno. Morok niczego nie podejrzewa³. Teraz mamy wa¿niejsze sprawy na g³owie, ni¿ zemsta na ludziach z Bractwa.");
-    //Log_SetTopicStatus       (CH1_SzpiegoMoroka, LOG_SUCCESS);
+
     MIS_SpyInRuins = LOG_SUCCESS;
 
     B_GiveXP (100);
@@ -339,6 +334,8 @@ FUNC VOID DIA_Morok_Attack_Info()
     AI_Output (other, self ,"DIA_Morok_Attack_15_01"); //Do ataku!
     AI_Output (self, other ,"DIA_Morok_Attack_03_02"); //ChodŸmy! Za mn¹.
     AI_StopProcessInfos	(self);
+	GRD_7894_Morok.flags = 0;
+    GRD_7895_Patter.flags = 0;
 	B_SetPermAttitude	(GRD_7898_Gardist,	ATT_FRIENDLY);
 	B_SetPermAttitude	(GRD_7897_Gardist,	ATT_FRIENDLY);
 	B_SetPermAttitude	(GRD_7896_Gardist,	ATT_FRIENDLY);

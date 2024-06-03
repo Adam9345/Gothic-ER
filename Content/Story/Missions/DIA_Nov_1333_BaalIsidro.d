@@ -234,7 +234,7 @@ FUNC VOID DIA_BaalIsidro_Drink_Info()
 // ************************************************************
 	var int BaalIsidro_DealerJob;
 // ************************************************************
-
+var int DealerJob_Started;
 INSTANCE DIA_BaalIsidro_ThinkAgain(C_INFO) 
 {
 	npc			= Nov_1333_BaalIsidro;
@@ -265,7 +265,7 @@ FUNC VOID DIA_BaalIsidro_ThinkAgain_Info()
 		AI_Output (other, self,"DIA_BaalIsidro_ThinkAgain_15_04"); //Wiesz mo¿e, kto mo¿e tutaj kupiæ wiêksz¹ iloœæ ziela?
 		AI_Output (self, other,"DIA_BaalIsidro_ThinkAgain_03_05"); //Gdybym wiedzia³, sam bym je dawno sprzeda³, nie s¹dzisz?
 		AI_Output (self, other,"DIA_BaalIsidro_ThinkAgain_03_06"); //Poczu³em siê lepiej po pozbyciu siê tego ziela, wiesz?
-		
+		DealerJob_Started = true;
 		BaalIsidro_DealerJob = LOG_RUNNING;
 	    B_LogEntry			(CH1_DealerJob, "Baal Isidro da³ mi swoj¹ porcjê ziela. Jeœli uda mi siê je sprzedaæ, otrzymam po³owê zysku, czyli jakieœ 200 bry³ek rudy.");	
 	
@@ -303,6 +303,7 @@ INSTANCE DIA_BaalIsidro_RUNNING(C_INFO)
 FUNC INT DIA_BaalIsidro_RUNNING_Condition()
 {
 	if (BaalIsidro_DealerJob != LOG_SUCCESS)
+	&& (DealerJob_Started == TRUE)
 	{
 		return 1;
 	};

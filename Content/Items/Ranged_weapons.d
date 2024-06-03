@@ -537,7 +537,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 	visual 				=	"ItRwCrossbow1.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
@@ -565,7 +565,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 	visual 				=	"ItRwCrossbow1.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
@@ -595,7 +595,7 @@ INSTANCE ItRw_Crossbow_02(C_Item)
 	visual 				=	"ItRwCrossbow2.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
@@ -622,7 +622,7 @@ INSTANCE ItRw_Crossbow_02_Z(C_Item)
 	visual 				=	"ItRwCrossbow2.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza lekka";
@@ -649,7 +649,7 @@ INSTANCE ItRw_Crossbow_02_S(C_Item)
 	visual 				=	"ItRwCrossbow2.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Pamiêta czasy tworzenia bariery...";
@@ -678,7 +678,7 @@ INSTANCE ItRw_Crossbow_03(C_Item)
 	visual 				=	"ItRwCrossbow3.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
@@ -705,7 +705,7 @@ INSTANCE ItRw_Crossbow_03_Z(C_Item)
 	visual 				=	"ItRwCrossbow3.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
@@ -736,7 +736,7 @@ INSTANCE ItRw_Crossbow_04(C_Item)
 	visual 				=	"ItRwCrossbow4.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";
@@ -761,7 +761,7 @@ INSTANCE ItRw_Crossbow_04_Z(C_Item)
 	visual 				=	"ItRwCrossbow4.mms";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
 	TEXT[4] 			= "Kusza ciê¿ka";

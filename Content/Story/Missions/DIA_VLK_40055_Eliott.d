@@ -85,7 +85,7 @@ FUNC VOID DIA_Eliott_HELLO2_Info()
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_04"); //Przez stra¿nika Winstona i jego kumpli, g³ównie równie¿ stra¿ników.
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_05"); //Ci¹gle dostaje od nich po g³owie i tracê wszystko co wartoœciowe co uda mi siê jakoœ zdobyæ. 
     AI_Output (other, self ,"DIA_Eliott_HELLO2_15_06"); //Potrzebujesz pomocy. Nie myœla³eœ by udaæ siê z tym do kogoœ wa¿nego?
-    AI_Output (self, other ,"DIA_Eliott_HELLO2_03_07"); //Rozmawia³em z Asghanem. Ale on mnie sp³awi³ , nie chcia³ zajmowaæ siê losem byle kopacza.
+    AI_Output (self, other ,"DIA_Eliott_HELLO2_03_07"); //Rozmawia³em z Asghanem. Ale on mnie sp³awi³, nie chcia³ zajmowaæ siê losem byle kopacza.
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_08"); //Przed pójœciem do Iana blokuj¹ mnie groŸby i zastraszenia ze strony Winstona. Wy³ga³ by siê z tego a potem mnie sprz¹tn¹³.
     AI_Output (other, self ,"DIA_Eliott_HELLO2_15_09"); //Dlaczego ten typ tak ciê nienawidzi?
     AI_Output (self, other ,"DIA_Eliott_HELLO2_03_10"); //Stare dzieje... Jeszcze w Khorinis nale¿eliœmy do konkurencyjnych, zwalczaj¹cych siê grup.
@@ -117,7 +117,7 @@ if (Npc_KnowsInfo(hero,DIA_Eliott_HELLO2))
 FUNC VOID DIA_Eliott_HELLO3_Info()
 {
     AI_Output (other, self ,"DIA_Eliott_HELLO3_15_01"); //Co by³o dalej?
-    AI_Output (self, other ,"DIA_Eliott_HELLO3_03_02"); //Raz zbytnio siê po³akomi³em na cenny ³up. Jego wizja przys³oni³a przezorne myœlenie... no i trafi³em tutaj.
+    AI_Output (self, other ,"DIA_Eliott_HELLO3_03_02"); //Raz zbytnio siê nakrêci³em na cenny ³up. Jego wizja przys³oni³a przezorne myœlenie... no i trafi³em tutaj.
     AI_Output (self, other ,"DIA_Eliott_HELLO3_03_03"); //Przez kilka miesiêcy nie by³o Ÿle choæ pocz¹tki zawsze bywaj¹ doœæ trudne.
     AI_Output (self, other ,"DIA_Eliott_HELLO3_03_04"); //Jednak póŸniej trafi³ tu Winston. A, ¿e pasowa³ do tych têpych si³aczy ze stra¿y to w miarê szybko do nich przysta³. 
     AI_Output (self, other ,"DIA_Eliott_HELLO3_03_05"); //Tak zaczê³o siê moje piek³o. Odt¹d bije mnie i upokarza a z nim jego kole¿kowie.

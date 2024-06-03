@@ -106,6 +106,7 @@ INSTANCE DIA_Steh_QUEST_BADANIA (C_INFO)
 FUNC INT DIA_Steh_QUEST_BADANIA_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Steh_HELLO)) && steh_badania == false
+	&& (kapitel >= 2)
     {
     return TRUE;
     };

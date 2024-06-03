@@ -932,7 +932,8 @@ INSTANCE ItMi_Worek_Wytrychy (C_Item)
 	scemeName			=	"MAPSEALED";	
 	on_state[0]			=	UseOWorekWytrychy;
 	description			= name;
-	TEXT[2]				= "Przedmioty w tej sakiewce maj¹ ostre krawêdzie.";
+	TEXT[2]				= "Przedmioty w tej sakiewce maj¹";
+	TEXT[3]				= "ostre krawêdzie.";
 	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
 };
 func void UseOWorekWytrychy()

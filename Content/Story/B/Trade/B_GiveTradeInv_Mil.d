@@ -1,6 +1,6 @@
 
 
-func void B_Give_MilChapter1Ingredients ()
+func void B_Give_MilChapter1Ingredients()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
@@ -21,7 +21,7 @@ func void B_Give_MilChapter2Ingredients ()
 	CreateInvItems  (npc,ItMiNugget,55);//handel
 };
 
-func void B_Give_MilChapter3Ingredients ()
+func void B_Give_MilChapter3Ingredients()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
@@ -49,7 +49,7 @@ func void B_Give_MilChapter3Ingredients ()
 
 };
 
-func void B_Give_MilChapter4Ingredients ()
+func void B_Give_MilChapter4Ingredients()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
@@ -71,7 +71,7 @@ func void B_Give_MilChapter4Ingredients ()
 	CreateInvItems  (npc,ItMiNugget,50);//handel
 };
 
-func void B_Give_MilChapter5Ingredients ()
+func void B_Give_MilChapter5Ingredients()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);

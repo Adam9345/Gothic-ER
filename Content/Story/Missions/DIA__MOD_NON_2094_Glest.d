@@ -206,7 +206,7 @@ FUNC VOID DIA_Glest_Zjawa_2_Info()
     AI_Output (self, other ,"DIA_Glest_Zjawa_2_03_06"); //Obyœ spe³ni³ oczekiwania.
 	Log_CreateTopic		(Zjawa,	LOG_MISSION);
 	Log_SetTopicStatus	(Zjawa,	LOG_RUNNING);
-	B_LogEntry               (Zjawa,"Kopacz Glest powiedzia³ mi, ¿e kopacze uskar¿aj¹ siê na nocne widzenia jakiegoœ widma. Stra¿nicy twierdz¹, ¿e to zwyk³a bujda (sam mam równie¿ podobne skojarzenia). Ale zaszkodzi sprawdziæ co siê za tym kryje, zw³aszcza je¿eli dostanê za t¹ jak¹œ rudê. Powinienem pomówiæ z Gravo. ");
+	B_LogEntry               (Zjawa,"Kopacz Glest powiedzia³ mi, ¿e kopacze skar¿¹ siê na nocne widzenia jakiegoœ widma. Stra¿nicy twierdz¹, ¿e to zwyk³a bujda (sam mam równie¿ podobne skojarzenia). Ale zaszkodzi sprawdziæ co siê za tym kryje, zw³aszcza je¿eli dostanê za t¹ jak¹œ rudê. Powinienem pomówiæ z Gravo. ");
     AI_StopProcessInfos	(self);
 };
 

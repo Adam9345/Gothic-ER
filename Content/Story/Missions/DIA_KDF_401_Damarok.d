@@ -172,6 +172,8 @@ FUNC VOID DIA_Damarok_FOUND_WATER_Info()
 {
     AI_Output (other, self ,"DIA_Damarok_FOUND_WATER_15_01"); //Znalaz³em magiczn¹ wodê.
     AI_Output (self, other ,"DIA_Damarok_FOUND_WATER_03_02"); //Œwietnie, zaraz przyrz¹dzê wywar. Poczekaj tu na mnie. Zaraz wrócê.
+	 B_GiveInvItems (other,self, SpecialWater, 1);
+
 	AI_StopProcessInfos	(self);
 	//AI_GotoWP (self, "OCC_CHAPEL_STAIRCASE_TOP");
 	//AI_GotoWP (self, "OCC_CHAPEL_ENTRANCE");
@@ -202,6 +204,7 @@ FUNC VOID DIA_Damarok_FOUND_WATER2_Info()
     AI_Output (other, self ,"DIA_Damarok_FOUND_WATER2_15_04"); //Dziêki.
     B_LogEntry                     (CH1_RannyWojownik,"Damarok przyrz¹dzi³ lekarstwo. Powinienem jak najszybciej udaæ siê do Gerarda.");
     B_GiveXP (400);
+	Npc_RemoveInvItem	(KDF_401_Damarok,SpecialWater);
     B_GiveInvItems (other, self, SpecialWater, 1);
     CreateInvItems (self, GerardPotion, 1);
     B_GiveInvItems (self, other, GerardPotion, 1);

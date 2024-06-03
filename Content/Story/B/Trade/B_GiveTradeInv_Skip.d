@@ -1,4 +1,4 @@
-func void B_Give_SkipChapter2Weapons ()
+func void B_Give_SkipChapter2Weapons()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(Grd_211_Skip);
@@ -24,7 +24,7 @@ func void B_Give_SkipChapter2Weapons ()
   
 };
 
-func void B_Give_SkipChapter3Weapons ()
+func void B_Give_SkipChapter3Weapons()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(Grd_211_Skip);

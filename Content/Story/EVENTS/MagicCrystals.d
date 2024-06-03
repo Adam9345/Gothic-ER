@@ -20,10 +20,10 @@ func void Mod_BonusStr2_S1 ()
 	var C_NPC rock; rock = Hlp_GetNpc(PC_Rockefeller);
 	if ( (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))||(Hlp_GetInstanceID(self)==Hlp_GetInstanceID(rock)) ) 
 	{	
-	var int bonus;
-	if bonus == false
+	var int bonus1;
+	if bonus1 == false
 	{
-	bonus = true;
+	bonus1 = true;
 	B_RaiseAttribute	(ATR_STRENGTH,	1);
 	Snd_Play		("Harp02");
 	};

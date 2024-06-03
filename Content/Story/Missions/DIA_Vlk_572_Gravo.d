@@ -737,7 +737,7 @@ INSTANCE DIA_Gravo_Zjawa (C_INFO)
    condition    = DIA_Gravo_Zjawa_Condition;
    information  = DIA_Gravo_Zjawa_Info;
    permanent	= FALSE;
-   description	= "Kopacze uskar¿aj¹ siê na dziwn¹ zjawê...";
+   description	= "Kopacze skar¿¹ siê na dziwn¹ zjawê...";
 };
 
 FUNC INT DIA_Gravo_Zjawa_Condition()
@@ -749,7 +749,7 @@ FUNC INT DIA_Gravo_Zjawa_Condition()
 };
 FUNC VOID DIA_Gravo_Zjawa_Info()
 {
-    AI_Output (other, self ,"DIA_Gravo_Zjawa_15_01"); //Kopacze uskar¿aj¹ siê na dziwn¹ zjawê, która grasuje nieopodal obozu.
+    AI_Output (other, self ,"DIA_Gravo_Zjawa_15_01"); //Kopacze skar¿¹ siê na dziwn¹ zjawê, która grasuje nieopodal obozu.
     AI_Output (self, other ,"DIA_Gravo_Zjawa_03_02"); //To prawda. Nie wiadomo sk¹d przypl¹ta³ siê tu taki pomiot Beliara.
     AI_Output (other, self ,"DIA_Gravo_Zjawa_15_03"); //Co wiesz o tej sprawie?
     AI_Output (self, other ,"DIA_Gravo_Zjawa_03_04"); //Ju¿ kilku kopaczy niezale¿nie od siebie widzia³o tego ducha. Jednym z nich by³ Guy.
@@ -758,7 +758,7 @@ FUNC VOID DIA_Gravo_Zjawa_Info()
     AI_Output (other, self ,"DIA_Gravo_Zjawa_15_07"); //Ma³o co w ¿yciu przychodzi ³atwo. Pomówiê z Guyem.
     AI_Output (self, other ,"DIA_Gravo_Zjawa_03_08"); //Powodzenia.
     AI_Output (other, self ,"DIA_Gravo_Zjawa_15_09"); //Na razie.
-	B_LogEntry               (Zjawa,"Gravo twierdzi, i¿ rzekomo Guy wie wiêcej na temat nocnego widziad³a. Trzeba z nim o tym pogadaæ.");
+	B_LogEntry               (Zjawa,"Gravo twierdzi, i¿ rzekomo Guy wie wiêcej na temat nocnej zjawy. Trzeba z nim o tym pogadaæ.");
     AI_StopProcessInfos	(self);
 };
 

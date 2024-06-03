@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////
 INSTANCE ItMi_CronosPrecious (C_Item)
 {
-	name 				=	"Precjoza Cronosa";
+	name 				=	"Drobiazgi Cronosa";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MISSION;

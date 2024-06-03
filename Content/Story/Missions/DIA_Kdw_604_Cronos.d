@@ -751,16 +751,16 @@ FUNC VOID DIA_Cronos_KRADZIEZ_Info()
     AI_Output (other, self ,"DIA_Cronos_KRADZIEZ_15_04"); //Jestem tu, by pomagaæ magom. 
     AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_05"); //Kilka dni temu zosta³em okradziony przez jakiegoœ rzezimieszka. To cz³owiek Laresa, tego jestem pewien. 
 	AI_Output (other, self ,"DIA_Cronos_KRADZIEZ_15_06"); //Wiesz kim jest?
-    AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_07"); //Nie, kradzie¿y dokonano noc¹. Zostawi³em sakiewkê z magicznymi precjozami obok le¿¹cych nieopodal k³ód drewna i oddali³em siê na chwilê.
+    AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_07"); //Nie, kradzie¿y dokonano noc¹. Zostawi³em sakiewkê z magicznymi drobiazgami obok le¿¹cych nieopodal k³ód drewna i oddali³em siê na chwilê.
     AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_08"); //Z daleka dostrzeg³em jak jakiœ Szkodnik zabiera moj¹ w³asnoœæ. 
-	AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_09"); //Pobieg³ z ni¹ pod tamê i zrzuci³ na dó³, a potem znikn¹³ mi z oczu. Ni¿ej prawdopodobnie czeka³ jego wspólnik, który z³apa³ woreczek z precjozami. 
+	AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_09"); //Pobieg³ z ni¹ pod tamê i zrzuci³ na dó³, a potem znikn¹³ mi z oczu. Ni¿ej prawdopodobnie czeka³ jego wspólnik, który z³apa³ woreczek z drobiazgami. 
 	AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_10"); //Najemnicy stoj¹cy przy bramie zapewnili mnie, ¿e nikt tamtêdy nie wychodzi³ przez ca³¹ noc. Jeden ze z³odziei musi byæ wci¹¿ w obozie. 
 	AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_11"); //Spróbuj go znaleŸæ i odzyskaæ sakiewkê. Znajduj¹ siê tam fragmenty rozmaitych artefaktów. W niepowo³anych rêkach s¹ bardzo niebezpieczne. 
     MIS_CronosArtifacts = LOG_RUNNING;
     Npc_ExchangeRoutine(ORG_956_Vincent,"Mission");
     Log_CreateTopic          (CH1_MagicySzkodnicy, LOG_MISSION);
     Log_SetTopicStatus       (CH1_MagicySzkodnicy, LOG_RUNNING);
-    B_LogEntry               (CH1_MagicySzkodnicy,"Cronos zosta³ okradziony z magicznych precjozów, które na chwilê nieumyœlnie spuœci³ z oczu. Z³odziejem jest jeden ze Szkodników, oraz jego nieznany wspólnik. Muszê powêszyæ w obozie i poszukaæ wskazówki. Przychodzi mi na myœl klin, mo¿e od niego zacznê.");
+    B_LogEntry               (CH1_MagicySzkodnicy,"Cronos zosta³ okradziony z magicznych drobiazgów, które na chwilê nieumyœlnie spuœci³ z oczu. Z³odziejem jest jeden ze Szkodników, oraz jego nieznany wspólnik. Muszê powêszyæ w obozie i poszukaæ wskazówki. Przychodzi mi na myœl klin, mo¿e od niego zacznê.");
 	
 	Npc_ExchangeRoutine (ORG_816_Organisator,"magic");
    // nastêpny dialog!! AI_StopProcessInfos	(self);

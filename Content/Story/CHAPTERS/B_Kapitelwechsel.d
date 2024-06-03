@@ -62,29 +62,29 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		
 		
 		//-------- Händler auffüllen --------
-		B_Give_FiskChapter2Weapons ();
-		B_Give_DarrionChapter2Weapons ();
-		B_Give_SharkyChapter2Weapons ();
-		B_Give_BaalCadarChapter2Runes ();
-		B_Give_TorrezChapter2Runes ();
-		B_Give_CronosChapter2Runes ();
-		B_GiveRiordianChapter2Potions ();
+		B_Give_FiskChapter2Weapons();
+		B_Give_DarrionChapter2Weapons();
+		B_Give_SharkyChapter2Weapons();
+		B_Give_BaalCadarChapter2Runes();
+		B_Give_TorrezChapter2Runes();
+		B_Give_CronosChapter2Runes();
+		B_GiveRiordianChapter2Potions();
 		B_Give_CavalornChapter2Weapons();
 		B_Give_WolfChapter2Weapons();
-		B_Give_SkipChapter2Weapons ();
-		B_GivePatrosFoodCH2 ();
-		B_GiveMartinItemsCH2 ();
+		B_Give_SkipChapter2Weapons();
+		B_GivePatrosFoodCH2();
+		B_GiveMartinItemsCH2();
 		B_GiveJimItemsCH2 ();
-		B_Give_HuanChapter2Ingredients ();
-		B_Give_MilChapter2Ingredients ();
-		B_Give_StanleyChapter2Ingredients ();
-		B_Give_ZerronChapter2Books ();
-		B_GiveManheimCH2 ();
+		B_Give_HuanChapter2Ingredients();
+		B_Give_MilChapter2Ingredients();
+		B_Give_StanleyChapter2Ingredients();
+		B_Give_ZerronChapter2Books();
+		B_GiveManheimCH2();
 		B_Give_TradeInv_Kagan2();
 		B_GiveTradeInv_Silas2();
 		B_Give_Items_GavilianCh2();
 		B_Give_HunoChapter2Ingredients();
-		B_Give_BriamChapter2Ingredients ();
+		B_Give_BriamChapter2Ingredients();
 		B_GiverivFishFoodCH2();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW();
@@ -164,29 +164,29 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 
 		
 		//-------- Waffenhändler auffrischen --------
-		B_Give_FiskChapter3Weapons ();
-		B_Give_DarrionChapter3Weapons ();
-		B_Give_SharkyChapter3Weapons ();
-		B_Give_BaalCadarChapter3Runes ();
-		B_Give_TorrezChapter3Runes ();
-		B_Give_TorrezChapter3Runes ();
-		B_Give_CronosChapter3Runes ();
-		B_GiveRiordianChapter3Potions ();
+		B_Give_FiskChapter3Weapons();
+		B_Give_DarrionChapter3Weapons();
+		B_Give_SharkyChapter3Weapons();
+		B_Give_BaalCadarChapter3Runes(); 
+		B_Give_TorrezChapter3Runes();
+		B_Give_TorrezChapter3Runes();
+		B_Give_CronosChapter3Runes();
+		B_GiveRiordianChapter3Potions();
 		B_Give_CavalornChapter3Weapons();
-		B_Give_WolfChapter3Weapons ();
-		B_Give_SkipChapter3Weapons ();
-		B_GivePatrosFoodCH3 ();
-		B_GiveMartinItemsCH3 ();
-		B_GiveJimItemsCH3 ();
-		B_Give_HuanChapter3Ingredients ();
-		B_Give_MilChapter3Ingredients ();
-		B_Give_StanleyChapter3Ingredients ();
-		B_Give_ZerronChapter3Books ();
-		B_GiveManheimCH3 ();
+		B_Give_WolfChapter3Weapons();
+		B_Give_SkipChapter3Weapons();
+		B_GivePatrosFoodCH3();
+		B_GiveMartinItemsCH3();
+		B_GiveJimItemsCH3();
+		B_Give_HuanChapter3Ingredients();
+		B_Give_MilChapter3Ingredients();
+		B_Give_StanleyChapter3Ingredients();
+		B_Give_ZerronChapter3Books();
+		B_GiveManheimCH3();
 		B_Give_TradeInv_Kagan3();
 		B_GiveTradeInv_Silas3();
 		B_Give_Items_GavilianCh3();
-		B_Give_BriamChapter3Ingredients ();
+		B_Give_BriamChapter3Ingredients();
 		B_GiverivFishFoodCH3();
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW_Ch3();

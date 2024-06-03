@@ -407,6 +407,7 @@ FUNC VOID DIA_Torlof_SuccesS_Info()
     AI_Output (self, other ,"DIA_Torlof_SuccesS_03_02"); //Oto twoje wynagrodzenie.
     CreateInvItems (self, ItMiNugget, 100);
     B_GiveInvItems (self, other, ItMiNugget, 100);
+	B_LogEntry               (CH4_TorlofNeedHelp,"Sprawa za³atwiona, powinienem poinformowaæ o tym Laresa.");
     B_LogEntry               (CH1_helpSld1,"Pokonaliœmy wszystkich Stra¿ników. Jako wynagrodzenie otrzyma³em 100 bry³ek rudy.");
     Log_SetTopicStatus       (CH1_helpSld1, LOG_SUCCESS);
     MIS_helpSld1 = LOG_SUCCESS;

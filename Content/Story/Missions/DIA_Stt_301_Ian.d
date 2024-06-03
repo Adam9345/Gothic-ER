@@ -343,7 +343,7 @@ FUNC VOID  STT_301_IAN_GEAR_SUC_Info()
 	Wld_InsertNpc (VLK_7019_Buddler, "OM_NEW_ORE1");
 	Wld_InsertNpc (VLK_7018_Buddler, "OM_NEW_ORE1");
 	Wld_InsertNpc (GRD_7017_Gardist, "OM_NEW_ORE1");
-	Wld_InsertNpc (GRD_7016_Gardist, "OM_NEW_ORE1");
+	
 };	
 
 // ******************************GOTO ASGHAN********************************************  

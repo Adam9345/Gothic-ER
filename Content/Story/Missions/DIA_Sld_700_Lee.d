@@ -650,7 +650,7 @@ instance  SLD_700_Lee_TEACH_2H_START (C_INFO)
 FUNC int  SLD_700_Lee_TEACH_2H_START_Condition()
 {	
 	if (Npc_KnowsInfo (hero, SLD_700_Lee_TEACH_2H))
-	&& ((Npc_GetTrueGuild    (hero) == GIL_SLD) || (Npc_GetTrueGuild    (hero) == GIL_ORG) || (Npc_GetTrueGuild    (hero) == GIL_SFB) || (Npc_GetTrueGuild    (hero) == GIL_KDW) || ( (Npc_GetTrueGuild(hero) == GIL_NONE) && (kapitel >= 4)))
+	&& ((Npc_GetTrueGuild    (hero) == GIL_SLD) || (Npc_GetTrueGuild    (hero) == GIL_ORG) || (Npc_GetTrueGuild    (hero) == GIL_SFB) || (Npc_GetTrueGuild    (hero) != GIL_GRD)|| (Npc_GetTrueGuild    (hero) == GIL_KDW) || ( (Npc_GetTrueGuild(hero) == GIL_NONE) && (kapitel >= 4)))
 	{
 	return TRUE;
 	};

@@ -120,7 +120,7 @@ FUNC VOID DIA_Richard_Decyzja_Info()
 {
     AI_Output (other, self ,"DIA_Richard_Decyzja_15_01"); //Ten ktoœ to oczywiœcie ja... jak zwykle.
     AI_Output (self, other ,"DIA_Richard_Decyzja_03_02"); //M³ody, nie traktuj tego jak zwyk³¹ b³ahostkê. Tu chodzi o moje ¿ycie i zdrowie.
-	AI_Output (self, other ,"DIA_Richard_Decyzja_03_03"); //Obiecujê ¿e jakoœ ci siê odwdziêdzê.
+	AI_Output (self, other ,"DIA_Richard_Decyzja_03_03"); //Obiecujê ¿e jakoœ ci siê odwdzieczê.
     AI_Output (other, self ,"DIA_Richard_Decyzja_15_04"); //Ale co konkretnie mam zrobiæ? Tak po prostu podreptaæ do, któregoœ z Magów i powiedzieæ, ¿e zjad³eœ jakiegoœ grzyba i Ÿle siê czujesz?!
     AI_Output (self, other ,"DIA_Richard_Decyzja_03_05"); //Musimy byæ dok³adni inaczej nie wyrwie siê temu cholerstwu i zginê marnie...
    
