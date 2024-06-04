@@ -179,6 +179,7 @@ FUNC void  DIA_EBR_106_Bartholo_Wait4SC_Info()
 	
 	self.guild 	= GIL_EBR;
 	Npc_SetTrueGuild	(self, GIL_EBR);	
+    Npc_SetPermAttitude (self, ATT_HOSTILE);
 };
 
 var int szukam_dowodow;

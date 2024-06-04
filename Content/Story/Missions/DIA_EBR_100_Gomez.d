@@ -484,13 +484,17 @@ FUNC void  DIA_EBR_100_Gomez_Wait4SC_Info()
 	Npc_SetTrueGuild	(GRD_3916_Elitarny_straznik, GIL_EBR );	
 	Npc_SetPermAttitude (GRD_3916_Elitarny_straznik, ATT_HOSTILE);
 	
-	GRD_8800_Gardist.guild 	= GIL_EBR;
-	Npc_SetTrueGuild	(GRD_8800_Gardist, GIL_EBR );	
+	GRD_8800_Gardist.guild 	= GIL_GRD;
+	Npc_SetTrueGuild	(GRD_8800_Gardist, GIL_GRD );	
 	Npc_SetPermAttitude (GRD_8800_Gardist, ATT_HOSTILE);
 	
-	GRD_8801_Gardist.guild 	= GIL_EBR;
-	Npc_SetTrueGuild	(GRD_8801_Gardist, GIL_EBR );	
+	GRD_8801_Gardist.guild 	= GIL_GRD;
+	Npc_SetTrueGuild	(GRD_8801_Gardist, GIL_GRD );	
 	Npc_SetPermAttitude (GRD_8801_Gardist, ATT_HOSTILE);
+
+	GRD_3935_Hector.guild 	= GIL_GRD;
+	Npc_SetTrueGuild	(GRD_3935_Hector, GIL_GRD );	
+	Npc_SetPermAttitude (GRD_3935_Hector, ATT_HOSTILE);
 };
 instance dia_gomez_pickpocket(c_info) {
     npc = ebr_100_gomez;

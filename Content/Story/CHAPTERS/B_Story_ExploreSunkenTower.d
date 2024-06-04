@@ -35,6 +35,7 @@ func void B_Story_ExploreSunkenTower ()
 	var	C_NPC grd8801		; grd8801		= Hlp_GetNpc (GRD_8801_Gardist	);
 	var	C_NPC grd3916		; grd3916		= Hlp_GetNpc (GRD_3916_Elitarny_straznik	);
 	var	C_NPC grd3917		; grd3917		= Hlp_GetNpc (GRD_3917_Elitarny_straznik	);
+	var	C_NPC skelden		; skelden		= Hlp_GetNpc (GRD_3935_Hector	);
 	
 	Npc_ExchangeRoutine		(Gomez		,"OT"); 
 	Npc_ExchangeRoutine		(Bartholo	,"OT"); 
@@ -66,11 +67,11 @@ func void B_Story_ExploreSunkenTower ()
 	Serafia.guild 	= GIL_NONE;		Npc_SetTrueGuild	(Serafia, 	GIL_NONE);	
 	Velayla.guild 	= GIL_NONE;		Npc_SetTrueGuild	(Velayla, 	GIL_NONE);	
 	Sira.guild 		= GIL_NONE;		Npc_SetTrueGuild	(Sira,	 	GIL_NONE);	
-	grd3916.guild 	= GIL_NONE ;	Npc_SetTrueGuild	(grd3916,	 GIL_NONE);	
-	grd3917.guild 	= GIL_NONE ;	Npc_SetTrueGuild	(grd3917,	 GIL_NONE);	
+	grd3916.guild 	= GIL_GRD ;	Npc_SetTrueGuild	(grd3916,	 GIL_GRD);	
+	grd3917.guild 	= GIL_GRD ;	Npc_SetTrueGuild	(grd3917,	 GIL_GRD);	
 	grd8800.guild 	= GIL_NONE ;	Npc_SetTrueGuild	(grd8800,	 GIL_NONE);	
 	grd8801.guild 	= GIL_NONE ;	Npc_SetTrueGuild	(grd8801,	 GIL_NONE);	
-	
+	skelden.guild   = GIL_NONE;	Npc_SetTrueGuild	(skelden,	 GIL_NONE);
 	// Attitüde Änderung
 	Npc_SetPermAttitude	(Stone,		ATT_NEUTRAL);	Npc_SetTempAttitude	(Stone,		ATT_NEUTRAL);
 	Npc_SetPermAttitude	(Skip,		ATT_NEUTRAL);	Npc_SetTempAttitude	(Skip,		ATT_NEUTRAL); 	         	
@@ -79,10 +80,11 @@ func void B_Story_ExploreSunkenTower ()
 	Npc_SetPermAttitude	(Gomez,		ATT_NEUTRAL);	Npc_SetTempAttitude	(Gomez,		ATT_NEUTRAL); 	
 	Npc_SetPermAttitude	(Serafia,		ATT_NEUTRAL);	Npc_SetTempAttitude	(Serafia,		ATT_NEUTRAL); 	     	
 	Npc_SetPermAttitude	(Velayla,		ATT_NEUTRAL);	Npc_SetTempAttitude	(Velayla,		ATT_NEUTRAL); 	 
-	Npc_SetPermAttitude	(grd3916,		ATT_NEUTRAL);	Npc_SetTempAttitude	(grd3916,		ATT_NEUTRAL); 	 
-	Npc_SetPermAttitude	(grd3917,		ATT_NEUTRAL);	Npc_SetTempAttitude	(grd3917,		ATT_NEUTRAL); 
-	Npc_SetPermAttitude	(grd8800,		ATT_NEUTRAL);	Npc_SetTempAttitude	(grd8800,		ATT_NEUTRAL); 	
-	Npc_SetPermAttitude	(grd8801,		ATT_NEUTRAL);	Npc_SetTempAttitude	(grd8801,		ATT_NEUTRAL); 	  	
+	Npc_SetPermAttitude	(grd3916,		ATT_HOSTILE);	Npc_SetTempAttitude	(grd3916,		ATT_HOSTILE); 	 
+	Npc_SetPermAttitude	(grd3917,		ATT_HOSTILE);	Npc_SetTempAttitude	(grd3917,		ATT_HOSTILE); 
+	Npc_SetPermAttitude	(grd8800,		ATT_HOSTILE);	Npc_SetTempAttitude	(grd8800,		ATT_HOSTILE); 	
+	Npc_SetPermAttitude	(grd8801,		ATT_HOSTILE);	Npc_SetTempAttitude	(grd8801,		ATT_HOSTILE);
+	Npc_SetPermAttitude	(skelden,		ATT_HOSTILE);	Npc_SetTempAttitude	(skelden,		ATT_HOSTILE); 	  	
 	
 	//-------- Immortals löschen --------
 	Thorus.flags	= 0;
