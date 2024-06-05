@@ -577,7 +577,7 @@ FUNC VOID DIA_Aleph_DWMN_Info()
     AI_Output (other, self ,"DIA_Aleph_DWMN_15_03"); //Chodzi o dostawê rudy do Starego Obozu Gomez zarobi na niej fortunê.
     AI_Output (self, other ,"DIA_Aleph_DWMN_03_04"); //Ciekawe. Na pewno zarz¹dcy kopalni dostan¹ niez³e premie. 
     AI_Output (self, other ,"DIA_Aleph_DWMN_03_05"); //Ale w³aœciwie po co mi o tym mówisz?
-    AI_Output (other, self ,"DIA_Aleph_DWMN_15_06"); //Uzna³em , ¿e lubisz du¿o wiedzieæ.
+    AI_Output (other, self ,"DIA_Aleph_DWMN_15_06"); //Uzna³em, ¿e lubisz du¿o wiedzieæ.
     AI_Output (self, other ,"DIA_Aleph_DWMN_03_07"); //Rozumiem. I masz trochê racji.
     AI_Output (other, self ,"DIA_Aleph_DWMN_15_08"); //Có¿, do zobaczenia...
     AI_Output (self, other ,"DIA_Aleph_DWMN_03_09"); //Na razie.

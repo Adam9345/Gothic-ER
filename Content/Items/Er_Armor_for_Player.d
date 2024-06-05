@@ -619,7 +619,7 @@ INSTANCE BAU_ARMOR_H(C_Item)
 *******************************************************************************************/
 INSTANCE NON_ORCHUNTERARMOR_01(C_Item)
 {
-	name 					=	"Solidny skórzany pancerz";
+	name 					=	"Pancerz ³owcy orków";
 
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
@@ -809,7 +809,7 @@ INSTANCE CBDTES_ARMOR_M(C_Item)
 
 INSTANCE Armor_och_H(C_Item)
 {
-	name 					=	"Ciê¿ka Zbroja £owców Orków";
+	name 					=	"Ciê¿ka Zbroja £owcy Orków";
 
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;

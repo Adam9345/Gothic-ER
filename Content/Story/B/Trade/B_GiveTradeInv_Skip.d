@@ -10,6 +10,11 @@ func void B_Give_SkipChapter2Weapons()
 	CreateInvItem (npc,ItMw_1H_Sword_03);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
+	
+	CreateInvItem (npc,ItMw_2H_Sword_New_02);
+	CreateInvItem (npc,ItMw_2H_Axe_Big_05);
+	CreateInvItem (npc,ItMw_2h_Axe_Lumber_01);
+	
 	CreateInvItem (npc,ItRe_GrdBelt);
 	
 	CreateInvItems (npc,ItMiNugget,400); 
@@ -41,7 +46,8 @@ func void B_Give_SkipChapter3Weapons()
 	CreateInvItem   (npc,Plan_Miecz1H9);
 	CreateInvItems  (npc,ItMiNugget,250); 
 	//-------- Fernkampfwaffen --------
-	
+	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
+	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
 
 	//-------- Munition --------
   

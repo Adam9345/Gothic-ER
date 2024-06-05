@@ -8454,7 +8454,7 @@ func void UseTho_Ashgan ()
 					Doc_PrintLine	( nDocID,  0, "Ashgan"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_SetFont 	( nDocID, -1, "font_10_book.TGA"	   			); 	// -1 -> all pages 
-					Doc_PrintLines	( nDocID,  0, "Z zeznañ tragarza Brennusa wynika, ¿e Stra¿nik Winston dopuœci³ siê pod³ego oszustwa i przyw³aszczenia nie swojej rudy. Zamiast udaæ siê do Skipa i kupiæ broñ wysokiej klasy , uda³ siê do Huno i kupi³ po tanioœci miecze gorszego sortu. Twierdzi³, ¿e kupuje je dla kopaczy. Resztê rudy zatrzyma³. Domagam siê dla tego ³otra wysokiej kary. Niech popamiêta. ");
+					Doc_PrintLines	( nDocID,  0, "Z zeznañ tragarza Brennusa wynika, ¿e Stra¿nik Winston dopuœci³ siê pod³ego oszustwa i przyw³aszczenia nie swojej rudy. Zamiast udaæ siê do Skipa i kupiæ broñ wysokiej klasy, uda³ siê do Huno i kupi³ po tanioœci miecze gorszego sortu. Twierdzi³, ¿e kupuje je dla kopaczy. Resztê rudy zatrzyma³. Domagam siê dla tego ³otra wysokiej kary. Niech popamiêta. ");
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Podpisano"					);
 					Doc_PrintLine	( nDocID,  0, "THORUS"					);

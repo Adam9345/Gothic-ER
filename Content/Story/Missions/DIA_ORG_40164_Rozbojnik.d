@@ -60,7 +60,7 @@ FUNC VOID DIA_RozbojnikPW_HELLO1_Info()
     AI_Output (other, self ,"DIA_RozbojnikPW_HELLO1_15_05"); //Wasze niedoczekanie chamy. On nie zginie.
     AI_Output (self, other ,"DIA_RozbojnikPW_HELLO1_03_06"); //S³yszeliœcie? Bêdzie nam grozi³!
     AI_Output (self, other ,"DIA_RozbojnikPW_HELLO1_03_07"); //No trudno. Wiêcej trupów, wiêcej ³upów!
-    AI_Output (other, self ,"DIA_RozbojnikPW_HELLO1_15_08"); //Ud³aw siê kanalio!
+    
 	
 	
 	B_LogEntry(PrawdziwyWojownik,"Id¹c na polowanie natknêliœmy siê na bandziorów, którzy napadli jakiegoœ Najemnika. Trzeba mu pomóc!");

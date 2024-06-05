@@ -50,7 +50,7 @@ FUNC VOID DIA_Nieznajomy_HELLO1_Info()
     AI_Output (self, other ,"DIA_Nieznajomy_HELLO1_03_03"); //On jest zajêty.
     AI_Output (other, self ,"DIA_Nieznajomy_HELLO1_15_04"); //Nie widaæ.
     AI_Output (self, other ,"DIA_Nieznajomy_HELLO1_03_05"); //I nie chce chce ciê widzieæ a tym bardziej strzêpiæ do ciebie jêzyka.
-    AI_Output (other, self ,"DIA_Nieznajomy_HELLO1_15_06"); //Jesteœ jego niañk¹ , ¿e gadasz za niego? Co tu robisz i kto ciê przys³a³?
+    AI_Output (other, self ,"DIA_Nieznajomy_HELLO1_15_06"); //Jesteœ jego niañk¹, ¿e gadasz za niego? Co tu robisz i kto ciê przys³a³?
     AI_Output (self, other ,"DIA_Nieznajomy_HELLO1_03_07"); //Ja? Po prostu tu jestem i nic ci do tego æwoku!
     AI_Output (other, self ,"DIA_Nieznajomy_HELLO1_15_08"); //Porozmawiam sobie z Ulbertem a ty zejdŸ mi z drogi.
     AI_Output (self, other ,"DIA_Nieznajomy_HELLO1_03_09"); //Jeszcze s³owo i nie rêczê za siebie!

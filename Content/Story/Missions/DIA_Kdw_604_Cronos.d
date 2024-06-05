@@ -1110,7 +1110,7 @@ FUNC VOID DIA_Cronos_Richard_Rosliny_Info()
 	
     AI_Output (self, other ,"DIA_Cronos_Richard_Rosliny_03_04"); //Œwietnie. 
 	AI_Output (other, self ,"DIA_Cronos_Richard_Rosliny_15_05"); //Teraz druga czêœæ umowy. Oto fiolka z krwi¹ otrutego nieszczêœnika, powinna trafiæ do Riordiana.
-    AI_Output (self, other ,"DIA_Cronos_Richard_Rosliny_03_06"); //Postaram siê niezw³ocznie pomówiæ z Riordianem. Zbada tê próbkê i pomyœli nad rozwi¹zaniem.  PrzyjdŸ jutro, powiem ci co i jak.
+    AI_Output (self, other ,"DIA_Cronos_Richard_Rosliny_03_06"); //Postaram siê niezw³ocznie pomówiæ z Riordianem. Zbada tê próbkê i pomyœli nad rozwi¹zaniem. PrzyjdŸ jutro, powiem ci co i jak.
 	Riordian_Going_Day = Wld_GetDay();
     AI_Output (other, self ,"DIA_Cronos_Richard_Rosliny_15_07"); //Dziêki.	
     B_GiveInvItems     (other,self, ItMi_RichardBlood,     1);

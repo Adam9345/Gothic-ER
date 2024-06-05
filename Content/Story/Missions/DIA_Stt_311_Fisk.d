@@ -429,11 +429,13 @@ FUNC VOID DIA_Fisk_PNA_Skory_Info()
     AI_Output (self, other ,"DIA_Fisk_PNA_Skory_03_08"); //Aaa... By³bym zapomnia³. Masz siê spotkaæ z Bartholo przed g³ówn¹ bram¹ do zamku.
     AI_Output (other, self ,"DIA_Fisk_PNA_Skory_15_09"); //Rozumiem. Pewnie chodzi o zap³atê.
     AI_Output (self, other ,"DIA_Fisk_PNA_Skory_03_10"); //Najpewniej.	
-	Npc_ExchangeRoutine(EBR_106_Bartholo,"PNAGATE");
+	
 	AI_Output (other, self ,"DIA_Fisk_PNA_Skory_15_11"); //Zatem pogadam z nim. Do zobaczenia.
     AI_Output (self, other ,"DIA_Fisk_PNA_Skory_03_12"); //Na razie.
-     B_LogEntry               (PolowanieNaAligatory,"Da³em skóry aligatorów Fiskowi. Powiedzia³, ¿e mam pomówiæ z Bartholo przez bram¹ do Zamku. Czas odebraæ zap³atê.");
+     B_LogEntry               (PolowanieNaAligatory,"Da³em skóry aligatorów Fiskowi. Powiedzia³, ¿e mam pomówiæ z Bartholo przed bram¹ do Zamku. Czas odebraæ zap³atê.");
 	
+	 B_StartOtherRoutine   (EBR_106_Bartholo,"PNAGATE");  
+
 	
 	
 };
