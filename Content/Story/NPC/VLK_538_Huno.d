@@ -158,8 +158,8 @@ func void rtn_pali_538 ()
 
 func void rtn_nockruka_538 ()
 {
-	TA_Boss	(06,40,22,50,"OW_PATH_1_5_3");
-	TA_Boss	(22,50,06,00,"OW_PATH_1_5_3");
+	TA_Boss	(06,40,22,50,"WP_HUNO_NK");
+	TA_Boss	(22,50,06,00,"WP_HUNO_NK");
 };
 
 
