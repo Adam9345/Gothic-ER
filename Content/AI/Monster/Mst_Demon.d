@@ -202,6 +202,7 @@ INSTANCE DemonMine (Mst_Default_Demon)
 
 INSTANCE DemonKastagir (Mst_Default_Demon)
 {
+
 	name							=	"Demon";
 	level							=	40;
 //--------------------------------------------------------	
@@ -222,7 +223,8 @@ INSTANCE DemonKastagir (Mst_Default_Demon)
 	protection	[PROT_MAGIC]		=	40;
 //--------------------------------------------------------
 	damagetype 						=	DAM_MAGIC;
-	Set_DemonKastagir_Visuals();
+
+	Set_Demon2_Visuals();
 	Npc_SetToFistMode(self);
 };
 
