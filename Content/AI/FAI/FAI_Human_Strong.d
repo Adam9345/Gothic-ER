@@ -19,7 +19,7 @@ INSTANCE FA_ENEMY_PREHIT_3 (C_FightAI)
 	move[0] = MOVE_PARADE;
 	move[1] = MOVE_JUMPBACK;
 	move[2] = MOVE_SIDEATTACK;
-	move[3] = MOVE_WAIT;
+	move[3] = MOVE_ATTACK;
 	
 	
 };
@@ -45,6 +45,8 @@ INSTANCE FA_MY_W_COMBO_3 (C_FightAI)
 INSTANCE FA_MY_W_RUNTO_3 (C_FightAI)
 {
 	move[0] = MOVE_TURN;
+	move[1] = MOVE_ATTACK;
+	
 };
 
 INSTANCE FA_MY_W_STRAFE_3 (C_FightAI)

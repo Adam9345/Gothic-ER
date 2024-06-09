@@ -594,9 +594,9 @@ INSTANCE SkeletonL			(Mst_Default_Skeleton)
 
 	aivar[AIV_MM_Behaviour]		= PACKHUNTER;
 	
-	aivar[AIV_MM_PercRange]		= 2000;
-	aivar[AIV_MM_DrohRange]		= 1500;
-	aivar[AIV_MM_AttackRange]	= 1500;
+    aivar[AIV_MM_PercRange]		= 2500;
+	aivar[AIV_MM_DrohRange]		= 2000;
+	aivar[AIV_MM_AttackRange]	= 1800;
 	aivar[AIV_MM_DrohTime]		= 0;
 	aivar[AIV_MM_FollowTime]	= 5;
 	aivar[AIV_MM_FollowInWater] = FALSE;
@@ -677,4 +677,27 @@ INSTANCE SkeletonKH			(Mst_Default_Skeleton)
     Set_SkeletonBranTow_Visuals();
 	EquipItem (self,  ItMw_2H_Sword_Old_02);
 	
+};
+
+INSTANCE SkeletonMage_Fortress		(Mst_Default_Skeleton)
+{
+	aivar[AIV_MM_REAL_ID]	= 	ID_SKELETONMAGE;
+	Set_SkeletonMage_Visuals();
+	name					=	"Szkielet maga Fortecy";
+	guild					=	GIL_DEMON;	// "fliegende" Gilde nötig, damit es nicht Watet/Schwimmt/... !
+	level					=	30;
+	
+	protection	[PROT_BLUNT]		=	90;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	50;
+	protection	[PROT_FIRE]			=	50;
+	protection	[PROT_FLY]			=	0;
+	protection	[PROT_MAGIC]		=	50;		
+
+	attribute	[ATR_HITPOINTS_MAX]	=	500;
+	attribute	[ATR_HITPOINTS]		=	500;
+	
+	fight_tactic =			FAI_HUMAN_MAGE;
+
+   EquipItem (self,  ItArRuneThunderball);
 };

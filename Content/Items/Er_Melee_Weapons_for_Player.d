@@ -21,31 +21,7 @@
 ******* Opis: jest to nagroda od Huno, jeœli nie wpêdzimy
 ******* go ponownie w na³óg. 
 *****************************************************/
-INSTANCE Miecz1H5 (C_Item) //nagroda od Huno
-{	
-	name 				=	"Miecz Horyzontów";  
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	600;
-	
-	damageTotal			= 	35;
-	damagetype			=	DAM_EDGE;
-	range    			=  	120;		
-	
-	cond_atr[1]   		= 	ATR_DEXTERITY;
-	cond_value[1]  		= 	35;
-	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_02.3DS";
-
-	description			= name;
-	TEXT[1]				= "porêczny miecz o dalekim zasiêgu";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
-	TEXT[4]				= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 /****************************************************
 ******* MIECZ KOWALA
@@ -382,29 +358,6 @@ INSTANCE Miecz2H5 (C_Item) // £owcy orków
 ******* Opis: Nagroda za pomoc od Snake'a. Dostajemy od   
 ******* niego plan.
 *****************************************************/
-INSTANCE ItMw_DaggerOfMurder(C_Item) 
-{	
-	name 				=	"Sztylet Zabójcy";  
-
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	600;
-	
-	damageTotal			= 	40;
-	damagetype			=	DAM_EDGE;
-	range    			=  	70;		
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	30;
-	visual 				=	"steel_dagger.3DS";
-
-	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 
 /****************************************************
@@ -412,77 +365,9 @@ INSTANCE ItMw_DaggerOfMurder(C_Item)
 ******* Opis: Pospolite bronie, które mo¿na kupiæ u   
 ******* handlarzy lub znaleŸæ w œwiecie.
 *****************************************************/	
-INSTANCE ItMw_Dagger (C_Item) 
-{	
-	name 				=	"Sztylet";  
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
 
-	value 				=	20;
-	
-	damageTotal			= 	10;
-	damagetype			=	DAM_EDGE;
-	range    			=  	70;		
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	7;
-	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
 
-	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
-
-INSTANCE ItMw_Dagger2 (C_Item) 
-{	
-	name 				=	"Zdobiony Sztylet";  
-
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	35;
-	
-	damageTotal			= 	15;
-	damagetype			=	DAM_EDGE;
-	range    			=  	70;		
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	11;
-	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
-
-	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
-
-INSTANCE ItMw_Dagger3 (C_Item) 
-{	
-	name 				=	"Sztylet Wojownika" ;  
-
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	350;
-	
-	damageTotal			= 	25;
-	damagetype			=	DAM_EDGE;
-	range    			=  	70;		
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	15;
-	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
-
-	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 /****************************************************
 ******* RAPIER		
@@ -490,30 +375,6 @@ INSTANCE ItMw_Dagger3 (C_Item)
 ******* wymagaj¹cy wyskiego wspó³czynnika zrêcznoœci. 
 ******* Plan do kupienia u Darriona w trzecim rozdziale. 
 *****************************************************/
-
-INSTANCE ItMw_Rapier (C_Item) 
-{	
-	name 				=	"Rapier" ;  
-
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	1400;
-	
-	damageTotal			= 	60;
-	damagetype			=	DAM_EDGE;
-	range    			=  	100;		
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	45;
-	visual 				=	"ItMw_050_1H_Sword_Rapier_01.3DS";
-
-	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 
 
@@ -546,30 +407,7 @@ FUNC VOID UnEquip_1H_10()
 };
 const string NAME_ADDON_BONUS_1H = "Premia do trafieñ krytycznych";
 /******************************************************************************************/
-INSTANCE ItMw_Meisterdegen (C_Item)
-{	
-	name 				=	"Miecz Mistrzowski";  
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	4400;
-	
-	damageTotal			= 	120;
-	damagetype			=	DAM_EDGE;
-	range    			=  	120;		
-	cond_atr[1]   		= 	ATR_DEXTERITY;
-	cond_value[1]  		= 	90;
-	visual 				=	"ItMw_065_1h_SwordCane_02.3ds";
-	
-	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[1];
-	TEXT[3]				= NAME_ADDON_BONUS_1H;			COUNT[3]	= 5;
-	TEXT[4]				= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};	
 
 
 /****************************************************
@@ -578,31 +416,7 @@ INSTANCE ItMw_Meisterdegen (C_Item)
 *****************************************************/
 //Degen 	- ItMw_1h_Vlk_Sword 
 /******************************************************************************************/
-INSTANCE ItMw_Addon_BanditTrader (C_Item)
-{	
-	name 				=	"Pa³asz";  
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	800;
-	
-	damageTotal			= 	40;
-	damagetype			=	DAM_EDGE;
-	range    			=  	90;		
-	cond_atr[1]   		= 	ATR_DEXTERITY;
-	cond_value[1]  		= 	30;
-	visual 				=	"ItMw_018_1h_SwordCane_01.3ds";
-
-	description			= name;
-
-	TEXT[1]				= 	"Lekka i porêczna broñ";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 
 	
@@ -611,31 +425,7 @@ INSTANCE ItMw_Addon_BanditTrader (C_Item)
 ******* Opis: Broñ mo¿na znaleŸæ w górnej sali Cmentarzyska    
 ******* Orków.
 *****************************************************/
-INSTANCE ItMw_DarkTrader (C_Item) //Cmentarzysko Orków - górna sala
-{	
-	name 				=	"Wspania³y Pa³asz";  
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD;	
-	material 			=	MAT_METAL;
-
-	value 				=	1000;
-	
-	damageTotal			= 	50;
-	damagetype			=	DAM_EDGE;
-	range    			=  	90;		
-	cond_atr[1]   		= 	ATR_DEXTERITY;
-	cond_value[1]  		= 	35;
-	visual 				=	"ItMw_018_1h_SwordCane_01.3ds";
-
-	description			= name;
-
-	TEXT[1]				= 	"Lekka i porêczna broñ";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
-	TEXT[4] 			= NAME_OneHanded;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
-};
 
 /****************************************************
 ******* TOPÓR £ASKI		
@@ -1112,32 +902,7 @@ INSTANCE ItMw_2h_RepairedRedSword (C_Item)
 	
 };
 //*********************************************************************************/
-// keine NPCs
-INSTANCE ItMw_1h_Sword_Katana (C_Item)
-{	
-	name 				=	"Katana";
 
-	mainflag 			=	ITEM_KAT_NF;
-	flags 				=	ITEM_SWD|ITEM_MULTI;	
-	material 			=	MAT_METAL;
-
-	value  = 650;
-
-	damageTotal			= 	65;
-	damagetype			=	DAM_EDGE;
-	range    			=  	95;		
-
-	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	60;
-	visual 				=	"ItMw_1h_Sword_Katana.3DS";
-
-	description			= name;
-	TEXT[2]				=	NAME_Damage;			COUNT[2]	=   damageTotal;
-	TEXT[3] 			=	NAME_Dex_needed;		COUNT[3]	=	cond_value[2];
-	TEXT[4] 			=   NAME_OneHanded;
-	TEXT[5]				=	NAME_Value;				COUNT[5]	=	value;
-	
-};
 //*********************************************************************************/
 // keine NPCs
 INSTANCE ItMw_2H_AxeHevay_100 (C_Item)
@@ -1223,3 +988,311 @@ INSTANCE ItMw_1H_Sword_Grd_Master (C_Item)
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
+/*************************************************************************/
+
+//BRONIE POD ZRÊCZNOŒÆ 1H
+/*************************************************************************/
+INSTANCE ItMw_Dagger (C_Item) 
+{	
+	name 				=	"Sztylet";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	20;
+	
+	damageTotal			= 	10;
+	damagetype			=	DAM_EDGE;
+	range    			=  	70;		
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	7;
+	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_Dagger2 (C_Item) 
+{	
+	name 				=	"Zdobiony Sztylet";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	35;
+	
+	damageTotal			= 	15;
+	damagetype			=	DAM_EDGE;
+	range    			=  	70;		
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	11;
+	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_Dagger3 (C_Item) 
+{	
+	name 				=	"Sztylet Wojownika" ;  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	350;
+	
+	damageTotal			= 	25;
+	damagetype			=	DAM_EDGE;
+	range    			=  	70;		
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	15;
+	visual 				=	"ItMw_005_1H_Dagger_01.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE Miecz1H5 (C_Item) //nagroda od Huno
+{	
+	name 				=	"Miecz Horyzontów";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	600;
+	
+	damageTotal			= 	35;
+	damagetype			=	DAM_EDGE;
+	range    			=  	120;		
+	
+	cond_atr[1]   		= 	ATR_DEXTERITY;
+	cond_value[1]  		= 	35;
+	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_02.3DS";
+
+	description			= name;
+	TEXT[1]				= "Porêczny miecz o dalekim zasiêgu";
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4]				= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_DaggerOfMurder(C_Item) 
+{	
+	name 				=	"Sztylet Zabójcy";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	600;
+	
+	damageTotal			= 	40;
+	damagetype			=	DAM_EDGE;
+	range    			=  	70;		
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	30;
+	visual 				=	"steel_dagger.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_Addon_BanditTrader (C_Item)
+{	
+	name 				=	"Pa³asz";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	800;
+	
+	damageTotal			= 	40;
+	damagetype			=	DAM_EDGE;
+	range    			=  	90;		
+	cond_atr[1]   		= 	ATR_DEXTERITY;
+	cond_value[1]  		= 	30;
+	visual 				=	"ItMw_018_1h_SwordCane_01.3ds";
+
+	description			= name;
+
+	TEXT[1]				= 	"Lekka i porêczna broñ";
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_DarkTrader (C_Item) //Cmentarzysko Orków - górna sala
+{	
+	name 				=	"Wspania³y Pa³asz";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	1000;
+	
+	damageTotal			= 	50;
+	damagetype			=	DAM_EDGE;
+	range    			=  	90;		
+	cond_atr[1]   		= 	ATR_DEXTERITY;
+	cond_value[1]  		= 	35;
+	visual 				=	"ItMw_018_1h_SwordCane_01.3ds";
+
+	description			= name;
+
+	TEXT[1]				= 	"Lekka i porêczna broñ";
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_Rapier (C_Item) 
+{	
+	name 				=	"Rapier" ;  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	1400;
+	
+	damageTotal			= 	60;
+	damagetype			=	DAM_EDGE;
+	range    			=  	100;		
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	55;
+	visual 				=	"ItMw_050_1H_Sword_Rapier_01.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_1h_Sword_Katana (C_Item)
+{	
+	name 				=	"Katana";
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD|ITEM_MULTI;	
+	material 			=	MAT_METAL;
+
+	value  = 650;
+
+	damageTotal			= 	65;
+	damagetype			=	DAM_EDGE;
+	range    			=  	95;		
+
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	60;
+	visual 				=	"ItMw_1h_Sword_Katana.3DS";
+
+	description			= name;
+	TEXT[2]				=	NAME_Damage;			COUNT[2]	=   damageTotal;
+	TEXT[3] 			=	NAME_Dex_needed;		COUNT[3]	=	cond_value[2];
+	TEXT[4] 			=   NAME_OneHanded;
+	TEXT[5]				=	NAME_Value;				COUNT[5]	=	value;
+	
+};
+/*************************************************************************/
+INSTANCE ItMw_1h_ShineRevenge (C_Item) 
+{	
+	
+	name 				=	"Blask zemsty";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	650;
+
+	damageTotal  		= 	70;
+	damagetype 			=	DAM_EDGE;
+	range    			=  	130;		
+
+	cond_atr[2]   		=	ATR_DEXTERITY;
+	cond_value[2]  		=	60;
+	visual 				=	"ER_1h_ShineRevenge.3DS";
+
+	description			= name;
+	
+	
+	TEXT[2]				= NAME_Dam_Edge;					         COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				             COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					             COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_1h_DecoratedSabre (C_Item) 
+{	
+	
+	name 				=	"Zdobiona szabla";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	780;
+
+	damageTotal  		= 	78;
+	damagetype 			=	DAM_EDGE;
+	range    			=  	130;		
+
+	cond_atr[2]   		=	ATR_DEXTERITY;
+	cond_value[2]  		=	74;
+	visual 				=	"ER_1h_DecoratedSabre.3DS";
+
+	description			= name;
+	
+	
+	TEXT[2]				= NAME_Dam_Edge;					         COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				             COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					             COUNT[5]	= value;
+};
+/*************************************************************************/
+INSTANCE ItMw_Meisterdegen (C_Item)
+{	
+	name 				=	"Miecz Mistrzowski";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	900;
+	
+	damageTotal			= 	90;
+	damagetype			=	DAM_EDGE;
+	range    			=  	120;		
+	cond_atr[1]   		= 	ATR_DEXTERITY;
+	cond_value[1]  		= 	90;
+	visual 				=	"ItMw_065_1h_SwordCane_02.3ds";
+	
+	description			= name;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[1];
+	TEXT[3]				= NAME_ADDON_BONUS_1H;			COUNT[3]	= 5;
+	TEXT[4]				= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};	

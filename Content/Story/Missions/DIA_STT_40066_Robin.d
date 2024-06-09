@@ -87,7 +87,7 @@ FUNC VOID DIA_Robin_DWNM_Info()
     AI_Output (other, self ,"DIA_Robin_DWNM_15_07"); //I?
     AI_Output (self, other ,"DIA_Robin_DWNM_03_08"); //Nale¿y rozpuœciæ pewn¹ plotkê wœród bywalców kopalni. 
     AI_Output (other, self ,"DIA_Robin_DWNM_15_09"); //Jak¹?
-    AI_Output (self, other ,"DIA_Robin_DWNM_03_10"); //Tak¹, ¿e jest przygotowywana specjalna dostawa rudy do obozu, która przyniesie spory zysk.
+    AI_Output (self, other ,"DIA_Robin_DWNM_03_10"); //Tak¹, ¿e jest przygotowywana specjalna dostawa rudy do obozuobozu, która przyniesie spory zysk.
     AI_Output (self, other ,"DIA_Robin_DWNM_03_11"); //Ja pogadam o tym z paroma Stra¿nikami. A Ty z kopaczami, najlepiej ze Snipesem I Alephem.
     AI_Output (other, self ,"DIA_Robin_DWNM_15_12"); //Dobra...
     AI_Output (self, other ,"DIA_Robin_DWNM_03_13"); //W takim razie ¿yczê powodzenia.

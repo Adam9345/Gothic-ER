@@ -58,6 +58,11 @@ func void Set_Troll_Visuals()
 	Mdl_SetVisual			(self,	"Troll.mds");
 	//								Body-Mesh		Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
 	Mdl_SetVisualBody		(self,	"Tro_Body",		DEFAULT,	DEFAULT,	"",			DEFAULT,  	DEFAULT,	-1);
+};func void Set_MadTroll_Visuals()
+{
+	Mdl_SetVisual			(self,	"Troll.mds");
+	//								Body-Mesh		Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
+	Mdl_SetVisualBody		(self,	"Tro_MadBody",		DEFAULT,	DEFAULT,	"",			DEFAULT,  	DEFAULT,	-1);
 };
 
 /*************************************************************************
@@ -90,7 +95,7 @@ INSTANCE AlexTroll	(Mst_Default_Troll)
 INSTANCE MadTroll	(Mst_Default_Troll)
 {
 	name = "Troll z kanionu";
-	Set_Troll_Visuals();
+	Set_MadTroll_Visuals();
 	Npc_SetToFistMode(self);
 	level							=	60;
 //------------------------------------------------------	
@@ -109,6 +114,7 @@ INSTANCE MadTroll	(Mst_Default_Troll)
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	9999;	// immun
 	protection	[PROT_MAGIC]		=	50;
+	CreateInvItem (self, ItMw_1h_ShineRevenge);
 };
 
 /*************************************************************************
