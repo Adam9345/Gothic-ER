@@ -35,6 +35,6 @@ func void B_Orc_AssessMurder()
 	{
 		PrintDebugNpc( PD_ORC_FRAME, "B_Orc_AssesMurder: irgendwas ist tot -> cooool" );
 		B_Say( self, NULL, "$CHEERFIGHT" );
-		AI_PlayAni( self, "T_HAPPY" );
+		//AI_PlayAni( self, "T_HAPPY" );
 	};
 };

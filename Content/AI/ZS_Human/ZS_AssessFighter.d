@@ -112,7 +112,6 @@ func int ZS_AssessFighter_Loop ()
 	//######## SC in Nahkampfdistanz ! ########
 	if (Npc_GetDistToNpc(self,other) < HAI_DIST_ABORT_MELEE)
 	{
-		if (Npc_GetPermAttitude(victim, other) != ATT_HOSTILE) {
 		PrintDebugNpc		(PD_ZS_CHECK,	"...SC ist in Nahkampfdistanz!");
 
 		//---- Passender Kommentar ! ----
@@ -134,7 +133,6 @@ func int ZS_AssessFighter_Loop ()
 		{
 			PrintDebugNpc	(PD_ZS_CHECK, "...Zeit abgelaufen!");
 			AI_StartState 	(self,	ZS_AssessFighterWait,	0 ,	""); 
-		};
 		};
 	}
 
