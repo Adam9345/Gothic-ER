@@ -907,7 +907,17 @@ FUNC VOID STARTUP_SUB_OLDCAMP ()
 	
 	
 	Wld_InsertNpc				(BlackWolf,"PATH_AROUND_HILL01");
+	Wld_InsertNpc				(DarkGolem,"WP_ER_NP_07");
 	
+	
+	Wld_InsertNpc				(Razor,"WP_ER_NP_08");
+	Wld_InsertNpc				(Razor,"WP_ER_NP_08");
+	Wld_InsertNpc				(Razor,"WP_ER_NP_01");
+	Wld_InsertNpc				(Razor,"WP_ER_NP_02");
+	
+	
+	
+	Wld_InsertNpc				(BlackTroll,"WP_ER_NP_09");
 	//----------------Pokoje-------------------------------
 	
 	Wld_AssignRoomToGuild("EROMCAMP01",GIL_STT);

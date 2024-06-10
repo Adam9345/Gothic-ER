@@ -1296,3 +1296,28 @@ INSTANCE ItMw_Meisterdegen (C_Item)
 	TEXT[4]				= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };	
+/*************************************************************************/
+INSTANCE ItMw_1h_SilverLance (C_Item)
+{	
+	name 				=	"Srebrzysta Lanca";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	1100;
+	
+	damageTotal			= 	110;
+	damagetype			=	DAM_EDGE;
+	range    			=  	120;		
+	cond_atr[1]   		= 	ATR_DEXTERITY;
+	cond_value[1]  		= 	100;
+	visual 				=	"ER_1h_SilverLance.3DS";
+	
+	description			= name;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[1];
+	TEXT[3]				= NAME_ADDON_BONUS_1H;			COUNT[3]	= 5;
+	TEXT[4]				= NAME_OneHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};	

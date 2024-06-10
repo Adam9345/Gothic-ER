@@ -8,6 +8,7 @@ func void B_Give_ScorpioChapter4Weapons ()
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_03);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_04);
+	CreateInvItem	(npc,	ItMw_1h_SilverLance);
 	
 	CreateInvItem	(npc,	ItMw_1H_Sword_Bastard_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Bastard_02);
