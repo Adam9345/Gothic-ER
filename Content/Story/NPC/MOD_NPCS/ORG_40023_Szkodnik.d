@@ -52,8 +52,8 @@ CreateInvItems  (self,ItFoBeer,3);
 
 FUNC VOID Rtn_start_40023 () //Wache: Durchgang zu Lares
 {
-	TA_Position	    (20,00,08,00,"WP_CK_ORG2");
-	TA_Position	(08,00,20,00,"WP_CK_ORG2");
+	TA_Stand	    (20,00,08,00,"WP_CK_ORG2");
+	TA_Stand	(08,00,20,00,"WP_CK_ORG2");
 };
 
 

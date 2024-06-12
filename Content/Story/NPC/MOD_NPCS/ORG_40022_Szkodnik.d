@@ -51,8 +51,8 @@ B_SetFightSkills(self,50);
 
 FUNC VOID Rtn_start_40022 () //Wache: Durchgang zu Lares
 {
-	TA_Position	    (20,00,08,00,"WP_SZKODNIK_QUARTZ01");
-	TA_Position	    (08,00,20,00,"WP_SZKODNIK_QUARTZ01");
+	TA_Stand	    (20,00,08,00,"WP_SZKODNIK_QUARTZ01");
+	TA_Stand	    (08,00,20,00,"WP_SZKODNIK_QUARTZ01");
 };
 
 

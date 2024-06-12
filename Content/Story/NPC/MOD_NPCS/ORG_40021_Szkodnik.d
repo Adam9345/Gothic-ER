@@ -49,8 +49,8 @@ B_CreateAmbientInv (self);
 
 FUNC VOID Rtn_start_40021 () //Wache: Durchgang zu Lares
 {
-	TA_Position	    (20,00,08,00,"WP_CK_ORG3");
-	TA_Position	(08,00,20,00,"WP_CK_ORG3");
+	TA_Stand	    (20,00,08,00,"WP_CK_ORG3");
+	TA_Stand	(08,00,20,00,"WP_CK_ORG3");
 };
 
 
