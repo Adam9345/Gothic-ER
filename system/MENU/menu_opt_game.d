@@ -27,9 +27,8 @@ INSTANCE MENU_OPT_GAME(C_MENU_DEF)
 	items[12]		= "MENUITEM_GAME_BLOOD_CHOICE";
 
 	items[13]       = "MENUITEM_OPT_GFA";
-	items[14]       = "MENUITEM_OPT_GFA_CHOICE";
 
-	items[15]		= "MENUITEM_GAME_BACK";
+	items[14]		= "MENUITEM_GAME_BACK";
 	
 	flags = flags | MENU_SHOW_INFO;
 };

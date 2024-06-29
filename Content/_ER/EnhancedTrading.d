@@ -113,23 +113,23 @@ func int Trade_GetPlayerContainerValue () {
 	return 0;
 };
 
-func void oCViewDialogItemContainer_UpdateValue (var int ptr) {
-	//0x00727900 protected: void __fastcall oCViewDialogItemContainer::UpdateValue(void)
-	const int oCViewDialogItemContainer__UpdateValue_G1 = 7502080;
+// func void oCViewDialogItemContainer_UpdateValue (var int ptr) {
+// 	//0x00727900 protected: void __fastcall oCViewDialogItemContainer::UpdateValue(void)
+// 	const int oCViewDialogItemContainer__UpdateValue_G1 = 7502080;
 
-	//0x00689D10 protected: void __fastcall oCViewDialogItemContainer::UpdateValue(void)
-	const int oCViewDialogItemContainer__UpdateValue_G2 = 6855952;
+// 	//0x00689D10 protected: void __fastcall oCViewDialogItemContainer::UpdateValue(void)
+// 	const int oCViewDialogItemContainer__UpdateValue_G2 = 6855952;
 
-	if (!ptr) { return; };
+// 	if (!ptr) { return; };
 
-	const int null = 0;
+// 	const int null = 0;
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL__fastcall(_@(ptr), _@(null), MEMINT_SwitchG1G2 (oCViewDialogItemContainer__UpdateValue_G1, oCViewDialogItemContainer__UpdateValue_G2));
-		call = CALL_End();
-	};
-};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL__fastcall(_@(ptr), _@(null), MEMINT_SwitchG1G2 (oCViewDialogItemContainer__UpdateValue_G1, oCViewDialogItemContainer__UpdateValue_G2));
+// 		call = CALL_End();
+// 	};
+// };
 
 func void Trade_SetPlayerContainerValue (var int value) {
 	var oCViewDialogTrade dialogTrade;
@@ -237,24 +237,24 @@ func void Trade_SetTradeAmount (var int amount) {
 /*
  *	Function updates buy/sell multiplier for specific item pointer
  */
-func int Hlp_Trade_GetInventoryNpcContainer () {
-	if (!MEM_InformationMan.DlgTrade) { return 0; };
+// func int Hlp_Trade_GetInventoryNpcContainer () {
+// 	if (!MEM_InformationMan.DlgTrade) { return 0; };
 
-	var oCViewDialogTrade dialogTrade;
-	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
+// 	var oCViewDialogTrade dialogTrade;
+// 	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
 
-	if (dialogTrade.dlgInventoryNpc) {
-		var oCViewDialogStealContainer dialogStealContainer;
-		dialogStealContainer = _^ (dialogTrade.dlgInventoryNpc);
+// 	if (dialogTrade.dlgInventoryNpc) {
+// 		var oCViewDialogStealContainer dialogStealContainer;
+// 		dialogStealContainer = _^ (dialogTrade.dlgInventoryNpc);
 
-		//oCStealContainer
-		if (dialogStealContainer.stealContainer) {
-			return dialogStealContainer.stealContainer;
-		};
-	};
+// 		//oCStealContainer
+// 		if (dialogStealContainer.stealContainer) {
+// 			return dialogStealContainer.stealContainer;
+// 		};
+// 	};
 
-	return 0;
-};
+// 	return 0;
+// };
 
 func void Trade_UpdateBuySellMultiplier (var int itmPtr) {
 	var oCNPC npc;
@@ -383,101 +383,101 @@ func int Trade_CalculateTotalValue (var int itemValue, var int amount, var int m
  *	Function moves amount of items (by item pointer) from players container back to players inventory
  */
 
-func int Hlp_Trade_GetInventoryPlayerContainer () {
-	if (!MEM_InformationMan.DlgTrade) { return 0; };
+// func int Hlp_Trade_GetInventoryPlayerContainer () {
+// 	if (!MEM_InformationMan.DlgTrade) { return 0; };
 
-	var oCViewDialogTrade dialogTrade;
-	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
+// 	var oCViewDialogTrade dialogTrade;
+// 	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
 
-	if (dialogTrade.dlgInventoryPlayer) {
-		var oCViewDialogInventory dialogInventory;
-		dialogInventory = _^ (dialogTrade.dlgInventoryPlayer);
+// 	if (dialogTrade.dlgInventoryPlayer) {
+// 		var oCViewDialogInventory dialogInventory;
+// 		dialogInventory = _^ (dialogTrade.dlgInventoryPlayer);
 
-		//oCNpcInventory
-		if (dialogInventory.inventory) {
-			return dialogInventory.inventory;
-		};
-	};
+// 		//oCNpcInventory
+// 		if (dialogInventory.inventory) {
+// 			return dialogInventory.inventory;
+// 		};
+// 	};
 
-	return 0;
-};
+// 	return 0;
+// };
 
-func int Hlp_Trade_GetContainerPlayerContainer () {
-	//G2A does not have containers!
-	if (MEMINT_SwitchG1G2 (0, 1)) { return 0; };
+// func int Hlp_Trade_GetContainerPlayerContainer () {
+// 	//G2A does not have containers!
+// 	if (MEMINT_SwitchG1G2 (0, 1)) { return 0; };
 
-	if (!MEM_InformationMan.DlgTrade) { return 0; };
+// 	if (!MEM_InformationMan.DlgTrade) { return 0; };
 
-	var oCViewDialogTrade dialogTrade;
-	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
+// 	var oCViewDialogTrade dialogTrade;
+// 	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
 
-	//G2A class oCViewDialogTrade does not have property dlgContainerPlayer
-	//Therefore we cannot use it directly, but we have to use offset instead
-	//var int dlgContainerPlayer; //oCViewDialogItemContainer* // sizeof 04h offset 104h
+// 	//G2A class oCViewDialogTrade does not have property dlgContainerPlayer
+// 	//Therefore we cannot use it directly, but we have to use offset instead
+// 	//var int dlgContainerPlayer; //oCViewDialogItemContainer* // sizeof 04h offset 104h
 
-	var int itemContainerPtr; itemContainerPtr = MEM_ReadInt (_@ (dialogTrade) + 260);
+// 	var int itemContainerPtr; itemContainerPtr = MEM_ReadInt (_@ (dialogTrade) + 260);
 
-	//if (dialogTrade.dlgContainerPlayer) {
-	if (itemContainerPtr) {
-		var oCViewDialogItemContainer dialogItemContainer;
-		//dialogItemContainer = _^ (dialogTrade.dlgContainerPlayer);
-		dialogItemContainer = _^ (itemContainerPtr);
+// 	//if (dialogTrade.dlgContainerPlayer) {
+// 	if (itemContainerPtr) {
+// 		var oCViewDialogItemContainer dialogItemContainer;
+// 		//dialogItemContainer = _^ (dialogTrade.dlgContainerPlayer);
+// 		dialogItemContainer = _^ (itemContainerPtr);
 
-		//oCItemContainer
-		if (dialogItemContainer.itemContainer) {
-			return dialogItemContainer.itemContainer;
-		};
-	};
+// 		//oCItemContainer
+// 		if (dialogItemContainer.itemContainer) {
+// 			return dialogItemContainer.itemContainer;
+// 		};
+// 	};
 
-	return 0;
-};
+// 	return 0;
+// };
 
-func int oCItemContainer_RemoveByPtr (var int ptr, var int itemPtr, var int amount) {
-	//0x006693C0 public: virtual class oCItem * __thiscall oCItemContainer::RemoveByPtr(class oCItem *,int)
-	const int oCItemContainer__RemoveByPtr_G1 = 6722496;
+// func int oCItemContainer_RemoveByPtr (var int ptr, var int itemPtr, var int amount) {
+// 	//0x006693C0 public: virtual class oCItem * __thiscall oCItemContainer::RemoveByPtr(class oCItem *,int)
+// 	const int oCItemContainer__RemoveByPtr_G1 = 6722496;
 
-	//0x007094D0 public: virtual class oCItem * __thiscall oCItemContainer::RemoveByPtr(class oCItem *,int)
-	const int oCItemContainer__RemoveByPtr_G2 = 7378128;
+// 	//0x007094D0 public: virtual class oCItem * __thiscall oCItemContainer::RemoveByPtr(class oCItem *,int)
+// 	const int oCItemContainer__RemoveByPtr_G2 = 7378128;
 
-	if (!itemPtr) { return 0; };
-	if (!ptr) { return 0; };
+// 	if (!itemPtr) { return 0; };
+// 	if (!ptr) { return 0; };
 
-	var int retVal;
+// 	var int retVal;
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL_PutRetValTo(_@ (retVal));
-		CALL_IntParam (_@ (amount));
-		CALL_PtrParam (_@ (itemPtr));
-		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCItemContainer__RemoveByPtr_G1, oCItemContainer__RemoveByPtr_G2));
-		call = CALL_End();
-	};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL_PutRetValTo(_@ (retVal));
+// 		CALL_IntParam (_@ (amount));
+// 		CALL_PtrParam (_@ (itemPtr));
+// 		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCItemContainer__RemoveByPtr_G1, oCItemContainer__RemoveByPtr_G2));
+// 		call = CALL_End();
+// 	};
 
-	return +retVal;
-};
+// 	return +retVal;
+// };
 
-func int oCNpcInventory_Insert (var int ptr, var int itemPtr) {
-	//0x0066C7D0 public: virtual class oCItem * __thiscall oCNpcInventory::Insert(class oCItem *)
-	const int oCNpcInventory__Insert_G1 = 6735824;
+// func int oCNpcInventory_Insert (var int ptr, var int itemPtr) {
+// 	//0x0066C7D0 public: virtual class oCItem * __thiscall oCNpcInventory::Insert(class oCItem *)
+// 	const int oCNpcInventory__Insert_G1 = 6735824;
 
-	//0x0070C730 public: virtual class oCItem * __thiscall oCNpcInventory::Insert(class oCItem *)
-	const int oCNpcInventory__Insert_G2 = 7391024;
+// 	//0x0070C730 public: virtual class oCItem * __thiscall oCNpcInventory::Insert(class oCItem *)
+// 	const int oCNpcInventory__Insert_G2 = 7391024;
 
-	if (!itemPtr) { return 0; };
-	if (!ptr) { return 0; };
+// 	if (!itemPtr) { return 0; };
+// 	if (!ptr) { return 0; };
 
-	var int retVal;
+// 	var int retVal;
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL_PutRetValTo(_@ (retVal));
-		CALL_PtrParam (_@ (itemPtr));
-		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCNpcInventory__Insert_G1, oCNpcInventory__Insert_G2));
-		call = CALL_End();
-	};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL_PutRetValTo(_@ (retVal));
+// 		CALL_PtrParam (_@ (itemPtr));
+// 		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCNpcInventory__Insert_G1, oCNpcInventory__Insert_G2));
+// 		call = CALL_End();
+// 	};
 
-	return +retVal;
-};
+// 	return +retVal;
+// };
 
 func void Trade_MoveToInventoryPlayer (var int itmPtr, var int amount) {
 	var oCNpc npc;
@@ -524,62 +524,62 @@ func void Trade_MoveToInventoryPlayer (var int itmPtr, var int amount) {
  *	Function moves amount of items (by item pointer) from players inventory to players container
  */
 
-func int oCNpcInventory_RemoveByPtr (var int ptr, var int itemPtr, var int amount) {
-	//0x0066CF10 public: virtual class oCItem * __thiscall oCNpcInventory::RemoveByPtr(class oCItem *,int)
-	const int oCNpcInventory__RemoveByPtr_G1 = 6737680;
+// func int oCNpcInventory_RemoveByPtr (var int ptr, var int itemPtr, var int amount) {
+// 	//0x0066CF10 public: virtual class oCItem * __thiscall oCNpcInventory::RemoveByPtr(class oCItem *,int)
+// 	const int oCNpcInventory__RemoveByPtr_G1 = 6737680;
 
-	//0x0070CC70 public: virtual class oCItem * __thiscall oCNpcInventory::RemoveByPtr(class oCItem *,int)
-	const int oCNpcInventory__RemoveByPtr_G2 = 7392368;
+// 	//0x0070CC70 public: virtual class oCItem * __thiscall oCNpcInventory::RemoveByPtr(class oCItem *,int)
+// 	const int oCNpcInventory__RemoveByPtr_G2 = 7392368;
 
-	if (!itemPtr) { return 0; };
-	if (!ptr) { return 0; };
+// 	if (!itemPtr) { return 0; };
+// 	if (!ptr) { return 0; };
 
-	var int retVal;
+// 	var int retVal;
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL_PutRetValTo(_@ (retVal));
-		CALL_IntParam (_@ (amount));
-		CALL_PtrParam (_@ (itemPtr));
-		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCNpcInventory__RemoveByPtr_G1, oCNpcInventory__RemoveByPtr_G2));
-		call = CALL_End();
-	};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL_PutRetValTo(_@ (retVal));
+// 		CALL_IntParam (_@ (amount));
+// 		CALL_PtrParam (_@ (itemPtr));
+// 		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCNpcInventory__RemoveByPtr_G1, oCNpcInventory__RemoveByPtr_G2));
+// 		call = CALL_End();
+// 	};
 
-	return +retVal;
-};
+// 	return +retVal;
+// };
 
-func void oCViewDialogItemContainer_InsertItem (var int ptr, var int itemPtr) {
-	//0x007276C0 public: void __fastcall oCViewDialogItemContainer::InsertItem(class oCItem *)
-	const int oCViewDialogItemContainer__InsertItem_G1 = 7501504;
+// func void oCViewDialogItemContainer_InsertItem (var int ptr, var int itemPtr) {
+// 	//0x007276C0 public: void __fastcall oCViewDialogItemContainer::InsertItem(class oCItem *)
+// 	const int oCViewDialogItemContainer__InsertItem_G1 = 7501504;
 
-	//0x00689C00 public: void __fastcall oCViewDialogItemContainer::InsertItem(class oCItem *)
-	const int oCViewDialogItemContainer__InsertItem_G2 = 6855680;
+// 	//0x00689C00 public: void __fastcall oCViewDialogItemContainer::InsertItem(class oCItem *)
+// 	const int oCViewDialogItemContainer__InsertItem_G2 = 6855680;
 
-	if (!itemPtr) { return; };
-	if (!ptr) { return; };
+// 	if (!itemPtr) { return; };
+// 	if (!ptr) { return; };
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL__fastcall(_@(ptr), _@(itemPtr), MEMINT_SwitchG1G2 (oCViewDialogItemContainer__InsertItem_G1, oCViewDialogItemContainer__InsertItem_G2));
-		call = CALL_End();
-	};
-};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL__fastcall(_@(ptr), _@(itemPtr), MEMINT_SwitchG1G2 (oCViewDialogItemContainer__InsertItem_G1, oCViewDialogItemContainer__InsertItem_G2));
+// 		call = CALL_End();
+// 	};
+// };
 
-func void oCItemContainer_Draw (var int ptr) {
-	//0x00667660 protected: virtual void __thiscall oCItemContainer::Draw(void)
-	const int oCItemContainer__Draw_G1 = 6714976;
+// func void oCItemContainer_Draw (var int ptr) {
+// 	//0x00667660 protected: virtual void __thiscall oCItemContainer::Draw(void)
+// 	const int oCItemContainer__Draw_G1 = 6714976;
 
-	//0x007076B0 protected: virtual void __thiscall oCItemContainer::Draw(void)
-	const int oCItemContainer__Draw_G2 = 7370416;
+// 	//0x007076B0 protected: virtual void __thiscall oCItemContainer::Draw(void)
+// 	const int oCItemContainer__Draw_G2 = 7370416;
 
-	if (!ptr) { return; };
+// 	if (!ptr) { return; };
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCItemContainer__Draw_G1, oCItemContainer__Draw_G2));
-		call = CALL_End();
-	};
-};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL__thiscall (_@ (ptr), MEMINT_SwitchG1G2 (oCItemContainer__Draw_G1, oCItemContainer__Draw_G2));
+// 		call = CALL_End();
+// 	};
+// };
 
 func void Trade_MoveToContainerPlayer (var int itmPtr, var int amount) {
 	var oCNpc npc;
@@ -638,53 +638,53 @@ func void Trade_MoveToContainerPlayer (var int itmPtr, var int amount) {
  *	Function moves amount of items (by item pointer) from npcs inventory to npcs container
  */
 
-func int Hlp_Trade_GetContainerNpcContainer () {
-	//G2A does not have containers!
-	if (MEMINT_SwitchG1G2 (0, 1)) { return 0; };
+// func int Hlp_Trade_GetContainerNpcContainer () {
+// 	//G2A does not have containers!
+// 	if (MEMINT_SwitchG1G2 (0, 1)) { return 0; };
 
-	if (!MEM_InformationMan.DlgTrade) { return 0; };
+// 	if (!MEM_InformationMan.DlgTrade) { return 0; };
 
-	var oCViewDialogTrade dialogTrade;
-	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
+// 	var oCViewDialogTrade dialogTrade;
+// 	dialogTrade = _^ (MEM_InformationMan.DlgTrade);
 
-	//G2A class oCViewDialogTrade does not have property dlgContainerNpc
-	//Therefore we cannot use it directly, but we have to use offset instead
-	//var int dlgContainerNpc; //oCViewDialogItemContainer* // sizeof 04h offset FCh
+// 	//G2A class oCViewDialogTrade does not have property dlgContainerNpc
+// 	//Therefore we cannot use it directly, but we have to use offset instead
+// 	//var int dlgContainerNpc; //oCViewDialogItemContainer* // sizeof 04h offset FCh
 
-	var int itemContainerPtr; itemContainerPtr = MEM_ReadInt (_@ (dialogTrade) + 252);
+// 	var int itemContainerPtr; itemContainerPtr = MEM_ReadInt (_@ (dialogTrade) + 252);
 
-//	if (dialogTrade.dlgContainerNpc) {
-	if (itemContainerPtr) {
-		var oCViewDialogItemContainer dialogItemContainer;
-		//dialogItemContainer = _^ (dialogTrade.dlgContainerNpc);
-		dialogItemContainer = _^ (itemContainerPtr);
+// //	if (dialogTrade.dlgContainerNpc) {
+// 	if (itemContainerPtr) {
+// 		var oCViewDialogItemContainer dialogItemContainer;
+// 		//dialogItemContainer = _^ (dialogTrade.dlgContainerNpc);
+// 		dialogItemContainer = _^ (itemContainerPtr);
 
-		//oCItemContainer
-		if (dialogItemContainer.itemContainer) {
-			return dialogItemContainer.itemContainer;
-		};
-	};
+// 		//oCItemContainer
+// 		if (dialogItemContainer.itemContainer) {
+// 			return dialogItemContainer.itemContainer;
+// 		};
+// 	};
 
-	return 0;
-};
+// 	return 0;
+// };
 
-func void oCStealContainer_SetOwner (var int stealContainerPtr, var int npcPtr) {
-	//0x0066A590 public: virtual void __thiscall oCStealContainer::SetOwner(class oCNpc *)
-	const int oCStealContainer__SetOwner_G1 = 6727056;
+// func void oCStealContainer_SetOwner (var int stealContainerPtr, var int npcPtr) {
+// 	//0x0066A590 public: virtual void __thiscall oCStealContainer::SetOwner(class oCNpc *)
+// 	const int oCStealContainer__SetOwner_G1 = 6727056;
 
-	//0x0070ADB0 public: virtual void __thiscall oCStealContainer::SetOwner(class oCNpc *)
-	const int oCStealContainer__SetOwner_G2 = 7384496;
+// 	//0x0070ADB0 public: virtual void __thiscall oCStealContainer::SetOwner(class oCNpc *)
+// 	const int oCStealContainer__SetOwner_G2 = 7384496;
 
-	if (!stealContainerPtr) { return; };
-	if (!npcPtr) { return; };
+// 	if (!stealContainerPtr) { return; };
+// 	if (!npcPtr) { return; };
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL_PtrParam (_@ (npcPtr));
-		CALL__thiscall (_@ (stealContainerPtr), MEMINT_SwitchG1G2 (oCStealContainer__SetOwner_G1, oCStealContainer__SetOwner_G2));
-		call = CALL_End();
-	};
-};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL_PtrParam (_@ (npcPtr));
+// 		CALL__thiscall (_@ (stealContainerPtr), MEMINT_SwitchG1G2 (oCStealContainer__SetOwner_G1, oCStealContainer__SetOwner_G2));
+// 		call = CALL_End();
+// 	};
+// };
 
 func void Trade_MoveToContainerNpc (var int itmPtr, var int amount) {
 	var oCNpc npc;
@@ -742,22 +742,22 @@ func void Trade_MoveToContainerNpc (var int itmPtr, var int amount) {
 /*
  *	Function moves amount of items (by item pointer) from npcs container back to npcs inventory
  */
-func void oCViewDialogStealContainer_InsertItem (var int ptr, var int itemPtr) {
-	//0x00728130 public: void __fastcall oCViewDialogStealContainer::InsertItem(class oCItem *)
-	const int oCViewDialogStealContainer__InsertItem_G1 = 7504176;
+// func void oCViewDialogStealContainer_InsertItem (var int ptr, var int itemPtr) {
+// 	//0x00728130 public: void __fastcall oCViewDialogStealContainer::InsertItem(class oCItem *)
+// 	const int oCViewDialogStealContainer__InsertItem_G1 = 7504176;
 
-	//0x0068A500 public: void __fastcall oCViewDialogStealContainer::InsertItem(class oCItem *)
-	const int oCViewDialogStealContainer__InsertItem_G2 = 6857984;
+// 	//0x0068A500 public: void __fastcall oCViewDialogStealContainer::InsertItem(class oCItem *)
+// 	const int oCViewDialogStealContainer__InsertItem_G2 = 6857984;
 
-	if (!itemPtr) { return; };
-	if (!ptr) { return; };
+// 	if (!itemPtr) { return; };
+// 	if (!ptr) { return; };
 
-	const int call = 0;
-	if (CALL_Begin(call)) {
-		CALL__fastcall(_@(ptr), _@(itemPtr), MEMINT_SwitchG1G2 (oCViewDialogStealContainer__InsertItem_G1, oCViewDialogStealContainer__InsertItem_G2));
-		call = CALL_End();
-	};
-};
+// 	const int call = 0;
+// 	if (CALL_Begin(call)) {
+// 		CALL__fastcall(_@(ptr), _@(itemPtr), MEMINT_SwitchG1G2 (oCViewDialogStealContainer__InsertItem_G1, oCViewDialogStealContainer__InsertItem_G2));
+// 		call = CALL_End();
+// 	};
+// };
 
 func void Trade_MoveToInventoryNpc (var int itmPtr, var int amount) {
 	var oCNpcInventory npcInventory;
@@ -799,36 +799,36 @@ func void Trade_MoveToInventoryNpc (var int itmPtr, var int amount) {
 /*
  *	Hook updates buy/sell multipliers for moved items
  */
-func int Hlp_GetActiveOpenInvContainer () {
-	//0x008DA998 class zCList<class oCItemContainer> s_openContainers
-	const int s_openContainers_G1 = 9283992;
+// func int Hlp_GetActiveOpenInvContainer () {
+// 	//0x008DA998 class zCList<class oCItemContainer> s_openContainers
+// 	const int s_openContainers_G1 = 9283992;
 
-	//0x00AB0FD4 class zCList<class oCItemContainer> s_openContainers
-	const int s_openContainers_G2 = 11210708;
+// 	//0x00AB0FD4 class zCList<class oCItemContainer> s_openContainers
+// 	const int s_openContainers_G2 = 11210708;
 
-	var oCItemContainer container;
+// 	var oCItemContainer container;
 
-	var int ptr; ptr = MEMINT_SwitchG1G2(s_openContainers_G1, s_openContainers_G2);
+// 	var int ptr; ptr = MEMINT_SwitchG1G2(s_openContainers_G1, s_openContainers_G2);
 
-	var zCList list;
+// 	var zCList list;
 
-	while (ptr);
-		list = _^ (ptr);
-		ptr = list.data;
+// 	while (ptr);
+// 		list = _^ (ptr);
+// 		ptr = list.data;
 
-		if (ptr) {
-			container = _^ (ptr);
+// 		if (ptr) {
+// 			container = _^ (ptr);
 
-			if (container.inventory2_oCItemContainer_frame) {
-				return ptr;
-			};
-		};
+// 			if (container.inventory2_oCItemContainer_frame) {
+// 				return ptr;
+// 			};
+// 		};
 
-		ptr = list.next;
-	end;
+// 		ptr = list.next;
+// 	end;
 
-	return 0;
-};
+// 	return 0;
+// };
 
 func int zCListSort_GetNode (var int list, var int nr) {
 	if (!list) { return 0; };

@@ -7,11 +7,13 @@ _INTERN\Ikarus.D
 _INTERN\Float.D
 _INTERN\LeGo_G1\HEADER_G1.src
 _INTERN\engine_addresses_G1.D
-_INTERN\Patches\G1\*.D
-_INTERN\Patches\G12\*.D
 _ER\oSDamageDescriptor.D
 _ER\Trucizna.D
 _ER\AdditionalAIVars.d
+_ER\AI_Functions\AI_Functions.src
+_ER\NPC_Functions\NPC_Functions.src
+_INTERN\Patches\G1\*.D
+_INTERN\Patches\G12\*.D
 
 _ER\classes.d
 _ER\helper_Funcs.d

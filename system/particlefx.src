@@ -2,4 +2,4 @@ _intern\ParticleFXDef.d
 pfx\ParticleFXEngine.d
 pfx\PFX.d
 pfx\PFXMagic.d
-PFX\PfxInstGFA_G1.d
+GFA\PFX_G1.src

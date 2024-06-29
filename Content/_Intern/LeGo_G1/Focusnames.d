@@ -25,10 +25,12 @@ func int Focusnames_Color_Hostile() {
 func void _Focusnames() {
     var int col; col = -1; // Stupid pseudo-locals
     var oCNpc her; her = Hlp_GetNpc(hero);
+	var int att;
 
 	if(Hlp_Is_oCNpc(her.focus_vob)) {
-		var c_npc oth; oth = MEM_PtrToInst(her.focus_vob);
-		var int att; att = Npc_GetPermAttitude(hero, oth);
+		var oCNpc oth; oth = MEM_PtrToInst(her.focus_vob);
+		// var int att; att = Npc_GetPermAttitude(hero, oth);
+		att = oth.attitude;
 		if     (att == ATT_FRIENDLY) { col = Focusnames_Color_Friendly(); }
 		else if(att == ATT_NEUTRAL)  { col = Focusnames_Color_Neutral();  }
 		else if(att == ATT_ANGRY)    { col = Focusnames_Color_Angry();    }

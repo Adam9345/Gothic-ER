@@ -4,8 +4,6 @@ menu\menu_defines.d
 // Deklarationen
 _intern\menu.d
 
-Menu\Menu_Opt_Game_GFA.d
-
 // Menue (Spielmenue)
 menu\menu_main.d
 menu\menu_opt.d
@@ -15,8 +13,10 @@ menu\menu_opt_graphics.d
 menu\menu_opt_video.d
 menu\menu_opt_audio.d
 menu\menu_opt_controls.d
+GFA\Menu.src
 menu\menu_misc.d
 menu\menu_savegame.d
+menu\Menu_Opt_Game_GFA.d
 
 // Log-Screen
 menu\menu_log.d
